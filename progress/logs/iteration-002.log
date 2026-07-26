@@ -1,0 +1,12 @@
+[ITERATION] 002
+[FOCUS] Frontend live stream + snapshot integration
+[TIMESTAMP_UTC] 2026-07-26T06:30:00Z
+[CHANGES]
+- Implemented snapshot hydration and SSE live updates in frontend
+- Added event dedupe and snapshot replay suppression
+[SAMPLE_OUTPUT]
+[HTTP] GET /api/pipeline/snapshot 200
+[SSE] data: {"event_type":"server_heartbeat","source":"dev_server"}
+[SSE] data: {"event_type":"chunk_captured","transcript":"sse verification event"}
+[UI] connStatus=live runStatus=running captured=1
+[RESULT] Dashboard renders snapshot/live data correctly without duplicate side effects

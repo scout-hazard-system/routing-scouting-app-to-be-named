@@ -1,0 +1,11 @@
+[ITERATION] 001
+[FOCUS] Pipeline stability baseline
+[TIMESTAMP_UTC] 2026-07-26T06:00:00Z
+[CHANGES]
+- Added alert fallback and expanded diagnostic logging
+- Added run summary counters and graceful signal handling
+[SAMPLE_OUTPUT]
+[RUN_SUMMARY] captured=18 skipped_silence=241 skipped_clipped=3 llm_alert=0 soft_alert_fallback=2
+[ALERT_LOG] kind=soft_alert_fallback transcript="units responding check jurisdiction line"
+[EVENT_JSON] {"event_type":"run_summary","captured":18,"skipped_silence":241,"llm_alert":0,"soft_alert_fallback":2}
+[RESULT] Stable long-running loop with sparse alerts and expected fallback behavior
