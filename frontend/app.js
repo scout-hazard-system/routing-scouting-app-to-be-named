@@ -324,7 +324,7 @@ async function fetchRouteWeather() {
     return;
   }
   try {
-    const url = apiUrl(`/api/route/weather?start=${encodeURIComponent(start)}&end=${encodeURIComponent(end)}`);
+    const url = apiUrl(`/api/platform/weather/forecast?start=${encodeURIComponent(start)}&end=${encodeURIComponent(end)}`);
     const r = await fetch(url);
     if (!r.ok) throw new Error("weather endpoint unavailable");
     const data = await r.json();
@@ -338,8 +338,19 @@ async function fetchRouteWeather() {
       addListItem(ui.weatherList, `${p.segment || "route"} • ${p.temp ?? "?"}° • ${p.condition || "unknown"} • ${p.time || ""}`);
     });
   } catch {
-    ui.weatherList.innerHTML = "<li>Weather API not available yet. Hook your Java backend endpoint at /api/route/weather.</li>";
+    ui.weatherList.innerHTML = "<li>Weather API not available yet. Hook your Java backend endpoint at /api/platform/weather/forecast.</li>";
   }
+}
+
+async function fetchWazeRouteFromBackend({ start, end, lat, lon }) {
+  const params = new URLSearchParams();
+  if (start) params.set("start", start);
+  if (end) params.set("end", end);
+  if (Number.isFinite(lat)) params.set("lat", String(lat));
+  if (Number.isFinite(lon)) params.set("lon", String(lon));
+  const r = await fetch(apiUrl(`/api/platform/waze/route?${params.toString()}`));
+  if (!r.ok) throw new Error("waze route endpoint unavailable");
+  return r.json();
 }
 
 function planRoute() {
@@ -347,14 +358,23 @@ function planRoute() {
   const startRaw = ui.startInput.value.trim();
   const parsedEnd = parseLatLonInput(endRaw);
   const parsedStart = parseLatLonInput(startRaw);
+  const lat = parsedEnd?.lat ?? parsedStart?.lat;
+  const lon = parsedEnd?.lon ?? parsedStart?.lon;
 
-  if (parsedEnd) {
-    updateEmbeddedMap(parsedEnd.lat, parsedEnd.lon, 12);
-    openWazeFromCoords(parsedEnd.lat, parsedEnd.lon);
-  } else if (endRaw) {
-    const url = `https://waze.com/ul?q=${encodeURIComponent(endRaw)}&navigate=yes`;
-    openWazeUrl(url);
-  }
+  fetchWazeRouteFromBackend({ start: startRaw, end: endRaw, lat, lon })
+    .then((route) => {
+      if (route?.embed_url && ui.wazeMapFrame) ui.wazeMapFrame.src = route.embed_url;
+      if (route?.app_url) openWazeUrl(route.app_url);
+    })
+    .catch(() => {
+      if (parsedEnd) {
+        updateEmbeddedMap(parsedEnd.lat, parsedEnd.lon, 12);
+        openWazeFromCoords(parsedEnd.lat, parsedEnd.lon);
+      } else if (endRaw) {
+        const url = `https://waze.com/ul?q=${encodeURIComponent(endRaw)}&navigate=yes`;
+        openWazeUrl(url);
+      }
+    });
 
   if (parsedStart) {
     ui.latInput.value = parsedStart.lat;

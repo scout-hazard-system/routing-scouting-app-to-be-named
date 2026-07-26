@@ -31,6 +31,12 @@ PIPELINE_LOG_PATH=/tmp/pipeline_live_doordash.log FRONTEND_DEV_PORT=8787 python3
   - SSE stream forwarding new `[EVENT_JSON]` entries from the pipeline log
 - `GET /api/route/weather?start=...&end=...`
   - mock weather response for route panel (replace with real backend implementation later)
+- `GET /api/platform/weather/forecast?start=...&end=...`
+  - provider-ready weather endpoint currently returning mock fallback data
+- `GET /api/platform/waze/route?start=...&end=...&lat=...&lon=...`
+  - returns backend-generated Waze app/embed URLs
+- `GET /api/platform/providers/status`
+  - provider wiring readiness metadata
 
 ## Event contract expected by UI
 The UI consumes JSON events with at least:
