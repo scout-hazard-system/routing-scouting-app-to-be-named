@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Scanner Navigation Monitor</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <main class="layout">
+    <header class="card header">
+      <div>
+        <h1>Scanner Navigation Monitor</h1>
+        <p class="sub">Live dispatch awareness with navigation handoff</p>
+      </div>
+      <div class="status-group">
+        <span id="connStatus" class="pill warn">connecting</span>
+        <span id="runStatus" class="pill mute">idle</span>
+        <button id="enableNotifyBtn" class="tiny-btn">Enable Notifications</button>
+      </div>
+    </header>
+    <section class="grid top-grid">
+      <article class="card map-card">
+        <div class="card-head">
+          <h2>Waze Map</h2>
+          <span class="sub tiny">Live route view / quick jump</span>
+        </div>
+        <iframe
+          id="wazeMapFrame"
+          title="Waze Map"
+          src="https://embed.waze.com/iframe?zoom=10&lat=34.0522&lon=-118.2437"
+          loading="lazy"
+        ></iframe>
+      </article>
+      <article class="card route-card">
+        <h2>Route Planner</h2>
+        <div class="route-grid">
+          <input id="startInput" type="text" placeholder="Start (address or lat,lon)" />
+          <input id="endInput" type="text" placeholder="Destination (address or lat,lon)" />
+          <input id="latInput" type="number" step="any" placeholder="Latitude (optional)" />
+          <input id="lonInput" type="number" step="any" placeholder="Longitude (optional)" />
+        </div>
+        <div class="nav-row tri">
+          <button id="planRouteBtn" class="primary">Plan Route in Waze</button>
+          <button id="openWazeBtn">Open Waze Route</button>
+          <button id="useAlertCoordsBtn">Use Last Alert Coords</button>
+        </div>
+        <p class="sub tiny">Planner supports destination text + lat/lon. If both are provided, destination text takes priority.</p>
+      </article>
+    </section>
+    <section class="grid mid-grid">
+      <article class="card weather-card">
+        <h2>Weather Forecast (Current Route)</h2>
+        <p class="sub tiny">Expected backend endpoint: <code>/api/route/weather?start=...&end=...</code></p>
+        <ul id="weatherList" class="list compact"></ul>
+      </article>
+      <article class="card widget-card">
+        <h2>Extensible UI Slots</h2>
+        <div class="widget-slots">
+          <div class="widget-slot">
+            <h3>Slot A</h3>
+            <p>Reserve for ETA / traffic model / hazard confidence.</p>
+          </div>
+          <div class="widget-slot">
+            <h3>Slot B</h3>
+            <p>Reserve for jurisdiction overlays / geofence telemetry.</p>
+          </div>
+          <div class="widget-slot">
+            <h3>Slot C</h3>
+            <p>Reserve for user controls, rule tuning, or external plugin cards.</p>
+          </div>
+        </div>
+      </article>
+    </section>
+    <section class="grid">
+      <article class="card">
+        <h2>Run Metrics</h2>
+        <div class="metrics">
+          <div><label>Captured</label><strong id="captured">0</strong></div>
+          <div><label>Skipped silence</label><strong id="skippedSilence">0</strong></div>
+          <div><label>Skipped clipped</label><strong id="skippedClipped">0</strong></div>
+          <div><label>LLM alerts</label><strong id="llmAlert">0</strong></div>
+          <div><label>Fallback alerts</label><strong id="softFallback">0</strong></div>
+          <div><label>Jurisdiction notices</label><strong id="jurisdictionCount">0</strong></div>
+        </div>
+      </article>
+    </section>
+    <section class="card">
+      <h2>Recent Alerts</h2>
+      <ul id="alerts" class="list"></ul>
+    </section>
+    <section class="card">
+      <h2>Recent Transcripts</h2>
+      <ul id="transcripts" class="list"></ul>
+    </section>
+    <section class="card">
+      <h2>Jurisdiction Edge Notifications</h2>
+      <ul id="jurisdictionNotices" class="list"></ul>
+    </section>
+    <section class="card">
+      <h2>Integration Stream</h2>
+      <p class="sub tiny">
+        Frontend expects JSON events from a Java/API bridge via
+        <code>/api/pipeline/stream</code> (SSE) and optional
+        <code>/api/pipeline/snapshot</code>.
+      </p>
+      <pre id="eventPreview" class="event-preview"></pre>
+    </section>
+  </main>
+  <div id="alertModal" class="modal hidden" aria-hidden="true">
+    <div class="modal-card">
+      <div class="modal-head">
+        <h2>Active Alert</h2>
+        <button id="closeAlertModalBtn">Close</button>
+      </div>
+      <p id="alertModalText"></p>
+      <canvas id="visualizerCanvas" width="700" height="180"></canvas>
+    </div>
+  </div>
+  <script src="./app.js"></script>
+</body>
+</html>

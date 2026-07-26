@@ -2,6 +2,11 @@ import argparse
 import subprocess
 import shutil
 import time
+import re
+import sys
+import signal
+import json
+from datetime import datetime, UTC
 import sounddevice as sd
 import scipy.io.wavfile as wav
 import requests
@@ -12,28 +17,168 @@ from faster_whisper import WhisperModel
 FS = 16000          # Audio frequency standard for Whisper
 DURATION = 12       # Grabs audio in 12-second intervals to minimize processing lag
 OLLAMA_URL = "http://localhost:11434/api/generate"
+SHOULD_EXIT = False
+
+def request_shutdown(signum, _frame):
+    global SHOULD_EXIT
+    SHOULD_EXIT = True
+    print(f"\nReceived signal {signum}. Shutting down gracefully...")
+
+def emit_event_json(event_type, enabled=True, **payload):
+    if not enabled:
+        return
+    event = {
+        "ts": datetime.now(UTC).isoformat(),
+        "event_type": event_type,
+        **payload,
+    }
+    print(f"[EVENT_JSON] {json.dumps(event, ensure_ascii=False)}")
 
 # The system prompt context maps out local 10-codes into plain speech warnings
 SYSTEM_PROMPT = """
 You are an in-car speed trap and radar alert assistant for a driver on a cross country trip.
 Analyze the following police scanner transcript. Look exclusively for traffic or highway enforcement events.
-Keywords to watch out for: 'radar', 'laser', 'clocked', 'speed trap', 'pacing', '10-38' (traffic stop), 'staged near marker'.
-If an active speed trap or traffic stop is mentioned, reply EXACTLY with a 1-sentence warning starting with 'ALERT:'.
+Primary keywords: 'radar', 'laser', 'clocked', 'speed trap', 'pacing', '10-38' (traffic stop), 'staged near marker'.
+Also treat dispatch-style cues as alert-worthy when they plausibly indicate traffic enforcement activity:
+- unit callouts and acknowledgements ('unit', 'copy', 'go ahead', '10-xx', 'code xx')
+- lane/highway/location markers ('mile marker', 'exit', 'northbound', 'southbound', 'on-ramp', 'shoulder')
+- coordination language ('switch to channel', 'in progress', 'vehicle stop', 'running traffic')
+If traffic enforcement is explicit OR dispatch-style clues strongly suggest active roadway enforcement, reply EXACTLY with a 1-sentence warning starting with 'ALERT:'.
 Example: 'ALERT: State trooper clocking speed near mile marker 85.'
+If transcript is ambiguous, prefer ALERT only when at least 2 dispatch/enforcement clues are present; otherwise reply 'IGNORE'.
 If it is generic chatter, static, or irrelevant noise, reply strictly with 'IGNORE'.
 """
 
-def query_llm(transcript_text):
+CALL_TYPE_KEYWORDS = {
+    "traffic_stop": ["traffic stop", "stopped", "vehicle stop", "10-38", "10 38"],
+    "speed_enforcement": ["radar", "laser", "clocked", "speed trap", "pacing"],
+    "pursuit": ["pursuit", "chase", "failing to yield"],
+    "welfare_check": ["welfare check", "check well-being"],
+    "suspicious_activity": ["suspicious", "loitering", "prowler"],
+    "accident": ["accident", "mvc", "crash", "collision"],
+    "units_coordination": ["copy", "switch over", "channel", "unit", "dispatch"],
+}
+PRIORITY_KEYWORDS = {
+    "high": ["in progress", "shots fired", "officer needs assistance", "pursuit", "urgent"],
+    "medium": ["traffic stop", "suspicious", "welfare check", "accident"],
+    "low": ["clear", "cancel", "advised", "non-injury", "information only"],
+}
+DISPATCH_CUE_GROUPS = {
+    "primary_enforcement": ["radar", "laser", "clocked", "speed trap", "pacing", "10-38", "10 38", "vehicle stop", "running traffic"],
+    "unit_ack": ["unit", "copy", "go ahead", "10-", "code "],
+    "location_markers": ["mile marker", "exit", "northbound", "southbound", "on-ramp", "shoulder", "highway"],
+    "coordination": ["switch to channel", "channel", "in progress", "dispatch"],
+}
+DISPATCH_CUE_WEIGHTS = {
+    "primary_enforcement": 3,
+    "location_markers": 2,
+    "unit_ack": 1,
+    "coordination": 1,
+}
+PRIMARY_ENFORCEMENT_STRONG = {"radar", "laser", "clocked", "speed trap", "pacing", "vehicle stop", "running traffic"}
+
+def log_safe(text):
+    return text.replace('"', "'").replace("\n", " ").strip()
+
+def extract_dispatch_cues(text):
+    lower = text.lower()
+    matched = {}
+    for group, cues in DISPATCH_CUE_GROUPS.items():
+        found = []
+        for cue in cues:
+            if cue in lower:
+                found.append(cue)
+        if found:
+            matched[group] = sorted(set(found))
+    cue_count = sum(len(v) for v in matched.values())
+    return matched, cue_count
+
+def score_dispatch_cues(cue_map):
+    score = 0
+    for group, values in cue_map.items():
+        weight = DISPATCH_CUE_WEIGHTS.get(group, 1)
+        score += weight * len(values)
+    return score
+
+def has_strong_enforcement_signal(cue_map):
+    for cue in cue_map.get("primary_enforcement", []):
+        if cue in PRIMARY_ENFORCEMENT_STRONG:
+            return True
+    return False
+
+def extract_codes(text):
+    ten_codes = [f"10-{m.group(1)}" for m in re.finditer(r"\b10[-\s]?(\d{1,2})\b", text, flags=re.IGNORECASE)]
+    generic_codes = [f"code {m.group(1)}" for m in re.finditer(r"\bcode[-\s]?(\d{1,3})\b", text, flags=re.IGNORECASE)]
+    return sorted(set(ten_codes + generic_codes))
+
+def classify_transcript(text):
+    lower = text.lower()
+    matched_types = []
+    for call_type, keywords in CALL_TYPE_KEYWORDS.items():
+        if any(k in lower for k in keywords):
+            matched_types.append(call_type)
+    if not matched_types:
+        matched_types = ["unclassified"]
+
+    priority = "unknown"
+    for level, keywords in PRIORITY_KEYWORDS.items():
+        if any(k in lower for k in keywords):
+            priority = level
+            break
+
+    confidence = 0.45
+    if matched_types != ["unclassified"]:
+        confidence += 0.25
+    if priority != "unknown":
+        confidence += 0.15
+    codes = extract_codes(text)
+    if codes:
+        confidence += 0.15
+    confidence = min(confidence, 0.95)
+
+    return {
+        "call_types": matched_types,
+        "priority": priority,
+        "codes": codes,
+        "confidence": round(confidence, 2),
+    }
+def query_llm(transcript_text, timeout_seconds=3.0, retries=0):
     payload = {
         "model": "llama3.1", 
         "prompt": f"{SYSTEM_PROMPT}\n\nTranscript: {transcript_text}",
         "stream": False
     }
-    try:
-        response = requests.post(OLLAMA_URL, json=payload, timeout=3)
-        return response.json().get("response", "IGNORE")
-    except Exception:
-        return "IGNORE"
+    attempts = retries + 1
+    last_error = None
+    last_status = None
+    last_raw = None
+    for _ in range(attempts):
+        try:
+            response = requests.post(OLLAMA_URL, json=payload, timeout=timeout_seconds)
+            last_status = response.status_code
+            raw_text = response.text
+            last_raw = raw_text[:500]
+            try:
+                parsed = response.json()
+            except Exception:
+                parsed = {}
+            model_response = parsed.get("response", "IGNORE")
+            return {
+                "response": model_response,
+                "status_code": last_status,
+                "error": None,
+                "raw": last_raw,
+                "attempts": attempts,
+            }
+        except Exception as e:
+            last_error = repr(e)
+    return {
+        "response": "IGNORE",
+        "status_code": last_status,
+        "error": last_error,
+        "raw": last_raw,
+        "attempts": attempts,
+    }
 def pick_default_input_device():
     devices = sd.query_devices()
     for idx, dev in enumerate(devices):
@@ -74,6 +219,64 @@ def speak_alert(message):
         pass
 def run_command(command):
     return subprocess.check_output(command, text=True, stderr=subprocess.STDOUT)
+def list_sinks():
+    out = run_command(["pactl", "list", "short", "sinks"])
+    sinks = []
+    for line in out.splitlines():
+        if not line.strip():
+            continue
+        parts = line.split("\t")
+        if len(parts) >= 2:
+            try:
+                sink_index = int(parts[0])
+            except ValueError:
+                continue
+            sinks.append({"index": sink_index, "name": parts[1]})
+    return sinks
+def sink_name_index_maps():
+    sinks = list_sinks()
+    index_to_name = {s["index"]: s["name"] for s in sinks}
+    name_to_index = {s["name"]: s["index"] for s in sinks}
+    return index_to_name, name_to_index
+def default_sink_name():
+    out = run_command(["pactl", "info"])
+    for line in out.splitlines():
+        if line.lower().startswith("default sink:"):
+            return line.split(":", 1)[1].strip()
+    raise RuntimeError("Could not determine default sink from pactl info.")
+def parse_sink_inputs():
+    out = run_command(["pactl", "list", "sink-inputs"])
+    sink_inputs = []
+    chunks = out.split("Sink Input #")
+    for chunk in chunks[1:]:
+        lines = chunk.splitlines()
+        if not lines:
+            continue
+        try:
+            sink_input_id = int(lines[0].strip())
+        except ValueError:
+            continue
+        sink_index = None
+        for line in lines:
+            stripped = line.strip()
+            if stripped.startswith("Sink:"):
+                try:
+                    sink_index = int(stripped.split(":", 1)[1].strip())
+                except ValueError:
+                    sink_index = None
+                break
+        lower = chunk.lower()
+        is_scrcpy = (
+            'application.process.binary = "scrcpy"' in lower
+            or 'application.name = "scrcpy"' in lower
+            or "scrcpy" in lower
+        )
+        sink_inputs.append({
+            "id": sink_input_id,
+            "sink_index": sink_index,
+            "is_scrcpy": is_scrcpy,
+        })
+    return sink_inputs
 def ensure_binary(name_or_path):
     if "/" in name_or_path:
         if not shutil.which(name_or_path):
@@ -100,8 +303,8 @@ def adb_connected_devices():
             devices.append(ln.split("\t")[0])
     return devices
 def sink_exists(sink_name):
-    out = run_command(["pactl", "list", "short", "sinks"])
-    return any(line.split("\t")[1] == sink_name for line in out.splitlines() if line.strip())
+    _, name_to_index = sink_name_index_maps()
+    return sink_name in name_to_index
 def ensure_null_sink(sink_name):
     if sink_exists(sink_name):
         return
@@ -111,16 +314,9 @@ def ensure_null_sink(sink_name):
         "sink_properties=device.description=ScannerSink"
     ])
 def find_scrcpy_sink_input_id():
-    out = run_command(["pactl", "list", "sink-inputs"])
-    chunks = out.split("Sink Input #")
-    for chunk in chunks[1:]:
-        first_line = chunk.splitlines()[0].strip()
-        try:
-            sink_input_id = int(first_line)
-        except ValueError:
-            continue
-        if "scrcpy" in chunk.lower():
-            return sink_input_id
+    scrcpy_inputs = [si["id"] for si in parse_sink_inputs() if si["is_scrcpy"]]
+    if scrcpy_inputs:
+        return max(scrcpy_inputs)
     return None
 def wait_for_scrcpy_sink_input(timeout_seconds=20):
     deadline = time.time() + timeout_seconds
@@ -132,6 +328,32 @@ def wait_for_scrcpy_sink_input(timeout_seconds=20):
     return None
 def move_sink_input_to_sink(sink_input_id, sink_name):
     run_command(["pactl", "move-sink-input", str(sink_input_id), sink_name])
+def enforce_scrcpy_sink_purity(target_sink_name, scrcpy_sink_input_id):
+    index_to_name, name_to_index = sink_name_index_maps()
+    target_sink_index = name_to_index.get(target_sink_name)
+    if target_sink_index is None:
+        raise RuntimeError(f"Target sink '{target_sink_name}' is missing.")
+    current_default_sink = default_sink_name()
+    fallback_sink = current_default_sink
+    if fallback_sink == target_sink_name:
+        for name in name_to_index.keys():
+            if name != target_sink_name:
+                fallback_sink = name
+                break
+    evicted = 0
+    for sink_input in parse_sink_inputs():
+        if sink_input["sink_index"] != target_sink_index:
+            continue
+        if sink_input["id"] == scrcpy_sink_input_id:
+            continue
+        if sink_input["is_scrcpy"]:
+            continue
+        if fallback_sink != target_sink_name:
+            move_sink_input_to_sink(sink_input["id"], fallback_sink)
+            evicted += 1
+    if evicted > 0:
+        print(f"Evicted {evicted} non-scrcpy stream(s) from '{target_sink_name}'.")
+    return evicted
 def capture_scrcpy_chunk_to_wav(source_name, duration_seconds, output_path, sample_rate):
     subprocess.run([
         "ffmpeg", "-hide_banner", "-loglevel", "error", "-y",
@@ -142,6 +364,27 @@ def capture_scrcpy_chunk_to_wav(source_name, duration_seconds, output_path, samp
         "-t", str(duration_seconds),
         output_path
     ], check=True)
+class TeeStream:
+    def __init__(self, *streams):
+        self.streams = streams
+    def write(self, data):
+        for s in self.streams:
+            s.write(data)
+            s.flush()
+        return len(data)
+    def flush(self):
+        for s in self.streams:
+            s.flush()
+    def isatty(self):
+        return any(getattr(s, "isatty", lambda: False)() for s in self.streams)
+    def fileno(self):
+        for s in self.streams:
+            if hasattr(s, "fileno"):
+                try:
+                    return s.fileno()
+                except Exception:
+                    continue
+        raise OSError("No fileno available")
 def start_scrcpy(scrcpy_bin, serial=None):
     ensure_binary(scrcpy_bin)
     ensure_binary("adb")
@@ -152,7 +395,7 @@ def start_scrcpy(scrcpy_bin, serial=None):
             raise RuntimeError(f"ADB device '{serial}' not connected/authorized. Connected: {devices}")
     elif not devices:
         raise RuntimeError("No authorized ADB devices connected.")
-    cmd = [scrcpy_bin, "--no-video"]
+    cmd = [scrcpy_bin, "--no-video", "--require-audio", "--audio-source=output", "--no-control"]
     if serial:
         cmd.extend(["-s", serial])
     print(f"Starting scrcpy: {' '.join(cmd)}")
@@ -168,7 +411,28 @@ parser.add_argument("--start-scrcpy", action="store_true", help="Auto-launch scr
 parser.add_argument("--serial", type=str, default=None, help="ADB device serial (optional)")
 parser.add_argument("--scrcpy-bin", type=str, default="scrcpy", help="scrcpy executable path/name for scrcpy mode")
 parser.add_argument("--scrcpy-sink", type=str, default="scanner_sink", help="PulseAudio sink name used to isolate scrcpy audio")
+parser.add_argument("--log-file", type=str, default="/tmp/pipeline_runtime.log", help="Path to append pipeline logs")
+parser.add_argument("--alert-debug", action=argparse.BooleanOptionalAction, default=True, help="Emit detailed [ALERT_DEBUG] lines for cue matching and Ollama decisions")
+parser.add_argument("--ollama-timeout", type=float, default=8.0, help="Ollama request timeout in seconds")
+parser.add_argument("--ollama-retries", type=int, default=1, help="Retry attempts after first Ollama failure")
+parser.add_argument("--rms-threshold", type=float, default=0.01, help="Skip chunk when RMS is below this value")
+parser.add_argument("--clip-threshold", type=float, default=0.15, help="Skip chunk when clipped sample ratio exceeds this value")
+parser.add_argument("--soft-alert-fallback", action=argparse.BooleanOptionalAction, default=True, help="Emit SOFT_ALERT when dispatch cues meet threshold but LLM does not emit ALERT")
+parser.add_argument("--integration-json", action=argparse.BooleanOptionalAction, default=True, help="Emit structured [EVENT_JSON] lines for Java/HTML integrations")
+parser.add_argument("--rule-score-threshold", type=int, default=3, help="Weighted dispatch score threshold that marks a transcript as rule-expected alert")
+parser.add_argument("--hard-rule-score-threshold", type=int, default=4, help="Weighted dispatch score threshold for hard rule-based alert promotion")
 args = parser.parse_args()
+signal.signal(signal.SIGTERM, request_shutdown)
+signal.signal(signal.SIGINT, request_shutdown)
+for _sig in (signal.SIGTSTP, signal.SIGTTIN, signal.SIGTTOU):
+    try:
+        signal.signal(_sig, signal.SIG_IGN)
+    except Exception:
+        pass
+log_handle = open(args.log_file, "a", buffering=1)
+sys.stdout = TeeStream(sys.stdout, log_handle)
+sys.stderr = TeeStream(sys.stderr, log_handle)
+print(f"Logging pipeline output to: {args.log_file}")
 
 if args.list_devices:
     print(sd.query_devices())
@@ -188,6 +452,7 @@ if args.mode == "scrcpy":
     if sink_input_id is None:
         raise RuntimeError("Could not detect scrcpy audio stream in PulseAudio sink-inputs.")
     move_sink_input_to_sink(sink_input_id, args.scrcpy_sink)
+    enforce_scrcpy_sink_purity(args.scrcpy_sink, sink_input_id)
     source_node = f"{args.scrcpy_sink}.monitor"
     capture_fs = FS
     print(f"Routed scrcpy sink-input #{sink_input_id} to isolated sink '{args.scrcpy_sink}'.")
@@ -210,64 +475,288 @@ else:
     print(f"Input device index: {input_device}")
     print(f"Input source node: {input_device_name}")
 print(f"Capture sample rate: {capture_fs}")
+emit_event_json(
+    "pipeline_ready",
+    enabled=args.integration_json,
+    mode=args.mode,
+    source_node=source_node if args.mode == "scrcpy" else input_device_name,
+    sample_rate=capture_fs,
+    soft_alert_fallback=args.soft_alert_fallback,
+)
+run_stats = {
+    "captured": 0,
+    "skipped_silence": 0,
+    "skipped_clipped": 0,
+    "llm_alert": 0,
+    "soft_alert_fallback": 0,
+}
 try:
-    while True:
-        if args.mode == "scrcpy":
-            capture_scrcpy_chunk_to_wav(source_node, chunk_duration, "buffer_chunk.wav", capture_fs)
-            chunk_fs, chunk_data = wav.read("buffer_chunk.wav")
-            if chunk_data.ndim == 2:
-                chunk_data = chunk_data[:, 0]
-            mono = chunk_data.astype(np.float32)
-            if chunk_data.dtype == np.int16:
-                mono = mono / 32768.0
-            elif chunk_data.dtype == np.int32:
-                mono = mono / 2147483648.0
-            capture_fs = chunk_fs
-        else:
-            # 2. Record raw scanner snippet from direct audio capture
-            audio_buffer = sd.rec(
-                int(chunk_duration * capture_fs),
-                samplerate=capture_fs,
-                channels=1,
-                dtype='float32',
-                device=input_device
+    while not SHOULD_EXIT:
+        try:
+            if args.mode == "scrcpy":
+                enforce_scrcpy_sink_purity(args.scrcpy_sink, sink_input_id)
+                capture_scrcpy_chunk_to_wav(source_node, chunk_duration, "buffer_chunk.wav", capture_fs)
+                chunk_fs, chunk_data = wav.read("buffer_chunk.wav")
+                if chunk_data.ndim == 2:
+                    chunk_data = chunk_data[:, 0]
+                mono = chunk_data.astype(np.float32)
+                if chunk_data.dtype == np.int16:
+                    mono = mono / 32768.0
+                elif chunk_data.dtype == np.int32:
+                    mono = mono / 2147483648.0
+                capture_fs = chunk_fs
+            else:
+                # 2. Record raw scanner snippet from direct audio capture
+                audio_buffer = sd.rec(
+                    int(chunk_duration * capture_fs),
+                    samplerate=capture_fs,
+                    channels=1,
+                    dtype='float32',
+                    device=input_device
+                )
+                sd.wait()
+                wav.write("buffer_chunk.wav", capture_fs, audio_buffer)
+                mono = audio_buffer[:, 0]
+            rms = float(np.sqrt(np.mean(mono ** 2)))
+            clip_ratio = float(np.mean(np.abs(mono) > 0.98))
+            if rms < args.rms_threshold:
+                run_stats["skipped_silence"] += 1
+                if args.alert_debug:
+                    print(f"[Skipped]: near-silence chunk (rms={rms:.6f}, threshold={args.rms_threshold})")
+                else:
+                    print("[Skipped]: near-silence chunk")
+                emit_event_json(
+                    "chunk_skipped_silence",
+                    enabled=args.integration_json,
+                    rms=rms,
+                    threshold=args.rms_threshold,
+                )
+                continue
+            if clip_ratio > args.clip_threshold:
+                run_stats["skipped_clipped"] += 1
+                print(f"[Skipped]: heavily clipped chunk (clip_ratio={clip_ratio:.4f}, threshold={args.clip_threshold})")
+                emit_event_json(
+                    "chunk_skipped_clipped",
+                    enabled=args.integration_json,
+                    clip_ratio=clip_ratio,
+                    threshold=args.clip_threshold,
+                )
+                continue
+            
+            # 3. Process transcription on CPU
+            segments, _ = whisper_engine.transcribe(
+                "buffer_chunk.wav",
+                beam_size=5,
+                vad_filter=True,
+                condition_on_previous_text=False,
+                no_speech_threshold=0.6,
+                log_prob_threshold=-1.0
             )
-            sd.wait()
-            wav.write("buffer_chunk.wav", capture_fs, audio_buffer)
-            mono = audio_buffer[:, 0]
-        rms = float(np.sqrt(np.mean(mono ** 2)))
-        clip_ratio = float(np.mean(np.abs(mono) > 0.98))
-        if rms < 0.01:
-            print("[Skipped]: near-silence chunk")
-            continue
-        if clip_ratio > 0.15:
-            print(f"[Skipped]: heavily clipped chunk (clip_ratio={clip_ratio:.2f})")
-            continue
-        
-        # 3. Process transcription on CPU
-        segments, _ = whisper_engine.transcribe(
-            "buffer_chunk.wav",
-            beam_size=5,
-            vad_filter=True,
-            condition_on_previous_text=False,
-            no_speech_threshold=0.6,
-            log_prob_threshold=-1.0
-        )
-        raw_text = " ".join([seg.text for seg in segments]).strip()
-        
-        if raw_text:
-            print(f"[Captured Chatter]: {raw_text}")
+            raw_text = " ".join([seg.text for seg in segments]).strip()
             
-            # 4. Offload text to local Ollama Llama 3.1 framework
-            ai_response = query_llm(raw_text)
-            
-            if "ALERT:" in ai_response:
-                print(f"🚨 {ai_response}")
-                # 5. Linux Native Voice Notification Engine
-                clean_message = ai_response.replace("ALERT:", "").strip()
-                speak_alert(clean_message)
-except KeyboardInterrupt:
-    print("\nStopping pipeline.")
+            if raw_text:
+                run_stats["captured"] += 1
+                print(f"[Captured Chatter]: {raw_text}")
+                classification = classify_transcript(raw_text)
+                print(
+                    "[Classification]: "
+                    f"types={classification['call_types']} "
+                    f"priority={classification['priority']} "
+                    f"codes={classification['codes']} "
+                    f"confidence={classification['confidence']}"
+                )
+                emit_event_json(
+                    "chunk_captured",
+                    enabled=args.integration_json,
+                    transcript=raw_text,
+                    classification=classification,
+                )
+                cue_map, cue_count = extract_dispatch_cues(raw_text)
+                dispatch_score = score_dispatch_cues(cue_map)
+                strong_enforcement = has_strong_enforcement_signal(cue_map)
+                has_location = bool(cue_map.get("location_markers"))
+                
+                # 4. Offload text to local Ollama Llama 3.1 framework
+                llm_result = query_llm(raw_text, timeout_seconds=args.ollama_timeout, retries=args.ollama_retries)
+                ai_response = llm_result["response"]
+                llm_alert = "ALERT:" in ai_response
+                rule_expected_alert = dispatch_score >= args.rule_score_threshold
+                hard_rule_alert = (
+                    dispatch_score >= args.hard_rule_score_threshold
+                    and strong_enforcement
+                    and (has_location or classification["call_types"] != ["unclassified"] or classification["codes"])
+                )
+                if llm_alert:
+                    decision_reason = "llm_alert"
+                elif hard_rule_alert:
+                    decision_reason = "hard_rule_alert_promotion"
+                elif llm_result["error"]:
+                    decision_reason = "llm_error_timeout_or_transport"
+                elif rule_expected_alert and not llm_alert:
+                    decision_reason = "llm_ignore_despite_rule_expected_alert"
+                else:
+                    decision_reason = "insufficient_dispatch_cues_or_llm_ignore"
+                fallback_soft_alert = (
+                    args.soft_alert_fallback
+                    and rule_expected_alert
+                    and not hard_rule_alert
+                    and (not llm_alert)
+                    and (strong_enforcement or has_location)
+                )
+                emit_event_json(
+                    "alert_decision",
+                    enabled=args.integration_json,
+                    transcript=raw_text,
+                    cue_count=cue_count,
+                    dispatch_score=dispatch_score,
+                    cue_groups=cue_map,
+                    llm_alert=llm_alert,
+                    rule_expected_alert=rule_expected_alert,
+                    hard_rule_alert=hard_rule_alert,
+                    decision_reason=decision_reason,
+                    fallback_soft_alert=fallback_soft_alert,
+                    llm_status=llm_result["status_code"],
+                    llm_attempts=llm_result["attempts"],
+                    llm_error=llm_result["error"],
+                    llm_response=ai_response,
+                    classification=classification,
+                )
+                if args.alert_debug:
+                    llm_raw_excerpt = log_safe(llm_result["raw"]) if llm_result["raw"] else "none"
+                    print(
+                        "[ALERT_DEBUG] "
+                        f"ts={datetime.now(UTC).isoformat()} "
+                        f"cue_count={cue_count} "
+                        f"dispatch_score={dispatch_score} "
+                        f"cue_groups={cue_map} "
+                        f"rule_expected_alert={rule_expected_alert} "
+                        f"hard_rule_alert={hard_rule_alert} "
+                        f"llm_alert={llm_alert} "
+                        f"decision_reason={decision_reason} "
+                        f"classification_types={classification['call_types']} "
+                        f"classification_priority={classification['priority']} "
+                        f"llm_status={llm_result['status_code']} "
+                        f"llm_attempts={llm_result['attempts']} "
+                        f"llm_error={log_safe(str(llm_result['error'])) if llm_result['error'] else 'none'} "
+                        f"fallback_soft_alert={fallback_soft_alert} "
+                        f"llm_raw_excerpt=\"{llm_raw_excerpt}\" "
+                        f"llm_response=\"{log_safe(ai_response)}\" "
+                        f"transcript=\"{log_safe(raw_text)}\""
+                    )
+                
+                if llm_alert:
+                    run_stats["llm_alert"] += 1
+                    print(f"🚨 {ai_response}")
+                    print(
+                        "[ALERT_LOG] "
+                        f"ts={datetime.now(UTC).isoformat()} "
+                        f"kind=llm_alert "
+                        f"alert=\"{ai_response}\" "
+                        f"types={classification['call_types']} "
+                        f"priority={classification['priority']} "
+                        f"codes={classification['codes']} "
+                        f"transcript=\"{raw_text}\""
+                    )
+                    # 5. Linux Native Voice Notification Engine
+                    clean_message = ai_response.replace("ALERT:", "").strip()
+                    speak_alert(clean_message)
+                    emit_event_json(
+                        "alert_triggered",
+                        enabled=args.integration_json,
+                        kind="llm_alert",
+                        alert=ai_response,
+                        transcript=raw_text,
+                        classification=classification,
+                    )
+                elif hard_rule_alert:
+                    run_stats["llm_alert"] += 1
+                    hard_alert_message = (
+                        f"ALERT: probable enforcement activity (rule score={dispatch_score}, "
+                        f"strong_enforcement={strong_enforcement}, location={has_location})."
+                    )
+                    print(f"🚨 {hard_alert_message}")
+                    print(
+                        "[ALERT_LOG] "
+                        f"ts={datetime.now(UTC).isoformat()} "
+                        f"kind=rule_alert_high_confidence "
+                        f"alert=\"{hard_alert_message}\" "
+                        f"types={classification['call_types']} "
+                        f"priority={classification['priority']} "
+                        f"codes={classification['codes']} "
+                        f"transcript=\"{raw_text}\""
+                    )
+                    speak_alert("Potential traffic enforcement ahead. Slow down and use caution.")
+                    emit_event_json(
+                        "alert_triggered",
+                        enabled=args.integration_json,
+                        kind="rule_alert_high_confidence",
+                        alert=hard_alert_message,
+                        transcript=raw_text,
+                        classification=classification,
+                        cue_count=cue_count,
+                        dispatch_score=dispatch_score,
+                    )
+                elif fallback_soft_alert:
+                    soft_alert_message = (
+                        f"SOFT_ALERT: dispatch-style cues met threshold (cue_count={cue_count}, score={dispatch_score}) "
+                        f"but LLM returned IGNORE."
+                    )
+                    run_stats["soft_alert_fallback"] += 1
+                    print(f"⚠️ {soft_alert_message}")
+                    print(
+                        "[FALLBACK_LOG] "
+                        f"ts={datetime.now(UTC).isoformat()} "
+                        f"reason=llm_ignore_despite_rule_expected_alert "
+                        f"cue_count={cue_count} "
+                        f"dispatch_score={dispatch_score} "
+                        f"types={classification['call_types']} "
+                        f"priority={classification['priority']} "
+                        f"codes={classification['codes']} "
+                        f"transcript=\"{raw_text}\""
+                    )
+                    print(
+                        "[ALERT_LOG] "
+                        f"ts={datetime.now(UTC).isoformat()} "
+                        f"kind=soft_alert_fallback "
+                        f"alert=\"{soft_alert_message}\" "
+                        f"types={classification['call_types']} "
+                        f"priority={classification['priority']} "
+                        f"codes={classification['codes']} "
+                        f"transcript=\"{raw_text}\""
+                    )
+                    speak_alert("Possible traffic enforcement activity detected. Use caution.")
+                    emit_event_json(
+                        "alert_triggered",
+                        enabled=args.integration_json,
+                        kind="soft_alert_fallback",
+                        alert=soft_alert_message,
+                        transcript=raw_text,
+                        classification=classification,
+                        cue_count=cue_count,
+                    )
+        except Exception as e:
+            if SHOULD_EXIT:
+                break
+            print(f"[LoopError] recoverable error: {repr(e)}")
+            emit_event_json(
+                "loop_error",
+                enabled=args.integration_json,
+                error=repr(e),
+            )
+            time.sleep(1)
 finally:
+    print(
+        "[RUN_SUMMARY] "
+        f"captured={run_stats['captured']} "
+        f"skipped_silence={run_stats['skipped_silence']} "
+        f"skipped_clipped={run_stats['skipped_clipped']} "
+        f"llm_alert={run_stats['llm_alert']} "
+        f"soft_alert_fallback={run_stats['soft_alert_fallback']}"
+    )
+    emit_event_json(
+        "run_summary",
+        enabled=args.integration_json,
+        **run_stats,
+    )
     if scrcpy_proc is not None and scrcpy_proc.poll() is None:
         scrcpy_proc.terminate()
