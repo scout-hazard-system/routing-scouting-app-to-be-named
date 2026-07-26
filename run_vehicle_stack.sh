@@ -5,6 +5,7 @@ ROOT_DIR="/home/gibi/Desktop"
 FRONTEND_DIR="$ROOT_DIR/frontend"
 BACKEND_DIR="$FRONTEND_DIR/java_backend"
 PIPELINE_SCRIPT="$ROOT_DIR/pipeline.py"
+CONFIG_FILE="${VEHICLE_STACK_CONFIG_FILE:-$ROOT_DIR/config/vehicle_stack.env}"
 
 RUNTIME_DIR="/tmp/vehicle_stack"
 LOG_DIR="$RUNTIME_DIR/logs"
@@ -14,6 +15,10 @@ mkdir -p "$LOG_DIR" "$PID_DIR"
 PIPELINE_LOG="${PIPELINE_LOG:-/tmp/pipeline_live_doordash.log}"
 BACKEND_PORT="${BACKEND_PORT:-18080}"
 FRONTEND_PORT="${FRONTEND_PORT:-8787}"
+MAX_LOG_SIZE_MB="${MAX_LOG_SIZE_MB:-32}"
+MAX_LOG_BACKUPS="${MAX_LOG_BACKUPS:-5}"
+ENABLE_PIPELINE_AUTOSTART="${ENABLE_PIPELINE_AUTOSTART:-true}"
+JAVA_BACKEND_HOST="${JAVA_BACKEND_HOST:-0.0.0.0}"
 
 BACKEND_PID_FILE="$PID_DIR/backend.pid"
 FRONTEND_PID_FILE="$PID_DIR/frontend.pid"
@@ -21,6 +26,34 @@ PIPELINE_PID_FILE="$PID_DIR/pipeline.pid"
 
 BACKEND_LOG_FILE="$LOG_DIR/backend.log"
 FRONTEND_LOG_FILE="$LOG_DIR/frontend.log"
+if [[ -f "$CONFIG_FILE" ]]; then
+  # shellcheck disable=SC1090
+  source "$CONFIG_FILE"
+fi
+
+rotate_one_log() {
+  local file_path="$1"
+  [[ -f "$file_path" ]] || return 0
+  local max_bytes=$((MAX_LOG_SIZE_MB * 1024 * 1024))
+  local size
+  size="$(wc -c < "$file_path" | tr -d ' ')"
+  if (( size < max_bytes )); then
+    return 0
+  fi
+  for i in $(seq "$MAX_LOG_BACKUPS" -1 1); do
+    if [[ -f "${file_path}.${i}" ]]; then
+      mv "${file_path}.${i}" "${file_path}.$((i + 1))"
+    fi
+  done
+  mv "$file_path" "${file_path}.1"
+  : > "$file_path"
+}
+
+rotate_logs() {
+  rotate_one_log "$BACKEND_LOG_FILE"
+  rotate_one_log "$FRONTEND_LOG_FILE"
+  rotate_one_log "$PIPELINE_LOG"
+}
 port_in_use() {
   local port="$1"
   ss -ltn "sport = :$port" | grep -q LISTEN
@@ -49,6 +82,7 @@ is_running() {
 }
 
 start_backend() {
+  rotate_logs
   if is_running "$BACKEND_PID_FILE"; then
     return
   fi
@@ -61,7 +95,7 @@ start_backend() {
   else
     (cd "$BACKEND_DIR" && javac ScannerBackendServer.java && printf 'Main-Class: ScannerBackendServer\n' > /tmp/vehicle_stack_manifest.mf && jar cfm dist/scanner-backend-lite.jar /tmp/vehicle_stack_manifest.mf ScannerBackendServer*.class)
   fi
-  nohup env PIPELINE_LOG_PATH="$PIPELINE_LOG" JAVA_BACKEND_HOST="0.0.0.0" JAVA_BACKEND_PORT="$BACKEND_PORT" \
+  nohup env PIPELINE_LOG_PATH="$PIPELINE_LOG" JAVA_BACKEND_HOST="$JAVA_BACKEND_HOST" JAVA_BACKEND_PORT="$BACKEND_PORT" \
     java -jar "$BACKEND_DIR/dist/scanner-backend-lite.jar" >"$BACKEND_LOG_FILE" 2>&1 &
   echo $! >"$BACKEND_PID_FILE"
   if ! wait_for_http "http://127.0.0.1:${BACKEND_PORT}/api/health" 30 0.25; then
@@ -71,6 +105,7 @@ start_backend() {
 }
 
 start_frontend() {
+  rotate_logs
   if is_running "$FRONTEND_PID_FILE"; then
     return
   fi
@@ -88,6 +123,10 @@ start_frontend() {
 }
 
 start_pipeline() {
+  rotate_logs
+  if [[ "${ENABLE_PIPELINE_AUTOSTART}" != "true" ]]; then
+    return
+  fi
   if [[ ! -f "$PIPELINE_SCRIPT" ]]; then
     return
   fi
@@ -123,12 +162,14 @@ status_component() {
 }
 
 start_all() {
+  rotate_logs
   start_backend
   start_frontend
   start_pipeline
   printf "Vehicle stack started.\n"
   printf "UI: http://127.0.0.1:%s\n" "$FRONTEND_PORT"
   printf "Backend health: http://127.0.0.1:%s/api/health\n" "$BACKEND_PORT"
+  printf "Mobile bootstrap: http://127.0.0.1:%s/api/mobile/bootstrap\n" "$BACKEND_PORT"
   printf "Logs: %s and %s (pipeline: %s)\n" "$BACKEND_LOG_FILE" "$FRONTEND_LOG_FILE" "$PIPELINE_LOG"
 }
 

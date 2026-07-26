@@ -13,7 +13,7 @@ This backend mirrors the same API contract used by `frontend/app.js`:
 
 ## Environment variables
 - `PIPELINE_LOG_PATH` (default: `/tmp/pipeline_live_doordash.log`)
-- `JAVA_BACKEND_HOST` (default: `127.0.0.1`)
+- `JAVA_BACKEND_HOST` (default: `0.0.0.0`)
 - `JAVA_BACKEND_PORT` (default: `8080`)
 - `WEATHER_PROVIDER` (default: `mock`)
 - `WAZE_DEEPLINK_BASE_URL` (default: `https://waze.com/ul`)
@@ -46,6 +46,29 @@ Output:
 Run executable:
 ```bash
 PIPELINE_LOG_PATH=/tmp/pipeline_live_doordash.log JAVA_BACKEND_PORT=8080 java -jar dist/scanner-backend-lite.jar
+```
+## Unified runtime and supervision assets
+- Runtime config file: `config/vehicle_stack.env`
+- Unified launcher: `run_vehicle_stack.sh`
+- Systemd user unit: `deployment/systemd/vehicle-stack.service`
+- Service install helpers:
+  - `deployment/install_user_service.sh`
+  - `deployment/uninstall_user_service.sh`
+- Log maintenance helper:
+  - `deployment/maintain_logs.sh`
+
+Quick runtime commands:
+```bash
+./run_vehicle_stack.sh start
+./run_vehicle_stack.sh status
+./run_vehicle_stack.sh stop
+```
+
+Systemd user service setup:
+```bash
+./deployment/install_user_service.sh
+systemctl --user start vehicle-stack.service
+systemctl --user status vehicle-stack.service
 ```
 
 ## Companion app/mobile LAN deployment steps
