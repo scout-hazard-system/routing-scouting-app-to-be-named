@@ -15,6 +15,7 @@ const state = {
 };
 const JURISDICTION_COOLDOWN_MS = 4 * 60 * 1000;
 
+const API_BASE = (window.SCANNER_API_BASE_URL || "").replace(/\/+$/, "");
 const ui = {
   connStatus: document.getElementById("connStatus"),
   runStatus: document.getElementById("runStatus"),
@@ -43,6 +44,10 @@ const ui = {
   closeAlertModalBtn: document.getElementById("closeAlertModalBtn"),
   visualizerCanvas: document.getElementById("visualizerCanvas"),
 };
+
+function apiUrl(path) {
+  return API_BASE ? `${API_BASE}${path}` : path;
+}
 
 function setConn(text, cls) {
   ui.connStatus.className = `pill ${cls}`;
@@ -270,7 +275,7 @@ function handleEvent(event, opts = {}) {
 }
 
 function connectSSE() {
-  const source = new EventSource("/api/pipeline/stream");
+  const source = new EventSource(apiUrl("/api/pipeline/stream"));
   setConn("connecting", "warn");
 
   source.onopen = () => setConn("live", "ok");
@@ -288,7 +293,7 @@ function connectSSE() {
 
 async function fetchSnapshotFallback() {
   try {
-    const r = await fetch("/api/pipeline/snapshot");
+    const r = await fetch(apiUrl("/api/pipeline/snapshot"));
     if (!r.ok) return;
     const snapshot = await r.json();
     state.lastSnapshotTs = snapshot.ts || null;
@@ -319,7 +324,7 @@ async function fetchRouteWeather() {
     return;
   }
   try {
-    const url = `/api/route/weather?start=${encodeURIComponent(start)}&end=${encodeURIComponent(end)}`;
+    const url = apiUrl(`/api/route/weather?start=${encodeURIComponent(start)}&end=${encodeURIComponent(end)}`);
     const r = await fetch(url);
     if (!r.ok) throw new Error("weather endpoint unavailable");
     const data = await r.json();
