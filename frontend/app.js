@@ -10,6 +10,8 @@ const state = {
   lastAlertCoords: null,
   lastJurisdictionNoticeTs: 0,
   visualizerFrame: null,
+  lastSnapshotTs: null,
+  seenEventKeys: new Set(),
 };
 const JURISDICTION_COOLDOWN_MS = 4 * 60 * 1000;
 
@@ -70,6 +72,33 @@ function renderMetrics() {
 
 function updatePreview(event) {
   ui.eventPreview.textContent = JSON.stringify(event, null, 2);
+}
+
+function updateSnapshotPreview(snapshot) {
+  const compact = {
+    snapshot_ts: snapshot.ts || null,
+    metrics: snapshot.metrics || {},
+    event_type_counts: snapshot.event_type_counts || {},
+    recent_events: Array.isArray(snapshot.recentEvents) ? snapshot.recentEvents.length : 0,
+  };
+  ui.eventPreview.textContent = JSON.stringify(compact, null, 2);
+}
+
+function eventKey(event) {
+  const ts = event.ts || "na";
+  const type = event.event_type || "na";
+  const transcript = event.transcript || "";
+  return `${ts}|${type}|${transcript.slice(0, 64)}`;
+}
+
+function shouldProcessEvent(event) {
+  const key = eventKey(event);
+  if (state.seenEventKeys.has(key)) return false;
+  state.seenEventKeys.add(key);
+  if (state.seenEventKeys.size > 3000) {
+    state.seenEventKeys = new Set(Array.from(state.seenEventKeys).slice(-1500));
+  }
+  return true;
 }
 
 function extractLatLon(text) {
@@ -148,7 +177,7 @@ function startVisualizerAnimation() {
   state.visualizerFrame = requestAnimationFrame(draw);
 }
 
-function maybeJurisdictionNoticeFromText(text, source = "transcript") {
+function maybeJurisdictionNoticeFromText(text, source = "transcript", notify = true) {
   if (!text) return;
   const now = Date.now();
   if (now - state.lastJurisdictionNoticeTs < JURISDICTION_COOLDOWN_MS) return;
@@ -168,11 +197,13 @@ function maybeJurisdictionNoticeFromText(text, source = "transcript") {
     renderMetrics();
     const msg = `Approaching jurisdiction edge (${source}): ${text}`;
     addListItem(ui.jurisdictionNotices, msg);
-    maybeBrowserNotify("Jurisdiction Edge Notice", msg);
+    if (notify) maybeBrowserNotify("Jurisdiction Edge Notice", msg);
   }
 }
 
-function handleEvent(event) {
+function handleEvent(event, opts = {}) {
+  const { fromSnapshot = false } = opts;
+  if (!shouldProcessEvent(event)) return;
   updatePreview(event);
   const t = event.event_type;
 
@@ -194,7 +225,7 @@ function handleEvent(event) {
     state.metrics.captured += 1;
     renderMetrics();
     addListItem(ui.transcripts, event.transcript || "(no transcript)");
-    maybeJurisdictionNoticeFromText(event.transcript, "captured_chatter");
+    maybeJurisdictionNoticeFromText(event.transcript, "captured_chatter", !fromSnapshot);
     return;
   }
   if (t === "jurisdiction_proximity") {
@@ -203,7 +234,7 @@ function handleEvent(event) {
     renderMetrics();
     const edgeText = event.message || "Approaching boundary of a new jurisdiction";
     addListItem(ui.jurisdictionNotices, edgeText);
-    maybeBrowserNotify("Jurisdiction Edge Notice", edgeText);
+    if (!fromSnapshot) maybeBrowserNotify("Jurisdiction Edge Notice", edgeText);
     return;
   }
   if (t === "alert_triggered") {
@@ -212,15 +243,17 @@ function handleEvent(event) {
     renderMetrics();
     const alertText = `[${event.kind}] ${event.alert}`;
     addListItem(ui.alerts, alertText);
-    showAlertModal(alertText);
-    maybeBrowserNotify("Scanner Alert", alertText);
+    if (!fromSnapshot) {
+      showAlertModal(alertText);
+      maybeBrowserNotify("Scanner Alert", alertText);
+    }
 
     const coords = extractLatLon(event.alert || "") || extractLatLon(event.transcript || "");
     if (coords) {
       state.lastAlertCoords = coords;
       updateEmbeddedMap(coords.lat, coords.lon);
     }
-    maybeJurisdictionNoticeFromText(event.transcript, "alert_context");
+    maybeJurisdictionNoticeFromText(event.transcript, "alert_context", !fromSnapshot);
     return;
   }
   if (t === "run_summary") {
@@ -246,7 +279,7 @@ function connectSSE() {
   source.onmessage = (msg) => {
     try {
       const event = JSON.parse(msg.data);
-      handleEvent(event);
+      handleEvent(event, { fromSnapshot: false });
     } catch {
       setConn("parse_error", "bad");
     }
@@ -258,6 +291,8 @@ async function fetchSnapshotFallback() {
     const r = await fetch("/api/pipeline/snapshot");
     if (!r.ok) return;
     const snapshot = await r.json();
+    state.lastSnapshotTs = snapshot.ts || null;
+    updateSnapshotPreview(snapshot);
     if (snapshot.metrics) {
       state.metrics = {
         ...state.metrics,
@@ -265,8 +300,11 @@ async function fetchSnapshotFallback() {
       };
       renderMetrics();
     }
+    if (snapshot.event_type_counts?.run_summary > 0) {
+      setRun("stopped", "warn");
+    }
     if (snapshot.recentEvents && Array.isArray(snapshot.recentEvents)) {
-      snapshot.recentEvents.forEach(handleEvent);
+      snapshot.recentEvents.forEach((ev) => handleEvent(ev, { fromSnapshot: true }));
     }
   } catch {
     // SSE is primary source
