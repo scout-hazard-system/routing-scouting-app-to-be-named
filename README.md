@@ -4,6 +4,7 @@ This file is the high-level index for project progress.
 - Local-first vehicle stack is operational.
 - Unified launcher exists to start pipeline + backend + UI together.
 - Java backend supports pipeline, platform, and mobile API surfaces.
+- Frontend can be packaged as its own executable via `frontend/build_executable.sh`.
 - Deployment runbook and Phase 1 validation are documented in `deployment/README.md`.
 ## Active scope decision
 - Current development focus is **local-only iteration**.
@@ -17,6 +18,13 @@ This file is the high-level index for project progress.
 2. Fill in summary metrics and notable changes.
 3. Append a new row/entry in `progress/README.md`.
 4. If you ran validation, add the command outcomes to `deployment/README.md`.
+## Frontend executable quickstart
+- Build frontend executable:
+  - `./frontend/build_executable.sh`
+- Start full stack (launcher will prefer frontend executable when present):
+  - `./run_vehicle_stack.sh start`
+- Override executable path (optional):
+  - `FRONTEND_EXECUTABLE_PATH=/custom/path/scanner-frontend-lite ./run_vehicle_stack.sh start`
 ## Next suggested milestone
 - Improve audio setup universality on local machines:
   - reduce hard dependency on one capture path/device setup

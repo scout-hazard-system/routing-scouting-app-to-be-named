@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import json
 import os
+import sys
 import time
 from collections import Counter, deque
 from datetime import datetime, UTC
@@ -9,7 +10,7 @@ from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from urllib.parse import parse_qs, urlparse
 
-ROOT = Path(__file__).resolve().parent
+ROOT = Path(getattr(sys, "_MEIPASS", Path(__file__).resolve().parent))
 LOG_PATH = Path(os.environ.get("PIPELINE_LOG_PATH", "/tmp/pipeline_live_doordash.log"))
 HOST = os.environ.get("FRONTEND_DEV_HOST", "127.0.0.1")
 PORT = int(os.environ.get("FRONTEND_DEV_PORT", "8787"))

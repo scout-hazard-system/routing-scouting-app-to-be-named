@@ -23,6 +23,8 @@ JAVA_BACKEND_HOST="${JAVA_BACKEND_HOST:-0.0.0.0}"
 PYTHON_BIN="${PYTHON_BIN:-$DEFAULT_PYTHON_BIN}"
 PIPELINE_MODE="${PIPELINE_MODE:-direct}"
 PIPELINE_EXTRA_ARGS="${PIPELINE_EXTRA_ARGS:-}"
+FRONTEND_EXECUTABLE_PATH="${FRONTEND_EXECUTABLE_PATH:-$FRONTEND_DIR/dist/scanner-frontend-lite/scanner-frontend-lite}"
+FRONTEND_BUILD_ON_START="${FRONTEND_BUILD_ON_START:-true}"
 if [[ ! -x "$PYTHON_BIN" ]]; then
   PYTHON_BIN="python3"
 fi
@@ -137,8 +139,17 @@ start_frontend() {
     printf "Frontend port %s already in use. Set FRONTEND_PORT or stop existing service.\n" "$FRONTEND_PORT" >&2
     exit 1
   fi
+  local frontend_cmd
+  if [[ ! -x "$FRONTEND_EXECUTABLE_PATH" && "$FRONTEND_BUILD_ON_START" == "true" && -x "$FRONTEND_DIR/build_executable.sh" ]]; then
+    "$FRONTEND_DIR/build_executable.sh" >/dev/null
+  fi
+  if [[ -x "$FRONTEND_EXECUTABLE_PATH" ]]; then
+    frontend_cmd="$FRONTEND_EXECUTABLE_PATH"
+  else
+    frontend_cmd="$PYTHON_BIN $FRONTEND_DIR/dev_server.py"
+  fi
   nohup env FRONTEND_DEV_PORT="$FRONTEND_PORT" PIPELINE_LOG_PATH="$PIPELINE_LOG" \
-    "$PYTHON_BIN" "$FRONTEND_DIR/dev_server.py" >"$FRONTEND_LOG_FILE" 2>&1 &
+    bash -lc "$frontend_cmd" >"$FRONTEND_LOG_FILE" 2>&1 &
   echo $! >"$FRONTEND_PID_FILE"
   if ! wait_for_http "http://127.0.0.1:${FRONTEND_PORT}/index.html" 30 0.25; then
     printf "Frontend failed to start cleanly. Check %s\n" "$FRONTEND_LOG_FILE" >&2
