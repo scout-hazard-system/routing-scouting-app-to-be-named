@@ -1,0 +1,956 @@
+{
+  "channels": [
+    {
+      "id": "bf-32602-indianapolis-metropolitan-police",
+      "name": "Indianapolis Metropolitan Police",
+      "description": "Broadcastify public safety feed 32602 for Montana.",
+      "city": "",
+      "county": "Various",
+      "state": "MT",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "montana",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32602"
+    },
+    {
+      "id": "bf-37138-butte-silver-bow-police",
+      "name": "Butte Silver Bow Police",
+      "description": "Broadcastify public safety feed 37138 for Montana.",
+      "city": "",
+      "county": "Various",
+      "state": "MT",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "montana",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37138"
+    },
+    {
+      "id": "bf-39839-yellowstone-county-law-enforcment-fire-and",
+      "name": "Yellowstone County Law Enforcment, Fire and EMS",
+      "description": "Broadcastify public safety feed 39839 for Montana.",
+      "city": "",
+      "county": "Various",
+      "state": "MT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "montana",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39839"
+    },
+    {
+      "id": "bf-30049-ravalli-county-sheriff-hamilton-police-fir",
+      "name": "Ravalli County Sheriff, Hamilton Police, Fire and EMS",
+      "description": "Broadcastify public safety feed 30049 for Montana.",
+      "city": "",
+      "county": "Various",
+      "state": "MT",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "montana",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/30049"
+    },
+    {
+      "id": "bf-44154-great-falls-police",
+      "name": "Great Falls Police",
+      "description": "Broadcastify public safety feed 44154 for Montana.",
+      "city": "",
+      "county": "Various",
+      "state": "MT",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "montana",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44154"
+    },
+    {
+      "id": "bf-36217-lake-county-public-safety",
+      "name": "Lake County Public Safety",
+      "description": "Broadcastify public safety feed 36217 for Montana.",
+      "city": "",
+      "county": "Various",
+      "state": "MT",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "montana"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/36217"
+    },
+    {
+      "id": "bf-22562-plentywood-fire",
+      "name": "Plentywood Fire",
+      "description": "Broadcastify public safety feed 22562 for Montana.",
+      "city": "",
+      "county": "Various",
+      "state": "MT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "montana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/22562"
+    },
+    {
+      "id": "bf-6561-flathead-county-law-fire-and-ems",
+      "name": "Flathead County Law, Fire and EMS",
+      "description": "Broadcastify public safety feed 6561 for Montana.",
+      "city": "",
+      "county": "Various",
+      "state": "MT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "montana",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/6561"
+    },
+    {
+      "id": "bf-33753-great-falls-fire-and-ems",
+      "name": "Great Falls Fire and EMS",
+      "description": "Broadcastify public safety feed 33753 for Montana.",
+      "city": "",
+      "county": "Various",
+      "state": "MT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "montana",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/33753"
+    },
+    {
+      "id": "bf-44505-missoula-county-public-safety-wildland-fir",
+      "name": "Missoula County Public Safety & Wildland Fire (Includes Seeley Lake RFD)",
+      "description": "Broadcastify public safety feed 44505 for Montana.",
+      "city": "",
+      "county": "Various",
+      "state": "MT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "montana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44505"
+    },
+    {
+      "id": "bf-43827-cascade-county-public-safety",
+      "name": "Cascade County Public Safety",
+      "description": "Broadcastify public safety feed 43827 for Montana.",
+      "city": "",
+      "county": "Various",
+      "state": "MT",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "montana"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43827"
+    },
+    {
+      "id": "bf-29478-wolf-point-fire",
+      "name": "Wolf Point Fire",
+      "description": "Broadcastify public safety feed 29478 for Montana.",
+      "city": "",
+      "county": "Various",
+      "state": "MT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "montana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/29478"
+    },
+    {
+      "id": "bf-8277-sweet-grass-county-public-safety",
+      "name": "Sweet Grass County Public Safety",
+      "description": "Broadcastify public safety feed 8277 for Montana.",
+      "city": "",
+      "county": "Various",
+      "state": "MT",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "montana"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/8277"
+    },
+    {
+      "id": "bf-38763-poplar-fire",
+      "name": "Poplar Fire",
+      "description": "Broadcastify public safety feed 38763 for Montana.",
+      "city": "",
+      "county": "Various",
+      "state": "MT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "montana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38763"
+    },
+    {
+      "id": "bf-32687-bainville-fire",
+      "name": "Bainville Fire",
+      "description": "Broadcastify public safety feed 32687 for Montana.",
+      "city": "",
+      "county": "Various",
+      "state": "MT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "montana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32687"
+    },
+    {
+      "id": "bf-41922-stillwater-county-emergency-services",
+      "name": "Stillwater County Emergency Services",
+      "description": "Broadcastify public safety feed 41922 for Montana.",
+      "city": "",
+      "county": "Various",
+      "state": "MT",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "montana"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41922"
+    },
+    {
+      "id": "bf-47012-gardiner-public-safety",
+      "name": "Gardiner Public Safety",
+      "description": "Broadcastify public safety feed 47012 for Montana.",
+      "city": "",
+      "county": "Various",
+      "state": "MT",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "montana"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47012"
+    },
+    {
+      "id": "bf-39165-park-county-fire",
+      "name": "Park County Fire",
+      "description": "Broadcastify public safety feed 39165 for Montana.",
+      "city": "",
+      "county": "Various",
+      "state": "MT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "montana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39165"
+    },
+    {
+      "id": "bf-26449-mineral-county-fire-and-ems-west",
+      "name": "Mineral County Fire and EMS - West",
+      "description": "Broadcastify public safety feed 26449 for Montana.",
+      "city": "",
+      "county": "Various",
+      "state": "MT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "montana",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/26449"
+    },
+    {
+      "id": "bf-22986-sheridan-county-ems",
+      "name": "Sheridan County EMS",
+      "description": "Broadcastify public safety feed 22986 for Montana.",
+      "city": "",
+      "county": "Various",
+      "state": "MT",
+      "service_types": [
+        "dispatch",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "montana",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/22986"
+    },
+    {
+      "id": "bf-38992-northeast-montana-health-services",
+      "name": "Northeast Montana Health Services",
+      "description": "Broadcastify public safety feed 38992 for Montana.",
+      "city": "",
+      "county": "Various",
+      "state": "MT",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "montana"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38992"
+    },
+    {
+      "id": "bf-38811-plains-city-vfd",
+      "name": "Plains City VFD",
+      "description": "Broadcastify public safety feed 38811 for Montana.",
+      "city": "",
+      "county": "Various",
+      "state": "MT",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "montana"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38811"
+    },
+    {
+      "id": "bf-47054-scobey-volunteer-fire-dept",
+      "name": "Scobey Volunteer Fire Dept",
+      "description": "Broadcastify public safety feed 47054 for Montana.",
+      "city": "",
+      "county": "Various",
+      "state": "MT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "montana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47054"
+    },
+    {
+      "id": "bf-20485-opportunity-fire",
+      "name": "Opportunity Fire",
+      "description": "Broadcastify public safety feed 20485 for Montana.",
+      "city": "",
+      "county": "Various",
+      "state": "MT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "montana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/20485"
+    },
+    {
+      "id": "bf-32429-wesby-ems",
+      "name": "Wesby EMS",
+      "description": "Broadcastify public safety feed 32429 for Montana.",
+      "city": "",
+      "county": "Various",
+      "state": "MT",
+      "service_types": [
+        "dispatch",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "montana",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32429"
+    },
+    {
+      "id": "bf-41165-westby-fire",
+      "name": "Westby Fire",
+      "description": "Broadcastify public safety feed 41165 for Montana.",
+      "city": "",
+      "county": "Various",
+      "state": "MT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "montana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41165"
+    },
+    {
+      "id": "bf-25207-scobey-fire",
+      "name": "Scobey Fire",
+      "description": "Broadcastify public safety feed 25207 for Montana.",
+      "city": "",
+      "county": "Various",
+      "state": "MT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "montana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/25207"
+    },
+    {
+      "id": "bf-42806-coutts-fire-and-rescue",
+      "name": "Coutts Fire and Rescue",
+      "description": "Broadcastify public safety feed 42806 for Montana.",
+      "city": "",
+      "county": "Various",
+      "state": "MT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "montana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42806"
+    },
+    {
+      "id": "bf-40565-long-run-fire",
+      "name": "Long Run Fire",
+      "description": "Broadcastify public safety feed 40565 for Montana.",
+      "city": "",
+      "county": "Various",
+      "state": "MT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "montana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40565"
+    },
+    {
+      "id": "bf-24910-scobey-ems",
+      "name": "Scobey EMS",
+      "description": "Broadcastify public safety feed 24910 for Montana.",
+      "city": "",
+      "county": "Various",
+      "state": "MT",
+      "service_types": [
+        "dispatch",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "montana",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/24910"
+    },
+    {
+      "id": "bf-26012-boulder-fire",
+      "name": "Boulder Fire",
+      "description": "Broadcastify public safety feed 26012 for Montana.",
+      "city": "",
+      "county": "Various",
+      "state": "MT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "montana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/26012"
+    },
+    {
+      "id": "bf-35977-georgetown-lake-fire",
+      "name": "Georgetown Lake Fire",
+      "description": "Broadcastify public safety feed 35977 for Montana.",
+      "city": "",
+      "county": "Various",
+      "state": "MT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "montana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/35977"
+    },
+    {
+      "id": "bf-28792-superior-fire",
+      "name": "Superior Fire",
+      "description": "Broadcastify public safety feed 28792 for Montana.",
+      "city": "",
+      "county": "Various",
+      "state": "MT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "montana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/28792"
+    },
+    {
+      "id": "bf-19841-meagher-county-ems",
+      "name": "Meagher County EMS",
+      "description": "Broadcastify public safety feed 19841 for Montana.",
+      "city": "",
+      "county": "Various",
+      "state": "MT",
+      "service_types": [
+        "dispatch",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "montana",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/19841"
+    },
+    {
+      "id": "bf-19729-meagher-county-fire",
+      "name": "Meagher County Fire",
+      "description": "Broadcastify public safety feed 19729 for Montana.",
+      "city": "",
+      "county": "Various",
+      "state": "MT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "montana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/19729"
+    },
+    {
+      "id": "bf-46010-lincoln-county-public-safety-north",
+      "name": "Lincoln County Public Safety - North",
+      "description": "Broadcastify public safety feed 46010 for Montana.",
+      "city": "",
+      "county": "Various",
+      "state": "MT",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "montana"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46010"
+    },
+    {
+      "id": "bf-39701-trego-fortine-stryker",
+      "name": "Trego Fortine Stryker",
+      "description": "Broadcastify public safety feed 39701 for Montana.",
+      "city": "",
+      "county": "Various",
+      "state": "MT",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "montana"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39701"
+    },
+    {
+      "id": "bf-33196-troy-fire",
+      "name": "Troy Fire",
+      "description": "Broadcastify public safety feed 33196 for Montana.",
+      "city": "",
+      "county": "Various",
+      "state": "MT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "montana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/33196"
+    },
+    {
+      "id": "bf-32114-troy-ambulance",
+      "name": "Troy Ambulance",
+      "description": "Broadcastify public safety feed 32114 for Montana.",
+      "city": "",
+      "county": "Various",
+      "state": "MT",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "montana"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32114"
+    },
+    {
+      "id": "bf-17253-libby-volunteer-ambulance",
+      "name": "Libby Volunteer Ambulance",
+      "description": "Broadcastify public safety feed 17253 for Montana.",
+      "city": "",
+      "county": "Various",
+      "state": "MT",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "montana"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/17253"
+    },
+    {
+      "id": "bf-14640-libby-volunteer-fire",
+      "name": "Libby Volunteer Fire",
+      "description": "Broadcastify public safety feed 14640 for Montana.",
+      "city": "",
+      "county": "Various",
+      "state": "MT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "montana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/14640"
+    },
+    {
+      "id": "bf-29700-cut-bank-fire",
+      "name": "Cut Bank Fire",
+      "description": "Broadcastify public safety feed 29700 for Montana.",
+      "city": "",
+      "county": "Various",
+      "state": "MT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "montana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/29700"
+    }
+  ]
+}

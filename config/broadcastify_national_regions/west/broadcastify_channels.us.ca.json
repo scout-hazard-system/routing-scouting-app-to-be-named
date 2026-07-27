@@ -1,0 +1,2394 @@
+{
+  "channels": [
+    {
+      "id": "bf-33623-lapd-west-divisions",
+      "name": "LAPD West Divisions",
+      "description": "Broadcastify feed 33623 for LAPD west-side divisions.",
+      "city": "Los Angeles",
+      "county": "Los Angeles County",
+      "state": "CA",
+      "service_types": [
+        "law",
+        "dispatch"
+      ],
+      "tags": [
+        "lapd",
+        "west",
+        "police",
+        "dispatch"
+      ],
+      "lat": 34.0522,
+      "lon": -118.2437,
+      "listeners": 130,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/33623"
+    },
+    {
+      "id": "bf-45051-san-mateo-county-ems",
+      "name": "San Mateo County EMS Dispatch",
+      "description": "Broadcastify feed 45051 for San Mateo County EMS dispatch traffic.",
+      "city": "Redwood City",
+      "county": "San Mateo County",
+      "state": "CA",
+      "service_types": [
+        "ems",
+        "dispatch",
+        "fire"
+      ],
+      "tags": [
+        "ems",
+        "dispatch",
+        "san mateo",
+        "peninsula"
+      ],
+      "lat": 37.4852,
+      "lon": -122.2364,
+      "listeners": 75,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45051"
+    },
+    {
+      "id": "bf-47028-south-san-francisco-police",
+      "name": "South San Francisco City Police",
+      "description": "Broadcastify feed 47028 for South San Francisco police operations near Daly City/SFO corridor.",
+      "city": "South San Francisco",
+      "county": "San Mateo County",
+      "state": "CA",
+      "service_types": [
+        "law",
+        "dispatch"
+      ],
+      "tags": [
+        "police",
+        "dispatch",
+        "san mateo",
+        "daly city",
+        "us-101",
+        "i-280"
+      ],
+      "lat": 37.6547,
+      "lon": -122.4077,
+      "listeners": 90,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47028"
+    },
+    {
+      "id": "bf-32602-indianapolis-metropolitan-police",
+      "name": "Indianapolis Metropolitan Police",
+      "description": "Broadcastify public safety feed 32602 for California.",
+      "city": "",
+      "county": "Various",
+      "state": "CA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "california",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32602"
+    },
+    {
+      "id": "bf-1929-butte-county-fire-calfire-chico-fire",
+      "name": "Butte County Fire / CalFire, Chico Fire",
+      "description": "Broadcastify public safety feed 1929 for California.",
+      "city": "",
+      "county": "Various",
+      "state": "CA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "california",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/1929"
+    },
+    {
+      "id": "bf-5688-sacramento-county-sheriff-and-city-police",
+      "name": "Sacramento County Sheriff and City Police",
+      "description": "Broadcastify public safety feed 5688 for California.",
+      "city": "",
+      "county": "Various",
+      "state": "CA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "california",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/5688"
+    },
+    {
+      "id": "bf-820-vallejo-police-and-fire",
+      "name": "Vallejo Police and Fire",
+      "description": "Broadcastify public safety feed 820 for California.",
+      "city": "",
+      "county": "Various",
+      "state": "CA",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "california",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/820"
+    },
+    {
+      "id": "bf-6248-mendocino-county-sheriff-fire-ems-cal-fire",
+      "name": "Mendocino County Sheriff, Fire, EMS, Cal Fire and CHP",
+      "description": "Broadcastify public safety feed 6248 for California.",
+      "city": "",
+      "county": "Various",
+      "state": "CA",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "california",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/6248"
+    },
+    {
+      "id": "bf-13549-fresno-city-police-fire-and-ems",
+      "name": "Fresno City Police, Fire and EMS",
+      "description": "Broadcastify public safety feed 13549 for California.",
+      "city": "",
+      "county": "Various",
+      "state": "CA",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "california",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/13549"
+    },
+    {
+      "id": "bf-46790-shasta-county-fire-and-calfire",
+      "name": "Shasta County Fire and CalFire",
+      "description": "Broadcastify public safety feed 46790 for California.",
+      "city": "",
+      "county": "Various",
+      "state": "CA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "california",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46790"
+    },
+    {
+      "id": "bf-26569-lapd-valley-bureau",
+      "name": "LAPD Valley Bureau",
+      "description": "Broadcastify feed 26569 for LAPD Valley Bureau dispatch channels.",
+      "city": "Los Angeles",
+      "county": "Los Angeles County",
+      "state": "CA",
+      "service_types": [
+        "law",
+        "dispatch"
+      ],
+      "tags": [
+        "lapd",
+        "valley",
+        "police",
+        "dispatch"
+      ],
+      "lat": 34.1899,
+      "lon": -118.4514,
+      "listeners": 120,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/26569"
+    },
+    {
+      "id": "bf-35962-calfire-shu-tgu-sku-dispatch",
+      "name": "CALFIRE SHU/TGU/SKU Dispatch",
+      "description": "Broadcastify public safety feed 35962 for California.",
+      "city": "",
+      "county": "Various",
+      "state": "CA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "california",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/35962"
+    },
+    {
+      "id": "bf-20296-lapd-south-bureau",
+      "name": "LAPD South Bureau",
+      "description": "Broadcastify feed 20296 for LAPD South Bureau dispatch channels.",
+      "city": "Los Angeles",
+      "county": "Los Angeles County",
+      "state": "CA",
+      "service_types": [
+        "law",
+        "dispatch"
+      ],
+      "tags": [
+        "lapd",
+        "south bureau",
+        "police",
+        "dispatch"
+      ],
+      "lat": 33.9739,
+      "lon": -118.2487,
+      "listeners": 140,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/20296"
+    },
+    {
+      "id": "bf-37163-stanislaus-county-sheriff-and-fire-dispatc",
+      "name": "Stanislaus County Sheriff and Fire Dispatch, Ceres Police Dispatch, and Modesto Police Dispatch",
+      "description": "Broadcastify public safety feed 37163 for California.",
+      "city": "",
+      "county": "Various",
+      "state": "CA",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "california",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37163"
+    },
+    {
+      "id": "bf-26302-nevada-county-public-safety-west",
+      "name": "Nevada County Public Safety - West",
+      "description": "Broadcastify public safety feed 26302 for California.",
+      "city": "",
+      "county": "Various",
+      "state": "CA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "california"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/26302"
+    },
+    {
+      "id": "bf-9276-kings-county-sheriff-and-corcoran-police",
+      "name": "Kings County Sheriff and Corcoran Police",
+      "description": "Broadcastify public safety feed 9276 for California.",
+      "city": "",
+      "county": "Various",
+      "state": "CA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "california",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/9276"
+    },
+    {
+      "id": "bf-2202-beu-cal-fire-and-san-benito-county-public-",
+      "name": "BEU CAL FIRE and San Benito County Public Safety",
+      "description": "Broadcastify public safety feed 2202 for California.",
+      "city": "",
+      "county": "Various",
+      "state": "CA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "california",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/2202"
+    },
+    {
+      "id": "bf-8294-yuba-county-sheriff-wheatland-and-marysvil",
+      "name": "Yuba County Sheriff, Wheatland and Marysville Public Safety",
+      "description": "Broadcastify public safety feed 8294 for California.",
+      "city": "",
+      "county": "Various",
+      "state": "CA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "california",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/8294"
+    },
+    {
+      "id": "bf-45191-cal-fire-btu",
+      "name": "CAL FIRE BTU",
+      "description": "Broadcastify public safety feed 45191 for California.",
+      "city": "",
+      "county": "Various",
+      "state": "CA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "california",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45191"
+    },
+    {
+      "id": "bf-2846-los-angeles-city-fire",
+      "name": "Los Angeles City Fire",
+      "description": "Broadcastify public safety feed 2846 for California.",
+      "city": "",
+      "county": "Various",
+      "state": "CA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "california",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/2846"
+    },
+    {
+      "id": "bf-30531-lake-county-fire-and-law",
+      "name": "Lake County Fire and Law",
+      "description": "Broadcastify public safety feed 30531 for California.",
+      "city": "",
+      "county": "Various",
+      "state": "CA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "california",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/30531"
+    },
+    {
+      "id": "bf-38639-los-angeles-county-fire-dispatch",
+      "name": "Los Angeles County Fire - Dispatch",
+      "description": "Broadcastify public safety feed 38639 for California.",
+      "city": "",
+      "county": "Various",
+      "state": "CA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "california",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38639"
+    },
+    {
+      "id": "bf-24051-long-beach-police-dispatch",
+      "name": "Long Beach Police Dispatch",
+      "description": "Broadcastify public safety feed 24051 for California.",
+      "city": "",
+      "county": "Various",
+      "state": "CA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "california",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/24051"
+    },
+    {
+      "id": "bf-27179-placer-county-law-enforcement-and-cal-fire",
+      "name": "Placer County Law Enforcement and CAL Fire",
+      "description": "Broadcastify public safety feed 27179 for California.",
+      "city": "",
+      "county": "Various",
+      "state": "CA",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "california",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/27179"
+    },
+    {
+      "id": "bf-29189-san-bernardino-county-fire-valley",
+      "name": "San Bernardino County Fire - Valley",
+      "description": "Broadcastify public safety feed 29189 for California.",
+      "city": "",
+      "county": "Various",
+      "state": "CA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "california",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/29189"
+    },
+    {
+      "id": "bf-9340-stockton-police-and-fire-dispatch",
+      "name": "Stockton Police and Fire Dispatch",
+      "description": "Broadcastify public safety feed 9340 for California.",
+      "city": "",
+      "county": "Various",
+      "state": "CA",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "california",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/9340"
+    },
+    {
+      "id": "bf-16364-del-norte-county-sheriff-ccpd-fire-ems-chp",
+      "name": "Del Norte County Sheriff, CCPD, Fire, EMS & CHP",
+      "description": "Broadcastify public safety feed 16364 for California.",
+      "city": "",
+      "county": "Various",
+      "state": "CA",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "california",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/16364"
+    },
+    {
+      "id": "bf-4881-fairfield-vacaville-and-suisun-police-fire",
+      "name": "Fairfield, Vacaville, and Suisun Police, Fire and EMS",
+      "description": "Broadcastify public safety feed 4881 for California.",
+      "city": "",
+      "county": "Various",
+      "state": "CA",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "california",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/4881"
+    },
+    {
+      "id": "bf-10892-north-comm-dispatch-and-le-interop",
+      "name": "North Comm Dispatch and LE Interop",
+      "description": "Broadcastify public safety feed 10892 for California.",
+      "city": "",
+      "county": "Various",
+      "state": "CA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "california"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/10892"
+    },
+    {
+      "id": "bf-25187-lasd-chp-downey-fire",
+      "name": "LASD, CHP and Downey Fire",
+      "description": "Broadcastify feed 25187 for mixed Los Angeles County Sheriff, CHP, and Downey Fire dispatch traffic.",
+      "city": "Downey",
+      "county": "Los Angeles County",
+      "state": "CA",
+      "service_types": [
+        "law",
+        "dispatch",
+        "fire",
+        "highway"
+      ],
+      "tags": [
+        "lasd",
+        "chp",
+        "downey",
+        "sheriff",
+        "highway",
+        "dispatch"
+      ],
+      "lat": 33.9401,
+      "lon": -118.1332,
+      "listeners": 135,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/25187"
+    },
+    {
+      "id": "bf-7010-san-bernardino-county-fire-high-desert",
+      "name": "San Bernardino County Fire - High Desert",
+      "description": "Broadcastify public safety feed 7010 for California.",
+      "city": "",
+      "county": "Various",
+      "state": "CA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "california",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/7010"
+    },
+    {
+      "id": "bf-24351-humboldt-county-law-fire-and-ems-eureka-an",
+      "name": "Humboldt County Law, Fire and EMS - Eureka and North",
+      "description": "Broadcastify public safety feed 24351 for California.",
+      "city": "",
+      "county": "Various",
+      "state": "CA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "california",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/24351"
+    },
+    {
+      "id": "bf-10294-san-diego-city-and-poway-fire",
+      "name": "San Diego City and Poway Fire",
+      "description": "Broadcastify public safety feed 10294 for California.",
+      "city": "",
+      "county": "Various",
+      "state": "CA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "california",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/10294"
+    },
+    {
+      "id": "bf-44069-slo-county-public-safety",
+      "name": "SLO County Public Safety",
+      "description": "Broadcastify public safety feed 44069 for California.",
+      "city": "",
+      "county": "Various",
+      "state": "CA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "california"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44069"
+    },
+    {
+      "id": "bf-14029-bakersfield-police-fire-and-ems",
+      "name": "Bakersfield Police, Fire and EMS",
+      "description": "Broadcastify public safety feed 14029 for California.",
+      "city": "",
+      "county": "Various",
+      "state": "CA",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "california",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/14029"
+    },
+    {
+      "id": "bf-39828-west-sacramento-police-fire-and-yolo-count",
+      "name": "West Sacramento Police, Fire and Yolo County Sheriff Dispatch",
+      "description": "Broadcastify public safety feed 39828 for California.",
+      "city": "",
+      "county": "Various",
+      "state": "CA",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "california",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39828"
+    },
+    {
+      "id": "bf-24052-san-joaquin-county-sheriff-dispatch",
+      "name": "San Joaquin County Sheriff Dispatch",
+      "description": "Broadcastify public safety feed 24052 for California.",
+      "city": "",
+      "county": "Various",
+      "state": "CA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "california",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/24052"
+    },
+    {
+      "id": "bf-16015-el-dorado-and-amador-counties-public-safet",
+      "name": "El Dorado and Amador Counties Public Safety",
+      "description": "Broadcastify public safety feed 16015 for California.",
+      "city": "",
+      "county": "Various",
+      "state": "CA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "california"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/16015"
+    },
+    {
+      "id": "bf-7047-humboldt-county-law-fire-and-ems-eureka-an",
+      "name": "Humboldt County Law, Fire and EMS - Eureka and South",
+      "description": "Broadcastify public safety feed 7047 for California.",
+      "city": "",
+      "county": "Various",
+      "state": "CA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "california",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/7047"
+    },
+    {
+      "id": "bf-20029-inyo-county-sheriff-fire-and-ems-chp-gold",
+      "name": "Inyo County Sheriff, Fire and EMS, CHP Gold",
+      "description": "Broadcastify public safety feed 20029 for California.",
+      "city": "",
+      "county": "Various",
+      "state": "CA",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "california",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/20029"
+    },
+    {
+      "id": "bf-32974-roseville-police-and-fire",
+      "name": "Roseville Police and Fire",
+      "description": "Broadcastify public safety feed 32974 for California.",
+      "city": "",
+      "county": "Various",
+      "state": "CA",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "california",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32974"
+    },
+    {
+      "id": "bf-43324-rpd-dispatch-rfd-dispatch-fireground",
+      "name": "RPD Dispatch & RFD Dispatch/Fireground",
+      "description": "Broadcastify public safety feed 43324 for California.",
+      "city": "",
+      "county": "Various",
+      "state": "CA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "california",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43324"
+    },
+    {
+      "id": "bf-13177-manteca-public-safety",
+      "name": "Manteca Public Safety",
+      "description": "Broadcastify public safety feed 13177 for California.",
+      "city": "",
+      "county": "Various",
+      "state": "CA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "california"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/13177"
+    },
+    {
+      "id": "bf-39051-lassen-county-sheriff-and-susanville-polic",
+      "name": "Lassen County Sheriff and Susanville Police Dispatch",
+      "description": "Broadcastify public safety feed 39051 for California.",
+      "city": "",
+      "county": "Various",
+      "state": "CA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "california",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39051"
+    },
+    {
+      "id": "bf-31006-metronet-fire-dispatch",
+      "name": "MetroNet Fire Dispatch",
+      "description": "Broadcastify public safety feed 31006 for California.",
+      "city": "",
+      "county": "Various",
+      "state": "CA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "california",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/31006"
+    },
+    {
+      "id": "bf-13524-calaveras-county-sheriff-calaveras-and-tuo",
+      "name": "Calaveras County Sheriff, Calaveras and Tuolumne Counties CAL FIRE Dispatch",
+      "description": "Broadcastify public safety feed 13524 for California.",
+      "city": "",
+      "county": "Various",
+      "state": "CA",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "california",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/13524"
+    },
+    {
+      "id": "bf-10703-san-jose-fire",
+      "name": "San Jose Fire",
+      "description": "Broadcastify public safety feed 10703 for California.",
+      "city": "",
+      "county": "Various",
+      "state": "CA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "california",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/10703"
+    },
+    {
+      "id": "bf-747-santa-barbara-county-sheriff-fire-aircraft",
+      "name": "Santa Barbara County Sheriff, Fire, Aircraft and Marine, Lompoc Police / Fire",
+      "description": "Broadcastify public safety feed 747 for California.",
+      "city": "",
+      "county": "Various",
+      "state": "CA",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "california",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/747"
+    },
+    {
+      "id": "bf-31780-ventura-county-sheriff-dispatch-west",
+      "name": "Ventura County Sheriff Dispatch - West",
+      "description": "Broadcastify public safety feed 31780 for California.",
+      "city": "",
+      "county": "Various",
+      "state": "CA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "california",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/31780"
+    },
+    {
+      "id": "bf-22322-ocfa-dispatch-5b",
+      "name": "OCFA Dispatch 5B",
+      "description": "Broadcastify public safety feed 22322 for California.",
+      "city": "",
+      "county": "Various",
+      "state": "CA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "california"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/22322"
+    },
+    {
+      "id": "bf-20773-solano-county-sheriff-rio-vista-and-dixon-",
+      "name": "Solano County Sheriff,  Rio Vista and Dixon Police Dispatch",
+      "description": "Broadcastify public safety feed 20773 for California.",
+      "city": "",
+      "county": "Various",
+      "state": "CA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "california",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/20773"
+    },
+    {
+      "id": "bf-28507-siskiyou-county-sheriff-and-fire-west",
+      "name": "Siskiyou County Sheriff and Fire - West",
+      "description": "Broadcastify public safety feed 28507 for California.",
+      "city": "",
+      "county": "Various",
+      "state": "CA",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "california",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/28507"
+    },
+    {
+      "id": "bf-40874-butte-btu-dispatch-command",
+      "name": "Butte BTU Dispatch - Command",
+      "description": "Broadcastify public safety feed 40874 for California.",
+      "city": "",
+      "county": "Various",
+      "state": "CA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "california"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40874"
+    },
+    {
+      "id": "bf-34434-fresno-county-sheriff-sanger-parlier-fowle",
+      "name": "Fresno County Sheriff - Sanger/Parlier/Fowler/Orange Cove/Kingsburg",
+      "description": "Broadcastify public safety feed 34434 for California.",
+      "city": "",
+      "county": "Various",
+      "state": "CA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "california",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/34434"
+    },
+    {
+      "id": "bf-829-los-angeles-county-sheriff-fire-and-aircra",
+      "name": "Los Angeles County Sheriff, Fire and Aircraft - Santa Clarita Valley",
+      "description": "Broadcastify public safety feed 829 for California.",
+      "city": "",
+      "county": "Various",
+      "state": "CA",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "california",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/829"
+    },
+    {
+      "id": "bf-8710-inland-chp",
+      "name": "Inland CHP",
+      "description": "Broadcastify public safety feed 8710 for California.",
+      "city": "",
+      "county": "Various",
+      "state": "CA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "california"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/8710"
+    },
+    {
+      "id": "bf-39444-dispatch-lnu-mrn-napa-lake",
+      "name": "Dispatch LNU, MRN, Napa, Lake",
+      "description": "Broadcastify public safety feed 39444 for California.",
+      "city": "",
+      "county": "Various",
+      "state": "CA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "california"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39444"
+    },
+    {
+      "id": "bf-41894-burbank-police-primary-dispatch",
+      "name": "Burbank Police Primary Dispatch",
+      "description": "Broadcastify public safety feed 41894 for California.",
+      "city": "",
+      "county": "Various",
+      "state": "CA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "california",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41894"
+    },
+    {
+      "id": "bf-30549-stanislaus-county-fire-dispatch",
+      "name": "Stanislaus County Fire Dispatch",
+      "description": "Broadcastify public safety feed 30549 for California.",
+      "city": "",
+      "county": "Various",
+      "state": "CA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "california",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/30549"
+    },
+    {
+      "id": "bf-39929-clovis-public-safety",
+      "name": "Clovis Public Safety",
+      "description": "Broadcastify public safety feed 39929 for California.",
+      "city": "",
+      "county": "Various",
+      "state": "CA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "california"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39929"
+    },
+    {
+      "id": "bf-865-napa-county-fire-and-cal-fire-lnu-east",
+      "name": "Napa County Fire and CAL FIRE LNU East",
+      "description": "Broadcastify public safety feed 865 for California.",
+      "city": "",
+      "county": "Various",
+      "state": "CA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "california",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/865"
+    },
+    {
+      "id": "bf-38428-tuolumne-county-public-safety",
+      "name": "Tuolumne County Public Safety",
+      "description": "Broadcastify public safety feed 38428 for California.",
+      "city": "",
+      "county": "Various",
+      "state": "CA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "california"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38428"
+    },
+    {
+      "id": "bf-26975-napa-valley-law-enforcement",
+      "name": "Napa Valley Law Enforcement",
+      "description": "Broadcastify public safety feed 26975 for California.",
+      "city": "",
+      "county": "Various",
+      "state": "CA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "california",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/26975"
+    },
+    {
+      "id": "bf-30094-tehama-county-law-enforcement-dispatch",
+      "name": "Tehama County Law Enforcement Dispatch",
+      "description": "Broadcastify public safety feed 30094 for California.",
+      "city": "",
+      "county": "Various",
+      "state": "CA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "california",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/30094"
+    },
+    {
+      "id": "bf-6369-tulare-city-police-and-fire-dispatch",
+      "name": "Tulare City Police and Fire Dispatch",
+      "description": "Broadcastify public safety feed 6369 for California.",
+      "city": "",
+      "county": "Various",
+      "state": "CA",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "california",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/6369"
+    },
+    {
+      "id": "bf-31459-mariposa-county-calfire-sheriff-and-public",
+      "name": "Mariposa County CalFire, Sheriff and Public Works",
+      "description": "Broadcastify public safety feed 31459 for California.",
+      "city": "",
+      "county": "Various",
+      "state": "CA",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "california",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/31459"
+    },
+    {
+      "id": "bf-12911-contra-costa-county-fire-protection-distri",
+      "name": "Contra Costa County Fire Protection District",
+      "description": "Broadcastify public safety feed 12911 for California.",
+      "city": "",
+      "county": "Various",
+      "state": "CA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "california",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/12911"
+    },
+    {
+      "id": "bf-36480-ventura-county-sheriff-dispatch-east",
+      "name": "Ventura County Sheriff Dispatch - East",
+      "description": "Broadcastify public safety feed 36480 for California.",
+      "city": "",
+      "county": "Various",
+      "state": "CA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "california",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/36480"
+    },
+    {
+      "id": "bf-40337-sonoma-county-fire-ems-and-sheriff-dispatc",
+      "name": "Sonoma County Fire-EMS and Sheriff Dispatch",
+      "description": "Broadcastify public safety feed 40337 for California.",
+      "city": "",
+      "county": "Various",
+      "state": "CA",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "california",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40337"
+    },
+    {
+      "id": "bf-25811-san-joaquin-county-fire-and-chp",
+      "name": "San Joaquin County Fire and CHP",
+      "description": "Broadcastify public safety feed 25811 for California.",
+      "city": "",
+      "county": "Various",
+      "state": "CA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "california",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/25811"
+    },
+    {
+      "id": "bf-34252-selma-police-dispatch",
+      "name": "Selma Police Dispatch",
+      "description": "Broadcastify public safety feed 34252 for California.",
+      "city": "",
+      "county": "Various",
+      "state": "CA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "california",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/34252"
+    },
+    {
+      "id": "bf-46180-san-francisco-city-police",
+      "name": "San Francisco City Police",
+      "description": "Broadcastify public safety feed 46180 for California.",
+      "city": "",
+      "county": "Various",
+      "state": "CA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "california",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46180"
+    },
+    {
+      "id": "bf-20530-san-diego-city-fire-department",
+      "name": "San Diego City Fire Department",
+      "description": "Broadcastify public safety feed 20530 for California.",
+      "city": "",
+      "county": "Various",
+      "state": "CA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "california",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/20530"
+    },
+    {
+      "id": "bf-5698-citrus-heights-police-folsom-police-elk-gr",
+      "name": "Citrus Heights Police, Folsom Police, Elk Grove Police and Galt Police",
+      "description": "Broadcastify public safety feed 5698 for California.",
+      "city": "",
+      "county": "Various",
+      "state": "CA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "california",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/5698"
+    },
+    {
+      "id": "bf-28839-porterville-police",
+      "name": "Porterville Police",
+      "description": "Broadcastify public safety feed 28839 for California.",
+      "city": "",
+      "county": "Various",
+      "state": "CA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "california",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/28839"
+    },
+    {
+      "id": "bf-19-cal-fire-and-riverside-county-fire-west",
+      "name": "Cal Fire and Riverside County Fire - West",
+      "description": "Broadcastify public safety feed 19 for California.",
+      "city": "",
+      "county": "Various",
+      "state": "CA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "california",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/19"
+    },
+    {
+      "id": "bf-47440-kern-county-sheriff-bakersfield-police",
+      "name": "Kern County Sheriff / Bakersfield Police",
+      "description": "Broadcastify public safety feed 47440 for California.",
+      "city": "",
+      "county": "Various",
+      "state": "CA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "california",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47440"
+    },
+    {
+      "id": "bf-20274-lapd-dispatch-pacific-division",
+      "name": "LAPD Dispatch - Pacific Division",
+      "description": "Broadcastify public safety feed 20274 for California.",
+      "city": "",
+      "county": "Various",
+      "state": "CA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "california"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/20274"
+    },
+    {
+      "id": "bf-41253-modesto-police-dispatch",
+      "name": "Modesto Police Dispatch",
+      "description": "Broadcastify public safety feed 41253 for California.",
+      "city": "",
+      "county": "Various",
+      "state": "CA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "california",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41253"
+    },
+    {
+      "id": "bf-38264-air-attack-a-g-fresno-calfire-sierra-fores",
+      "name": "Air Attack (A/G) Fresno CalFire - Sierra Forest Net",
+      "description": "Broadcastify public safety feed 38264 for California.",
+      "city": "",
+      "county": "Various",
+      "state": "CA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "california",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38264"
+    },
+    {
+      "id": "bf-45331-san-bernardino-county-cajon-pass-usfs-blm-",
+      "name": "San Bernardino County - Cajon Pass USFS, BLM, CalFire",
+      "description": "Broadcastify public safety feed 45331 for California.",
+      "city": "",
+      "county": "Various",
+      "state": "CA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "california",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45331"
+    },
+    {
+      "id": "bf-31714-yuba-city-police-sutter-county-sheriff-and",
+      "name": "Yuba City Police, Sutter County Sheriff, and Fire/Rescue",
+      "description": "Broadcastify public safety feed 31714 for California.",
+      "city": "",
+      "county": "Various",
+      "state": "CA",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "california",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/31714"
+    },
+    {
+      "id": "bf-36152-lassen-county-fire-and-ems-dispatch",
+      "name": "Lassen County Fire and EMS Dispatch",
+      "description": "Broadcastify public safety feed 36152 for California.",
+      "city": "",
+      "county": "Various",
+      "state": "CA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "california",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/36152"
+    },
+    {
+      "id": "bf-23572-sacramento-county-sheriff-and-area-police-",
+      "name": "Sacramento County Sheriff and Area Police - South",
+      "description": "Broadcastify public safety feed 23572 for California.",
+      "city": "",
+      "county": "Various",
+      "state": "CA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "california",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/23572"
+    },
+    {
+      "id": "bf-6316-tulare-county-sheriff-2",
+      "name": "Tulare County Sheriff 2",
+      "description": "Broadcastify public safety feed 6316 for California.",
+      "city": "",
+      "county": "Various",
+      "state": "CA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "california",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/6316"
+    },
+    {
+      "id": "bf-44909-ocfa-tac-5c-zone-5",
+      "name": "OCFA Tac 5C - Zone 5",
+      "description": "Broadcastify public safety feed 44909 for California.",
+      "city": "",
+      "county": "Various",
+      "state": "CA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "california"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44909"
+    },
+    {
+      "id": "bf-31397-metronet-fire-north-alt-tac-2n",
+      "name": "MetroNet Fire North Alt Tac 2N",
+      "description": "Broadcastify public safety feed 31397 for California.",
+      "city": "",
+      "county": "Various",
+      "state": "CA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "california",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/31397"
+    },
+    {
+      "id": "bf-39432-cal-fire-lnu",
+      "name": "Cal Fire LNU",
+      "description": "Broadcastify public safety feed 39432 for California.",
+      "city": "",
+      "county": "Various",
+      "state": "CA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "california",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39432"
+    },
+    {
+      "id": "bf-33910-lapd-dispatch-harbor-5",
+      "name": "LAPD Dispatch - Harbor (5)",
+      "description": "Broadcastify public safety feed 33910 for California.",
+      "city": "",
+      "county": "Various",
+      "state": "CA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "california"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/33910"
+    },
+    {
+      "id": "bf-29171-long-beach-fire-dispatch-and-v2-3",
+      "name": "Long Beach Fire Dispatch and V2/3",
+      "description": "Broadcastify public safety feed 29171 for California.",
+      "city": "",
+      "county": "Various",
+      "state": "CA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "california",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/29171"
+    },
+    {
+      "id": "bf-23386-west-sacramento-fire-dispatch",
+      "name": "West Sacramento Fire Dispatch",
+      "description": "Broadcastify public safety feed 23386 for California.",
+      "city": "",
+      "county": "Various",
+      "state": "CA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "california",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/23386"
+    },
+    {
+      "id": "bf-23383-yolo-county-fire-dispatch-green",
+      "name": "Yolo County Fire Dispatch - Green",
+      "description": "Broadcastify public safety feed 23383 for California.",
+      "city": "",
+      "county": "Various",
+      "state": "CA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "california",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/23383"
+    },
+    {
+      "id": "bf-30829-cal-fire-sherwood-brooktrails-and-little-l",
+      "name": "Cal Fire, Sherwood, Brooktrails and Little Lake Fire / EMS",
+      "description": "Broadcastify public safety feed 30829 for California.",
+      "city": "",
+      "county": "Various",
+      "state": "CA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "california",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/30829"
+    },
+    {
+      "id": "bf-30587-ventura-county-fire-ch-1-2-5-8",
+      "name": "Ventura County Fire - Ch 1,2,5,8",
+      "description": "Broadcastify public safety feed 30587 for California.",
+      "city": "",
+      "county": "Various",
+      "state": "CA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "california",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/30587"
+    },
+    {
+      "id": "bf-20102-monterey-county-fire-dispatch-command-31",
+      "name": "Monterey County Fire Dispatch - Command 31",
+      "description": "Broadcastify public safety feed 20102 for California.",
+      "city": "",
+      "county": "Various",
+      "state": "CA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "california",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/20102"
+    },
+    {
+      "id": "bf-10239-chp-la-orange-centers",
+      "name": "CHP Los Angeles and Orange County Centers",
+      "description": "Broadcastify feed 10239 for California Highway Patrol LA/Orange dispatch channels.",
+      "city": "Los Angeles",
+      "county": "Los Angeles County",
+      "state": "CA",
+      "service_types": [
+        "law",
+        "dispatch",
+        "highway"
+      ],
+      "tags": [
+        "chp",
+        "highway",
+        "interstate",
+        "i-5",
+        "i-10",
+        "i-405"
+      ],
+      "lat": 34.0522,
+      "lon": -118.2437,
+      "listeners": 260,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/10239"
+    },
+    {
+      "id": "bf-31324-ocfa-tac-5n-zone-5",
+      "name": "OCFA Tac 5N - Zone 5",
+      "description": "Broadcastify public safety feed 31324 for California.",
+      "city": "",
+      "county": "Various",
+      "state": "CA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "california"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/31324"
+    },
+    {
+      "id": "bf-31326-ocfa-tac-4n-zone-4",
+      "name": "OCFA Tac 4N - Zone 4",
+      "description": "Broadcastify public safety feed 31326 for California.",
+      "city": "",
+      "county": "Various",
+      "state": "CA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "california"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/31326"
+    },
+    {
+      "id": "bf-33544-heartland-fire",
+      "name": "Heartland Fire",
+      "description": "Broadcastify public safety feed 33544 for California.",
+      "city": "",
+      "county": "Various",
+      "state": "CA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "california",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/33544"
+    },
+    {
+      "id": "bf-28469-calaveras-and-alpine-counties-fire-cal-fir",
+      "name": "Calaveras and Alpine Counties Fire, Cal Fire and USFS",
+      "description": "Broadcastify public safety feed 28469 for California.",
+      "city": "",
+      "county": "Various",
+      "state": "CA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "california",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/28469"
+    },
+    {
+      "id": "bf-8919-chula-vista-police-and-fire",
+      "name": "Chula Vista Police and Fire",
+      "description": "Broadcastify public safety feed 8919 for California.",
+      "city": "",
+      "county": "Various",
+      "state": "CA",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "california",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/8919"
+    },
+    {
+      "id": "bf-9733-rural-san-diego-county-cal-fire-and-usfs",
+      "name": "Rural San Diego County CAL FIRE and USFS",
+      "description": "Broadcastify public safety feed 9733 for California.",
+      "city": "",
+      "county": "Various",
+      "state": "CA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "california",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/9733"
+    },
+    {
+      "id": "bf-33663-santa-barbara-county-sheriff-main-channel",
+      "name": "Santa Barbara County Sheriff Main Channel",
+      "description": "Broadcastify public safety feed 33663 for California.",
+      "city": "",
+      "county": "Various",
+      "state": "CA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "california",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/33663"
+    },
+    {
+      "id": "bf-43009-san-luis-obispo-county-fire",
+      "name": "San Luis Obispo County Fire",
+      "description": "Broadcastify public safety feed 43009 for California.",
+      "city": "",
+      "county": "Various",
+      "state": "CA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "california",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43009"
+    }
+  ]
+}

@@ -1,0 +1,2315 @@
+{
+  "channels": [
+    {
+      "id": "bf-20613-multnomah-sheriff-gresham",
+      "name": "Multnomah County Sheriff and Gresham Police",
+      "description": "Broadcastify feed 20613 covering Multnomah County Sheriff and Gresham PD dispatch traffic.",
+      "city": "Gresham",
+      "county": "Multnomah County",
+      "state": "OR",
+      "service_types": [
+        "law",
+        "dispatch"
+      ],
+      "tags": [
+        "sheriff",
+        "police",
+        "dispatch",
+        "multnomah",
+        "gresham",
+        "i-84"
+      ],
+      "lat": 45.5001,
+      "lon": -122.4302,
+      "listeners": 150,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/20613"
+    },
+    {
+      "id": "bf-32602-indianapolis-metropolitan-police",
+      "name": "Indianapolis Metropolitan Police",
+      "description": "Broadcastify public safety feed 32602 for Oregon.",
+      "city": "",
+      "county": "Various",
+      "state": "OR",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oregon",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32602"
+    },
+    {
+      "id": "bf-23474-klamath-county-public-safety",
+      "name": "Klamath County Public Safety",
+      "description": "Broadcastify public safety feed 23474 for Oregon.",
+      "city": "",
+      "county": "Various",
+      "state": "OR",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oregon"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/23474"
+    },
+    {
+      "id": "bf-30541-cowlitz-county-public-safety-columbia-coun",
+      "name": "Cowlitz County Public Safety, Columbia County Law Dispatch",
+      "description": "Broadcastify public safety feed 30541 for Oregon.",
+      "city": "",
+      "county": "Various",
+      "state": "OR",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oregon"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/30541"
+    },
+    {
+      "id": "bf-4654-deschutes-crook-jefferson-counties-fire-em",
+      "name": "Deschutes, Crook, Jefferson counties Fire / EMS",
+      "description": "Broadcastify public safety feed 4654 for Oregon.",
+      "city": "",
+      "county": "Various",
+      "state": "OR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oregon",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/4654"
+    },
+    {
+      "id": "bf-20766-portland-area-fire-rescue",
+      "name": "Portland Area Fire and Rescue",
+      "description": "Broadcastify feed 20766 for Portland metro fire and rescue dispatch.",
+      "city": "Portland",
+      "county": "Multnomah County",
+      "state": "OR",
+      "service_types": [
+        "fire",
+        "dispatch",
+        "ems"
+      ],
+      "tags": [
+        "portland",
+        "multnomah",
+        "fire",
+        "ems",
+        "metro"
+      ],
+      "lat": 45.5152,
+      "lon": -122.6784,
+      "listeners": 180,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/20766"
+    },
+    {
+      "id": "bf-16984-tillamook-county-police-fire-ems-em-and-pu",
+      "name": "Tillamook County Police, Fire, EMS, EM, and Public Works",
+      "description": "Broadcastify public safety feed 16984 for Oregon.",
+      "city": "",
+      "county": "Various",
+      "state": "OR",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oregon",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/16984"
+    },
+    {
+      "id": "bf-31740-salem-police-dispatch",
+      "name": "Salem Police Dispatch",
+      "description": "Broadcastify public safety feed 31740 for Oregon.",
+      "city": "",
+      "county": "Various",
+      "state": "OR",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oregon",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/31740"
+    },
+    {
+      "id": "bf-40833-douglas-county-public-safety",
+      "name": "Douglas County Public Safety",
+      "description": "Broadcastify public safety feed 40833 for Oregon.",
+      "city": "",
+      "county": "Various",
+      "state": "OR",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oregon"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40833"
+    },
+    {
+      "id": "bf-31041-lane-county-fire-and-ems-oregon-state-poli",
+      "name": "Lane County Fire and EMS, Oregon State Police / ODOT",
+      "description": "Broadcastify public safety feed 31041 for Oregon.",
+      "city": "",
+      "county": "Various",
+      "state": "OR",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oregon",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/31041"
+    },
+    {
+      "id": "bf-12637-benton-county-public-safety",
+      "name": "Benton County Public Safety",
+      "description": "Broadcastify public safety feed 12637 for Oregon.",
+      "city": "",
+      "county": "Various",
+      "state": "OR",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oregon"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/12637"
+    },
+    {
+      "id": "bf-33903-umatilla-county-public-safety",
+      "name": "Umatilla County Public Safety",
+      "description": "Broadcastify public safety feed 33903 for Oregon.",
+      "city": "",
+      "county": "Various",
+      "state": "OR",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oregon"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/33903"
+    },
+    {
+      "id": "bf-44231-jackson-county-public-safety",
+      "name": "Jackson County Public Safety",
+      "description": "Broadcastify public safety feed 44231 for Oregon.",
+      "city": "",
+      "county": "Various",
+      "state": "OR",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oregon"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44231"
+    },
+    {
+      "id": "bf-1102-washington-county-fire-and-ems",
+      "name": "Washington County Fire and EMS",
+      "description": "Broadcastify public safety feed 1102 for Oregon.",
+      "city": "",
+      "county": "Various",
+      "state": "OR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oregon",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/1102"
+    },
+    {
+      "id": "bf-34649-harney-county-public-safety",
+      "name": "Harney County Public Safety",
+      "description": "Broadcastify public safety feed 34649 for Oregon.",
+      "city": "",
+      "county": "Various",
+      "state": "OR",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oregon"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/34649"
+    },
+    {
+      "id": "bf-8015-walla-walla-valley-law-fire-and-ems",
+      "name": "Walla Walla Valley Law, Fire and EMS",
+      "description": "Broadcastify public safety feed 8015 for Oregon.",
+      "city": "",
+      "county": "Various",
+      "state": "OR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oregon",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/8015"
+    },
+    {
+      "id": "bf-36257-wallowa-county-public-safety",
+      "name": "Wallowa County Public Safety",
+      "description": "Broadcastify public safety feed 36257 for Oregon.",
+      "city": "",
+      "county": "Various",
+      "state": "OR",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oregon"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/36257"
+    },
+    {
+      "id": "bf-4241-clatsop-county-public-safety",
+      "name": "Clatsop County Public Safety",
+      "description": "Broadcastify public safety feed 4241 for Oregon.",
+      "city": "",
+      "county": "Various",
+      "state": "OR",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oregon"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/4241"
+    },
+    {
+      "id": "bf-500-baker-county-sheriff-and-fire",
+      "name": "Baker County Sheriff and Fire",
+      "description": "Broadcastify public safety feed 500 for Oregon.",
+      "city": "",
+      "county": "Various",
+      "state": "OR",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oregon",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/500"
+    },
+    {
+      "id": "bf-36509-clackamas-county-fire-and-ems",
+      "name": "Clackamas County Fire and EMS",
+      "description": "Broadcastify public safety feed 36509 for Oregon.",
+      "city": "",
+      "county": "Various",
+      "state": "OR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oregon",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/36509"
+    },
+    {
+      "id": "bf-46500-usfs-mhnf-flag-point-repeater",
+      "name": "USFS MHNF Flag Point Repeater",
+      "description": "Broadcastify public safety feed 46500 for Oregon.",
+      "city": "",
+      "county": "Various",
+      "state": "OR",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oregon"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46500"
+    },
+    {
+      "id": "bf-38372-albany-police",
+      "name": "Albany Police",
+      "description": "Broadcastify public safety feed 38372 for Oregon.",
+      "city": "",
+      "county": "Various",
+      "state": "OR",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oregon",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38372"
+    },
+    {
+      "id": "bf-29985-polk-county-sheriff-and-dallas-police",
+      "name": "Polk County Sheriff and Dallas Police",
+      "description": "Broadcastify public safety feed 29985 for Oregon.",
+      "city": "",
+      "county": "Various",
+      "state": "OR",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oregon",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/29985"
+    },
+    {
+      "id": "bf-31473-clatsop-county-police-fire-ems-marine-and-",
+      "name": "Clatsop County Police, Fire, EMS, Marine and Aircraft",
+      "description": "Broadcastify public safety feed 31473 for Oregon.",
+      "city": "",
+      "county": "Various",
+      "state": "OR",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oregon",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/31473"
+    },
+    {
+      "id": "bf-42736-dallas-and-polk-county-fire-dispatch",
+      "name": "Dallas and Polk County Fire Dispatch",
+      "description": "Broadcastify public safety feed 42736 for Oregon.",
+      "city": "",
+      "county": "Various",
+      "state": "OR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oregon",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42736"
+    },
+    {
+      "id": "bf-19114-oregon-state-police-and-dot-douglas-county",
+      "name": "Oregon State Police and DOT, Douglas County Sheriff, Fire / SAR",
+      "description": "Broadcastify public safety feed 19114 for Oregon.",
+      "city": "",
+      "county": "Various",
+      "state": "OR",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oregon",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/19114"
+    },
+    {
+      "id": "bf-20083-salem-fire-keizer-fire-and-marion-county-f",
+      "name": "Salem Fire, Keizer Fire, and Marion County Fire District 1",
+      "description": "Broadcastify public safety feed 20083 for Oregon.",
+      "city": "",
+      "county": "Various",
+      "state": "OR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oregon",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/20083"
+    },
+    {
+      "id": "bf-45208-linn-county-sheriff",
+      "name": "Linn County Sheriff",
+      "description": "Broadcastify public safety feed 45208 for Oregon.",
+      "city": "",
+      "county": "Various",
+      "state": "OR",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oregon",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45208"
+    },
+    {
+      "id": "bf-35717-the-dalles-police-dispatch-oregon-state-po",
+      "name": "The Dalles Police Dispatch, Oregon State Police Dispatch",
+      "description": "Broadcastify public safety feed 35717 for Oregon.",
+      "city": "",
+      "county": "Various",
+      "state": "OR",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oregon",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/35717"
+    },
+    {
+      "id": "bf-35988-yamhill-county-sheriff",
+      "name": "Yamhill County Sheriff",
+      "description": "Broadcastify public safety feed 35988 for Oregon.",
+      "city": "",
+      "county": "Various",
+      "state": "OR",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oregon",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/35988"
+    },
+    {
+      "id": "bf-42041-hood-river-police-fire-odot-odf",
+      "name": "Hood River Police-Fire-ODOT-ODF",
+      "description": "Broadcastify public safety feed 42041 for Oregon.",
+      "city": "",
+      "county": "Various",
+      "state": "OR",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oregon",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42041"
+    },
+    {
+      "id": "bf-42359-lake-county-public-safety-forestry",
+      "name": "Lake County Public Safety & Forestry",
+      "description": "Broadcastify public safety feed 42359 for Oregon.",
+      "city": "",
+      "county": "Various",
+      "state": "OR",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oregon"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42359"
+    },
+    {
+      "id": "bf-45398-lincoln-county-police-and-fire",
+      "name": "Lincoln County Police and Fire",
+      "description": "Broadcastify public safety feed 45398 for Oregon.",
+      "city": "",
+      "county": "Various",
+      "state": "OR",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oregon",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45398"
+    },
+    {
+      "id": "bf-5465-marion-county-metcom-north-1-fire",
+      "name": "Marion County METCOM North-1 Fire",
+      "description": "Broadcastify public safety feed 5465 for Oregon.",
+      "city": "",
+      "county": "Various",
+      "state": "OR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oregon",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/5465"
+    },
+    {
+      "id": "bf-35408-marion-county-fire-south-1-4",
+      "name": "Marion County Fire South 1-4",
+      "description": "Broadcastify public safety feed 35408 for Oregon.",
+      "city": "",
+      "county": "Various",
+      "state": "OR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oregon",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/35408"
+    },
+    {
+      "id": "bf-9766-yamhill-county-fire",
+      "name": "Yamhill County Fire",
+      "description": "Broadcastify public safety feed 9766 for Oregon.",
+      "city": "",
+      "county": "Various",
+      "state": "OR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oregon",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/9766"
+    },
+    {
+      "id": "bf-40841-jackson-county-fire",
+      "name": "Jackson County Fire",
+      "description": "Broadcastify public safety feed 40841 for Oregon.",
+      "city": "",
+      "county": "Various",
+      "state": "OR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oregon",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40841"
+    },
+    {
+      "id": "bf-44043-linn-county-fire",
+      "name": "Linn County Fire",
+      "description": "Broadcastify public safety feed 44043 for Oregon.",
+      "city": "",
+      "county": "Various",
+      "state": "OR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oregon",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44043"
+    },
+    {
+      "id": "bf-9689-lake-oswego-fire",
+      "name": "Lake Oswego Fire",
+      "description": "Broadcastify public safety feed 9689 for Oregon.",
+      "city": "",
+      "county": "Various",
+      "state": "OR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oregon",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/9689"
+    },
+    {
+      "id": "bf-27259-deschutes-county-police-dispatch",
+      "name": "Deschutes County Police Dispatch",
+      "description": "Broadcastify public safety feed 27259 for Oregon.",
+      "city": "",
+      "county": "Various",
+      "state": "OR",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oregon",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/27259"
+    },
+    {
+      "id": "bf-27260-redmond-police-dispatch",
+      "name": "Redmond Police Dispatch",
+      "description": "Broadcastify public safety feed 27260 for Oregon.",
+      "city": "",
+      "county": "Various",
+      "state": "OR",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oregon",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/27260"
+    },
+    {
+      "id": "bf-27261-bend-police-dispatch",
+      "name": "Bend Police Dispatch",
+      "description": "Broadcastify public safety feed 27261 for Oregon.",
+      "city": "",
+      "county": "Various",
+      "state": "OR",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oregon",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/27261"
+    },
+    {
+      "id": "bf-41744-douglas-county-fire-dispatch",
+      "name": "Douglas County Fire Dispatch",
+      "description": "Broadcastify public safety feed 41744 for Oregon.",
+      "city": "",
+      "county": "Various",
+      "state": "OR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oregon",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41744"
+    },
+    {
+      "id": "bf-42139-douglas-county-sheriff-law-1",
+      "name": "Douglas County Sheriff - Law 1",
+      "description": "Broadcastify public safety feed 42139 for Oregon.",
+      "city": "",
+      "county": "Various",
+      "state": "OR",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oregon",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42139"
+    },
+    {
+      "id": "bf-45727-hood-river-county-fire-dispatch",
+      "name": "Hood River County Fire Dispatch",
+      "description": "Broadcastify public safety feed 45727 for Oregon.",
+      "city": "",
+      "county": "Various",
+      "state": "OR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oregon",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45727"
+    },
+    {
+      "id": "bf-41954-josephine-county-fire-agencies",
+      "name": "Josephine County Fire Agencies",
+      "description": "Broadcastify public safety feed 41954 for Oregon.",
+      "city": "",
+      "county": "Various",
+      "state": "OR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oregon",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41954"
+    },
+    {
+      "id": "bf-32798-oregon-department-of-forestry-umpqua-and-w",
+      "name": "Oregon Department of Forestry / Umpqua and Willamette National Forest",
+      "description": "Broadcastify public safety feed 32798 for Oregon.",
+      "city": "",
+      "county": "Various",
+      "state": "OR",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oregon"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32798"
+    },
+    {
+      "id": "bf-44330-linn-and-south-marion-county-fire",
+      "name": "Linn and South Marion County Fire",
+      "description": "Broadcastify public safety feed 44330 for Oregon.",
+      "city": "",
+      "county": "Various",
+      "state": "OR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oregon",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44330"
+    },
+    {
+      "id": "bf-17728-marion-county-sheriff-dispatch",
+      "name": "Marion County Sheriff Dispatch",
+      "description": "Broadcastify public safety feed 17728 for Oregon.",
+      "city": "",
+      "county": "Various",
+      "state": "OR",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oregon",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/17728"
+    },
+    {
+      "id": "bf-23459-elgin-rural-fire-protection-district",
+      "name": "Elgin Rural Fire Protection District",
+      "description": "Broadcastify public safety feed 23459 for Oregon.",
+      "city": "",
+      "county": "Various",
+      "state": "OR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oregon",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/23459"
+    },
+    {
+      "id": "bf-35918-baker-county-911",
+      "name": "Baker County 911",
+      "description": "Broadcastify public safety feed 35918 for Oregon.",
+      "city": "",
+      "county": "Various",
+      "state": "OR",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oregon"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/35918"
+    },
+    {
+      "id": "bf-37066-clackamas-county-fire-dispatch",
+      "name": "Clackamas County Fire Dispatch",
+      "description": "Broadcastify public safety feed 37066 for Oregon.",
+      "city": "",
+      "county": "Various",
+      "state": "OR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oregon",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37066"
+    },
+    {
+      "id": "bf-37067-lake-oswego-fire-dispatch",
+      "name": "Lake Oswego Fire Dispatch",
+      "description": "Broadcastify public safety feed 37067 for Oregon.",
+      "city": "",
+      "county": "Various",
+      "state": "OR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oregon",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37067"
+    },
+    {
+      "id": "bf-37071-clackamas-county-fire-channel-ops-22",
+      "name": "Clackamas County Fire Channel OPS 22",
+      "description": "Broadcastify public safety feed 37071 for Oregon.",
+      "city": "",
+      "county": "Various",
+      "state": "OR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oregon",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37071"
+    },
+    {
+      "id": "bf-37072-clackamas-county-fire-channel-ops-23",
+      "name": "Clackamas County Fire Channel OPS 23",
+      "description": "Broadcastify public safety feed 37072 for Oregon.",
+      "city": "",
+      "county": "Various",
+      "state": "OR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oregon",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37072"
+    },
+    {
+      "id": "bf-37073-clackamas-county-fire-channel-ops-24",
+      "name": "Clackamas County Fire Channel OPS 24",
+      "description": "Broadcastify public safety feed 37073 for Oregon.",
+      "city": "",
+      "county": "Various",
+      "state": "OR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oregon",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37073"
+    },
+    {
+      "id": "bf-37074-clackamas-county-fire-channel-ops-25",
+      "name": "Clackamas County Fire Channel OPS 25",
+      "description": "Broadcastify public safety feed 37074 for Oregon.",
+      "city": "",
+      "county": "Various",
+      "state": "OR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oregon",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37074"
+    },
+    {
+      "id": "bf-37075-clackamas-county-fire-channel-ops-26",
+      "name": "Clackamas County Fire Channel OPS 26",
+      "description": "Broadcastify public safety feed 37075 for Oregon.",
+      "city": "",
+      "county": "Various",
+      "state": "OR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oregon",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37075"
+    },
+    {
+      "id": "bf-37076-clackamas-county-fire-channel-ops-27",
+      "name": "Clackamas County Fire Channel OPS 27",
+      "description": "Broadcastify public safety feed 37076 for Oregon.",
+      "city": "",
+      "county": "Various",
+      "state": "OR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oregon",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37076"
+    },
+    {
+      "id": "bf-37077-clackamas-county-fire-channel-ops-28",
+      "name": "Clackamas County Fire Channel OPS 28",
+      "description": "Broadcastify public safety feed 37077 for Oregon.",
+      "city": "",
+      "county": "Various",
+      "state": "OR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oregon",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37077"
+    },
+    {
+      "id": "bf-43504-north-south-clatsop-county-fire",
+      "name": "North & South Clatsop County Fire",
+      "description": "Broadcastify public safety feed 43504 for Oregon.",
+      "city": "",
+      "county": "Various",
+      "state": "OR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oregon",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43504"
+    },
+    {
+      "id": "bf-28236-st-helens-police-and-fire",
+      "name": "St. Helens Police and Fire",
+      "description": "Broadcastify public safety feed 28236 for Oregon.",
+      "city": "",
+      "county": "Various",
+      "state": "OR",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oregon",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/28236"
+    },
+    {
+      "id": "bf-47011-columbia-county-dispatch-mednet",
+      "name": "Columbia County Dispatch / MEDNET",
+      "description": "Broadcastify public safety feed 47011 for Oregon.",
+      "city": "",
+      "county": "Various",
+      "state": "OR",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oregon"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47011"
+    },
+    {
+      "id": "bf-40402-charleston-fire",
+      "name": "Charleston Fire",
+      "description": "Broadcastify public safety feed 40402 for Oregon.",
+      "city": "",
+      "county": "Various",
+      "state": "OR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oregon",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40402"
+    },
+    {
+      "id": "bf-34019-gold-beach-fire",
+      "name": "Gold Beach Fire",
+      "description": "Broadcastify public safety feed 34019 for Oregon.",
+      "city": "",
+      "county": "Various",
+      "state": "OR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oregon",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/34019"
+    },
+    {
+      "id": "bf-40536-ophir-rural-fire",
+      "name": "Ophir Rural Fire",
+      "description": "Broadcastify public safety feed 40536 for Oregon.",
+      "city": "",
+      "county": "Various",
+      "state": "OR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oregon",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40536"
+    },
+    {
+      "id": "bf-43492-cedar-valley-north-bank-rural",
+      "name": "Cedar Valley North Bank Rural",
+      "description": "Broadcastify public safety feed 43492 for Oregon.",
+      "city": "",
+      "county": "Various",
+      "state": "OR",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oregon"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43492"
+    },
+    {
+      "id": "bf-33107-gardiner-rural-fire",
+      "name": "Gardiner Rural Fire",
+      "description": "Broadcastify public safety feed 33107 for Oregon.",
+      "city": "",
+      "county": "Various",
+      "state": "OR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oregon",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/33107"
+    },
+    {
+      "id": "bf-41248-douglas-forest-protective-association-dfpa",
+      "name": "Douglas Forest Protective Association (DFPA)",
+      "description": "Broadcastify public safety feed 41248 for Oregon.",
+      "city": "",
+      "county": "Various",
+      "state": "OR",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oregon"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41248"
+    },
+    {
+      "id": "bf-42136-oregon-department-of-transportation-distri",
+      "name": "Oregon Department of Transportation - District 7 (South Douglas)",
+      "description": "Broadcastify public safety feed 42136 for Oregon.",
+      "city": "",
+      "county": "Various",
+      "state": "OR",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oregon"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42136"
+    },
+    {
+      "id": "bf-42137-oregon-state-police-roseburg-station",
+      "name": "Oregon State Police - Roseburg Station",
+      "description": "Broadcastify public safety feed 42137 for Oregon.",
+      "city": "",
+      "county": "Various",
+      "state": "OR",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oregon",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42137"
+    },
+    {
+      "id": "bf-42138-douglas-county-sheriff-law-2",
+      "name": "Douglas County Sheriff - Law 2",
+      "description": "Broadcastify public safety feed 42138 for Oregon.",
+      "city": "",
+      "county": "Various",
+      "state": "OR",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oregon",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42138"
+    },
+    {
+      "id": "bf-42407-dfpa-primary-dispatch-douglas-county-fire-",
+      "name": "DFPA Primary Dispatch & Douglas County Fire Dispatch",
+      "description": "Broadcastify public safety feed 42407 for Oregon.",
+      "city": "",
+      "county": "Various",
+      "state": "OR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oregon",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42407"
+    },
+    {
+      "id": "bf-43057-us-forest-service-umpqua-national-forest",
+      "name": "US Forest Service - Umpqua National Forest",
+      "description": "Broadcastify public safety feed 43057 for Oregon.",
+      "city": "",
+      "county": "Various",
+      "state": "OR",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oregon"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43057"
+    },
+    {
+      "id": "bf-46553-douglas-county-fire-2",
+      "name": "Douglas County Fire 2",
+      "description": "Broadcastify public safety feed 46553 for Oregon.",
+      "city": "",
+      "county": "Various",
+      "state": "OR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oregon",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46553"
+    },
+    {
+      "id": "bf-47296-douglas-county-interop",
+      "name": "Douglas County Interop",
+      "description": "Broadcastify public safety feed 47296 for Oregon.",
+      "city": "",
+      "county": "Various",
+      "state": "OR",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oregon"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47296"
+    },
+    {
+      "id": "bf-32827-jackson-county-north-county-fire",
+      "name": "Jackson County - North County Fire",
+      "description": "Broadcastify public safety feed 32827 for Oregon.",
+      "city": "",
+      "county": "Various",
+      "state": "OR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oregon",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32827"
+    },
+    {
+      "id": "bf-34832-medford-fire-department",
+      "name": "Medford Fire Department",
+      "description": "Broadcastify public safety feed 34832 for Oregon.",
+      "city": "",
+      "county": "Various",
+      "state": "OR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oregon",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/34832"
+    },
+    {
+      "id": "bf-39538-williams-rfpd",
+      "name": "Williams RFPD",
+      "description": "Broadcastify public safety feed 39538 for Oregon.",
+      "city": "",
+      "county": "Various",
+      "state": "OR",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oregon"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39538"
+    },
+    {
+      "id": "bf-41956-odf-grants-pass-unit",
+      "name": "ODF Grants Pass Unit",
+      "description": "Broadcastify public safety feed 41956 for Oregon.",
+      "city": "",
+      "county": "Various",
+      "state": "OR",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oregon"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41956"
+    },
+    {
+      "id": "bf-42620-oregon-department-of-forestry-odf-fire-sou",
+      "name": "Oregon Department of Forestry (ODF) Fire -  Southwest Oregon",
+      "description": "Broadcastify public safety feed 42620 for Oregon.",
+      "city": "",
+      "county": "Various",
+      "state": "OR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oregon",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42620"
+    },
+    {
+      "id": "bf-42763-illinois-valley-fire-protection-district",
+      "name": "Illinois Valley Fire Protection District",
+      "description": "Broadcastify public safety feed 42763 for Oregon.",
+      "city": "",
+      "county": "Various",
+      "state": "OR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oregon",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42763"
+    },
+    {
+      "id": "bf-44315-rural-metro-fire-department-dispatch",
+      "name": "Rural Metro Fire Department Dispatch",
+      "description": "Broadcastify public safety feed 44315 for Oregon.",
+      "city": "",
+      "county": "Various",
+      "state": "OR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oregon",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44315"
+    },
+    {
+      "id": "bf-44402-grants-pass-fire-rescue",
+      "name": "Grants Pass Fire Rescue",
+      "description": "Broadcastify public safety feed 44402 for Oregon.",
+      "city": "",
+      "county": "Various",
+      "state": "OR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oregon",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44402"
+    },
+    {
+      "id": "bf-46873-illinois-valley-rural-fire-district-alt",
+      "name": "Illinois Valley Rural Fire District - Alt",
+      "description": "Broadcastify public safety feed 46873 for Oregon.",
+      "city": "",
+      "county": "Various",
+      "state": "OR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oregon",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46873"
+    },
+    {
+      "id": "bf-43123-chemult-fire",
+      "name": "Chemult Fire",
+      "description": "Broadcastify public safety feed 43123 for Oregon.",
+      "city": "",
+      "county": "Various",
+      "state": "OR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oregon",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43123"
+    },
+    {
+      "id": "bf-39528-lakeview-fire",
+      "name": "Lakeview Fire",
+      "description": "Broadcastify public safety feed 39528 for Oregon.",
+      "city": "",
+      "county": "Various",
+      "state": "OR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oregon",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39528"
+    },
+    {
+      "id": "bf-44479-christmas-valley-fire",
+      "name": "Christmas Valley Fire",
+      "description": "Broadcastify public safety feed 44479 for Oregon.",
+      "city": "",
+      "county": "Various",
+      "state": "OR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oregon",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44479"
+    },
+    {
+      "id": "bf-47129-willowranch-fpd",
+      "name": "WillowRanch FPD",
+      "description": "Broadcastify public safety feed 47129 for Oregon.",
+      "city": "",
+      "county": "Various",
+      "state": "OR",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oregon"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47129"
+    },
+    {
+      "id": "bf-24081-mckenzie-fire-and-rescue",
+      "name": "McKenzie Fire and Rescue",
+      "description": "Broadcastify public safety feed 24081 for Oregon.",
+      "city": "",
+      "county": "Various",
+      "state": "OR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oregon",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/24081"
+    },
+    {
+      "id": "bf-41805-pleasant-hill-goshen-fire-rescue",
+      "name": "Pleasant Hill Goshen Fire & Rescue",
+      "description": "Broadcastify public safety feed 41805 for Oregon.",
+      "city": "",
+      "county": "Various",
+      "state": "OR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oregon",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41805"
+    },
+    {
+      "id": "bf-38373-toledo-fire-west-east-lincoln-county-fire-",
+      "name": "Toledo Fire West & East, Lincoln County Fire 1 & 2, and PWA",
+      "description": "Broadcastify public safety feed 38373 for Oregon.",
+      "city": "",
+      "county": "Various",
+      "state": "OR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oregon",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38373"
+    },
+    {
+      "id": "bf-45624-linn-county-fire-dispatch-and-operations",
+      "name": "Linn County Fire Dispatch and Operations",
+      "description": "Broadcastify public safety feed 45624 for Oregon.",
+      "city": "",
+      "county": "Various",
+      "state": "OR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oregon",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45624"
+    },
+    {
+      "id": "bf-42819-keizer-police-dispatch",
+      "name": "Keizer Police Dispatch",
+      "description": "Broadcastify public safety feed 42819 for Oregon.",
+      "city": "",
+      "county": "Various",
+      "state": "OR",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oregon",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42819"
+    },
+    {
+      "id": "bf-44640-keizer-fire-district",
+      "name": "Keizer Fire District",
+      "description": "Broadcastify public safety feed 44640 for Oregon.",
+      "city": "",
+      "county": "Various",
+      "state": "OR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oregon",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44640"
+    },
+    {
+      "id": "bf-41049-joseph-fire",
+      "name": "Joseph Fire",
+      "description": "Broadcastify public safety feed 41049 for Oregon.",
+      "city": "",
+      "county": "Various",
+      "state": "OR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oregon",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41049"
+    },
+    {
+      "id": "bf-36064-wasco-county-south-fire-and-ambulance-disp",
+      "name": "Wasco County (South) Fire and Ambulance Dispatch",
+      "description": "Broadcastify public safety feed 36064 for Oregon.",
+      "city": "",
+      "county": "Various",
+      "state": "OR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oregon",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/36064"
+    },
+    {
+      "id": "bf-47449-columbia-gorge-public-safety-osrp",
+      "name": "Columbia Gorge Public Safety - OSRP",
+      "description": "Broadcastify public safety feed 47449 for Oregon.",
+      "city": "",
+      "county": "Various",
+      "state": "OR",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oregon"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47449"
+    },
+    {
+      "id": "bf-23100-washington-county-fire-dispatch",
+      "name": "Washington County Fire Dispatch",
+      "description": "Broadcastify public safety feed 23100 for Oregon.",
+      "city": "",
+      "county": "Various",
+      "state": "OR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oregon",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/23100"
+    },
+    {
+      "id": "bf-37080-washington-county-fire-channel-2",
+      "name": "Washington County Fire Channel 2",
+      "description": "Broadcastify public safety feed 37080 for Oregon.",
+      "city": "",
+      "county": "Various",
+      "state": "OR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oregon",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37080"
+    },
+    {
+      "id": "bf-37081-washington-county-fire-channel-3",
+      "name": "Washington County Fire Channel 3",
+      "description": "Broadcastify public safety feed 37081 for Oregon.",
+      "city": "",
+      "county": "Various",
+      "state": "OR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oregon",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37081"
+    },
+    {
+      "id": "bf-37082-washington-county-fire-channel-4",
+      "name": "Washington County Fire Channel 4",
+      "description": "Broadcastify public safety feed 37082 for Oregon.",
+      "city": "",
+      "county": "Various",
+      "state": "OR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oregon",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37082"
+    }
+  ]
+}

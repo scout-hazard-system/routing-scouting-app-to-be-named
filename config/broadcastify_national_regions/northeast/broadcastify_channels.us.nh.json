@@ -1,0 +1,1914 @@
+{
+  "channels": [
+    {
+      "id": "bf-32602-indianapolis-metropolitan-police",
+      "name": "Indianapolis Metropolitan Police",
+      "description": "Broadcastify public safety feed 32602 for New Hampshire.",
+      "city": "",
+      "county": "Various",
+      "state": "NH",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new hampshire",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32602"
+    },
+    {
+      "id": "bf-5138-lakes-region-mutual-fire-aid-association",
+      "name": "Lakes Region Mutual Fire Aid Association",
+      "description": "Broadcastify public safety feed 5138 for New Hampshire.",
+      "city": "",
+      "county": "Various",
+      "state": "NH",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new hampshire",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/5138"
+    },
+    {
+      "id": "bf-45906-manchester-fire",
+      "name": "Manchester Fire",
+      "description": "Broadcastify public safety feed 45906 for New Hampshire.",
+      "city": "",
+      "county": "Various",
+      "state": "NH",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new hampshire",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45906"
+    },
+    {
+      "id": "bf-6169-upper-valley-area-police-and-fire",
+      "name": "Upper Valley Area Police and Fire",
+      "description": "Broadcastify public safety feed 6169 for New Hampshire.",
+      "city": "",
+      "county": "Various",
+      "state": "NH",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new hampshire",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/6169"
+    },
+    {
+      "id": "bf-44608-swnh-district-fire-mutual-aid",
+      "name": "SWNH District Fire Mutual Aid",
+      "description": "Broadcastify public safety feed 44608 for New Hampshire.",
+      "city": "",
+      "county": "Various",
+      "state": "NH",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new hampshire",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44608"
+    },
+    {
+      "id": "bf-35891-northern-new-hampshire-law-net",
+      "name": "Northern New Hampshire Law Net",
+      "description": "Broadcastify public safety feed 35891 for New Hampshire.",
+      "city": "",
+      "county": "Various",
+      "state": "NH",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new hampshire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/35891"
+    },
+    {
+      "id": "bf-6787-claremont-police-and-fire",
+      "name": "Claremont Police and Fire",
+      "description": "Broadcastify public safety feed 6787 for New Hampshire.",
+      "city": "",
+      "county": "Various",
+      "state": "NH",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new hampshire",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/6787"
+    },
+    {
+      "id": "bf-25356-strafford-county-area-local-police-and-fir",
+      "name": "Strafford County Area Local Police and Fire",
+      "description": "Broadcastify public safety feed 25356 for New Hampshire.",
+      "city": "",
+      "county": "Various",
+      "state": "NH",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new hampshire",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/25356"
+    },
+    {
+      "id": "bf-43744-nashua-fire-rescue-ch-1-8",
+      "name": "Nashua Fire Rescue Ch 1-8",
+      "description": "Broadcastify public safety feed 43744 for New Hampshire.",
+      "city": "",
+      "county": "Various",
+      "state": "NH",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new hampshire",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43744"
+    },
+    {
+      "id": "bf-18639-londonderry-police-and-fire",
+      "name": "Londonderry Police and Fire",
+      "description": "Broadcastify public safety feed 18639 for New Hampshire.",
+      "city": "",
+      "county": "Various",
+      "state": "NH",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new hampshire",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/18639"
+    },
+    {
+      "id": "bf-139-twin-state-fire-mutual-aid",
+      "name": "Twin State Fire Mutual Aid",
+      "description": "Broadcastify public safety feed 139 for New Hampshire.",
+      "city": "",
+      "county": "Various",
+      "state": "NH",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new hampshire",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/139"
+    },
+    {
+      "id": "bf-2341-concord-fire-alarm-capital-area",
+      "name": "Concord Fire Alarm - Capital Area",
+      "description": "Broadcastify public safety feed 2341 for New Hampshire.",
+      "city": "",
+      "county": "Various",
+      "state": "NH",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new hampshire",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/2341"
+    },
+    {
+      "id": "bf-519-essex-and-southern-rockingham-counties-fir",
+      "name": "Essex and Southern Rockingham Counties Fire / EMS",
+      "description": "Broadcastify public safety feed 519 for New Hampshire.",
+      "city": "",
+      "county": "Various",
+      "state": "NH",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new hampshire",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/519"
+    },
+    {
+      "id": "bf-46042-rochester-nh-police-and-fire",
+      "name": "Rochester NH Police and Fire",
+      "description": "Broadcastify public safety feed 46042 for New Hampshire.",
+      "city": "",
+      "county": "Various",
+      "state": "NH",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new hampshire",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46042"
+    },
+    {
+      "id": "bf-33795-carroll-county-public-safety",
+      "name": "Carroll County Public Safety",
+      "description": "Broadcastify public safety feed 33795 for New Hampshire.",
+      "city": "",
+      "county": "Various",
+      "state": "NH",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new hampshire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/33795"
+    },
+    {
+      "id": "bf-27935-derry-police-dispatch",
+      "name": "Derry Police Dispatch",
+      "description": "Broadcastify public safety feed 27935 for New Hampshire.",
+      "city": "",
+      "county": "Various",
+      "state": "NH",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new hampshire",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/27935"
+    },
+    {
+      "id": "bf-14724-carroll-county-police-and-fire",
+      "name": "Carroll County Police and Fire",
+      "description": "Broadcastify public safety feed 14724 for New Hampshire.",
+      "city": "",
+      "county": "Various",
+      "state": "NH",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new hampshire",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/14724"
+    },
+    {
+      "id": "bf-29597-derry-fire",
+      "name": "Derry Fire",
+      "description": "Broadcastify public safety feed 29597 for New Hampshire.",
+      "city": "",
+      "county": "Various",
+      "state": "NH",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new hampshire",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/29597"
+    },
+    {
+      "id": "bf-141-coos-and-grafton-counties-police-and-fire",
+      "name": "Coos and Grafton Counties Police and Fire",
+      "description": "Broadcastify public safety feed 141 for New Hampshire.",
+      "city": "",
+      "county": "Various",
+      "state": "NH",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new hampshire",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/141"
+    },
+    {
+      "id": "bf-46401-seacoast-public-safety-west",
+      "name": "Seacoast Public Safety - West",
+      "description": "Broadcastify public safety feed 46401 for New Hampshire.",
+      "city": "",
+      "county": "Various",
+      "state": "NH",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new hampshire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46401"
+    },
+    {
+      "id": "bf-38335-amherst-police-and-fire",
+      "name": "Amherst Police and Fire",
+      "description": "Broadcastify public safety feed 38335 for New Hampshire.",
+      "city": "",
+      "county": "Various",
+      "state": "NH",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new hampshire",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38335"
+    },
+    {
+      "id": "bf-38866-sunapee-fire-and-ems-dispatch",
+      "name": "Sunapee Fire and EMS Dispatch",
+      "description": "Broadcastify public safety feed 38866 for New Hampshire.",
+      "city": "",
+      "county": "Various",
+      "state": "NH",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new hampshire",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38866"
+    },
+    {
+      "id": "bf-47127-laconia-area-public-safety",
+      "name": "Laconia Area Public Safety",
+      "description": "Broadcastify public safety feed 47127 for New Hampshire.",
+      "city": "",
+      "county": "Various",
+      "state": "NH",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new hampshire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47127"
+    },
+    {
+      "id": "bf-31641-milford-police-fire-and-ems",
+      "name": "Milford Police, Fire and EMS",
+      "description": "Broadcastify public safety feed 31641 for New Hampshire.",
+      "city": "",
+      "county": "Various",
+      "state": "NH",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new hampshire",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/31641"
+    },
+    {
+      "id": "bf-36946-concord-police-dispatch",
+      "name": "Concord Police Dispatch",
+      "description": "Broadcastify public safety feed 36946 for New Hampshire.",
+      "city": "",
+      "county": "Various",
+      "state": "NH",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new hampshire",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/36946"
+    },
+    {
+      "id": "bf-41783-merrimack-county-public-safety",
+      "name": "Merrimack County Public Safety",
+      "description": "Broadcastify public safety feed 41783 for New Hampshire.",
+      "city": "",
+      "county": "Various",
+      "state": "NH",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new hampshire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41783"
+    },
+    {
+      "id": "bf-31226-brookline-hollis-mason-police-fire-and-ems",
+      "name": "Brookline Hollis Mason Police, Fire and EMS",
+      "description": "Broadcastify public safety feed 31226 for New Hampshire.",
+      "city": "",
+      "county": "Various",
+      "state": "NH",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new hampshire",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/31226"
+    },
+    {
+      "id": "bf-21728-chester-and-auburn-fire",
+      "name": "Chester and Auburn Fire",
+      "description": "Broadcastify public safety feed 21728 for New Hampshire.",
+      "city": "",
+      "county": "Various",
+      "state": "NH",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new hampshire",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/21728"
+    },
+    {
+      "id": "bf-26080-rockingham-county-public-safety-seacoast-a",
+      "name": "Rockingham County Public Safety - Seacoast Area",
+      "description": "Broadcastify public safety feed 26080 for New Hampshire.",
+      "city": "",
+      "county": "Various",
+      "state": "NH",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new hampshire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/26080"
+    },
+    {
+      "id": "bf-28733-gorham-fire",
+      "name": "Gorham Fire",
+      "description": "Broadcastify public safety feed 28733 for New Hampshire.",
+      "city": "",
+      "county": "Various",
+      "state": "NH",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new hampshire",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/28733"
+    },
+    {
+      "id": "bf-28585-colebrook-fire",
+      "name": "Colebrook Fire",
+      "description": "Broadcastify public safety feed 28585 for New Hampshire.",
+      "city": "",
+      "county": "Various",
+      "state": "NH",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new hampshire",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/28585"
+    },
+    {
+      "id": "bf-44607-keene-fire-stream",
+      "name": "Keene Fire Stream",
+      "description": "Broadcastify public safety feed 44607 for New Hampshire.",
+      "city": "",
+      "county": "Various",
+      "state": "NH",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new hampshire",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44607"
+    },
+    {
+      "id": "bf-30983-windham-fire",
+      "name": "Windham Fire",
+      "description": "Broadcastify public safety feed 30983 for New Hampshire.",
+      "city": "",
+      "county": "Various",
+      "state": "NH",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new hampshire",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/30983"
+    },
+    {
+      "id": "bf-43508-hudson-fire-department",
+      "name": "Hudson Fire Department",
+      "description": "Broadcastify public safety feed 43508 for New Hampshire.",
+      "city": "",
+      "county": "Various",
+      "state": "NH",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new hampshire",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43508"
+    },
+    {
+      "id": "bf-27942-dover-police-dispatch-1",
+      "name": "Dover Police Dispatch 1",
+      "description": "Broadcastify public safety feed 27942 for New Hampshire.",
+      "city": "",
+      "county": "Various",
+      "state": "NH",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new hampshire",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/27942"
+    },
+    {
+      "id": "bf-36730-new-hampshire-state-police",
+      "name": "New Hampshire State Police",
+      "description": "Broadcastify public safety feed 36730 for New Hampshire.",
+      "city": "",
+      "county": "Various",
+      "state": "NH",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new hampshire",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/36730"
+    },
+    {
+      "id": "bf-47130-belknap-county-police",
+      "name": "Belknap County Police",
+      "description": "Broadcastify public safety feed 47130 for New Hampshire.",
+      "city": "",
+      "county": "Various",
+      "state": "NH",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new hampshire",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47130"
+    },
+    {
+      "id": "bf-712-worcester-county-fire-and-ems-northern",
+      "name": "Worcester County Fire and EMS - Northern",
+      "description": "Broadcastify public safety feed 712 for New Hampshire.",
+      "city": "",
+      "county": "Various",
+      "state": "NH",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new hampshire",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/712"
+    },
+    {
+      "id": "bf-17057-bedford-fire-dispatch",
+      "name": "Bedford Fire Dispatch",
+      "description": "Broadcastify public safety feed 17057 for New Hampshire.",
+      "city": "",
+      "county": "Various",
+      "state": "NH",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new hampshire",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/17057"
+    },
+    {
+      "id": "bf-31545-litchfield-fire-and-ems",
+      "name": "Litchfield Fire and EMS",
+      "description": "Broadcastify public safety feed 31545 for New Hampshire.",
+      "city": "",
+      "county": "Various",
+      "state": "NH",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new hampshire",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/31545"
+    },
+    {
+      "id": "bf-46449-newport-fire",
+      "name": "Newport Fire",
+      "description": "Broadcastify public safety feed 46449 for New Hampshire.",
+      "city": "",
+      "county": "Various",
+      "state": "NH",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new hampshire",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46449"
+    },
+    {
+      "id": "bf-46342-conway-fire-dispatch",
+      "name": "Conway Fire Dispatch",
+      "description": "Broadcastify public safety feed 46342 for New Hampshire.",
+      "city": "",
+      "county": "Various",
+      "state": "NH",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new hampshire",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46342"
+    },
+    {
+      "id": "bf-26703-lancaster-fire",
+      "name": "Lancaster Fire",
+      "description": "Broadcastify public safety feed 26703 for New Hampshire.",
+      "city": "",
+      "county": "Various",
+      "state": "NH",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new hampshire",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/26703"
+    },
+    {
+      "id": "bf-37452-greenland-fire",
+      "name": "Greenland Fire",
+      "description": "Broadcastify public safety feed 37452 for New Hampshire.",
+      "city": "",
+      "county": "Various",
+      "state": "NH",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new hampshire",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37452"
+    },
+    {
+      "id": "bf-32724-newington-fire-rescue",
+      "name": "Newington Fire Rescue",
+      "description": "Broadcastify public safety feed 32724 for New Hampshire.",
+      "city": "",
+      "county": "Various",
+      "state": "NH",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new hampshire",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32724"
+    },
+    {
+      "id": "bf-28011-epping-fire-rescue",
+      "name": "Epping Fire Rescue",
+      "description": "Broadcastify public safety feed 28011 for New Hampshire.",
+      "city": "",
+      "county": "Various",
+      "state": "NH",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new hampshire",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/28011"
+    },
+    {
+      "id": "bf-14388-lebanon-fire-dispatch",
+      "name": "Lebanon Fire Dispatch",
+      "description": "Broadcastify public safety feed 14388 for New Hampshire.",
+      "city": "",
+      "county": "Various",
+      "state": "NH",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new hampshire",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/14388"
+    },
+    {
+      "id": "bf-9350-weare-police",
+      "name": "Weare Police",
+      "description": "Broadcastify public safety feed 9350 for New Hampshire.",
+      "city": "",
+      "county": "Various",
+      "state": "NH",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new hampshire",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/9350"
+    },
+    {
+      "id": "bf-25164-souhegan-valley-area-and-nh-forest-fire-se",
+      "name": "Souhegan Valley Area and NH Forest Fire Service",
+      "description": "Broadcastify public safety feed 25164 for New Hampshire.",
+      "city": "",
+      "county": "Various",
+      "state": "NH",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new hampshire",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/25164"
+    },
+    {
+      "id": "bf-27404-merrimack-police-dispatch",
+      "name": "Merrimack Police Dispatch",
+      "description": "Broadcastify public safety feed 27404 for New Hampshire.",
+      "city": "",
+      "county": "Various",
+      "state": "NH",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new hampshire",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/27404"
+    },
+    {
+      "id": "bf-16071-pelham-fire-and-ems",
+      "name": "Pelham Fire and EMS",
+      "description": "Broadcastify public safety feed 16071 for New Hampshire.",
+      "city": "",
+      "county": "Various",
+      "state": "NH",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new hampshire",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/16071"
+    },
+    {
+      "id": "bf-21084-somersworth-fire",
+      "name": "Somersworth Fire",
+      "description": "Broadcastify public safety feed 21084 for New Hampshire.",
+      "city": "",
+      "county": "Various",
+      "state": "NH",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new hampshire",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/21084"
+    },
+    {
+      "id": "bf-37218-merrimack-fire-rescue-dispatch",
+      "name": "Merrimack Fire-Rescue Dispatch",
+      "description": "Broadcastify public safety feed 37218 for New Hampshire.",
+      "city": "",
+      "county": "Various",
+      "state": "NH",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new hampshire",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37218"
+    },
+    {
+      "id": "bf-44609-swnh-district-fire-mutual-aid-2",
+      "name": "SWNH District Fire Mutual Aid 2",
+      "description": "Broadcastify public safety feed 44609 for New Hampshire.",
+      "city": "",
+      "county": "Various",
+      "state": "NH",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new hampshire",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44609"
+    },
+    {
+      "id": "bf-29123-madbury-fire-dispatch",
+      "name": "Madbury Fire Dispatch",
+      "description": "Broadcastify public safety feed 29123 for New Hampshire.",
+      "city": "",
+      "county": "Various",
+      "state": "NH",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new hampshire",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/29123"
+    },
+    {
+      "id": "bf-29622-durham-fire",
+      "name": "Durham Fire",
+      "description": "Broadcastify public safety feed 29622 for New Hampshire.",
+      "city": "",
+      "county": "Various",
+      "state": "NH",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new hampshire",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/29622"
+    },
+    {
+      "id": "bf-30458-rollinsford-fire",
+      "name": "Rollinsford Fire",
+      "description": "Broadcastify public safety feed 30458 for New Hampshire.",
+      "city": "",
+      "county": "Various",
+      "state": "NH",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new hampshire",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/30458"
+    },
+    {
+      "id": "bf-32564-lee-fire-rescue",
+      "name": "Lee Fire Rescue",
+      "description": "Broadcastify public safety feed 32564 for New Hampshire.",
+      "city": "",
+      "county": "Various",
+      "state": "NH",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new hampshire",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32564"
+    },
+    {
+      "id": "bf-34676-dover-fire-rescue-vfire-21-long-hill",
+      "name": "Dover Fire Rescue VFire 21 Long Hill",
+      "description": "Broadcastify public safety feed 34676 for New Hampshire.",
+      "city": "",
+      "county": "Various",
+      "state": "NH",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new hampshire",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/34676"
+    },
+    {
+      "id": "bf-34677-dover-fire-rescue-vfire-21-middle-rd",
+      "name": "Dover Fire Rescue VFire 21 Middle Rd",
+      "description": "Broadcastify public safety feed 34677 for New Hampshire.",
+      "city": "",
+      "county": "Various",
+      "state": "NH",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new hampshire",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/34677"
+    },
+    {
+      "id": "bf-34678-dover-fire-rescue-vfire-21-dispatch",
+      "name": "Dover Fire Rescue VFire 21 Dispatch",
+      "description": "Broadcastify public safety feed 34678 for New Hampshire.",
+      "city": "",
+      "county": "Various",
+      "state": "NH",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new hampshire",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/34678"
+    },
+    {
+      "id": "bf-40583-merrimack-fire",
+      "name": "Merrimack Fire",
+      "description": "Broadcastify public safety feed 40583 for New Hampshire.",
+      "city": "",
+      "county": "Various",
+      "state": "NH",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new hampshire",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40583"
+    },
+    {
+      "id": "bf-46163-strafford-country-north-police-fire-milton",
+      "name": "Strafford Country North Police & Fire - Milton, Farmington, Middleton, New Durham",
+      "description": "Broadcastify public safety feed 46163 for New Hampshire.",
+      "city": "",
+      "county": "Various",
+      "state": "NH",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new hampshire",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46163"
+    },
+    {
+      "id": "bf-34052-ovma-and-wolfeboro-fire-dispatch",
+      "name": "OVMA and Wolfeboro Fire Dispatch",
+      "description": "Broadcastify public safety feed 34052 for New Hampshire.",
+      "city": "",
+      "county": "Various",
+      "state": "NH",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new hampshire",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/34052"
+    },
+    {
+      "id": "bf-23537-sandwich-fire",
+      "name": "Sandwich Fire",
+      "description": "Broadcastify public safety feed 23537 for New Hampshire.",
+      "city": "",
+      "county": "Various",
+      "state": "NH",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new hampshire",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/23537"
+    },
+    {
+      "id": "bf-39328-litchfield-police-department",
+      "name": "Litchfield Police Department",
+      "description": "Broadcastify public safety feed 39328 for New Hampshire.",
+      "city": "",
+      "county": "Various",
+      "state": "NH",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new hampshire",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39328"
+    },
+    {
+      "id": "bf-31407-lebanon-police",
+      "name": "Lebanon Police",
+      "description": "Broadcastify public safety feed 31407 for New Hampshire.",
+      "city": "",
+      "county": "Various",
+      "state": "NH",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new hampshire",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/31407"
+    },
+    {
+      "id": "bf-18019-mcgregor-ems",
+      "name": "McGregor EMS",
+      "description": "Broadcastify public safety feed 18019 for New Hampshire.",
+      "city": "",
+      "county": "Various",
+      "state": "NH",
+      "service_types": [
+        "dispatch",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new hampshire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/18019"
+    },
+    {
+      "id": "bf-17945-rochester-fire",
+      "name": "Rochester Fire",
+      "description": "Broadcastify public safety feed 17945 for New Hampshire.",
+      "city": "",
+      "county": "Various",
+      "state": "NH",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new hampshire",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/17945"
+    },
+    {
+      "id": "bf-45691-hampstead-fire-and-rescue",
+      "name": "Hampstead Fire and Rescue",
+      "description": "Broadcastify public safety feed 45691 for New Hampshire.",
+      "city": "",
+      "county": "Various",
+      "state": "NH",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new hampshire",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45691"
+    },
+    {
+      "id": "bf-37496-hampton-and-hampton-falls-fire",
+      "name": "Hampton and Hampton Falls Fire",
+      "description": "Broadcastify public safety feed 37496 for New Hampshire.",
+      "city": "",
+      "county": "Various",
+      "state": "NH",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new hampshire",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37496"
+    },
+    {
+      "id": "bf-44251-new-boston-fire-department",
+      "name": "New Boston Fire Department",
+      "description": "Broadcastify public safety feed 44251 for New Hampshire.",
+      "city": "",
+      "county": "Various",
+      "state": "NH",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new hampshire",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44251"
+    },
+    {
+      "id": "bf-44471-bedford-police-department",
+      "name": "Bedford Police Department",
+      "description": "Broadcastify public safety feed 44471 for New Hampshire.",
+      "city": "",
+      "county": "Various",
+      "state": "NH",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new hampshire",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44471"
+    },
+    {
+      "id": "bf-31076-exeter-fire",
+      "name": "Exeter Fire",
+      "description": "Broadcastify public safety feed 31076 for New Hampshire.",
+      "city": "",
+      "county": "Various",
+      "state": "NH",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new hampshire",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/31076"
+    },
+    {
+      "id": "bf-27896-stratford-hollow-fire",
+      "name": "Stratford Hollow Fire",
+      "description": "Broadcastify public safety feed 27896 for New Hampshire.",
+      "city": "",
+      "county": "Various",
+      "state": "NH",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new hampshire",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/27896"
+    },
+    {
+      "id": "bf-30967-portsmouth-fire-dispatch",
+      "name": "Portsmouth Fire Dispatch",
+      "description": "Broadcastify public safety feed 30967 for New Hampshire.",
+      "city": "",
+      "county": "Various",
+      "state": "NH",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new hampshire",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/30967"
+    },
+    {
+      "id": "bf-30960-windham-police-and-fire",
+      "name": "Windham Police and Fire",
+      "description": "Broadcastify public safety feed 30960 for New Hampshire.",
+      "city": "",
+      "county": "Various",
+      "state": "NH",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new hampshire",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/30960"
+    },
+    {
+      "id": "bf-27995-whitefield-fire-rescue",
+      "name": "Whitefield Fire Rescue",
+      "description": "Broadcastify public safety feed 27995 for New Hampshire.",
+      "city": "",
+      "county": "Various",
+      "state": "NH",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new hampshire",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/27995"
+    },
+    {
+      "id": "bf-36590-pittsburg-fire",
+      "name": "Pittsburg Fire",
+      "description": "Broadcastify public safety feed 36590 for New Hampshire.",
+      "city": "",
+      "county": "Various",
+      "state": "NH",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new hampshire",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/36590"
+    },
+    {
+      "id": "bf-43320-45th-parallel-ems",
+      "name": "45th Parallel EMS",
+      "description": "Broadcastify public safety feed 43320 for New Hampshire.",
+      "city": "",
+      "county": "Various",
+      "state": "NH",
+      "service_types": [
+        "dispatch",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new hampshire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43320"
+    },
+    {
+      "id": "bf-23723-newton-fire-rescue",
+      "name": "Newton Fire Rescue",
+      "description": "Broadcastify public safety feed 23723 for New Hampshire.",
+      "city": "",
+      "county": "Various",
+      "state": "NH",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new hampshire",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/23723"
+    },
+    {
+      "id": "bf-44337-berlin-fire-dispatch",
+      "name": "Berlin Fire Dispatch",
+      "description": "Broadcastify public safety feed 44337 for New Hampshire.",
+      "city": "",
+      "county": "Various",
+      "state": "NH",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new hampshire",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44337"
+    },
+    {
+      "id": "bf-46161-milan-and-dummer-ambulance",
+      "name": "Milan and Dummer Ambulance",
+      "description": "Broadcastify public safety feed 46161 for New Hampshire.",
+      "city": "",
+      "county": "Various",
+      "state": "NH",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new hampshire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46161"
+    }
+  ]
+}

@@ -1,0 +1,1685 @@
+{
+  "channels": [
+    {
+      "id": "bf-32602-indianapolis-metropolitan-police",
+      "name": "Indianapolis Metropolitan Police",
+      "description": "Broadcastify public safety feed 32602 for Nebraska.",
+      "city": "",
+      "county": "Various",
+      "state": "NE",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "nebraska",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32602"
+    },
+    {
+      "id": "bf-14395-lincoln-police-and-fire-lancaster-county-s",
+      "name": "Lincoln Police and Fire, Lancaster County Sheriff",
+      "description": "Broadcastify public safety feed 14395 for Nebraska.",
+      "city": "",
+      "county": "Various",
+      "state": "NE",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "nebraska",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/14395"
+    },
+    {
+      "id": "bf-39012-scotts-bluff-county-public-safety",
+      "name": "Scotts Bluff County Public Safety",
+      "description": "Broadcastify public safety feed 39012 for Nebraska.",
+      "city": "",
+      "county": "Various",
+      "state": "NE",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "nebraska"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39012"
+    },
+    {
+      "id": "bf-26964-grand-island-police-fire-and-ems",
+      "name": "Grand Island Police, Fire and EMS",
+      "description": "Broadcastify public safety feed 26964 for Nebraska.",
+      "city": "",
+      "county": "Various",
+      "state": "NE",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "nebraska",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/26964"
+    },
+    {
+      "id": "bf-35492-omaha-police-dispatch-northeast",
+      "name": "Omaha Police Dispatch - Northeast",
+      "description": "Broadcastify public safety feed 35492 for Nebraska.",
+      "city": "",
+      "county": "Various",
+      "state": "NE",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "nebraska",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/35492"
+    },
+    {
+      "id": "bf-40751-buffalo-county-city-of-kearney-public-safe",
+      "name": "Buffalo County/City of Kearney Public Safety",
+      "description": "Broadcastify public safety feed 40751 for Nebraska.",
+      "city": "",
+      "county": "Various",
+      "state": "NE",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "nebraska"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40751"
+    },
+    {
+      "id": "bf-35653-lincoln-county-public-safety",
+      "name": "Lincoln County Public Safety",
+      "description": "Broadcastify public safety feed 35653 for Nebraska.",
+      "city": "",
+      "county": "Various",
+      "state": "NE",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "nebraska"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/35653"
+    },
+    {
+      "id": "bf-34221-omaha-fire-department-dispatch",
+      "name": "Omaha Fire Department Dispatch",
+      "description": "Broadcastify public safety feed 34221 for Nebraska.",
+      "city": "",
+      "county": "Various",
+      "state": "NE",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "nebraska",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/34221"
+    },
+    {
+      "id": "bf-18959-lincoln-fire-and-rescue",
+      "name": "Lincoln Fire and Rescue",
+      "description": "Broadcastify public safety feed 18959 for Nebraska.",
+      "city": "",
+      "county": "Various",
+      "state": "NE",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "nebraska",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/18959"
+    },
+    {
+      "id": "bf-35491-omaha-police-dispatch-southwest",
+      "name": "Omaha Police Dispatch - Southwest",
+      "description": "Broadcastify public safety feed 35491 for Nebraska.",
+      "city": "",
+      "county": "Various",
+      "state": "NE",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "nebraska",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/35491"
+    },
+    {
+      "id": "bf-35495-omaha-police-dispatch-northwest",
+      "name": "Omaha Police Dispatch - Northwest",
+      "description": "Broadcastify public safety feed 35495 for Nebraska.",
+      "city": "",
+      "county": "Various",
+      "state": "NE",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "nebraska",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/35495"
+    },
+    {
+      "id": "bf-44543-madison-county-public-safety",
+      "name": "Madison County Public Safety",
+      "description": "Broadcastify public safety feed 44543 for Nebraska.",
+      "city": "",
+      "county": "Various",
+      "state": "NE",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "nebraska"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44543"
+    },
+    {
+      "id": "bf-35490-omaha-police-dispatch-southeast",
+      "name": "Omaha Police Dispatch - Southeast",
+      "description": "Broadcastify public safety feed 35490 for Nebraska.",
+      "city": "",
+      "county": "Various",
+      "state": "NE",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "nebraska",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/35490"
+    },
+    {
+      "id": "bf-34178-omaha-police-dispatch-west",
+      "name": "Omaha Police Dispatch - West",
+      "description": "Broadcastify public safety feed 34178 for Nebraska.",
+      "city": "",
+      "county": "Various",
+      "state": "NE",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "nebraska",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/34178"
+    },
+    {
+      "id": "bf-23275-otoe-cass-and-johnson-counties-sheriff-and",
+      "name": "Otoe, Cass and Johnson Counties Sheriff and Fire",
+      "description": "Broadcastify public safety feed 23275 for Nebraska.",
+      "city": "",
+      "county": "Various",
+      "state": "NE",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "nebraska",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/23275"
+    },
+    {
+      "id": "bf-43364-adams-county-sheriff-hastings-police-emerg",
+      "name": "Adams County Sheriff-Hastings Police & Emergency Services",
+      "description": "Broadcastify public safety feed 43364 for Nebraska.",
+      "city": "",
+      "county": "Various",
+      "state": "NE",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "nebraska",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43364"
+    },
+    {
+      "id": "bf-37995-platte-county-fire-departments",
+      "name": "Platte County Fire Departments",
+      "description": "Broadcastify public safety feed 37995 for Nebraska.",
+      "city": "",
+      "county": "Various",
+      "state": "NE",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "nebraska",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37995"
+    },
+    {
+      "id": "bf-41080-nebraska-state-patrol-troop-h-a",
+      "name": "Nebraska State Patrol - Troop H & A",
+      "description": "Broadcastify public safety feed 41080 for Nebraska.",
+      "city": "",
+      "county": "Various",
+      "state": "NE",
+      "service_types": [
+        "dispatch",
+        "law",
+        "highway"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "nebraska",
+        "law",
+        "highway"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41080"
+    },
+    {
+      "id": "bf-32263-cass-county-fire-ems",
+      "name": "Cass County Fire/EMS",
+      "description": "Broadcastify public safety feed 32263 for Nebraska.",
+      "city": "",
+      "county": "Various",
+      "state": "NE",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "nebraska",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32263"
+    },
+    {
+      "id": "bf-34785-sarpy-county-law-east",
+      "name": "Sarpy County LAW-EAST",
+      "description": "Broadcastify public safety feed 34785 for Nebraska.",
+      "city": "",
+      "county": "Various",
+      "state": "NE",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "nebraska"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/34785"
+    },
+    {
+      "id": "bf-40675-keith-county-fire-ems",
+      "name": "Keith County Fire/EMS",
+      "description": "Broadcastify public safety feed 40675 for Nebraska.",
+      "city": "",
+      "county": "Various",
+      "state": "NE",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "nebraska",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40675"
+    },
+    {
+      "id": "bf-43260-sarpy-county-sheriff",
+      "name": "Sarpy County Sheriff",
+      "description": "Broadcastify public safety feed 43260 for Nebraska.",
+      "city": "",
+      "county": "Various",
+      "state": "NE",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "nebraska",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43260"
+    },
+    {
+      "id": "bf-12411-saunders-county-sheriff-fire-and-ems",
+      "name": "Saunders County Sheriff, Fire and EMS",
+      "description": "Broadcastify public safety feed 12411 for Nebraska.",
+      "city": "",
+      "county": "Various",
+      "state": "NE",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "nebraska",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/12411"
+    },
+    {
+      "id": "bf-21526-seward-county-sheriff-and-milford-police",
+      "name": "Seward County Sheriff and Milford Police",
+      "description": "Broadcastify public safety feed 21526 for Nebraska.",
+      "city": "",
+      "county": "Various",
+      "state": "NE",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "nebraska",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/21526"
+    },
+    {
+      "id": "bf-34784-sarpy-county-fire-east",
+      "name": "Sarpy County FIRE-EAST",
+      "description": "Broadcastify public safety feed 34784 for Nebraska.",
+      "city": "",
+      "county": "Various",
+      "state": "NE",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "nebraska",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/34784"
+    },
+    {
+      "id": "bf-16544-ansley-fire-and-rescue-dispatch",
+      "name": "Ansley Fire and Rescue Dispatch",
+      "description": "Broadcastify public safety feed 16544 for Nebraska.",
+      "city": "",
+      "county": "Various",
+      "state": "NE",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "nebraska",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/16544"
+    },
+    {
+      "id": "bf-46673-loup-valley-loup-platte-task-force-teams",
+      "name": "Loup Valley/Loup Platte Task Force Teams",
+      "description": "Broadcastify public safety feed 46673 for Nebraska.",
+      "city": "",
+      "county": "Various",
+      "state": "NE",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "nebraska"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46673"
+    },
+    {
+      "id": "bf-34783-sarpy-county-fire-west",
+      "name": "Sarpy County FIRE-WEST",
+      "description": "Broadcastify public safety feed 34783 for Nebraska.",
+      "city": "",
+      "county": "Various",
+      "state": "NE",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "nebraska",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/34783"
+    },
+    {
+      "id": "bf-38077-merrick-county-public-safety",
+      "name": "Merrick County Public Safety",
+      "description": "Broadcastify public safety feed 38077 for Nebraska.",
+      "city": "",
+      "county": "Various",
+      "state": "NE",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "nebraska"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38077"
+    },
+    {
+      "id": "bf-21653-twin-loops-fire-mutual-aid",
+      "name": "Twin Loops Fire Mutual Aid",
+      "description": "Broadcastify public safety feed 21653 for Nebraska.",
+      "city": "",
+      "county": "Various",
+      "state": "NE",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "nebraska",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/21653"
+    },
+    {
+      "id": "bf-33013-giltner-fire-and-rescue",
+      "name": "Giltner Fire and Rescue",
+      "description": "Broadcastify public safety feed 33013 for Nebraska.",
+      "city": "",
+      "county": "Various",
+      "state": "NE",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "nebraska",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/33013"
+    },
+    {
+      "id": "bf-35597-butler-county-law-enforcement",
+      "name": "Butler County Law Enforcement",
+      "description": "Broadcastify public safety feed 35597 for Nebraska.",
+      "city": "",
+      "county": "Various",
+      "state": "NE",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "nebraska",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/35597"
+    },
+    {
+      "id": "bf-26677-minden-fire-and-rescue",
+      "name": "Minden Fire and Rescue",
+      "description": "Broadcastify public safety feed 26677 for Nebraska.",
+      "city": "",
+      "county": "Various",
+      "state": "NE",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "nebraska",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/26677"
+    },
+    {
+      "id": "bf-36235-fillmore-county-fire",
+      "name": "Fillmore County Fire",
+      "description": "Broadcastify public safety feed 36235 for Nebraska.",
+      "city": "",
+      "county": "Various",
+      "state": "NE",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "nebraska",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/36235"
+    },
+    {
+      "id": "bf-21281-lancaster-county-rural-fire-and-rescue",
+      "name": "Lancaster County Rural Fire and Rescue",
+      "description": "Broadcastify public safety feed 21281 for Nebraska.",
+      "city": "",
+      "county": "Various",
+      "state": "NE",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "nebraska",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/21281"
+    },
+    {
+      "id": "bf-43772-omaha-fire-tac3",
+      "name": "Omaha Fire (TAC3)",
+      "description": "Broadcastify public safety feed 43772 for Nebraska.",
+      "city": "",
+      "county": "Various",
+      "state": "NE",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "nebraska",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43772"
+    },
+    {
+      "id": "bf-39790-douglas-county-sheriff",
+      "name": "Douglas County Sheriff",
+      "description": "Broadcastify public safety feed 39790 for Nebraska.",
+      "city": "",
+      "county": "Various",
+      "state": "NE",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "nebraska",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39790"
+    },
+    {
+      "id": "bf-34786-sarpy-county-law-west",
+      "name": "Sarpy County LAW-WEST",
+      "description": "Broadcastify public safety feed 34786 for Nebraska.",
+      "city": "",
+      "county": "Various",
+      "state": "NE",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "nebraska"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/34786"
+    },
+    {
+      "id": "bf-46096-cuming-county-dodge-county-public-safety",
+      "name": "Cuming County/Dodge County Public Safety",
+      "description": "Broadcastify public safety feed 46096 for Nebraska.",
+      "city": "",
+      "county": "Various",
+      "state": "NE",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "nebraska"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46096"
+    },
+    {
+      "id": "bf-10314-adams-county-and-hastings-fire-ems",
+      "name": "Adams County and Hastings Fire / EMS",
+      "description": "Broadcastify public safety feed 10314 for Nebraska.",
+      "city": "",
+      "county": "Various",
+      "state": "NE",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "nebraska",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/10314"
+    },
+    {
+      "id": "bf-16732-chapman-fire-and-rescue",
+      "name": "Chapman Fire and Rescue",
+      "description": "Broadcastify public safety feed 16732 for Nebraska.",
+      "city": "",
+      "county": "Various",
+      "state": "NE",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "nebraska",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/16732"
+    },
+    {
+      "id": "bf-40065-wayne-sheriff-police-fire-ems-campus-secur",
+      "name": "Wayne Sheriff, Police, Fire, EMS, Campus Security",
+      "description": "Broadcastify public safety feed 40065 for Nebraska.",
+      "city": "",
+      "county": "Various",
+      "state": "NE",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "nebraska",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40065"
+    },
+    {
+      "id": "bf-43186-central-city-fire",
+      "name": "Central City Fire",
+      "description": "Broadcastify public safety feed 43186 for Nebraska.",
+      "city": "",
+      "county": "Various",
+      "state": "NE",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "nebraska",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43186"
+    },
+    {
+      "id": "bf-14843-broadwater-volunteer-fire",
+      "name": "Broadwater Volunteer Fire",
+      "description": "Broadcastify public safety feed 14843 for Nebraska.",
+      "city": "",
+      "county": "Various",
+      "state": "NE",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "nebraska",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/14843"
+    },
+    {
+      "id": "bf-35547-platte-county-law-enforcement",
+      "name": "Platte County Law Enforcement",
+      "description": "Broadcastify public safety feed 35547 for Nebraska.",
+      "city": "",
+      "county": "Various",
+      "state": "NE",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "nebraska",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/35547"
+    },
+    {
+      "id": "bf-35546-polk-county-public-safety",
+      "name": "Polk County Public Safety",
+      "description": "Broadcastify public safety feed 35546 for Nebraska.",
+      "city": "",
+      "county": "Various",
+      "state": "NE",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "nebraska"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/35546"
+    },
+    {
+      "id": "bf-18882-bartley-fire-and-ems",
+      "name": "Bartley Fire and EMS",
+      "description": "Broadcastify public safety feed 18882 for Nebraska.",
+      "city": "",
+      "county": "Various",
+      "state": "NE",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "nebraska",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/18882"
+    },
+    {
+      "id": "bf-37022-valley-county-law-enforcement",
+      "name": "Valley County Law Enforcement",
+      "description": "Broadcastify public safety feed 37022 for Nebraska.",
+      "city": "",
+      "county": "Various",
+      "state": "NE",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "nebraska",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37022"
+    },
+    {
+      "id": "bf-16830-hay-springs-fire-dispatch",
+      "name": "Hay Springs Fire Dispatch",
+      "description": "Broadcastify public safety feed 16830 for Nebraska.",
+      "city": "",
+      "county": "Various",
+      "state": "NE",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "nebraska",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/16830"
+    },
+    {
+      "id": "bf-43259-sarpy-county-fire-station-alerting",
+      "name": "Sarpy County Fire Station Alerting",
+      "description": "Broadcastify public safety feed 43259 for Nebraska.",
+      "city": "",
+      "county": "Various",
+      "state": "NE",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "nebraska",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43259"
+    },
+    {
+      "id": "bf-25568-valparaiso-rural-fire",
+      "name": "Valparaiso Rural Fire",
+      "description": "Broadcastify public safety feed 25568 for Nebraska.",
+      "city": "",
+      "county": "Various",
+      "state": "NE",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "nebraska",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/25568"
+    },
+    {
+      "id": "bf-45836-dodge-county-sheriff-dispatch",
+      "name": "Dodge County Sheriff Dispatch",
+      "description": "Broadcastify public safety feed 45836 for Nebraska.",
+      "city": "",
+      "county": "Various",
+      "state": "NE",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "nebraska",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45836"
+    },
+    {
+      "id": "bf-23453-ainsworth-fire",
+      "name": "Ainsworth Fire",
+      "description": "Broadcastify public safety feed 23453 for Nebraska.",
+      "city": "",
+      "county": "Various",
+      "state": "NE",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "nebraska",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/23453"
+    },
+    {
+      "id": "bf-23505-brown-county-rural-fire",
+      "name": "Brown County Rural Fire",
+      "description": "Broadcastify public safety feed 23505 for Nebraska.",
+      "city": "",
+      "county": "Various",
+      "state": "NE",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "nebraska",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/23505"
+    },
+    {
+      "id": "bf-46052-saunders-butler-county-public-safety",
+      "name": "Saunders/Butler County Public Safety",
+      "description": "Broadcastify public safety feed 46052 for Nebraska.",
+      "city": "",
+      "county": "Various",
+      "state": "NE",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "nebraska"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46052"
+    },
+    {
+      "id": "bf-15244-plattsmouth-volunteer-fire",
+      "name": "Plattsmouth Volunteer Fire",
+      "description": "Broadcastify public safety feed 15244 for Nebraska.",
+      "city": "",
+      "county": "Various",
+      "state": "NE",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "nebraska",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/15244"
+    },
+    {
+      "id": "bf-22737-imperial-volunteer-fire",
+      "name": "Imperial Volunteer Fire",
+      "description": "Broadcastify public safety feed 22737 for Nebraska.",
+      "city": "",
+      "county": "Various",
+      "state": "NE",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "nebraska",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/22737"
+    },
+    {
+      "id": "bf-35598-colfax-county-public-safety",
+      "name": "Colfax County Public Safety",
+      "description": "Broadcastify public safety feed 35598 for Nebraska.",
+      "city": "",
+      "county": "Various",
+      "state": "NE",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "nebraska"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/35598"
+    },
+    {
+      "id": "bf-7614-dawes-county-fire-and-ems",
+      "name": "Dawes County Fire and EMS",
+      "description": "Broadcastify public safety feed 7614 for Nebraska.",
+      "city": "",
+      "county": "Various",
+      "state": "NE",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "nebraska",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/7614"
+    },
+    {
+      "id": "bf-26123-fremont-rural-fire",
+      "name": "Fremont Rural Fire",
+      "description": "Broadcastify public safety feed 26123 for Nebraska.",
+      "city": "",
+      "county": "Various",
+      "state": "NE",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "nebraska",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/26123"
+    },
+    {
+      "id": "bf-30494-nickerson-fire",
+      "name": "Nickerson Fire",
+      "description": "Broadcastify public safety feed 30494 for Nebraska.",
+      "city": "",
+      "county": "Various",
+      "state": "NE",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "nebraska",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/30494"
+    },
+    {
+      "id": "bf-31877-hooper-fire",
+      "name": "Hooper Fire",
+      "description": "Broadcastify public safety feed 31877 for Nebraska.",
+      "city": "",
+      "county": "Various",
+      "state": "NE",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "nebraska",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/31877"
+    },
+    {
+      "id": "bf-37230-fremont-fire",
+      "name": "Fremont Fire",
+      "description": "Broadcastify public safety feed 37230 for Nebraska.",
+      "city": "",
+      "county": "Various",
+      "state": "NE",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "nebraska",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37230"
+    },
+    {
+      "id": "bf-46300-norfolk-fire-ops1",
+      "name": "Norfolk Fire OPS1",
+      "description": "Broadcastify public safety feed 46300 for Nebraska.",
+      "city": "",
+      "county": "Various",
+      "state": "NE",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "nebraska",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46300"
+    },
+    {
+      "id": "bf-45843-fremont-police-dispatch",
+      "name": "Fremont Police Dispatch",
+      "description": "Broadcastify public safety feed 45843 for Nebraska.",
+      "city": "",
+      "county": "Various",
+      "state": "NE",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "nebraska",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45843"
+    },
+    {
+      "id": "bf-43771-douglas-county-rural-fire-departments",
+      "name": "Douglas County Rural Fire Departments",
+      "description": "Broadcastify public safety feed 43771 for Nebraska.",
+      "city": "",
+      "county": "Various",
+      "state": "NE",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "nebraska",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43771"
+    },
+    {
+      "id": "bf-43773-omaha-fire-ofd-fire",
+      "name": "Omaha Fire (OFD Fire)",
+      "description": "Broadcastify public safety feed 43773 for Nebraska.",
+      "city": "",
+      "county": "Various",
+      "state": "NE",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "nebraska",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43773"
+    },
+    {
+      "id": "bf-19159-benkelman-fire",
+      "name": "Benkelman Fire",
+      "description": "Broadcastify public safety feed 19159 for Nebraska.",
+      "city": "",
+      "county": "Various",
+      "state": "NE",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "nebraska",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/19159"
+    },
+    {
+      "id": "bf-19672-grand-island-fire",
+      "name": "Grand Island Fire",
+      "description": "Broadcastify public safety feed 19672 for Nebraska.",
+      "city": "",
+      "county": "Various",
+      "state": "NE",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "nebraska",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/19672"
+    },
+    {
+      "id": "bf-20687-culbertson-rescue",
+      "name": "Culbertson Rescue",
+      "description": "Broadcastify public safety feed 20687 for Nebraska.",
+      "city": "",
+      "county": "Various",
+      "state": "NE",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "nebraska"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/20687"
+    },
+    {
+      "id": "bf-38138-palisade-fire-and-rescue",
+      "name": "Palisade Fire and Rescue",
+      "description": "Broadcastify public safety feed 38138 for Nebraska.",
+      "city": "",
+      "county": "Various",
+      "state": "NE",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "nebraska",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38138"
+    },
+    {
+      "id": "bf-42804-stratton-fd",
+      "name": "Stratton FD",
+      "description": "Broadcastify public safety feed 42804 for Nebraska.",
+      "city": "",
+      "county": "Various",
+      "state": "NE",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "nebraska"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42804"
+    },
+    {
+      "id": "bf-46989-ogallala-fd",
+      "name": "Ogallala FD",
+      "description": "Broadcastify public safety feed 46989 for Nebraska.",
+      "city": "",
+      "county": "Various",
+      "state": "NE",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "nebraska"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46989"
+    },
+    {
+      "id": "bf-30234-lincoln-county-fire-and-ems-dispatch",
+      "name": "Lincoln County Fire and EMS Dispatch",
+      "description": "Broadcastify public safety feed 30234 for Nebraska.",
+      "city": "",
+      "county": "Various",
+      "state": "NE",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "nebraska",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/30234"
+    }
+  ]
+}

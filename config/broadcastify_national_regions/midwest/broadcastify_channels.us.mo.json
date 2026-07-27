@@ -1,0 +1,2297 @@
+{
+  "channels": [
+    {
+      "id": "bf-32602-indianapolis-metropolitan-police",
+      "name": "Indianapolis Metropolitan Police",
+      "description": "Broadcastify public safety feed 32602 for Missouri.",
+      "city": "",
+      "county": "Various",
+      "state": "MO",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "missouri",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32602"
+    },
+    {
+      "id": "bf-4142-springfield-police-and-fire-greene-county-",
+      "name": "Springfield Police and Fire, Greene County Sheriff and Fire",
+      "description": "Broadcastify public safety feed 4142 for Missouri.",
+      "city": "",
+      "county": "Various",
+      "state": "MO",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "missouri",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/4142"
+    },
+    {
+      "id": "bf-23630-kansas-city-regional-public-safety",
+      "name": "Kansas City Regional Public Safety",
+      "description": "Broadcastify public safety feed 23630 for Missouri.",
+      "city": "",
+      "county": "Various",
+      "state": "MO",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "missouri"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/23630"
+    },
+    {
+      "id": "bf-17925-missouri-state-highway-patrol-troop-c",
+      "name": "Missouri State Highway Patrol - Troop C",
+      "description": "Broadcastify public safety feed 17925 for Missouri.",
+      "city": "",
+      "county": "Various",
+      "state": "MO",
+      "service_types": [
+        "dispatch",
+        "law",
+        "highway"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "missouri",
+        "law",
+        "highway"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/17925"
+    },
+    {
+      "id": "bf-2982-linn-county-police-fire-and-ems",
+      "name": "Linn County Police, Fire, and EMS",
+      "description": "Broadcastify public safety feed 2982 for Missouri.",
+      "city": "",
+      "county": "Various",
+      "state": "MO",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "missouri",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/2982"
+    },
+    {
+      "id": "bf-31250-ray-county-public-safety",
+      "name": "Ray County Public Safety",
+      "description": "Broadcastify public safety feed 31250 for Missouri.",
+      "city": "",
+      "county": "Various",
+      "state": "MO",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "missouri"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/31250"
+    },
+    {
+      "id": "bf-19463-st-louis-county-fire-and-ems-south",
+      "name": "St. Louis County Fire and EMS - South",
+      "description": "Broadcastify public safety feed 19463 for Missouri.",
+      "city": "",
+      "county": "Various",
+      "state": "MO",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "missouri",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/19463"
+    },
+    {
+      "id": "bf-20661-columbia-police-and-boone-county-sheriff",
+      "name": "Columbia Police and Boone County Sheriff",
+      "description": "Broadcastify public safety feed 20661 for Missouri.",
+      "city": "",
+      "county": "Various",
+      "state": "MO",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "missouri",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/20661"
+    },
+    {
+      "id": "bf-9518-randolph-county-sheriff-and-ems-moberly-po",
+      "name": "Randolph County Sheriff and EMS, Moberly Police / Fire",
+      "description": "Broadcastify public safety feed 9518 for Missouri.",
+      "city": "",
+      "county": "Various",
+      "state": "MO",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "missouri",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/9518"
+    },
+    {
+      "id": "bf-36219-kansas-city-fire",
+      "name": "Kansas City Fire",
+      "description": "Broadcastify public safety feed 36219 for Missouri.",
+      "city": "",
+      "county": "Various",
+      "state": "MO",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "missouri",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/36219"
+    },
+    {
+      "id": "bf-10142-sullivan-and-surrounding-area-public-safet",
+      "name": "Sullivan and Surrounding Area Public Safety",
+      "description": "Broadcastify public safety feed 10142 for Missouri.",
+      "city": "",
+      "county": "Various",
+      "state": "MO",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "missouri"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/10142"
+    },
+    {
+      "id": "bf-19472-jefferson-county-fire-and-ems-digital",
+      "name": "Jefferson County Fire and EMS - Digital",
+      "description": "Broadcastify public safety feed 19472 for Missouri.",
+      "city": "",
+      "county": "Various",
+      "state": "MO",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "missouri",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/19472"
+    },
+    {
+      "id": "bf-39017-camden-county-public-safety",
+      "name": "Camden County Public Safety",
+      "description": "Broadcastify public safety feed 39017 for Missouri.",
+      "city": "",
+      "county": "Various",
+      "state": "MO",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "missouri"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39017"
+    },
+    {
+      "id": "bf-2757-west-central-il-and-north-east-mo-counties",
+      "name": "West Central IL and North East Mo Counties Public Safety",
+      "description": "Broadcastify public safety feed 2757 for Missouri.",
+      "city": "",
+      "county": "Various",
+      "state": "MO",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "missouri"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/2757"
+    },
+    {
+      "id": "bf-47155-pettis-county-public-safety",
+      "name": "Pettis County Public Safety",
+      "description": "Broadcastify public safety feed 47155 for Missouri.",
+      "city": "",
+      "county": "Various",
+      "state": "MO",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "missouri"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47155"
+    },
+    {
+      "id": "bf-23607-st-louis-county-fire-and-ems-north",
+      "name": "St. Louis County Fire and EMS - North",
+      "description": "Broadcastify public safety feed 23607 for Missouri.",
+      "city": "",
+      "county": "Various",
+      "state": "MO",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "missouri",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/23607"
+    },
+    {
+      "id": "bf-21181-lee-clark-and-hancock-counties-public-safe",
+      "name": "Lee, Clark and Hancock Counties Public Safety",
+      "description": "Broadcastify public safety feed 21181 for Missouri.",
+      "city": "",
+      "county": "Various",
+      "state": "MO",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "missouri"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/21181"
+    },
+    {
+      "id": "bf-46240-sikeston-public-safety-scott-new-madrid-mi",
+      "name": "Sikeston Public Safety / Scott, New Madrid, Mississippi Counties Sheriff",
+      "description": "Broadcastify public safety feed 46240 for Missouri.",
+      "city": "",
+      "county": "Various",
+      "state": "MO",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "missouri",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46240"
+    },
+    {
+      "id": "bf-29127-marion-county-public-safety",
+      "name": "Marion County Public Safety",
+      "description": "Broadcastify public safety feed 29127 for Missouri.",
+      "city": "",
+      "county": "Various",
+      "state": "MO",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "missouri"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/29127"
+    },
+    {
+      "id": "bf-42949-pulaski-county-public-safety",
+      "name": "Pulaski County Public Safety",
+      "description": "Broadcastify public safety feed 42949 for Missouri.",
+      "city": "",
+      "county": "Various",
+      "state": "MO",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "missouri"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42949"
+    },
+    {
+      "id": "bf-2120-eastern-missouri-public-safety",
+      "name": "Eastern Missouri Public Safety",
+      "description": "Broadcastify public safety feed 2120 for Missouri.",
+      "city": "",
+      "county": "Various",
+      "state": "MO",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "missouri"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/2120"
+    },
+    {
+      "id": "bf-37876-cooper-county-police-fire-and-ems",
+      "name": "Cooper County Police, Fire, and EMS",
+      "description": "Broadcastify public safety feed 37876 for Missouri.",
+      "city": "",
+      "county": "Various",
+      "state": "MO",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "missouri",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37876"
+    },
+    {
+      "id": "bf-31142-phelps-county-sheriff-and-fire",
+      "name": "Phelps County Sheriff and Fire",
+      "description": "Broadcastify public safety feed 31142 for Missouri.",
+      "city": "",
+      "county": "Various",
+      "state": "MO",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "missouri",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/31142"
+    },
+    {
+      "id": "bf-807-crawford-county-sheriff-and-fire",
+      "name": "Crawford County Sheriff and Fire",
+      "description": "Broadcastify public safety feed 807 for Missouri.",
+      "city": "",
+      "county": "Various",
+      "state": "MO",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "missouri",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/807"
+    },
+    {
+      "id": "bf-13323-audrain-county-missouri-public-safety",
+      "name": "Audrain County Missouri Public Safety",
+      "description": "Broadcastify public safety feed 13323 for Missouri.",
+      "city": "",
+      "county": "Various",
+      "state": "MO",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "missouri"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/13323"
+    },
+    {
+      "id": "bf-43851-cape-county-public-safety",
+      "name": "Cape County Public Safety",
+      "description": "Broadcastify public safety feed 43851 for Missouri.",
+      "city": "",
+      "county": "Various",
+      "state": "MO",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "missouri"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43851"
+    },
+    {
+      "id": "bf-10591-aurora-police-fire-and-ems-dispatch",
+      "name": "Aurora Police, Fire and EMS Dispatch",
+      "description": "Broadcastify public safety feed 10591 for Missouri.",
+      "city": "",
+      "county": "Various",
+      "state": "MO",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "missouri",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/10591"
+    },
+    {
+      "id": "bf-46333-st-louis-city-fire-main",
+      "name": "St. Louis City Fire - Main",
+      "description": "Broadcastify public safety feed 46333 for Missouri.",
+      "city": "",
+      "county": "Various",
+      "state": "MO",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "missouri",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46333"
+    },
+    {
+      "id": "bf-14442-southeast-missouri-counties-public-safety",
+      "name": "Southeast Missouri Counties Public Safety",
+      "description": "Broadcastify public safety feed 14442 for Missouri.",
+      "city": "",
+      "county": "Various",
+      "state": "MO",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "missouri"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/14442"
+    },
+    {
+      "id": "bf-938-carroll-chariton-linn-livingston-counties-",
+      "name": "Carroll, Chariton, Linn, Livingston Counties Public Safety",
+      "description": "Broadcastify public safety feed 938 for Missouri.",
+      "city": "",
+      "county": "Various",
+      "state": "MO",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "missouri"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/938"
+    },
+    {
+      "id": "bf-16625-st-francois-county-fire",
+      "name": "St. Francois County Fire",
+      "description": "Broadcastify public safety feed 16625 for Missouri.",
+      "city": "",
+      "county": "Various",
+      "state": "MO",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "missouri",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/16625"
+    },
+    {
+      "id": "bf-46013-taney-county-police",
+      "name": "Taney County Police",
+      "description": "Broadcastify public safety feed 46013 for Missouri.",
+      "city": "",
+      "county": "Various",
+      "state": "MO",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "missouri",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46013"
+    },
+    {
+      "id": "bf-37165-andrew-and-dekalb-counties-fire",
+      "name": "Andrew and Dekalb Counties Fire",
+      "description": "Broadcastify public safety feed 37165 for Missouri.",
+      "city": "",
+      "county": "Various",
+      "state": "MO",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "missouri",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37165"
+    },
+    {
+      "id": "bf-35967-clay-county-public-safety",
+      "name": "Clay County Public Safety",
+      "description": "Broadcastify public safety feed 35967 for Missouri.",
+      "city": "",
+      "county": "Various",
+      "state": "MO",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "missouri"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/35967"
+    },
+    {
+      "id": "bf-1461-grundy-and-livingston-counties-law-fire-an",
+      "name": "Grundy and Livingston Counties Law, Fire and EMS Dispatch",
+      "description": "Broadcastify public safety feed 1461 for Missouri.",
+      "city": "",
+      "county": "Various",
+      "state": "MO",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "missouri",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/1461"
+    },
+    {
+      "id": "bf-44750-northeast-arkansas-southeast-missouri-publ",
+      "name": "Northeast Arkansas & Southeast Missouri Public Safety",
+      "description": "Broadcastify public safety feed 44750 for Missouri.",
+      "city": "",
+      "county": "Various",
+      "state": "MO",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "missouri"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44750"
+    },
+    {
+      "id": "bf-43691-tri-lakes-area-emergency-services",
+      "name": "Tri Lakes Area Emergency Services",
+      "description": "Broadcastify public safety feed 43691 for Missouri.",
+      "city": "",
+      "county": "Various",
+      "state": "MO",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "missouri"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43691"
+    },
+    {
+      "id": "bf-46628-lawrence-and-barry-county-public-safety",
+      "name": "Lawrence and Barry County Public Safety",
+      "description": "Broadcastify public safety feed 46628 for Missouri.",
+      "city": "",
+      "county": "Various",
+      "state": "MO",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "missouri"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46628"
+    },
+    {
+      "id": "bf-24970-cass-county-fire-and-ems-departments-centr",
+      "name": "Cass County Fire and EMS Departments - Central",
+      "description": "Broadcastify public safety feed 24970 for Missouri.",
+      "city": "",
+      "county": "Various",
+      "state": "MO",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "missouri",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/24970"
+    },
+    {
+      "id": "bf-9474-springfield-nixa-ozark-republic-marshfield",
+      "name": "Springfield, Nixa, Ozark, Republic, Marshfield and Greene County Fire",
+      "description": "Broadcastify public safety feed 9474 for Missouri.",
+      "city": "",
+      "county": "Various",
+      "state": "MO",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "missouri",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/9474"
+    },
+    {
+      "id": "bf-46923-dunklin-county-public-safety",
+      "name": "Dunklin County Public Safety",
+      "description": "Broadcastify public safety feed 46923 for Missouri.",
+      "city": "",
+      "county": "Various",
+      "state": "MO",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "missouri"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46923"
+    },
+    {
+      "id": "bf-46428-franklin-county-fire-ems",
+      "name": "Franklin County Fire/EMS",
+      "description": "Broadcastify public safety feed 46428 for Missouri.",
+      "city": "",
+      "county": "Various",
+      "state": "MO",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "missouri",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46428"
+    },
+    {
+      "id": "bf-35780-nodaway-county-ambulance",
+      "name": "Nodaway County Ambulance",
+      "description": "Broadcastify public safety feed 35780 for Missouri.",
+      "city": "",
+      "county": "Various",
+      "state": "MO",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "missouri"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/35780"
+    },
+    {
+      "id": "bf-18081-randolph-jackson-perry-and-genevieve-count",
+      "name": "Randolph, Jackson, Perry and Genevieve Counties Fire, Law and EMS",
+      "description": "Broadcastify public safety feed 18081 for Missouri.",
+      "city": "",
+      "county": "Various",
+      "state": "MO",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "missouri",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/18081"
+    },
+    {
+      "id": "bf-329-boone-county-fire-and-ems",
+      "name": "Boone County Fire and EMS",
+      "description": "Broadcastify public safety feed 329 for Missouri.",
+      "city": "",
+      "county": "Various",
+      "state": "MO",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "missouri",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/329"
+    },
+    {
+      "id": "bf-35666-poplar-bluff-fire-dept",
+      "name": "Poplar Bluff Fire Dept",
+      "description": "Broadcastify public safety feed 35666 for Missouri.",
+      "city": "",
+      "county": "Various",
+      "state": "MO",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "missouri",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/35666"
+    },
+    {
+      "id": "bf-28294-lenox-rural-fire",
+      "name": "Lenox Rural Fire",
+      "description": "Broadcastify public safety feed 28294 for Missouri.",
+      "city": "",
+      "county": "Various",
+      "state": "MO",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "missouri",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/28294"
+    },
+    {
+      "id": "bf-28523-malden-fire",
+      "name": "Malden Fire",
+      "description": "Broadcastify public safety feed 28523 for Missouri.",
+      "city": "",
+      "county": "Various",
+      "state": "MO",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "missouri",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/28523"
+    },
+    {
+      "id": "bf-46617-franklin-county-police-department",
+      "name": "Franklin County Police Department",
+      "description": "Broadcastify public safety feed 46617 for Missouri.",
+      "city": "",
+      "county": "Various",
+      "state": "MO",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "missouri",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46617"
+    },
+    {
+      "id": "bf-40036-springfield-and-greene-county-fire-operati",
+      "name": "Springfield and Greene County Fire Operations",
+      "description": "Broadcastify public safety feed 40036 for Missouri.",
+      "city": "",
+      "county": "Various",
+      "state": "MO",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "missouri",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40036"
+    },
+    {
+      "id": "bf-46648-jasper-county-fire-dispatch",
+      "name": "Jasper County Fire Dispatch",
+      "description": "Broadcastify public safety feed 46648 for Missouri.",
+      "city": "",
+      "county": "Various",
+      "state": "MO",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "missouri",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46648"
+    },
+    {
+      "id": "bf-33636-warrensburg-fire",
+      "name": "Warrensburg Fire",
+      "description": "Broadcastify public safety feed 33636 for Missouri.",
+      "city": "",
+      "county": "Various",
+      "state": "MO",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "missouri",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/33636"
+    },
+    {
+      "id": "bf-40695-lincoln-county-fire-ems",
+      "name": "Lincoln County Fire/EMS",
+      "description": "Broadcastify public safety feed 40695 for Missouri.",
+      "city": "",
+      "county": "Various",
+      "state": "MO",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "missouri",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40695"
+    },
+    {
+      "id": "bf-28560-steele-fire",
+      "name": "Steele Fire",
+      "description": "Broadcastify public safety feed 28560 for Missouri.",
+      "city": "",
+      "county": "Various",
+      "state": "MO",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "missouri",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/28560"
+    },
+    {
+      "id": "bf-39727-saline-county-public-safety",
+      "name": "Saline County Public Safety",
+      "description": "Broadcastify public safety feed 39727 for Missouri.",
+      "city": "",
+      "county": "Various",
+      "state": "MO",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "missouri"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39727"
+    },
+    {
+      "id": "bf-16634-scott-county-fire-departments",
+      "name": "Scott County Fire Departments",
+      "description": "Broadcastify public safety feed 16634 for Missouri.",
+      "city": "",
+      "county": "Various",
+      "state": "MO",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "missouri",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/16634"
+    },
+    {
+      "id": "bf-39655-brunswick-fire",
+      "name": "Brunswick Fire",
+      "description": "Broadcastify public safety feed 39655 for Missouri.",
+      "city": "",
+      "county": "Various",
+      "state": "MO",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "missouri",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39655"
+    },
+    {
+      "id": "bf-42787-chariton-county-ambulance",
+      "name": "Chariton County Ambulance",
+      "description": "Broadcastify public safety feed 42787 for Missouri.",
+      "city": "",
+      "county": "Various",
+      "state": "MO",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "missouri"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42787"
+    },
+    {
+      "id": "bf-17396-dent-county-fire-protection-district",
+      "name": "Dent County Fire Protection District",
+      "description": "Broadcastify public safety feed 17396 for Missouri.",
+      "city": "",
+      "county": "Various",
+      "state": "MO",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "missouri",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/17396"
+    },
+    {
+      "id": "bf-27063-montauk-rural-fire",
+      "name": "Montauk Rural Fire",
+      "description": "Broadcastify public safety feed 27063 for Missouri.",
+      "city": "",
+      "county": "Various",
+      "state": "MO",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "missouri",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/27063"
+    },
+    {
+      "id": "bf-47330-washington-fire-department",
+      "name": "Washington Fire Department",
+      "description": "Broadcastify public safety feed 47330 for Missouri.",
+      "city": "",
+      "county": "Various",
+      "state": "MO",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "missouri",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47330"
+    },
+    {
+      "id": "bf-26851-flora-fire",
+      "name": "Flora Fire",
+      "description": "Broadcastify public safety feed 26851 for Missouri.",
+      "city": "",
+      "county": "Various",
+      "state": "MO",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "missouri",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/26851"
+    },
+    {
+      "id": "bf-42825-eldon-police",
+      "name": "Eldon Police",
+      "description": "Broadcastify public safety feed 42825 for Missouri.",
+      "city": "",
+      "county": "Various",
+      "state": "MO",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "missouri",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42825"
+    },
+    {
+      "id": "bf-44836-monroe-county-mshp-region-b-public-safety",
+      "name": "Monroe County / MSHP Region B Public Safety",
+      "description": "Broadcastify public safety feed 44836 for Missouri.",
+      "city": "",
+      "county": "Various",
+      "state": "MO",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "missouri"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44836"
+    },
+    {
+      "id": "bf-15279-hayti-fire",
+      "name": "Hayti Fire",
+      "description": "Broadcastify public safety feed 15279 for Missouri.",
+      "city": "",
+      "county": "Various",
+      "state": "MO",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "missouri",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/15279"
+    },
+    {
+      "id": "bf-18696-caruthersville-fire",
+      "name": "Caruthersville Fire",
+      "description": "Broadcastify public safety feed 18696 for Missouri.",
+      "city": "",
+      "county": "Various",
+      "state": "MO",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "missouri",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/18696"
+    },
+    {
+      "id": "bf-31691-liberty-township-fire",
+      "name": "Liberty Township Fire",
+      "description": "Broadcastify public safety feed 31691 for Missouri.",
+      "city": "",
+      "county": "Various",
+      "state": "MO",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "missouri",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/31691"
+    },
+    {
+      "id": "bf-16322-st-francois-county-public-safety",
+      "name": "St Francois County Public Safety",
+      "description": "Broadcastify public safety feed 16322 for Missouri.",
+      "city": "",
+      "county": "Various",
+      "state": "MO",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "missouri"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/16322"
+    },
+    {
+      "id": "bf-35816-downing-fire",
+      "name": "Downing Fire",
+      "description": "Broadcastify public safety feed 35816 for Missouri.",
+      "city": "",
+      "county": "Various",
+      "state": "MO",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "missouri",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/35816"
+    },
+    {
+      "id": "bf-10280-adair-county-fire",
+      "name": "Adair County Fire",
+      "description": "Broadcastify public safety feed 10280 for Missouri.",
+      "city": "",
+      "county": "Various",
+      "state": "MO",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "missouri",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/10280"
+    },
+    {
+      "id": "bf-37304-atchison-county-fire",
+      "name": "Atchison County Fire",
+      "description": "Broadcastify public safety feed 37304 for Missouri.",
+      "city": "",
+      "county": "Various",
+      "state": "MO",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "missouri",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37304"
+    },
+    {
+      "id": "bf-37305-fairfax-fire",
+      "name": "Fairfax Fire",
+      "description": "Broadcastify public safety feed 37305 for Missouri.",
+      "city": "",
+      "county": "Various",
+      "state": "MO",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "missouri",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37305"
+    },
+    {
+      "id": "bf-17448-missouri-state-highway-patrol-troop-f",
+      "name": "Missouri State Highway Patrol - Troop F",
+      "description": "Broadcastify public safety feed 17448 for Missouri.",
+      "city": "",
+      "county": "Various",
+      "state": "MO",
+      "service_types": [
+        "dispatch",
+        "law",
+        "highway"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "missouri",
+        "law",
+        "highway"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/17448"
+    },
+    {
+      "id": "bf-30217-central-crossing-fire-protection-district-",
+      "name": "Central Crossing Fire Protection District - Shell Knob",
+      "description": "Broadcastify public safety feed 30217 for Missouri.",
+      "city": "",
+      "county": "Various",
+      "state": "MO",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "missouri",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/30217"
+    },
+    {
+      "id": "bf-44835-barton-county-public-safety",
+      "name": "Barton County Public Safety",
+      "description": "Broadcastify public safety feed 44835 for Missouri.",
+      "city": "",
+      "county": "Various",
+      "state": "MO",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "missouri"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44835"
+    },
+    {
+      "id": "bf-46999-noaa-weather-radio-avillla-wxj61",
+      "name": "NOAA Weather Radio Avillla (WXJ61)",
+      "description": "Broadcastify public safety feed 46999 for Missouri.",
+      "city": "",
+      "county": "Various",
+      "state": "MO",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "missouri"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46999"
+    },
+    {
+      "id": "bf-47187-barton-county-lamar-public-safety",
+      "name": "Barton County / Lamar Public Safety",
+      "description": "Broadcastify public safety feed 47187 for Missouri.",
+      "city": "",
+      "county": "Various",
+      "state": "MO",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "missouri"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47187"
+    },
+    {
+      "id": "bf-28490-boone-county-fire-protection-district-disp",
+      "name": "Boone County Fire Protection District - Dispatch Only",
+      "description": "Broadcastify public safety feed 28490 for Missouri.",
+      "city": "",
+      "county": "Various",
+      "state": "MO",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "missouri",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/28490"
+    },
+    {
+      "id": "bf-47334-butler-police",
+      "name": "Butler Police",
+      "description": "Broadcastify public safety feed 47334 for Missouri.",
+      "city": "",
+      "county": "Various",
+      "state": "MO",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "missouri",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47334"
+    },
+    {
+      "id": "bf-16271-keytesville-fire",
+      "name": "Keytesville Fire",
+      "description": "Broadcastify public safety feed 16271 for Missouri.",
+      "city": "",
+      "county": "Various",
+      "state": "MO",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "missouri",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/16271"
+    },
+    {
+      "id": "bf-17885-salisbury-fire",
+      "name": "Salisbury Fire",
+      "description": "Broadcastify public safety feed 17885 for Missouri.",
+      "city": "",
+      "county": "Various",
+      "state": "MO",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "missouri",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/17885"
+    },
+    {
+      "id": "bf-37233-mendon-fire",
+      "name": "Mendon Fire",
+      "description": "Broadcastify public safety feed 37233 for Missouri.",
+      "city": "",
+      "county": "Various",
+      "state": "MO",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "missouri",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37233"
+    },
+    {
+      "id": "bf-29337-logan-rogersville-fire-protection-district",
+      "name": "Logan-Rogersville Fire Protection District",
+      "description": "Broadcastify public safety feed 29337 for Missouri.",
+      "city": "",
+      "county": "Various",
+      "state": "MO",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "missouri",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/29337"
+    },
+    {
+      "id": "bf-27994-alexandria-fire-protection-district",
+      "name": "Alexandria Fire Protection District",
+      "description": "Broadcastify public safety feed 27994 for Missouri.",
+      "city": "",
+      "county": "Various",
+      "state": "MO",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "missouri",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/27994"
+    },
+    {
+      "id": "bf-34978-clark-county-ambulance-district",
+      "name": "Clark County Ambulance District",
+      "description": "Broadcastify public safety feed 34978 for Missouri.",
+      "city": "",
+      "county": "Various",
+      "state": "MO",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "missouri"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/34978"
+    },
+    {
+      "id": "bf-35527-kahoka-clark-county-rural-fire",
+      "name": "Kahoka/Clark County Rural Fire",
+      "description": "Broadcastify public safety feed 35527 for Missouri.",
+      "city": "",
+      "county": "Various",
+      "state": "MO",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "missouri",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/35527"
+    },
+    {
+      "id": "bf-42615-fishing-river-fire",
+      "name": "Fishing River Fire",
+      "description": "Broadcastify public safety feed 42615 for Missouri.",
+      "city": "",
+      "county": "Various",
+      "state": "MO",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "missouri",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42615"
+    },
+    {
+      "id": "bf-32450-cole-county-fire-protection-districts",
+      "name": "Cole County Fire Protection Districts",
+      "description": "Broadcastify public safety feed 32450 for Missouri.",
+      "city": "",
+      "county": "Various",
+      "state": "MO",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "missouri",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32450"
+    },
+    {
+      "id": "bf-45599-salem-memorial-district-hospital-ems",
+      "name": "Salem Memorial District Hospital EMS",
+      "description": "Broadcastify public safety feed 45599 for Missouri.",
+      "city": "",
+      "county": "Various",
+      "state": "MO",
+      "service_types": [
+        "dispatch",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "missouri",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45599"
+    },
+    {
+      "id": "bf-42360-douglas-county-ema-fire-dispatch",
+      "name": "Douglas County EMA/Fire Dispatch",
+      "description": "Broadcastify public safety feed 42360 for Missouri.",
+      "city": "",
+      "county": "Various",
+      "state": "MO",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "missouri",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42360"
+    },
+    {
+      "id": "bf-37996-dunklin-county-stoddad-and-new-madrid-publ",
+      "name": "Dunklin County, Stoddad, and New Madrid Public Safety",
+      "description": "Broadcastify public safety feed 37996 for Missouri.",
+      "city": "",
+      "county": "Various",
+      "state": "MO",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "missouri"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37996"
+    },
+    {
+      "id": "bf-23554-stanberry-fire",
+      "name": "Stanberry Fire",
+      "description": "Broadcastify public safety feed 23554 for Missouri.",
+      "city": "",
+      "county": "Various",
+      "state": "MO",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "missouri",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/23554"
+    },
+    {
+      "id": "bf-38804-mound-city-fire",
+      "name": "Mound City Fire",
+      "description": "Broadcastify public safety feed 38804 for Missouri.",
+      "city": "",
+      "county": "Various",
+      "state": "MO",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "missouri",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38804"
+    },
+    {
+      "id": "bf-39339-south-holt-county-fire",
+      "name": "South Holt County Fire",
+      "description": "Broadcastify public safety feed 39339 for Missouri.",
+      "city": "",
+      "county": "Various",
+      "state": "MO",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "missouri",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39339"
+    },
+    {
+      "id": "bf-23475-johnson-county-fire-dispatch",
+      "name": "Johnson County Fire Dispatch",
+      "description": "Broadcastify public safety feed 23475 for Missouri.",
+      "city": "",
+      "county": "Various",
+      "state": "MO",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "missouri",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/23475"
+    },
+    {
+      "id": "bf-47238-laclede-county-emergency-services",
+      "name": "Laclede County Emergency Services",
+      "description": "Broadcastify public safety feed 47238 for Missouri.",
+      "city": "",
+      "county": "Various",
+      "state": "MO",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "missouri"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47238"
+    },
+    {
+      "id": "bf-38519-concordia-fire",
+      "name": "Concordia Fire",
+      "description": "Broadcastify public safety feed 38519 for Missouri.",
+      "city": "",
+      "county": "Various",
+      "state": "MO",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "missouri",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38519"
+    },
+    {
+      "id": "bf-9797-lincoln-and-pike-counties-fire-and-ems",
+      "name": "Lincoln and Pike Counties Fire and EMS",
+      "description": "Broadcastify public safety feed 9797 for Missouri.",
+      "city": "",
+      "county": "Various",
+      "state": "MO",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "missouri",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/9797"
+    },
+    {
+      "id": "bf-23670-noel-fire",
+      "name": "Noel Fire",
+      "description": "Broadcastify public safety feed 23670 for Missouri.",
+      "city": "",
+      "county": "Various",
+      "state": "MO",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "missouri",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/23670"
+    },
+    {
+      "id": "bf-31497-southwest-city-fire-dispatch",
+      "name": "Southwest City Fire Dispatch",
+      "description": "Broadcastify public safety feed 31497 for Missouri.",
+      "city": "",
+      "county": "Various",
+      "state": "MO",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "missouri",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/31497"
+    },
+    {
+      "id": "bf-33457-tiff-city-fire",
+      "name": "Tiff City Fire",
+      "description": "Broadcastify public safety feed 33457 for Missouri.",
+      "city": "",
+      "county": "Various",
+      "state": "MO",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "missouri",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/33457"
+    }
+  ]
+}

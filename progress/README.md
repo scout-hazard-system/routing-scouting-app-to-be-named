@@ -38,3 +38,13 @@ For each new iteration, add:
 ## Notes
 - Keep sample logs concise and structured so future debugging can compare iterations quickly.
 - When behavior regresses, create a dedicated iteration and link both failing and fixed logs.
+## Local-only roadmap (current priority)
+1. Audio input portability:
+   - detect available capture devices automatically
+   - support fallback capture paths when primary source is unavailable
+2. Runtime resilience:
+   - maintain stable long-running pipeline behavior during source switches
+   - improve restart/recovery messaging in launcher and logs
+3. Validation loop:
+   - run short standardized validation cycle after each audio-change iteration
+   - store outputs in `progress/logs/iteration-XXX.log`

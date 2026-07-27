@@ -42,6 +42,34 @@ public final class ScannerBackendServer {
       System.getenv().getOrDefault("WAZE_DEEPLINK_BASE_URL", "https://waze.com/ul");
   private static final String WAZE_EMBED_BASE_URL =
       System.getenv().getOrDefault("WAZE_EMBED_BASE_URL", "https://embed.waze.com/iframe");
+  private static final String SELECTOR_PYTHON_BIN =
+      System.getenv().getOrDefault("SELECTOR_PYTHON_BIN", "/home/gibi/Desktop/cop_pipeline/bin/python3");
+  private static final String SELECTOR_SCRIPT_PATH =
+      System.getenv().getOrDefault("SELECTOR_SCRIPT_PATH", "/home/gibi/Desktop/channel_selector.py");
+  private static final String BROADCASTIFY_CHANNELS_FILE =
+      System.getenv().getOrDefault("BROADCASTIFY_CHANNELS_FILE", "/home/gibi/Desktop/config/broadcastify_channels.sample.json");
+  private static final String BROADCASTIFY_SELECTOR_CITY =
+      System.getenv().getOrDefault("BROADCASTIFY_SELECTOR_CITY", "Sample City");
+  private static final String BROADCASTIFY_SELECTOR_COUNTY =
+      System.getenv().getOrDefault("BROADCASTIFY_SELECTOR_COUNTY", "Sample County");
+  private static final String BROADCASTIFY_SELECTOR_STATE =
+      System.getenv().getOrDefault("BROADCASTIFY_SELECTOR_STATE", "Sample State");
+  private static final String BROADCASTIFY_SELECTOR_DESIRED_TYPES =
+      System.getenv().getOrDefault("BROADCASTIFY_SELECTOR_DESIRED_TYPES", "law,dispatch");
+  private static final int BROADCASTIFY_SELECTOR_TOP_K =
+      parseIntOrDefault(System.getenv("BROADCASTIFY_SELECTOR_TOP_K"), 8);
+  private static final int BROADCASTIFY_SELECTOR_PRINT_TOP =
+      parseIntOrDefault(System.getenv("BROADCASTIFY_SELECTOR_PRINT_TOP"), 3);
+  private static final String BROADCASTIFY_SELECTOR_USE_OLLAMA_RERANK =
+      System.getenv().getOrDefault("BROADCASTIFY_SELECTOR_USE_OLLAMA_RERANK", "false");
+  private static final String BROADCASTIFY_SELECTOR_OLLAMA_MODEL =
+      System.getenv().getOrDefault("BROADCASTIFY_SELECTOR_OLLAMA_MODEL", "llama3.1");
+  private static final String BROADCASTIFY_SELECTOR_OLLAMA_URL =
+      System.getenv().getOrDefault("BROADCASTIFY_SELECTOR_OLLAMA_URL", "http://localhost:11434/api/generate");
+  private static final String BROADCASTIFY_SELECTOR_OLLAMA_TIMEOUT =
+      System.getenv().getOrDefault("BROADCASTIFY_SELECTOR_OLLAMA_TIMEOUT", "8.0");
+  private static final String BROADCASTIFY_SELECTOR_OLLAMA_WEIGHT =
+      System.getenv().getOrDefault("BROADCASTIFY_SELECTOR_OLLAMA_WEIGHT", "0.2");
   private static final Path LOG_PATH =
       Path.of(System.getenv().getOrDefault("PIPELINE_LOG_PATH", "/tmp/pipeline_live_doordash.log"));
   private static final String HOST = System.getenv().getOrDefault("JAVA_BACKEND_HOST", DEFAULT_HOST);
@@ -55,6 +83,7 @@ public final class ScannerBackendServer {
     server.createContext("/api/route/weather", new WeatherHandler());
     server.createContext("/api/platform/weather/forecast", new PlatformWeatherHandler());
     server.createContext("/api/platform/waze/route", new WazeRouteHandler());
+    server.createContext("/api/platform/broadcastify/select", new BroadcastifySelectHandler());
     server.createContext("/api/platform/providers/status", new ProviderStatusHandler());
     server.createContext("/api/mobile/bootstrap", new MobileBootstrapHandler());
     server.createContext("/api/mobile/snapshot", new MobileSnapshotHandler());
@@ -119,6 +148,16 @@ public final class ScannerBackendServer {
     }
     try {
       return Integer.parseInt(maybePort);
+    } catch (NumberFormatException ex) {
+      return fallback;
+    }
+  }
+  private static int parseIntOrDefault(String value, int fallback) {
+    if (value == null || value.isBlank()) {
+      return fallback;
+    }
+    try {
+      return Integer.parseInt(value);
     } catch (NumberFormatException ex) {
       return fallback;
     }
@@ -433,6 +472,88 @@ public final class ScannerBackendServer {
         + "\"embed_url\":\"" + jsonEscape(route.embedUrl) + "\""
         + "}";
   }
+  private static String runBroadcastifySelector(Map<String, String> query) {
+    String lat = query.getOrDefault("lat", "");
+    String lon = query.getOrDefault("lon", "");
+    String city = query.getOrDefault("city", BROADCASTIFY_SELECTOR_CITY);
+    String county = query.getOrDefault("county", BROADCASTIFY_SELECTOR_COUNTY);
+    String state = query.getOrDefault("state", BROADCASTIFY_SELECTOR_STATE);
+    List<String> cmd = new ArrayList<>();
+    cmd.add(SELECTOR_PYTHON_BIN);
+    cmd.add(SELECTOR_SCRIPT_PATH);
+    cmd.add("--channels-file");
+    cmd.add(BROADCASTIFY_CHANNELS_FILE);
+    if (!lat.isBlank()) {
+      cmd.add("--lat");
+      cmd.add(lat);
+    }
+    if (!lon.isBlank()) {
+      cmd.add("--lon");
+      cmd.add(lon);
+    }
+    if (!city.isBlank()) {
+      cmd.add("--city");
+      cmd.add(city);
+    }
+    if (!county.isBlank()) {
+      cmd.add("--county");
+      cmd.add(county);
+    }
+    if (!state.isBlank()) {
+      cmd.add("--state");
+      cmd.add(state);
+    }
+    cmd.add("--desired-types");
+    cmd.add(BROADCASTIFY_SELECTOR_DESIRED_TYPES);
+    cmd.add("--top-k");
+    cmd.add(String.valueOf(BROADCASTIFY_SELECTOR_TOP_K));
+    cmd.add("--print-top");
+    cmd.add(String.valueOf(BROADCASTIFY_SELECTOR_PRINT_TOP));
+    cmd.add("--output-format");
+    cmd.add("json");
+    if ("true".equalsIgnoreCase(BROADCASTIFY_SELECTOR_USE_OLLAMA_RERANK)) {
+      cmd.add("--use-ollama-rerank");
+      cmd.add("--ollama-model");
+      cmd.add(BROADCASTIFY_SELECTOR_OLLAMA_MODEL);
+      cmd.add("--ollama-url");
+      cmd.add(BROADCASTIFY_SELECTOR_OLLAMA_URL);
+      cmd.add("--ollama-timeout");
+      cmd.add(BROADCASTIFY_SELECTOR_OLLAMA_TIMEOUT);
+      cmd.add("--ollama-weight");
+      cmd.add(BROADCASTIFY_SELECTOR_OLLAMA_WEIGHT);
+    } else {
+      cmd.add("--no-use-ollama-rerank");
+    }
+
+    ProcessBuilder pb = new ProcessBuilder(cmd);
+    pb.redirectErrorStream(true);
+    String output;
+    int exitCode;
+    try {
+      Process process = pb.start();
+      output = new String(process.getInputStream().readAllBytes(), StandardCharsets.UTF_8).trim();
+      exitCode = process.waitFor();
+    } catch (Exception ex) {
+      return "{"
+          + "\"error\":\"selector_execution_failed\","
+          + "\"details\":\"" + jsonEscape(ex.toString()) + "\""
+          + "}";
+    }
+
+    if (exitCode != 0) {
+      return "{"
+          + "\"error\":\"selector_exit_nonzero\","
+          + "\"exit_code\":" + exitCode + ","
+          + "\"details\":\"" + jsonEscape(output) + "\""
+          + "}";
+    }
+    if (output.isBlank()) {
+      return "{"
+          + "\"error\":\"selector_empty_output\""
+          + "}";
+    }
+    return output;
+  }
 
   private static void writeJson(HttpExchange exchange, int statusCode, String body) throws IOException {
     byte[] payload = body.getBytes(StandardCharsets.UTF_8);
@@ -529,6 +650,19 @@ public final class ScannerBackendServer {
       Map<String, String> query = parseQuery(uri.getRawQuery());
       WazeRouteData route = buildWazeRoute(query);
       writeJson(exchange, 200, wazeRouteToJson(route));
+    }
+  }
+  private static final class BroadcastifySelectHandler implements HttpHandler {
+    @Override
+    public void handle(HttpExchange exchange) throws IOException {
+      if (!isGet(exchange)) {
+        writeJson(exchange, 405, "{\"error\":\"method_not_allowed\"}");
+        return;
+      }
+      URI uri = exchange.getRequestURI();
+      Map<String, String> query = parseQuery(uri.getRawQuery());
+      String selectorJson = runBroadcastifySelector(query);
+      writeJson(exchange, 200, selectorJson);
     }
   }
 

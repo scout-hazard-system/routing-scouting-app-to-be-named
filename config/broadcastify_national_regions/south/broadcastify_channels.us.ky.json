@@ -1,0 +1,2278 @@
+{
+  "channels": [
+    {
+      "id": "bf-32602-indianapolis-metropolitan-police",
+      "name": "Indianapolis Metropolitan Police",
+      "description": "Broadcastify public safety feed 32602 for Kentucky.",
+      "city": "",
+      "county": "Various",
+      "state": "KY",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kentucky",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32602"
+    },
+    {
+      "id": "bf-36295-louisville-metro-police-3-divisions-1-and-",
+      "name": "Louisville Metro Police 3 - Divisions 1 and 2",
+      "description": "Broadcastify public safety feed 36295 for Kentucky.",
+      "city": "",
+      "county": "Various",
+      "state": "KY",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kentucky",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/36295"
+    },
+    {
+      "id": "bf-11832-mingo-and-pike-counties-sheriff-fire-and-e",
+      "name": "Mingo and Pike Counties Sheriff, Fire, and EMS, Williamson Police and Fire",
+      "description": "Broadcastify public safety feed 11832 for Kentucky.",
+      "city": "",
+      "county": "Various",
+      "state": "KY",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kentucky",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/11832"
+    },
+    {
+      "id": "bf-30644-barren-county-public-safety",
+      "name": "Barren County Public Safety",
+      "description": "Broadcastify public safety feed 30644 for Kentucky.",
+      "city": "",
+      "county": "Various",
+      "state": "KY",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kentucky"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/30644"
+    },
+    {
+      "id": "bf-2546-laurel-county-and-city-fire-rescue-police-",
+      "name": "Laurel County and City Fire, Rescue, Police, and EMS Dispatch",
+      "description": "Broadcastify public safety feed 2546 for Kentucky.",
+      "city": "",
+      "county": "Various",
+      "state": "KY",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kentucky",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/2546"
+    },
+    {
+      "id": "bf-47073-boyd-county-public-safety",
+      "name": "Boyd County Public Safety",
+      "description": "Broadcastify public safety feed 47073 for Kentucky.",
+      "city": "",
+      "county": "Various",
+      "state": "KY",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kentucky"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47073"
+    },
+    {
+      "id": "bf-36294-louisville-metro-police-2-divisions-3-and-",
+      "name": "Louisville Metro Police 2 - Divisions 3 and 8",
+      "description": "Broadcastify public safety feed 36294 for Kentucky.",
+      "city": "",
+      "county": "Various",
+      "state": "KY",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kentucky",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/36294"
+    },
+    {
+      "id": "bf-16824-greenup-county-public-safety",
+      "name": "Greenup County Public Safety",
+      "description": "Broadcastify public safety feed 16824 for Kentucky.",
+      "city": "",
+      "county": "Various",
+      "state": "KY",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kentucky"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/16824"
+    },
+    {
+      "id": "bf-29558-kentucky-state-police-post-13",
+      "name": "Kentucky State Police Post 13",
+      "description": "Broadcastify public safety feed 29558 for Kentucky.",
+      "city": "",
+      "county": "Various",
+      "state": "KY",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kentucky",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/29558"
+    },
+    {
+      "id": "bf-36293-louisville-metro-police-1-divisions-6-and-",
+      "name": "Louisville Metro Police 1 - Divisions 6 and 7",
+      "description": "Broadcastify public safety feed 36293 for Kentucky.",
+      "city": "",
+      "county": "Various",
+      "state": "KY",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kentucky",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/36293"
+    },
+    {
+      "id": "bf-38197-cumberland-county-public-safety",
+      "name": "Cumberland County Public Safety",
+      "description": "Broadcastify public safety feed 38197 for Kentucky.",
+      "city": "",
+      "county": "Various",
+      "state": "KY",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kentucky"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38197"
+    },
+    {
+      "id": "bf-39904-northern-kentucky-public-safety",
+      "name": "Northern Kentucky Public Safety",
+      "description": "Broadcastify public safety feed 39904 for Kentucky.",
+      "city": "",
+      "county": "Various",
+      "state": "KY",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kentucky"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39904"
+    },
+    {
+      "id": "bf-41409-warren-county-sheriff-and-fire-departments",
+      "name": "Warren County Sheriff and Fire Departments",
+      "description": "Broadcastify public safety feed 41409 for Kentucky.",
+      "city": "",
+      "county": "Various",
+      "state": "KY",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kentucky",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41409"
+    },
+    {
+      "id": "bf-30167-edmonson-county-sheriff-and-fire-dispatch-",
+      "name": "Edmonson County Sheriff and Fire Dispatch, KSP Post 3",
+      "description": "Broadcastify public safety feed 30167 for Kentucky.",
+      "city": "",
+      "county": "Various",
+      "state": "KY",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kentucky",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/30167"
+    },
+    {
+      "id": "bf-24325-hardin-county-sheriff-radcliff-police-vine",
+      "name": "Hardin County Sheriff, Radcliff Police, Vine Grove Police & KSP-4",
+      "description": "Broadcastify public safety feed 24325 for Kentucky.",
+      "city": "",
+      "county": "Various",
+      "state": "KY",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kentucky",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/24325"
+    },
+    {
+      "id": "bf-29847-hart-county-ky-public-safety-ksp-p3",
+      "name": "Hart County KY Public Safety & KSP P3",
+      "description": "Broadcastify public safety feed 29847 for Kentucky.",
+      "city": "",
+      "county": "Various",
+      "state": "KY",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kentucky"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/29847"
+    },
+    {
+      "id": "bf-36296-louisville-metro-police-4-divisions-4-and-",
+      "name": "Louisville Metro Police 4 - Divisions 4 and 5",
+      "description": "Broadcastify public safety feed 36296 for Kentucky.",
+      "city": "",
+      "county": "Various",
+      "state": "KY",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kentucky",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/36296"
+    },
+    {
+      "id": "bf-44339-bowling-green-city-police-department",
+      "name": "Bowling Green City Police Department",
+      "description": "Broadcastify public safety feed 44339 for Kentucky.",
+      "city": "",
+      "county": "Various",
+      "state": "KY",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kentucky",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44339"
+    },
+    {
+      "id": "bf-20841-estill-county-fire-rescue",
+      "name": "Estill County Fire / Rescue",
+      "description": "Broadcastify public safety feed 20841 for Kentucky.",
+      "city": "",
+      "county": "Various",
+      "state": "KY",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kentucky",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/20841"
+    },
+    {
+      "id": "bf-42383-kenton-county-police-and-fire",
+      "name": "Kenton County Police and Fire",
+      "description": "Broadcastify public safety feed 42383 for Kentucky.",
+      "city": "",
+      "county": "Various",
+      "state": "KY",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kentucky",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42383"
+    },
+    {
+      "id": "bf-36268-martin-county-public-safety",
+      "name": "Martin County Public Safety",
+      "description": "Broadcastify public safety feed 36268 for Kentucky.",
+      "city": "",
+      "county": "Various",
+      "state": "KY",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kentucky"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/36268"
+    },
+    {
+      "id": "bf-36485-shelby-county-and-surrounding-counties-pub",
+      "name": "Shelby County and Surrounding Counties Public Safety",
+      "description": "Broadcastify public safety feed 36485 for Kentucky.",
+      "city": "",
+      "county": "Various",
+      "state": "KY",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kentucky"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/36485"
+    },
+    {
+      "id": "bf-37817-grant-county-fire-dispatch",
+      "name": "Grant County Fire Dispatch",
+      "description": "Broadcastify public safety feed 37817 for Kentucky.",
+      "city": "",
+      "county": "Various",
+      "state": "KY",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kentucky",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37817"
+    },
+    {
+      "id": "bf-42384-boone-county-police-and-fire",
+      "name": "Boone County Police and Fire",
+      "description": "Broadcastify public safety feed 42384 for Kentucky.",
+      "city": "",
+      "county": "Various",
+      "state": "KY",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kentucky",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42384"
+    },
+    {
+      "id": "bf-47522-henderson-county-fire",
+      "name": "Henderson County Fire",
+      "description": "Broadcastify public safety feed 47522 for Kentucky.",
+      "city": "",
+      "county": "Various",
+      "state": "KY",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kentucky",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47522"
+    },
+    {
+      "id": "bf-42013-jackson-county-sheriff",
+      "name": "Jackson County Sheriff",
+      "description": "Broadcastify public safety feed 42013 for Kentucky.",
+      "city": "",
+      "county": "Various",
+      "state": "KY",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kentucky",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42013"
+    },
+    {
+      "id": "bf-42256-louisville-fire-fire-1-4-lfr-alert",
+      "name": "Louisville Fire (Fire 1-4, LFR Alert)",
+      "description": "Broadcastify public safety feed 42256 for Kentucky.",
+      "city": "",
+      "county": "Various",
+      "state": "KY",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kentucky",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42256"
+    },
+    {
+      "id": "bf-45574-oldham-county-police",
+      "name": "Oldham County Police",
+      "description": "Broadcastify public safety feed 45574 for Kentucky.",
+      "city": "",
+      "county": "Various",
+      "state": "KY",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kentucky",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45574"
+    },
+    {
+      "id": "bf-45621-ksp-post-3-barren-county-sheriff-vfd",
+      "name": "KSP Post 3, Barren County Sheriff & VFD",
+      "description": "Broadcastify public safety feed 45621 for Kentucky.",
+      "city": "",
+      "county": "Various",
+      "state": "KY",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kentucky",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45621"
+    },
+    {
+      "id": "bf-18450-boone-county-fire-and-ems-dispatch",
+      "name": "Boone County Fire and EMS Dispatch",
+      "description": "Broadcastify public safety feed 18450 for Kentucky.",
+      "city": "",
+      "county": "Various",
+      "state": "KY",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kentucky",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/18450"
+    },
+    {
+      "id": "bf-45947-kentucky-state-police-post-5",
+      "name": "Kentucky State Police Post 5",
+      "description": "Broadcastify public safety feed 45947 for Kentucky.",
+      "city": "",
+      "county": "Various",
+      "state": "KY",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kentucky",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45947"
+    },
+    {
+      "id": "bf-42083-pike-and-floyd-county-public-safety",
+      "name": "Pike and Floyd County Public Safety",
+      "description": "Broadcastify public safety feed 42083 for Kentucky.",
+      "city": "",
+      "county": "Various",
+      "state": "KY",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kentucky"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42083"
+    },
+    {
+      "id": "bf-8637-louisville-metrosafe-suburban-fire-5-8-oko",
+      "name": "Louisville MetroSafe Suburban Fire 5 - 8, Okolona Tac 80",
+      "description": "Broadcastify public safety feed 8637 for Kentucky.",
+      "city": "",
+      "county": "Various",
+      "state": "KY",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kentucky",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/8637"
+    },
+    {
+      "id": "bf-33236-morgan-county-public-safety",
+      "name": "Morgan County Public Safety",
+      "description": "Broadcastify public safety feed 33236 for Kentucky.",
+      "city": "",
+      "county": "Various",
+      "state": "KY",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kentucky"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/33236"
+    },
+    {
+      "id": "bf-39712-owen-county-sheriff",
+      "name": "Owen County Sheriff",
+      "description": "Broadcastify public safety feed 39712 for Kentucky.",
+      "city": "",
+      "county": "Various",
+      "state": "KY",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kentucky",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39712"
+    },
+    {
+      "id": "bf-18558-shelby-county-public-safety-dispatch",
+      "name": "Shelby County Public Safety Dispatch",
+      "description": "Broadcastify public safety feed 18558 for Kentucky.",
+      "city": "",
+      "county": "Various",
+      "state": "KY",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kentucky"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/18558"
+    },
+    {
+      "id": "bf-9885-bullitt-county-fire",
+      "name": "Bullitt County Fire",
+      "description": "Broadcastify public safety feed 9885 for Kentucky.",
+      "city": "",
+      "county": "Various",
+      "state": "KY",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kentucky",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/9885"
+    },
+    {
+      "id": "bf-44814-carter-county-public-safety",
+      "name": "Carter County Public Safety",
+      "description": "Broadcastify public safety feed 44814 for Kentucky.",
+      "city": "",
+      "county": "Various",
+      "state": "KY",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kentucky"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44814"
+    },
+    {
+      "id": "bf-44941-hancock-county-fire-sherriff",
+      "name": "Hancock County Fire & Sherriff",
+      "description": "Broadcastify public safety feed 44941 for Kentucky.",
+      "city": "",
+      "county": "Various",
+      "state": "KY",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kentucky",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44941"
+    },
+    {
+      "id": "bf-3285-hardin-county-fire-and-ems",
+      "name": "Hardin County Fire and EMS",
+      "description": "Broadcastify public safety feed 3285 for Kentucky.",
+      "city": "",
+      "county": "Various",
+      "state": "KY",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kentucky",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/3285"
+    },
+    {
+      "id": "bf-46838-hopkins-county-public-safety",
+      "name": "Hopkins County Public Safety",
+      "description": "Broadcastify public safety feed 46838 for Kentucky.",
+      "city": "",
+      "county": "Various",
+      "state": "KY",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kentucky"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46838"
+    },
+    {
+      "id": "bf-41554-jackson-county-fire",
+      "name": "Jackson County Fire",
+      "description": "Broadcastify public safety feed 41554 for Kentucky.",
+      "city": "",
+      "county": "Various",
+      "state": "KY",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kentucky",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41554"
+    },
+    {
+      "id": "bf-42393-lawrence-county-police-fire-ems",
+      "name": "Lawrence County Police, Fire, EMS",
+      "description": "Broadcastify public safety feed 42393 for Kentucky.",
+      "city": "",
+      "county": "Various",
+      "state": "KY",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kentucky",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42393"
+    },
+    {
+      "id": "bf-20923-skyline-fire",
+      "name": "Skyline Fire",
+      "description": "Broadcastify public safety feed 20923 for Kentucky.",
+      "city": "",
+      "county": "Various",
+      "state": "KY",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kentucky",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/20923"
+    },
+    {
+      "id": "bf-45638-ksp-post-1",
+      "name": "KSP Post 1",
+      "description": "Broadcastify public safety feed 45638 for Kentucky.",
+      "city": "",
+      "county": "Various",
+      "state": "KY",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kentucky"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45638"
+    },
+    {
+      "id": "bf-15294-mercer-county-fire",
+      "name": "Mercer County Fire",
+      "description": "Broadcastify public safety feed 15294 for Kentucky.",
+      "city": "",
+      "county": "Various",
+      "state": "KY",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kentucky",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/15294"
+    },
+    {
+      "id": "bf-11954-oldham-county-fire-and-ems-dispatch",
+      "name": "Oldham County Fire and EMS Dispatch",
+      "description": "Broadcastify public safety feed 11954 for Kentucky.",
+      "city": "",
+      "county": "Various",
+      "state": "KY",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kentucky",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/11954"
+    },
+    {
+      "id": "bf-44305-campbellsville-police-department",
+      "name": "Campbellsville Police Department",
+      "description": "Broadcastify public safety feed 44305 for Kentucky.",
+      "city": "",
+      "county": "Various",
+      "state": "KY",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kentucky",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44305"
+    },
+    {
+      "id": "bf-44723-union-county-public-safety",
+      "name": "Union County Public Safety",
+      "description": "Broadcastify public safety feed 44723 for Kentucky.",
+      "city": "",
+      "county": "Various",
+      "state": "KY",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kentucky"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44723"
+    },
+    {
+      "id": "bf-46818-bourbon-county-public-safety",
+      "name": "Bourbon County Public Safety",
+      "description": "Broadcastify public safety feed 46818 for Kentucky.",
+      "city": "",
+      "county": "Various",
+      "state": "KY",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kentucky"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46818"
+    },
+    {
+      "id": "bf-22876-boyle-county-fire-dispatch",
+      "name": "Boyle County Fire Dispatch",
+      "description": "Broadcastify public safety feed 22876 for Kentucky.",
+      "city": "",
+      "county": "Various",
+      "state": "KY",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kentucky",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/22876"
+    },
+    {
+      "id": "bf-38460-butler-county-public-safety",
+      "name": "Butler County Public Safety",
+      "description": "Broadcastify public safety feed 38460 for Kentucky.",
+      "city": "",
+      "county": "Various",
+      "state": "KY",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kentucky"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38460"
+    },
+    {
+      "id": "bf-40525-carroll-county-ems",
+      "name": "Carroll County EMS",
+      "description": "Broadcastify public safety feed 40525 for Kentucky.",
+      "city": "",
+      "county": "Various",
+      "state": "KY",
+      "service_types": [
+        "dispatch",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kentucky",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40525"
+    },
+    {
+      "id": "bf-47192-ksp-post-9-area-public-safety",
+      "name": "KSP Post 9 Area Public Safety",
+      "description": "Broadcastify public safety feed 47192 for Kentucky.",
+      "city": "",
+      "county": "Various",
+      "state": "KY",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kentucky"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47192"
+    },
+    {
+      "id": "bf-24009-green-county-fire-rescue",
+      "name": "Green County Fire Rescue",
+      "description": "Broadcastify public safety feed 24009 for Kentucky.",
+      "city": "",
+      "county": "Various",
+      "state": "KY",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kentucky",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/24009"
+    },
+    {
+      "id": "bf-46424-jackson-county-public-safety",
+      "name": "Jackson County Public Safety",
+      "description": "Broadcastify public safety feed 46424 for Kentucky.",
+      "city": "",
+      "county": "Various",
+      "state": "KY",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kentucky"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46424"
+    },
+    {
+      "id": "bf-32158-berea-fire-dispatch",
+      "name": "Berea Fire Dispatch",
+      "description": "Broadcastify public safety feed 32158 for Kentucky.",
+      "city": "",
+      "county": "Various",
+      "state": "KY",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kentucky",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32158"
+    },
+    {
+      "id": "bf-44888-magoffin-county-public-safety",
+      "name": "Magoffin County Public Safety",
+      "description": "Broadcastify public safety feed 44888 for Kentucky.",
+      "city": "",
+      "county": "Various",
+      "state": "KY",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kentucky"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44888"
+    },
+    {
+      "id": "bf-34477-marshall-county-fire-dispatch",
+      "name": "Marshall County Fire Dispatch",
+      "description": "Broadcastify public safety feed 34477 for Kentucky.",
+      "city": "",
+      "county": "Various",
+      "state": "KY",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kentucky",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/34477"
+    },
+    {
+      "id": "bf-42325-washington-fire",
+      "name": "Washington Fire",
+      "description": "Broadcastify public safety feed 42325 for Kentucky.",
+      "city": "",
+      "county": "Various",
+      "state": "KY",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kentucky",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42325"
+    },
+    {
+      "id": "bf-43133-harrodsburg-city-fire",
+      "name": "Harrodsburg City Fire",
+      "description": "Broadcastify public safety feed 43133 for Kentucky.",
+      "city": "",
+      "county": "Various",
+      "state": "KY",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kentucky",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43133"
+    },
+    {
+      "id": "bf-6302-muhlenberg-county-fire",
+      "name": "Muhlenberg County Fire",
+      "description": "Broadcastify public safety feed 6302 for Kentucky.",
+      "city": "",
+      "county": "Various",
+      "state": "KY",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kentucky",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/6302"
+    },
+    {
+      "id": "bf-43604-shopville-fire",
+      "name": "Shopville Fire",
+      "description": "Broadcastify public safety feed 43604 for Kentucky.",
+      "city": "",
+      "county": "Various",
+      "state": "KY",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kentucky",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43604"
+    },
+    {
+      "id": "bf-43926-campbellsville-ems",
+      "name": "Campbellsville EMS",
+      "description": "Broadcastify public safety feed 43926 for Kentucky.",
+      "city": "",
+      "county": "Various",
+      "state": "KY",
+      "service_types": [
+        "dispatch",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kentucky",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43926"
+    },
+    {
+      "id": "bf-12697-trimble-county-fire-and-ems",
+      "name": "Trimble County Fire and EMS",
+      "description": "Broadcastify public safety feed 12697 for Kentucky.",
+      "city": "",
+      "county": "Various",
+      "state": "KY",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kentucky",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/12697"
+    },
+    {
+      "id": "bf-41919-adair-county-public-safety",
+      "name": "Adair County Public Safety",
+      "description": "Broadcastify public safety feed 41919 for Kentucky.",
+      "city": "",
+      "county": "Various",
+      "state": "KY",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kentucky"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41919"
+    },
+    {
+      "id": "bf-19653-sharpsburg-fire",
+      "name": "Sharpsburg Fire",
+      "description": "Broadcastify public safety feed 19653 for Kentucky.",
+      "city": "",
+      "county": "Various",
+      "state": "KY",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kentucky",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/19653"
+    },
+    {
+      "id": "bf-19654-owingsville-fire",
+      "name": "Owingsville Fire",
+      "description": "Broadcastify public safety feed 19654 for Kentucky.",
+      "city": "",
+      "county": "Various",
+      "state": "KY",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kentucky",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/19654"
+    },
+    {
+      "id": "bf-35747-junction-city-fire",
+      "name": "Junction City Fire",
+      "description": "Broadcastify public safety feed 35747 for Kentucky.",
+      "city": "",
+      "county": "Various",
+      "state": "KY",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kentucky",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/35747"
+    },
+    {
+      "id": "bf-36392-boyle-county-ambulance",
+      "name": "Boyle County Ambulance",
+      "description": "Broadcastify public safety feed 36392 for Kentucky.",
+      "city": "",
+      "county": "Various",
+      "state": "KY",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kentucky"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/36392"
+    },
+    {
+      "id": "bf-44384-perrville-kentucky",
+      "name": "Perrville Kentucky",
+      "description": "Broadcastify public safety feed 44384 for Kentucky.",
+      "city": "",
+      "county": "Various",
+      "state": "KY",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kentucky"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44384"
+    },
+    {
+      "id": "bf-41399-bracken-county-fire-ems",
+      "name": "Bracken County Fire/EMS",
+      "description": "Broadcastify public safety feed 41399 for Kentucky.",
+      "city": "",
+      "county": "Various",
+      "state": "KY",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kentucky",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41399"
+    },
+    {
+      "id": "bf-46745-breathitt-county-public-safety",
+      "name": "Breathitt County Public Safety",
+      "description": "Broadcastify public safety feed 46745 for Kentucky.",
+      "city": "",
+      "county": "Various",
+      "state": "KY",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kentucky"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46745"
+    },
+    {
+      "id": "bf-42271-kentucky-state-police-post-4",
+      "name": "Kentucky State Police Post 4",
+      "description": "Broadcastify public safety feed 42271 for Kentucky.",
+      "city": "",
+      "county": "Various",
+      "state": "KY",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kentucky",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42271"
+    },
+    {
+      "id": "bf-26572-morgantown-fire",
+      "name": "Morgantown Fire",
+      "description": "Broadcastify public safety feed 26572 for Kentucky.",
+      "city": "",
+      "county": "Various",
+      "state": "KY",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kentucky",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/26572"
+    },
+    {
+      "id": "bf-39805-fifth-district-fire",
+      "name": "Fifth District Fire",
+      "description": "Broadcastify public safety feed 39805 for Kentucky.",
+      "city": "",
+      "county": "Various",
+      "state": "KY",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kentucky",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39805"
+    },
+    {
+      "id": "bf-20120-ghent-fire-protection-district",
+      "name": "Ghent Fire Protection District",
+      "description": "Broadcastify public safety feed 20120 for Kentucky.",
+      "city": "",
+      "county": "Various",
+      "state": "KY",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kentucky",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/20120"
+    },
+    {
+      "id": "bf-40019-carrollton-fire",
+      "name": "Carrollton Fire",
+      "description": "Broadcastify public safety feed 40019 for Kentucky.",
+      "city": "",
+      "county": "Various",
+      "state": "KY",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kentucky",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40019"
+    },
+    {
+      "id": "bf-41212-worthville-fire",
+      "name": "Worthville Fire",
+      "description": "Broadcastify public safety feed 41212 for Kentucky.",
+      "city": "",
+      "county": "Various",
+      "state": "KY",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kentucky",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41212"
+    },
+    {
+      "id": "bf-38572-liberty-casey-county-fire-and-rescue",
+      "name": "Liberty-Casey County Fire and Rescue",
+      "description": "Broadcastify public safety feed 38572 for Kentucky.",
+      "city": "",
+      "county": "Various",
+      "state": "KY",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kentucky",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38572"
+    },
+    {
+      "id": "bf-45425-clay-county-public-safety",
+      "name": "Clay County Public Safety",
+      "description": "Broadcastify public safety feed 45425 for Kentucky.",
+      "city": "",
+      "county": "Various",
+      "state": "KY",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kentucky"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45425"
+    },
+    {
+      "id": "bf-35578-fleming-county-fire",
+      "name": "Fleming County Fire",
+      "description": "Broadcastify public safety feed 35578 for Kentucky.",
+      "city": "",
+      "county": "Various",
+      "state": "KY",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kentucky",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/35578"
+    },
+    {
+      "id": "bf-17714-garrard-county-fire-and-ems",
+      "name": "Garrard County Fire and EMS",
+      "description": "Broadcastify public safety feed 17714 for Kentucky.",
+      "city": "",
+      "county": "Various",
+      "state": "KY",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kentucky",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/17714"
+    },
+    {
+      "id": "bf-17718-stanford-fire",
+      "name": "Stanford Fire",
+      "description": "Broadcastify public safety feed 17718 for Kentucky.",
+      "city": "",
+      "county": "Various",
+      "state": "KY",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kentucky",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/17718"
+    },
+    {
+      "id": "bf-38411-lincoln-ems",
+      "name": "Lincoln EMS",
+      "description": "Broadcastify public safety feed 38411 for Kentucky.",
+      "city": "",
+      "county": "Various",
+      "state": "KY",
+      "service_types": [
+        "dispatch",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kentucky",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38411"
+    },
+    {
+      "id": "bf-38432-casey-rescue",
+      "name": "Casey Rescue",
+      "description": "Broadcastify public safety feed 38432 for Kentucky.",
+      "city": "",
+      "county": "Various",
+      "state": "KY",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kentucky"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38432"
+    },
+    {
+      "id": "bf-38433-casey-county-fire-departments",
+      "name": "Casey County Fire Departments",
+      "description": "Broadcastify public safety feed 38433 for Kentucky.",
+      "city": "",
+      "county": "Various",
+      "state": "KY",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kentucky",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38433"
+    },
+    {
+      "id": "bf-38434-clementsville-fire",
+      "name": "Clementsville Fire",
+      "description": "Broadcastify public safety feed 38434 for Kentucky.",
+      "city": "",
+      "county": "Various",
+      "state": "KY",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kentucky",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38434"
+    },
+    {
+      "id": "bf-38436-liberty-fire",
+      "name": "Liberty Fire",
+      "description": "Broadcastify public safety feed 38436 for Kentucky.",
+      "city": "",
+      "county": "Various",
+      "state": "KY",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kentucky",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38436"
+    },
+    {
+      "id": "bf-44480-casey-county-ems",
+      "name": "Casey County EMS",
+      "description": "Broadcastify public safety feed 44480 for Kentucky.",
+      "city": "",
+      "county": "Various",
+      "state": "KY",
+      "service_types": [
+        "dispatch",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kentucky",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44480"
+    },
+    {
+      "id": "bf-10380-grayson-county-law-enforcement-and-ems",
+      "name": "Grayson County Law Enforcement and EMS",
+      "description": "Broadcastify public safety feed 10380 for Kentucky.",
+      "city": "",
+      "county": "Various",
+      "state": "KY",
+      "service_types": [
+        "dispatch",
+        "law",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kentucky",
+        "law",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/10380"
+    },
+    {
+      "id": "bf-45405-green-county-rescue",
+      "name": "Green County Rescue",
+      "description": "Broadcastify public safety feed 45405 for Kentucky.",
+      "city": "",
+      "county": "Various",
+      "state": "KY",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kentucky"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45405"
+    },
+    {
+      "id": "bf-43122-flatwoods-fire-dept",
+      "name": "Flatwoods Fire Dept",
+      "description": "Broadcastify public safety feed 43122 for Kentucky.",
+      "city": "",
+      "county": "Various",
+      "state": "KY",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kentucky",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43122"
+    },
+    {
+      "id": "bf-44948-hancock-county-fire",
+      "name": "Hancock County Fire",
+      "description": "Broadcastify public safety feed 44948 for Kentucky.",
+      "city": "",
+      "county": "Various",
+      "state": "KY",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kentucky",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44948"
+    },
+    {
+      "id": "bf-47372-lincoln-trail-area-public-safety",
+      "name": "Lincoln Trail Area Public Safety",
+      "description": "Broadcastify public safety feed 47372 for Kentucky.",
+      "city": "",
+      "county": "Various",
+      "state": "KY",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kentucky"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47372"
+    },
+    {
+      "id": "bf-44459-henry-county-fire-ems",
+      "name": "Henry County Fire & EMS",
+      "description": "Broadcastify public safety feed 44459 for Kentucky.",
+      "city": "",
+      "county": "Various",
+      "state": "KY",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kentucky",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44459"
+    },
+    {
+      "id": "bf-41553-jackson-county-ems",
+      "name": "Jackson County EMS",
+      "description": "Broadcastify public safety feed 41553 for Kentucky.",
+      "city": "",
+      "county": "Various",
+      "state": "KY",
+      "service_types": [
+        "dispatch",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kentucky",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41553"
+    },
+    {
+      "id": "bf-25763-air-evac-life-team-helicopter",
+      "name": "Air Evac Life-Team Helicopter",
+      "description": "Broadcastify public safety feed 25763 for Kentucky.",
+      "city": "",
+      "county": "Various",
+      "state": "KY",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kentucky"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/25763"
+    },
+    {
+      "id": "bf-40967-jefferson-county-sheriff",
+      "name": "Jefferson County Sheriff",
+      "description": "Broadcastify public safety feed 40967 for Kentucky.",
+      "city": "",
+      "county": "Various",
+      "state": "KY",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kentucky",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40967"
+    },
+    {
+      "id": "bf-44141-jefferson-county-sheriff-s-office-satellit",
+      "name": "Jefferson County Sheriff's Office - Satellite Agencies",
+      "description": "Broadcastify public safety feed 44141 for Kentucky.",
+      "city": "",
+      "county": "Various",
+      "state": "KY",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kentucky",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44141"
+    },
+    {
+      "id": "bf-47343-southeast-jefferson-county-area-metrosafe",
+      "name": "Southeast Jefferson County Area - MetroSafe",
+      "description": "Broadcastify public safety feed 47343 for Kentucky.",
+      "city": "",
+      "county": "Various",
+      "state": "KY",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kentucky"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47343"
+    }
+  ]
+}

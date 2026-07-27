@@ -1,0 +1,2304 @@
+{
+  "channels": [
+    {
+      "id": "bf-32602-indianapolis-metropolitan-police",
+      "name": "Indianapolis Metropolitan Police",
+      "description": "Broadcastify public safety feed 32602 for Arkansas.",
+      "city": "",
+      "county": "Various",
+      "state": "AR",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arkansas",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32602"
+    },
+    {
+      "id": "bf-35736-texarkana-police-and-bowie-and-miller-coun",
+      "name": "Texarkana Police and Bowie and Miller County Sheriff",
+      "description": "Broadcastify public safety feed 35736 for Arkansas.",
+      "city": "",
+      "county": "Various",
+      "state": "AR",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arkansas",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/35736"
+    },
+    {
+      "id": "bf-39864-lonoke-county-sheriff-dispatch",
+      "name": "Lonoke County Sheriff Dispatch",
+      "description": "Broadcastify public safety feed 39864 for Arkansas.",
+      "city": "",
+      "county": "Various",
+      "state": "AR",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arkansas",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39864"
+    },
+    {
+      "id": "bf-18094-north-little-rock-police-dispatch-1",
+      "name": "North Little Rock Police Dispatch 1",
+      "description": "Broadcastify public safety feed 18094 for Arkansas.",
+      "city": "",
+      "county": "Various",
+      "state": "AR",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arkansas",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/18094"
+    },
+    {
+      "id": "bf-39865-cleburne-county-sheriff-dispatch",
+      "name": "Cleburne County Sheriff Dispatch",
+      "description": "Broadcastify public safety feed 39865 for Arkansas.",
+      "city": "",
+      "county": "Various",
+      "state": "AR",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arkansas",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39865"
+    },
+    {
+      "id": "bf-32530-faulkner-county-area-public-safety",
+      "name": "Faulkner County Area Public Safety",
+      "description": "Broadcastify public safety feed 32530 for Arkansas.",
+      "city": "",
+      "county": "Various",
+      "state": "AR",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arkansas"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32530"
+    },
+    {
+      "id": "bf-39595-helena-west-helena-police-dispatch",
+      "name": "Helena-West Helena Police Dispatch",
+      "description": "Broadcastify public safety feed 39595 for Arkansas.",
+      "city": "",
+      "county": "Various",
+      "state": "AR",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arkansas",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39595"
+    },
+    {
+      "id": "bf-43633-fort-smith-police-dispatch",
+      "name": "Fort Smith Police Dispatch",
+      "description": "Broadcastify public safety feed 43633 for Arkansas.",
+      "city": "",
+      "county": "Various",
+      "state": "AR",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arkansas",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43633"
+    },
+    {
+      "id": "bf-38700-northwest-arkansas-public-safety",
+      "name": "Northwest Arkansas Public Safety",
+      "description": "Broadcastify public safety feed 38700 for Arkansas.",
+      "city": "",
+      "county": "Various",
+      "state": "AR",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arkansas"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38700"
+    },
+    {
+      "id": "bf-44750-northeast-arkansas-southeast-missouri-publ",
+      "name": "Northeast Arkansas & Southeast Missouri Public Safety",
+      "description": "Broadcastify public safety feed 44750 for Arkansas.",
+      "city": "",
+      "county": "Various",
+      "state": "AR",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arkansas"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44750"
+    },
+    {
+      "id": "bf-39879-arkansas-state-police-troop-a-dispatch",
+      "name": "Arkansas State Police Troop A Dispatch",
+      "description": "Broadcastify public safety feed 39879 for Arkansas.",
+      "city": "",
+      "county": "Various",
+      "state": "AR",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arkansas",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39879"
+    },
+    {
+      "id": "bf-26205-ouachita-county-sheriff-dispatch",
+      "name": "Ouachita County Sheriff Dispatch",
+      "description": "Broadcastify public safety feed 26205 for Arkansas.",
+      "city": "",
+      "county": "Various",
+      "state": "AR",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arkansas",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/26205"
+    },
+    {
+      "id": "bf-42663-polk-county-mena-public-safety",
+      "name": "Polk County / Mena Public Safety",
+      "description": "Broadcastify public safety feed 42663 for Arkansas.",
+      "city": "",
+      "county": "Various",
+      "state": "AR",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arkansas"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42663"
+    },
+    {
+      "id": "bf-25070-sevier-county-police-fire-and-ems",
+      "name": "Sevier County Police, Fire and EMS",
+      "description": "Broadcastify public safety feed 25070 for Arkansas.",
+      "city": "",
+      "county": "Various",
+      "state": "AR",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arkansas",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/25070"
+    },
+    {
+      "id": "bf-33777-river-valley-public-safety",
+      "name": "River Valley Public Safety",
+      "description": "Broadcastify public safety feed 33777 for Arkansas.",
+      "city": "",
+      "county": "Various",
+      "state": "AR",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arkansas"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/33777"
+    },
+    {
+      "id": "bf-5368-saline-county-law-enforcement-and-awin",
+      "name": "Saline County Law Enforcement and AWIN",
+      "description": "Broadcastify public safety feed 5368 for Arkansas.",
+      "city": "",
+      "county": "Various",
+      "state": "AR",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arkansas",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/5368"
+    },
+    {
+      "id": "bf-38677-pulaski-county-sheriff",
+      "name": "Pulaski County Sheriff",
+      "description": "Broadcastify public safety feed 38677 for Arkansas.",
+      "city": "",
+      "county": "Various",
+      "state": "AR",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arkansas",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38677"
+    },
+    {
+      "id": "bf-16533-rogers-fire",
+      "name": "Rogers Fire",
+      "description": "Broadcastify public safety feed 16533 for Arkansas.",
+      "city": "",
+      "county": "Various",
+      "state": "AR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arkansas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/16533"
+    },
+    {
+      "id": "bf-25650-berryville-fire",
+      "name": "Berryville Fire",
+      "description": "Broadcastify public safety feed 25650 for Arkansas.",
+      "city": "",
+      "county": "Various",
+      "state": "AR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arkansas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/25650"
+    },
+    {
+      "id": "bf-45919-pafford-ems-dispatch-southwest-arkansas-2",
+      "name": "Pafford EMS Dispatch Southwest Arkansas 2",
+      "description": "Broadcastify public safety feed 45919 for Arkansas.",
+      "city": "",
+      "county": "Various",
+      "state": "AR",
+      "service_types": [
+        "dispatch",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arkansas",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45919"
+    },
+    {
+      "id": "bf-42273-arkansas-state-police-troop-c",
+      "name": "Arkansas State Police Troop C",
+      "description": "Broadcastify public safety feed 42273 for Arkansas.",
+      "city": "",
+      "county": "Various",
+      "state": "AR",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arkansas",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42273"
+    },
+    {
+      "id": "bf-39875-arkansas-state-police-troop-b-dispatch",
+      "name": "Arkansas State Police Troop B Dispatch",
+      "description": "Broadcastify public safety feed 39875 for Arkansas.",
+      "city": "",
+      "county": "Various",
+      "state": "AR",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arkansas",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39875"
+    },
+    {
+      "id": "bf-46503-cleburne-county-fire-and-ems-heber-springs",
+      "name": "Cleburne County Fire and EMS / Heber Springs PD",
+      "description": "Broadcastify public safety feed 46503 for Arkansas.",
+      "city": "",
+      "county": "Various",
+      "state": "AR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arkansas",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46503"
+    },
+    {
+      "id": "bf-44621-melbourne-fd",
+      "name": "Melbourne FD",
+      "description": "Broadcastify public safety feed 44621 for Arkansas.",
+      "city": "",
+      "county": "Various",
+      "state": "AR",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arkansas"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44621"
+    },
+    {
+      "id": "bf-43829-madison-county-law-and-emergency-services",
+      "name": "Madison County Law and Emergency Services",
+      "description": "Broadcastify public safety feed 43829 for Arkansas.",
+      "city": "",
+      "county": "Various",
+      "state": "AR",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arkansas"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43829"
+    },
+    {
+      "id": "bf-36835-flippin-fire",
+      "name": "Flippin Fire",
+      "description": "Broadcastify public safety feed 36835 for Arkansas.",
+      "city": "",
+      "county": "Various",
+      "state": "AR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arkansas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/36835"
+    },
+    {
+      "id": "bf-39862-prairie-county-sheriff-dispatch",
+      "name": "Prairie County Sheriff Dispatch",
+      "description": "Broadcastify public safety feed 39862 for Arkansas.",
+      "city": "",
+      "county": "Various",
+      "state": "AR",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arkansas",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39862"
+    },
+    {
+      "id": "bf-43811-pulaski-county-volunteer-fire-dispatch",
+      "name": "Pulaski County Volunteer Fire Dispatch",
+      "description": "Broadcastify public safety feed 43811 for Arkansas.",
+      "city": "",
+      "county": "Various",
+      "state": "AR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arkansas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43811"
+    },
+    {
+      "id": "bf-46631-randolph-county-public-safety",
+      "name": "Randolph County Public Safety",
+      "description": "Broadcastify public safety feed 46631 for Arkansas.",
+      "city": "",
+      "county": "Various",
+      "state": "AR",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arkansas"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46631"
+    },
+    {
+      "id": "bf-41156-harris-fire",
+      "name": "Harris Fire",
+      "description": "Broadcastify public safety feed 41156 for Arkansas.",
+      "city": "",
+      "county": "Various",
+      "state": "AR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arkansas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41156"
+    },
+    {
+      "id": "bf-17299-eureka-springs-fire-and-ems",
+      "name": "Eureka Springs Fire and EMS",
+      "description": "Broadcastify public safety feed 17299 for Arkansas.",
+      "city": "",
+      "county": "Various",
+      "state": "AR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arkansas",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/17299"
+    },
+    {
+      "id": "bf-41239-pafford-ems-dispatch-southeast-arkansas",
+      "name": "Pafford EMS Dispatch Southeast Arkansas",
+      "description": "Broadcastify public safety feed 41239 for Arkansas.",
+      "city": "",
+      "county": "Various",
+      "state": "AR",
+      "service_types": [
+        "dispatch",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arkansas",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41239"
+    },
+    {
+      "id": "bf-39842-faulkner-county-sheriff-dispatch",
+      "name": "Faulkner County Sheriff Dispatch",
+      "description": "Broadcastify public safety feed 39842 for Arkansas.",
+      "city": "",
+      "county": "Various",
+      "state": "AR",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arkansas",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39842"
+    },
+    {
+      "id": "bf-41241-pafford-ems-dispatch-southwest-arkansas",
+      "name": "Pafford EMS Dispatch Southwest Arkansas",
+      "description": "Broadcastify public safety feed 41241 for Arkansas.",
+      "city": "",
+      "county": "Various",
+      "state": "AR",
+      "service_types": [
+        "dispatch",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arkansas",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41241"
+    },
+    {
+      "id": "bf-28037-ravenden-fire",
+      "name": "Ravenden Fire",
+      "description": "Broadcastify public safety feed 28037 for Arkansas.",
+      "city": "",
+      "county": "Various",
+      "state": "AR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arkansas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/28037"
+    },
+    {
+      "id": "bf-38443-texarkana-arkansas-and-texas-fire-departme",
+      "name": "Texarkana, Arkansas and Texas Fire Departments",
+      "description": "Broadcastify public safety feed 38443 for Arkansas.",
+      "city": "",
+      "county": "Various",
+      "state": "AR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arkansas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38443"
+    },
+    {
+      "id": "bf-16428-saline-county-fire-departments",
+      "name": "Saline County Fire Departments",
+      "description": "Broadcastify public safety feed 16428 for Arkansas.",
+      "city": "",
+      "county": "Various",
+      "state": "AR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arkansas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/16428"
+    },
+    {
+      "id": "bf-7191-fayetteville-police-fire-and-ems",
+      "name": "Fayetteville Police, Fire, and EMS",
+      "description": "Broadcastify public safety feed 7191 for Arkansas.",
+      "city": "",
+      "county": "Various",
+      "state": "AR",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arkansas",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/7191"
+    },
+    {
+      "id": "bf-38165-springdale-fire",
+      "name": "Springdale Fire",
+      "description": "Broadcastify public safety feed 38165 for Arkansas.",
+      "city": "",
+      "county": "Various",
+      "state": "AR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arkansas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38165"
+    },
+    {
+      "id": "bf-36879-bald-knob-fire",
+      "name": "Bald Knob Fire",
+      "description": "Broadcastify public safety feed 36879 for Arkansas.",
+      "city": "",
+      "county": "Various",
+      "state": "AR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arkansas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/36879"
+    },
+    {
+      "id": "bf-40286-searcy-fire",
+      "name": "Searcy Fire",
+      "description": "Broadcastify public safety feed 40286 for Arkansas.",
+      "city": "",
+      "county": "Various",
+      "state": "AR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arkansas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40286"
+    },
+    {
+      "id": "bf-31824-northeast-lakeside-fire-ems",
+      "name": "Northeast Lakeside Fire/EMS",
+      "description": "Broadcastify public safety feed 31824 for Arkansas.",
+      "city": "",
+      "county": "Various",
+      "state": "AR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arkansas",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/31824"
+    },
+    {
+      "id": "bf-32362-northeast-lakeside-fire-and-ems-tactical",
+      "name": "Northeast Lakeside Fire and EMS Tactical",
+      "description": "Broadcastify public safety feed 32362 for Arkansas.",
+      "city": "",
+      "county": "Various",
+      "state": "AR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arkansas",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32362"
+    },
+    {
+      "id": "bf-42843-cotter-fire",
+      "name": "Cotter Fire",
+      "description": "Broadcastify public safety feed 42843 for Arkansas.",
+      "city": "",
+      "county": "Various",
+      "state": "AR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arkansas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42843"
+    },
+    {
+      "id": "bf-41237-pafford-ems-dispatch-northwest-arkansas",
+      "name": "Pafford EMS Dispatch Northwest Arkansas",
+      "description": "Broadcastify public safety feed 41237 for Arkansas.",
+      "city": "",
+      "county": "Various",
+      "state": "AR",
+      "service_types": [
+        "dispatch",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arkansas",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41237"
+    },
+    {
+      "id": "bf-47118-rogers-police",
+      "name": "Rogers Police",
+      "description": "Broadcastify public safety feed 47118 for Arkansas.",
+      "city": "",
+      "county": "Various",
+      "state": "AR",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arkansas",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47118"
+    },
+    {
+      "id": "bf-39213-boone-south-fire",
+      "name": "Boone South Fire",
+      "description": "Broadcastify public safety feed 39213 for Arkansas.",
+      "city": "",
+      "county": "Various",
+      "state": "AR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arkansas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39213"
+    },
+    {
+      "id": "bf-39222-capps-batavia-fire",
+      "name": "Capps Batavia Fire",
+      "description": "Broadcastify public safety feed 39222 for Arkansas.",
+      "city": "",
+      "county": "Various",
+      "state": "AR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arkansas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39222"
+    },
+    {
+      "id": "bf-39225-marion-fire",
+      "name": "Marion Fire",
+      "description": "Broadcastify public safety feed 39225 for Arkansas.",
+      "city": "",
+      "county": "Various",
+      "state": "AR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arkansas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39225"
+    },
+    {
+      "id": "bf-39288-boone-north-fire",
+      "name": "Boone North Fire",
+      "description": "Broadcastify public safety feed 39288 for Arkansas.",
+      "city": "",
+      "county": "Various",
+      "state": "AR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arkansas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39288"
+    },
+    {
+      "id": "bf-39289-searcy-fire",
+      "name": "Searcy Fire",
+      "description": "Broadcastify public safety feed 39289 for Arkansas.",
+      "city": "",
+      "county": "Various",
+      "state": "AR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arkansas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39289"
+    },
+    {
+      "id": "bf-37420-warren-fire-rescue",
+      "name": "Warren Fire Rescue",
+      "description": "Broadcastify public safety feed 37420 for Arkansas.",
+      "city": "",
+      "county": "Various",
+      "state": "AR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arkansas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37420"
+    },
+    {
+      "id": "bf-37421-bradley-county-fire",
+      "name": "Bradley County Fire",
+      "description": "Broadcastify public safety feed 37421 for Arkansas.",
+      "city": "",
+      "county": "Various",
+      "state": "AR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arkansas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37421"
+    },
+    {
+      "id": "bf-40534-hermitage-vol-fire",
+      "name": "Hermitage Vol Fire",
+      "description": "Broadcastify public safety feed 40534 for Arkansas.",
+      "city": "",
+      "county": "Various",
+      "state": "AR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arkansas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40534"
+    },
+    {
+      "id": "bf-40535-bradley-county-vfd",
+      "name": "Bradley County VFD",
+      "description": "Broadcastify public safety feed 40535 for Arkansas.",
+      "city": "",
+      "county": "Various",
+      "state": "AR",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arkansas"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40535"
+    },
+    {
+      "id": "bf-17510-oak-grove-fire-and-rescue",
+      "name": "Oak Grove Fire and Rescue",
+      "description": "Broadcastify public safety feed 17510 for Arkansas.",
+      "city": "",
+      "county": "Various",
+      "state": "AR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arkansas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/17510"
+    },
+    {
+      "id": "bf-19866-green-forest-fire",
+      "name": "Green Forest Fire",
+      "description": "Broadcastify public safety feed 19866 for Arkansas.",
+      "city": "",
+      "county": "Various",
+      "state": "AR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arkansas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/19866"
+    },
+    {
+      "id": "bf-20032-inspiration-point-fire",
+      "name": "Inspiration Point Fire",
+      "description": "Broadcastify public safety feed 20032 for Arkansas.",
+      "city": "",
+      "county": "Various",
+      "state": "AR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arkansas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/20032"
+    },
+    {
+      "id": "bf-26197-grassy-knob-fire",
+      "name": "Grassy Knob Fire",
+      "description": "Broadcastify public safety feed 26197 for Arkansas.",
+      "city": "",
+      "county": "Various",
+      "state": "AR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arkansas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/26197"
+    },
+    {
+      "id": "bf-39338-holiday-island-fire",
+      "name": "Holiday Island Fire",
+      "description": "Broadcastify public safety feed 39338 for Arkansas.",
+      "city": "",
+      "county": "Various",
+      "state": "AR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arkansas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39338"
+    },
+    {
+      "id": "bf-19626-arkadelphia-fire",
+      "name": "Arkadelphia Fire",
+      "description": "Broadcastify public safety feed 19626 for Arkansas.",
+      "city": "",
+      "county": "Various",
+      "state": "AR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arkansas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/19626"
+    },
+    {
+      "id": "bf-36737-degray-fire",
+      "name": "DeGray Fire",
+      "description": "Broadcastify public safety feed 36737 for Arkansas.",
+      "city": "",
+      "county": "Various",
+      "state": "AR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arkansas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/36737"
+    },
+    {
+      "id": "bf-20534-columbia-county-fire",
+      "name": "Columbia County Fire",
+      "description": "Broadcastify public safety feed 20534 for Arkansas.",
+      "city": "",
+      "county": "Various",
+      "state": "AR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arkansas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/20534"
+    },
+    {
+      "id": "bf-29095-magnolia-fire-dispatch",
+      "name": "Magnolia Fire Dispatch",
+      "description": "Broadcastify public safety feed 29095 for Arkansas.",
+      "city": "",
+      "county": "Various",
+      "state": "AR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arkansas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/29095"
+    },
+    {
+      "id": "bf-17381-st-vincent-fire",
+      "name": "St. Vincent Fire",
+      "description": "Broadcastify public safety feed 17381 for Arkansas.",
+      "city": "",
+      "county": "Various",
+      "state": "AR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arkansas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/17381"
+    },
+    {
+      "id": "bf-17538-morrilton-fire",
+      "name": "Morrilton Fire",
+      "description": "Broadcastify public safety feed 17538 for Arkansas.",
+      "city": "",
+      "county": "Various",
+      "state": "AR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arkansas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/17538"
+    },
+    {
+      "id": "bf-33985-plumerville-fire",
+      "name": "Plumerville Fire",
+      "description": "Broadcastify public safety feed 33985 for Arkansas.",
+      "city": "",
+      "county": "Various",
+      "state": "AR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arkansas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/33985"
+    },
+    {
+      "id": "bf-19335-jonesboro-fire",
+      "name": "Jonesboro Fire",
+      "description": "Broadcastify public safety feed 19335 for Arkansas.",
+      "city": "",
+      "county": "Various",
+      "state": "AR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arkansas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/19335"
+    },
+    {
+      "id": "bf-28967-alma-fire",
+      "name": "Alma Fire",
+      "description": "Broadcastify public safety feed 28967 for Arkansas.",
+      "city": "",
+      "county": "Various",
+      "state": "AR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arkansas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/28967"
+    },
+    {
+      "id": "bf-45918-pafford-ems-dispatch-crittenden-talkgroup",
+      "name": "Pafford EMS Dispatch Crittenden Talkgroup",
+      "description": "Broadcastify public safety feed 45918 for Arkansas.",
+      "city": "",
+      "county": "Various",
+      "state": "AR",
+      "service_types": [
+        "dispatch",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arkansas",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45918"
+    },
+    {
+      "id": "bf-39873-pafford-ems-dispatch",
+      "name": "Pafford EMS Dispatch",
+      "description": "Broadcastify public safety feed 39873 for Arkansas.",
+      "city": "",
+      "county": "Various",
+      "state": "AR",
+      "service_types": [
+        "dispatch",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arkansas",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39873"
+    },
+    {
+      "id": "bf-41236-pafford-ems-dispatch-north-central-arkansa",
+      "name": "Pafford EMS Dispatch North-Central Arkansas",
+      "description": "Broadcastify public safety feed 41236 for Arkansas.",
+      "city": "",
+      "county": "Various",
+      "state": "AR",
+      "service_types": [
+        "dispatch",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arkansas",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41236"
+    },
+    {
+      "id": "bf-46731-vilonia-police",
+      "name": "Vilonia Police",
+      "description": "Broadcastify public safety feed 46731 for Arkansas.",
+      "city": "",
+      "county": "Various",
+      "state": "AR",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arkansas",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46731"
+    },
+    {
+      "id": "bf-16527-ozark-fire-dispatch",
+      "name": "Ozark Fire Dispatch",
+      "description": "Broadcastify public safety feed 16527 for Arkansas.",
+      "city": "",
+      "county": "Various",
+      "state": "AR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arkansas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/16527"
+    },
+    {
+      "id": "bf-17864-north-franklin-fire-communications",
+      "name": "North Franklin Fire Communications",
+      "description": "Broadcastify public safety feed 17864 for Arkansas.",
+      "city": "",
+      "county": "Various",
+      "state": "AR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arkansas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/17864"
+    },
+    {
+      "id": "bf-17865-south-franklin-fire-communications",
+      "name": "South Franklin Fire Communications",
+      "description": "Broadcastify public safety feed 17865 for Arkansas.",
+      "city": "",
+      "county": "Various",
+      "state": "AR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arkansas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/17865"
+    },
+    {
+      "id": "bf-17866-franklin-ems",
+      "name": "Franklin EMS",
+      "description": "Broadcastify public safety feed 17866 for Arkansas.",
+      "city": "",
+      "county": "Various",
+      "state": "AR",
+      "service_types": [
+        "dispatch",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arkansas",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/17866"
+    },
+    {
+      "id": "bf-46241-booneville-rural-fire",
+      "name": "Booneville Rural Fire",
+      "description": "Broadcastify public safety feed 46241 for Arkansas.",
+      "city": "",
+      "county": "Various",
+      "state": "AR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arkansas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46241"
+    },
+    {
+      "id": "bf-36475-hope-fire",
+      "name": "Hope Fire",
+      "description": "Broadcastify public safety feed 36475 for Arkansas.",
+      "city": "",
+      "county": "Various",
+      "state": "AR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arkansas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/36475"
+    },
+    {
+      "id": "bf-43398-nashville-fire",
+      "name": "Nashville Fire",
+      "description": "Broadcastify public safety feed 43398 for Arkansas.",
+      "city": "",
+      "county": "Various",
+      "state": "AR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arkansas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43398"
+    },
+    {
+      "id": "bf-43399-nashville-fire",
+      "name": "Nashville Fire",
+      "description": "Broadcastify public safety feed 43399 for Arkansas.",
+      "city": "",
+      "county": "Various",
+      "state": "AR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arkansas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43399"
+    },
+    {
+      "id": "bf-27109-pleasant-plains-fire",
+      "name": "Pleasant Plains Fire",
+      "description": "Broadcastify public safety feed 27109 for Arkansas.",
+      "city": "",
+      "county": "Various",
+      "state": "AR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arkansas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/27109"
+    },
+    {
+      "id": "bf-31152-southside-fire",
+      "name": "Southside Fire",
+      "description": "Broadcastify public safety feed 31152 for Arkansas.",
+      "city": "",
+      "county": "Various",
+      "state": "AR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arkansas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/31152"
+    },
+    {
+      "id": "bf-38662-newark-fire",
+      "name": "Newark Fire",
+      "description": "Broadcastify public safety feed 38662 for Arkansas.",
+      "city": "",
+      "county": "Various",
+      "state": "AR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arkansas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38662"
+    },
+    {
+      "id": "bf-30004-newport-fire",
+      "name": "Newport Fire",
+      "description": "Broadcastify public safety feed 30004 for Arkansas.",
+      "city": "",
+      "county": "Various",
+      "state": "AR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arkansas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/30004"
+    },
+    {
+      "id": "bf-33209-grubbs-fire",
+      "name": "Grubbs Fire",
+      "description": "Broadcastify public safety feed 33209 for Arkansas.",
+      "city": "",
+      "county": "Various",
+      "state": "AR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arkansas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/33209"
+    },
+    {
+      "id": "bf-39194-tuckerman-fire-ems",
+      "name": "Tuckerman Fire/EMS",
+      "description": "Broadcastify public safety feed 39194 for Arkansas.",
+      "city": "",
+      "county": "Various",
+      "state": "AR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arkansas",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39194"
+    },
+    {
+      "id": "bf-41344-swifton-fire",
+      "name": "Swifton Fire",
+      "description": "Broadcastify public safety feed 41344 for Arkansas.",
+      "city": "",
+      "county": "Various",
+      "state": "AR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arkansas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41344"
+    },
+    {
+      "id": "bf-20069-clarksville-fire",
+      "name": "Clarksville Fire",
+      "description": "Broadcastify public safety feed 20069 for Arkansas.",
+      "city": "",
+      "county": "Various",
+      "state": "AR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arkansas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/20069"
+    },
+    {
+      "id": "bf-35431-johnson-county-fire-services",
+      "name": "Johnson County Fire Services",
+      "description": "Broadcastify public safety feed 35431 for Arkansas.",
+      "city": "",
+      "county": "Various",
+      "state": "AR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arkansas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/35431"
+    },
+    {
+      "id": "bf-30380-lafayette-county-fire",
+      "name": "Lafayette County Fire",
+      "description": "Broadcastify public safety feed 30380 for Arkansas.",
+      "city": "",
+      "county": "Various",
+      "state": "AR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arkansas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/30380"
+    },
+    {
+      "id": "bf-38463-black-rock-fire",
+      "name": "Black Rock Fire",
+      "description": "Broadcastify public safety feed 38463 for Arkansas.",
+      "city": "",
+      "county": "Various",
+      "state": "AR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arkansas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38463"
+    },
+    {
+      "id": "bf-18030-foreman-fire",
+      "name": "Foreman Fire",
+      "description": "Broadcastify public safety feed 18030 for Arkansas.",
+      "city": "",
+      "county": "Various",
+      "state": "AR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arkansas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/18030"
+    },
+    {
+      "id": "bf-24510-booneville-rural-volunteer-fire",
+      "name": "Booneville Rural Volunteer Fire",
+      "description": "Broadcastify public safety feed 24510 for Arkansas.",
+      "city": "",
+      "county": "Various",
+      "state": "AR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arkansas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/24510"
+    },
+    {
+      "id": "bf-20978-lonoke-county-fire-dispatch",
+      "name": "Lonoke County Fire Dispatch",
+      "description": "Broadcastify public safety feed 20978 for Arkansas.",
+      "city": "",
+      "county": "Various",
+      "state": "AR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arkansas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/20978"
+    },
+    {
+      "id": "bf-39880-lonoke-countywide-fireground-1-2-and-3",
+      "name": "Lonoke Countywide Fireground 1, 2, and 3",
+      "description": "Broadcastify public safety feed 39880 for Arkansas.",
+      "city": "",
+      "county": "Various",
+      "state": "AR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arkansas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39880"
+    },
+    {
+      "id": "bf-40768-england-fire-dispatch",
+      "name": "England Fire Dispatch",
+      "description": "Broadcastify public safety feed 40768 for Arkansas.",
+      "city": "",
+      "county": "Various",
+      "state": "AR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arkansas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40768"
+    },
+    {
+      "id": "bf-46635-austin-volunteer-fire",
+      "name": "Austin Volunteer Fire",
+      "description": "Broadcastify public safety feed 46635 for Arkansas.",
+      "city": "",
+      "county": "Various",
+      "state": "AR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arkansas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46635"
+    },
+    {
+      "id": "bf-46636-mountain-springs",
+      "name": "Mountain Springs",
+      "description": "Broadcastify public safety feed 46636 for Arkansas.",
+      "city": "",
+      "county": "Various",
+      "state": "AR",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arkansas"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46636"
+    },
+    {
+      "id": "bf-47259-lonoke-county-public-safety",
+      "name": "Lonoke County Public Safety",
+      "description": "Broadcastify public safety feed 47259 for Arkansas.",
+      "city": "",
+      "county": "Various",
+      "state": "AR",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arkansas"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47259"
+    },
+    {
+      "id": "bf-30578-rea-valley-fire",
+      "name": "Rea Valley Fire",
+      "description": "Broadcastify public safety feed 30578 for Arkansas.",
+      "city": "",
+      "county": "Various",
+      "state": "AR",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arkansas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/30578"
+    }
+  ]
+}

@@ -16,6 +16,7 @@
       <div class="status-group">
         <span id="connStatus" class="pill warn">connecting</span>
         <span id="runStatus" class="pill mute">idle</span>
+        <span id="gpsStatus" class="pill mute">gps: pending</span>
         <button id="enableNotifyBtn" class="tiny-btn">Enable Notifications</button>
       </div>
     </header>
@@ -44,6 +45,11 @@
           <button id="planRouteBtn" class="primary">Plan Route in Waze</button>
           <button id="openWazeBtn">Open Waze Route</button>
           <button id="useAlertCoordsBtn">Use Last Alert Coords</button>
+        </div>
+        <div class="nav-row tri">
+          <button id="useCurrentGpsBtn">Use Current GPS</button>
+          <button id="refreshSelectorBtn">Refresh Broadcastify Selector</button>
+          <span id="selectorStatus" class="sub tiny">selector: idle</span>
         </div>
         <p class="sub tiny">Planner supports destination text + lat/lon. If both are provided, destination text takes priority.</p>
       </article>

@@ -12,6 +12,7 @@ import scipy.io.wavfile as wav
 import requests
 import numpy as np
 from faster_whisper import WhisperModel
+from channel_selector import SelectorContext, load_channels, select_channels
 
 
 FS = 16000          # Audio frequency standard for Whisper
@@ -76,6 +77,15 @@ DISPATCH_CUE_WEIGHTS = {
     "coordination": 1,
 }
 PRIMARY_ENFORCEMENT_STRONG = {"radar", "laser", "clocked", "speed trap", "pacing", "vehicle stop", "running traffic"}
+DIRECT_SOURCE_FALLBACK_TOKENS = [
+    "pipewire",
+    "alsa_input",
+    "analog",
+    "usb",
+    "microphone",
+    "mic",
+    "input",
+]
 
 def log_safe(text):
     return text.replace('"', "'").replace("\n", " ").strip()
@@ -179,29 +189,58 @@ def query_llm(transcript_text, timeout_seconds=3.0, retries=0):
         "raw": last_raw,
         "attempts": attempts,
     }
+def list_input_devices():
+    devices = sd.query_devices()
+    return [(idx, dev) for idx, dev in enumerate(devices) if dev["max_input_channels"] > 0]
 def pick_default_input_device():
-    devices = sd.query_devices()
-    for idx, dev in enumerate(devices):
-        if "pipewire" in dev["name"].lower() and dev["max_input_channels"] > 0:
-            return idx
-    return sd.default.device[0]
+    input_devices = list_input_devices()
+    if not input_devices:
+        raise RuntimeError("No audio input devices detected by sounddevice.")
+    for idx, dev in input_devices:
+        if "pipewire" in dev["name"].lower():
+            return idx, dev["name"], "preferred_pipewire_match"
+    default_input_idx = None
+    default_device = sd.default.device
+    if isinstance(default_device, (list, tuple)) and len(default_device) >= 1:
+        default_input_idx = default_device[0]
+    elif isinstance(default_device, int):
+        default_input_idx = default_device
+    if isinstance(default_input_idx, int) and default_input_idx >= 0:
+        default_info = sd.query_devices(default_input_idx)
+        if default_info["max_input_channels"] > 0:
+            return default_input_idx, default_info["name"], "system_default_input"
+    first_idx, first_dev = input_devices[0]
+    return first_idx, first_dev["name"], "first_available_input"
 def resolve_input_device(device_index=None, source_name=None, strict_source_match=False):
-    devices = sd.query_devices()
+    input_devices = list_input_devices()
     if device_index is not None:
+        devices = sd.query_devices()
         dev = devices[device_index]
         if dev["max_input_channels"] <= 0:
             raise RuntimeError(f"Selected device index {device_index} is not an input device: {dev['name']}")
-        return device_index, dev["name"]
+        return device_index, dev["name"], "explicit_device_index"
     if source_name:
         token = source_name.lower()
-        for idx, dev in enumerate(devices):
-            if dev["max_input_channels"] > 0 and token in dev["name"].lower():
-                return idx, dev["name"]
+        for idx, dev in input_devices:
+            if token in dev["name"].lower():
+                return idx, dev["name"], "explicit_source_token_match"
         if strict_source_match:
             raise RuntimeError(f"No input device matched --source-node '{source_name}'. Use --list-devices to inspect names.")
-        print(f"No input device matched --source-node '{source_name}', falling back to default input selection.")
-    idx = pick_default_input_device()
-    return idx, devices[idx]["name"]
+        print(f"No input device matched --source-node '{source_name}', continuing with auto-detection fallback.")
+    used_fallback_tokens = []
+    for token in DIRECT_SOURCE_FALLBACK_TOKENS:
+        used_fallback_tokens.append(token)
+        for idx, dev in input_devices:
+            if token in dev["name"].lower():
+                print(f"Auto-detected input via fallback token '{token}': {dev['name']} (index {idx})")
+                return idx, dev["name"], f"fallback_token:{token}"
+    idx, dev_name, selection_reason = pick_default_input_device()
+    print(
+        "No fallback token match found; using default strategy "
+        f"({selection_reason}) -> {dev_name} (index {idx}). "
+        f"Tried tokens: {used_fallback_tokens}"
+    )
+    return idx, dev_name, selection_reason
 def resolve_capture_samplerate(device_index, requested_rate):
     try:
         sd.check_input_settings(device=device_index, samplerate=requested_rate, channels=1, dtype="float32")
@@ -364,6 +403,49 @@ def capture_scrcpy_chunk_to_wav(source_name, duration_seconds, output_path, samp
         "-t", str(duration_seconds),
         output_path
     ], check=True)
+def capture_stream_chunk_to_wav(stream_url, duration_seconds, output_path, sample_rate):
+    subprocess.run([
+        "ffmpeg", "-hide_banner", "-loglevel", "error", "-y",
+        "-rw_timeout", "15000000",
+        "-i", stream_url,
+        "-vn",
+        "-ac", "1",
+        "-ar", str(sample_rate),
+        "-t", str(duration_seconds),
+        output_path
+    ], check=True)
+def resolve_broadcast_stream(args):
+    if args.stream_url:
+        return args.stream_url, {"id": "manual_stream", "name": "manual_stream", "stream_url": args.stream_url}, None
+    if not args.channels_file:
+        raise RuntimeError("Broadcastify mode requires --stream-url or --channels-file for selector-based auto-selection.")
+    desired_types = [token.strip() for token in args.selector_desired_types.split(",") if token.strip()]
+    ctx = SelectorContext(
+        lat=args.selector_lat,
+        lon=args.selector_lon,
+        city=args.selector_city,
+        county=args.selector_county,
+        state=args.selector_state,
+        desired_types=desired_types,
+    )
+    channels = load_channels(args.channels_file, ctx=ctx)
+    ranked, rerank_error = select_channels(
+        channels=channels,
+        ctx=ctx,
+        top_k=args.selector_top_k,
+        use_ollama_rerank=args.selector_use_ollama_rerank,
+        ollama_model=args.selector_ollama_model,
+        ollama_url=args.selector_ollama_url,
+        ollama_timeout=args.selector_ollama_timeout,
+        ollama_weight=args.selector_ollama_weight,
+    )
+    if not ranked:
+        raise RuntimeError("Channel selector did not return any ranked candidates.")
+    selected = ranked[0]["channel"]
+    stream_url = selected.get("stream_url")
+    if not stream_url:
+        raise RuntimeError(f"Selected channel '{selected.get('id')}' has no stream_url.")
+    return stream_url, selected, rerank_error
 class TeeStream:
     def __init__(self, *streams):
         self.streams = streams
@@ -402,7 +484,7 @@ def start_scrcpy(scrcpy_bin, serial=None):
     return subprocess.Popen(cmd, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
 parser = argparse.ArgumentParser(description="Live police scanner -> Whisper -> LLM alert pipeline")
-parser.add_argument("--mode", choices=["direct", "scrcpy"], default="scrcpy", help="Audio capture mode: direct input or scrcpy phone stream")
+parser.add_argument("--mode", choices=["direct", "scrcpy", "broadcastify"], default="scrcpy", help="Audio capture mode: direct input, scrcpy phone stream, or broadcastify stream")
 parser.add_argument("--device", type=int, default=None, help="Input device index (use --list-devices to inspect)")
 parser.add_argument("--source-node", type=str, default=None, help="Input source name substring (used when --device is not set)")
 parser.add_argument("--duration", type=float, default=DURATION, help="Capture duration per chunk in seconds")
@@ -411,6 +493,20 @@ parser.add_argument("--start-scrcpy", action="store_true", help="Auto-launch scr
 parser.add_argument("--serial", type=str, default=None, help="ADB device serial (optional)")
 parser.add_argument("--scrcpy-bin", type=str, default="scrcpy", help="scrcpy executable path/name for scrcpy mode")
 parser.add_argument("--scrcpy-sink", type=str, default="scanner_sink", help="PulseAudio sink name used to isolate scrcpy audio")
+parser.add_argument("--stream-url", type=str, default=None, help="Direct broadcast stream URL (broadcastify mode)")
+parser.add_argument("--channels-file", type=str, default=None, help="Channel catalog JSON path for broadcastify auto-selection")
+parser.add_argument("--selector-city", type=str, default="", help="Jurisdiction city for channel selector scoring")
+parser.add_argument("--selector-county", type=str, default="", help="Jurisdiction county for channel selector scoring")
+parser.add_argument("--selector-state", type=str, default="", help="Jurisdiction state for channel selector scoring")
+parser.add_argument("--selector-lat", type=float, default=None, help="Latitude for distance-aware selector scoring")
+parser.add_argument("--selector-lon", type=float, default=None, help="Longitude for distance-aware selector scoring")
+parser.add_argument("--selector-desired-types", type=str, default="law,dispatch", help="Comma-separated desired channel type tokens")
+parser.add_argument("--selector-top-k", type=int, default=8, help="Top deterministic candidates to consider before reranking")
+parser.add_argument("--selector-use-ollama-rerank", action=argparse.BooleanOptionalAction, default=True, help="Enable optional Ollama rerank for selector")
+parser.add_argument("--selector-ollama-model", type=str, default="llama3.1", help="Ollama model for selector reranking")
+parser.add_argument("--selector-ollama-url", type=str, default="http://localhost:11434/api/generate", help="Ollama endpoint for selector reranking")
+parser.add_argument("--selector-ollama-timeout", type=float, default=8.0, help="Ollama timeout in seconds for selector reranking")
+parser.add_argument("--selector-ollama-weight", type=float, default=0.2, help="Blend weight [0..1] for Ollama rerank influence")
 parser.add_argument("--log-file", type=str, default="/tmp/pipeline_runtime.log", help="Path to append pipeline logs")
 parser.add_argument("--alert-debug", action=argparse.BooleanOptionalAction, default=True, help="Emit detailed [ALERT_DEBUG] lines for cue matching and Ollama decisions")
 parser.add_argument("--ollama-timeout", type=float, default=8.0, help="Ollama request timeout in seconds")
@@ -421,6 +517,8 @@ parser.add_argument("--soft-alert-fallback", action=argparse.BooleanOptionalActi
 parser.add_argument("--integration-json", action=argparse.BooleanOptionalAction, default=True, help="Emit structured [EVENT_JSON] lines for Java/HTML integrations")
 parser.add_argument("--rule-score-threshold", type=int, default=3, help="Weighted dispatch score threshold that marks a transcript as rule-expected alert")
 parser.add_argument("--hard-rule-score-threshold", type=int, default=4, help="Weighted dispatch score threshold for hard rule-based alert promotion")
+parser.add_argument("--loop-heartbeat", action=argparse.BooleanOptionalAction, default=False, help="Emit per-loop heartbeat diagnostics during capture/transcription runtime")
+parser.add_argument("--loop-heartbeat-every", type=int, default=1, help="Emit loop heartbeat every N loop iterations when --loop-heartbeat is enabled")
 args = parser.parse_args()
 signal.signal(signal.SIGTERM, request_shutdown)
 signal.signal(signal.SIGINT, request_shutdown)
@@ -441,6 +539,9 @@ scrcpy_proc = None
 source_node = args.source_node
 input_device = None
 input_device_name = None
+input_selection_reason = None
+stream_url = None
+selected_channel = None
 if args.mode == "scrcpy":
     ensure_binary("ffmpeg")
     ensure_binary("pactl")
@@ -456,11 +557,23 @@ if args.mode == "scrcpy":
     source_node = f"{args.scrcpy_sink}.monitor"
     capture_fs = FS
     print(f"Routed scrcpy sink-input #{sink_input_id} to isolated sink '{args.scrcpy_sink}'.")
+elif args.mode == "broadcastify":
+    ensure_binary("ffmpeg")
+    stream_url, selected_channel, selector_rerank_error = resolve_broadcast_stream(args)
+    capture_fs = FS
+    print(
+        f"Selected broadcast stream: id={selected_channel.get('id')} "
+        f"name={selected_channel.get('name')} url={stream_url}"
+    )
+    if selector_rerank_error:
+        print(f"Selector rerank fallback to deterministic score due to: {selector_rerank_error}")
 else:
-    if source_node is None:
-        source_node = "ALC274 Analog"
     strict_source_match = False
-    input_device, input_device_name = resolve_input_device(args.device, source_node, strict_source_match=strict_source_match)
+    input_device, input_device_name, input_selection_reason = resolve_input_device(
+        args.device,
+        source_node,
+        strict_source_match=strict_source_match
+    )
     capture_fs = resolve_capture_samplerate(input_device, FS)
 chunk_duration = args.duration
 print("Loading Whisper model...")
@@ -471,17 +584,34 @@ print("\n--- Pipeline Fully Loaded and Active ---")
 print(f"Listening in mode: {args.mode}")
 if args.mode == "scrcpy":
     print(f"Input source node: {source_node}")
+elif args.mode == "broadcastify":
+    print(f"Broadcast stream URL: {stream_url}")
+    if selected_channel:
+        print(
+            "Broadcast channel context: "
+            f"id={selected_channel.get('id')} "
+            f"name={selected_channel.get('name')} "
+            f"jurisdiction={selected_channel.get('city','')}/{selected_channel.get('county','')}/{selected_channel.get('state','')}"
+        )
 else:
     print(f"Input device index: {input_device}")
     print(f"Input source node: {input_device_name}")
+    print(f"Input selection strategy: {input_selection_reason}")
 print(f"Capture sample rate: {capture_fs}")
 emit_event_json(
     "pipeline_ready",
     enabled=args.integration_json,
     mode=args.mode,
-    source_node=source_node if args.mode == "scrcpy" else input_device_name,
+    source_node=source_node if args.mode == "scrcpy" else (stream_url if args.mode == "broadcastify" else input_device_name),
+    input_selection_reason=(
+        input_selection_reason
+        if args.mode == "direct"
+        else ("broadcast_stream_selector" if args.mode == "broadcastify" else "scrcpy_sink_monitor")
+    ),
     sample_rate=capture_fs,
     soft_alert_fallback=args.soft_alert_fallback,
+    channel_id=selected_channel.get("id") if selected_channel else None,
+    channel_name=selected_channel.get("name") if selected_channel else None,
 )
 run_stats = {
     "captured": 0,
@@ -490,12 +620,49 @@ run_stats = {
     "llm_alert": 0,
     "soft_alert_fallback": 0,
 }
+run_started_at = time.time()
+loop_counter = 0
 try:
     while not SHOULD_EXIT:
         try:
+            loop_counter += 1
+            if args.loop_heartbeat and loop_counter % max(1, args.loop_heartbeat_every) == 0:
+                print(
+                    "[LOOP_HEARTBEAT] "
+                    f"loop={loop_counter} "
+                    f"mode={args.mode} "
+                    f"captured={run_stats['captured']} "
+                    f"skipped_silence={run_stats['skipped_silence']} "
+                    f"skipped_clipped={run_stats['skipped_clipped']} "
+                    f"llm_alert={run_stats['llm_alert']} "
+                    f"soft_alert_fallback={run_stats['soft_alert_fallback']}"
+                )
+                emit_event_json(
+                    "loop_heartbeat",
+                    enabled=args.integration_json,
+                    loop=loop_counter,
+                    mode=args.mode,
+                    uptime_seconds=round(time.time() - run_started_at, 3),
+                    captured=run_stats["captured"],
+                    skipped_silence=run_stats["skipped_silence"],
+                    skipped_clipped=run_stats["skipped_clipped"],
+                    llm_alert=run_stats["llm_alert"],
+                    soft_alert_fallback=run_stats["soft_alert_fallback"],
+                )
             if args.mode == "scrcpy":
                 enforce_scrcpy_sink_purity(args.scrcpy_sink, sink_input_id)
                 capture_scrcpy_chunk_to_wav(source_node, chunk_duration, "buffer_chunk.wav", capture_fs)
+                chunk_fs, chunk_data = wav.read("buffer_chunk.wav")
+                if chunk_data.ndim == 2:
+                    chunk_data = chunk_data[:, 0]
+                mono = chunk_data.astype(np.float32)
+                if chunk_data.dtype == np.int16:
+                    mono = mono / 32768.0
+                elif chunk_data.dtype == np.int32:
+                    mono = mono / 2147483648.0
+                capture_fs = chunk_fs
+            elif args.mode == "broadcastify":
+                capture_stream_chunk_to_wav(stream_url, chunk_duration, "buffer_chunk.wav", capture_fs)
                 chunk_fs, chunk_data = wav.read("buffer_chunk.wav")
                 if chunk_data.ndim == 2:
                     chunk_data = chunk_data[:, 0]

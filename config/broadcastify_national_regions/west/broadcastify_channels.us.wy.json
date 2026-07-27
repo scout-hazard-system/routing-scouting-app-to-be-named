@@ -1,0 +1,546 @@
+{
+  "channels": [
+    {
+      "id": "bf-32602-indianapolis-metropolitan-police",
+      "name": "Indianapolis Metropolitan Police",
+      "description": "Broadcastify public safety feed 32602 for Wyoming.",
+      "city": "",
+      "county": "Various",
+      "state": "WY",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wyoming",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32602"
+    },
+    {
+      "id": "bf-6900-gillette-police-campbell-county-sheriff-fi",
+      "name": "Gillette Police, Campbell County Sheriff, Fire and EMS, WHP",
+      "description": "Broadcastify public safety feed 6900 for Wyoming.",
+      "city": "",
+      "county": "Various",
+      "state": "WY",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wyoming",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/6900"
+    },
+    {
+      "id": "bf-47003-laramie-county-law-enforcement",
+      "name": "Laramie County Law Enforcement",
+      "description": "Broadcastify public safety feed 47003 for Wyoming.",
+      "city": "",
+      "county": "Various",
+      "state": "WY",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wyoming",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47003"
+    },
+    {
+      "id": "bf-37816-fremont-county-public-safety",
+      "name": "Fremont County Public Safety",
+      "description": "Broadcastify public safety feed 37816 for Wyoming.",
+      "city": "",
+      "county": "Various",
+      "state": "WY",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wyoming"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37816"
+    },
+    {
+      "id": "bf-32016-natrona-county-fire-and-ems-dispatch",
+      "name": "Natrona County Fire and EMS Dispatch",
+      "description": "Broadcastify public safety feed 32016 for Wyoming.",
+      "city": "",
+      "county": "Various",
+      "state": "WY",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wyoming",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32016"
+    },
+    {
+      "id": "bf-38973-sheridan-county-public-safety",
+      "name": "Sheridan County Public Safety",
+      "description": "Broadcastify public safety feed 38973 for Wyoming.",
+      "city": "",
+      "county": "Various",
+      "state": "WY",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wyoming"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38973"
+    },
+    {
+      "id": "bf-24587-carbon-county-public-safety",
+      "name": "Carbon County Public Safety",
+      "description": "Broadcastify public safety feed 24587 for Wyoming.",
+      "city": "",
+      "county": "Various",
+      "state": "WY",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wyoming"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/24587"
+    },
+    {
+      "id": "bf-47019-laramie-county-public-safety",
+      "name": "Laramie County Public Safety",
+      "description": "Broadcastify public safety feed 47019 for Wyoming.",
+      "city": "",
+      "county": "Various",
+      "state": "WY",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wyoming"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47019"
+    },
+    {
+      "id": "bf-42118-park-county-public-safety-wyolink",
+      "name": "Park County Public Safety - WyoLink",
+      "description": "Broadcastify public safety feed 42118 for Wyoming.",
+      "city": "",
+      "county": "Various",
+      "state": "WY",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wyoming"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42118"
+    },
+    {
+      "id": "bf-46189-laramie-county-fire-and-ems",
+      "name": "Laramie County Fire and EMS",
+      "description": "Broadcastify public safety feed 46189 for Wyoming.",
+      "city": "",
+      "county": "Various",
+      "state": "WY",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wyoming",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46189"
+    },
+    {
+      "id": "bf-46691-albany-county-public-safety",
+      "name": "Albany County Public Safety",
+      "description": "Broadcastify public safety feed 46691 for Wyoming.",
+      "city": "",
+      "county": "Various",
+      "state": "WY",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wyoming"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46691"
+    },
+    {
+      "id": "bf-44724-big-horn-county-public-safety",
+      "name": "Big Horn County Public Safety",
+      "description": "Broadcastify public safety feed 44724 for Wyoming.",
+      "city": "",
+      "county": "Various",
+      "state": "WY",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wyoming"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44724"
+    },
+    {
+      "id": "bf-46359-laramie-county-fire-district-3",
+      "name": "Laramie County Fire District 3",
+      "description": "Broadcastify public safety feed 46359 for Wyoming.",
+      "city": "",
+      "county": "Various",
+      "state": "WY",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wyoming",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46359"
+    },
+    {
+      "id": "bf-46815-goshen-county-public-safety",
+      "name": "Goshen County Public Safety",
+      "description": "Broadcastify public safety feed 46815 for Wyoming.",
+      "city": "",
+      "county": "Various",
+      "state": "WY",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wyoming"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46815"
+    },
+    {
+      "id": "bf-25375-big-horn-fire",
+      "name": "Big Horn Fire",
+      "description": "Broadcastify public safety feed 25375 for Wyoming.",
+      "city": "",
+      "county": "Various",
+      "state": "WY",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wyoming",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/25375"
+    },
+    {
+      "id": "bf-47444-natrona-county-public-safety",
+      "name": "Natrona County Public Safety",
+      "description": "Broadcastify public safety feed 47444 for Wyoming.",
+      "city": "",
+      "county": "Various",
+      "state": "WY",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wyoming"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47444"
+    },
+    {
+      "id": "bf-34634-guernsey-fire",
+      "name": "Guernsey Fire",
+      "description": "Broadcastify public safety feed 34634 for Wyoming.",
+      "city": "",
+      "county": "Various",
+      "state": "WY",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wyoming",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/34634"
+    },
+    {
+      "id": "bf-43946-sheridan-fire-and-rescue",
+      "name": "Sheridan Fire and Rescue",
+      "description": "Broadcastify public safety feed 43946 for Wyoming.",
+      "city": "",
+      "county": "Various",
+      "state": "WY",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wyoming",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43946"
+    },
+    {
+      "id": "bf-33812-chugwater-fire-protection",
+      "name": "Chugwater Fire Protection",
+      "description": "Broadcastify public safety feed 33812 for Wyoming.",
+      "city": "",
+      "county": "Various",
+      "state": "WY",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wyoming",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/33812"
+    },
+    {
+      "id": "bf-2897-powell-police-fire-and-ems",
+      "name": "Powell Police, Fire and EMS",
+      "description": "Broadcastify public safety feed 2897 for Wyoming.",
+      "city": "",
+      "county": "Various",
+      "state": "WY",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wyoming",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/2897"
+    },
+    {
+      "id": "bf-45263-niobrara-county-and-lusk-fire-and-ems-anal",
+      "name": "Niobrara County and Lusk Fire and EMS Analog",
+      "description": "Broadcastify public safety feed 45263 for Wyoming.",
+      "city": "",
+      "county": "Various",
+      "state": "WY",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wyoming",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45263"
+    },
+    {
+      "id": "bf-33051-fort-laramie-fire",
+      "name": "Fort Laramie Fire",
+      "description": "Broadcastify public safety feed 33051 for Wyoming.",
+      "city": "",
+      "county": "Various",
+      "state": "WY",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wyoming",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/33051"
+    },
+    {
+      "id": "bf-45835-converse-county-douglas-glenrock-public-sa",
+      "name": "Converse County (Douglas/Glenrock) Public Safety",
+      "description": "Broadcastify public safety feed 45835 for Wyoming.",
+      "city": "",
+      "county": "Various",
+      "state": "WY",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wyoming"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45835"
+    },
+    {
+      "id": "bf-18122-deaver-frannie-fire",
+      "name": "Deaver-Frannie Fire",
+      "description": "Broadcastify public safety feed 18122 for Wyoming.",
+      "city": "",
+      "county": "Various",
+      "state": "WY",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wyoming",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/18122"
+    }
+  ]
+}

@@ -1,0 +1,768 @@
+{
+  "channels": [
+    {
+      "id": "bf-32602-indianapolis-metropolitan-police",
+      "name": "Indianapolis Metropolitan Police",
+      "description": "Broadcastify public safety feed 32602 for Utah.",
+      "city": "",
+      "county": "Various",
+      "state": "UT",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "utah",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32602"
+    },
+    {
+      "id": "bf-44029-davis-county-uca-700-mhz-p25-system",
+      "name": "Davis County UCA 700 MHz P25 System",
+      "description": "Broadcastify public safety feed 44029 for Utah.",
+      "city": "",
+      "county": "Various",
+      "state": "UT",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "utah"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44029"
+    },
+    {
+      "id": "bf-47411-salt-lake-county-public-safety",
+      "name": "Salt Lake County Public Safety",
+      "description": "Broadcastify public safety feed 47411 for Utah.",
+      "city": "",
+      "county": "Various",
+      "state": "UT",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "utah"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47411"
+    },
+    {
+      "id": "bf-26923-utah-county-public-safety",
+      "name": "Utah County Public Safety",
+      "description": "Broadcastify public safety feed 26923 for Utah.",
+      "city": "",
+      "county": "Various",
+      "state": "UT",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "utah"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/26923"
+    },
+    {
+      "id": "bf-44287-central-iron-county-public-safety",
+      "name": "Central Iron County Public Safety",
+      "description": "Broadcastify public safety feed 44287 for Utah.",
+      "city": "",
+      "county": "Various",
+      "state": "UT",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "utah"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44287"
+    },
+    {
+      "id": "bf-29296-box-elder-county-public-safety",
+      "name": "Box Elder County Public Safety",
+      "description": "Broadcastify public safety feed 29296 for Utah.",
+      "city": "",
+      "county": "Various",
+      "state": "UT",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "utah"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/29296"
+    },
+    {
+      "id": "bf-1996-cache-county-public-safety",
+      "name": "Cache County Public Safety",
+      "description": "Broadcastify public safety feed 1996 for Utah.",
+      "city": "",
+      "county": "Various",
+      "state": "UT",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "utah"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/1996"
+    },
+    {
+      "id": "bf-12137-summit-county-sheriff-ems-and-park-city-po",
+      "name": "Summit County Sheriff, EMS and Park City Police",
+      "description": "Broadcastify public safety feed 12137 for Utah.",
+      "city": "",
+      "county": "Various",
+      "state": "UT",
+      "service_types": [
+        "dispatch",
+        "law",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "utah",
+        "law",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/12137"
+    },
+    {
+      "id": "bf-45438-tooele-county-public-safety",
+      "name": "Tooele County Public Safety",
+      "description": "Broadcastify public safety feed 45438 for Utah.",
+      "city": "",
+      "county": "Various",
+      "state": "UT",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "utah"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45438"
+    },
+    {
+      "id": "bf-24454-rich-county-sheriff-fire-ems-and-sar",
+      "name": "Rich County Sheriff, Fire, EMS and SAR",
+      "description": "Broadcastify public safety feed 24454 for Utah.",
+      "city": "",
+      "county": "Various",
+      "state": "UT",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "utah",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/24454"
+    },
+    {
+      "id": "bf-25572-washington-county-fire-and-ems-east",
+      "name": "Washington County Fire and EMS - East",
+      "description": "Broadcastify public safety feed 25572 for Utah.",
+      "city": "",
+      "county": "Various",
+      "state": "UT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "utah",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/25572"
+    },
+    {
+      "id": "bf-44878-millard-county-dispatch",
+      "name": "Millard County Dispatch",
+      "description": "Broadcastify public safety feed 44878 for Utah.",
+      "city": "",
+      "county": "Various",
+      "state": "UT",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "utah"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44878"
+    },
+    {
+      "id": "bf-20471-san-juan-ems",
+      "name": "San Juan EMS",
+      "description": "Broadcastify public safety feed 20471 for Utah.",
+      "city": "",
+      "county": "Various",
+      "state": "UT",
+      "service_types": [
+        "dispatch",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "utah",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/20471"
+    },
+    {
+      "id": "bf-386-dolores-montezuma-and-san-juan-counties-sh",
+      "name": "Dolores, Montezuma, and San Juan Counties Sheriff and Fire",
+      "description": "Broadcastify public safety feed 386 for Utah.",
+      "city": "",
+      "county": "Various",
+      "state": "UT",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "utah",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/386"
+    },
+    {
+      "id": "bf-44008-beaver-county-sheriff",
+      "name": "Beaver County Sheriff",
+      "description": "Broadcastify public safety feed 44008 for Utah.",
+      "city": "",
+      "county": "Various",
+      "state": "UT",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "utah",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44008"
+    },
+    {
+      "id": "bf-46981-wasatch-county-public-safety",
+      "name": "Wasatch County Public Safety",
+      "description": "Broadcastify public safety feed 46981 for Utah.",
+      "city": "",
+      "county": "Various",
+      "state": "UT",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "utah"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46981"
+    },
+    {
+      "id": "bf-44440-sevier-county-public-safety",
+      "name": "Sevier County Public Safety",
+      "description": "Broadcastify public safety feed 44440 for Utah.",
+      "city": "",
+      "county": "Various",
+      "state": "UT",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "utah"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44440"
+    },
+    {
+      "id": "bf-24559-hildale-and-colorado-city-police-fire-ems",
+      "name": "Hildale and Colorado City Police, Fire / EMS",
+      "description": "Broadcastify public safety feed 24559 for Utah.",
+      "city": "",
+      "county": "Various",
+      "state": "UT",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "utah",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/24559"
+    },
+    {
+      "id": "bf-34958-myton-fire",
+      "name": "Myton Fire",
+      "description": "Broadcastify public safety feed 34958 for Utah.",
+      "city": "",
+      "county": "Various",
+      "state": "UT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "utah",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/34958"
+    },
+    {
+      "id": "bf-44041-layton-city-police-and-fire",
+      "name": "Layton City Police and Fire",
+      "description": "Broadcastify public safety feed 44041 for Utah.",
+      "city": "",
+      "county": "Various",
+      "state": "UT",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "utah",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44041"
+    },
+    {
+      "id": "bf-46670-utah-navajo-health-system",
+      "name": "Utah Navajo Health System",
+      "description": "Broadcastify public safety feed 46670 for Utah.",
+      "city": "",
+      "county": "Various",
+      "state": "UT",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "utah"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46670"
+    },
+    {
+      "id": "bf-33592-harmony-valley-fire-district",
+      "name": "Harmony Valley Fire District",
+      "description": "Broadcastify public safety feed 33592 for Utah.",
+      "city": "",
+      "county": "Various",
+      "state": "UT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "utah",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/33592"
+    },
+    {
+      "id": "bf-31124-beaver-county-ems-dispatch",
+      "name": "Beaver County EMS Dispatch",
+      "description": "Broadcastify public safety feed 31124 for Utah.",
+      "city": "",
+      "county": "Various",
+      "state": "UT",
+      "service_types": [
+        "dispatch",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "utah",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/31124"
+    },
+    {
+      "id": "bf-22787-carbon-county-ems",
+      "name": "Carbon County EMS",
+      "description": "Broadcastify public safety feed 22787 for Utah.",
+      "city": "",
+      "county": "Various",
+      "state": "UT",
+      "service_types": [
+        "dispatch",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "utah",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/22787"
+    },
+    {
+      "id": "bf-40932-east-carbon-fire",
+      "name": "East Carbon Fire",
+      "description": "Broadcastify public safety feed 40932 for Utah.",
+      "city": "",
+      "county": "Various",
+      "state": "UT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "utah",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40932"
+    },
+    {
+      "id": "bf-43192-northern-ut-wildland-fire-davis-county-are",
+      "name": "Northern UT Wildland Fire, Davis County ARES Simplex",
+      "description": "Broadcastify public safety feed 43192 for Utah.",
+      "city": "",
+      "county": "Various",
+      "state": "UT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "utah",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43192"
+    },
+    {
+      "id": "bf-25625-duchesne-county-ems",
+      "name": "Duchesne County EMS",
+      "description": "Broadcastify public safety feed 25625 for Utah.",
+      "city": "",
+      "county": "Various",
+      "state": "UT",
+      "service_types": [
+        "dispatch",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "utah",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/25625"
+    },
+    {
+      "id": "bf-44071-iron-county-public-safety",
+      "name": "Iron County Public Safety",
+      "description": "Broadcastify public safety feed 44071 for Utah.",
+      "city": "",
+      "county": "Various",
+      "state": "UT",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "utah"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44071"
+    },
+    {
+      "id": "bf-19863-monticello-fire",
+      "name": "Monticello Fire",
+      "description": "Broadcastify public safety feed 19863 for Utah.",
+      "city": "",
+      "county": "Various",
+      "state": "UT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "utah",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/19863"
+    },
+    {
+      "id": "bf-25532-emery-county-fire",
+      "name": "Emery County Fire",
+      "description": "Broadcastify public safety feed 25532 for Utah.",
+      "city": "",
+      "county": "Various",
+      "state": "UT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "utah",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/25532"
+    },
+    {
+      "id": "bf-38147-tropic-fire",
+      "name": "Tropic Fire",
+      "description": "Broadcastify public safety feed 38147 for Utah.",
+      "city": "",
+      "county": "Various",
+      "state": "UT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "utah",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38147"
+    },
+    {
+      "id": "bf-34948-west-jordan-police-dispatch",
+      "name": "West Jordan Police Dispatch",
+      "description": "Broadcastify public safety feed 34948 for Utah.",
+      "city": "",
+      "county": "Various",
+      "state": "UT",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "utah",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/34948"
+    },
+    {
+      "id": "bf-19557-moab-fire",
+      "name": "Moab Fire",
+      "description": "Broadcastify public safety feed 19557 for Utah.",
+      "city": "",
+      "county": "Various",
+      "state": "UT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "utah",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/19557"
+    },
+    {
+      "id": "bf-40829-northern-washington-southern-iron-counties",
+      "name": "Northern Washington / Southern Iron Counties Public Safety",
+      "description": "Broadcastify public safety feed 40829 for Utah.",
+      "city": "",
+      "county": "Various",
+      "state": "UT",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "utah"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40829"
+    }
+  ]
+}

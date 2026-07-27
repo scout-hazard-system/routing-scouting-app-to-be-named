@@ -12,6 +12,7 @@ const state = {
   visualizerFrame: null,
   lastSnapshotTs: null,
   seenEventKeys: new Set(),
+  currentGps: null,
 };
 const JURISDICTION_COOLDOWN_MS = 4 * 60 * 1000;
 
@@ -19,6 +20,7 @@ const API_BASE = (window.SCANNER_API_BASE_URL || "").replace(/\/+$/, "");
 const ui = {
   connStatus: document.getElementById("connStatus"),
   runStatus: document.getElementById("runStatus"),
+  gpsStatus: document.getElementById("gpsStatus"),
   captured: document.getElementById("captured"),
   skippedSilence: document.getElementById("skippedSilence"),
   skippedClipped: document.getElementById("skippedClipped"),
@@ -38,6 +40,9 @@ const ui = {
   openWazeBtn: document.getElementById("openWazeBtn"),
   planRouteBtn: document.getElementById("planRouteBtn"),
   useAlertCoordsBtn: document.getElementById("useAlertCoordsBtn"),
+  useCurrentGpsBtn: document.getElementById("useCurrentGpsBtn"),
+  refreshSelectorBtn: document.getElementById("refreshSelectorBtn"),
+  selectorStatus: document.getElementById("selectorStatus"),
   enableNotifyBtn: document.getElementById("enableNotifyBtn"),
   alertModal: document.getElementById("alertModal"),
   alertModalText: document.getElementById("alertModalText"),
@@ -57,6 +62,10 @@ function setConn(text, cls) {
 function setRun(text, cls = "mute") {
   ui.runStatus.className = `pill ${cls}`;
   ui.runStatus.textContent = text;
+}
+function setGpsStatus(text, cls = "mute") {
+  ui.gpsStatus.className = `pill ${cls}`;
+  ui.gpsStatus.textContent = text;
 }
 
 function addListItem(list, text) {
@@ -131,6 +140,158 @@ function openWazeFromCoords(lat, lon) {
 function updateEmbeddedMap(lat, lon, zoom = 11) {
   const src = `https://embed.waze.com/iframe?zoom=${encodeURIComponent(zoom)}&lat=${encodeURIComponent(lat)}&lon=${encodeURIComponent(lon)}`;
   ui.wazeMapFrame.src = src;
+}
+function setSelectorStatus(text) {
+  ui.selectorStatus.textContent = text;
+}
+const STATE_NAME_TO_ABBR = {
+  alabama: "AL", alaska: "AK", arizona: "AZ", arkansas: "AR", california: "CA", colorado: "CO", connecticut: "CT",
+  delaware: "DE", "district of columbia": "DC", florida: "FL", georgia: "GA", hawaii: "HI", idaho: "ID", illinois: "IL",
+  indiana: "IN", iowa: "IA", kansas: "KS", kentucky: "KY", louisiana: "LA", maine: "ME", maryland: "MD",
+  massachusetts: "MA", michigan: "MI", minnesota: "MN", mississippi: "MS", missouri: "MO", montana: "MT", nebraska: "NE",
+  nevada: "NV", "new hampshire": "NH", "new jersey": "NJ", "new mexico": "NM", "new york": "NY", "north carolina": "NC",
+  "north dakota": "ND", ohio: "OH", oklahoma: "OK", oregon: "OR", pennsylvania: "PA", "rhode island": "RI",
+  "south carolina": "SC", "south dakota": "SD", tennessee: "TN", texas: "TX", utah: "UT", vermont: "VT", virginia: "VA",
+  washington: "WA", "west virginia": "WV", wisconsin: "WI", wyoming: "WY", "puerto rico": "PR"
+};
+function normalizeState(value) {
+  const raw = (value || "").trim();
+  if (!raw) return "";
+  if (/^[a-z]{2}$/i.test(raw)) return raw.toUpperCase();
+  return STATE_NAME_TO_ABBR[raw.toLowerCase()] || raw.toUpperCase();
+}
+function parseJurisdictionFromText(text) {
+  if (!text) return null;
+  const trimmed = text.trim();
+  if (!trimmed) return null;
+  const parts = trimmed.split(",").map((s) => s.trim()).filter(Boolean);
+  if (parts.length < 2) return null;
+  const state = normalizeState(parts[parts.length - 1]);
+  if (!state || state.length !== 2) return null;
+  return { city: parts[0] || "", county: "", state };
+}
+function inferJurisdictionFromRouteInputs() {
+  return (
+    parseJurisdictionFromText(ui.endInput?.value || "") ||
+    parseJurisdictionFromText(ui.startInput?.value || "") ||
+    null
+  );
+}
+async function reverseGeocodeJurisdiction(lat, lon) {
+  try {
+    const url = `https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${encodeURIComponent(lat)}&lon=${encodeURIComponent(lon)}`;
+    const r = await fetch(url, {
+      headers: { Accept: "application/json" }
+    });
+    if (!r.ok) return null;
+    const data = await r.json();
+    const addr = data?.address || {};
+    const city = addr.city || addr.town || addr.village || addr.municipality || "";
+    const county = addr.county || "";
+    const state = normalizeState(addr.state || addr.state_code || "");
+    if (!state) return null;
+    return { city, county, state };
+  } catch {
+    return null;
+  }
+}
+async function refreshBroadcastifySelector(lat, lon) {
+  try {
+    setSelectorStatus("selector: updating");
+    const inferred = inferJurisdictionFromRouteInputs();
+    const reverse = inferred ? null : await reverseGeocodeJurisdiction(lat, lon);
+    const jurisdiction = inferred || reverse || {};
+    const params = new URLSearchParams({
+      lat: String(lat),
+      lon: String(lon),
+    });
+    if (jurisdiction.city) params.set("city", jurisdiction.city);
+    if (jurisdiction.county) params.set("county", jurisdiction.county);
+    if (jurisdiction.state) params.set("state", jurisdiction.state);
+    const url = apiUrl(`/api/platform/broadcastify/select?${params.toString()}`);
+    const r = await fetch(url);
+    if (!r.ok) throw new Error("selector endpoint unavailable");
+    const data = await r.json();
+    const selected = data.selected || {};
+    const channelName = selected.name || selected.id || "unknown";
+    setSelectorStatus(`selector: ${channelName}`);
+    if (selected.city || selected.county || selected.state) {
+      addListItem(
+        ui.jurisdictionNotices,
+        `Selector chose channel: ${channelName} (${selected.city || ""}/${selected.county || ""}/${selected.state || ""})`
+      );
+    }
+  } catch {
+    setSelectorStatus("selector: unavailable");
+  }
+}
+function applyCurrentGpsToUi(lat, lon) {
+  state.currentGps = { lat, lon };
+  ui.latInput.value = lat.toFixed(6);
+  ui.lonInput.value = lon.toFixed(6);
+  updateEmbeddedMap(lat, lon, 13);
+  setGpsStatus("gps: locked", "ok");
+  refreshBroadcastifySelector(lat, lon);
+}
+function acquireCurrentGpsAndApply() {
+  if (!("geolocation" in navigator)) {
+    setGpsStatus("gps: unsupported", "bad");
+    return;
+  }
+  setGpsStatus("gps: locating", "warn");
+  navigator.geolocation.getCurrentPosition(
+    (pos) => {
+      applyCurrentGpsToUi(pos.coords.latitude, pos.coords.longitude);
+    },
+    (err) => {
+      if (err?.code === 1) {
+        setGpsStatus("gps: denied", "bad");
+      } else if (err?.code === 2) {
+        setGpsStatus("gps: unavailable", "bad");
+      } else if (err?.code === 3) {
+        setGpsStatus("gps: timeout", "warn");
+      } else {
+        setGpsStatus("gps: error", "bad");
+      }
+      if (err?.message) {
+        console.warn("Geolocation error:", err.message);
+      }
+    },
+    { enableHighAccuracy: true, timeout: 15000, maximumAge: 0 }
+  );
+}
+async function initGeolocationFlow() {
+  if (!("geolocation" in navigator)) {
+    setGpsStatus("gps: unsupported", "bad");
+    return;
+  }
+  if (navigator.permissions?.query) {
+    try {
+      const status = await navigator.permissions.query({ name: "geolocation" });
+      if (status.state === "granted") {
+        setGpsStatus("gps: granted", "ok");
+        acquireCurrentGpsAndApply();
+      } else if (status.state === "prompt") {
+        setGpsStatus("gps: prompt needed", "warn");
+      } else {
+        setGpsStatus("gps: denied", "bad");
+      }
+      status.onchange = () => {
+        if (status.state === "granted") {
+          setGpsStatus("gps: granted", "ok");
+          acquireCurrentGpsAndApply();
+        } else if (status.state === "prompt") {
+          setGpsStatus("gps: prompt needed", "warn");
+        } else {
+          setGpsStatus("gps: denied", "bad");
+        }
+      };
+      return;
+    } catch {
+      // fallback below
+    }
+  }
+  acquireCurrentGpsAndApply();
 }
 
 function maybeBrowserNotify(title, body) {
@@ -408,10 +569,31 @@ ui.useAlertCoordsBtn.addEventListener("click", () => {
   ui.lonInput.value = state.lastAlertCoords.lon;
   updateEmbeddedMap(state.lastAlertCoords.lat, state.lastAlertCoords.lon, 12);
 });
+ui.useCurrentGpsBtn.addEventListener("click", acquireCurrentGpsAndApply);
+ui.refreshSelectorBtn.addEventListener("click", () => {
+  const lat = Number(ui.latInput.value);
+  const lon = Number(ui.lonInput.value);
+  if (!Number.isFinite(lat) || !Number.isFinite(lon)) {
+    setSelectorStatus("selector: set GPS first");
+    return;
+  }
+  refreshBroadcastifySelector(lat, lon);
+});
 
 ui.closeAlertModalBtn.addEventListener("click", hideAlertModal);
 
 renderMetrics();
 setRun("waiting", "mute");
+setGpsStatus("gps: pending", "mute");
 connectSSE();
 fetchSnapshotFallback();
+initGeolocationFlow();
+window.addEventListener(
+  "pointerdown",
+  () => {
+    if (!state.currentGps) {
+      acquireCurrentGpsAndApply();
+    }
+  },
+  { once: true }
+);

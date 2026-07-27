@@ -6,6 +6,7 @@ FRONTEND_DIR="$ROOT_DIR/frontend"
 BACKEND_DIR="$FRONTEND_DIR/java_backend"
 PIPELINE_SCRIPT="$ROOT_DIR/pipeline.py"
 CONFIG_FILE="${VEHICLE_STACK_CONFIG_FILE:-$ROOT_DIR/config/vehicle_stack.env}"
+DEFAULT_PYTHON_BIN="$ROOT_DIR/cop_pipeline/bin/python3"
 
 RUNTIME_DIR="/tmp/vehicle_stack"
 LOG_DIR="$RUNTIME_DIR/logs"
@@ -19,6 +20,12 @@ MAX_LOG_SIZE_MB="${MAX_LOG_SIZE_MB:-32}"
 MAX_LOG_BACKUPS="${MAX_LOG_BACKUPS:-5}"
 ENABLE_PIPELINE_AUTOSTART="${ENABLE_PIPELINE_AUTOSTART:-true}"
 JAVA_BACKEND_HOST="${JAVA_BACKEND_HOST:-0.0.0.0}"
+PYTHON_BIN="${PYTHON_BIN:-$DEFAULT_PYTHON_BIN}"
+PIPELINE_MODE="${PIPELINE_MODE:-direct}"
+PIPELINE_EXTRA_ARGS="${PIPELINE_EXTRA_ARGS:-}"
+if [[ ! -x "$PYTHON_BIN" ]]; then
+  PYTHON_BIN="python3"
+fi
 
 BACKEND_PID_FILE="$PID_DIR/backend.pid"
 FRONTEND_PID_FILE="$PID_DIR/frontend.pid"
@@ -95,7 +102,24 @@ start_backend() {
   else
     (cd "$BACKEND_DIR" && javac ScannerBackendServer.java && printf 'Main-Class: ScannerBackendServer\n' > /tmp/vehicle_stack_manifest.mf && jar cfm dist/scanner-backend-lite.jar /tmp/vehicle_stack_manifest.mf ScannerBackendServer*.class)
   fi
-  nohup env PIPELINE_LOG_PATH="$PIPELINE_LOG" JAVA_BACKEND_HOST="$JAVA_BACKEND_HOST" JAVA_BACKEND_PORT="$BACKEND_PORT" \
+  nohup env \
+    PIPELINE_LOG_PATH="$PIPELINE_LOG" \
+    JAVA_BACKEND_HOST="$JAVA_BACKEND_HOST" \
+    JAVA_BACKEND_PORT="$BACKEND_PORT" \
+    SELECTOR_PYTHON_BIN="${SELECTOR_PYTHON_BIN:-$PYTHON_BIN}" \
+    SELECTOR_SCRIPT_PATH="${SELECTOR_SCRIPT_PATH:-$ROOT_DIR/channel_selector.py}" \
+    BROADCASTIFY_CHANNELS_FILE="${BROADCASTIFY_CHANNELS_FILE:-$ROOT_DIR/config/broadcastify_channels.sample.json}" \
+    BROADCASTIFY_SELECTOR_CITY="${BROADCASTIFY_SELECTOR_CITY:-Sample City}" \
+    BROADCASTIFY_SELECTOR_COUNTY="${BROADCASTIFY_SELECTOR_COUNTY:-Sample County}" \
+    BROADCASTIFY_SELECTOR_STATE="${BROADCASTIFY_SELECTOR_STATE:-Sample State}" \
+    BROADCASTIFY_SELECTOR_DESIRED_TYPES="${BROADCASTIFY_SELECTOR_DESIRED_TYPES:-law,dispatch}" \
+    BROADCASTIFY_SELECTOR_TOP_K="${BROADCASTIFY_SELECTOR_TOP_K:-8}" \
+    BROADCASTIFY_SELECTOR_PRINT_TOP="${BROADCASTIFY_SELECTOR_PRINT_TOP:-3}" \
+    BROADCASTIFY_SELECTOR_USE_OLLAMA_RERANK="${BROADCASTIFY_SELECTOR_USE_OLLAMA_RERANK:-false}" \
+    BROADCASTIFY_SELECTOR_OLLAMA_MODEL="${BROADCASTIFY_SELECTOR_OLLAMA_MODEL:-llama3.1}" \
+    BROADCASTIFY_SELECTOR_OLLAMA_URL="${BROADCASTIFY_SELECTOR_OLLAMA_URL:-http://localhost:11434/api/generate}" \
+    BROADCASTIFY_SELECTOR_OLLAMA_TIMEOUT="${BROADCASTIFY_SELECTOR_OLLAMA_TIMEOUT:-8.0}" \
+    BROADCASTIFY_SELECTOR_OLLAMA_WEIGHT="${BROADCASTIFY_SELECTOR_OLLAMA_WEIGHT:-0.2}" \
     java -jar "$BACKEND_DIR/dist/scanner-backend-lite.jar" >"$BACKEND_LOG_FILE" 2>&1 &
   echo $! >"$BACKEND_PID_FILE"
   if ! wait_for_http "http://127.0.0.1:${BACKEND_PORT}/api/health" 30 0.25; then
@@ -114,7 +138,7 @@ start_frontend() {
     exit 1
   fi
   nohup env FRONTEND_DEV_PORT="$FRONTEND_PORT" PIPELINE_LOG_PATH="$PIPELINE_LOG" \
-    python3 "$FRONTEND_DIR/dev_server.py" >"$FRONTEND_LOG_FILE" 2>&1 &
+    "$PYTHON_BIN" "$FRONTEND_DIR/dev_server.py" >"$FRONTEND_LOG_FILE" 2>&1 &
   echo $! >"$FRONTEND_PID_FILE"
   if ! wait_for_http "http://127.0.0.1:${FRONTEND_PORT}/index.html" 30 0.25; then
     printf "Frontend failed to start cleanly. Check %s\n" "$FRONTEND_LOG_FILE" >&2
@@ -133,7 +157,20 @@ start_pipeline() {
   if is_running "$PIPELINE_PID_FILE"; then
     return
   fi
-  nohup python3 "$PIPELINE_SCRIPT" --integration-json --soft-alert-fallback >>"$PIPELINE_LOG" 2>&1 &
+  local -a pipeline_cmd=(
+    "$PYTHON_BIN" "$PIPELINE_SCRIPT"
+    --mode "$PIPELINE_MODE"
+    --integration-json
+    --soft-alert-fallback
+    --log-file "$PIPELINE_LOG"
+  )
+  if [[ -n "$PIPELINE_EXTRA_ARGS" ]]; then
+    local -a extra_args=()
+    # shellcheck disable=SC2294
+    eval "extra_args=($PIPELINE_EXTRA_ARGS)"
+    pipeline_cmd+=("${extra_args[@]}")
+  fi
+  nohup "${pipeline_cmd[@]}" >>"$PIPELINE_LOG" 2>&1 &
   echo $! >"$PIPELINE_PID_FILE"
 }
 
