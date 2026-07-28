@@ -75,6 +75,10 @@ reachability and per-model availability.
   summary (call types, priority, units, plus the summary sentence) shown in
   the alert popup and the stream log. Popups appear for `alert_triggered`
   events even when no location was mentioned (Route button disabled).
+- **Audio visualizer** — `chunk_captured`/`alert_triggered` events carry an
+  `audio_levels` per-window RMS envelope (250 ms windows, capped at 240) and
+  the popup visualizer plays back that actual envelope in a loop, falling
+  back to a static `rms`-derived amplitude for events without it.
 - **Routing** — "Route to this location" picks the first *routable* mention:
   bare directional tokens (`northbound`, `southbound`, …) and road furniture
   (`shoulder`, `on-ramp`, …) are skipped, and directional words are stripped

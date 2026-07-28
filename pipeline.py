@@ -118,6 +118,29 @@ DIRECT_SOURCE_FALLBACK_TOKENS = [
 def log_safe(text):
     return text.replace('"', "'").replace("\n", " ").strip()
 
+AUDIO_LEVEL_WINDOW_MS = 250
+AUDIO_LEVEL_MAX_WINDOWS = 240
+
+def compute_audio_levels(mono, sample_rate, window_ms=AUDIO_LEVEL_WINDOW_MS, max_windows=AUDIO_LEVEL_MAX_WINDOWS):
+    """Per-window RMS envelope of a captured chunk.
+
+    Drives the app's popup audio visualizer so the bars play back the actual
+    audio envelope instead of a single static amplitude. Returns a list of
+    rounded floats (one per window_ms slice), capped at max_windows to bound
+    event payload size.
+    """
+    if mono is None or len(mono) == 0 or sample_rate <= 0:
+        return []
+    window = max(1, int(sample_rate * window_ms / 1000.0))
+    count = min(max_windows, (len(mono) + window - 1) // window)
+    levels = []
+    for i in range(count):
+        segment = mono[i * window:(i + 1) * window]
+        if len(segment) == 0:
+            break
+        levels.append(round(float(np.sqrt(np.mean(segment ** 2))), 4))
+    return levels
+
 def extract_dispatch_cues(text):
     lower = text.lower()
     matched = {}
@@ -1210,6 +1233,7 @@ try:
                 mono = audio_buffer[:, 0]
             rms = float(np.sqrt(np.mean(mono ** 2)))
             clip_ratio = float(np.mean(np.abs(mono) > 0.98))
+            audio_levels = compute_audio_levels(mono, capture_fs)
             if rms < args.rms_threshold:
                 run_stats["skipped_silence"] += 1
                 if args.alert_debug:
@@ -1269,6 +1293,8 @@ try:
                     poi_mentions=poi_mentions,
                     rms=rms,
                     clip_ratio=clip_ratio,
+                    audio_levels=audio_levels,
+                    audio_level_window_ms=AUDIO_LEVEL_WINDOW_MS,
                 )
                 cue_map, cue_count = extract_dispatch_cues(raw_text)
                 dispatch_score = score_dispatch_cues(cue_map)
@@ -1417,6 +1443,8 @@ try:
                         llm_intel=llm_intel,
                         rms=rms,
                         clip_ratio=clip_ratio,
+                        audio_levels=audio_levels,
+                        audio_level_window_ms=AUDIO_LEVEL_WINDOW_MS,
                     )
                 elif hard_rule_alert:
                     run_stats["llm_alert"] += 1
@@ -1452,6 +1480,8 @@ try:
                         dispatch_score=dispatch_score,
                         rms=rms,
                         clip_ratio=clip_ratio,
+                        audio_levels=audio_levels,
+                        audio_level_window_ms=AUDIO_LEVEL_WINDOW_MS,
                     )
                 elif fallback_soft_alert:
                     soft_alert_message = (
@@ -1498,6 +1528,8 @@ try:
                         cue_count=cue_count,
                         rms=rms,
                         clip_ratio=clip_ratio,
+                        audio_levels=audio_levels,
+                        audio_level_window_ms=AUDIO_LEVEL_WINDOW_MS,
                     )
         except Exception as e:
             if SHOULD_EXIT:

@@ -883,7 +883,11 @@ public class MainActivity extends AppCompatActivity {
       String intelLine = buildIntelLine(json.optJSONObject("llm_intel"));
       boolean isAlert = "alert_triggered".equals(eventType);
       if (!mentions.isEmpty() || (isAlert && !TextUtils.isEmpty(text))) {
-        maybeShowLocationPopup(eventType, mentions, intelLine, text, json.optDouble("rms", 0.0));
+        float[] levelSeries = parseAudioLevels(json.optJSONArray("audio_levels"));
+        long levelWindowMs = json.optLong("audio_level_window_ms", 250L);
+        maybeShowLocationPopup(
+            eventType, mentions, intelLine, text, json.optDouble("rms", 0.0),
+            levelSeries, levelWindowMs);
       }
       String label =
           kind.isEmpty()
@@ -905,6 +909,22 @@ public class MainActivity extends AppCompatActivity {
         sink.add(mention);
       }
     }
+  }
+
+  /**
+   * Converts the event's per-window RMS envelope into normalized visualizer amplitudes
+   * (same rms*8 scaling as the static amplitude path); null when absent.
+   */
+  private float[] parseAudioLevels(JSONArray array) {
+    if (array == null || array.length() == 0) {
+      return null;
+    }
+    float[] levels = new float[array.length()];
+    for (int i = 0; i < array.length(); i++) {
+      double windowRms = array.optDouble(i, 0.0);
+      levels[i] = (float) Math.min(1.0, Math.max(0.0, windowRms * 8.0));
+    }
+    return levels;
   }
 
   /**
@@ -960,7 +980,13 @@ public class MainActivity extends AppCompatActivity {
   }
 
   private void maybeShowLocationPopup(
-      String eventType, List<String> mentions, String intelLine, String text, double rms) {
+      String eventType,
+      List<String> mentions,
+      String intelLine,
+      String text,
+      double rms,
+      float[] levelSeries,
+      long levelWindowMs) {
     String key = TextUtils.join("|", mentions).toLowerCase(Locale.ROOT);
     long now = SystemClock.elapsedRealtime();
     boolean isAlert = "alert_triggered".equals(eventType);
@@ -994,7 +1020,11 @@ public class MainActivity extends AppCompatActivity {
           popupRouteBtn.setEnabled(canRoute);
           popupRouteBtn.setAlpha(canRoute ? 1f : 0.5f);
           popupTranscriptText.setText(text);
-          popupVisualizer.setAmplitude(amplitude);
+          if (levelSeries != null) {
+            popupVisualizer.setLevels(levelSeries, levelWindowMs);
+          } else {
+            popupVisualizer.setAmplitude(amplitude);
+          }
           popupVisualizer.start();
           locationPopup.setVisibility(View.VISIBLE);
           uiHandler.removeCallbacks(popupAutoHideRunnable);

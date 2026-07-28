@@ -11,7 +11,9 @@ import java.util.Random;
 
 /**
  * Animated bar visualizer that reflects the audio energy (rms) of the scanner
- * call that produced a location mention. Amplitude is normalized 0..1.
+ * call that produced a location mention. Amplitude is normalized 0..1. When a
+ * per-window energy envelope is supplied via {@link #setLevels}, the bars play
+ * back the actual audio envelope (looping) instead of a static amplitude.
  */
 public class AudioVisualizerView extends View {
   private static final int BAR_COUNT = 27;
@@ -21,6 +23,9 @@ public class AudioVisualizerView extends View {
   private final float[] phases = new float[BAR_COUNT];
   private final float[] speeds = new float[BAR_COUNT];
   private float amplitude = 0.2f;
+  private float[] levels = null;
+  private long levelWindowMs = 250L;
+  private long levelsStartMs = 0L;
   private boolean animating = false;
 
   public AudioVisualizerView(Context context) {
@@ -37,9 +42,24 @@ public class AudioVisualizerView extends View {
     }
   }
 
-  /** Sets the normalized (0..1) audio energy driving bar heights. */
+  /** Sets a static normalized (0..1) audio energy driving bar heights. */
   public void setAmplitude(float normalized) {
+    levels = null;
     amplitude = Math.max(0.08f, Math.min(1f, normalized));
+  }
+
+  /**
+   * Plays back a normalized (0..1) per-window energy envelope, looping. Each
+   * entry drives the bar heights for {@code windowMs} milliseconds.
+   */
+  public void setLevels(float[] normalizedLevels, long windowMs) {
+    if (normalizedLevels == null || normalizedLevels.length == 0) {
+      levels = null;
+      return;
+    }
+    levels = normalizedLevels;
+    levelWindowMs = Math.max(50L, windowMs);
+    levelsStartMs = System.currentTimeMillis();
   }
 
   public void start() {
@@ -63,6 +83,18 @@ public class AudioVisualizerView extends View {
     }
     float slot = width / BAR_COUNT;
     float barWidth = slot * 0.62f;
+    float[] envelope = levels;
+    if (envelope != null) {
+      // Interpolate between adjacent envelope windows for smooth playback.
+      float position =
+          ((System.currentTimeMillis() - levelsStartMs) / (float) levelWindowMs)
+              % envelope.length;
+      int index = (int) position;
+      float fraction = position - index;
+      float current = envelope[index];
+      float next = envelope[(index + 1) % envelope.length];
+      amplitude = Math.max(0.08f, Math.min(1f, current + ((next - current) * fraction)));
+    }
     float nowSeconds = (System.currentTimeMillis() % 100000L) / 1000f;
     for (int i = 0; i < BAR_COUNT; i++) {
       float wave = (float) Math.abs(Math.sin((nowSeconds * speeds[i]) + phases[i]));
