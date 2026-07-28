@@ -36,9 +36,12 @@ import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Locale;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -81,6 +84,20 @@ public class MainActivity extends AppCompatActivity {
   private static final String STATE_DEVICE_LON = "state_device_lon";
   private static final Pattern COORDINATE_PATTERN =
       Pattern.compile("\\b(-?\\d{1,2}\\.\\d+)\\s*[, ]\\s*(-?\\d{1,3}\\.\\d+)\\b");
+  /** Mention-extractor tokens that are useless as geocode queries (directions, road furniture). */
+  private static final Set<String> NON_ROUTABLE_MENTIONS =
+      new HashSet<>(
+          Arrays.asList(
+              "northbound",
+              "southbound",
+              "eastbound",
+              "westbound",
+              "shoulder",
+              "on-ramp",
+              "off-ramp",
+              "interchange"));
+  private static final Pattern DIRECTIONAL_TOKEN_PATTERN =
+      Pattern.compile("(?i)\\b(northbound|southbound|eastbound|westbound)\\b");
 
   private EditText baseUrlInput;
   private EditText destinationInput;
@@ -306,6 +323,13 @@ public class MainActivity extends AppCompatActivity {
     }
     appendLine(label, "geocoding via OSM: " + query);
     String url = base + "/api/platform/geocode?q=" + Uri.encode(query);
+    // Bias geocoding toward the device (or current map target) so short street
+    // names resolve near us instead of anywhere on the planet.
+    Double biasLat = lastDeviceLat != null ? lastDeviceLat : lastMapLat;
+    Double biasLon = lastDeviceLon != null ? lastDeviceLon : lastMapLon;
+    if (biasLat != null && biasLon != null) {
+      url += String.format(Locale.ROOT, "&lat=%.6f&lon=%.6f", biasLat, biasLon);
+    }
     Request request = new Request.Builder().url(url).build();
     client.newCall(request)
         .enqueue(
@@ -883,6 +907,30 @@ public class MainActivity extends AppCompatActivity {
     }
   }
 
+  /**
+   * Picks the first mention that is actually routable: strips bare directional words and skips
+   * junk tokens (e.g. "northbound") that would geocode to arbitrary far-away places.
+   */
+  private String pickRoutableQuery(List<String> mentions) {
+    for (String mention : mentions) {
+      String cleaned = stripDirectional(mention);
+      if (cleaned.isEmpty()
+          || NON_ROUTABLE_MENTIONS.contains(cleaned.toLowerCase(Locale.ROOT))) {
+        continue;
+      }
+      return cleaned;
+    }
+    return null;
+  }
+
+  private String stripDirectional(String mention) {
+    return DIRECTIONAL_TOKEN_PATTERN
+        .matcher(mention)
+        .replaceAll(" ")
+        .replaceAll("\\s+", " ")
+        .trim();
+  }
+
   /** One-line summary of the scout-intel extraction; empty when intel is unavailable. */
   private String buildIntelLine(JSONObject intel) {
     if (intel == null) {
@@ -924,7 +972,8 @@ public class MainActivity extends AppCompatActivity {
     lastPopupMentionKey = key;
     lastPopupShownMs = now;
     boolean hasMention = !mentions.isEmpty();
-    pendingPopupQuery = hasMention ? mentions.get(0) : null;
+    pendingPopupQuery = pickRoutableQuery(mentions);
+    boolean canRoute = pendingPopupQuery != null;
     float amplitude = (float) Math.min(1.0, Math.max(0.0, rms * 8.0));
     String title =
         isAlert ? getString(R.string.popup_title_alert) : getString(R.string.popup_title_location);
@@ -942,8 +991,8 @@ public class MainActivity extends AppCompatActivity {
           popupLocationText.setText(locations);
           popupIntelText.setText(intelLine);
           popupIntelText.setVisibility(TextUtils.isEmpty(intelLine) ? View.GONE : View.VISIBLE);
-          popupRouteBtn.setEnabled(hasMention);
-          popupRouteBtn.setAlpha(hasMention ? 1f : 0.5f);
+          popupRouteBtn.setEnabled(canRoute);
+          popupRouteBtn.setAlpha(canRoute ? 1f : 0.5f);
           popupTranscriptText.setText(text);
           popupVisualizer.setAmplitude(amplitude);
           popupVisualizer.start();

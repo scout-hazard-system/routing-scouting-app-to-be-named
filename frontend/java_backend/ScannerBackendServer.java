@@ -51,6 +51,8 @@ public final class ScannerBackendServer {
       System.getenv().getOrDefault("WAZE_EMBED_BASE_URL", "https://embed.waze.com/iframe");
   private static final String NOMINATIM_SEARCH_URL =
       System.getenv().getOrDefault("NOMINATIM_SEARCH_URL", "https://nominatim.openstreetmap.org/search");
+  private static final double GEOCODE_BIAS_RADIUS_DEGREES =
+      parseDouble(System.getenv("GEOCODE_BIAS_RADIUS_DEGREES"), 0.35);
   private static final String OSRM_ROUTE_BASE_URL =
       System.getenv().getOrDefault("OSRM_ROUTE_BASE_URL", "https://router.project-osrm.org/route/v1/driving");
   private static final String EXTERNAL_HTTP_USER_AGENT =
@@ -1093,8 +1095,34 @@ public final class ScannerBackendServer {
         writeJson(exchange, 400, "{\"error\":\"missing_query\"}");
         return;
       }
-      String url = NOMINATIM_SEARCH_URL + "?format=json&limit=5&q=" + urlEncode(q);
-      String body = httpGetExternal(url);
+      // Optional caller position (lat/lon) biases results: first try a bounded
+      // viewbox search near the caller, then fall back to a global search.
+      double biasLat = parseDouble(query.get("lat"), Double.NaN);
+      double biasLon = parseDouble(query.get("lon"), Double.NaN);
+      boolean hasBias =
+          Double.isFinite(biasLat)
+              && Double.isFinite(biasLon)
+              && Math.abs(biasLat) <= 90.0
+              && Math.abs(biasLon) <= 180.0;
+      String baseUrl = NOMINATIM_SEARCH_URL + "?format=json&limit=5&q=" + urlEncode(q);
+      String body = null;
+      boolean bounded = false;
+      if (hasBias) {
+        // Nominatim viewbox is lon,lat pairs: lonMin,latMin,lonMax,latMax.
+        String viewbox =
+            trimDouble(biasLon - GEOCODE_BIAS_RADIUS_DEGREES)
+                + ","
+                + trimDouble(biasLat - GEOCODE_BIAS_RADIUS_DEGREES)
+                + ","
+                + trimDouble(biasLon + GEOCODE_BIAS_RADIUS_DEGREES)
+                + ","
+                + trimDouble(biasLat + GEOCODE_BIAS_RADIUS_DEGREES);
+        body = httpGetExternal(baseUrl + "&viewbox=" + viewbox + "&bounded=1");
+        bounded = body != null && looksLikeJson(body) && !"[]".equals(body.trim());
+      }
+      if (!bounded) {
+        body = httpGetExternal(baseUrl);
+      }
       if (body == null || !looksLikeJson(body)) {
         writeJson(
             exchange,
@@ -1110,6 +1138,7 @@ public final class ScannerBackendServer {
               + "\"status\":\"ok\","
               + "\"provider\":\"nominatim\","
               + "\"query\":\"" + jsonEscape(q) + "\","
+              + "\"bounded\":" + bounded + ","
               + "\"results\":" + body
               + "}");
     }
