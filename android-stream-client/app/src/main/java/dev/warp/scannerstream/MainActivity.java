@@ -623,6 +623,7 @@ public class MainActivity extends AppCompatActivity {
       setStatus("invalid URL");
       return;
     }
+    AppPrefs.saveBaseUrl(this, base);
     running = true;
     setStatus("connecting...");
     appendLine("STREAM TARGET", base);
@@ -844,6 +845,7 @@ public class MainActivity extends AppCompatActivity {
   }
 
   private void updateMapTargetUi() {
+    AppPrefs.saveDestination(this, lastMapLat, lastMapLon);
     uiHandler.post(
         () -> {
           if (mapTargetText == null) {
