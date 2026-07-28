@@ -1,0 +1,2291 @@
+{
+  "channels": [
+    {
+      "id": "bf-32602-indianapolis-metropolitan-police",
+      "name": "Indianapolis Metropolitan Police",
+      "description": "Broadcastify public safety feed 32602 for Texas.",
+      "city": "",
+      "county": "Various",
+      "state": "TX",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "texas",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32602"
+    },
+    {
+      "id": "bf-14111-amarillo-police-and-fire",
+      "name": "Amarillo Police and Fire",
+      "description": "Broadcastify public safety feed 14111 for Texas.",
+      "city": "",
+      "county": "Various",
+      "state": "TX",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "texas",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/14111"
+    },
+    {
+      "id": "bf-35736-texarkana-police-and-bowie-and-miller-coun",
+      "name": "Texarkana Police and Bowie and Miller County Sheriff",
+      "description": "Broadcastify public safety feed 35736 for Texas.",
+      "city": "",
+      "county": "Various",
+      "state": "TX",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "texas",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/35736"
+    },
+    {
+      "id": "bf-35847-galveston-and-la-marque-public-safety",
+      "name": "Galveston and La Marque Public Safety",
+      "description": "Broadcastify public safety feed 35847 for Texas.",
+      "city": "",
+      "county": "Various",
+      "state": "TX",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "texas"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/35847"
+    },
+    {
+      "id": "bf-32889-houston-police-department-all-districts",
+      "name": "Houston Police Department - All Districts",
+      "description": "Broadcastify public safety feed 32889 for Texas.",
+      "city": "",
+      "county": "Various",
+      "state": "TX",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "texas",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32889"
+    },
+    {
+      "id": "bf-30603-lamar-county-public-safety-dispatch",
+      "name": "Lamar County Public Safety Dispatch",
+      "description": "Broadcastify public safety feed 30603 for Texas.",
+      "city": "",
+      "county": "Various",
+      "state": "TX",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "texas"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/30603"
+    },
+    {
+      "id": "bf-29158-wharton-county-public-safety",
+      "name": "Wharton County Public Safety",
+      "description": "Broadcastify public safety feed 29158 for Texas.",
+      "city": "",
+      "county": "Various",
+      "state": "TX",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "texas"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/29158"
+    },
+    {
+      "id": "bf-40578-bastrop-county-law-enforcement-fire-ems",
+      "name": "Bastrop County Law Enforcement / Fire / EMS",
+      "description": "Broadcastify public safety feed 40578 for Texas.",
+      "city": "",
+      "county": "Various",
+      "state": "TX",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "texas",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40578"
+    },
+    {
+      "id": "bf-38094-jefferson-county-public-safety",
+      "name": "Jefferson County Public Safety",
+      "description": "Broadcastify public safety feed 38094 for Texas.",
+      "city": "",
+      "county": "Various",
+      "state": "TX",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "texas"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38094"
+    },
+    {
+      "id": "bf-14874-orange-county-public-safety",
+      "name": "Orange County Public Safety",
+      "description": "Broadcastify public safety feed 14874 for Texas.",
+      "city": "",
+      "county": "Various",
+      "state": "TX",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "texas"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/14874"
+    },
+    {
+      "id": "bf-1364-harris-county-law-enforcement-north",
+      "name": "Harris County Law Enforcement - North",
+      "description": "Broadcastify public safety feed 1364 for Texas.",
+      "city": "",
+      "county": "Various",
+      "state": "TX",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "texas",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/1364"
+    },
+    {
+      "id": "bf-42354-caldwell-county-sheriff-lockhart-and-lulin",
+      "name": "Caldwell County Sheriff, Lockhart and Luling Police",
+      "description": "Broadcastify public safety feed 42354 for Texas.",
+      "city": "",
+      "county": "Various",
+      "state": "TX",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "texas",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42354"
+    },
+    {
+      "id": "bf-14439-travis-county-law-enforcement",
+      "name": "Travis County Law Enforcement",
+      "description": "Broadcastify public safety feed 14439 for Texas.",
+      "city": "",
+      "county": "Various",
+      "state": "TX",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "texas",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/14439"
+    },
+    {
+      "id": "bf-34921-houston-county-fire-law-dispatch-city-of-c",
+      "name": "Houston County Fire/Law Dispatch, City of Crockett Law Dispatch",
+      "description": "Broadcastify public safety feed 34921 for Texas.",
+      "city": "",
+      "county": "Various",
+      "state": "TX",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "texas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/34921"
+    },
+    {
+      "id": "bf-44306-jim-wells-county-public-safety",
+      "name": "Jim Wells County Public Safety",
+      "description": "Broadcastify public safety feed 44306 for Texas.",
+      "city": "",
+      "county": "Various",
+      "state": "TX",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "texas"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44306"
+    },
+    {
+      "id": "bf-45909-lubbock-city-county-public-safety",
+      "name": "\u200bLubbock City-County Public Safety",
+      "description": "Broadcastify public safety feed 45909 for Texas.",
+      "city": "",
+      "county": "Various",
+      "state": "TX",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "texas"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45909"
+    },
+    {
+      "id": "bf-27740-kendall-county-public-safety",
+      "name": "Kendall County Public Safety",
+      "description": "Broadcastify public safety feed 27740 for Texas.",
+      "city": "",
+      "county": "Various",
+      "state": "TX",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "texas"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/27740"
+    },
+    {
+      "id": "bf-8755-dewitt-county-sheriff-and-fire-cuero-polic",
+      "name": "DeWitt County Sheriff and Fire, Cuero Police and EMS",
+      "description": "Broadcastify public safety feed 8755 for Texas.",
+      "city": "",
+      "county": "Various",
+      "state": "TX",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "texas",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/8755"
+    },
+    {
+      "id": "bf-45714-parker-county-public-safety",
+      "name": "Parker County Public Safety",
+      "description": "Broadcastify public safety feed 45714 for Texas.",
+      "city": "",
+      "county": "Various",
+      "state": "TX",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "texas"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45714"
+    },
+    {
+      "id": "bf-19824-hays-county-fire-and-ems-north",
+      "name": "Hays County Fire and EMS - North",
+      "description": "Broadcastify public safety feed 19824 for Texas.",
+      "city": "",
+      "county": "Various",
+      "state": "TX",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "texas",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/19824"
+    },
+    {
+      "id": "bf-27331-rusk-county-public-safety",
+      "name": "Rusk County Public Safety",
+      "description": "Broadcastify public safety feed 27331 for Texas.",
+      "city": "",
+      "county": "Various",
+      "state": "TX",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "texas"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/27331"
+    },
+    {
+      "id": "bf-41587-smith-county-sheriff-tyler-police-and-tyle",
+      "name": "Smith County Sheriff, Tyler Police, and Tyler Fire",
+      "description": "Broadcastify public safety feed 41587 for Texas.",
+      "city": "",
+      "county": "Various",
+      "state": "TX",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "texas",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41587"
+    },
+    {
+      "id": "bf-36841-guadalupe-county-public-safety",
+      "name": "Guadalupe County Public Safety",
+      "description": "Broadcastify public safety feed 36841 for Texas.",
+      "city": "",
+      "county": "Various",
+      "state": "TX",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "texas"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/36841"
+    },
+    {
+      "id": "bf-37609-nolan-county-public-safety",
+      "name": "Nolan County Public Safety",
+      "description": "Broadcastify public safety feed 37609 for Texas.",
+      "city": "",
+      "county": "Various",
+      "state": "TX",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "texas"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37609"
+    },
+    {
+      "id": "bf-45626-bandera-county-public-safety",
+      "name": "Bandera County Public Safety",
+      "description": "Broadcastify public safety feed 45626 for Texas.",
+      "city": "",
+      "county": "Various",
+      "state": "TX",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "texas"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45626"
+    },
+    {
+      "id": "bf-33001-killeen-police-and-fire",
+      "name": "Killeen Police and Fire",
+      "description": "Broadcastify public safety feed 33001 for Texas.",
+      "city": "",
+      "county": "Various",
+      "state": "TX",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "texas",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/33001"
+    },
+    {
+      "id": "bf-38190-hardin-county-public-safety",
+      "name": "Hardin County Public Safety",
+      "description": "Broadcastify public safety feed 38190 for Texas.",
+      "city": "",
+      "county": "Various",
+      "state": "TX",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "texas"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38190"
+    },
+    {
+      "id": "bf-37196-nacogdoches-public-safety",
+      "name": "Nacogdoches Public Safety",
+      "description": "Broadcastify public safety feed 37196 for Texas.",
+      "city": "",
+      "county": "Various",
+      "state": "TX",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "texas"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37196"
+    },
+    {
+      "id": "bf-44552-gainesville-cooke-county-public-safety",
+      "name": "Gainesville / Cooke County Public Safety",
+      "description": "Broadcastify public safety feed 44552 for Texas.",
+      "city": "",
+      "county": "Various",
+      "state": "TX",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "texas"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44552"
+    },
+    {
+      "id": "bf-648-brazos-county-area-fire-and-ems",
+      "name": "Brazos County Area Fire and EMS",
+      "description": "Broadcastify public safety feed 648 for Texas.",
+      "city": "",
+      "county": "Various",
+      "state": "TX",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "texas",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/648"
+    },
+    {
+      "id": "bf-33789-matagorda-county-public-safety",
+      "name": "Matagorda County Public Safety",
+      "description": "Broadcastify public safety feed 33789 for Texas.",
+      "city": "",
+      "county": "Various",
+      "state": "TX",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "texas"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/33789"
+    },
+    {
+      "id": "bf-21649-deaf-smith-county-sheriff-hereford-police-",
+      "name": "Deaf Smith County Sheriff, Hereford Police and Fire",
+      "description": "Broadcastify public safety feed 21649 for Texas.",
+      "city": "",
+      "county": "Various",
+      "state": "TX",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "texas",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/21649"
+    },
+    {
+      "id": "bf-35960-johnson-tarrant-county-fire",
+      "name": "Johnson/Tarrant County Fire",
+      "description": "Broadcastify public safety feed 35960 for Texas.",
+      "city": "",
+      "county": "Various",
+      "state": "TX",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "texas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/35960"
+    },
+    {
+      "id": "bf-5680-burleson-county-sheriff-fire-and-ems",
+      "name": "Burleson County Sheriff, Fire and EMS",
+      "description": "Broadcastify public safety feed 5680 for Texas.",
+      "city": "",
+      "county": "Various",
+      "state": "TX",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "texas",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/5680"
+    },
+    {
+      "id": "bf-3609-ennis-police-and-fire-ellis-county-sheriff",
+      "name": "Ennis Police and Fire, Ellis County Sheriff",
+      "description": "Broadcastify public safety feed 3609 for Texas.",
+      "city": "",
+      "county": "Various",
+      "state": "TX",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "texas",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/3609"
+    },
+    {
+      "id": "bf-40227-collin-county-sheriff-plano-allen-murphy-c",
+      "name": "Collin County Sheriff, Plano, Allen, Murphy, Colony, Frisco, and Prosper Police",
+      "description": "Broadcastify public safety feed 40227 for Texas.",
+      "city": "",
+      "county": "Various",
+      "state": "TX",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "texas",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40227"
+    },
+    {
+      "id": "bf-38607-houston-police-department-and-harris-count",
+      "name": "Houston Police Department and Harris County Constables",
+      "description": "Broadcastify public safety feed 38607 for Texas.",
+      "city": "",
+      "county": "Various",
+      "state": "TX",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "texas",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38607"
+    },
+    {
+      "id": "bf-40746-bexar-county-fire-and-ems",
+      "name": "Bexar County Fire and EMS",
+      "description": "Broadcastify public safety feed 40746 for Texas.",
+      "city": "",
+      "county": "Various",
+      "state": "TX",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "texas",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40746"
+    },
+    {
+      "id": "bf-46521-medina-county-public-safety",
+      "name": "Medina County Public Safety",
+      "description": "Broadcastify public safety feed 46521 for Texas.",
+      "city": "",
+      "county": "Various",
+      "state": "TX",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "texas"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46521"
+    },
+    {
+      "id": "bf-20438-graham-fire",
+      "name": "Graham Fire",
+      "description": "Broadcastify public safety feed 20438 for Texas.",
+      "city": "",
+      "county": "Various",
+      "state": "TX",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "texas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/20438"
+    },
+    {
+      "id": "bf-18140-rockwall-city-police-fire-and-ems",
+      "name": "Rockwall City Police, Fire, and EMS",
+      "description": "Broadcastify public safety feed 18140 for Texas.",
+      "city": "",
+      "county": "Various",
+      "state": "TX",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "texas",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/18140"
+    },
+    {
+      "id": "bf-46056-new-braunfels-fire-department",
+      "name": "New Braunfels Fire Department",
+      "description": "Broadcastify public safety feed 46056 for Texas.",
+      "city": "",
+      "county": "Various",
+      "state": "TX",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "texas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46056"
+    },
+    {
+      "id": "bf-41325-comal-county-fire-ems-dispatch",
+      "name": "Comal County Fire/EMS Dispatch",
+      "description": "Broadcastify public safety feed 41325 for Texas.",
+      "city": "",
+      "county": "Various",
+      "state": "TX",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "texas",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41325"
+    },
+    {
+      "id": "bf-10729-north-harris-montgomery-waller-and-walker-",
+      "name": "North Harris, Montgomery, Waller and Walker Counties Fire and EMS",
+      "description": "Broadcastify public safety feed 10729 for Texas.",
+      "city": "",
+      "county": "Various",
+      "state": "TX",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "texas",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/10729"
+    },
+    {
+      "id": "bf-40885-bosque-and-surrounding-counties-public-saf",
+      "name": "Bosque and Surrounding Counties Public Safety",
+      "description": "Broadcastify public safety feed 40885 for Texas.",
+      "city": "",
+      "county": "Various",
+      "state": "TX",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "texas"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40885"
+    },
+    {
+      "id": "bf-16717-fannin-county-fire-dispatch",
+      "name": "Fannin County Fire Dispatch",
+      "description": "Broadcastify public safety feed 16717 for Texas.",
+      "city": "",
+      "county": "Various",
+      "state": "TX",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "texas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/16717"
+    },
+    {
+      "id": "bf-19336-snyder-fire",
+      "name": "Snyder Fire",
+      "description": "Broadcastify public safety feed 19336 for Texas.",
+      "city": "",
+      "county": "Various",
+      "state": "TX",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "texas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/19336"
+    },
+    {
+      "id": "bf-32806-collin-county-public-safety",
+      "name": "Collin County Public Safety",
+      "description": "Broadcastify public safety feed 32806 for Texas.",
+      "city": "",
+      "county": "Various",
+      "state": "TX",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "texas"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32806"
+    },
+    {
+      "id": "bf-44267-fort-bend-county-law-enforcement",
+      "name": "Fort Bend County Law Enforcement",
+      "description": "Broadcastify public safety feed 44267 for Texas.",
+      "city": "",
+      "county": "Various",
+      "state": "TX",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "texas",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44267"
+    },
+    {
+      "id": "bf-46855-somervell-county-public-safety",
+      "name": "Somervell County Public Safety",
+      "description": "Broadcastify public safety feed 46855 for Texas.",
+      "city": "",
+      "county": "Various",
+      "state": "TX",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "texas"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46855"
+    },
+    {
+      "id": "bf-30436-lumberton-fire-and-ems-hardin-county-esd-2",
+      "name": "Lumberton Fire and EMS, Hardin County ESD 2",
+      "description": "Broadcastify public safety feed 30436 for Texas.",
+      "city": "",
+      "county": "Various",
+      "state": "TX",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "texas",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/30436"
+    },
+    {
+      "id": "bf-43489-brown-county-public-safety",
+      "name": "Brown County Public Safety",
+      "description": "Broadcastify public safety feed 43489 for Texas.",
+      "city": "",
+      "county": "Various",
+      "state": "TX",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "texas"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43489"
+    },
+    {
+      "id": "bf-28947-cy-fair-fire-and-ems",
+      "name": "Cy-Fair Fire and EMS",
+      "description": "Broadcastify public safety feed 28947 for Texas.",
+      "city": "",
+      "county": "Various",
+      "state": "TX",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "texas",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/28947"
+    },
+    {
+      "id": "bf-46744-hood-county-public-safety",
+      "name": "Hood County Public Safety",
+      "description": "Broadcastify public safety feed 46744 for Texas.",
+      "city": "",
+      "county": "Various",
+      "state": "TX",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "texas"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46744"
+    },
+    {
+      "id": "bf-34273-hidalgo-county-public-safety",
+      "name": "Hidalgo County Public Safety",
+      "description": "Broadcastify public safety feed 34273 for Texas.",
+      "city": "",
+      "county": "Various",
+      "state": "TX",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "texas"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/34273"
+    },
+    {
+      "id": "bf-28416-houston-fire-digital",
+      "name": "Houston Fire - Digital",
+      "description": "Broadcastify public safety feed 28416 for Texas.",
+      "city": "",
+      "county": "Various",
+      "state": "TX",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "texas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/28416"
+    },
+    {
+      "id": "bf-42597-san-antonio-fire-dept-automated-dispatch",
+      "name": "San Antonio Fire Dept Automated Dispatch",
+      "description": "Broadcastify public safety feed 42597 for Texas.",
+      "city": "",
+      "county": "Various",
+      "state": "TX",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "texas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42597"
+    },
+    {
+      "id": "bf-34189-sabine-county-firefighters-association",
+      "name": "Sabine County Firefighters Association",
+      "description": "Broadcastify public safety feed 34189 for Texas.",
+      "city": "",
+      "county": "Various",
+      "state": "TX",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "texas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/34189"
+    },
+    {
+      "id": "bf-30692-the-colony-police-fire-and-ems",
+      "name": "The Colony Police, Fire and EMS",
+      "description": "Broadcastify public safety feed 30692 for Texas.",
+      "city": "",
+      "county": "Various",
+      "state": "TX",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "texas",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/30692"
+    },
+    {
+      "id": "bf-39311-san-patricio-county-sheriff-dispatch",
+      "name": "San Patricio County Sheriff Dispatch",
+      "description": "Broadcastify public safety feed 39311 for Texas.",
+      "city": "",
+      "county": "Various",
+      "state": "TX",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "texas",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39311"
+    },
+    {
+      "id": "bf-46336-dallas-city-police-all-divisions-dispatch",
+      "name": "Dallas City Police - All Divisions Dispatch",
+      "description": "Broadcastify public safety feed 46336 for Texas.",
+      "city": "",
+      "county": "Various",
+      "state": "TX",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "texas",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46336"
+    },
+    {
+      "id": "bf-37171-dallas-city-police-north-central-dispatch",
+      "name": "Dallas City Police - North Central Dispatch",
+      "description": "Broadcastify public safety feed 37171 for Texas.",
+      "city": "",
+      "county": "Various",
+      "state": "TX",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "texas",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37171"
+    },
+    {
+      "id": "bf-2681-dallas-city-fire-and-rescue-dispatch",
+      "name": "Dallas City Fire and Rescue Dispatch",
+      "description": "Broadcastify public safety feed 2681 for Texas.",
+      "city": "",
+      "county": "Various",
+      "state": "TX",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "texas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/2681"
+    },
+    {
+      "id": "bf-17825-falls-county-fire-association",
+      "name": "Falls County Fire Association",
+      "description": "Broadcastify public safety feed 17825 for Texas.",
+      "city": "",
+      "county": "Various",
+      "state": "TX",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "texas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/17825"
+    },
+    {
+      "id": "bf-10597-nocona-fire-and-police-dispatch",
+      "name": "Nocona Fire and Police Dispatch",
+      "description": "Broadcastify public safety feed 10597 for Texas.",
+      "city": "",
+      "county": "Various",
+      "state": "TX",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "texas",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/10597"
+    },
+    {
+      "id": "bf-44380-wise-county-fire-ems",
+      "name": "Wise County Fire/EMS",
+      "description": "Broadcastify public safety feed 44380 for Texas.",
+      "city": "",
+      "county": "Various",
+      "state": "TX",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "texas",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44380"
+    },
+    {
+      "id": "bf-37629-borger-police-and-fire",
+      "name": "Borger Police and Fire",
+      "description": "Broadcastify public safety feed 37629 for Texas.",
+      "city": "",
+      "county": "Various",
+      "state": "TX",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "texas",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37629"
+    },
+    {
+      "id": "bf-41588-wylie-police-and-fire",
+      "name": "Wylie Police and Fire",
+      "description": "Broadcastify public safety feed 41588 for Texas.",
+      "city": "",
+      "county": "Various",
+      "state": "TX",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "texas",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41588"
+    },
+    {
+      "id": "bf-44414-life-flight-dispatch-memorial-hermann",
+      "name": "Life Flight Dispatch - Memorial Hermann",
+      "description": "Broadcastify public safety feed 44414 for Texas.",
+      "city": "",
+      "county": "Various",
+      "state": "TX",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "texas"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44414"
+    },
+    {
+      "id": "bf-45972-harrison-county-so-marshall-police",
+      "name": "Harrison County SO / Marshall Police",
+      "description": "Broadcastify public safety feed 45972 for Texas.",
+      "city": "",
+      "county": "Various",
+      "state": "TX",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "texas",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45972"
+    },
+    {
+      "id": "bf-29716-randall-county-fire",
+      "name": "Randall County Fire",
+      "description": "Broadcastify public safety feed 29716 for Texas.",
+      "city": "",
+      "county": "Various",
+      "state": "TX",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "texas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/29716"
+    },
+    {
+      "id": "bf-26006-mason-fire",
+      "name": "Mason Fire",
+      "description": "Broadcastify public safety feed 26006 for Texas.",
+      "city": "",
+      "county": "Various",
+      "state": "TX",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "texas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/26006"
+    },
+    {
+      "id": "bf-3292-mckinney-fire-and-ems",
+      "name": "McKinney Fire and EMS",
+      "description": "Broadcastify public safety feed 3292 for Texas.",
+      "city": "",
+      "county": "Various",
+      "state": "TX",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "texas",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/3292"
+    },
+    {
+      "id": "bf-29360-potter-county-sheriff-and-fire",
+      "name": "Potter County Sheriff and Fire",
+      "description": "Broadcastify public safety feed 29360 for Texas.",
+      "city": "",
+      "county": "Various",
+      "state": "TX",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "texas",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/29360"
+    },
+    {
+      "id": "bf-41881-lake-livingston-area-wide-public-safety",
+      "name": "Lake Livingston Area Wide Public Safety",
+      "description": "Broadcastify public safety feed 41881 for Texas.",
+      "city": "",
+      "county": "Various",
+      "state": "TX",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "texas"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41881"
+    },
+    {
+      "id": "bf-45719-harris-county-sheriff-s-department-dispatc",
+      "name": "Harris County Sheriff's Department Dispatch",
+      "description": "Broadcastify public safety feed 45719 for Texas.",
+      "city": "",
+      "county": "Various",
+      "state": "TX",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "texas",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45719"
+    },
+    {
+      "id": "bf-18172-woodville-volunteer-fire",
+      "name": "Woodville Volunteer Fire",
+      "description": "Broadcastify public safety feed 18172 for Texas.",
+      "city": "",
+      "county": "Various",
+      "state": "TX",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "texas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/18172"
+    },
+    {
+      "id": "bf-39845-jackson-county-public-safety",
+      "name": "Jackson County Public Safety",
+      "description": "Broadcastify public safety feed 39845 for Texas.",
+      "city": "",
+      "county": "Various",
+      "state": "TX",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "texas"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39845"
+    },
+    {
+      "id": "bf-16411-mt-pleasant-and-titus-county-fire",
+      "name": "Mt. Pleasant and Titus County Fire",
+      "description": "Broadcastify public safety feed 16411 for Texas.",
+      "city": "",
+      "county": "Various",
+      "state": "TX",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "texas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/16411"
+    },
+    {
+      "id": "bf-30544-jasper-esd-dispatch",
+      "name": "Jasper ESD Dispatch",
+      "description": "Broadcastify public safety feed 30544 for Texas.",
+      "city": "",
+      "county": "Various",
+      "state": "TX",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "texas"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/30544"
+    },
+    {
+      "id": "bf-24524-calhoun-county-ems-dispatch",
+      "name": "Calhoun County EMS Dispatch",
+      "description": "Broadcastify public safety feed 24524 for Texas.",
+      "city": "",
+      "county": "Various",
+      "state": "TX",
+      "service_types": [
+        "dispatch",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "texas",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/24524"
+    },
+    {
+      "id": "bf-29076-taylor-county-fire-and-ems-departments",
+      "name": "Taylor County Fire and EMS Departments",
+      "description": "Broadcastify public safety feed 29076 for Texas.",
+      "city": "",
+      "county": "Various",
+      "state": "TX",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "texas",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/29076"
+    },
+    {
+      "id": "bf-1205-wichita-falls-area-law-enforcement",
+      "name": "Wichita Falls Area Law Enforcement",
+      "description": "Broadcastify public safety feed 1205 for Texas.",
+      "city": "",
+      "county": "Various",
+      "state": "TX",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "texas",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/1205"
+    },
+    {
+      "id": "bf-24797-central-panhandle-counties-public-safety",
+      "name": "Central Panhandle Counties Public Safety",
+      "description": "Broadcastify public safety feed 24797 for Texas.",
+      "city": "",
+      "county": "Various",
+      "state": "TX",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "texas"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/24797"
+    },
+    {
+      "id": "bf-36463-whitesboro-fire",
+      "name": "Whitesboro Fire",
+      "description": "Broadcastify public safety feed 36463 for Texas.",
+      "city": "",
+      "county": "Various",
+      "state": "TX",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "texas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/36463"
+    },
+    {
+      "id": "bf-37687-hamlin-vfd",
+      "name": "Hamlin VFD",
+      "description": "Broadcastify public safety feed 37687 for Texas.",
+      "city": "",
+      "county": "Various",
+      "state": "TX",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "texas"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37687"
+    },
+    {
+      "id": "bf-32246-donley-ems",
+      "name": "Donley EMS",
+      "description": "Broadcastify public safety feed 32246 for Texas.",
+      "city": "",
+      "county": "Various",
+      "state": "TX",
+      "service_types": [
+        "dispatch",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "texas",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32246"
+    },
+    {
+      "id": "bf-29119-earth-fire-and-ems",
+      "name": "Earth Fire and EMS",
+      "description": "Broadcastify public safety feed 29119 for Texas.",
+      "city": "",
+      "county": "Various",
+      "state": "TX",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "texas",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/29119"
+    },
+    {
+      "id": "bf-24316-harrison-county-fire-dispatch",
+      "name": "Harrison County Fire Dispatch",
+      "description": "Broadcastify public safety feed 24316 for Texas.",
+      "city": "",
+      "county": "Various",
+      "state": "TX",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "texas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/24316"
+    },
+    {
+      "id": "bf-28541-miles-fire",
+      "name": "Miles Fire",
+      "description": "Broadcastify public safety feed 28541 for Texas.",
+      "city": "",
+      "county": "Various",
+      "state": "TX",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "texas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/28541"
+    },
+    {
+      "id": "bf-28757-elkhart-fire",
+      "name": "Elkhart Fire",
+      "description": "Broadcastify public safety feed 28757 for Texas.",
+      "city": "",
+      "county": "Various",
+      "state": "TX",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "texas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/28757"
+    },
+    {
+      "id": "bf-28695-presidio-fire-and-ems",
+      "name": "Presidio Fire and EMS",
+      "description": "Broadcastify public safety feed 28695 for Texas.",
+      "city": "",
+      "county": "Various",
+      "state": "TX",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "texas",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/28695"
+    },
+    {
+      "id": "bf-40789-gardendale-fire",
+      "name": "Gardendale Fire",
+      "description": "Broadcastify public safety feed 40789 for Texas.",
+      "city": "",
+      "county": "Various",
+      "state": "TX",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "texas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40789"
+    },
+    {
+      "id": "bf-19693-thorndale-fire",
+      "name": "Thorndale Fire",
+      "description": "Broadcastify public safety feed 19693 for Texas.",
+      "city": "",
+      "county": "Various",
+      "state": "TX",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "texas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/19693"
+    },
+    {
+      "id": "bf-32918-hill-county-public-safety",
+      "name": "Hill County Public Safety",
+      "description": "Broadcastify public safety feed 32918 for Texas.",
+      "city": "",
+      "county": "Various",
+      "state": "TX",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "texas"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32918"
+    },
+    {
+      "id": "bf-28080-kirbyville-first-responders",
+      "name": "Kirbyville First Responders",
+      "description": "Broadcastify public safety feed 28080 for Texas.",
+      "city": "",
+      "county": "Various",
+      "state": "TX",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "texas"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/28080"
+    },
+    {
+      "id": "bf-40086-dumas-fire",
+      "name": "Dumas Fire",
+      "description": "Broadcastify public safety feed 40086 for Texas.",
+      "city": "",
+      "county": "Various",
+      "state": "TX",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "texas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40086"
+    },
+    {
+      "id": "bf-45104-seabrook-public-safety",
+      "name": "Seabrook Public Safety",
+      "description": "Broadcastify public safety feed 45104 for Texas.",
+      "city": "",
+      "county": "Various",
+      "state": "TX",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "texas"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45104"
+    },
+    {
+      "id": "bf-30119-montague-county-public-safety",
+      "name": "Montague County Public Safety",
+      "description": "Broadcastify public safety feed 30119 for Texas.",
+      "city": "",
+      "county": "Various",
+      "state": "TX",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "texas"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/30119"
+    },
+    {
+      "id": "bf-17774-red-river-county-fire",
+      "name": "Red River County Fire",
+      "description": "Broadcastify public safety feed 17774 for Texas.",
+      "city": "",
+      "county": "Various",
+      "state": "TX",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "texas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/17774"
+    },
+    {
+      "id": "bf-31029-jim-hogg-county-sheriff-dispatch",
+      "name": "Jim Hogg County Sheriff Dispatch.",
+      "description": "Broadcastify public safety feed 31029 for Texas.",
+      "city": "",
+      "county": "Various",
+      "state": "TX",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "texas",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/31029"
+    }
+  ]
+}

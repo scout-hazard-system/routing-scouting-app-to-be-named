@@ -1,0 +1,2351 @@
+{
+  "channels": [
+    {
+      "id": "bf-32602-indianapolis-metropolitan-police",
+      "name": "Indianapolis Metropolitan Police",
+      "description": "Broadcastify public safety feed 32602 for North Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "NC",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north carolina",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32602"
+    },
+    {
+      "id": "bf-31838-rutherford-county-sheriff-fire-and-ems",
+      "name": "Rutherford County Sheriff, Fire and EMS",
+      "description": "Broadcastify public safety feed 31838 for North Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "NC",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north carolina",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/31838"
+    },
+    {
+      "id": "bf-37219-gaston-county-police-fire-ems-primary-chan",
+      "name": "Gaston County Police/Fire/EMS - Primary Channel",
+      "description": "Broadcastify public safety feed 37219 for North Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "NC",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north carolina",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37219"
+    },
+    {
+      "id": "bf-31767-vance-county-public-safety",
+      "name": "Vance County Public Safety",
+      "description": "Broadcastify public safety feed 31767 for North Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "NC",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north carolina"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/31767"
+    },
+    {
+      "id": "bf-31300-caldwell-county-public-safety",
+      "name": "Caldwell County Public Safety",
+      "description": "Broadcastify public safety feed 31300 for North Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "NC",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north carolina"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/31300"
+    },
+    {
+      "id": "bf-32805-burke-county-public-safety",
+      "name": "Burke County Public Safety",
+      "description": "Broadcastify public safety feed 32805 for North Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "NC",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north carolina"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32805"
+    },
+    {
+      "id": "bf-16761-stokes-county-sheriff-fire-and-ems-dispatc",
+      "name": "Stokes County Sheriff, Fire and EMS Dispatch, King Police",
+      "description": "Broadcastify public safety feed 16761 for North Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "NC",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north carolina",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/16761"
+    },
+    {
+      "id": "bf-10989-dare-county-fire-ems-and-ocean-rescue",
+      "name": "Dare County Fire, EMS and Ocean Rescue",
+      "description": "Broadcastify public safety feed 10989 for North Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "NC",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north carolina",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/10989"
+    },
+    {
+      "id": "bf-43457-surry-county-public-safety",
+      "name": "Surry County Public Safety",
+      "description": "Broadcastify public safety feed 43457 for North Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "NC",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north carolina"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43457"
+    },
+    {
+      "id": "bf-6151-pasquotank-and-camden-county-police-fire-a",
+      "name": "Pasquotank and Camden County Police, Fire and EMS - Analog",
+      "description": "Broadcastify public safety feed 6151 for North Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "NC",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north carolina",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/6151"
+    },
+    {
+      "id": "bf-34585-cleveland-county-fire-ems-state-and-local-",
+      "name": "Cleveland County Fire, EMS, State and local police departments",
+      "description": "Broadcastify public safety feed 34585 for North Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "NC",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north carolina",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/34585"
+    },
+    {
+      "id": "bf-24241-johnston-county-public-safety-digital",
+      "name": "Johnston County Public Safety - Digital",
+      "description": "Broadcastify public safety feed 24241 for North Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "NC",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north carolina"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/24241"
+    },
+    {
+      "id": "bf-33476-lincoln-county-public-safety",
+      "name": "Lincoln County Public Safety",
+      "description": "Broadcastify public safety feed 33476 for North Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "NC",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north carolina"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/33476"
+    },
+    {
+      "id": "bf-22607-rowan-county-fire-and-ems-salisbury-fire",
+      "name": "Rowan County Fire and EMS, Salisbury Fire",
+      "description": "Broadcastify public safety feed 22607 for North Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "NC",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north carolina",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/22607"
+    },
+    {
+      "id": "bf-31998-randolph-county-sheriff-fire-and-ems",
+      "name": "Randolph County Sheriff, Fire and EMS",
+      "description": "Broadcastify public safety feed 31998 for North Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "NC",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north carolina",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/31998"
+    },
+    {
+      "id": "bf-16923-union-county-and-north-carolina-state-fire",
+      "name": "Union County and North Carolina State Fire",
+      "description": "Broadcastify public safety feed 16923 for North Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "NC",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north carolina",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/16923"
+    },
+    {
+      "id": "bf-24391-brunswick-county-sheriff-fire-and-ems-nc-h",
+      "name": "Brunswick County Sheriff, Fire and EMS, NC Highway Patrol",
+      "description": "Broadcastify public safety feed 24391 for North Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "NC",
+      "service_types": [
+        "dispatch",
+        "law",
+        "highway",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north carolina",
+        "law",
+        "highway",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/24391"
+    },
+    {
+      "id": "bf-21242-winston-salem-police-dispatch",
+      "name": "Winston-Salem Police Dispatch",
+      "description": "Broadcastify public safety feed 21242 for North Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "NC",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north carolina",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/21242"
+    },
+    {
+      "id": "bf-29533-oxford-police-fire-and-ems",
+      "name": "Oxford Police, Fire and EMS",
+      "description": "Broadcastify public safety feed 29533 for North Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "NC",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north carolina",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/29533"
+    },
+    {
+      "id": "bf-39525-wilson-county-public-safety",
+      "name": "Wilson County Public Safety",
+      "description": "Broadcastify public safety feed 39525 for North Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "NC",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north carolina"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39525"
+    },
+    {
+      "id": "bf-26159-guilford-county-and-greensboro-fire-dispat",
+      "name": "Guilford County and Greensboro Fire Dispatch",
+      "description": "Broadcastify public safety feed 26159 for North Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "NC",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north carolina",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/26159"
+    },
+    {
+      "id": "bf-45395-buncombe-county-fire-and-ems",
+      "name": "Buncombe County Fire and EMS",
+      "description": "Broadcastify public safety feed 45395 for North Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "NC",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north carolina",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45395"
+    },
+    {
+      "id": "bf-27354-lenoir-county-fire-and-ems-dispatch",
+      "name": "Lenoir County Fire and EMS Dispatch",
+      "description": "Broadcastify public safety feed 27354 for North Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "NC",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north carolina",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/27354"
+    },
+    {
+      "id": "bf-45383-wayne-county-fire-and-ops-channels",
+      "name": "Wayne County Fire and OPS Channels",
+      "description": "Broadcastify public safety feed 45383 for North Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "NC",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north carolina",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45383"
+    },
+    {
+      "id": "bf-12477-davidson-county-fire",
+      "name": "Davidson County Fire",
+      "description": "Broadcastify public safety feed 12477 for North Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "NC",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north carolina",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/12477"
+    },
+    {
+      "id": "bf-38151-duplin-county-law-enforcement",
+      "name": "Duplin County Law Enforcement",
+      "description": "Broadcastify public safety feed 38151 for North Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "NC",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north carolina",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38151"
+    },
+    {
+      "id": "bf-16518-franklin-county-public-safety",
+      "name": "Franklin County Public Safety",
+      "description": "Broadcastify public safety feed 16518 for North Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "NC",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north carolina"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/16518"
+    },
+    {
+      "id": "bf-143-guilford-metro-fire",
+      "name": "Guilford Metro Fire",
+      "description": "Broadcastify public safety feed 143 for North Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "NC",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north carolina",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/143"
+    },
+    {
+      "id": "bf-46088-alexander-county-public-safety",
+      "name": "Alexander County Public Safety",
+      "description": "Broadcastify public safety feed 46088 for North Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "NC",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north carolina"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46088"
+    },
+    {
+      "id": "bf-39593-cabarrus-county-concord-harrisburg-and-kan",
+      "name": "Cabarrus County, Concord, Harrisburg, and Kannapolis Fire Departments",
+      "description": "Broadcastify public safety feed 39593 for North Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "NC",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north carolina",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39593"
+    },
+    {
+      "id": "bf-46847-cumberland-county-and-city-of-fayetteville",
+      "name": "Cumberland County and City of Fayetteville Fire Service",
+      "description": "Broadcastify public safety feed 46847 for North Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "NC",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north carolina",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46847"
+    },
+    {
+      "id": "bf-9004-harnett-county-public-safety",
+      "name": "Harnett County Public Safety",
+      "description": "Broadcastify public safety feed 9004 for North Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "NC",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north carolina"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/9004"
+    },
+    {
+      "id": "bf-18200-robeson-county-fire-and-ems",
+      "name": "Robeson County Fire and EMS",
+      "description": "Broadcastify public safety feed 18200 for North Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "NC",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north carolina",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/18200"
+    },
+    {
+      "id": "bf-32802-duplin-county-fire-and-ems",
+      "name": "Duplin County Fire and EMS",
+      "description": "Broadcastify public safety feed 32802 for North Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "NC",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north carolina",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32802"
+    },
+    {
+      "id": "bf-27962-catawba-county-sheriff-conover-and-newton-",
+      "name": "Catawba County Sheriff, Conover and Newton Police Dispatch, NC Highway Patrol Troop F",
+      "description": "Broadcastify public safety feed 27962 for North Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "NC",
+      "service_types": [
+        "dispatch",
+        "law",
+        "highway"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north carolina",
+        "law",
+        "highway"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/27962"
+    },
+    {
+      "id": "bf-46182-randolph-chatham-and-moore-counties-public",
+      "name": "Randolph, Chatham and Moore Counties Public Safety",
+      "description": "Broadcastify public safety feed 46182 for North Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "NC",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north carolina"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46182"
+    },
+    {
+      "id": "bf-4189-yadkin-county-police-and-fire",
+      "name": "Yadkin County Police and Fire",
+      "description": "Broadcastify public safety feed 4189 for North Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "NC",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north carolina",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/4189"
+    },
+    {
+      "id": "bf-25176-brunswick-county-public-safety-viper",
+      "name": "Brunswick County Public Safety - VIPER",
+      "description": "Broadcastify public safety feed 25176 for North Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "NC",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north carolina"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/25176"
+    },
+    {
+      "id": "bf-41460-sandhills-region-public-safety",
+      "name": "Sandhills Region Public Safety",
+      "description": "Broadcastify public safety feed 41460 for North Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "NC",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north carolina"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41460"
+    },
+    {
+      "id": "bf-15934-davie-county-fire-and-ems-dispatch",
+      "name": "Davie County Fire and EMS Dispatch",
+      "description": "Broadcastify public safety feed 15934 for North Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "NC",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north carolina",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/15934"
+    },
+    {
+      "id": "bf-10670-orange-county-fire-and-ems",
+      "name": "Orange County Fire and EMS",
+      "description": "Broadcastify public safety feed 10670 for North Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "NC",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north carolina",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/10670"
+    },
+    {
+      "id": "bf-8038-greenville-fire-rescue",
+      "name": "Greenville Fire Rescue",
+      "description": "Broadcastify public safety feed 8038 for North Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "NC",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north carolina",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/8038"
+    },
+    {
+      "id": "bf-9413-watauga-county-fire-ems-and-rescue-boone-a",
+      "name": "Watauga County Fire, EMS and Rescue, Boone and Blowing Rock Fire",
+      "description": "Broadcastify public safety feed 9413 for North Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "NC",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north carolina",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/9413"
+    },
+    {
+      "id": "bf-42698-cleveland-county-shelby-and-kings-mountain",
+      "name": "Cleveland County, Shelby, and Kings Mountain Fire",
+      "description": "Broadcastify public safety feed 42698 for North Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "NC",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north carolina",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42698"
+    },
+    {
+      "id": "bf-44857-craven-police-fire-ems",
+      "name": "Craven Police Fire EMS",
+      "description": "Broadcastify public safety feed 44857 for North Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "NC",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north carolina",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44857"
+    },
+    {
+      "id": "bf-32661-graham-county-sheriff-fire-and-ems",
+      "name": "Graham County Sheriff, Fire and EMS",
+      "description": "Broadcastify public safety feed 32661 for North Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "NC",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north carolina",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32661"
+    },
+    {
+      "id": "bf-42428-johnston-county-fire",
+      "name": "Johnston County Fire",
+      "description": "Broadcastify public safety feed 42428 for North Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "NC",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north carolina",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42428"
+    },
+    {
+      "id": "bf-31289-nash-county-fire-digital",
+      "name": "Nash County Fire - Digital",
+      "description": "Broadcastify public safety feed 31289 for North Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "NC",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north carolina",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/31289"
+    },
+    {
+      "id": "bf-27191-asheville-fire",
+      "name": "Asheville Fire",
+      "description": "Broadcastify public safety feed 27191 for North Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "NC",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north carolina",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/27191"
+    },
+    {
+      "id": "bf-34106-chatham-county-fire",
+      "name": "Chatham County Fire",
+      "description": "Broadcastify public safety feed 34106 for North Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "NC",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north carolina",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/34106"
+    },
+    {
+      "id": "bf-43411-high-point-fire-department-dispatch",
+      "name": "High Point Fire Department Dispatch",
+      "description": "Broadcastify public safety feed 43411 for North Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "NC",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north carolina",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43411"
+    },
+    {
+      "id": "bf-35290-gastonia-fire",
+      "name": "Gastonia Fire",
+      "description": "Broadcastify public safety feed 35290 for North Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "NC",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north carolina",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/35290"
+    },
+    {
+      "id": "bf-23557-macon-county-fire-dispatch",
+      "name": "Macon County Fire Dispatch",
+      "description": "Broadcastify public safety feed 23557 for North Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "NC",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north carolina",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/23557"
+    },
+    {
+      "id": "bf-36566-town-of-holly-springs-police-and-fire",
+      "name": "Town of Holly Springs Police and Fire",
+      "description": "Broadcastify public safety feed 36566 for North Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "NC",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north carolina",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/36566"
+    },
+    {
+      "id": "bf-29273-wilkes-county-fire-departments",
+      "name": "Wilkes County Fire Departments",
+      "description": "Broadcastify public safety feed 29273 for North Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "NC",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north carolina",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/29273"
+    },
+    {
+      "id": "bf-46869-beaufort-county-public-safety",
+      "name": "Beaufort County Public Safety",
+      "description": "Broadcastify public safety feed 46869 for North Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "NC",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north carolina"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46869"
+    },
+    {
+      "id": "bf-41171-brunswick-county-sheriff",
+      "name": "Brunswick County Sheriff",
+      "description": "Broadcastify public safety feed 41171 for North Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "NC",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north carolina",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41171"
+    },
+    {
+      "id": "bf-20282-carteret-county-fire-and-ems-dispatch",
+      "name": "Carteret County Fire and EMS Dispatch",
+      "description": "Broadcastify public safety feed 20282 for North Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "NC",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north carolina",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/20282"
+    },
+    {
+      "id": "bf-32074-durham-city-fire",
+      "name": "Durham City Fire",
+      "description": "Broadcastify public safety feed 32074 for North Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "NC",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north carolina",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32074"
+    },
+    {
+      "id": "bf-25516-winston-salem-fire",
+      "name": "Winston-Salem Fire",
+      "description": "Broadcastify public safety feed 25516 for North Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "NC",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north carolina",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/25516"
+    },
+    {
+      "id": "bf-29195-gaston-county-public-safety",
+      "name": "Gaston County Public Safety",
+      "description": "Broadcastify public safety feed 29195 for North Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "NC",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north carolina"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/29195"
+    },
+    {
+      "id": "bf-32764-guilford-county-ems-dispatch",
+      "name": "Guilford County EMS Dispatch",
+      "description": "Broadcastify public safety feed 32764 for North Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "NC",
+      "service_types": [
+        "dispatch",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north carolina",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32764"
+    },
+    {
+      "id": "bf-31285-nash-county-ems-dispatch-digital",
+      "name": "Nash County EMS Dispatch - Digital",
+      "description": "Broadcastify public safety feed 31285 for North Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "NC",
+      "service_types": [
+        "dispatch",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north carolina",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/31285"
+    },
+    {
+      "id": "bf-46597-salisbury-rowan-county-law-dispatch",
+      "name": "Salisbury & Rowan County Law Dispatch",
+      "description": "Broadcastify public safety feed 46597 for North Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "NC",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north carolina"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46597"
+    },
+    {
+      "id": "bf-38216-wake-county-fire",
+      "name": "Wake County Fire",
+      "description": "Broadcastify public safety feed 38216 for North Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "NC",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north carolina",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38216"
+    },
+    {
+      "id": "bf-149-yadkin-county-fire-and-ems",
+      "name": "Yadkin County Fire and EMS",
+      "description": "Broadcastify public safety feed 149 for North Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "NC",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north carolina",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/149"
+    },
+    {
+      "id": "bf-26407-brunswick-county-fire-paging",
+      "name": "Brunswick County Fire Paging",
+      "description": "Broadcastify public safety feed 26407 for North Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "NC",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north carolina",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/26407"
+    },
+    {
+      "id": "bf-46757-caswell-county-fire-ems-dispatch",
+      "name": "Caswell County Fire/EMS Dispatch",
+      "description": "Broadcastify public safety feed 46757 for North Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "NC",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north carolina",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46757"
+    },
+    {
+      "id": "bf-43763-new-bern-police-fire-ems-nbps",
+      "name": "New Bern Police Fire EMS NBPS",
+      "description": "Broadcastify public safety feed 43763 for North Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "NC",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north carolina",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43763"
+    },
+    {
+      "id": "bf-45643-forsyth-county-fire",
+      "name": "Forsyth County Fire",
+      "description": "Broadcastify public safety feed 45643 for North Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "NC",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north carolina",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45643"
+    },
+    {
+      "id": "bf-44678-franklin-county-public-safety",
+      "name": "Franklin County Public Safety",
+      "description": "Broadcastify public safety feed 44678 for North Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "NC",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north carolina"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44678"
+    },
+    {
+      "id": "bf-44458-greene-county-fire-ems",
+      "name": "Greene County Fire/EMS",
+      "description": "Broadcastify public safety feed 44458 for North Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "NC",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north carolina",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44458"
+    },
+    {
+      "id": "bf-45547-stokes-county-fire-ems",
+      "name": "Stokes County Fire/EMS",
+      "description": "Broadcastify public safety feed 45547 for North Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "NC",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north carolina",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45547"
+    },
+    {
+      "id": "bf-37658-transylvania-county-fire-and-ems",
+      "name": "Transylvania County Fire and EMS",
+      "description": "Broadcastify public safety feed 37658 for North Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "NC",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north carolina",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37658"
+    },
+    {
+      "id": "bf-32819-ansonville-fire",
+      "name": "Ansonville Fire",
+      "description": "Broadcastify public safety feed 32819 for North Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "NC",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north carolina",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32819"
+    },
+    {
+      "id": "bf-10120-brunswick-county-fire-and-rescue",
+      "name": "Brunswick County Fire and Rescue",
+      "description": "Broadcastify public safety feed 10120 for North Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "NC",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north carolina",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/10120"
+    },
+    {
+      "id": "bf-41037-north-carolina-state-highway-patrol-troop-",
+      "name": "North Carolina State Highway Patrol - Troop B Dispatch",
+      "description": "Broadcastify public safety feed 41037 for North Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "NC",
+      "service_types": [
+        "dispatch",
+        "law",
+        "highway"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north carolina",
+        "law",
+        "highway"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41037"
+    },
+    {
+      "id": "bf-40027-cherokee-county-fire",
+      "name": "Cherokee County Fire",
+      "description": "Broadcastify public safety feed 40027 for North Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "NC",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north carolina",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40027"
+    },
+    {
+      "id": "bf-46075-cherokee-county-law-enforcement",
+      "name": "Cherokee County Law Enforcement",
+      "description": "Broadcastify public safety feed 46075 for North Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "NC",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north carolina",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46075"
+    },
+    {
+      "id": "bf-46077-cherokee-county-ems",
+      "name": "Cherokee County EMS",
+      "description": "Broadcastify public safety feed 46077 for North Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "NC",
+      "service_types": [
+        "dispatch",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north carolina",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46077"
+    },
+    {
+      "id": "bf-37251-clay-county-sheriff-fire-and-ems-dispatch",
+      "name": "Clay County Sheriff, Fire, and EMS Dispatch",
+      "description": "Broadcastify public safety feed 37251 for North Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "NC",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north carolina",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37251"
+    },
+    {
+      "id": "bf-21220-forsyth-county-ems",
+      "name": "Forsyth County EMS",
+      "description": "Broadcastify public safety feed 21220 for North Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "NC",
+      "service_types": [
+        "dispatch",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north carolina",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/21220"
+    },
+    {
+      "id": "bf-46765-forsyth-county-law-enforcement",
+      "name": "Forsyth County Law Enforcement",
+      "description": "Broadcastify public safety feed 46765 for North Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "NC",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north carolina",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46765"
+    },
+    {
+      "id": "bf-46766-forsyth-county-ems",
+      "name": "Forsyth County EMS",
+      "description": "Broadcastify public safety feed 46766 for North Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "NC",
+      "service_types": [
+        "dispatch",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north carolina",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46766"
+    },
+    {
+      "id": "bf-47046-forsyth-county-imap-incident-management-as",
+      "name": "Forsyth County IMAP (Incident Management Assistance Patrol)",
+      "description": "Broadcastify public safety feed 47046 for North Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "NC",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north carolina"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47046"
+    },
+    {
+      "id": "bf-47202-kernersville-police-department",
+      "name": "Kernersville Police Department",
+      "description": "Broadcastify public safety feed 47202 for North Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "NC",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north carolina",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47202"
+    },
+    {
+      "id": "bf-47321-winston-salem-university-campuses-public-s",
+      "name": "Winston Salem University Campuses Public Safety",
+      "description": "Broadcastify public safety feed 47321 for North Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "NC",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north carolina"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47321"
+    },
+    {
+      "id": "bf-46371-haywood-county-fire",
+      "name": "Haywood County Fire",
+      "description": "Broadcastify public safety feed 46371 for North Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "NC",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north carolina",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46371"
+    },
+    {
+      "id": "bf-30779-henderson-county-fire-and-ems",
+      "name": "Henderson County Fire and EMS",
+      "description": "Broadcastify public safety feed 30779 for North Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "NC",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north carolina",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/30779"
+    },
+    {
+      "id": "bf-4352-lenoir-county-and-kinston-fire-dispatch",
+      "name": "Lenoir County and Kinston Fire Dispatch",
+      "description": "Broadcastify public safety feed 4352 for North Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "NC",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north carolina",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/4352"
+    },
+    {
+      "id": "bf-46447-wilson-and-nash-county-public-safety",
+      "name": "Wilson and Nash County Public Safety",
+      "description": "Broadcastify public safety feed 46447 for North Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "NC",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north carolina"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46447"
+    },
+    {
+      "id": "bf-46760-pender-county-ems",
+      "name": "Pender County EMS",
+      "description": "Broadcastify public safety feed 46760 for North Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "NC",
+      "service_types": [
+        "dispatch",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north carolina",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46760"
+    },
+    {
+      "id": "bf-44358-hertford-fire",
+      "name": "Hertford Fire",
+      "description": "Broadcastify public safety feed 44358 for North Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "NC",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north carolina",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44358"
+    },
+    {
+      "id": "bf-42795-eastcare-air-ops",
+      "name": "EastCare Air Ops",
+      "description": "Broadcastify public safety feed 42795 for North Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "NC",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north carolina"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42795"
+    },
+    {
+      "id": "bf-34059-polk-county-sheriff-fire-and-ems",
+      "name": "Polk County Sheriff, Fire, and EMS",
+      "description": "Broadcastify public safety feed 34059 for North Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "NC",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north carolina",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/34059"
+    },
+    {
+      "id": "bf-46229-richmond-county-rescue-ems-dispatch",
+      "name": "Richmond County Rescue/EMS Dispatch",
+      "description": "Broadcastify public safety feed 46229 for North Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "NC",
+      "service_types": [
+        "dispatch",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north carolina",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46229"
+    },
+    {
+      "id": "bf-46230-richmond-county-fire",
+      "name": "Richmond County Fire",
+      "description": "Broadcastify public safety feed 46230 for North Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "NC",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north carolina",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46230"
+    },
+    {
+      "id": "bf-46313-hamlet-fire",
+      "name": "Hamlet Fire",
+      "description": "Broadcastify public safety feed 46313 for North Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "NC",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north carolina",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46313"
+    },
+    {
+      "id": "bf-35154-rockingham-county-public-safety",
+      "name": "Rockingham County Public Safety",
+      "description": "Broadcastify public safety feed 35154 for North Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "NC",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north carolina"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/35154"
+    },
+    {
+      "id": "bf-43456-nc-va-line-area-public-safety",
+      "name": "NC/VA Line Area Public Safety",
+      "description": "Broadcastify public safety feed 43456 for North Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "NC",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north carolina"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43456"
+    },
+    {
+      "id": "bf-46979-cary-fire-rescue",
+      "name": "Cary Fire-Rescue",
+      "description": "Broadcastify public safety feed 46979 for North Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "NC",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north carolina",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46979"
+    }
+  ]
+}

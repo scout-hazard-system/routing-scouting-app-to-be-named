@@ -1,0 +1,1182 @@
+{
+  "channels": [
+    {
+      "id": "bf-32602-indianapolis-metropolitan-police",
+      "name": "Indianapolis Metropolitan Police",
+      "description": "Broadcastify public safety feed 32602 for Vermont.",
+      "city": "",
+      "county": "Various",
+      "state": "VT",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "vermont",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32602"
+    },
+    {
+      "id": "bf-35891-northern-new-hampshire-law-net",
+      "name": "Northern New Hampshire Law Net",
+      "description": "Broadcastify public safety feed 35891 for Vermont.",
+      "city": "",
+      "county": "Various",
+      "state": "VT",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "vermont"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/35891"
+    },
+    {
+      "id": "bf-39681-franklin-county-missisquoi-valley-public-s",
+      "name": "Franklin County / Missisquoi Valley Public Safety",
+      "description": "Broadcastify public safety feed 39681 for Vermont.",
+      "city": "",
+      "county": "Various",
+      "state": "VT",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "vermont"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39681"
+    },
+    {
+      "id": "bf-46660-chittenden-county-rural-semi-rural-dispatc",
+      "name": "Chittenden County Rural/Semi Rural Dispatch",
+      "description": "Broadcastify public safety feed 46660 for Vermont.",
+      "city": "",
+      "county": "Various",
+      "state": "VT",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "vermont"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46660"
+    },
+    {
+      "id": "bf-44463-champlain-valley-fire-ems",
+      "name": "Champlain Valley Fire & EMS",
+      "description": "Broadcastify public safety feed 44463 for Vermont.",
+      "city": "",
+      "county": "Various",
+      "state": "VT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "vermont",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44463"
+    },
+    {
+      "id": "bf-6779-windsor-county-fire-south",
+      "name": "Windsor County Fire - South",
+      "description": "Broadcastify public safety feed 6779 for Vermont.",
+      "city": "",
+      "county": "Various",
+      "state": "VT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "vermont",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/6779"
+    },
+    {
+      "id": "bf-45600-bennington-fire-ems-police",
+      "name": "Bennington Fire / EMS / Police",
+      "description": "Broadcastify public safety feed 45600 for Vermont.",
+      "city": "",
+      "county": "Various",
+      "state": "VT",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "vermont",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45600"
+    },
+    {
+      "id": "bf-38244-windsor-county-sheriff",
+      "name": "Windsor County Sheriff",
+      "description": "Broadcastify public safety feed 38244 for Vermont.",
+      "city": "",
+      "county": "Various",
+      "state": "VT",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "vermont",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38244"
+    },
+    {
+      "id": "bf-35848-southern-vermont-tri-mountain-fire-rescue-",
+      "name": "Southern Vermont Tri-Mountain Fire/Rescue/EMS Dispatch",
+      "description": "Broadcastify public safety feed 35848 for Vermont.",
+      "city": "",
+      "county": "Various",
+      "state": "VT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "vermont",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/35848"
+    },
+    {
+      "id": "bf-42088-walden-and-cabot-fire-ems",
+      "name": "Walden and Cabot Fire / EMS",
+      "description": "Broadcastify public safety feed 42088 for Vermont.",
+      "city": "",
+      "county": "Various",
+      "state": "VT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "vermont",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42088"
+    },
+    {
+      "id": "bf-47339-st-johnsbury-caledonia-county-fire-ems-dis",
+      "name": "St. Johnsbury / Caledonia County Fire & EMS Dispatch",
+      "description": "Broadcastify public safety feed 47339 for Vermont.",
+      "city": "",
+      "county": "Various",
+      "state": "VT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "vermont",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47339"
+    },
+    {
+      "id": "bf-36098-middlebury-fire",
+      "name": "Middlebury Fire",
+      "description": "Broadcastify public safety feed 36098 for Vermont.",
+      "city": "",
+      "county": "Various",
+      "state": "VT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "vermont",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/36098"
+    },
+    {
+      "id": "bf-28343-white-river-valley-ambulance",
+      "name": "White River Valley Ambulance",
+      "description": "Broadcastify public safety feed 28343 for Vermont.",
+      "city": "",
+      "county": "Various",
+      "state": "VT",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "vermont"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/28343"
+    },
+    {
+      "id": "bf-14994-glover-ambulance",
+      "name": "Glover Ambulance",
+      "description": "Broadcastify public safety feed 14994 for Vermont.",
+      "city": "",
+      "county": "Various",
+      "state": "VT",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "vermont"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/14994"
+    },
+    {
+      "id": "bf-38609-grand-isle-county-fire-dispatch",
+      "name": "Grand Isle County Fire Dispatch",
+      "description": "Broadcastify public safety feed 38609 for Vermont.",
+      "city": "",
+      "county": "Various",
+      "state": "VT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "vermont",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38609"
+    },
+    {
+      "id": "bf-27099-essex-essex-jct-and-westford-fire-departme",
+      "name": "Essex, Essex Jct. and Westford Fire Departments",
+      "description": "Broadcastify public safety feed 27099 for Vermont.",
+      "city": "",
+      "county": "Various",
+      "state": "VT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "vermont",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/27099"
+    },
+    {
+      "id": "bf-28877-arlington-rescue-squad",
+      "name": "Arlington Rescue Squad",
+      "description": "Broadcastify public safety feed 28877 for Vermont.",
+      "city": "",
+      "county": "Various",
+      "state": "VT",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "vermont"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/28877"
+    },
+    {
+      "id": "bf-46735-st-johnsbury-fire",
+      "name": "St. Johnsbury Fire",
+      "description": "Broadcastify public safety feed 46735 for Vermont.",
+      "city": "",
+      "county": "Various",
+      "state": "VT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "vermont",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46735"
+    },
+    {
+      "id": "bf-23839-bolton-fire",
+      "name": "Bolton Fire",
+      "description": "Broadcastify public safety feed 23839 for Vermont.",
+      "city": "",
+      "county": "Various",
+      "state": "VT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "vermont",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/23839"
+    },
+    {
+      "id": "bf-43393-glover-fire",
+      "name": "Glover Fire",
+      "description": "Broadcastify public safety feed 43393 for Vermont.",
+      "city": "",
+      "county": "Various",
+      "state": "VT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "vermont",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43393"
+    },
+    {
+      "id": "bf-46716-northtroy-vfd",
+      "name": "NorthTroy VFD",
+      "description": "Broadcastify public safety feed 46716 for Vermont.",
+      "city": "",
+      "county": "Various",
+      "state": "VT",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "vermont"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46716"
+    },
+    {
+      "id": "bf-22705-killington-fire-rescue",
+      "name": "Killington Fire Rescue",
+      "description": "Broadcastify public safety feed 22705 for Vermont.",
+      "city": "",
+      "county": "Various",
+      "state": "VT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "vermont",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/22705"
+    },
+    {
+      "id": "bf-28742-rutland-county-fire",
+      "name": "Rutland County Fire",
+      "description": "Broadcastify public safety feed 28742 for Vermont.",
+      "city": "",
+      "county": "Various",
+      "state": "VT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "vermont",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/28742"
+    },
+    {
+      "id": "bf-30819-rutland-county-law-enforcement",
+      "name": "Rutland County Law Enforcement",
+      "description": "Broadcastify public safety feed 30819 for Vermont.",
+      "city": "",
+      "county": "Various",
+      "state": "VT",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "vermont",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/30819"
+    },
+    {
+      "id": "bf-36365-pittsford-fire",
+      "name": "Pittsford Fire",
+      "description": "Broadcastify public safety feed 36365 for Vermont.",
+      "city": "",
+      "county": "Various",
+      "state": "VT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "vermont",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/36365"
+    },
+    {
+      "id": "bf-18768-waterbury-fire",
+      "name": "Waterbury Fire",
+      "description": "Broadcastify public safety feed 18768 for Vermont.",
+      "city": "",
+      "county": "Various",
+      "state": "VT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "vermont",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/18768"
+    },
+    {
+      "id": "bf-30953-barre-city-fire-and-ems",
+      "name": "Barre City Fire and EMS",
+      "description": "Broadcastify public safety feed 30953 for Vermont.",
+      "city": "",
+      "county": "Various",
+      "state": "VT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "vermont",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/30953"
+    },
+    {
+      "id": "bf-38496-derby-line-fire",
+      "name": "Derby Line Fire",
+      "description": "Broadcastify public safety feed 38496 for Vermont.",
+      "city": "",
+      "county": "Various",
+      "state": "VT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "vermont",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38496"
+    },
+    {
+      "id": "bf-25998-barnard-fire",
+      "name": "Barnard Fire",
+      "description": "Broadcastify public safety feed 25998 for Vermont.",
+      "city": "",
+      "county": "Various",
+      "state": "VT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "vermont",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/25998"
+    },
+    {
+      "id": "bf-21577-pownal-rescue",
+      "name": "Pownal Rescue",
+      "description": "Broadcastify public safety feed 21577 for Vermont.",
+      "city": "",
+      "county": "Various",
+      "state": "VT",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "vermont"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/21577"
+    },
+    {
+      "id": "bf-21492-vergennes-rescue",
+      "name": "Vergennes Rescue",
+      "description": "Broadcastify public safety feed 21492 for Vermont.",
+      "city": "",
+      "county": "Various",
+      "state": "VT",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "vermont"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/21492"
+    },
+    {
+      "id": "bf-43755-broad-brook-fire",
+      "name": "Broad Brook Fire",
+      "description": "Broadcastify public safety feed 43755 for Vermont.",
+      "city": "",
+      "county": "Various",
+      "state": "VT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "vermont",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43755"
+    },
+    {
+      "id": "bf-46450-springfield-fire",
+      "name": "Springfield Fire",
+      "description": "Broadcastify public safety feed 46450 for Vermont.",
+      "city": "",
+      "county": "Various",
+      "state": "VT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "vermont",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46450"
+    },
+    {
+      "id": "bf-47154-chester-fd",
+      "name": "Chester FD",
+      "description": "Broadcastify public safety feed 47154 for Vermont.",
+      "city": "",
+      "county": "Various",
+      "state": "VT",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "vermont"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47154"
+    },
+    {
+      "id": "bf-14952-orleans-fire",
+      "name": "Orleans Fire",
+      "description": "Broadcastify public safety feed 14952 for Vermont.",
+      "city": "",
+      "county": "Various",
+      "state": "VT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "vermont",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/14952"
+    },
+    {
+      "id": "bf-18512-georgia-fire-and-rescue-dispatch",
+      "name": "Georgia Fire and Rescue Dispatch",
+      "description": "Broadcastify public safety feed 18512 for Vermont.",
+      "city": "",
+      "county": "Various",
+      "state": "VT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "vermont",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/18512"
+    },
+    {
+      "id": "bf-18975-fairfield-fire",
+      "name": "Fairfield Fire",
+      "description": "Broadcastify public safety feed 18975 for Vermont.",
+      "city": "",
+      "county": "Various",
+      "state": "VT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "vermont",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/18975"
+    },
+    {
+      "id": "bf-29470-fairfax-fire",
+      "name": "Fairfax Fire",
+      "description": "Broadcastify public safety feed 29470 for Vermont.",
+      "city": "",
+      "county": "Various",
+      "state": "VT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "vermont",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/29470"
+    },
+    {
+      "id": "bf-43389-richmond-fd",
+      "name": "Richmond FD",
+      "description": "Broadcastify public safety feed 43389 for Vermont.",
+      "city": "",
+      "county": "Various",
+      "state": "VT",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "vermont"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43389"
+    },
+    {
+      "id": "bf-37588-cambridge-fire-and-rescue",
+      "name": "Cambridge Fire and Rescue",
+      "description": "Broadcastify public safety feed 37588 for Vermont.",
+      "city": "",
+      "county": "Various",
+      "state": "VT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "vermont",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37588"
+    },
+    {
+      "id": "bf-16526-tunbridge-fire-dispatch",
+      "name": "Tunbridge Fire Dispatch",
+      "description": "Broadcastify public safety feed 16526 for Vermont.",
+      "city": "",
+      "county": "Various",
+      "state": "VT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "vermont",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/16526"
+    },
+    {
+      "id": "bf-33202-first-branch-ambulance",
+      "name": "First Branch Ambulance",
+      "description": "Broadcastify public safety feed 33202 for Vermont.",
+      "city": "",
+      "county": "Various",
+      "state": "VT",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "vermont"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/33202"
+    },
+    {
+      "id": "bf-45505-east-randolph-fire",
+      "name": "East Randolph Fire",
+      "description": "Broadcastify public safety feed 45505 for Vermont.",
+      "city": "",
+      "county": "Various",
+      "state": "VT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "vermont",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45505"
+    },
+    {
+      "id": "bf-41659-newport-fire",
+      "name": "Newport Fire",
+      "description": "Broadcastify public safety feed 41659 for Vermont.",
+      "city": "",
+      "county": "Various",
+      "state": "VT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "vermont",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41659"
+    },
+    {
+      "id": "bf-20819-underhill-jericho-fire-dispatch",
+      "name": "Underhill / Jericho Fire Dispatch",
+      "description": "Broadcastify public safety feed 20819 for Vermont.",
+      "city": "",
+      "county": "Various",
+      "state": "VT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "vermont",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/20819"
+    },
+    {
+      "id": "bf-24435-charleston-fire",
+      "name": "Charleston Fire",
+      "description": "Broadcastify public safety feed 24435 for Vermont.",
+      "city": "",
+      "county": "Various",
+      "state": "VT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "vermont",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/24435"
+    },
+    {
+      "id": "bf-24890-newport-ambulance",
+      "name": "Newport Ambulance",
+      "description": "Broadcastify public safety feed 24890 for Vermont.",
+      "city": "",
+      "county": "Various",
+      "state": "VT",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "vermont"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/24890"
+    },
+    {
+      "id": "bf-30346-westmore-fire-rescue",
+      "name": "Westmore Fire Rescue",
+      "description": "Broadcastify public safety feed 30346 for Vermont.",
+      "city": "",
+      "county": "Various",
+      "state": "VT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "vermont",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/30346"
+    },
+    {
+      "id": "bf-33839-albany-fire",
+      "name": "Albany Fire",
+      "description": "Broadcastify public safety feed 33839 for Vermont.",
+      "city": "",
+      "county": "Various",
+      "state": "VT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "vermont",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/33839"
+    },
+    {
+      "id": "bf-34707-newport-center-fire",
+      "name": "Newport Center Fire",
+      "description": "Broadcastify public safety feed 34707 for Vermont.",
+      "city": "",
+      "county": "Various",
+      "state": "VT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "vermont",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/34707"
+    },
+    {
+      "id": "bf-34986-troy-fire",
+      "name": "Troy Fire",
+      "description": "Broadcastify public safety feed 34986 for Vermont.",
+      "city": "",
+      "county": "Various",
+      "state": "VT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "vermont",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/34986"
+    },
+    {
+      "id": "bf-35538-beecher-falls",
+      "name": "Beecher Falls",
+      "description": "Broadcastify public safety feed 35538 for Vermont.",
+      "city": "",
+      "county": "Various",
+      "state": "VT",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "vermont"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/35538"
+    }
+  ]
+}

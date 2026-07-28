@@ -1,0 +1,2302 @@
+{
+  "channels": [
+    {
+      "id": "bf-32602-indianapolis-metropolitan-police",
+      "name": "Indianapolis Metropolitan Police",
+      "description": "Broadcastify public safety feed 32602 for Indiana.",
+      "city": "",
+      "county": "Various",
+      "state": "IN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "indiana",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32602"
+    },
+    {
+      "id": "bf-38966-south-bend-mishawaka-st-joseph-county-poli",
+      "name": "South Bend, Mishawaka & St. Joseph County Police, Fire & EMS",
+      "description": "Broadcastify public safety feed 38966 for Indiana.",
+      "city": "",
+      "county": "Various",
+      "state": "IN",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "indiana",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38966"
+    },
+    {
+      "id": "bf-25304-terre-haute-public-safety-and-vigo-county-",
+      "name": "Terre Haute Public Safety and Vigo County Fire",
+      "description": "Broadcastify public safety feed 25304 for Indiana.",
+      "city": "",
+      "county": "Various",
+      "state": "IN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "indiana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/25304"
+    },
+    {
+      "id": "bf-14176-kokomo-police-and-fire-howard-county-sheri",
+      "name": "Kokomo Police and Fire, Howard County Sheriff / Fire Dispatch",
+      "description": "Broadcastify public safety feed 14176 for Indiana.",
+      "city": "",
+      "county": "Various",
+      "state": "IN",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "indiana",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/14176"
+    },
+    {
+      "id": "bf-38289-grant-county-public-safety",
+      "name": "Grant County Public Safety",
+      "description": "Broadcastify public safety feed 38289 for Indiana.",
+      "city": "",
+      "county": "Various",
+      "state": "IN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "indiana"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38289"
+    },
+    {
+      "id": "bf-21905-elkhart-goshen-elkhart-county-police-fire-",
+      "name": "Elkhart, Goshen & Elkhart County Police, Fire & EMS",
+      "description": "Broadcastify public safety feed 21905 for Indiana.",
+      "city": "",
+      "county": "Various",
+      "state": "IN",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "indiana",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/21905"
+    },
+    {
+      "id": "bf-33130-muncie-and-delaware-county-public-safety",
+      "name": "Muncie and Delaware County Public Safety",
+      "description": "Broadcastify public safety feed 33130 for Indiana.",
+      "city": "",
+      "county": "Various",
+      "state": "IN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "indiana"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/33130"
+    },
+    {
+      "id": "bf-32431-vanderburgh-county-police-fire-and-ems",
+      "name": "Vanderburgh County Police, Fire, and EMS",
+      "description": "Broadcastify public safety feed 32431 for Indiana.",
+      "city": "",
+      "county": "Various",
+      "state": "IN",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "indiana",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32431"
+    },
+    {
+      "id": "bf-2762-knox-county-police-fire-and-ems",
+      "name": "Knox County Police, Fire and EMS",
+      "description": "Broadcastify public safety feed 2762 for Indiana.",
+      "city": "",
+      "county": "Various",
+      "state": "IN",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "indiana",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/2762"
+    },
+    {
+      "id": "bf-5101-henry-county-public-safety",
+      "name": "Henry County Public Safety",
+      "description": "Broadcastify public safety feed 5101 for Indiana.",
+      "city": "",
+      "county": "Various",
+      "state": "IN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "indiana"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/5101"
+    },
+    {
+      "id": "bf-23314-decatur-county-sheriff-fire-and-ems-greens",
+      "name": "Decatur County Sheriff, Fire and EMS, Greensburg Police",
+      "description": "Broadcastify public safety feed 23314 for Indiana.",
+      "city": "",
+      "county": "Various",
+      "state": "IN",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "indiana",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/23314"
+    },
+    {
+      "id": "bf-22032-dekalb-county-sheriff-fire-ems-auburn-and-",
+      "name": "DeKalb County Sheriff, Fire / EMS, Auburn and Garrett Police / Fire",
+      "description": "Broadcastify public safety feed 22032 for Indiana.",
+      "city": "",
+      "county": "Various",
+      "state": "IN",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "indiana",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/22032"
+    },
+    {
+      "id": "bf-42837-michigan-city-public-safety",
+      "name": "Michigan City Public Safety",
+      "description": "Broadcastify public safety feed 42837 for Indiana.",
+      "city": "",
+      "county": "Various",
+      "state": "IN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "indiana"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42837"
+    },
+    {
+      "id": "bf-36178-porter-county-public-safety",
+      "name": "Porter County Public Safety",
+      "description": "Broadcastify public safety feed 36178 for Indiana.",
+      "city": "",
+      "county": "Various",
+      "state": "IN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "indiana"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/36178"
+    },
+    {
+      "id": "bf-44657-starke-county-sheriff-fire-ems",
+      "name": "Starke County Sheriff Fire & EMS",
+      "description": "Broadcastify public safety feed 44657 for Indiana.",
+      "city": "",
+      "county": "Various",
+      "state": "IN",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "indiana",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44657"
+    },
+    {
+      "id": "bf-36276-johnson-county-public-safety",
+      "name": "Johnson County Public Safety",
+      "description": "Broadcastify public safety feed 36276 for Indiana.",
+      "city": "",
+      "county": "Various",
+      "state": "IN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "indiana"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/36276"
+    },
+    {
+      "id": "bf-24550-madison-county-sheriff-fire-and-ems-anders",
+      "name": "Madison County Sheriff, Fire and EMS, Anderson Police",
+      "description": "Broadcastify public safety feed 24550 for Indiana.",
+      "city": "",
+      "county": "Various",
+      "state": "IN",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "indiana",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/24550"
+    },
+    {
+      "id": "bf-47396-clark-county-public-safety",
+      "name": "Clark County Public Safety",
+      "description": "Broadcastify public safety feed 47396 for Indiana.",
+      "city": "",
+      "county": "Various",
+      "state": "IN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "indiana"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47396"
+    },
+    {
+      "id": "bf-37868-fayette-county-public-safety",
+      "name": "Fayette County Public Safety",
+      "description": "Broadcastify public safety feed 37868 for Indiana.",
+      "city": "",
+      "county": "Various",
+      "state": "IN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "indiana"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37868"
+    },
+    {
+      "id": "bf-40131-logansport-and-cass-county-public-safety-p",
+      "name": "Logansport and Cass County Public Safety (P25 SAFE-T)",
+      "description": "Broadcastify public safety feed 40131 for Indiana.",
+      "city": "",
+      "county": "Various",
+      "state": "IN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "indiana"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40131"
+    },
+    {
+      "id": "bf-26148-monroe-and-brown-counties-public-safety",
+      "name": "Monroe and Brown Counties Public Safety",
+      "description": "Broadcastify public safety feed 26148 for Indiana.",
+      "city": "",
+      "county": "Various",
+      "state": "IN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "indiana"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/26148"
+    },
+    {
+      "id": "bf-5331-dearborn-county-police-fire-and-ems",
+      "name": "Dearborn County Police, Fire and EMS",
+      "description": "Broadcastify public safety feed 5331 for Indiana.",
+      "city": "",
+      "county": "Various",
+      "state": "IN",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "indiana",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/5331"
+    },
+    {
+      "id": "bf-33387-lake-county-public-safety",
+      "name": "Lake County Public Safety",
+      "description": "Broadcastify public safety feed 33387 for Indiana.",
+      "city": "",
+      "county": "Various",
+      "state": "IN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "indiana"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/33387"
+    },
+    {
+      "id": "bf-45827-tippecanoe-county-law-enforcement",
+      "name": "Tippecanoe County Law Enforcement",
+      "description": "Broadcastify public safety feed 45827 for Indiana.",
+      "city": "",
+      "county": "Various",
+      "state": "IN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "indiana",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45827"
+    },
+    {
+      "id": "bf-32212-allen-county-fire",
+      "name": "Allen County Fire",
+      "description": "Broadcastify public safety feed 32212 for Indiana.",
+      "city": "",
+      "county": "Various",
+      "state": "IN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "indiana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32212"
+    },
+    {
+      "id": "bf-42098-wabash-huntington-miami-and-grant-counties",
+      "name": "Wabash, Huntington, Miami and Grant Counties Public Safety",
+      "description": "Broadcastify public safety feed 42098 for Indiana.",
+      "city": "",
+      "county": "Various",
+      "state": "IN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "indiana"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42098"
+    },
+    {
+      "id": "bf-44930-steuben-county-public-safety",
+      "name": "Steuben County Public Safety",
+      "description": "Broadcastify public safety feed 44930 for Indiana.",
+      "city": "",
+      "county": "Various",
+      "state": "IN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "indiana"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44930"
+    },
+    {
+      "id": "bf-13938-new-albany-police-and-fire",
+      "name": "New Albany Police and Fire",
+      "description": "Broadcastify public safety feed 13938 for Indiana.",
+      "city": "",
+      "county": "Various",
+      "state": "IN",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "indiana",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/13938"
+    },
+    {
+      "id": "bf-1162-huntington-city-and-county-police-and-fire",
+      "name": "Huntington City and County Police and Fire",
+      "description": "Broadcastify public safety feed 1162 for Indiana.",
+      "city": "",
+      "county": "Various",
+      "state": "IN",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "indiana",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/1162"
+    },
+    {
+      "id": "bf-46448-indianapolis-fire-department",
+      "name": "Indianapolis Fire Department",
+      "description": "Broadcastify public safety feed 46448 for Indiana.",
+      "city": "",
+      "county": "Various",
+      "state": "IN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "indiana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46448"
+    },
+    {
+      "id": "bf-41363-scott-county-public-safety",
+      "name": "Scott County Public Safety",
+      "description": "Broadcastify public safety feed 41363 for Indiana.",
+      "city": "",
+      "county": "Various",
+      "state": "IN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "indiana"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41363"
+    },
+    {
+      "id": "bf-45189-union-wayne-fayette-franklin-county-public",
+      "name": "Union, Wayne, Fayette, Franklin County Public Safety",
+      "description": "Broadcastify public safety feed 45189 for Indiana.",
+      "city": "",
+      "county": "Various",
+      "state": "IN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "indiana"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45189"
+    },
+    {
+      "id": "bf-34521-marshall-county-police-fire-and-ems",
+      "name": "Marshall County Police, Fire, and EMS",
+      "description": "Broadcastify public safety feed 34521 for Indiana.",
+      "city": "",
+      "county": "Various",
+      "state": "IN",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "indiana",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/34521"
+    },
+    {
+      "id": "bf-39676-tipton-county-police-fire-ems-and-isp",
+      "name": "Tipton County Police, Fire, EMS and ISP",
+      "description": "Broadcastify public safety feed 39676 for Indiana.",
+      "city": "",
+      "county": "Various",
+      "state": "IN",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "indiana",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39676"
+    },
+    {
+      "id": "bf-24415-fountain-county-fire-and-ems-warren-county",
+      "name": "Fountain County Fire and EMS, Warren County EMS",
+      "description": "Broadcastify public safety feed 24415 for Indiana.",
+      "city": "",
+      "county": "Various",
+      "state": "IN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "indiana",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/24415"
+    },
+    {
+      "id": "bf-41952-jackson-county-public-safety",
+      "name": "Jackson County Public Safety",
+      "description": "Broadcastify public safety feed 41952 for Indiana.",
+      "city": "",
+      "county": "Various",
+      "state": "IN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "indiana"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41952"
+    },
+    {
+      "id": "bf-20517-kosciusko-county-public-safety",
+      "name": "Kosciusko County Public Safety",
+      "description": "Broadcastify public safety feed 20517 for Indiana.",
+      "city": "",
+      "county": "Various",
+      "state": "IN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "indiana"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/20517"
+    },
+    {
+      "id": "bf-24362-posey-county-police-fire-and-ems",
+      "name": "Posey County Police, Fire and EMS",
+      "description": "Broadcastify public safety feed 24362 for Indiana.",
+      "city": "",
+      "county": "Various",
+      "state": "IN",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "indiana",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/24362"
+    },
+    {
+      "id": "bf-44691-shelby-county-public-safety",
+      "name": "Shelby County Public Safety",
+      "description": "Broadcastify public safety feed 44691 for Indiana.",
+      "city": "",
+      "county": "Various",
+      "state": "IN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "indiana"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44691"
+    },
+    {
+      "id": "bf-45354-knox-county-gibson-county-public-safety",
+      "name": "Knox County & Gibson County Public Safety",
+      "description": "Broadcastify public safety feed 45354 for Indiana.",
+      "city": "",
+      "county": "Various",
+      "state": "IN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "indiana"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45354"
+    },
+    {
+      "id": "bf-32404-laporte-county-public-safety",
+      "name": "LaPorte County Public Safety",
+      "description": "Broadcastify public safety feed 32404 for Indiana.",
+      "city": "",
+      "county": "Various",
+      "state": "IN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "indiana"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32404"
+    },
+    {
+      "id": "bf-46389-parke-and-vermillion-county-public-safety",
+      "name": "Parke and Vermillion County Public Safety",
+      "description": "Broadcastify public safety feed 46389 for Indiana.",
+      "city": "",
+      "county": "Various",
+      "state": "IN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "indiana"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46389"
+    },
+    {
+      "id": "bf-26764-tell-city-police-fire-and-ems",
+      "name": "Tell City Police, Fire and EMS",
+      "description": "Broadcastify public safety feed 26764 for Indiana.",
+      "city": "",
+      "county": "Various",
+      "state": "IN",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "indiana",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/26764"
+    },
+    {
+      "id": "bf-40391-randolph-county-public-safety",
+      "name": "Randolph County Public Safety",
+      "description": "Broadcastify public safety feed 40391 for Indiana.",
+      "city": "",
+      "county": "Various",
+      "state": "IN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "indiana"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40391"
+    },
+    {
+      "id": "bf-22514-hancock-county-sheriff-fire-and-ems-greenf",
+      "name": "Hancock County Sheriff, Fire and EMS, Greenfield Police Dispatch",
+      "description": "Broadcastify public safety feed 22514 for Indiana.",
+      "city": "",
+      "county": "Various",
+      "state": "IN",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "indiana",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/22514"
+    },
+    {
+      "id": "bf-23465-gibson-county-sheriff-fire-and-ems-princet",
+      "name": "Gibson County Sheriff, Fire and EMS, Princeton Police",
+      "description": "Broadcastify public safety feed 23465 for Indiana.",
+      "city": "",
+      "county": "Various",
+      "state": "IN",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "indiana",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/23465"
+    },
+    {
+      "id": "bf-38068-grant-county-police",
+      "name": "Grant County Police",
+      "description": "Broadcastify public safety feed 38068 for Indiana.",
+      "city": "",
+      "county": "Various",
+      "state": "IN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "indiana",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38068"
+    },
+    {
+      "id": "bf-47263-morgan-county-public-safety",
+      "name": "Morgan County Public Safety",
+      "description": "Broadcastify public safety feed 47263 for Indiana.",
+      "city": "",
+      "county": "Various",
+      "state": "IN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "indiana"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47263"
+    },
+    {
+      "id": "bf-44728-south-bend-mishawaka-st-joseph-co-law-enfo",
+      "name": "South Bend, Mishawaka & St Joseph Co Law Enforcement",
+      "description": "Broadcastify public safety feed 44728 for Indiana.",
+      "city": "",
+      "county": "Various",
+      "state": "IN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "indiana",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44728"
+    },
+    {
+      "id": "bf-41429-dubois-county-fire-ems-dispatch",
+      "name": "Dubois County Fire/EMS Dispatch",
+      "description": "Broadcastify public safety feed 41429 for Indiana.",
+      "city": "",
+      "county": "Various",
+      "state": "IN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "indiana",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41429"
+    },
+    {
+      "id": "bf-17777-hendricks-county-fire-dispatch",
+      "name": "Hendricks County Fire - Dispatch",
+      "description": "Broadcastify public safety feed 17777 for Indiana.",
+      "city": "",
+      "county": "Various",
+      "state": "IN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "indiana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/17777"
+    },
+    {
+      "id": "bf-47070-jackson-county-law-enforcement",
+      "name": "Jackson County Law Enforcement",
+      "description": "Broadcastify public safety feed 47070 for Indiana.",
+      "city": "",
+      "county": "Various",
+      "state": "IN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "indiana",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47070"
+    },
+    {
+      "id": "bf-18981-clinton-county-fire-and-ems",
+      "name": "Clinton County Fire and EMS",
+      "description": "Broadcastify public safety feed 18981 for Indiana.",
+      "city": "",
+      "county": "Various",
+      "state": "IN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "indiana",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/18981"
+    },
+    {
+      "id": "bf-3332-hamilton-county-fire-ems",
+      "name": "Hamilton County Fire & EMS",
+      "description": "Broadcastify public safety feed 3332 for Indiana.",
+      "city": "",
+      "county": "Various",
+      "state": "IN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "indiana",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/3332"
+    },
+    {
+      "id": "bf-39050-hendricks-county-police-dispatch",
+      "name": "Hendricks County Police - Dispatch",
+      "description": "Broadcastify public safety feed 39050 for Indiana.",
+      "city": "",
+      "county": "Various",
+      "state": "IN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "indiana",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39050"
+    },
+    {
+      "id": "bf-17022-jasper-county-sheriff-indiana-state-police",
+      "name": "Jasper County Sheriff, Indiana State Police Districts 13 & 14",
+      "description": "Broadcastify public safety feed 17022 for Indiana.",
+      "city": "",
+      "county": "Various",
+      "state": "IN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "indiana",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/17022"
+    },
+    {
+      "id": "bf-37383-crawfordsville-police-fire-and-ems",
+      "name": "Crawfordsville Police, Fire, and EMS",
+      "description": "Broadcastify public safety feed 37383 for Indiana.",
+      "city": "",
+      "county": "Various",
+      "state": "IN",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "indiana",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37383"
+    },
+    {
+      "id": "bf-36745-pike-gibson-knox-daviess-and-dubois-county",
+      "name": "Pike, Gibson, Knox, Daviess and Dubois County Sheriff DNR EMS and ISP",
+      "description": "Broadcastify public safety feed 36745 for Indiana.",
+      "city": "",
+      "county": "Various",
+      "state": "IN",
+      "service_types": [
+        "dispatch",
+        "law",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "indiana",
+        "law",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/36745"
+    },
+    {
+      "id": "bf-9239-fulton-county-public-safety-analog",
+      "name": "Fulton County Public Safety - Analog",
+      "description": "Broadcastify public safety feed 9239 for Indiana.",
+      "city": "",
+      "county": "Various",
+      "state": "IN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "indiana"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/9239"
+    },
+    {
+      "id": "bf-38719-hendricks-county-fire-ops-1",
+      "name": "Hendricks County Fire - Ops 1",
+      "description": "Broadcastify public safety feed 38719 for Indiana.",
+      "city": "",
+      "county": "Various",
+      "state": "IN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "indiana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38719"
+    },
+    {
+      "id": "bf-5675-darke-mercer-randolph-shelby-and-jay-count",
+      "name": "Darke, Mercer, Randolph, Shelby and Jay Counties Fire and EMS",
+      "description": "Broadcastify public safety feed 5675 for Indiana.",
+      "city": "",
+      "county": "Various",
+      "state": "IN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "indiana",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/5675"
+    },
+    {
+      "id": "bf-45205-lagrange-county-public-safety",
+      "name": "Lagrange County Public Safety",
+      "description": "Broadcastify public safety feed 45205 for Indiana.",
+      "city": "",
+      "county": "Various",
+      "state": "IN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "indiana"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45205"
+    },
+    {
+      "id": "bf-39919-indianapolis-metropolitan-police-southeast",
+      "name": "Indianapolis Metropolitan Police - Southeast District",
+      "description": "Broadcastify public safety feed 39919 for Indiana.",
+      "city": "",
+      "county": "Various",
+      "state": "IN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "indiana",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39919"
+    },
+    {
+      "id": "bf-41670-noble-county-public-safety",
+      "name": "Noble County Public Safety",
+      "description": "Broadcastify public safety feed 41670 for Indiana.",
+      "city": "",
+      "county": "Various",
+      "state": "IN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "indiana"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41670"
+    },
+    {
+      "id": "bf-28211-putnam-county-sheriff-fire-and-ems",
+      "name": "Putnam County Sheriff, Fire and EMS",
+      "description": "Broadcastify public safety feed 28211 for Indiana.",
+      "city": "",
+      "county": "Various",
+      "state": "IN",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "indiana",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/28211"
+    },
+    {
+      "id": "bf-40835-warrick-spencer-county-public-safety",
+      "name": "Warrick / Spencer County Public Safety",
+      "description": "Broadcastify public safety feed 40835 for Indiana.",
+      "city": "",
+      "county": "Various",
+      "state": "IN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "indiana"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40835"
+    },
+    {
+      "id": "bf-16252-whitley-county-sheriff-dispatch",
+      "name": "Whitley County Sheriff Dispatch",
+      "description": "Broadcastify public safety feed 16252 for Indiana.",
+      "city": "",
+      "county": "Various",
+      "state": "IN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "indiana",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/16252"
+    },
+    {
+      "id": "bf-47033-fort-wayne-area-public-safety",
+      "name": "Fort Wayne Area Public Safety",
+      "description": "Broadcastify public safety feed 47033 for Indiana.",
+      "city": "",
+      "county": "Various",
+      "state": "IN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "indiana"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47033"
+    },
+    {
+      "id": "bf-27125-boone-county-fire-and-ems",
+      "name": "Boone County Fire and EMS",
+      "description": "Broadcastify public safety feed 27125 for Indiana.",
+      "city": "",
+      "county": "Various",
+      "state": "IN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "indiana",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/27125"
+    },
+    {
+      "id": "bf-46789-southeast-indiana-public-safety",
+      "name": "Southeast Indiana Public Safety",
+      "description": "Broadcastify public safety feed 46789 for Indiana.",
+      "city": "",
+      "county": "Various",
+      "state": "IN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "indiana"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46789"
+    },
+    {
+      "id": "bf-39699-hendricks-county-fire-county-wide-1",
+      "name": "Hendricks County Fire - County Wide 1",
+      "description": "Broadcastify public safety feed 39699 for Indiana.",
+      "city": "",
+      "county": "Various",
+      "state": "IN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "indiana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39699"
+    },
+    {
+      "id": "bf-27328-kokomo-police-and-howard-county-sheriff",
+      "name": "Kokomo Police and Howard County Sheriff",
+      "description": "Broadcastify public safety feed 27328 for Indiana.",
+      "city": "",
+      "county": "Various",
+      "state": "IN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "indiana",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/27328"
+    },
+    {
+      "id": "bf-46356-lake-county-public-safety",
+      "name": "Lake County Public Safety",
+      "description": "Broadcastify public safety feed 46356 for Indiana.",
+      "city": "",
+      "county": "Various",
+      "state": "IN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "indiana"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46356"
+    },
+    {
+      "id": "bf-25737-morgan-county-fire-and-ems",
+      "name": "Morgan County Fire and EMS",
+      "description": "Broadcastify public safety feed 25737 for Indiana.",
+      "city": "",
+      "county": "Various",
+      "state": "IN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "indiana",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/25737"
+    },
+    {
+      "id": "bf-17879-perry-county-ems",
+      "name": "Perry County EMS",
+      "description": "Broadcastify public safety feed 17879 for Indiana.",
+      "city": "",
+      "county": "Various",
+      "state": "IN",
+      "service_types": [
+        "dispatch",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "indiana",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/17879"
+    },
+    {
+      "id": "bf-44666-pulaski-county-public-safety",
+      "name": "Pulaski County Public Safety",
+      "description": "Broadcastify public safety feed 44666 for Indiana.",
+      "city": "",
+      "county": "Various",
+      "state": "IN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "indiana"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44666"
+    },
+    {
+      "id": "bf-665-spencer-county-sheriff-fire-and-ems",
+      "name": "Spencer County Sheriff, Fire, and EMS",
+      "description": "Broadcastify public safety feed 665 for Indiana.",
+      "city": "",
+      "county": "Various",
+      "state": "IN",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "indiana",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/665"
+    },
+    {
+      "id": "bf-45828-tippecanoe-county-fire",
+      "name": "Tippecanoe County Fire",
+      "description": "Broadcastify public safety feed 45828 for Indiana.",
+      "city": "",
+      "county": "Various",
+      "state": "IN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "indiana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45828"
+    },
+    {
+      "id": "bf-32257-salem-washington-township-fire",
+      "name": "Salem Washington Township Fire",
+      "description": "Broadcastify public safety feed 32257 for Indiana.",
+      "city": "",
+      "county": "Various",
+      "state": "IN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "indiana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32257"
+    },
+    {
+      "id": "bf-34924-logansport-fire",
+      "name": "Logansport Fire",
+      "description": "Broadcastify public safety feed 34924 for Indiana.",
+      "city": "",
+      "county": "Various",
+      "state": "IN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "indiana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/34924"
+    },
+    {
+      "id": "bf-18969-jeffersonville-fire-ops",
+      "name": "Jeffersonville Fire Ops",
+      "description": "Broadcastify public safety feed 18969 for Indiana.",
+      "city": "",
+      "county": "Various",
+      "state": "IN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "indiana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/18969"
+    },
+    {
+      "id": "bf-30372-lewis-township-fire",
+      "name": "Lewis Township Fire",
+      "description": "Broadcastify public safety feed 30372 for Indiana.",
+      "city": "",
+      "county": "Various",
+      "state": "IN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "indiana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/30372"
+    },
+    {
+      "id": "bf-10298-floyd-county-fire-safe-t",
+      "name": "Floyd County Fire (SAFE-T)",
+      "description": "Broadcastify public safety feed 10298 for Indiana.",
+      "city": "",
+      "county": "Various",
+      "state": "IN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "indiana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/10298"
+    },
+    {
+      "id": "bf-13420-fulton-county-public-safety-digital",
+      "name": "Fulton County Public Safety - Digital",
+      "description": "Broadcastify public safety feed 13420 for Indiana.",
+      "city": "",
+      "county": "Various",
+      "state": "IN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "indiana"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/13420"
+    },
+    {
+      "id": "bf-32206-hendricks-county-fire-ops-3",
+      "name": "Hendricks County Fire - Ops 3",
+      "description": "Broadcastify public safety feed 32206 for Indiana.",
+      "city": "",
+      "county": "Various",
+      "state": "IN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "indiana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32206"
+    },
+    {
+      "id": "bf-38272-hobart-area-public-safety",
+      "name": "Hobart Area Public Safety",
+      "description": "Broadcastify public safety feed 38272 for Indiana.",
+      "city": "",
+      "county": "Various",
+      "state": "IN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "indiana"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38272"
+    },
+    {
+      "id": "bf-31095-mexico-volunteer-fire-ground",
+      "name": "Mexico Volunteer Fire Ground",
+      "description": "Broadcastify public safety feed 31095 for Indiana.",
+      "city": "",
+      "county": "Various",
+      "state": "IN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "indiana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/31095"
+    },
+    {
+      "id": "bf-42008-ripley-county-fire-vhf-simulcast",
+      "name": "Ripley County Fire VHF Simulcast",
+      "description": "Broadcastify public safety feed 42008 for Indiana.",
+      "city": "",
+      "county": "Various",
+      "state": "IN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "indiana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42008"
+    },
+    {
+      "id": "bf-22276-rush-county-fire-and-ems-dispatch",
+      "name": "Rush County Fire and EMS Dispatch",
+      "description": "Broadcastify public safety feed 22276 for Indiana.",
+      "city": "",
+      "county": "Various",
+      "state": "IN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "indiana",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/22276"
+    },
+    {
+      "id": "bf-39192-south-bend-metro-fire",
+      "name": "South Bend Metro Fire",
+      "description": "Broadcastify public safety feed 39192 for Indiana.",
+      "city": "",
+      "county": "Various",
+      "state": "IN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "indiana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39192"
+    },
+    {
+      "id": "bf-28794-tippecanoe-county-fire-dispatch",
+      "name": "Tippecanoe County Fire Dispatch",
+      "description": "Broadcastify public safety feed 28794 for Indiana.",
+      "city": "",
+      "county": "Various",
+      "state": "IN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "indiana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/28794"
+    },
+    {
+      "id": "bf-30929-vanderburgh-county-fire",
+      "name": "Vanderburgh County Fire",
+      "description": "Broadcastify public safety feed 30929 for Indiana.",
+      "city": "",
+      "county": "Various",
+      "state": "IN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "indiana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/30929"
+    },
+    {
+      "id": "bf-39407-franklin-township-fire",
+      "name": "Franklin Township Fire",
+      "description": "Broadcastify public safety feed 39407 for Indiana.",
+      "city": "",
+      "county": "Various",
+      "state": "IN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "indiana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39407"
+    },
+    {
+      "id": "bf-35376-benton-county-emergency-management",
+      "name": "Benton County Emergency Management",
+      "description": "Broadcastify public safety feed 35376 for Indiana.",
+      "city": "",
+      "county": "Various",
+      "state": "IN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "indiana"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/35376"
+    },
+    {
+      "id": "bf-44292-brown-county-fire-dispatch",
+      "name": "Brown County Fire Dispatch",
+      "description": "Broadcastify public safety feed 44292 for Indiana.",
+      "city": "",
+      "county": "Various",
+      "state": "IN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "indiana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44292"
+    },
+    {
+      "id": "bf-33782-carroll-county-fire-and-ems",
+      "name": "Carroll County Fire and EMS",
+      "description": "Broadcastify public safety feed 33782 for Indiana.",
+      "city": "",
+      "county": "Various",
+      "state": "IN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "indiana",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/33782"
+    },
+    {
+      "id": "bf-38596-twelve-mile-fire",
+      "name": "Twelve Mile Fire",
+      "description": "Broadcastify public safety feed 38596 for Indiana.",
+      "city": "",
+      "county": "Various",
+      "state": "IN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "indiana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38596"
+    },
+    {
+      "id": "bf-39501-clinton-fire",
+      "name": "Clinton Fire",
+      "description": "Broadcastify public safety feed 39501 for Indiana.",
+      "city": "",
+      "county": "Various",
+      "state": "IN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "indiana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39501"
+    },
+    {
+      "id": "bf-40011-galveston-fire",
+      "name": "Galveston Fire",
+      "description": "Broadcastify public safety feed 40011 for Indiana.",
+      "city": "",
+      "county": "Various",
+      "state": "IN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "indiana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40011"
+    },
+    {
+      "id": "bf-42632-harrison-fire",
+      "name": "Harrison Fire",
+      "description": "Broadcastify public safety feed 42632 for Indiana.",
+      "city": "",
+      "county": "Various",
+      "state": "IN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "indiana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42632"
+    }
+  ]
+}

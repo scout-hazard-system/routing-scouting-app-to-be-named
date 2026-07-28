@@ -1,0 +1,2327 @@
+{
+  "channels": [
+    {
+      "id": "bf-32602-indianapolis-metropolitan-police",
+      "name": "Indianapolis Metropolitan Police",
+      "description": "Broadcastify public safety feed 32602 for Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "VA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "virginia",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32602"
+    },
+    {
+      "id": "bf-13160-accomack-county-public-safety",
+      "name": "Accomack County Public Safety",
+      "description": "Broadcastify public safety feed 13160 for Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "VA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "virginia"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/13160"
+    },
+    {
+      "id": "bf-26919-culpeper-county-public-safety",
+      "name": "Culpeper County Public Safety",
+      "description": "Broadcastify public safety feed 26919 for Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "VA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "virginia"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/26919"
+    },
+    {
+      "id": "bf-32886-rockingham-and-harrisonburg-fire-ems",
+      "name": "Rockingham and Harrisonburg Fire/EMS",
+      "description": "Broadcastify public safety feed 32886 for Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "VA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "virginia",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32886"
+    },
+    {
+      "id": "bf-14744-virginia-beach-ems",
+      "name": "Virginia Beach EMS",
+      "description": "Broadcastify public safety feed 14744 for Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "VA",
+      "service_types": [
+        "dispatch",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "virginia",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/14744"
+    },
+    {
+      "id": "bf-19075-fauquier-county-sheriff-and-fire-warrenton",
+      "name": "Fauquier County Sheriff and Fire, Warrenton Police",
+      "description": "Broadcastify public safety feed 19075 for Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "VA",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "virginia",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/19075"
+    },
+    {
+      "id": "bf-24141-campbell-county-fire-and-ems",
+      "name": "Campbell County Fire and EMS",
+      "description": "Broadcastify public safety feed 24141 for Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "VA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "virginia",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/24141"
+    },
+    {
+      "id": "bf-20671-carroll-county-public-safety-and-galax-cit",
+      "name": "Carroll County Public Safety and Galax City Fire / EMS",
+      "description": "Broadcastify public safety feed 20671 for Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "VA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "virginia",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/20671"
+    },
+    {
+      "id": "bf-18283-rockbridge-county-fire-and-ems",
+      "name": "Rockbridge County Fire and EMS",
+      "description": "Broadcastify public safety feed 18283 for Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "VA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "virginia",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/18283"
+    },
+    {
+      "id": "bf-35852-charlottesville-albemarle-and-uva-police",
+      "name": "Charlottesville, Albemarle, and UVA Police",
+      "description": "Broadcastify public safety feed 35852 for Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "VA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "virginia",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/35852"
+    },
+    {
+      "id": "bf-26688-washington-county-and-bristol-city-public-",
+      "name": "Washington County and Bristol City Public Safety",
+      "description": "Broadcastify public safety feed 26688 for Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "VA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "virginia"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/26688"
+    },
+    {
+      "id": "bf-1620-fairfax-county-fire-and-rescue",
+      "name": "Fairfax County Fire and Rescue",
+      "description": "Broadcastify public safety feed 1620 for Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "VA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "virginia",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/1620"
+    },
+    {
+      "id": "bf-7287-norfolk-city-police-dispatch-2nd-precinct",
+      "name": "Norfolk City Police Dispatch - 2nd Precinct",
+      "description": "Broadcastify public safety feed 7287 for Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "VA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "virginia",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/7287"
+    },
+    {
+      "id": "bf-27136-prince-william-county-fire",
+      "name": "Prince William County Fire",
+      "description": "Broadcastify public safety feed 27136 for Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "VA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "virginia",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/27136"
+    },
+    {
+      "id": "bf-37483-rappahannock-county-public-safety",
+      "name": "Rappahannock County Public Safety",
+      "description": "Broadcastify public safety feed 37483 for Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "VA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "virginia"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37483"
+    },
+    {
+      "id": "bf-30884-norfolk-city-fire-and-ems-dispatch",
+      "name": "Norfolk City Fire and EMS Dispatch",
+      "description": "Broadcastify public safety feed 30884 for Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "VA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "virginia",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/30884"
+    },
+    {
+      "id": "bf-37997-petersburg-fire-rescue",
+      "name": "Petersburg Fire/Rescue",
+      "description": "Broadcastify public safety feed 37997 for Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "VA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "virginia",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37997"
+    },
+    {
+      "id": "bf-28719-augusta-county-and-staunton-fire-and-ems",
+      "name": "Augusta County and Staunton Fire and EMS",
+      "description": "Broadcastify public safety feed 28719 for Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "VA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "virginia",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/28719"
+    },
+    {
+      "id": "bf-1541-loudoun-county-combined-fire-rescue",
+      "name": "Loudoun County Combined Fire Rescue",
+      "description": "Broadcastify public safety feed 1541 for Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "VA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "virginia",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/1541"
+    },
+    {
+      "id": "bf-36316-pittsylvania-county-public-safety",
+      "name": "Pittsylvania County Public Safety",
+      "description": "Broadcastify public safety feed 36316 for Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "VA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "virginia"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/36316"
+    },
+    {
+      "id": "bf-592-spotsylvania-county-fire-and-rescue",
+      "name": "Spotsylvania County Fire and Rescue",
+      "description": "Broadcastify public safety feed 592 for Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "VA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "virginia",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/592"
+    },
+    {
+      "id": "bf-25052-fluvanna-county-fire-and-ems",
+      "name": "Fluvanna County Fire and EMS",
+      "description": "Broadcastify public safety feed 25052 for Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "VA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "virginia",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/25052"
+    },
+    {
+      "id": "bf-45110-hanover-county-fire-ems",
+      "name": "Hanover County Fire / EMS",
+      "description": "Broadcastify public safety feed 45110 for Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "VA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "virginia",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45110"
+    },
+    {
+      "id": "bf-16025-montgomery-county-public-safety",
+      "name": "Montgomery County Public Safety",
+      "description": "Broadcastify public safety feed 16025 for Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "VA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "virginia"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/16025"
+    },
+    {
+      "id": "bf-45219-lancaster-county-fire-ems",
+      "name": "Lancaster County Fire / EMS",
+      "description": "Broadcastify public safety feed 45219 for Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "VA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "virginia",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45219"
+    },
+    {
+      "id": "bf-3415-powhatan-county-fire-rescue",
+      "name": "Powhatan County Fire & Rescue",
+      "description": "Broadcastify public safety feed 3415 for Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "VA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "virginia",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/3415"
+    },
+    {
+      "id": "bf-24242-richmond-city-fire-dispatch",
+      "name": "Richmond City Fire Dispatch",
+      "description": "Broadcastify public safety feed 24242 for Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "VA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "virginia",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/24242"
+    },
+    {
+      "id": "bf-46469-prince-george-county-fire-ems",
+      "name": "Prince George County Fire/EMS",
+      "description": "Broadcastify public safety feed 46469 for Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "VA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "virginia",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46469"
+    },
+    {
+      "id": "bf-15783-shenandoah-county-fire-and-rescue",
+      "name": "Shenandoah County Fire and Rescue",
+      "description": "Broadcastify public safety feed 15783 for Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "VA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "virginia",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/15783"
+    },
+    {
+      "id": "bf-24631-giles-county-police-fire-and-ems",
+      "name": "Giles County Police, Fire and EMS",
+      "description": "Broadcastify public safety feed 24631 for Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "VA",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "virginia",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/24631"
+    },
+    {
+      "id": "bf-44681-henrico-county-division-of-fire",
+      "name": "Henrico County Division of Fire",
+      "description": "Broadcastify public safety feed 44681 for Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "VA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "virginia",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44681"
+    },
+    {
+      "id": "bf-44885-frederick-county-public-safety",
+      "name": "Frederick County Public Safety",
+      "description": "Broadcastify public safety feed 44885 for Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "VA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "virginia"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44885"
+    },
+    {
+      "id": "bf-34120-buckingham-county-fire-and-rescue",
+      "name": "Buckingham County Fire and Rescue",
+      "description": "Broadcastify public safety feed 34120 for Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "VA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "virginia",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/34120"
+    },
+    {
+      "id": "bf-22885-caroline-county-fire-and-rescue",
+      "name": "Caroline County Fire and Rescue",
+      "description": "Broadcastify public safety feed 22885 for Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "VA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "virginia",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/22885"
+    },
+    {
+      "id": "bf-31083-chesterfield-county-fire-and-ems-dispatch",
+      "name": "Chesterfield County Fire and EMS Dispatch",
+      "description": "Broadcastify public safety feed 31083 for Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "VA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "virginia",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/31083"
+    },
+    {
+      "id": "bf-7671-stafford-county-and-fredericksburg-fire-an",
+      "name": "Stafford County and Fredericksburg Fire and EMS",
+      "description": "Broadcastify public safety feed 7671 for Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "VA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "virginia",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/7671"
+    },
+    {
+      "id": "bf-10020-newport-news-fire",
+      "name": "Newport News Fire",
+      "description": "Broadcastify public safety feed 10020 for Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "VA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "virginia",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/10020"
+    },
+    {
+      "id": "bf-19349-albemarle-county-fire-and-rescue",
+      "name": "Albemarle County Fire and Rescue",
+      "description": "Broadcastify public safety feed 19349 for Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "VA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "virginia",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/19349"
+    },
+    {
+      "id": "bf-2588-louisa-county-fire-and-ems",
+      "name": "Louisa County Fire and EMS",
+      "description": "Broadcastify public safety feed 2588 for Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "VA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "virginia",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/2588"
+    },
+    {
+      "id": "bf-42002-orange-county-fire-and-ems",
+      "name": "Orange County Fire and EMS",
+      "description": "Broadcastify public safety feed 42002 for Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "VA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "virginia",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42002"
+    },
+    {
+      "id": "bf-25280-smyth-county-public-safety",
+      "name": "Smyth County Public Safety",
+      "description": "Broadcastify public safety feed 25280 for Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "VA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "virginia"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/25280"
+    },
+    {
+      "id": "bf-5728-wythe-county-and-town-of-wytheville-fire-a",
+      "name": "Wythe County and Town of Wytheville Fire and EMS",
+      "description": "Broadcastify public safety feed 5728 for Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "VA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "virginia",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/5728"
+    },
+    {
+      "id": "bf-18707-suffolk-city-fire-and-rescue",
+      "name": "Suffolk City Fire and Rescue",
+      "description": "Broadcastify public safety feed 18707 for Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "VA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "virginia",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/18707"
+    },
+    {
+      "id": "bf-33195-amherst-county-public-safety",
+      "name": "Amherst County Public Safety",
+      "description": "Broadcastify public safety feed 33195 for Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "VA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "virginia"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/33195"
+    },
+    {
+      "id": "bf-25771-lunenburg-county-sheriff-fire-and-ems",
+      "name": "Lunenburg County Sheriff, Fire and EMS",
+      "description": "Broadcastify public safety feed 25771 for Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "VA",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "virginia",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/25771"
+    },
+    {
+      "id": "bf-527-fredericksburg-city-and-spotsylvania-count",
+      "name": "Fredericksburg City and Spotsylvania County Fire and EMS",
+      "description": "Broadcastify public safety feed 527 for Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "VA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "virginia",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/527"
+    },
+    {
+      "id": "bf-30726-hampton-fire-and-rescue",
+      "name": "Hampton Fire and Rescue",
+      "description": "Broadcastify public safety feed 30726 for Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "VA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "virginia",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/30726"
+    },
+    {
+      "id": "bf-39576-staunton-area-public-safety",
+      "name": "Staunton Area Public Safety",
+      "description": "Broadcastify public safety feed 39576 for Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "VA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "virginia"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39576"
+    },
+    {
+      "id": "bf-47307-king-george-county-sheriff",
+      "name": "King George County Sheriff",
+      "description": "Broadcastify public safety feed 47307 for Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "VA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "virginia",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47307"
+    },
+    {
+      "id": "bf-47358-prince-william-county-fire-rescue",
+      "name": "Prince William County Fire/ Rescue",
+      "description": "Broadcastify public safety feed 47358 for Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "VA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "virginia",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47358"
+    },
+    {
+      "id": "bf-34446-chesapeake-fire",
+      "name": "Chesapeake Fire",
+      "description": "Broadcastify public safety feed 34446 for Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "VA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "virginia",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/34446"
+    },
+    {
+      "id": "bf-45477-bedford-county-fire-and-rescue-ops",
+      "name": "Bedford County Fire and Rescue (Ops)",
+      "description": "Broadcastify public safety feed 45477 for Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "VA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "virginia",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45477"
+    },
+    {
+      "id": "bf-20599-botetourt-fire-and-ems",
+      "name": "Botetourt Fire and EMS",
+      "description": "Broadcastify public safety feed 20599 for Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "VA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "virginia",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/20599"
+    },
+    {
+      "id": "bf-46544-halifax-pitt-county-area-public-safety",
+      "name": "Halifax/Pitt County Area Public Safety",
+      "description": "Broadcastify public safety feed 46544 for Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "VA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "virginia"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46544"
+    },
+    {
+      "id": "bf-22352-goochland-county-fire-and-ems",
+      "name": "Goochland County Fire and EMS",
+      "description": "Broadcastify public safety feed 22352 for Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "VA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "virginia",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/22352"
+    },
+    {
+      "id": "bf-47290-henrico-county-fire-ems",
+      "name": "Henrico County Fire / EMS",
+      "description": "Broadcastify public safety feed 47290 for Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "VA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "virginia",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47290"
+    },
+    {
+      "id": "bf-5250-king-george-county-fire-and-ems",
+      "name": "King George County Fire and EMS",
+      "description": "Broadcastify public safety feed 5250 for Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "VA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "virginia",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/5250"
+    },
+    {
+      "id": "bf-34308-middlesex-county-fire-and-rescue",
+      "name": "Middlesex County Fire and Rescue",
+      "description": "Broadcastify public safety feed 34308 for Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "VA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "virginia",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/34308"
+    },
+    {
+      "id": "bf-39585-northumberland-county-fire-ems",
+      "name": "Northumberland County Fire & EMS",
+      "description": "Broadcastify public safety feed 39585 for Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "VA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "virginia",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39585"
+    },
+    {
+      "id": "bf-47464-danville-fire-department",
+      "name": "Danville Fire Department",
+      "description": "Broadcastify public safety feed 47464 for Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "VA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "virginia",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47464"
+    },
+    {
+      "id": "bf-35976-galax-fire-rescue",
+      "name": "Galax Fire & Rescue",
+      "description": "Broadcastify public safety feed 35976 for Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "VA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "virginia",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/35976"
+    },
+    {
+      "id": "bf-27918-norfolk-city-police-dispatch-1st-precinct",
+      "name": "Norfolk City Police Dispatch - 1st Precinct",
+      "description": "Broadcastify public safety feed 27918 for Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "VA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "virginia",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/27918"
+    },
+    {
+      "id": "bf-37464-albemarle-county-police-department",
+      "name": "Albemarle County Police Department",
+      "description": "Broadcastify public safety feed 37464 for Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "VA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "virginia",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37464"
+    },
+    {
+      "id": "bf-44578-amelia-county-fire-ems",
+      "name": "Amelia County Fire & EMS",
+      "description": "Broadcastify public safety feed 44578 for Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "VA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "virginia",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44578"
+    },
+    {
+      "id": "bf-45186-appomattox-public-safety",
+      "name": "Appomattox Public Safety",
+      "description": "Broadcastify public safety feed 45186 for Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "VA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "virginia"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45186"
+    },
+    {
+      "id": "bf-1605-metropolitan-washington-airports-authority",
+      "name": "Metropolitan Washington Airports Authority (MWAA) Public Safety",
+      "description": "Broadcastify public safety feed 1605 for Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "VA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "virginia"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/1605"
+    },
+    {
+      "id": "bf-41287-bedford-county-fire-and-rescue-dispatch",
+      "name": "Bedford County Fire and Rescue (Dispatch)",
+      "description": "Broadcastify public safety feed 41287 for Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "VA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "virginia",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41287"
+    },
+    {
+      "id": "bf-27595-brunswick-county-fire-and-rescue",
+      "name": "Brunswick County Fire and Rescue",
+      "description": "Broadcastify public safety feed 27595 for Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "VA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "virginia",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/27595"
+    },
+    {
+      "id": "bf-46562-charles-city-new-kent-chesterfield-fire-em",
+      "name": "Charles City, New Kent, Chesterfield Fire/EMS",
+      "description": "Broadcastify public safety feed 46562 for Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "VA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "virginia",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46562"
+    },
+    {
+      "id": "bf-33567-greene-county-fire-and-ems",
+      "name": "Greene County Fire and EMS",
+      "description": "Broadcastify public safety feed 33567 for Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "VA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "virginia",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/33567"
+    },
+    {
+      "id": "bf-47384-henry-county-fire-ems",
+      "name": "Henry County Fire/EMS",
+      "description": "Broadcastify public safety feed 47384 for Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "VA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "virginia",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47384"
+    },
+    {
+      "id": "bf-46715-highland-county-public-safety",
+      "name": "Highland County Public Safety",
+      "description": "Broadcastify public safety feed 46715 for Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "VA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "virginia"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46715"
+    },
+    {
+      "id": "bf-46566-king-william-fire-ems",
+      "name": "King William Fire/EMS",
+      "description": "Broadcastify public safety feed 46566 for Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "VA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "virginia",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46566"
+    },
+    {
+      "id": "bf-45284-montgomery-county-fire-rescue-south-11",
+      "name": "Montgomery County Fire Rescue South 11",
+      "description": "Broadcastify public safety feed 45284 for Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "VA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "virginia",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45284"
+    },
+    {
+      "id": "bf-45364-south-11",
+      "name": "South 11",
+      "description": "Broadcastify public safety feed 45364 for Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "VA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "virginia"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45364"
+    },
+    {
+      "id": "bf-43303-nelson-county-public-safety",
+      "name": "Nelson County Public Safety",
+      "description": "Broadcastify public safety feed 43303 for Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "VA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "virginia"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43303"
+    },
+    {
+      "id": "bf-41699-southampton-county-fire-and-ems-dispatch",
+      "name": "Southampton County Fire and EMS Dispatch",
+      "description": "Broadcastify public safety feed 41699 for Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "VA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "virginia",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41699"
+    },
+    {
+      "id": "bf-22378-big-stone-gap-fire",
+      "name": "Big Stone Gap Fire",
+      "description": "Broadcastify public safety feed 22378 for Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "VA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "virginia",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/22378"
+    },
+    {
+      "id": "bf-47276-big-stone-gap-rescue",
+      "name": "Big Stone Gap Rescue",
+      "description": "Broadcastify public safety feed 47276 for Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "VA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "virginia"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47276"
+    },
+    {
+      "id": "bf-16242-colonial-heights-city-fire-and-ems",
+      "name": "Colonial Heights City Fire and EMS",
+      "description": "Broadcastify public safety feed 16242 for Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "VA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "virginia",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/16242"
+    },
+    {
+      "id": "bf-46463-hopewell-city-fire-ems",
+      "name": "Hopewell City Fire/EMS",
+      "description": "Broadcastify public safety feed 46463 for Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "VA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "virginia",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46463"
+    },
+    {
+      "id": "bf-30733-norfolk-city-police-dispatch-2nd-precinct",
+      "name": "Norfolk City Police Dispatch - 2nd Precinct",
+      "description": "Broadcastify public safety feed 30733 for Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "VA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "virginia",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/30733"
+    },
+    {
+      "id": "bf-34301-uva-helicopter-dispatch",
+      "name": "UVA Helicopter Dispatch",
+      "description": "Broadcastify public safety feed 34301 for Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "VA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "virginia"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/34301"
+    },
+    {
+      "id": "bf-37465-charlottesville-albemarle-shared-interop",
+      "name": "Charlottesville Albemarle Shared Interop",
+      "description": "Broadcastify public safety feed 37465 for Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "VA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "virginia"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37465"
+    },
+    {
+      "id": "bf-37468-albemarle-county-sheriff",
+      "name": "Albemarle County Sheriff",
+      "description": "Broadcastify public safety feed 37468 for Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "VA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "virginia",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37468"
+    },
+    {
+      "id": "bf-37472-charlottesville-airport-cho",
+      "name": "Charlottesville Airport (CHO)",
+      "description": "Broadcastify public safety feed 37472 for Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "VA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "virginia"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37472"
+    },
+    {
+      "id": "bf-41286-bedford-county-sheriff-and-police",
+      "name": "Bedford County Sheriff and Police",
+      "description": "Broadcastify public safety feed 41286 for Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "VA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "virginia",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41286"
+    },
+    {
+      "id": "bf-46317-bland-public-safety",
+      "name": "Bland Public Safety",
+      "description": "Broadcastify public safety feed 46317 for Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "VA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "virginia"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46317"
+    },
+    {
+      "id": "bf-20278-laurel-fork-vfd",
+      "name": "Laurel Fork VFD",
+      "description": "Broadcastify public safety feed 20278 for Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "VA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "virginia"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/20278"
+    },
+    {
+      "id": "bf-43456-nc-va-line-area-public-safety",
+      "name": "NC/VA Line Area Public Safety",
+      "description": "Broadcastify public safety feed 43456 for Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "VA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "virginia"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43456"
+    },
+    {
+      "id": "bf-47470-clarke-county-fire",
+      "name": "Clarke County Fire",
+      "description": "Broadcastify public safety feed 47470 for Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "VA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "virginia",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47470"
+    },
+    {
+      "id": "bf-36287-simmonsville-vfd",
+      "name": "Simmonsville VFD",
+      "description": "Broadcastify public safety feed 36287 for Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "VA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "virginia"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/36287"
+    },
+    {
+      "id": "bf-39290-new-castle-fire",
+      "name": "New Castle Fire",
+      "description": "Broadcastify public safety feed 39290 for Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "VA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "virginia",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39290"
+    },
+    {
+      "id": "bf-37505-culpeper-town-police",
+      "name": "Culpeper Town Police",
+      "description": "Broadcastify public safety feed 37505 for Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "VA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "virginia",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37505"
+    },
+    {
+      "id": "bf-37506-culpeper-county-sheriff",
+      "name": "Culpeper County Sheriff",
+      "description": "Broadcastify public safety feed 37506 for Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "VA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "virginia",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37506"
+    },
+    {
+      "id": "bf-28326-fairfax-county-police-fire-and-ems",
+      "name": "Fairfax County Police, Fire and EMS",
+      "description": "Broadcastify public safety feed 28326 for Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "VA",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "virginia",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/28326"
+    },
+    {
+      "id": "bf-42022-george-mason-university-public-safety",
+      "name": "George Mason University Public Safety",
+      "description": "Broadcastify public safety feed 42022 for Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "VA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "virginia"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42022"
+    },
+    {
+      "id": "bf-37511-warrenton-town-police",
+      "name": "Warrenton Town Police",
+      "description": "Broadcastify public safety feed 37511 for Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "VA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "virginia",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37511"
+    },
+    {
+      "id": "bf-47140-madison-county-public-safety",
+      "name": "Madison County Public Safety",
+      "description": "Broadcastify public safety feed 47140 for Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "VA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "virginia"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47140"
+    },
+    {
+      "id": "bf-24936-blacksburg-rescue-brs1",
+      "name": "Blacksburg Rescue - BRS1",
+      "description": "Broadcastify public safety feed 24936 for Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "VA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "virginia"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/24936"
+    },
+    {
+      "id": "bf-44549-virginia-tech-rescue-squad",
+      "name": "Virginia Tech Rescue Squad",
+      "description": "Broadcastify public safety feed 44549 for Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "VA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "virginia"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44549"
+    }
+  ]
+}

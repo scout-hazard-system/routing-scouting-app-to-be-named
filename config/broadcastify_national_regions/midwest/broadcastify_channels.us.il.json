@@ -1,0 +1,2330 @@
+{
+  "channels": [
+    {
+      "id": "bf-32602-indianapolis-metropolitan-police",
+      "name": "Indianapolis Metropolitan Police",
+      "description": "Broadcastify public safety feed 32602 for Illinois.",
+      "city": "",
+      "county": "Various",
+      "state": "IL",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "illinois",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32602"
+    },
+    {
+      "id": "bf-37361-chicago-police-department-zone-08",
+      "name": "Chicago Police Department Zone 08",
+      "description": "Broadcastify public safety feed 37361 for Illinois.",
+      "city": "",
+      "county": "Various",
+      "state": "IL",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "illinois",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37361"
+    },
+    {
+      "id": "bf-123-sangamon-county-public-safety",
+      "name": "Sangamon County Public Safety",
+      "description": "Broadcastify public safety feed 123 for Illinois.",
+      "city": "",
+      "county": "Various",
+      "state": "IL",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "illinois"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/123"
+    },
+    {
+      "id": "bf-45090-peoria-police-prep-1",
+      "name": "Peoria Police Prep 1",
+      "description": "Broadcastify public safety feed 45090 for Illinois.",
+      "city": "",
+      "county": "Various",
+      "state": "IL",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "illinois",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45090"
+    },
+    {
+      "id": "bf-909-chicago-fire-digital",
+      "name": "Chicago Fire - Digital",
+      "description": "Broadcastify public safety feed 909 for Illinois.",
+      "city": "",
+      "county": "Various",
+      "state": "IL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "illinois",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/909"
+    },
+    {
+      "id": "bf-36866-centralia-police-fire-ems-dispatch",
+      "name": "Centralia Police, Fire & EMS Dispatch",
+      "description": "Broadcastify public safety feed 36866 for Illinois.",
+      "city": "",
+      "county": "Various",
+      "state": "IL",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "illinois",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/36866"
+    },
+    {
+      "id": "bf-26874-macoupin-and-montgomery-counties-public-sa",
+      "name": "Macoupin and Montgomery Counties Public Safety Dispatch",
+      "description": "Broadcastify public safety feed 26874 for Illinois.",
+      "city": "",
+      "county": "Various",
+      "state": "IL",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "illinois"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/26874"
+    },
+    {
+      "id": "bf-37363-chicago-police-department-zone-10",
+      "name": "Chicago Police Department Zone 10",
+      "description": "Broadcastify public safety feed 37363 for Illinois.",
+      "city": "",
+      "county": "Various",
+      "state": "IL",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "illinois",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37363"
+    },
+    {
+      "id": "bf-28286-davenport-and-quad-cities-metro-police-fir",
+      "name": "Davenport and Quad Cities Metro Police, Fire / EMS",
+      "description": "Broadcastify public safety feed 28286 for Illinois.",
+      "city": "",
+      "county": "Various",
+      "state": "IL",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "illinois",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/28286"
+    },
+    {
+      "id": "bf-44334-tazewell-sheriff-pekin-police-main",
+      "name": "Tazewell Sheriff/Pekin Police Main",
+      "description": "Broadcastify public safety feed 44334 for Illinois.",
+      "city": "",
+      "county": "Various",
+      "state": "IL",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "illinois",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44334"
+    },
+    {
+      "id": "bf-19493-alton-police-fire-ems-and-public-works",
+      "name": "Alton Police, Fire, EMS and Public Works",
+      "description": "Broadcastify public safety feed 19493 for Illinois.",
+      "city": "",
+      "county": "Various",
+      "state": "IL",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "illinois",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/19493"
+    },
+    {
+      "id": "bf-39772-granite-pontoon-madison-city-mitchell-long",
+      "name": "Granite, Pontoon, Madison (City), Mitchell, Long Lake",
+      "description": "Broadcastify public safety feed 39772 for Illinois.",
+      "city": "",
+      "county": "Various",
+      "state": "IL",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "illinois"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39772"
+    },
+    {
+      "id": "bf-37359-chicago-police-department-zone-06",
+      "name": "Chicago Police Department Zone 06",
+      "description": "Broadcastify public safety feed 37359 for Illinois.",
+      "city": "",
+      "county": "Various",
+      "state": "IL",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "illinois",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37359"
+    },
+    {
+      "id": "bf-20729-lasalle-livingston-marshall-counties-sheri",
+      "name": "LaSalle, Livingston Marshall Counties Sheriff, Fire and EMS",
+      "description": "Broadcastify public safety feed 20729 for Illinois.",
+      "city": "",
+      "county": "Various",
+      "state": "IL",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "illinois",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/20729"
+    },
+    {
+      "id": "bf-3831-coles-county-fire-ems-and-ema",
+      "name": "Coles County Fire, EMS and EMA",
+      "description": "Broadcastify public safety feed 3831 for Illinois.",
+      "city": "",
+      "county": "Various",
+      "state": "IL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "illinois",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/3831"
+    },
+    {
+      "id": "bf-37357-chicago-police-department-zone-04",
+      "name": "Chicago Police Department Zone 04",
+      "description": "Broadcastify public safety feed 37357 for Illinois.",
+      "city": "",
+      "county": "Various",
+      "state": "IL",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "illinois",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37357"
+    },
+    {
+      "id": "bf-20301-peoria-county-sheriff-dispatch",
+      "name": "Peoria County Sheriff Dispatch",
+      "description": "Broadcastify public safety feed 20301 for Illinois.",
+      "city": "",
+      "county": "Various",
+      "state": "IL",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "illinois",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/20301"
+    },
+    {
+      "id": "bf-2757-west-central-il-and-north-east-mo-counties",
+      "name": "West Central IL and North East Mo Counties Public Safety",
+      "description": "Broadcastify public safety feed 2757 for Illinois.",
+      "city": "",
+      "county": "Various",
+      "state": "IL",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "illinois"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/2757"
+    },
+    {
+      "id": "bf-119-bureau-county-sheriff-fire-and-ems",
+      "name": "Bureau County Sheriff, Fire and EMS",
+      "description": "Broadcastify public safety feed 119 for Illinois.",
+      "city": "",
+      "county": "Various",
+      "state": "IL",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "illinois",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/119"
+    },
+    {
+      "id": "bf-35812-mchenry-county-sheriff-dispatch",
+      "name": "McHenry County Sheriff Dispatch",
+      "description": "Broadcastify public safety feed 35812 for Illinois.",
+      "city": "",
+      "county": "Various",
+      "state": "IL",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "illinois",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/35812"
+    },
+    {
+      "id": "bf-21791-east-alton-hartford-roxana-s-roxana-and-wo",
+      "name": "East Alton, Hartford, Roxana, S. Roxana and Wood River Police / Fire",
+      "description": "Broadcastify public safety feed 21791 for Illinois.",
+      "city": "",
+      "county": "Various",
+      "state": "IL",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "illinois",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/21791"
+    },
+    {
+      "id": "bf-36221-south-east-iowa-west-central-illinois-publ",
+      "name": "South East Iowa, West Central Illinois Public Safety",
+      "description": "Broadcastify public safety feed 36221 for Illinois.",
+      "city": "",
+      "county": "Various",
+      "state": "IL",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "illinois"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/36221"
+    },
+    {
+      "id": "bf-30465-fire-south-dispatch-algonquin-lith-crystal",
+      "name": "Fire South Dispatch - Algonquin-LITH, Crystal Lake, Huntley",
+      "description": "Broadcastify public safety feed 30465 for Illinois.",
+      "city": "",
+      "county": "Various",
+      "state": "IL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "illinois",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/30465"
+    },
+    {
+      "id": "bf-20082-illinois-valley-regional-police-fire-and-e",
+      "name": "Illinois Valley Regional Police, Fire and EMS Dispatch",
+      "description": "Broadcastify public safety feed 20082 for Illinois.",
+      "city": "",
+      "county": "Various",
+      "state": "IL",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "illinois",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/20082"
+    },
+    {
+      "id": "bf-21181-lee-clark-and-hancock-counties-public-safe",
+      "name": "Lee, Clark and Hancock Counties Public Safety",
+      "description": "Broadcastify public safety feed 21181 for Illinois.",
+      "city": "",
+      "county": "Various",
+      "state": "IL",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "illinois"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/21181"
+    },
+    {
+      "id": "bf-21049-illinois-state-police-troops-1-2-3-4-5",
+      "name": "Illinois State Police Troops 1,2,3,4,5",
+      "description": "Broadcastify public safety feed 21049 for Illinois.",
+      "city": "",
+      "county": "Various",
+      "state": "IL",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "illinois",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/21049"
+    },
+    {
+      "id": "bf-36111-jerseyville-city-police-ems",
+      "name": "Jerseyville City Police / EMS",
+      "description": "Broadcastify public safety feed 36111 for Illinois.",
+      "city": "",
+      "county": "Various",
+      "state": "IL",
+      "service_types": [
+        "dispatch",
+        "law",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "illinois",
+        "law",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/36111"
+    },
+    {
+      "id": "bf-37362-chicago-police-department-zone-09",
+      "name": "Chicago Police Department Zone 09",
+      "description": "Broadcastify public safety feed 37362 for Illinois.",
+      "city": "",
+      "county": "Various",
+      "state": "IL",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "illinois",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37362"
+    },
+    {
+      "id": "bf-32468-fire-west-dispatch-harvard-marengo-woodsto",
+      "name": "Fire West Dispatch - Harvard, Marengo, Woodstock, Union",
+      "description": "Broadcastify public safety feed 32468 for Illinois.",
+      "city": "",
+      "county": "Various",
+      "state": "IL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "illinois",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32468"
+    },
+    {
+      "id": "bf-31860-elgin-fire",
+      "name": "Elgin Fire",
+      "description": "Broadcastify public safety feed 31860 for Illinois.",
+      "city": "",
+      "county": "Various",
+      "state": "IL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "illinois",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/31860"
+    },
+    {
+      "id": "bf-37354-chicago-police-department-zone-01",
+      "name": "Chicago Police Department Zone 01",
+      "description": "Broadcastify public safety feed 37354 for Illinois.",
+      "city": "",
+      "county": "Various",
+      "state": "IL",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "illinois",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37354"
+    },
+    {
+      "id": "bf-31390-boone-county-fire-dispatch",
+      "name": "Boone County Fire Dispatch",
+      "description": "Broadcastify public safety feed 31390 for Illinois.",
+      "city": "",
+      "county": "Various",
+      "state": "IL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "illinois",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/31390"
+    },
+    {
+      "id": "bf-11466-peoria-county-fire-digital",
+      "name": "Peoria County Fire - Digital",
+      "description": "Broadcastify public safety feed 11466 for Illinois.",
+      "city": "",
+      "county": "Various",
+      "state": "IL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "illinois",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/11466"
+    },
+    {
+      "id": "bf-20305-peoria-city-fire-dispatch-peor-1-and-2-and",
+      "name": "Peoria City Fire Dispatch - PEOR 1 and 2 and 3",
+      "description": "Broadcastify public safety feed 20305 for Illinois.",
+      "city": "",
+      "county": "Various",
+      "state": "IL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "illinois",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/20305"
+    },
+    {
+      "id": "bf-34093-belleville-police-fire-and-ems-dispatch",
+      "name": "Belleville Police, Fire and EMS Dispatch",
+      "description": "Broadcastify public safety feed 34093 for Illinois.",
+      "city": "",
+      "county": "Various",
+      "state": "IL",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "illinois",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/34093"
+    },
+    {
+      "id": "bf-3411-franklin-perry-jackson-williamson-and-jeff",
+      "name": "Franklin, Perry, Jackson, Williamson, and Jefferson Counties Police, Fire and EMS",
+      "description": "Broadcastify public safety feed 3411 for Illinois.",
+      "city": "",
+      "county": "Various",
+      "state": "IL",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "illinois",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/3411"
+    },
+    {
+      "id": "bf-45694-dekalb-southern-kane-county-public-safety",
+      "name": "Dekalb & Southern Kane County Public Safety.",
+      "description": "Broadcastify public safety feed 45694 for Illinois.",
+      "city": "",
+      "county": "Various",
+      "state": "IL",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "illinois"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45694"
+    },
+    {
+      "id": "bf-37356-chicago-police-department-zone-03",
+      "name": "Chicago Police Department Zone 03",
+      "description": "Broadcastify public safety feed 37356 for Illinois.",
+      "city": "",
+      "county": "Various",
+      "state": "IL",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "illinois",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37356"
+    },
+    {
+      "id": "bf-37365-chicago-police-department-zone-12",
+      "name": "Chicago Police Department Zone 12",
+      "description": "Broadcastify public safety feed 37365 for Illinois.",
+      "city": "",
+      "county": "Various",
+      "state": "IL",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "illinois",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37365"
+    },
+    {
+      "id": "bf-15203-pike-county-fire-ems-and-law-enforcement",
+      "name": "Pike County Fire, EMS, and Law Enforcement",
+      "description": "Broadcastify public safety feed 15203 for Illinois.",
+      "city": "",
+      "county": "Various",
+      "state": "IL",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "illinois",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/15203"
+    },
+    {
+      "id": "bf-33477-fire-east-dispatch-cary-fox-river-grove-mc",
+      "name": "Fire East Dispatch - Cary, Fox River Grove, McHenry and Nunda",
+      "description": "Broadcastify public safety feed 33477 for Illinois.",
+      "city": "",
+      "county": "Various",
+      "state": "IL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "illinois",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/33477"
+    },
+    {
+      "id": "bf-28879-bloomington-and-normal-fire",
+      "name": "Bloomington and Normal Fire",
+      "description": "Broadcastify public safety feed 28879 for Illinois.",
+      "city": "",
+      "county": "Various",
+      "state": "IL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "illinois",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/28879"
+    },
+    {
+      "id": "bf-14920-la-salle-county-sheriff-and-fire-departmen",
+      "name": "La Salle County Sheriff and Fire Departments",
+      "description": "Broadcastify public safety feed 14920 for Illinois.",
+      "city": "",
+      "county": "Various",
+      "state": "IL",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "illinois",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/14920"
+    },
+    {
+      "id": "bf-37360-chicago-police-department-zone-07",
+      "name": "Chicago Police Department Zone 07",
+      "description": "Broadcastify public safety feed 37360 for Illinois.",
+      "city": "",
+      "county": "Various",
+      "state": "IL",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "illinois",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37360"
+    },
+    {
+      "id": "bf-34742-fire-north-dispatch-hebron-richmond-spring",
+      "name": "Fire North Dispatch - Hebron, Richmond, Spring Grove, Wonder Lake",
+      "description": "Broadcastify public safety feed 34742 for Illinois.",
+      "city": "",
+      "county": "Various",
+      "state": "IL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "illinois",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/34742"
+    },
+    {
+      "id": "bf-511-chicago-suburban-fire-departments-mabas-an",
+      "name": "Chicago Suburban Fire Departments, MABAS and IFERN",
+      "description": "Broadcastify public safety feed 511 for Illinois.",
+      "city": "",
+      "county": "Various",
+      "state": "IL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "illinois",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/511"
+    },
+    {
+      "id": "bf-40404-grundy-county-fire-and-ems",
+      "name": "Grundy County Fire and EMS",
+      "description": "Broadcastify public safety feed 40404 for Illinois.",
+      "city": "",
+      "county": "Various",
+      "state": "IL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "illinois",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40404"
+    },
+    {
+      "id": "bf-29550-lake-and-kenosha-counties-fire",
+      "name": "Lake and Kenosha Counties Fire",
+      "description": "Broadcastify public safety feed 29550 for Illinois.",
+      "city": "",
+      "county": "Various",
+      "state": "IL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "illinois",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/29550"
+    },
+    {
+      "id": "bf-39776-edwardsville-siue-glen-carbon-madison-coun",
+      "name": "Edwardsville, SIUE, Glen Carbon, Madison County, ISPERN Police and Fire",
+      "description": "Broadcastify public safety feed 39776 for Illinois.",
+      "city": "",
+      "county": "Various",
+      "state": "IL",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "illinois",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39776"
+    },
+    {
+      "id": "bf-32359-red-center-dispatch",
+      "name": "Red Center Dispatch",
+      "description": "Broadcastify public safety feed 32359 for Illinois.",
+      "city": "",
+      "county": "Various",
+      "state": "IL",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "illinois"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32359"
+    },
+    {
+      "id": "bf-45576-fulton-county-public-safety",
+      "name": "Fulton County Public Safety",
+      "description": "Broadcastify public safety feed 45576 for Illinois.",
+      "city": "",
+      "county": "Various",
+      "state": "IL",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "illinois"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45576"
+    },
+    {
+      "id": "bf-15386-northern-illinois-and-southern-wisconsin-m",
+      "name": "Northern Illinois and Southern Wisconsin MABAS",
+      "description": "Broadcastify public safety feed 15386 for Illinois.",
+      "city": "",
+      "county": "Various",
+      "state": "IL",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "illinois"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/15386"
+    },
+    {
+      "id": "bf-26911-wabash-county-sheriff-fire-and-ems-mount-c",
+      "name": "Wabash County Sheriff, Fire and EMS, Mount Carmel Police",
+      "description": "Broadcastify public safety feed 26911 for Illinois.",
+      "city": "",
+      "county": "Various",
+      "state": "IL",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "illinois",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/26911"
+    },
+    {
+      "id": "bf-37364-chicago-police-department-zone-11",
+      "name": "Chicago Police Department Zone 11",
+      "description": "Broadcastify public safety feed 37364 for Illinois.",
+      "city": "",
+      "county": "Various",
+      "state": "IL",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "illinois",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37364"
+    },
+    {
+      "id": "bf-29067-ogle-county-fire",
+      "name": "Ogle County Fire",
+      "description": "Broadcastify public safety feed 29067 for Illinois.",
+      "city": "",
+      "county": "Various",
+      "state": "IL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "illinois",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/29067"
+    },
+    {
+      "id": "bf-31772-will-and-dupage-counties-police-fire",
+      "name": "Will and DuPage Counties Police/Fire",
+      "description": "Broadcastify public safety feed 31772 for Illinois.",
+      "city": "",
+      "county": "Various",
+      "state": "IL",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "illinois",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/31772"
+    },
+    {
+      "id": "bf-40308-southern-il-and-western-ky-public-safety",
+      "name": "Southern IL and Western KY Public Safety",
+      "description": "Broadcastify public safety feed 40308 for Illinois.",
+      "city": "",
+      "county": "Various",
+      "state": "IL",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "illinois"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40308"
+    },
+    {
+      "id": "bf-33915-salem-fire-and-surrounding-fire-police-ems",
+      "name": "Salem Fire and Surrounding Fire, Police & EMS",
+      "description": "Broadcastify public safety feed 33915 for Illinois.",
+      "city": "",
+      "county": "Various",
+      "state": "IL",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "illinois",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/33915"
+    },
+    {
+      "id": "bf-46205-stephenson-county-public-safety",
+      "name": "Stephenson County Public Safety",
+      "description": "Broadcastify public safety feed 46205 for Illinois.",
+      "city": "",
+      "county": "Various",
+      "state": "IL",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "illinois"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46205"
+    },
+    {
+      "id": "bf-27561-kankakee-county-fire-and-ems-dispatch",
+      "name": "Kankakee County Fire and EMS Dispatch",
+      "description": "Broadcastify public safety feed 27561 for Illinois.",
+      "city": "",
+      "county": "Various",
+      "state": "IL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "illinois",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/27561"
+    },
+    {
+      "id": "bf-35296-chicago-suburbs-south-sw",
+      "name": "Chicago Suburbs South/SW",
+      "description": "Broadcastify public safety feed 35296 for Illinois.",
+      "city": "",
+      "county": "Various",
+      "state": "IL",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "illinois"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/35296"
+    },
+    {
+      "id": "bf-44264-mcdonough-county-area-public-safety",
+      "name": "McDonough County Area Public Safety",
+      "description": "Broadcastify public safety feed 44264 for Illinois.",
+      "city": "",
+      "county": "Various",
+      "state": "IL",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "illinois"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44264"
+    },
+    {
+      "id": "bf-37355-chicago-police-department-zone-02",
+      "name": "Chicago Police Department Zone 02",
+      "description": "Broadcastify public safety feed 37355 for Illinois.",
+      "city": "",
+      "county": "Various",
+      "state": "IL",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "illinois",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37355"
+    },
+    {
+      "id": "bf-37366-chicago-police-department-zone-13",
+      "name": "Chicago Police Department Zone 13",
+      "description": "Broadcastify public safety feed 37366 for Illinois.",
+      "city": "",
+      "county": "Various",
+      "state": "IL",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "illinois",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37366"
+    },
+    {
+      "id": "bf-35813-quadcom-fire-departments",
+      "name": "QuadCom Fire Departments",
+      "description": "Broadcastify public safety feed 35813 for Illinois.",
+      "city": "",
+      "county": "Various",
+      "state": "IL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "illinois",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/35813"
+    },
+    {
+      "id": "bf-44528-kendall-county-public-safety",
+      "name": "Kendall County Public Safety",
+      "description": "Broadcastify public safety feed 44528 for Illinois.",
+      "city": "",
+      "county": "Various",
+      "state": "IL",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "illinois"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44528"
+    },
+    {
+      "id": "bf-18081-randolph-jackson-perry-and-genevieve-count",
+      "name": "Randolph, Jackson, Perry and Genevieve Counties Fire, Law and EMS",
+      "description": "Broadcastify public safety feed 18081 for Illinois.",
+      "city": "",
+      "county": "Various",
+      "state": "IL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "illinois",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/18081"
+    },
+    {
+      "id": "bf-29030-rochelle-fire-dispatch",
+      "name": "Rochelle Fire Dispatch",
+      "description": "Broadcastify public safety feed 29030 for Illinois.",
+      "city": "",
+      "county": "Various",
+      "state": "IL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "illinois",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/29030"
+    },
+    {
+      "id": "bf-26616-countryside-fire-protection-district",
+      "name": "Countryside Fire Protection District",
+      "description": "Broadcastify public safety feed 26616 for Illinois.",
+      "city": "",
+      "county": "Various",
+      "state": "IL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "illinois",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/26616"
+    },
+    {
+      "id": "bf-42391-troy-st-jacob-police-fire",
+      "name": "Troy, St. Jacob Police & Fire",
+      "description": "Broadcastify public safety feed 42391 for Illinois.",
+      "city": "",
+      "county": "Various",
+      "state": "IL",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "illinois",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42391"
+    },
+    {
+      "id": "bf-3569-lasalle-marshall-bureau-and-putnam-countie",
+      "name": "LaSalle, Marshall, Bureau and Putnam Counties Fire and EMS Departments",
+      "description": "Broadcastify public safety feed 3569 for Illinois.",
+      "city": "",
+      "county": "Various",
+      "state": "IL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "illinois",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/3569"
+    },
+    {
+      "id": "bf-35345-winnebago-and-surrounding-county-fire-depa",
+      "name": "Winnebago and Surrounding County Fire Departments",
+      "description": "Broadcastify public safety feed 35345 for Illinois.",
+      "city": "",
+      "county": "Various",
+      "state": "IL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "illinois",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/35345"
+    },
+    {
+      "id": "bf-30660-carroll-county-sheriff-and-fire",
+      "name": "Carroll County Sheriff and Fire",
+      "description": "Broadcastify public safety feed 30660 for Illinois.",
+      "city": "",
+      "county": "Various",
+      "state": "IL",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "illinois",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/30660"
+    },
+    {
+      "id": "bf-16802-vermilion-county-rossville-hoopeston-and-d",
+      "name": "Vermilion County, Rossville, Hoopeston and Danville Fire Departments",
+      "description": "Broadcastify public safety feed 16802 for Illinois.",
+      "city": "",
+      "county": "Various",
+      "state": "IL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "illinois",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/16802"
+    },
+    {
+      "id": "bf-47530-aurora-naperville-fire",
+      "name": "Aurora & Naperville Fire",
+      "description": "Broadcastify public safety feed 47530 for Illinois.",
+      "city": "",
+      "county": "Various",
+      "state": "IL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "illinois",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47530"
+    },
+    {
+      "id": "bf-41210-chicago-police-citywide-dispatch-channels",
+      "name": "Chicago Police Citywide Dispatch Channels",
+      "description": "Broadcastify public safety feed 41210 for Illinois.",
+      "city": "",
+      "county": "Various",
+      "state": "IL",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "illinois",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41210"
+    },
+    {
+      "id": "bf-27266-washburn-fire-and-ambulance",
+      "name": "Washburn Fire and Ambulance",
+      "description": "Broadcastify public safety feed 27266 for Illinois.",
+      "city": "",
+      "county": "Various",
+      "state": "IL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "illinois",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/27266"
+    },
+    {
+      "id": "bf-44338-pekin-area-fire-departments",
+      "name": "Pekin Area Fire Departments",
+      "description": "Broadcastify public safety feed 44338 for Illinois.",
+      "city": "",
+      "county": "Various",
+      "state": "IL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "illinois",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44338"
+    },
+    {
+      "id": "bf-28609-oak-park-river-forest-forest-park-fire",
+      "name": "Oak Park, River Forest, Forest Park Fire",
+      "description": "Broadcastify public safety feed 28609 for Illinois.",
+      "city": "",
+      "county": "Various",
+      "state": "IL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "illinois",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/28609"
+    },
+    {
+      "id": "bf-18604-woodford-county-fire-and-ems-west",
+      "name": "Woodford County Fire and EMS - West",
+      "description": "Broadcastify public safety feed 18604 for Illinois.",
+      "city": "",
+      "county": "Various",
+      "state": "IL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "illinois",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/18604"
+    },
+    {
+      "id": "bf-34006-des-moines-county-public-safety-henderson-",
+      "name": "Des Moines County Public Safety / Henderson IL County",
+      "description": "Broadcastify public safety feed 34006 for Illinois.",
+      "city": "",
+      "county": "Various",
+      "state": "IL",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "illinois"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/34006"
+    },
+    {
+      "id": "bf-21136-wescom-fire-north",
+      "name": "WESCOM Fire - North",
+      "description": "Broadcastify public safety feed 21136 for Illinois.",
+      "city": "",
+      "county": "Various",
+      "state": "IL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "illinois",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/21136"
+    },
+    {
+      "id": "bf-45198-ifern-red-white-blue-fireground-tac",
+      "name": "IFERN, Red, White, & Blue Fireground Tac",
+      "description": "Broadcastify public safety feed 45198 for Illinois.",
+      "city": "",
+      "county": "Various",
+      "state": "IL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "illinois",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45198"
+    },
+    {
+      "id": "bf-40929-ducomm-fire-dispatch-and-ops-all",
+      "name": "DuComm Fire Dispatch and Ops (All)",
+      "description": "Broadcastify public safety feed 40929 for Illinois.",
+      "city": "",
+      "county": "Various",
+      "state": "IL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "illinois",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40929"
+    },
+    {
+      "id": "bf-42392-collinsville-maryville-police-fire",
+      "name": "Collinsville, Maryville Police & Fire",
+      "description": "Broadcastify public safety feed 42392 for Illinois.",
+      "city": "",
+      "county": "Various",
+      "state": "IL",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "illinois",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42392"
+    },
+    {
+      "id": "bf-25424-illinois-valley-regional-fire-and-ems-disp",
+      "name": "Illinois Valley Regional Fire and EMS Dispatch",
+      "description": "Broadcastify public safety feed 25424 for Illinois.",
+      "city": "",
+      "county": "Various",
+      "state": "IL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "illinois",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/25424"
+    },
+    {
+      "id": "bf-42904-rantoul-fire-fireground",
+      "name": "Rantoul Fire Fireground",
+      "description": "Broadcastify public safety feed 42904 for Illinois.",
+      "city": "",
+      "county": "Various",
+      "state": "IL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "illinois",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42904"
+    },
+    {
+      "id": "bf-16973-ducomm-police-1-east-lombard-and-villa-par",
+      "name": "DuComm Police 1 East - Lombard, and Villa Park",
+      "description": "Broadcastify public safety feed 16973 for Illinois.",
+      "city": "",
+      "county": "Various",
+      "state": "IL",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "illinois",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/16973"
+    },
+    {
+      "id": "bf-10852-crystal-lake-fire-rescue",
+      "name": "Crystal Lake Fire Rescue",
+      "description": "Broadcastify public safety feed 10852 for Illinois.",
+      "city": "",
+      "county": "Various",
+      "state": "IL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "illinois",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/10852"
+    },
+    {
+      "id": "bf-46714-bushnell-public-safety",
+      "name": "Bushnell Public Safety",
+      "description": "Broadcastify public safety feed 46714 for Illinois.",
+      "city": "",
+      "county": "Various",
+      "state": "IL",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "illinois"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46714"
+    },
+    {
+      "id": "bf-27296-effingham-county-sheriff-and-ems-effingham",
+      "name": "Effingham County Sheriff and EMS, Effingham City Police",
+      "description": "Broadcastify public safety feed 27296 for Illinois.",
+      "city": "",
+      "county": "Various",
+      "state": "IL",
+      "service_types": [
+        "dispatch",
+        "law",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "illinois",
+        "law",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/27296"
+    },
+    {
+      "id": "bf-30651-waukegan-fire",
+      "name": "Waukegan Fire",
+      "description": "Broadcastify public safety feed 30651 for Illinois.",
+      "city": "",
+      "county": "Various",
+      "state": "IL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "illinois",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/30651"
+    },
+    {
+      "id": "bf-43343-marion-jefferson-county-fire-and-ems",
+      "name": "Marion/Jefferson County Fire and EMS",
+      "description": "Broadcastify public safety feed 43343 for Illinois.",
+      "city": "",
+      "county": "Various",
+      "state": "IL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "illinois",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43343"
+    },
+    {
+      "id": "bf-45206-iroq-county-public-safety",
+      "name": "Iroq County Public Safety",
+      "description": "Broadcastify public safety feed 45206 for Illinois.",
+      "city": "",
+      "county": "Various",
+      "state": "IL",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "illinois"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45206"
+    },
+    {
+      "id": "bf-28587-sheldon-district-fire",
+      "name": "Sheldon District Fire",
+      "description": "Broadcastify public safety feed 28587 for Illinois.",
+      "city": "",
+      "county": "Various",
+      "state": "IL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "illinois",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/28587"
+    },
+    {
+      "id": "bf-41782-colona-fire-rescue",
+      "name": "Colona Fire Rescue",
+      "description": "Broadcastify public safety feed 41782 for Illinois.",
+      "city": "",
+      "county": "Various",
+      "state": "IL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "illinois",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41782"
+    },
+    {
+      "id": "bf-3554-lake-county-quad-1-fire-departments",
+      "name": "Lake County Quad 1 Fire Departments",
+      "description": "Broadcastify public safety feed 3554 for Illinois.",
+      "city": "",
+      "county": "Various",
+      "state": "IL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "illinois",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/3554"
+    },
+    {
+      "id": "bf-18647-morris-police-fire-and-ems",
+      "name": "Morris Police, Fire and  EMS",
+      "description": "Broadcastify public safety feed 18647 for Illinois.",
+      "city": "",
+      "county": "Various",
+      "state": "IL",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "illinois",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/18647"
+    },
+    {
+      "id": "bf-39189-lee-county-public-safety",
+      "name": "Lee County Public Safety",
+      "description": "Broadcastify public safety feed 39189 for Illinois.",
+      "city": "",
+      "county": "Various",
+      "state": "IL",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "illinois"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39189"
+    },
+    {
+      "id": "bf-17464-grand-ridge-fire",
+      "name": "Grand Ridge Fire",
+      "description": "Broadcastify public safety feed 17464 for Illinois.",
+      "city": "",
+      "county": "Various",
+      "state": "IL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "illinois",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/17464"
+    },
+    {
+      "id": "bf-22575-pontiac-fire",
+      "name": "Pontiac Fire",
+      "description": "Broadcastify public safety feed 22575 for Illinois.",
+      "city": "",
+      "county": "Various",
+      "state": "IL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "illinois",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/22575"
+    }
+  ]
+}

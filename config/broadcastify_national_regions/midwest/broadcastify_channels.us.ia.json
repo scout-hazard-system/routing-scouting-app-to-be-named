@@ -1,0 +1,2296 @@
+{
+  "channels": [
+    {
+      "id": "bf-32602-indianapolis-metropolitan-police",
+      "name": "Indianapolis Metropolitan Police",
+      "description": "Broadcastify public safety feed 32602 for Iowa.",
+      "city": "",
+      "county": "Various",
+      "state": "IA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "iowa",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32602"
+    },
+    {
+      "id": "bf-5725-des-moines-police-dispatch-1",
+      "name": "Des Moines Police Dispatch 1",
+      "description": "Broadcastify public safety feed 5725 for Iowa.",
+      "city": "",
+      "county": "Various",
+      "state": "IA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "iowa",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/5725"
+    },
+    {
+      "id": "bf-19612-cerro-gordo-county-sheriff-mason-city-poli",
+      "name": "Cerro Gordo County Sheriff, Mason City Police and Fire",
+      "description": "Broadcastify public safety feed 19612 for Iowa.",
+      "city": "",
+      "county": "Various",
+      "state": "IA",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "iowa",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/19612"
+    },
+    {
+      "id": "bf-16319-clinton-county-sheriff-and-fire-clinton-ci",
+      "name": "Clinton County Sheriff and Fire, Clinton City Police",
+      "description": "Broadcastify public safety feed 16319 for Iowa.",
+      "city": "",
+      "county": "Various",
+      "state": "IA",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "iowa",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/16319"
+    },
+    {
+      "id": "bf-33705-cedar-louisa-and-muscatine-counties-public",
+      "name": "Cedar, Louisa, and Muscatine Counties Public Safety",
+      "description": "Broadcastify public safety feed 33705 for Iowa.",
+      "city": "",
+      "county": "Various",
+      "state": "IA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "iowa"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/33705"
+    },
+    {
+      "id": "bf-30993-mills-county-sheriff-fire-and-ems",
+      "name": "Mills County Sheriff, Fire and EMS",
+      "description": "Broadcastify public safety feed 30993 for Iowa.",
+      "city": "",
+      "county": "Various",
+      "state": "IA",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "iowa",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/30993"
+    },
+    {
+      "id": "bf-28286-davenport-and-quad-cities-metro-police-fir",
+      "name": "Davenport and Quad Cities Metro Police, Fire / EMS",
+      "description": "Broadcastify public safety feed 28286 for Iowa.",
+      "city": "",
+      "county": "Various",
+      "state": "IA",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "iowa",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/28286"
+    },
+    {
+      "id": "bf-34805-polk-county-dallas-county-and-warren-count",
+      "name": "Polk County, Dallas County, and Warren County Public Safety and ISP",
+      "description": "Broadcastify public safety feed 34805 for Iowa.",
+      "city": "",
+      "county": "Various",
+      "state": "IA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "iowa"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/34805"
+    },
+    {
+      "id": "bf-35744-marion-county-public-safety",
+      "name": "Marion County Public Safety",
+      "description": "Broadcastify public safety feed 35744 for Iowa.",
+      "city": "",
+      "county": "Various",
+      "state": "IA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "iowa"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/35744"
+    },
+    {
+      "id": "bf-43649-linn-county-public-safety",
+      "name": "Linn County Public Safety",
+      "description": "Broadcastify public safety feed 43649 for Iowa.",
+      "city": "",
+      "county": "Various",
+      "state": "IA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "iowa"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43649"
+    },
+    {
+      "id": "bf-32444-jasper-county-law-enforcement",
+      "name": "Jasper County Law Enforcement",
+      "description": "Broadcastify public safety feed 32444 for Iowa.",
+      "city": "",
+      "county": "Various",
+      "state": "IA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "iowa",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32444"
+    },
+    {
+      "id": "bf-36221-south-east-iowa-west-central-illinois-publ",
+      "name": "South East Iowa, West Central Illinois Public Safety",
+      "description": "Broadcastify public safety feed 36221 for Iowa.",
+      "city": "",
+      "county": "Various",
+      "state": "IA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "iowa"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/36221"
+    },
+    {
+      "id": "bf-38864-johnson-county-fire-ems",
+      "name": "Johnson County Fire/EMS",
+      "description": "Broadcastify public safety feed 38864 for Iowa.",
+      "city": "",
+      "county": "Various",
+      "state": "IA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "iowa",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38864"
+    },
+    {
+      "id": "bf-45846-council-bluffs-public-safety",
+      "name": "Council Bluffs Public Safety",
+      "description": "Broadcastify public safety feed 45846 for Iowa.",
+      "city": "",
+      "county": "Various",
+      "state": "IA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "iowa"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45846"
+    },
+    {
+      "id": "bf-14589-algona-police-and-fire",
+      "name": "Algona Police and Fire",
+      "description": "Broadcastify public safety feed 14589 for Iowa.",
+      "city": "",
+      "county": "Various",
+      "state": "IA",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "iowa",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/14589"
+    },
+    {
+      "id": "bf-21181-lee-clark-and-hancock-counties-public-safe",
+      "name": "Lee, Clark and Hancock Counties Public Safety",
+      "description": "Broadcastify public safety feed 21181 for Iowa.",
+      "city": "",
+      "county": "Various",
+      "state": "IA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "iowa"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/21181"
+    },
+    {
+      "id": "bf-15277-le-mars-fire-and-rescue",
+      "name": "Le Mars Fire and Rescue",
+      "description": "Broadcastify public safety feed 15277 for Iowa.",
+      "city": "",
+      "county": "Various",
+      "state": "IA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "iowa",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/15277"
+    },
+    {
+      "id": "bf-13241-cass-county-public-safety-iowa-state-patro",
+      "name": "Cass County Public Safety, Iowa State Patrol",
+      "description": "Broadcastify public safety feed 13241 for Iowa.",
+      "city": "",
+      "county": "Various",
+      "state": "IA",
+      "service_types": [
+        "dispatch",
+        "law",
+        "highway"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "iowa",
+        "law",
+        "highway"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/13241"
+    },
+    {
+      "id": "bf-35412-waterloo-cedar-falls-public-safety",
+      "name": "Waterloo-Cedar Falls Public Safety",
+      "description": "Broadcastify public safety feed 35412 for Iowa.",
+      "city": "",
+      "county": "Various",
+      "state": "IA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "iowa"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/35412"
+    },
+    {
+      "id": "bf-26434-dallas-county-sheriff-fire-and-ems-perry-p",
+      "name": "Dallas County Sheriff, Fire and EMS, Perry Police",
+      "description": "Broadcastify public safety feed 26434 for Iowa.",
+      "city": "",
+      "county": "Various",
+      "state": "IA",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "iowa",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/26434"
+    },
+    {
+      "id": "bf-1594-des-moines-fire-ems",
+      "name": "Des Moines Fire/EMS",
+      "description": "Broadcastify public safety feed 1594 for Iowa.",
+      "city": "",
+      "county": "Various",
+      "state": "IA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "iowa",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/1594"
+    },
+    {
+      "id": "bf-36867-poweshiek-county-public-safety",
+      "name": "Poweshiek County Public Safety",
+      "description": "Broadcastify public safety feed 36867 for Iowa.",
+      "city": "",
+      "county": "Various",
+      "state": "IA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "iowa"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/36867"
+    },
+    {
+      "id": "bf-37654-city-of-ames-fire-and-ems",
+      "name": "City of Ames Fire and EMS",
+      "description": "Broadcastify public safety feed 37654 for Iowa.",
+      "city": "",
+      "county": "Various",
+      "state": "IA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "iowa",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37654"
+    },
+    {
+      "id": "bf-12466-black-hawk-county-fire-and-ems",
+      "name": "Black Hawk County Fire and EMS",
+      "description": "Broadcastify public safety feed 12466 for Iowa.",
+      "city": "",
+      "county": "Various",
+      "state": "IA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "iowa",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/12466"
+    },
+    {
+      "id": "bf-40149-butler-grundy-hardin-and-franklin-county-p",
+      "name": "Butler, Grundy, Hardin, and Franklin County Public Safety",
+      "description": "Broadcastify public safety feed 40149 for Iowa.",
+      "city": "",
+      "county": "Various",
+      "state": "IA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "iowa"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40149"
+    },
+    {
+      "id": "bf-31203-wright-county-public-safety-digital",
+      "name": "Wright County Public Safety - Digital",
+      "description": "Broadcastify public safety feed 31203 for Iowa.",
+      "city": "",
+      "county": "Various",
+      "state": "IA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "iowa"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/31203"
+    },
+    {
+      "id": "bf-20346-des-moines-county-public-safety",
+      "name": "Des Moines County Public Safety",
+      "description": "Broadcastify public safety feed 20346 for Iowa.",
+      "city": "",
+      "county": "Various",
+      "state": "IA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "iowa"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/20346"
+    },
+    {
+      "id": "bf-23902-marshall-county-public-safety-dispatch",
+      "name": "Marshall County Public Safety Dispatch",
+      "description": "Broadcastify public safety feed 23902 for Iowa.",
+      "city": "",
+      "county": "Various",
+      "state": "IA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "iowa"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/23902"
+    },
+    {
+      "id": "bf-45845-council-bluffs-fire-and-ems",
+      "name": "Council Bluffs Fire and EMS",
+      "description": "Broadcastify public safety feed 45845 for Iowa.",
+      "city": "",
+      "county": "Various",
+      "state": "IA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "iowa",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45845"
+    },
+    {
+      "id": "bf-20521-allamakee-fire",
+      "name": "Allamakee Fire",
+      "description": "Broadcastify public safety feed 20521 for Iowa.",
+      "city": "",
+      "county": "Various",
+      "state": "IA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "iowa",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/20521"
+    },
+    {
+      "id": "bf-29823-clinton-city-fire-and-police",
+      "name": "Clinton City Fire and Police",
+      "description": "Broadcastify public safety feed 29823 for Iowa.",
+      "city": "",
+      "county": "Various",
+      "state": "IA",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "iowa",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/29823"
+    },
+    {
+      "id": "bf-45088-greene-county-public-safety-digital",
+      "name": "Greene County Public Safety (Digital)",
+      "description": "Broadcastify public safety feed 45088 for Iowa.",
+      "city": "",
+      "county": "Various",
+      "state": "IA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "iowa"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45088"
+    },
+    {
+      "id": "bf-32071-maquoketa-area-public-safety",
+      "name": "Maquoketa Area Public Safety",
+      "description": "Broadcastify public safety feed 32071 for Iowa.",
+      "city": "",
+      "county": "Various",
+      "state": "IA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "iowa"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32071"
+    },
+    {
+      "id": "bf-39895-pottawattamie-county-public-safety",
+      "name": "Pottawattamie County Public Safety",
+      "description": "Broadcastify public safety feed 39895 for Iowa.",
+      "city": "",
+      "county": "Various",
+      "state": "IA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "iowa"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39895"
+    },
+    {
+      "id": "bf-37655-story-county-rural-fire-ems",
+      "name": "Story County Rural Fire/EMS",
+      "description": "Broadcastify public safety feed 37655 for Iowa.",
+      "city": "",
+      "county": "Various",
+      "state": "IA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "iowa",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37655"
+    },
+    {
+      "id": "bf-32156-iowa-dept-of-public-safety-dispatch-area-a",
+      "name": "Iowa Dept of Public Safety Dispatch - Area A",
+      "description": "Broadcastify public safety feed 32156 for Iowa.",
+      "city": "",
+      "county": "Various",
+      "state": "IA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "iowa"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32156"
+    },
+    {
+      "id": "bf-34006-des-moines-county-public-safety-henderson-",
+      "name": "Des Moines County Public Safety / Henderson IL County",
+      "description": "Broadcastify public safety feed 34006 for Iowa.",
+      "city": "",
+      "county": "Various",
+      "state": "IA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "iowa"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/34006"
+    },
+    {
+      "id": "bf-44705-howard-and-mitchell-county-public-safety",
+      "name": "Howard and Mitchell County Public Safety",
+      "description": "Broadcastify public safety feed 44705 for Iowa.",
+      "city": "",
+      "county": "Various",
+      "state": "IA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "iowa"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44705"
+    },
+    {
+      "id": "bf-40691-lee-county-public-safety",
+      "name": "Lee County Public Safety",
+      "description": "Broadcastify public safety feed 40691 for Iowa.",
+      "city": "",
+      "county": "Various",
+      "state": "IA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "iowa"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40691"
+    },
+    {
+      "id": "bf-28796-greeley-fire",
+      "name": "Greeley Fire",
+      "description": "Broadcastify public safety feed 28796 for Iowa.",
+      "city": "",
+      "county": "Various",
+      "state": "IA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "iowa",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/28796"
+    },
+    {
+      "id": "bf-32443-jasper-county-fire-and-ems",
+      "name": "Jasper County Fire and EMS",
+      "description": "Broadcastify public safety feed 32443 for Iowa.",
+      "city": "",
+      "county": "Various",
+      "state": "IA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "iowa",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32443"
+    },
+    {
+      "id": "bf-41232-jefferson-county-fire-ems",
+      "name": "Jefferson County Fire / EMS",
+      "description": "Broadcastify public safety feed 41232 for Iowa.",
+      "city": "",
+      "county": "Various",
+      "state": "IA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "iowa",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41232"
+    },
+    {
+      "id": "bf-31853-louisa-county-public-safety",
+      "name": "Louisa County Public Safety",
+      "description": "Broadcastify public safety feed 31853 for Iowa.",
+      "city": "",
+      "county": "Various",
+      "state": "IA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "iowa"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/31853"
+    },
+    {
+      "id": "bf-36107-pocahontas-county-area-public-safety",
+      "name": "Pocahontas County Area Public Safety",
+      "description": "Broadcastify public safety feed 36107 for Iowa.",
+      "city": "",
+      "county": "Various",
+      "state": "IA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "iowa"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/36107"
+    },
+    {
+      "id": "bf-23437-pottawattamie-county-fire-and-ems",
+      "name": "Pottawattamie County Fire and EMS",
+      "description": "Broadcastify public safety feed 23437 for Iowa.",
+      "city": "",
+      "county": "Various",
+      "state": "IA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "iowa",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/23437"
+    },
+    {
+      "id": "bf-46918-union-county-public-safety",
+      "name": "Union County Public Safety",
+      "description": "Broadcastify public safety feed 46918 for Iowa.",
+      "city": "",
+      "county": "Various",
+      "state": "IA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "iowa"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46918"
+    },
+    {
+      "id": "bf-33238-winneshiek-fire",
+      "name": "Winneshiek Fire",
+      "description": "Broadcastify public safety feed 33238 for Iowa.",
+      "city": "",
+      "county": "Various",
+      "state": "IA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "iowa",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/33238"
+    },
+    {
+      "id": "bf-24247-audubon-county-fire",
+      "name": "Audubon County Fire",
+      "description": "Broadcastify public safety feed 24247 for Iowa.",
+      "city": "",
+      "county": "Various",
+      "state": "IA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "iowa",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/24247"
+    },
+    {
+      "id": "bf-44669-benton-county-sara",
+      "name": "Benton County SARA",
+      "description": "Broadcastify public safety feed 44669 for Iowa.",
+      "city": "",
+      "county": "Various",
+      "state": "IA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "iowa"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44669"
+    },
+    {
+      "id": "bf-45019-waverly-fire",
+      "name": "Waverly Fire",
+      "description": "Broadcastify public safety feed 45019 for Iowa.",
+      "city": "",
+      "county": "Various",
+      "state": "IA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "iowa",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45019"
+    },
+    {
+      "id": "bf-16167-albert-city-fire",
+      "name": "Albert City Fire",
+      "description": "Broadcastify public safety feed 16167 for Iowa.",
+      "city": "",
+      "county": "Various",
+      "state": "IA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "iowa",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/16167"
+    },
+    {
+      "id": "bf-16265-sioux-rapids-fire",
+      "name": "Sioux Rapids Fire",
+      "description": "Broadcastify public safety feed 16265 for Iowa.",
+      "city": "",
+      "county": "Various",
+      "state": "IA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "iowa",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/16265"
+    },
+    {
+      "id": "bf-17875-alta-fire",
+      "name": "Alta Fire",
+      "description": "Broadcastify public safety feed 17875 for Iowa.",
+      "city": "",
+      "county": "Various",
+      "state": "IA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "iowa",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/17875"
+    },
+    {
+      "id": "bf-38085-alta-fire",
+      "name": "Alta Fire",
+      "description": "Broadcastify public safety feed 38085 for Iowa.",
+      "city": "",
+      "county": "Various",
+      "state": "IA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "iowa",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38085"
+    },
+    {
+      "id": "bf-47111-carroll-county-public-safety",
+      "name": "Carroll County Public Safety",
+      "description": "Broadcastify public safety feed 47111 for Iowa.",
+      "city": "",
+      "county": "Various",
+      "state": "IA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "iowa"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47111"
+    },
+    {
+      "id": "bf-22815-aurelia-fire",
+      "name": "Aurelia Fire",
+      "description": "Broadcastify public safety feed 22815 for Iowa.",
+      "city": "",
+      "county": "Various",
+      "state": "IA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "iowa",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/22815"
+    },
+    {
+      "id": "bf-31479-chickasaw-county-sheriff-fire-ems-and-road",
+      "name": "Chickasaw County Sheriff, Fire, EMS and Roads",
+      "description": "Broadcastify public safety feed 31479 for Iowa.",
+      "city": "",
+      "county": "Various",
+      "state": "IA",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "iowa",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/31479"
+    },
+    {
+      "id": "bf-13125-south-central-iowa-counties-public-safety",
+      "name": "South Central Iowa Counties Public Safety",
+      "description": "Broadcastify public safety feed 13125 for Iowa.",
+      "city": "",
+      "county": "Various",
+      "state": "IA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "iowa"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/13125"
+    },
+    {
+      "id": "bf-31726-manilla-fire",
+      "name": "Manilla Fire",
+      "description": "Broadcastify public safety feed 31726 for Iowa.",
+      "city": "",
+      "county": "Various",
+      "state": "IA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "iowa",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/31726"
+    },
+    {
+      "id": "bf-35599-floris-fire",
+      "name": "Floris Fire",
+      "description": "Broadcastify public safety feed 35599 for Iowa.",
+      "city": "",
+      "county": "Various",
+      "state": "IA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "iowa",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/35599"
+    },
+    {
+      "id": "bf-31626-garden-grove-fire",
+      "name": "Garden Grove Fire",
+      "description": "Broadcastify public safety feed 31626 for Iowa.",
+      "city": "",
+      "county": "Various",
+      "state": "IA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "iowa",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/31626"
+    },
+    {
+      "id": "bf-36423-decatur-county-ems",
+      "name": "Decatur County EMS",
+      "description": "Broadcastify public safety feed 36423 for Iowa.",
+      "city": "",
+      "county": "Various",
+      "state": "IA",
+      "service_types": [
+        "dispatch",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "iowa",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/36423"
+    },
+    {
+      "id": "bf-42009-edgewood-ambulance",
+      "name": "Edgewood Ambulance",
+      "description": "Broadcastify public safety feed 42009 for Iowa.",
+      "city": "",
+      "county": "Various",
+      "state": "IA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "iowa"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42009"
+    },
+    {
+      "id": "bf-30752-dickinson-county-fire-and-rescue",
+      "name": "Dickinson County Fire and Rescue",
+      "description": "Broadcastify public safety feed 30752 for Iowa.",
+      "city": "",
+      "county": "Various",
+      "state": "IA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "iowa",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/30752"
+    },
+    {
+      "id": "bf-35124-emmet-county-911",
+      "name": "Emmet County 911",
+      "description": "Broadcastify public safety feed 35124 for Iowa.",
+      "city": "",
+      "county": "Various",
+      "state": "IA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "iowa"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/35124"
+    },
+    {
+      "id": "bf-37762-fayette-county-fire",
+      "name": "Fayette County Fire",
+      "description": "Broadcastify public safety feed 37762 for Iowa.",
+      "city": "",
+      "county": "Various",
+      "state": "IA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "iowa",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37762"
+    },
+    {
+      "id": "bf-45248-west-central-iowa-public-safety",
+      "name": "West Central Iowa Public Safety",
+      "description": "Broadcastify public safety feed 45248 for Iowa.",
+      "city": "",
+      "county": "Various",
+      "state": "IA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "iowa"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45248"
+    },
+    {
+      "id": "bf-27375-guthrie-center-fire",
+      "name": "Guthrie Center Fire",
+      "description": "Broadcastify public safety feed 27375 for Iowa.",
+      "city": "",
+      "county": "Various",
+      "state": "IA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "iowa",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/27375"
+    },
+    {
+      "id": "bf-29992-yale-community-fire",
+      "name": "Yale Community Fire",
+      "description": "Broadcastify public safety feed 29992 for Iowa.",
+      "city": "",
+      "county": "Various",
+      "state": "IA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "iowa",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/29992"
+    },
+    {
+      "id": "bf-34306-panora-ems",
+      "name": "Panora EMS",
+      "description": "Broadcastify public safety feed 34306 for Iowa.",
+      "city": "",
+      "county": "Various",
+      "state": "IA",
+      "service_types": [
+        "dispatch",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "iowa",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/34306"
+    },
+    {
+      "id": "bf-39006-bagley-fire",
+      "name": "Bagley Fire",
+      "description": "Broadcastify public safety feed 39006 for Iowa.",
+      "city": "",
+      "county": "Various",
+      "state": "IA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "iowa",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39006"
+    },
+    {
+      "id": "bf-15972-stratford-fire-rescue",
+      "name": "Stratford Fire Rescue",
+      "description": "Broadcastify public safety feed 15972 for Iowa.",
+      "city": "",
+      "county": "Various",
+      "state": "IA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "iowa",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/15972"
+    },
+    {
+      "id": "bf-42036-hancock-and-winnebago-counties-public-safe",
+      "name": "Hancock and Winnebago Counties Public Safety",
+      "description": "Broadcastify public safety feed 42036 for Iowa.",
+      "city": "",
+      "county": "Various",
+      "state": "IA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "iowa"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42036"
+    },
+    {
+      "id": "bf-33878-henry-county-fire-dispatch",
+      "name": "Henry County Fire Dispatch",
+      "description": "Broadcastify public safety feed 33878 for Iowa.",
+      "city": "",
+      "county": "Various",
+      "state": "IA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "iowa",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/33878"
+    },
+    {
+      "id": "bf-39597-bellevue-fire-ems",
+      "name": "Bellevue Fire/EMS",
+      "description": "Broadcastify public safety feed 39597 for Iowa.",
+      "city": "",
+      "county": "Various",
+      "state": "IA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "iowa",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39597"
+    },
+    {
+      "id": "bf-18933-keota-fire",
+      "name": "Keota Fire",
+      "description": "Broadcastify public safety feed 18933 for Iowa.",
+      "city": "",
+      "county": "Various",
+      "state": "IA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "iowa",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/18933"
+    },
+    {
+      "id": "bf-21428-sigourney-fire",
+      "name": "Sigourney Fire",
+      "description": "Broadcastify public safety feed 21428 for Iowa.",
+      "city": "",
+      "county": "Various",
+      "state": "IA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "iowa",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/21428"
+    },
+    {
+      "id": "bf-23326-sigourney-ambulance",
+      "name": "Sigourney Ambulance",
+      "description": "Broadcastify public safety feed 23326 for Iowa.",
+      "city": "",
+      "county": "Various",
+      "state": "IA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "iowa"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/23326"
+    },
+    {
+      "id": "bf-46517-cedar-rapids-area-noaa-weather-radio-wxl61",
+      "name": "Cedar Rapids Area NOAA Weather Radio WXL61",
+      "description": "Broadcastify public safety feed 46517 for Iowa.",
+      "city": "",
+      "county": "Various",
+      "state": "IA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "iowa"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46517"
+    },
+    {
+      "id": "bf-22161-lyon-county-ema",
+      "name": "Lyon County EMA",
+      "description": "Broadcastify public safety feed 22161 for Iowa.",
+      "city": "",
+      "county": "Various",
+      "state": "IA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "iowa"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/22161"
+    },
+    {
+      "id": "bf-22305-rock-rapids-fire",
+      "name": "Rock Rapids Fire",
+      "description": "Broadcastify public safety feed 22305 for Iowa.",
+      "city": "",
+      "county": "Various",
+      "state": "IA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "iowa",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/22305"
+    },
+    {
+      "id": "bf-27834-mahaska-county-fire-dispatch",
+      "name": "Mahaska County Fire Dispatch",
+      "description": "Broadcastify public safety feed 27834 for Iowa.",
+      "city": "",
+      "county": "Various",
+      "state": "IA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "iowa",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/27834"
+    },
+    {
+      "id": "bf-34766-stacyville-fire",
+      "name": "Stacyville Fire",
+      "description": "Broadcastify public safety feed 34766 for Iowa.",
+      "city": "",
+      "county": "Various",
+      "state": "IA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "iowa",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/34766"
+    },
+    {
+      "id": "bf-35112-saint-ansgar-fire",
+      "name": "Saint Ansgar Fire",
+      "description": "Broadcastify public safety feed 35112 for Iowa.",
+      "city": "",
+      "county": "Various",
+      "state": "IA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "iowa",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/35112"
+    },
+    {
+      "id": "bf-40059-saint-ansgar-rescue",
+      "name": "Saint Ansgar Rescue",
+      "description": "Broadcastify public safety feed 40059 for Iowa.",
+      "city": "",
+      "county": "Various",
+      "state": "IA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "iowa"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40059"
+    },
+    {
+      "id": "bf-35323-albia-fire",
+      "name": "Albia Fire",
+      "description": "Broadcastify public safety feed 35323 for Iowa.",
+      "city": "",
+      "county": "Various",
+      "state": "IA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "iowa",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/35323"
+    },
+    {
+      "id": "bf-21426-osceola-county-emergency-management",
+      "name": "Osceola County Emergency Management",
+      "description": "Broadcastify public safety feed 21426 for Iowa.",
+      "city": "",
+      "county": "Various",
+      "state": "IA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "iowa"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/21426"
+    },
+    {
+      "id": "bf-37821-west-bend-fire",
+      "name": "West Bend Fire",
+      "description": "Broadcastify public safety feed 37821 for Iowa.",
+      "city": "",
+      "county": "Various",
+      "state": "IA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "iowa",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37821"
+    },
+    {
+      "id": "bf-39466-oyens-fire",
+      "name": "Oyens Fire",
+      "description": "Broadcastify public safety feed 39466 for Iowa.",
+      "city": "",
+      "county": "Various",
+      "state": "IA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "iowa",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39466"
+    },
+    {
+      "id": "bf-37270-pocahontas-fire",
+      "name": "Pocahontas Fire",
+      "description": "Broadcastify public safety feed 37270 for Iowa.",
+      "city": "",
+      "county": "Various",
+      "state": "IA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "iowa",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37270"
+    },
+    {
+      "id": "bf-32244-grinnell-fire",
+      "name": "Grinnell Fire",
+      "description": "Broadcastify public safety feed 32244 for Iowa.",
+      "city": "",
+      "county": "Various",
+      "state": "IA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "iowa",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32244"
+    },
+    {
+      "id": "bf-37268-mount-ayr-fire",
+      "name": "Mount Ayr Fire",
+      "description": "Broadcastify public safety feed 37268 for Iowa.",
+      "city": "",
+      "county": "Various",
+      "state": "IA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "iowa",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37268"
+    },
+    {
+      "id": "bf-37269-ringgold-county-fire",
+      "name": "Ringgold County Fire",
+      "description": "Broadcastify public safety feed 37269 for Iowa.",
+      "city": "",
+      "county": "Various",
+      "state": "IA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "iowa",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37269"
+    },
+    {
+      "id": "bf-29790-davenport-police-and-fire",
+      "name": "Davenport Police and Fire",
+      "description": "Broadcastify public safety feed 29790 for Iowa.",
+      "city": "",
+      "county": "Various",
+      "state": "IA",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "iowa",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/29790"
+    },
+    {
+      "id": "bf-46141-sioux-county-fire-and-ems-dispatch",
+      "name": "Sioux County Fire and EMS Dispatch",
+      "description": "Broadcastify public safety feed 46141 for Iowa.",
+      "city": "",
+      "county": "Various",
+      "state": "IA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "iowa",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46141"
+    },
+    {
+      "id": "bf-25141-taylor-county-fire-dispatch",
+      "name": "Taylor County Fire Dispatch",
+      "description": "Broadcastify public safety feed 25141 for Iowa.",
+      "city": "",
+      "county": "Various",
+      "state": "IA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "iowa",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/25141"
+    },
+    {
+      "id": "bf-27044-van-buren-county-fire-dispatch",
+      "name": "Van Buren County Fire Dispatch",
+      "description": "Broadcastify public safety feed 27044 for Iowa.",
+      "city": "",
+      "county": "Various",
+      "state": "IA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "iowa",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/27044"
+    },
+    {
+      "id": "bf-42643-van-buren-county-fire-and-ems",
+      "name": "Van Buren County Fire and EMS",
+      "description": "Broadcastify public safety feed 42643 for Iowa.",
+      "city": "",
+      "county": "Various",
+      "state": "IA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "iowa",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42643"
+    },
+    {
+      "id": "bf-19912-wapello-county-rural-fire",
+      "name": "Wapello County Rural Fire",
+      "description": "Broadcastify public safety feed 19912 for Iowa.",
+      "city": "",
+      "county": "Various",
+      "state": "IA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "iowa",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/19912"
+    },
+    {
+      "id": "bf-19924-wapello-county-rural-fire-2",
+      "name": "Wapello County Rural Fire 2",
+      "description": "Broadcastify public safety feed 19924 for Iowa.",
+      "city": "",
+      "county": "Various",
+      "state": "IA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "iowa",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/19924"
+    },
+    {
+      "id": "bf-30401-eddyville-fire",
+      "name": "Eddyville Fire",
+      "description": "Broadcastify public safety feed 30401 for Iowa.",
+      "city": "",
+      "county": "Various",
+      "state": "IA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "iowa",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/30401"
+    }
+  ]
+}

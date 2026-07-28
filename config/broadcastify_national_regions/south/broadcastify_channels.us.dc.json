@@ -1,0 +1,93 @@
+{
+  "channels": [
+    {
+      "id": "bf-32602-indianapolis-metropolitan-police",
+      "name": "Indianapolis Metropolitan Police",
+      "description": "Broadcastify public safety feed 32602 for District of Columbia.",
+      "city": "",
+      "county": "Various",
+      "state": "DC",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "district of columbia",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32602"
+    },
+    {
+      "id": "bf-1605-metropolitan-washington-airports-authority",
+      "name": "Metropolitan Washington Airports Authority (MWAA) Public Safety",
+      "description": "Broadcastify public safety feed 1605 for District of Columbia.",
+      "city": "",
+      "county": "Various",
+      "state": "DC",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "district of columbia"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/1605"
+    },
+    {
+      "id": "bf-41616-mutual-aid-md-dc-fmars-rins-nifog-7tac-8ta",
+      "name": "Mutual Aid MD-DC  FMARS-RINS-NIFOG-7TAC-8TAC",
+      "description": "Broadcastify public safety feed 41616 for District of Columbia.",
+      "city": "",
+      "county": "Various",
+      "state": "DC",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "district of columbia"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41616"
+    },
+    {
+      "id": "bf-47133-washington-dc-fire-ems",
+      "name": "Washington DC Fire EMS",
+      "description": "Broadcastify public safety feed 47133 for District of Columbia.",
+      "city": "",
+      "county": "Various",
+      "state": "DC",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "district of columbia",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47133"
+    }
+  ]
+}

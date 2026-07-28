@@ -1,0 +1,139 @@
+{
+  "catalog_manifest_version": 2,
+  "description": "US national bootstrap catalog sharded by region, then state, for low-memory selector loads.",
+  "state_to_region": {
+    "AK": "west",
+    "AL": "south",
+    "AR": "south",
+    "AZ": "west",
+    "CA": "west",
+    "CO": "west",
+    "CT": "northeast",
+    "DC": "south",
+    "DE": "south",
+    "FL": "south",
+    "GA": "south",
+    "HI": "west",
+    "IA": "midwest",
+    "ID": "west",
+    "IL": "midwest",
+    "IN": "midwest",
+    "KS": "midwest",
+    "KY": "south",
+    "LA": "south",
+    "MA": "northeast",
+    "MD": "south",
+    "ME": "northeast",
+    "MI": "midwest",
+    "MN": "midwest",
+    "MO": "midwest",
+    "MS": "south",
+    "MT": "west",
+    "NC": "south",
+    "ND": "midwest",
+    "NE": "midwest",
+    "NH": "northeast",
+    "NJ": "northeast",
+    "NM": "west",
+    "NV": "west",
+    "NY": "northeast",
+    "OH": "midwest",
+    "OK": "south",
+    "OR": "west",
+    "PA": "northeast",
+    "PR": "south",
+    "RI": "northeast",
+    "SC": "south",
+    "SD": "midwest",
+    "TN": "south",
+    "TX": "south",
+    "UT": "west",
+    "VA": "south",
+    "VT": "northeast",
+    "WA": "west",
+    "WI": "midwest",
+    "WV": "south",
+    "WY": "west"
+  },
+  "regions": {
+    "midwest": {
+      "state_files": {
+        "IA": "broadcastify_national_regions/midwest/broadcastify_channels.us.ia.json",
+        "IL": "broadcastify_national_regions/midwest/broadcastify_channels.us.il.json",
+        "IN": "broadcastify_national_regions/midwest/broadcastify_channels.us.in.json",
+        "KS": "broadcastify_national_regions/midwest/broadcastify_channels.us.ks.json",
+        "MI": "broadcastify_national_regions/midwest/broadcastify_channels.us.mi.json",
+        "MN": "broadcastify_national_regions/midwest/broadcastify_channels.us.mn.json",
+        "MO": "broadcastify_national_regions/midwest/broadcastify_channels.us.mo.json",
+        "ND": "broadcastify_national_regions/midwest/broadcastify_channels.us.nd.json",
+        "NE": "broadcastify_national_regions/midwest/broadcastify_channels.us.ne.json",
+        "OH": "broadcastify_national_regions/midwest/broadcastify_channels.us.oh.json",
+        "SD": "broadcastify_national_regions/midwest/broadcastify_channels.us.sd.json",
+        "WI": "broadcastify_national_regions/midwest/broadcastify_channels.us.wi.json"
+      },
+      "shared_files": []
+    },
+    "northeast": {
+      "state_files": {
+        "CT": "broadcastify_national_regions/northeast/broadcastify_channels.us.ct.json",
+        "MA": "broadcastify_national_regions/northeast/broadcastify_channels.us.ma.json",
+        "ME": "broadcastify_national_regions/northeast/broadcastify_channels.us.me.json",
+        "NH": "broadcastify_national_regions/northeast/broadcastify_channels.us.nh.json",
+        "NJ": "broadcastify_national_regions/northeast/broadcastify_channels.us.nj.json",
+        "NY": "broadcastify_national_regions/northeast/broadcastify_channels.us.ny.json",
+        "PA": "broadcastify_national_regions/northeast/broadcastify_channels.us.pa.json",
+        "RI": "broadcastify_national_regions/northeast/broadcastify_channels.us.ri.json",
+        "VT": "broadcastify_national_regions/northeast/broadcastify_channels.us.vt.json"
+      },
+      "shared_files": []
+    },
+    "south": {
+      "state_files": {
+        "AL": "broadcastify_national_regions/south/broadcastify_channels.us.al.json",
+        "AR": "broadcastify_national_regions/south/broadcastify_channels.us.ar.json",
+        "DC": "broadcastify_national_regions/south/broadcastify_channels.us.dc.json",
+        "DE": "broadcastify_national_regions/south/broadcastify_channels.us.de.json",
+        "FL": "broadcastify_national_regions/south/broadcastify_channels.us.fl.json",
+        "GA": "broadcastify_national_regions/south/broadcastify_channels.us.ga.json",
+        "KY": "broadcastify_national_regions/south/broadcastify_channels.us.ky.json",
+        "LA": "broadcastify_national_regions/south/broadcastify_channels.us.la.json",
+        "MD": "broadcastify_national_regions/south/broadcastify_channels.us.md.json",
+        "MS": "broadcastify_national_regions/south/broadcastify_channels.us.ms.json",
+        "NC": "broadcastify_national_regions/south/broadcastify_channels.us.nc.json",
+        "OK": "broadcastify_national_regions/south/broadcastify_channels.us.ok.json",
+        "PR": "broadcastify_national_regions/south/broadcastify_channels.us.pr.json",
+        "SC": "broadcastify_national_regions/south/broadcastify_channels.us.sc.json",
+        "TN": "broadcastify_national_regions/south/broadcastify_channels.us.tn.json",
+        "TX": "broadcastify_national_regions/south/broadcastify_channels.us.tx.json",
+        "VA": "broadcastify_national_regions/south/broadcastify_channels.us.va.json",
+        "WV": "broadcastify_national_regions/south/broadcastify_channels.us.wv.json"
+      },
+      "shared_files": []
+    },
+    "west": {
+      "state_files": {
+        "AK": "broadcastify_national_regions/west/broadcastify_channels.us.ak.json",
+        "AZ": "broadcastify_national_regions/west/broadcastify_channels.us.az.json",
+        "CA": "broadcastify_national_regions/west/broadcastify_channels.us.ca.json",
+        "CO": "broadcastify_national_regions/west/broadcastify_channels.us.co.json",
+        "HI": "broadcastify_national_regions/west/broadcastify_channels.us.hi.json",
+        "ID": "broadcastify_national_regions/west/broadcastify_channels.us.id.json",
+        "MT": "broadcastify_national_regions/west/broadcastify_channels.us.mt.json",
+        "NM": "broadcastify_national_regions/west/broadcastify_channels.us.nm.json",
+        "NV": "broadcastify_national_regions/west/broadcastify_channels.us.nv.json",
+        "OR": "broadcastify_national_regions/west/broadcastify_channels.us.or.json",
+        "UT": "broadcastify_national_regions/west/broadcastify_channels.us.ut.json",
+        "WA": "broadcastify_national_regions/west/broadcastify_channels.us.wa.json",
+        "WY": "broadcastify_national_regions/west/broadcastify_channels.us.wy.json"
+      },
+      "shared_files": []
+    }
+  },
+  "shared_files": [],
+  "fallback_files": [
+    "broadcastify_channels.route_west_coast_southwest.json"
+  ],
+  "default_files": [
+    "broadcastify_channels.route_west_coast_southwest.json"
+  ]
+}

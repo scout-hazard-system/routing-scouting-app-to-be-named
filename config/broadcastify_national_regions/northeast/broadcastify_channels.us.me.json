@@ -1,0 +1,1797 @@
+{
+  "channels": [
+    {
+      "id": "bf-32602-indianapolis-metropolitan-police",
+      "name": "Indianapolis Metropolitan Police",
+      "description": "Broadcastify public safety feed 32602 for Maine.",
+      "city": "",
+      "county": "Various",
+      "state": "ME",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maine",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32602"
+    },
+    {
+      "id": "bf-41202-cumberland-county-public-safety",
+      "name": "Cumberland County Public Safety",
+      "description": "Broadcastify public safety feed 41202 for Maine.",
+      "city": "",
+      "county": "Various",
+      "state": "ME",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maine"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41202"
+    },
+    {
+      "id": "bf-21377-penobscot-county-public-safety",
+      "name": "Penobscot County Public Safety",
+      "description": "Broadcastify public safety feed 21377 for Maine.",
+      "city": "",
+      "county": "Various",
+      "state": "ME",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maine"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/21377"
+    },
+    {
+      "id": "bf-32229-lincoln-county-fire-ems-and-police",
+      "name": "Lincoln County Fire/EMS and Police",
+      "description": "Broadcastify public safety feed 32229 for Maine.",
+      "city": "",
+      "county": "Various",
+      "state": "ME",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maine",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32229"
+    },
+    {
+      "id": "bf-35642-piscataquis-county-sheriff-and-fire",
+      "name": "Piscataquis County Sheriff and Fire",
+      "description": "Broadcastify public safety feed 35642 for Maine.",
+      "city": "",
+      "county": "Various",
+      "state": "ME",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maine",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/35642"
+    },
+    {
+      "id": "bf-33128-sebago-lakes-region-and-oxford-county-fire",
+      "name": "Sebago Lakes Region and Oxford County Fire and EMS",
+      "description": "Broadcastify public safety feed 33128 for Maine.",
+      "city": "",
+      "county": "Various",
+      "state": "ME",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maine",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/33128"
+    },
+    {
+      "id": "bf-41643-kennebec-somerset-and-waldo-county-fire-de",
+      "name": "Kennebec, Somerset, and Waldo County Fire Departments",
+      "description": "Broadcastify public safety feed 41643 for Maine.",
+      "city": "",
+      "county": "Various",
+      "state": "ME",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maine",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41643"
+    },
+    {
+      "id": "bf-4180-auburn-and-lewiston-fire-and-ems",
+      "name": "Auburn and Lewiston Fire and EMS",
+      "description": "Broadcastify public safety feed 4180 for Maine.",
+      "city": "",
+      "county": "Various",
+      "state": "ME",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maine",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/4180"
+    },
+    {
+      "id": "bf-41185-aroostook-county-fort-kent-madawaska-grand",
+      "name": "Aroostook County, Fort Kent, Madawaska, Grand Isle - Public Safety",
+      "description": "Broadcastify public safety feed 41185 for Maine.",
+      "city": "",
+      "county": "Various",
+      "state": "ME",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maine"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41185"
+    },
+    {
+      "id": "bf-45102-york-county-fire",
+      "name": "York County Fire",
+      "description": "Broadcastify public safety feed 45102 for Maine.",
+      "city": "",
+      "county": "Various",
+      "state": "ME",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maine",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45102"
+    },
+    {
+      "id": "bf-45602-portland-fire",
+      "name": "Portland Fire",
+      "description": "Broadcastify public safety feed 45602 for Maine.",
+      "city": "",
+      "county": "Various",
+      "state": "ME",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maine",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45602"
+    },
+    {
+      "id": "bf-45557-penobscot-waldo-knox-county-public-safety",
+      "name": "Penobscot, Waldo, Knox County Public Safety",
+      "description": "Broadcastify public safety feed 45557 for Maine.",
+      "city": "",
+      "county": "Various",
+      "state": "ME",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maine"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45557"
+    },
+    {
+      "id": "bf-25580-knox-county-fire-and-ems-dispatch",
+      "name": "Knox County Fire and EMS Dispatch",
+      "description": "Broadcastify public safety feed 25580 for Maine.",
+      "city": "",
+      "county": "Various",
+      "state": "ME",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maine",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/25580"
+    },
+    {
+      "id": "bf-19510-scarborough-fire",
+      "name": "Scarborough Fire",
+      "description": "Broadcastify public safety feed 19510 for Maine.",
+      "city": "",
+      "county": "Various",
+      "state": "ME",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maine",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/19510"
+    },
+    {
+      "id": "bf-40496-bar-harbor-mdi-and-acadia-police-fire-ems-",
+      "name": "Bar Harbor, MDI and Acadia Police, Fire, EMS, Park Rangers",
+      "description": "Broadcastify public safety feed 40496 for Maine.",
+      "city": "",
+      "county": "Various",
+      "state": "ME",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maine",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40496"
+    },
+    {
+      "id": "bf-45103-york-and-cumberland-county-public-safety",
+      "name": "York and Cumberland County Public Safety",
+      "description": "Broadcastify public safety feed 45103 for Maine.",
+      "city": "",
+      "county": "Various",
+      "state": "ME",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maine"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45103"
+    },
+    {
+      "id": "bf-37751-south-portland-police-and-fire-ems-dispatc",
+      "name": "South Portland Police and Fire/EMS Dispatch",
+      "description": "Broadcastify public safety feed 37751 for Maine.",
+      "city": "",
+      "county": "Various",
+      "state": "ME",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maine",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37751"
+    },
+    {
+      "id": "bf-43089-alfred-waterboro-fire-rescue-york-county-s",
+      "name": "Alfred & Waterboro Fire / Rescue, York County Sheriff, Maine State Police South",
+      "description": "Broadcastify public safety feed 43089 for Maine.",
+      "city": "",
+      "county": "Various",
+      "state": "ME",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maine",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43089"
+    },
+    {
+      "id": "bf-19108-south-berwick-police-fire-and-york-ambulan",
+      "name": "South Berwick Police, Fire, and York Ambulance",
+      "description": "Broadcastify public safety feed 19108 for Maine.",
+      "city": "",
+      "county": "Various",
+      "state": "ME",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maine",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/19108"
+    },
+    {
+      "id": "bf-6034-mount-desert-island-public-safety",
+      "name": "Mount Desert Island Public Safety",
+      "description": "Broadcastify public safety feed 6034 for Maine.",
+      "city": "",
+      "county": "Various",
+      "state": "ME",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maine"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/6034"
+    },
+    {
+      "id": "bf-47534-hancock-county-public-safety",
+      "name": "Hancock County Public Safety",
+      "description": "Broadcastify public safety feed 47534 for Maine.",
+      "city": "",
+      "county": "Various",
+      "state": "ME",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maine"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47534"
+    },
+    {
+      "id": "bf-40475-old-orchard-beach",
+      "name": "Old Orchard Beach",
+      "description": "Broadcastify public safety feed 40475 for Maine.",
+      "city": "",
+      "county": "Various",
+      "state": "ME",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maine"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40475"
+    },
+    {
+      "id": "bf-43776-aroostook-houlton-area-public-safety",
+      "name": "Aroostook/Houlton Area Public Safety",
+      "description": "Broadcastify public safety feed 43776 for Maine.",
+      "city": "",
+      "county": "Various",
+      "state": "ME",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maine"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43776"
+    },
+    {
+      "id": "bf-17037-brunswick-fire",
+      "name": "Brunswick Fire",
+      "description": "Broadcastify public safety feed 17037 for Maine.",
+      "city": "",
+      "county": "Various",
+      "state": "ME",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maine",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/17037"
+    },
+    {
+      "id": "bf-44144-kittery-police-department",
+      "name": "Kittery Police Department",
+      "description": "Broadcastify public safety feed 44144 for Maine.",
+      "city": "",
+      "county": "Various",
+      "state": "ME",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maine",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44144"
+    },
+    {
+      "id": "bf-36602-sanford-police",
+      "name": "Sanford Police",
+      "description": "Broadcastify public safety feed 36602 for Maine.",
+      "city": "",
+      "county": "Various",
+      "state": "ME",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maine",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/36602"
+    },
+    {
+      "id": "bf-31185-farmingdale-pittston-randolph-and-west-gar",
+      "name": "Farmingdale, Pittston, Randolph and West Gardiner Fire Departments",
+      "description": "Broadcastify public safety feed 31185 for Maine.",
+      "city": "",
+      "county": "Various",
+      "state": "ME",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maine",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/31185"
+    },
+    {
+      "id": "bf-38665-wells-fire",
+      "name": "Wells Fire",
+      "description": "Broadcastify public safety feed 38665 for Maine.",
+      "city": "",
+      "county": "Various",
+      "state": "ME",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maine",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38665"
+    },
+    {
+      "id": "bf-38755-york-maine-fire-departments",
+      "name": "York Maine Fire Departments",
+      "description": "Broadcastify public safety feed 38755 for Maine.",
+      "city": "",
+      "county": "Various",
+      "state": "ME",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maine",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38755"
+    },
+    {
+      "id": "bf-46706-sagadahoc-county-fire-ems",
+      "name": "Sagadahoc County Fire/EMS",
+      "description": "Broadcastify public safety feed 46706 for Maine.",
+      "city": "",
+      "county": "Various",
+      "state": "ME",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maine",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46706"
+    },
+    {
+      "id": "bf-47168-anson-and-madison-fire",
+      "name": "Anson and Madison Fire",
+      "description": "Broadcastify public safety feed 47168 for Maine.",
+      "city": "",
+      "county": "Various",
+      "state": "ME",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maine",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47168"
+    },
+    {
+      "id": "bf-25011-somerset-county-fire",
+      "name": "Somerset County Fire",
+      "description": "Broadcastify public safety feed 25011 for Maine.",
+      "city": "",
+      "county": "Various",
+      "state": "ME",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maine",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/25011"
+    },
+    {
+      "id": "bf-47467-oakland-rome-belgrade-fire-departments",
+      "name": "Oakland, Rome, & Belgrade Fire Departments",
+      "description": "Broadcastify public safety feed 47467 for Maine.",
+      "city": "",
+      "county": "Various",
+      "state": "ME",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maine",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47467"
+    },
+    {
+      "id": "bf-46310-calais-public-safety",
+      "name": "Calais Public Safety",
+      "description": "Broadcastify public safety feed 46310 for Maine.",
+      "city": "",
+      "county": "Various",
+      "state": "ME",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maine"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46310"
+    },
+    {
+      "id": "bf-46718-androscoggin-county-sherriff",
+      "name": "Androscoggin County Sherriff",
+      "description": "Broadcastify public safety feed 46718 for Maine.",
+      "city": "",
+      "county": "Various",
+      "state": "ME",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maine"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46718"
+    },
+    {
+      "id": "bf-46941-cherryfield-firerescue",
+      "name": "Cherryfield FireRescue",
+      "description": "Broadcastify public safety feed 46941 for Maine.",
+      "city": "",
+      "county": "Various",
+      "state": "ME",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maine",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46941"
+    },
+    {
+      "id": "bf-7644-hampden-police-fire-and-ems",
+      "name": "Hampden Police, Fire and EMS",
+      "description": "Broadcastify public safety feed 7644 for Maine.",
+      "city": "",
+      "county": "Various",
+      "state": "ME",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maine",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/7644"
+    },
+    {
+      "id": "bf-22910-monmouth-fire-department",
+      "name": "Monmouth Fire Department",
+      "description": "Broadcastify public safety feed 22910 for Maine.",
+      "city": "",
+      "county": "Various",
+      "state": "ME",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maine",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/22910"
+    },
+    {
+      "id": "bf-18895-waterboro-and-alfred-fire-ems",
+      "name": "Waterboro and Alfred Fire/EMS",
+      "description": "Broadcastify public safety feed 18895 for Maine.",
+      "city": "",
+      "county": "Various",
+      "state": "ME",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maine",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/18895"
+    },
+    {
+      "id": "bf-44204-harrison-fire-rescue",
+      "name": "Harrison Fire/Rescue",
+      "description": "Broadcastify public safety feed 44204 for Maine.",
+      "city": "",
+      "county": "Various",
+      "state": "ME",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maine",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44204"
+    },
+    {
+      "id": "bf-21601-falmouth-police-fire-and-ems",
+      "name": "Falmouth Police, Fire and EMS",
+      "description": "Broadcastify public safety feed 21601 for Maine.",
+      "city": "",
+      "county": "Various",
+      "state": "ME",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maine",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/21601"
+    },
+    {
+      "id": "bf-17518-freeport-fire-and-rescue",
+      "name": "Freeport Fire and Rescue",
+      "description": "Broadcastify public safety feed 17518 for Maine.",
+      "city": "",
+      "county": "Various",
+      "state": "ME",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maine",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/17518"
+    },
+    {
+      "id": "bf-16152-yarmouth-fire-cumberland-and-freeport-fire",
+      "name": "Yarmouth Fire, Cumberland and Freeport Fire",
+      "description": "Broadcastify public safety feed 16152 for Maine.",
+      "city": "",
+      "county": "Various",
+      "state": "ME",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maine",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/16152"
+    },
+    {
+      "id": "bf-32237-steuben-fire",
+      "name": "Steuben Fire",
+      "description": "Broadcastify public safety feed 32237 for Maine.",
+      "city": "",
+      "county": "Various",
+      "state": "ME",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maine",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32237"
+    },
+    {
+      "id": "bf-31543-washington-county-fire",
+      "name": "Washington County Fire",
+      "description": "Broadcastify public safety feed 31543 for Maine.",
+      "city": "",
+      "county": "Various",
+      "state": "ME",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maine",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/31543"
+    },
+    {
+      "id": "bf-17697-frenchville-fire-dispatch",
+      "name": "Frenchville Fire Dispatch",
+      "description": "Broadcastify public safety feed 17697 for Maine.",
+      "city": "",
+      "county": "Various",
+      "state": "ME",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maine",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/17697"
+    },
+    {
+      "id": "bf-32277-milbridge-fire",
+      "name": "Milbridge Fire",
+      "description": "Broadcastify public safety feed 32277 for Maine.",
+      "city": "",
+      "county": "Various",
+      "state": "ME",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maine",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32277"
+    },
+    {
+      "id": "bf-25688-eastport-fire",
+      "name": "Eastport Fire",
+      "description": "Broadcastify public safety feed 25688 for Maine.",
+      "city": "",
+      "county": "Various",
+      "state": "ME",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maine",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/25688"
+    },
+    {
+      "id": "bf-35911-addison-fire",
+      "name": "Addison Fire",
+      "description": "Broadcastify public safety feed 35911 for Maine.",
+      "city": "",
+      "county": "Various",
+      "state": "ME",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maine",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/35911"
+    },
+    {
+      "id": "bf-38086-downeast-ems",
+      "name": "Downeast EMS",
+      "description": "Broadcastify public safety feed 38086 for Maine.",
+      "city": "",
+      "county": "Various",
+      "state": "ME",
+      "service_types": [
+        "dispatch",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maine",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38086"
+    },
+    {
+      "id": "bf-41444-harrington-vfd",
+      "name": "Harrington VFD",
+      "description": "Broadcastify public safety feed 41444 for Maine.",
+      "city": "",
+      "county": "Various",
+      "state": "ME",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maine"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41444"
+    },
+    {
+      "id": "bf-41953-danforth-fire",
+      "name": "Danforth Fire",
+      "description": "Broadcastify public safety feed 41953 for Maine.",
+      "city": "",
+      "county": "Various",
+      "state": "ME",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maine",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41953"
+    },
+    {
+      "id": "bf-46055-princeton-fire",
+      "name": "Princeton Fire",
+      "description": "Broadcastify public safety feed 46055 for Maine.",
+      "city": "",
+      "county": "Various",
+      "state": "ME",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maine",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46055"
+    },
+    {
+      "id": "bf-41194-kennebunkport-fire-department",
+      "name": "Kennebunkport Fire Department",
+      "description": "Broadcastify public safety feed 41194 for Maine.",
+      "city": "",
+      "county": "Various",
+      "state": "ME",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maine",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41194"
+    },
+    {
+      "id": "bf-42554-buxton-fire-rescue-and-buxton-police",
+      "name": "Buxton Fire-Rescue and Buxton Police",
+      "description": "Broadcastify public safety feed 42554 for Maine.",
+      "city": "",
+      "county": "Various",
+      "state": "ME",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maine",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42554"
+    },
+    {
+      "id": "bf-41223-turner-fire-department-turner-rescue-emerg",
+      "name": "Turner Fire Department & Turner Rescue/Emergency Management",
+      "description": "Broadcastify public safety feed 41223 for Maine.",
+      "city": "",
+      "county": "Various",
+      "state": "ME",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maine",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41223"
+    },
+    {
+      "id": "bf-42401-bucksport-fire-department",
+      "name": "Bucksport Fire Department",
+      "description": "Broadcastify public safety feed 42401 for Maine.",
+      "city": "",
+      "county": "Various",
+      "state": "ME",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maine",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42401"
+    },
+    {
+      "id": "bf-46362-north-lakes-fire-madawaska-lake",
+      "name": "North Lakes Fire - Madawaska Lake",
+      "description": "Broadcastify public safety feed 46362 for Maine.",
+      "city": "",
+      "county": "Various",
+      "state": "ME",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maine",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46362"
+    },
+    {
+      "id": "bf-47517-north-lakes-fire-cross-lake",
+      "name": "North Lakes Fire - Cross Lake",
+      "description": "Broadcastify public safety feed 47517 for Maine.",
+      "city": "",
+      "county": "Various",
+      "state": "ME",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maine",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47517"
+    },
+    {
+      "id": "bf-40640-cape-elizabeth-fire-ems-dispatch",
+      "name": "Cape Elizabeth Fire/EMS Dispatch",
+      "description": "Broadcastify public safety feed 40640 for Maine.",
+      "city": "",
+      "county": "Various",
+      "state": "ME",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maine",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40640"
+    },
+    {
+      "id": "bf-43718-aroostook-county-public-safety",
+      "name": "Aroostook County Public Safety",
+      "description": "Broadcastify public safety feed 43718 for Maine.",
+      "city": "",
+      "county": "Various",
+      "state": "ME",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maine"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43718"
+    },
+    {
+      "id": "bf-43584-central-aroostook-public-safety",
+      "name": "Central Aroostook Public Safety",
+      "description": "Broadcastify public safety feed 43584 for Maine.",
+      "city": "",
+      "county": "Various",
+      "state": "ME",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maine"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43584"
+    },
+    {
+      "id": "bf-45641-naples-fire-rescue",
+      "name": "Naples Fire Rescue",
+      "description": "Broadcastify public safety feed 45641 for Maine.",
+      "city": "",
+      "county": "Various",
+      "state": "ME",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maine",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45641"
+    },
+    {
+      "id": "bf-47185-frye-island-fire-department",
+      "name": "Frye Island Fire Department",
+      "description": "Broadcastify public safety feed 47185 for Maine.",
+      "city": "",
+      "county": "Various",
+      "state": "ME",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maine",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47185"
+    },
+    {
+      "id": "bf-34470-franklin-county-fire",
+      "name": "Franklin County Fire",
+      "description": "Broadcastify public safety feed 34470 for Maine.",
+      "city": "",
+      "county": "Various",
+      "state": "ME",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maine",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/34470"
+    },
+    {
+      "id": "bf-46596-franklin-county-sheriff",
+      "name": "Franklin County Sheriff",
+      "description": "Broadcastify public safety feed 46596 for Maine.",
+      "city": "",
+      "county": "Various",
+      "state": "ME",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maine",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46596"
+    },
+    {
+      "id": "bf-46612-farmington-police-department",
+      "name": "Farmington Police Department",
+      "description": "Broadcastify public safety feed 46612 for Maine.",
+      "city": "",
+      "county": "Various",
+      "state": "ME",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maine",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46612"
+    },
+    {
+      "id": "bf-24740-pembroke-volunteer-fire",
+      "name": "Pembroke Volunteer Fire",
+      "description": "Broadcastify public safety feed 24740 for Maine.",
+      "city": "",
+      "county": "Various",
+      "state": "ME",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maine",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/24740"
+    },
+    {
+      "id": "bf-34778-gardiner-fire-rescue",
+      "name": "Gardiner Fire Rescue",
+      "description": "Broadcastify public safety feed 34778 for Maine.",
+      "city": "",
+      "county": "Various",
+      "state": "ME",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maine",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/34778"
+    },
+    {
+      "id": "bf-38242-winthrop-ambulance-fire-police-and-monmout",
+      "name": "Winthrop Ambulance, Fire & Police and Monmouth Police",
+      "description": "Broadcastify public safety feed 38242 for Maine.",
+      "city": "",
+      "county": "Various",
+      "state": "ME",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maine",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38242"
+    },
+    {
+      "id": "bf-22195-hodgdon-fire",
+      "name": "Hodgdon Fire",
+      "description": "Broadcastify public safety feed 22195 for Maine.",
+      "city": "",
+      "county": "Various",
+      "state": "ME",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maine",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/22195"
+    },
+    {
+      "id": "bf-46103-albion-fire-rescue",
+      "name": "Albion Fire-Rescue",
+      "description": "Broadcastify public safety feed 46103 for Maine.",
+      "city": "",
+      "county": "Various",
+      "state": "ME",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maine",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46103"
+    },
+    {
+      "id": "bf-44233-haynesville-fd",
+      "name": "Haynesville FD",
+      "description": "Broadcastify public safety feed 44233 for Maine.",
+      "city": "",
+      "county": "Various",
+      "state": "ME",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maine"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44233"
+    },
+    {
+      "id": "bf-36540-waldoboro-fire-and-ems",
+      "name": "Waldoboro Fire and EMS",
+      "description": "Broadcastify public safety feed 36540 for Maine.",
+      "city": "",
+      "county": "Various",
+      "state": "ME",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maine",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/36540"
+    },
+    {
+      "id": "bf-36981-wiscasset-fire-ems",
+      "name": "Wiscasset Fire/EMS",
+      "description": "Broadcastify public safety feed 36981 for Maine.",
+      "city": "",
+      "county": "Various",
+      "state": "ME",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maine",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/36981"
+    },
+    {
+      "id": "bf-16455-linneus-fire",
+      "name": "Linneus Fire",
+      "description": "Broadcastify public safety feed 16455 for Maine.",
+      "city": "",
+      "county": "Various",
+      "state": "ME",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maine",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/16455"
+    },
+    {
+      "id": "bf-47335-anson-madison-starks-ambulance",
+      "name": "Anson/Madison/Starks Ambulance",
+      "description": "Broadcastify public safety feed 47335 for Maine.",
+      "city": "",
+      "county": "Various",
+      "state": "ME",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maine"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47335"
+    },
+    {
+      "id": "bf-21620-pleasant-point-fire",
+      "name": "Pleasant Point Fire",
+      "description": "Broadcastify public safety feed 21620 for Maine.",
+      "city": "",
+      "county": "Various",
+      "state": "ME",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maine",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/21620"
+    }
+  ]
+}

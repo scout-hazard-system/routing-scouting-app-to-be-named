@@ -1,0 +1,1517 @@
+{
+  "channels": [
+    {
+      "id": "bf-32602-indianapolis-metropolitan-police",
+      "name": "Indianapolis Metropolitan Police",
+      "description": "Broadcastify public safety feed 32602 for Maryland.",
+      "city": "",
+      "county": "Various",
+      "state": "MD",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maryland",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32602"
+    },
+    {
+      "id": "bf-25680-anne-arundel-county-fire-and-ems",
+      "name": "Anne Arundel County Fire and EMS",
+      "description": "Broadcastify public safety feed 25680 for Maryland.",
+      "city": "",
+      "county": "Various",
+      "state": "MD",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maryland",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/25680"
+    },
+    {
+      "id": "bf-19917-carroll-county-fire-and-ems-digital",
+      "name": "Carroll County Fire and EMS - Digital",
+      "description": "Broadcastify public safety feed 19917 for Maryland.",
+      "city": "",
+      "county": "Various",
+      "state": "MD",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maryland",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/19917"
+    },
+    {
+      "id": "bf-9809-frederick-county-sheriff-fire-and-ems-stat",
+      "name": "Frederick County Sheriff, Fire and EMS, State Police",
+      "description": "Broadcastify public safety feed 9809 for Maryland.",
+      "city": "",
+      "county": "Various",
+      "state": "MD",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maryland",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/9809"
+    },
+    {
+      "id": "bf-31110-baltimore-county-municipal-police-departme",
+      "name": "Baltimore County Municipal Police Departments",
+      "description": "Broadcastify public safety feed 31110 for Maryland.",
+      "city": "",
+      "county": "Various",
+      "state": "MD",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maryland",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/31110"
+    },
+    {
+      "id": "bf-27160-allegany-county-emergency-services",
+      "name": "Allegany County Emergency Services",
+      "description": "Broadcastify public safety feed 27160 for Maryland.",
+      "city": "",
+      "county": "Various",
+      "state": "MD",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maryland"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/27160"
+    },
+    {
+      "id": "bf-20677-washington-county-fire-and-ems-digital",
+      "name": "Washington County Fire and EMS - Digital",
+      "description": "Broadcastify public safety feed 20677 for Maryland.",
+      "city": "",
+      "county": "Various",
+      "state": "MD",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maryland",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/20677"
+    },
+    {
+      "id": "bf-31134-cecil-county-fire-and-ems",
+      "name": "Cecil County Fire and EMS",
+      "description": "Broadcastify public safety feed 31134 for Maryland.",
+      "city": "",
+      "county": "Various",
+      "state": "MD",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maryland",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/31134"
+    },
+    {
+      "id": "bf-40593-baltimore-city-police",
+      "name": "Baltimore City Police",
+      "description": "Broadcastify public safety feed 40593 for Maryland.",
+      "city": "",
+      "county": "Various",
+      "state": "MD",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maryland",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40593"
+    },
+    {
+      "id": "bf-16120-dorchester-county-fire-and-ems",
+      "name": "Dorchester County Fire and EMS",
+      "description": "Broadcastify public safety feed 16120 for Maryland.",
+      "city": "",
+      "county": "Various",
+      "state": "MD",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maryland",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/16120"
+    },
+    {
+      "id": "bf-16828-baltimore-county-fire-and-ems-digital",
+      "name": "Baltimore County Fire and EMS - Digital",
+      "description": "Broadcastify public safety feed 16828 for Maryland.",
+      "city": "",
+      "county": "Various",
+      "state": "MD",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maryland",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/16828"
+    },
+    {
+      "id": "bf-32019-howard-county-police-fire-and-ems",
+      "name": "Howard County Police, Fire and EMS",
+      "description": "Broadcastify public safety feed 32019 for Maryland.",
+      "city": "",
+      "county": "Various",
+      "state": "MD",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maryland",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32019"
+    },
+    {
+      "id": "bf-25166-talbot-county-fire-and-ems",
+      "name": "Talbot County Fire and EMS",
+      "description": "Broadcastify public safety feed 25166 for Maryland.",
+      "city": "",
+      "county": "Various",
+      "state": "MD",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maryland",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/25166"
+    },
+    {
+      "id": "bf-34310-harford-county-fire-and-ems",
+      "name": "Harford County Fire and EMS",
+      "description": "Broadcastify public safety feed 34310 for Maryland.",
+      "city": "",
+      "county": "Various",
+      "state": "MD",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maryland",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/34310"
+    },
+    {
+      "id": "bf-44760-garrett-county-public-safety",
+      "name": "Garrett County Public Safety",
+      "description": "Broadcastify public safety feed 44760 for Maryland.",
+      "city": "",
+      "county": "Various",
+      "state": "MD",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maryland"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44760"
+    },
+    {
+      "id": "bf-30327-baltimore-city-fire",
+      "name": "Baltimore City Fire",
+      "description": "Broadcastify public safety feed 30327 for Maryland.",
+      "city": "",
+      "county": "Various",
+      "state": "MD",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maryland",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/30327"
+    },
+    {
+      "id": "bf-34853-calvert-county-fire-ems-and-sheriff",
+      "name": "Calvert County Fire, EMS, and Sheriff",
+      "description": "Broadcastify public safety feed 34853 for Maryland.",
+      "city": "",
+      "county": "Various",
+      "state": "MD",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maryland",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/34853"
+    },
+    {
+      "id": "bf-24427-queen-anne-s-county-fire-ems-and-police",
+      "name": "Queen Anne's County Fire, EMS and Police",
+      "description": "Broadcastify public safety feed 24427 for Maryland.",
+      "city": "",
+      "county": "Various",
+      "state": "MD",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maryland",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/24427"
+    },
+    {
+      "id": "bf-5531-st-mary-s-county-fire-and-ems",
+      "name": "St. Mary's County Fire and EMS",
+      "description": "Broadcastify public safety feed 5531 for Maryland.",
+      "city": "",
+      "county": "Various",
+      "state": "MD",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maryland",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/5531"
+    },
+    {
+      "id": "bf-15129-frederick-county-fire-digital",
+      "name": "Frederick County Fire - Digital",
+      "description": "Broadcastify public safety feed 15129 for Maryland.",
+      "city": "",
+      "county": "Various",
+      "state": "MD",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maryland",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/15129"
+    },
+    {
+      "id": "bf-39235-charles-county-law-enforcement",
+      "name": "Charles County Law Enforcement",
+      "description": "Broadcastify public safety feed 39235 for Maryland.",
+      "city": "",
+      "county": "Various",
+      "state": "MD",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maryland",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39235"
+    },
+    {
+      "id": "bf-43251-worcester-county-fire-and-ems-state-police",
+      "name": "Worcester County Fire and EMS, State Police and Highway",
+      "description": "Broadcastify public safety feed 43251 for Maryland.",
+      "city": "",
+      "county": "Various",
+      "state": "MD",
+      "service_types": [
+        "dispatch",
+        "law",
+        "highway",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maryland",
+        "law",
+        "highway",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43251"
+    },
+    {
+      "id": "bf-1654-kent-county-fire-dispatch",
+      "name": "Kent County Fire Dispatch",
+      "description": "Broadcastify public safety feed 1654 for Maryland.",
+      "city": "",
+      "county": "Various",
+      "state": "MD",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maryland",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/1654"
+    },
+    {
+      "id": "bf-30606-caroline-county-fire-and-ems",
+      "name": "Caroline County Fire and EMS",
+      "description": "Broadcastify public safety feed 30606 for Maryland.",
+      "city": "",
+      "county": "Various",
+      "state": "MD",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maryland",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/30606"
+    },
+    {
+      "id": "bf-45832-garrett-county-public-safety",
+      "name": "Garrett County Public Safety",
+      "description": "Broadcastify public safety feed 45832 for Maryland.",
+      "city": "",
+      "county": "Various",
+      "state": "MD",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maryland"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45832"
+    },
+    {
+      "id": "bf-36125-worcester-county-ocean-city-fire",
+      "name": "Worcester County / Ocean City Fire",
+      "description": "Broadcastify public safety feed 36125 for Maryland.",
+      "city": "",
+      "county": "Various",
+      "state": "MD",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maryland",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/36125"
+    },
+    {
+      "id": "bf-24385-prince-george-s-county-fire-and-ems",
+      "name": "Prince George's County Fire and EMS",
+      "description": "Broadcastify public safety feed 24385 for Maryland.",
+      "city": "",
+      "county": "Various",
+      "state": "MD",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maryland",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/24385"
+    },
+    {
+      "id": "bf-39146-charles-county-fire-ems",
+      "name": "Charles County Fire & EMS",
+      "description": "Broadcastify public safety feed 39146 for Maryland.",
+      "city": "",
+      "county": "Various",
+      "state": "MD",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maryland",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39146"
+    },
+    {
+      "id": "bf-13449-caroline-queen-anne-s-and-talbot-counties-",
+      "name": "Caroline, Queen Anne's, and Talbot Counties Fire",
+      "description": "Broadcastify public safety feed 13449 for Maryland.",
+      "city": "",
+      "county": "Various",
+      "state": "MD",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maryland",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/13449"
+    },
+    {
+      "id": "bf-40587-baltimore-city-police-northeast-district",
+      "name": "Baltimore City Police Northeast District",
+      "description": "Broadcastify public safety feed 40587 for Maryland.",
+      "city": "",
+      "county": "Various",
+      "state": "MD",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maryland",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40587"
+    },
+    {
+      "id": "bf-40365-carroll-county-law-enforcement",
+      "name": "Carroll County Law Enforcement",
+      "description": "Broadcastify public safety feed 40365 for Maryland.",
+      "city": "",
+      "county": "Various",
+      "state": "MD",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maryland",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40365"
+    },
+    {
+      "id": "bf-40592-baltimore-city-police-southern-district",
+      "name": "Baltimore City Police Southern District",
+      "description": "Broadcastify public safety feed 40592 for Maryland.",
+      "city": "",
+      "county": "Various",
+      "state": "MD",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maryland",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40592"
+    },
+    {
+      "id": "bf-42344-st-mary-s-county-public-safety",
+      "name": "St. Mary's County Public Safety",
+      "description": "Broadcastify public safety feed 42344 for Maryland.",
+      "city": "",
+      "county": "Various",
+      "state": "MD",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maryland"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42344"
+    },
+    {
+      "id": "bf-46654-ocean-city-fire-department",
+      "name": "Ocean City Fire Department",
+      "description": "Broadcastify public safety feed 46654 for Maryland.",
+      "city": "",
+      "county": "Various",
+      "state": "MD",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maryland",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46654"
+    },
+    {
+      "id": "bf-44519-ocean-city-beach-patrol",
+      "name": "Ocean City Beach Patrol",
+      "description": "Broadcastify public safety feed 44519 for Maryland.",
+      "city": "",
+      "county": "Various",
+      "state": "MD",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maryland"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44519"
+    },
+    {
+      "id": "bf-45306-montgomery-county-md-fire-rescue-7a2-dispa",
+      "name": "Montgomery County MD Fire Rescue 7A2 Dispatch",
+      "description": "Broadcastify public safety feed 45306 for Maryland.",
+      "city": "",
+      "county": "Various",
+      "state": "MD",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maryland",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45306"
+    },
+    {
+      "id": "bf-40591-baltimore-city-police-southwest-district",
+      "name": "Baltimore City Police Southwest District",
+      "description": "Broadcastify public safety feed 40591 for Maryland.",
+      "city": "",
+      "county": "Various",
+      "state": "MD",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maryland",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40591"
+    },
+    {
+      "id": "bf-40590-baltimore-city-police-western-district",
+      "name": "Baltimore City Police Western District",
+      "description": "Broadcastify public safety feed 40590 for Maryland.",
+      "city": "",
+      "county": "Various",
+      "state": "MD",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maryland",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40590"
+    },
+    {
+      "id": "bf-45308-montgomery-county-md-fire-rescue-7a1-ops-1",
+      "name": "Montgomery County MD Fire Rescue 7A1 Ops 1",
+      "description": "Broadcastify public safety feed 45308 for Maryland.",
+      "city": "",
+      "county": "Various",
+      "state": "MD",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maryland",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45308"
+    },
+    {
+      "id": "bf-40584-baltimore-city-police-central-district",
+      "name": "Baltimore City Police Central District",
+      "description": "Broadcastify public safety feed 40584 for Maryland.",
+      "city": "",
+      "county": "Various",
+      "state": "MD",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maryland",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40584"
+    },
+    {
+      "id": "bf-40585-baltimore-city-police-southeast-district",
+      "name": "Baltimore City Police Southeast District",
+      "description": "Broadcastify public safety feed 40585 for Maryland.",
+      "city": "",
+      "county": "Various",
+      "state": "MD",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maryland",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40585"
+    },
+    {
+      "id": "bf-37964-calvert-county-fire-ems",
+      "name": "Calvert County Fire & EMS",
+      "description": "Broadcastify public safety feed 37964 for Maryland.",
+      "city": "",
+      "county": "Various",
+      "state": "MD",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maryland",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37964"
+    },
+    {
+      "id": "bf-40586-baltimore-city-police-eastern-district",
+      "name": "Baltimore City Police Eastern District",
+      "description": "Broadcastify public safety feed 40586 for Maryland.",
+      "city": "",
+      "county": "Various",
+      "state": "MD",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maryland",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40586"
+    },
+    {
+      "id": "bf-8117-howard-county-fire-dispatch",
+      "name": "Howard County Fire Dispatch",
+      "description": "Broadcastify public safety feed 8117 for Maryland.",
+      "city": "",
+      "county": "Various",
+      "state": "MD",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maryland",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/8117"
+    },
+    {
+      "id": "bf-44004-baltimore-city-police-northern-district",
+      "name": "Baltimore City Police Northern District",
+      "description": "Broadcastify public safety feed 44004 for Maryland.",
+      "city": "",
+      "county": "Various",
+      "state": "MD",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maryland",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44004"
+    },
+    {
+      "id": "bf-40589-baltimore-city-police-northwest-district",
+      "name": "Baltimore City Police Northwest District",
+      "description": "Broadcastify public safety feed 40589 for Maryland.",
+      "city": "",
+      "county": "Various",
+      "state": "MD",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maryland",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40589"
+    },
+    {
+      "id": "bf-42652-harford-county-fire-and-ems-working-incide",
+      "name": "Harford County Fire and EMS Working Incidents",
+      "description": "Broadcastify public safety feed 42652 for Maryland.",
+      "city": "",
+      "county": "Various",
+      "state": "MD",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maryland",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42652"
+    },
+    {
+      "id": "bf-37415-frederick-county-fire-9c-fire-1",
+      "name": "Frederick County Fire - 9C FIRE 1",
+      "description": "Broadcastify public safety feed 37415 for Maryland.",
+      "city": "",
+      "county": "Various",
+      "state": "MD",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maryland",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37415"
+    },
+    {
+      "id": "bf-46390-harford-county-public-safety",
+      "name": "Harford County Public Safety",
+      "description": "Broadcastify public safety feed 46390 for Maryland.",
+      "city": "",
+      "county": "Various",
+      "state": "MD",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maryland"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46390"
+    },
+    {
+      "id": "bf-42237-frederick-county-fire-police-92h",
+      "name": "Frederick County Fire Police (92H)",
+      "description": "Broadcastify public safety feed 42237 for Maryland.",
+      "city": "",
+      "county": "Various",
+      "state": "MD",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maryland",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42237"
+    },
+    {
+      "id": "bf-37822-chart-district-7",
+      "name": "CHART District 7",
+      "description": "Broadcastify public safety feed 37822 for Maryland.",
+      "city": "",
+      "county": "Various",
+      "state": "MD",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maryland"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37822"
+    },
+    {
+      "id": "bf-37403-frederick-county-fire-9d-tac-10",
+      "name": "Frederick County Fire - 9D TAC 10",
+      "description": "Broadcastify public safety feed 37403 for Maryland.",
+      "city": "",
+      "county": "Various",
+      "state": "MD",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maryland",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37403"
+    },
+    {
+      "id": "bf-37408-frederick-county-sheriff-fcso-dispatch-1",
+      "name": "Frederick County Sheriff - FCSO Dispatch 1",
+      "description": "Broadcastify public safety feed 37408 for Maryland.",
+      "city": "",
+      "county": "Various",
+      "state": "MD",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maryland",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37408"
+    },
+    {
+      "id": "bf-37414-frederick-county-fire-9a-disp",
+      "name": "Frederick County Fire - 9A DISP",
+      "description": "Broadcastify public safety feed 37414 for Maryland.",
+      "city": "",
+      "county": "Various",
+      "state": "MD",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maryland",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37414"
+    },
+    {
+      "id": "bf-37416-frederick-county-fire-9b-ems-1",
+      "name": "Frederick County Fire - 9B EMS 1",
+      "description": "Broadcastify public safety feed 37416 for Maryland.",
+      "city": "",
+      "county": "Various",
+      "state": "MD",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maryland",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37416"
+    },
+    {
+      "id": "bf-37497-frederick-county-fire-9-i-tac-20",
+      "name": "Frederick County Fire - 9-I TAC 20",
+      "description": "Broadcastify public safety feed 37497 for Maryland.",
+      "city": "",
+      "county": "Various",
+      "state": "MD",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maryland",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37497"
+    },
+    {
+      "id": "bf-40491-frederick-county-fire-9h-cmd-13",
+      "name": "Frederick County Fire - 9H CMD 13",
+      "description": "Broadcastify public safety feed 40491 for Maryland.",
+      "city": "",
+      "county": "Various",
+      "state": "MD",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maryland",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40491"
+    },
+    {
+      "id": "bf-40492-frederick-county-fire-9j-tac-21",
+      "name": "Frederick County Fire - 9J TAC 21",
+      "description": "Broadcastify public safety feed 40492 for Maryland.",
+      "city": "",
+      "county": "Various",
+      "state": "MD",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maryland",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40492"
+    },
+    {
+      "id": "bf-47446-md-marine-chesapeake-bay",
+      "name": "MD Marine Chesapeake Bay",
+      "description": "Broadcastify public safety feed 47446 for Maryland.",
+      "city": "",
+      "county": "Various",
+      "state": "MD",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maryland"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47446"
+    },
+    {
+      "id": "bf-46707-harford-county-fire-c6-d6-working-incident",
+      "name": "Harford County Fire - C6 & D6 Working Incidents",
+      "description": "Broadcastify public safety feed 46707 for Maryland.",
+      "city": "",
+      "county": "Various",
+      "state": "MD",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maryland",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46707"
+    },
+    {
+      "id": "bf-46712-harford-county-fire-b6-e6-working-incident",
+      "name": "Harford County Fire - B6 & E6 Working Incidents",
+      "description": "Broadcastify public safety feed 46712 for Maryland.",
+      "city": "",
+      "county": "Various",
+      "state": "MD",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maryland",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46712"
+    },
+    {
+      "id": "bf-45307-montgomery-county-md-fire-rescue-7a3-ops-3",
+      "name": "Montgomery County MD Fire Rescue 7A3 Ops 3",
+      "description": "Broadcastify public safety feed 45307 for Maryland.",
+      "city": "",
+      "county": "Various",
+      "state": "MD",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maryland",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45307"
+    },
+    {
+      "id": "bf-45319-montgomery-county-md-fire-rescue-7a4-incid",
+      "name": "Montgomery County MD Fire Rescue 7A4 Incident 10",
+      "description": "Broadcastify public safety feed 45319 for Maryland.",
+      "city": "",
+      "county": "Various",
+      "state": "MD",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maryland",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45319"
+    },
+    {
+      "id": "bf-24750-wicomico-county-fire-and-ems",
+      "name": "Wicomico County Fire and EMS",
+      "description": "Broadcastify public safety feed 24750 for Maryland.",
+      "city": "",
+      "county": "Various",
+      "state": "MD",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maryland",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/24750"
+    },
+    {
+      "id": "bf-26178-maryland-state-police-barracks-i",
+      "name": "Maryland State Police Barracks I",
+      "description": "Broadcastify public safety feed 26178 for Maryland.",
+      "city": "",
+      "county": "Various",
+      "state": "MD",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "maryland",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/26178"
+    }
+  ]
+}

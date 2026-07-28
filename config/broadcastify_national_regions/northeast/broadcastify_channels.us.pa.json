@@ -1,0 +1,2398 @@
+{
+  "channels": [
+    {
+      "id": "bf-32602-indianapolis-metropolitan-police",
+      "name": "Indianapolis Metropolitan Police",
+      "description": "Broadcastify public safety feed 32602 for Pennsylvania.",
+      "city": "",
+      "county": "Various",
+      "state": "PA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "pennsylvania",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32602"
+    },
+    {
+      "id": "bf-21738-pittsburgh-police-fire-and-ems",
+      "name": "Pittsburgh Police, Fire and EMS",
+      "description": "Broadcastify public safety feed 21738 for Pennsylvania.",
+      "city": "",
+      "county": "Various",
+      "state": "PA",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "pennsylvania",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/21738"
+    },
+    {
+      "id": "bf-3737-westmoreland-county-public-safety",
+      "name": "Westmoreland County Public Safety",
+      "description": "Broadcastify public safety feed 3737 for Pennsylvania.",
+      "city": "",
+      "county": "Various",
+      "state": "PA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "pennsylvania"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/3737"
+    },
+    {
+      "id": "bf-22346-somerset-county-fire-and-ems-digital",
+      "name": "Somerset County Fire and EMS - Digital",
+      "description": "Broadcastify public safety feed 22346 for Pennsylvania.",
+      "city": "",
+      "county": "Various",
+      "state": "PA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "pennsylvania",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/22346"
+    },
+    {
+      "id": "bf-20884-schuylkill-county-fire",
+      "name": "Schuylkill County Fire",
+      "description": "Broadcastify public safety feed 20884 for Pennsylvania.",
+      "city": "",
+      "county": "Various",
+      "state": "PA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "pennsylvania",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/20884"
+    },
+    {
+      "id": "bf-38096-fayette-county-icorrs-public-safety-dispat",
+      "name": "Fayette County ICORRS Public Safety Dispatch",
+      "description": "Broadcastify public safety feed 38096 for Pennsylvania.",
+      "city": "",
+      "county": "Various",
+      "state": "PA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "pennsylvania"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38096"
+    },
+    {
+      "id": "bf-2504-blair-county-ems-fire-police-hazmat-and-he",
+      "name": "Blair County EMS, Fire, Police, Hazmat and Helos",
+      "description": "Broadcastify public safety feed 2504 for Pennsylvania.",
+      "city": "",
+      "county": "Various",
+      "state": "PA",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "pennsylvania",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/2504"
+    },
+    {
+      "id": "bf-22101-franklin-county-fire-and-ems-alerts",
+      "name": "Franklin County Fire and EMS Alerts",
+      "description": "Broadcastify public safety feed 22101 for Pennsylvania.",
+      "city": "",
+      "county": "Various",
+      "state": "PA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "pennsylvania",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/22101"
+    },
+    {
+      "id": "bf-12522-adams-county-fire-and-ems-digital",
+      "name": "Adams County Fire and EMS - Digital",
+      "description": "Broadcastify public safety feed 12522 for Pennsylvania.",
+      "city": "",
+      "county": "Various",
+      "state": "PA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "pennsylvania",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/12522"
+    },
+    {
+      "id": "bf-14441-bedford-county-fire-ems-and-law",
+      "name": "Bedford County Fire, EMS and Law",
+      "description": "Broadcastify public safety feed 14441 for Pennsylvania.",
+      "city": "",
+      "county": "Various",
+      "state": "PA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "pennsylvania",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/14441"
+    },
+    {
+      "id": "bf-23432-york-county-fire",
+      "name": "York County Fire",
+      "description": "Broadcastify public safety feed 23432 for Pennsylvania.",
+      "city": "",
+      "county": "Various",
+      "state": "PA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "pennsylvania",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/23432"
+    },
+    {
+      "id": "bf-45217-mifflin-county-fire-and-ems",
+      "name": "Mifflin County Fire and EMS",
+      "description": "Broadcastify public safety feed 45217 for Pennsylvania.",
+      "city": "",
+      "county": "Various",
+      "state": "PA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "pennsylvania",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45217"
+    },
+    {
+      "id": "bf-43441-armstrong-county-public-safety",
+      "name": "Armstrong County Public Safety",
+      "description": "Broadcastify public safety feed 43441 for Pennsylvania.",
+      "city": "",
+      "county": "Various",
+      "state": "PA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "pennsylvania"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43441"
+    },
+    {
+      "id": "bf-3790-lycoming-county-public-safety",
+      "name": "Lycoming County Public Safety",
+      "description": "Broadcastify public safety feed 3790 for Pennsylvania.",
+      "city": "",
+      "county": "Various",
+      "state": "PA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "pennsylvania"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/3790"
+    },
+    {
+      "id": "bf-35842-huntingdon-county-fire-and-ems",
+      "name": "Huntingdon County Fire and EMS",
+      "description": "Broadcastify public safety feed 35842 for Pennsylvania.",
+      "city": "",
+      "county": "Various",
+      "state": "PA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "pennsylvania",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/35842"
+    },
+    {
+      "id": "bf-1005-tioga-county-police-fire-and-ems",
+      "name": "Tioga County Police, Fire and EMS",
+      "description": "Broadcastify public safety feed 1005 for Pennsylvania.",
+      "city": "",
+      "county": "Various",
+      "state": "PA",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "pennsylvania",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/1005"
+    },
+    {
+      "id": "bf-690-erie-county-fire-and-ems",
+      "name": "Erie County Fire and EMS",
+      "description": "Broadcastify public safety feed 690 for Pennsylvania.",
+      "city": "",
+      "county": "Various",
+      "state": "PA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "pennsylvania",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/690"
+    },
+    {
+      "id": "bf-20873-clearfield-county-fire-and-ems",
+      "name": "Clearfield County Fire and EMS",
+      "description": "Broadcastify public safety feed 20873 for Pennsylvania.",
+      "city": "",
+      "county": "Various",
+      "state": "PA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "pennsylvania",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/20873"
+    },
+    {
+      "id": "bf-20563-lawrence-county-fire-and-ems-north",
+      "name": "Lawrence County Fire and EMS - North",
+      "description": "Broadcastify public safety feed 20563 for Pennsylvania.",
+      "city": "",
+      "county": "Various",
+      "state": "PA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "pennsylvania",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/20563"
+    },
+    {
+      "id": "bf-590-susquehanna-wayne-lackawanna-and-wyoming-c",
+      "name": "Susquehanna, Wayne, Lackawanna, and Wyoming Counties Fire / EMS",
+      "description": "Broadcastify public safety feed 590 for Pennsylvania.",
+      "city": "",
+      "county": "Various",
+      "state": "PA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "pennsylvania",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/590"
+    },
+    {
+      "id": "bf-5822-indiana-county-fire-dispatch-and-firegroun",
+      "name": "Indiana County Fire Dispatch and Fireground Operations",
+      "description": "Broadcastify public safety feed 5822 for Pennsylvania.",
+      "city": "",
+      "county": "Various",
+      "state": "PA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "pennsylvania",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/5822"
+    },
+    {
+      "id": "bf-44803-butler-county-public-safety",
+      "name": "Butler County Public Safety",
+      "description": "Broadcastify public safety feed 44803 for Pennsylvania.",
+      "city": "",
+      "county": "Various",
+      "state": "PA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "pennsylvania"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44803"
+    },
+    {
+      "id": "bf-42701-cambria-county-fire-and-ems",
+      "name": "Cambria County Fire and EMS",
+      "description": "Broadcastify public safety feed 42701 for Pennsylvania.",
+      "city": "",
+      "county": "Various",
+      "state": "PA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "pennsylvania",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42701"
+    },
+    {
+      "id": "bf-1363-centre-and-clearfield-counties-fire",
+      "name": "Centre and Clearfield Counties Fire",
+      "description": "Broadcastify public safety feed 1363 for Pennsylvania.",
+      "city": "",
+      "county": "Various",
+      "state": "PA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "pennsylvania",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/1363"
+    },
+    {
+      "id": "bf-13776-perry-county-fire-and-ems",
+      "name": "Perry County Fire and EMS",
+      "description": "Broadcastify public safety feed 13776 for Pennsylvania.",
+      "city": "",
+      "county": "Various",
+      "state": "PA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "pennsylvania",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/13776"
+    },
+    {
+      "id": "bf-27118-clarion-county-public-safety",
+      "name": "Clarion County Public Safety",
+      "description": "Broadcastify public safety feed 27118 for Pennsylvania.",
+      "city": "",
+      "county": "Various",
+      "state": "PA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "pennsylvania"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/27118"
+    },
+    {
+      "id": "bf-27956-dauphin-county-fire-and-ems-dispatch-digit",
+      "name": "Dauphin County Fire and EMS Dispatch - Digital",
+      "description": "Broadcastify public safety feed 27956 for Pennsylvania.",
+      "city": "",
+      "county": "Various",
+      "state": "PA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "pennsylvania",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/27956"
+    },
+    {
+      "id": "bf-4136-berks-county-fire-and-ems-digital",
+      "name": "Berks County Fire and EMS - Digital",
+      "description": "Broadcastify public safety feed 4136 for Pennsylvania.",
+      "city": "",
+      "county": "Various",
+      "state": "PA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "pennsylvania",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/4136"
+    },
+    {
+      "id": "bf-1456-lebanon-county-fire",
+      "name": "Lebanon County Fire",
+      "description": "Broadcastify public safety feed 1456 for Pennsylvania.",
+      "city": "",
+      "county": "Various",
+      "state": "PA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "pennsylvania",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/1456"
+    },
+    {
+      "id": "bf-1656-juniata-county-fire-and-ems",
+      "name": "Juniata County Fire and EMS",
+      "description": "Broadcastify public safety feed 1656 for Pennsylvania.",
+      "city": "",
+      "county": "Various",
+      "state": "PA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "pennsylvania",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/1656"
+    },
+    {
+      "id": "bf-710-northumberland-county-fire-and-ems",
+      "name": "Northumberland County Fire and EMS",
+      "description": "Broadcastify public safety feed 710 for Pennsylvania.",
+      "city": "",
+      "county": "Various",
+      "state": "PA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "pennsylvania",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/710"
+    },
+    {
+      "id": "bf-12623-clinton-county-public-safety",
+      "name": "Clinton County Public Safety",
+      "description": "Broadcastify public safety feed 12623 for Pennsylvania.",
+      "city": "",
+      "county": "Various",
+      "state": "PA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "pennsylvania"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/12623"
+    },
+    {
+      "id": "bf-46878-centre-county-fire-and-ems",
+      "name": "Centre County Fire and EMS",
+      "description": "Broadcastify public safety feed 46878 for Pennsylvania.",
+      "city": "",
+      "county": "Various",
+      "state": "PA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "pennsylvania",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46878"
+    },
+    {
+      "id": "bf-26692-lehigh-county-fire-and-northampton-county-",
+      "name": "Lehigh County Fire and Northampton County Fire Tac-5",
+      "description": "Broadcastify public safety feed 26692 for Pennsylvania.",
+      "city": "",
+      "county": "Various",
+      "state": "PA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "pennsylvania",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/26692"
+    },
+    {
+      "id": "bf-7971-allegheny-county-police-fire-and-ems-south",
+      "name": "Allegheny County Police, Fire and EMS - Southern Areas",
+      "description": "Broadcastify public safety feed 7971 for Pennsylvania.",
+      "city": "",
+      "county": "Various",
+      "state": "PA",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "pennsylvania",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/7971"
+    },
+    {
+      "id": "bf-10489-montgomery-county-fire-and-ems-east",
+      "name": "Montgomery County Fire and EMS - East",
+      "description": "Broadcastify public safety feed 10489 for Pennsylvania.",
+      "city": "",
+      "county": "Various",
+      "state": "PA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "pennsylvania",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/10489"
+    },
+    {
+      "id": "bf-236-beaver-county-fire-and-ems",
+      "name": "Beaver County Fire and EMS",
+      "description": "Broadcastify public safety feed 236 for Pennsylvania.",
+      "city": "",
+      "county": "Various",
+      "state": "PA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "pennsylvania",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/236"
+    },
+    {
+      "id": "bf-35877-potter-and-mckean-county-fire-and-ems",
+      "name": "Potter and McKean County Fire and EMS",
+      "description": "Broadcastify public safety feed 35877 for Pennsylvania.",
+      "city": "",
+      "county": "Various",
+      "state": "PA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "pennsylvania",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/35877"
+    },
+    {
+      "id": "bf-11389-luzerne-county-fire-and-ems",
+      "name": "Luzerne County Fire and EMS",
+      "description": "Broadcastify public safety feed 11389 for Pennsylvania.",
+      "city": "",
+      "county": "Various",
+      "state": "PA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "pennsylvania",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/11389"
+    },
+    {
+      "id": "bf-4603-philadelphia-police-citywide",
+      "name": "Philadelphia Police - Citywide",
+      "description": "Broadcastify public safety feed 4603 for Pennsylvania.",
+      "city": "",
+      "county": "Various",
+      "state": "PA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "pennsylvania",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/4603"
+    },
+    {
+      "id": "bf-44533-lancaster-county-fire-and-ems-digital",
+      "name": "Lancaster County Fire and EMS - Digital",
+      "description": "Broadcastify public safety feed 44533 for Pennsylvania.",
+      "city": "",
+      "county": "Various",
+      "state": "PA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "pennsylvania",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44533"
+    },
+    {
+      "id": "bf-28971-crawford-county-fire-and-ems-central",
+      "name": "Crawford County Fire and EMS - Central",
+      "description": "Broadcastify public safety feed 28971 for Pennsylvania.",
+      "city": "",
+      "county": "Various",
+      "state": "PA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "pennsylvania",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/28971"
+    },
+    {
+      "id": "bf-16104-warren-county-sheriff-fire-and-ems-dispatc",
+      "name": "Warren County Sheriff, Fire and EMS Dispatch",
+      "description": "Broadcastify public safety feed 16104 for Pennsylvania.",
+      "city": "",
+      "county": "Various",
+      "state": "PA",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "pennsylvania",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/16104"
+    },
+    {
+      "id": "bf-39396-allegheny-county-east-pd-1-and-east-pd-3",
+      "name": "Allegheny County East PD 1 and East PD 3",
+      "description": "Broadcastify public safety feed 39396 for Pennsylvania.",
+      "city": "",
+      "county": "Various",
+      "state": "PA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "pennsylvania"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39396"
+    },
+    {
+      "id": "bf-9389-mckean-county-public-safety-elk-county-fir",
+      "name": "McKean County Public Safety, Elk County Fire",
+      "description": "Broadcastify public safety feed 9389 for Pennsylvania.",
+      "city": "",
+      "county": "Various",
+      "state": "PA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "pennsylvania",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/9389"
+    },
+    {
+      "id": "bf-19053-dauphin-county-fire-digital",
+      "name": "Dauphin County Fire - Digital",
+      "description": "Broadcastify public safety feed 19053 for Pennsylvania.",
+      "city": "",
+      "county": "Various",
+      "state": "PA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "pennsylvania",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/19053"
+    },
+    {
+      "id": "bf-29361-jefferson-county-fire",
+      "name": "Jefferson County Fire",
+      "description": "Broadcastify public safety feed 29361 for Pennsylvania.",
+      "city": "",
+      "county": "Various",
+      "state": "PA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "pennsylvania",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/29361"
+    },
+    {
+      "id": "bf-46444-delaware-county-police-pd-sector-3",
+      "name": "Delaware County Police - PD Sector 3",
+      "description": "Broadcastify public safety feed 46444 for Pennsylvania.",
+      "city": "",
+      "county": "Various",
+      "state": "PA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "pennsylvania",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46444"
+    },
+    {
+      "id": "bf-5358-columbia-and-montour-county-fire-and-ems-d",
+      "name": "Columbia and Montour County Fire and EMS Dispatch",
+      "description": "Broadcastify public safety feed 5358 for Pennsylvania.",
+      "city": "",
+      "county": "Various",
+      "state": "PA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "pennsylvania",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/5358"
+    },
+    {
+      "id": "bf-27251-washington-city-fire-county-zone-1-fire-an",
+      "name": "Washington City Fire, County Zone 1 Fire and EMS",
+      "description": "Broadcastify public safety feed 27251 for Pennsylvania.",
+      "city": "",
+      "county": "Various",
+      "state": "PA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "pennsylvania",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/27251"
+    },
+    {
+      "id": "bf-32386-venango-county-police-fire-and-ems",
+      "name": "Venango County Police, Fire, and EMS",
+      "description": "Broadcastify public safety feed 32386 for Pennsylvania.",
+      "city": "",
+      "county": "Various",
+      "state": "PA",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "pennsylvania",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32386"
+    },
+    {
+      "id": "bf-30440-mercer-county-fire-ems-trumbull-and-mahoni",
+      "name": "Mercer County Fire / EMS, Trumbull and Mahoning Counties Fire, EMS / Police",
+      "description": "Broadcastify public safety feed 30440 for Pennsylvania.",
+      "city": "",
+      "county": "Various",
+      "state": "PA",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "pennsylvania",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/30440"
+    },
+    {
+      "id": "bf-41963-mckean-county-bradford-area-fire-ems",
+      "name": "McKean County / Bradford Area Fire/EMS",
+      "description": "Broadcastify public safety feed 41963 for Pennsylvania.",
+      "city": "",
+      "county": "Various",
+      "state": "PA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "pennsylvania",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41963"
+    },
+    {
+      "id": "bf-20621-fayette-county-public-safety-dispatch",
+      "name": "Fayette County Public Safety Dispatch",
+      "description": "Broadcastify public safety feed 20621 for Pennsylvania.",
+      "city": "",
+      "county": "Various",
+      "state": "PA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "pennsylvania"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/20621"
+    },
+    {
+      "id": "bf-1331-elk-county-police-fire-and-ems",
+      "name": "Elk County Police, Fire and EMS",
+      "description": "Broadcastify public safety feed 1331 for Pennsylvania.",
+      "city": "",
+      "county": "Various",
+      "state": "PA",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "pennsylvania",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/1331"
+    },
+    {
+      "id": "bf-36580-carlisle-fire-and-ems-dispatch",
+      "name": "Carlisle Fire and EMS Dispatch",
+      "description": "Broadcastify public safety feed 36580 for Pennsylvania.",
+      "city": "",
+      "county": "Various",
+      "state": "PA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "pennsylvania",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/36580"
+    },
+    {
+      "id": "bf-12388-pike-county-and-lackawaxen-fire-and-ems",
+      "name": "Pike County and Lackawaxen Fire and EMS",
+      "description": "Broadcastify public safety feed 12388 for Pennsylvania.",
+      "city": "",
+      "county": "Various",
+      "state": "PA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "pennsylvania",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/12388"
+    },
+    {
+      "id": "bf-34169-montgomery-county-fire-and-ems-digital",
+      "name": "Montgomery County Fire and EMS - Digital",
+      "description": "Broadcastify public safety feed 34169 for Pennsylvania.",
+      "city": "",
+      "county": "Various",
+      "state": "PA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "pennsylvania",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/34169"
+    },
+    {
+      "id": "bf-29810-chester-county-fire-ems-digital",
+      "name": "Chester County Fire/EMS - Digital",
+      "description": "Broadcastify public safety feed 29810 for Pennsylvania.",
+      "city": "",
+      "county": "Various",
+      "state": "PA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "pennsylvania",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/29810"
+    },
+    {
+      "id": "bf-463-allegheny-county-fire-north",
+      "name": "Allegheny County Fire - North",
+      "description": "Broadcastify public safety feed 463 for Pennsylvania.",
+      "city": "",
+      "county": "Various",
+      "state": "PA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "pennsylvania",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/463"
+    },
+    {
+      "id": "bf-34250-philadelphia-fire-south-fire-south-medics",
+      "name": "Philadelphia Fire - South Fire/South Medics",
+      "description": "Broadcastify public safety feed 34250 for Pennsylvania.",
+      "city": "",
+      "county": "Various",
+      "state": "PA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "pennsylvania",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/34250"
+    },
+    {
+      "id": "bf-36908-fulton-county-fire-and-ems",
+      "name": "Fulton County Fire and EMS",
+      "description": "Broadcastify public safety feed 36908 for Pennsylvania.",
+      "city": "",
+      "county": "Various",
+      "state": "PA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "pennsylvania",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/36908"
+    },
+    {
+      "id": "bf-37389-east-central-emergency-network-fire-and-em",
+      "name": "East Central Emergency Network Fire and EMS",
+      "description": "Broadcastify public safety feed 37389 for Pennsylvania.",
+      "city": "",
+      "county": "Various",
+      "state": "PA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "pennsylvania",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37389"
+    },
+    {
+      "id": "bf-38050-northumberland-public-safety",
+      "name": "Northumberland Public Safety",
+      "description": "Broadcastify public safety feed 38050 for Pennsylvania.",
+      "city": "",
+      "county": "Various",
+      "state": "PA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "pennsylvania"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38050"
+    },
+    {
+      "id": "bf-35833-snyder-county-fire-and-ems",
+      "name": "Snyder County Fire and EMS",
+      "description": "Broadcastify public safety feed 35833 for Pennsylvania.",
+      "city": "",
+      "county": "Various",
+      "state": "PA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "pennsylvania",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/35833"
+    },
+    {
+      "id": "bf-12947-franklin-county-fire-operations",
+      "name": "Franklin County Fire Operations",
+      "description": "Broadcastify public safety feed 12947 for Pennsylvania.",
+      "city": "",
+      "county": "Various",
+      "state": "PA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "pennsylvania",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/12947"
+    },
+    {
+      "id": "bf-1452-lebanon-county-ems-fire-police-and-hazmat",
+      "name": "Lebanon County EMS, Fire Police and Hazmat",
+      "description": "Broadcastify public safety feed 1452 for Pennsylvania.",
+      "city": "",
+      "county": "Various",
+      "state": "PA",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "pennsylvania",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/1452"
+    },
+    {
+      "id": "bf-45495-philadelphia-police-dispatch-northeast",
+      "name": "Philadelphia Police Dispatch - Northeast",
+      "description": "Broadcastify public safety feed 45495 for Pennsylvania.",
+      "city": "",
+      "county": "Various",
+      "state": "PA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "pennsylvania",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45495"
+    },
+    {
+      "id": "bf-15209-erie-county-fire-north-and-east",
+      "name": "Erie County Fire - North and East",
+      "description": "Broadcastify public safety feed 15209 for Pennsylvania.",
+      "city": "",
+      "county": "Various",
+      "state": "PA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "pennsylvania",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/15209"
+    },
+    {
+      "id": "bf-44217-armstrong-westmoreland-public-safety",
+      "name": "Armstrong/Westmoreland Public Safety",
+      "description": "Broadcastify public safety feed 44217 for Pennsylvania.",
+      "city": "",
+      "county": "Various",
+      "state": "PA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "pennsylvania"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44217"
+    },
+    {
+      "id": "bf-7700-allegheny-county-fire-east",
+      "name": "Allegheny County Fire - East",
+      "description": "Broadcastify public safety feed 7700 for Pennsylvania.",
+      "city": "",
+      "county": "Various",
+      "state": "PA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "pennsylvania",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/7700"
+    },
+    {
+      "id": "bf-18725-luzerne-wyoming-and-lackawanna-county-publ",
+      "name": "Luzerne, Wyoming, and Lackawanna County Public Safety",
+      "description": "Broadcastify public safety feed 18725 for Pennsylvania.",
+      "city": "",
+      "county": "Various",
+      "state": "PA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "pennsylvania"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/18725"
+    },
+    {
+      "id": "bf-8003-montgomery-county-fire-and-ems-east-bucks-",
+      "name": "Montgomery County Fire and EMS East, Bucks Fire/EMS West",
+      "description": "Broadcastify public safety feed 8003 for Pennsylvania.",
+      "city": "",
+      "county": "Various",
+      "state": "PA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "pennsylvania",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/8003"
+    },
+    {
+      "id": "bf-44221-perry-county-emergency-services",
+      "name": "Perry County Emergency Services",
+      "description": "Broadcastify public safety feed 44221 for Pennsylvania.",
+      "city": "",
+      "county": "Various",
+      "state": "PA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "pennsylvania"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44221"
+    },
+    {
+      "id": "bf-29216-elk-county-police-fire-and-ems-dispatch",
+      "name": "Elk County Police, Fire and EMS Dispatch",
+      "description": "Broadcastify public safety feed 29216 for Pennsylvania.",
+      "city": "",
+      "county": "Various",
+      "state": "PA",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "pennsylvania",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/29216"
+    },
+    {
+      "id": "bf-39386-luzerne-county-fire-dispatch",
+      "name": "Luzerne County Fire - Dispatch",
+      "description": "Broadcastify public safety feed 39386 for Pennsylvania.",
+      "city": "",
+      "county": "Various",
+      "state": "PA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "pennsylvania",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39386"
+    },
+    {
+      "id": "bf-42527-mercer-county-fire-ems",
+      "name": "Mercer County Fire/EMS",
+      "description": "Broadcastify public safety feed 42527 for Pennsylvania.",
+      "city": "",
+      "county": "Various",
+      "state": "PA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "pennsylvania",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42527"
+    },
+    {
+      "id": "bf-28470-central-pennsylvania-fire-and-ems",
+      "name": "Central Pennsylvania Fire and EMS",
+      "description": "Broadcastify public safety feed 28470 for Pennsylvania.",
+      "city": "",
+      "county": "Various",
+      "state": "PA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "pennsylvania",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/28470"
+    },
+    {
+      "id": "bf-28785-union-county-fire",
+      "name": "Union County Fire",
+      "description": "Broadcastify public safety feed 28785 for Pennsylvania.",
+      "city": "",
+      "county": "Various",
+      "state": "PA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "pennsylvania",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/28785"
+    },
+    {
+      "id": "bf-27816-venango-county-fire-departments-oil-city-p",
+      "name": "Venango County Fire Departments, Oil City Police",
+      "description": "Broadcastify public safety feed 27816 for Pennsylvania.",
+      "city": "",
+      "county": "Various",
+      "state": "PA",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "pennsylvania",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/27816"
+    },
+    {
+      "id": "bf-39937-bucks-county-fire-east",
+      "name": "Bucks County Fire - East",
+      "description": "Broadcastify public safety feed 39937 for Pennsylvania.",
+      "city": "",
+      "county": "Various",
+      "state": "PA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "pennsylvania",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39937"
+    },
+    {
+      "id": "bf-35445-westmoreland-county-fire",
+      "name": "Westmoreland County Fire",
+      "description": "Broadcastify public safety feed 35445 for Pennsylvania.",
+      "city": "",
+      "county": "Various",
+      "state": "PA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "pennsylvania",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/35445"
+    },
+    {
+      "id": "bf-15195-philadelphia-police-dispatch-southwest",
+      "name": "Philadelphia Police Dispatch - Southwest",
+      "description": "Broadcastify public safety feed 15195 for Pennsylvania.",
+      "city": "",
+      "county": "Various",
+      "state": "PA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "pennsylvania",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/15195"
+    },
+    {
+      "id": "bf-38106-washington-county-fire-zone-3",
+      "name": "Washington County Fire Zone 3",
+      "description": "Broadcastify public safety feed 38106 for Pennsylvania.",
+      "city": "",
+      "county": "Various",
+      "state": "PA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "pennsylvania",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38106"
+    },
+    {
+      "id": "bf-31983-carbon-county-and-northampton-county-fire-",
+      "name": "Carbon County and Northampton County Fire/EMS",
+      "description": "Broadcastify public safety feed 31983 for Pennsylvania.",
+      "city": "",
+      "county": "Various",
+      "state": "PA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "pennsylvania",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/31983"
+    },
+    {
+      "id": "bf-42895-north-fire-dispatch-6",
+      "name": "North Fire Dispatch 6",
+      "description": "Broadcastify public safety feed 42895 for Pennsylvania.",
+      "city": "",
+      "county": "Various",
+      "state": "PA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "pennsylvania",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42895"
+    },
+    {
+      "id": "bf-46438-delaware-county-fire-ems-countywide-ops",
+      "name": "Delaware County Fire/EMS - Countywide Ops",
+      "description": "Broadcastify public safety feed 46438 for Pennsylvania.",
+      "city": "",
+      "county": "Various",
+      "state": "PA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "pennsylvania",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46438"
+    },
+    {
+      "id": "bf-36323-delaware-county-police-dispatch",
+      "name": "Delaware County Police Dispatch",
+      "description": "Broadcastify public safety feed 36323 for Pennsylvania.",
+      "city": "",
+      "county": "Various",
+      "state": "PA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "pennsylvania",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/36323"
+    },
+    {
+      "id": "bf-46436-delaware-county-police-pd-sector-1",
+      "name": "Delaware County Police - PD Sector 1",
+      "description": "Broadcastify public safety feed 46436 for Pennsylvania.",
+      "city": "",
+      "county": "Various",
+      "state": "PA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "pennsylvania",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46436"
+    },
+    {
+      "id": "bf-43970-central-susquehanna-regional-911",
+      "name": "Central Susquehanna Regional 911",
+      "description": "Broadcastify public safety feed 43970 for Pennsylvania.",
+      "city": "",
+      "county": "Various",
+      "state": "PA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "pennsylvania"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43970"
+    },
+    {
+      "id": "bf-45105-york-county-ems",
+      "name": "York County EMS",
+      "description": "Broadcastify public safety feed 45105 for Pennsylvania.",
+      "city": "",
+      "county": "Various",
+      "state": "PA",
+      "service_types": [
+        "dispatch",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "pennsylvania",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45105"
+    },
+    {
+      "id": "bf-3063-township-of-moon-police",
+      "name": "Township Of Moon Police",
+      "description": "Broadcastify public safety feed 3063 for Pennsylvania.",
+      "city": "",
+      "county": "Various",
+      "state": "PA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "pennsylvania",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/3063"
+    },
+    {
+      "id": "bf-37494-fayette-county-fire",
+      "name": "Fayette County Fire",
+      "description": "Broadcastify public safety feed 37494 for Pennsylvania.",
+      "city": "",
+      "county": "Various",
+      "state": "PA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "pennsylvania",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37494"
+    },
+    {
+      "id": "bf-39942-greene-county-public-safety",
+      "name": "Greene County Public Safety",
+      "description": "Broadcastify public safety feed 39942 for Pennsylvania.",
+      "city": "",
+      "county": "Various",
+      "state": "PA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "pennsylvania"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39942"
+    },
+    {
+      "id": "bf-44240-lackawanna-wayne-counties-fire-dispatch-op",
+      "name": "Lackawanna & Wayne Counties Fire Dispatch & Operations",
+      "description": "Broadcastify public safety feed 44240 for Pennsylvania.",
+      "city": "",
+      "county": "Various",
+      "state": "PA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "pennsylvania",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44240"
+    },
+    {
+      "id": "bf-43318-lancaster-county-fire-and-ems-charlie",
+      "name": "Lancaster County Fire and EMS - Charlie",
+      "description": "Broadcastify public safety feed 43318 for Pennsylvania.",
+      "city": "",
+      "county": "Various",
+      "state": "PA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "pennsylvania",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43318"
+    },
+    {
+      "id": "bf-44534-lancaster-county-fire-and-ems-bravo",
+      "name": "Lancaster County Fire and EMS - Bravo",
+      "description": "Broadcastify public safety feed 44534 for Pennsylvania.",
+      "city": "",
+      "county": "Various",
+      "state": "PA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "pennsylvania",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44534"
+    },
+    {
+      "id": "bf-38101-washington-county-police-zone-1",
+      "name": "Washington County Police Zone 1",
+      "description": "Broadcastify public safety feed 38101 for Pennsylvania.",
+      "city": "",
+      "county": "Various",
+      "state": "PA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "pennsylvania",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38101"
+    },
+    {
+      "id": "bf-15747-philadelphia-fire-dispatch-north",
+      "name": "Philadelphia Fire Dispatch - North",
+      "description": "Broadcastify public safety feed 15747 for Pennsylvania.",
+      "city": "",
+      "county": "Various",
+      "state": "PA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "pennsylvania",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/15747"
+    },
+    {
+      "id": "bf-4786-washington-county-fire-zone-3",
+      "name": "Washington County Fire - Zone 3",
+      "description": "Broadcastify public safety feed 4786 for Pennsylvania.",
+      "city": "",
+      "county": "Various",
+      "state": "PA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "pennsylvania",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/4786"
+    },
+    {
+      "id": "bf-17310-philadelphia-police-dispatch-central",
+      "name": "Philadelphia Police Dispatch - Central",
+      "description": "Broadcastify public safety feed 17310 for Pennsylvania.",
+      "city": "",
+      "county": "Various",
+      "state": "PA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "pennsylvania",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/17310"
+    }
+  ]
+}

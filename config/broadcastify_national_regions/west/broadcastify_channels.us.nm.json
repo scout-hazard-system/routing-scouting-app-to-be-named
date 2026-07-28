@@ -1,0 +1,1823 @@
+{
+  "channels": [
+    {
+      "id": "bf-32602-indianapolis-metropolitan-police",
+      "name": "Indianapolis Metropolitan Police",
+      "description": "Broadcastify public safety feed 32602 for New Mexico.",
+      "city": "",
+      "county": "Various",
+      "state": "NM",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new mexico",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32602"
+    },
+    {
+      "id": "bf-29260-san-juan-county-police-and-fire-dispatch",
+      "name": "San Juan County Police and Fire Dispatch",
+      "description": "Broadcastify public safety feed 29260 for New Mexico.",
+      "city": "",
+      "county": "Various",
+      "state": "NM",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new mexico",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/29260"
+    },
+    {
+      "id": "bf-33192-albuquerque-bernalillo-county-rio-rancho-f",
+      "name": "Albuquerque-Bernalillo County-Rio Rancho Fire/Rescue",
+      "description": "Broadcastify public safety feed 33192 for New Mexico.",
+      "city": "",
+      "county": "Various",
+      "state": "NM",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new mexico",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/33192"
+    },
+    {
+      "id": "bf-47490-alamogordo-otero-county-public-safety",
+      "name": "Alamogordo & Otero County Public Safety",
+      "description": "Broadcastify public safety feed 47490 for New Mexico.",
+      "city": "",
+      "county": "Various",
+      "state": "NM",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new mexico"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47490"
+    },
+    {
+      "id": "bf-31806-eddy-county-sheriff-and-fire",
+      "name": "Eddy County Sheriff and Fire",
+      "description": "Broadcastify public safety feed 31806 for New Mexico.",
+      "city": "",
+      "county": "Various",
+      "state": "NM",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new mexico",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/31806"
+    },
+    {
+      "id": "bf-22406-chaves-county-and-roswell-fire-departments",
+      "name": "Chaves County and Roswell Fire Departments",
+      "description": "Broadcastify public safety feed 22406 for New Mexico.",
+      "city": "",
+      "county": "Various",
+      "state": "NM",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new mexico",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/22406"
+    },
+    {
+      "id": "bf-38486-sierra-county-public-safety",
+      "name": "Sierra County Public Safety",
+      "description": "Broadcastify public safety feed 38486 for New Mexico.",
+      "city": "",
+      "county": "Various",
+      "state": "NM",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new mexico"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38486"
+    },
+    {
+      "id": "bf-46726-bernalillo-and-sandoval-county-public-safe",
+      "name": "Bernalillo and Sandoval County Public Safety",
+      "description": "Broadcastify public safety feed 46726 for New Mexico.",
+      "city": "",
+      "county": "Various",
+      "state": "NM",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new mexico"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46726"
+    },
+    {
+      "id": "bf-40429-peralta-fire",
+      "name": "Peralta Fire",
+      "description": "Broadcastify public safety feed 40429 for New Mexico.",
+      "city": "",
+      "county": "Various",
+      "state": "NM",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new mexico",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40429"
+    },
+    {
+      "id": "bf-31477-san-miguel-county-fire",
+      "name": "San Miguel County Fire",
+      "description": "Broadcastify public safety feed 31477 for New Mexico.",
+      "city": "",
+      "county": "Various",
+      "state": "NM",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new mexico",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/31477"
+    },
+    {
+      "id": "bf-17553-knowles-fire",
+      "name": "Knowles Fire",
+      "description": "Broadcastify public safety feed 17553 for New Mexico.",
+      "city": "",
+      "county": "Various",
+      "state": "NM",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new mexico",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/17553"
+    },
+    {
+      "id": "bf-17986-tucumcari-mountain-fire-dispatch",
+      "name": "Tucumcari Mountain Fire Dispatch",
+      "description": "Broadcastify public safety feed 17986 for New Mexico.",
+      "city": "",
+      "county": "Various",
+      "state": "NM",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new mexico",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/17986"
+    },
+    {
+      "id": "bf-39111-tucumcari-fire",
+      "name": "Tucumcari Fire",
+      "description": "Broadcastify public safety feed 39111 for New Mexico.",
+      "city": "",
+      "county": "Various",
+      "state": "NM",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new mexico",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39111"
+    },
+    {
+      "id": "bf-47215-rio-rancho-fire-and-police",
+      "name": "Rio Rancho Fire and Police",
+      "description": "Broadcastify public safety feed 47215 for New Mexico.",
+      "city": "",
+      "county": "Various",
+      "state": "NM",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new mexico",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47215"
+    },
+    {
+      "id": "bf-16019-union-and-north-dallam-counties-public-saf",
+      "name": "Union and  North Dallam Counties Public Safety",
+      "description": "Broadcastify public safety feed 16019 for New Mexico.",
+      "city": "",
+      "county": "Various",
+      "state": "NM",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new mexico"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/16019"
+    },
+    {
+      "id": "bf-746-usfs-cibola-and-santa-fe-national-forests",
+      "name": "USFS Cibola and Santa Fe National Forests",
+      "description": "Broadcastify public safety feed 746 for New Mexico.",
+      "city": "",
+      "county": "Various",
+      "state": "NM",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new mexico"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/746"
+    },
+    {
+      "id": "bf-42990-valencia-county-fire",
+      "name": "Valencia County Fire",
+      "description": "Broadcastify public safety feed 42990 for New Mexico.",
+      "city": "",
+      "county": "Various",
+      "state": "NM",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new mexico",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42990"
+    },
+    {
+      "id": "bf-17586-logan-fire",
+      "name": "Logan Fire",
+      "description": "Broadcastify public safety feed 17586 for New Mexico.",
+      "city": "",
+      "county": "Various",
+      "state": "NM",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new mexico",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/17586"
+    },
+    {
+      "id": "bf-17970-porter-fire-dispatch",
+      "name": "Porter Fire Dispatch",
+      "description": "Broadcastify public safety feed 17970 for New Mexico.",
+      "city": "",
+      "county": "Various",
+      "state": "NM",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new mexico",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/17970"
+    },
+    {
+      "id": "bf-23651-bosque-farms-fire-and-ems",
+      "name": "Bosque Farms Fire and EMS",
+      "description": "Broadcastify public safety feed 23651 for New Mexico.",
+      "city": "",
+      "county": "Various",
+      "state": "NM",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new mexico",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/23651"
+    },
+    {
+      "id": "bf-17980-ragland-fire-dispatch",
+      "name": "Ragland Fire Dispatch",
+      "description": "Broadcastify public safety feed 17980 for New Mexico.",
+      "city": "",
+      "county": "Various",
+      "state": "NM",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new mexico",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/17980"
+    },
+    {
+      "id": "bf-22186-belen-fire",
+      "name": "Belen Fire",
+      "description": "Broadcastify public safety feed 22186 for New Mexico.",
+      "city": "",
+      "county": "Various",
+      "state": "NM",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new mexico",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/22186"
+    },
+    {
+      "id": "bf-31603-harding-county-fire-district-1",
+      "name": "Harding County Fire District 1",
+      "description": "Broadcastify public safety feed 31603 for New Mexico.",
+      "city": "",
+      "county": "Various",
+      "state": "NM",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new mexico",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/31603"
+    },
+    {
+      "id": "bf-47022-clayton-fire-dispatch",
+      "name": "Clayton Fire Dispatch",
+      "description": "Broadcastify public safety feed 47022 for New Mexico.",
+      "city": "",
+      "county": "Various",
+      "state": "NM",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new mexico",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47022"
+    },
+    {
+      "id": "bf-44660-ojo-sarco-fire",
+      "name": "Ojo Sarco Fire",
+      "description": "Broadcastify public safety feed 44660 for New Mexico.",
+      "city": "",
+      "county": "Various",
+      "state": "NM",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new mexico",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44660"
+    },
+    {
+      "id": "bf-18469-dora-fire-and-ems",
+      "name": "Dora Fire and EMS",
+      "description": "Broadcastify public safety feed 18469 for New Mexico.",
+      "city": "",
+      "county": "Various",
+      "state": "NM",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new mexico",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/18469"
+    },
+    {
+      "id": "bf-20959-causey-fire",
+      "name": "Causey Fire",
+      "description": "Broadcastify public safety feed 20959 for New Mexico.",
+      "city": "",
+      "county": "Various",
+      "state": "NM",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new mexico",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/20959"
+    },
+    {
+      "id": "bf-43113-floyd-fd",
+      "name": "Floyd FD",
+      "description": "Broadcastify public safety feed 43113 for New Mexico.",
+      "city": "",
+      "county": "Various",
+      "state": "NM",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new mexico"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43113"
+    },
+    {
+      "id": "bf-44978-portales-public-safety",
+      "name": "Portales Public Safety",
+      "description": "Broadcastify public safety feed 44978 for New Mexico.",
+      "city": "",
+      "county": "Various",
+      "state": "NM",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new mexico"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44978"
+    },
+    {
+      "id": "bf-47072-milnesand-fire-dispatch",
+      "name": "Milnesand Fire Dispatch",
+      "description": "Broadcastify public safety feed 47072 for New Mexico.",
+      "city": "",
+      "county": "Various",
+      "state": "NM",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new mexico",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47072"
+    },
+    {
+      "id": "bf-37236-torrance-county-fire",
+      "name": "Torrance County Fire",
+      "description": "Broadcastify public safety feed 37236 for New Mexico.",
+      "city": "",
+      "county": "Various",
+      "state": "NM",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new mexico",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37236"
+    },
+    {
+      "id": "bf-43234-santa-fe-national-forest",
+      "name": "Santa Fe National Forest",
+      "description": "Broadcastify public safety feed 43234 for New Mexico.",
+      "city": "",
+      "county": "Various",
+      "state": "NM",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new mexico"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43234"
+    },
+    {
+      "id": "bf-34844-rabbit-ear-fire",
+      "name": "Rabbit Ear Fire",
+      "description": "Broadcastify public safety feed 34844 for New Mexico.",
+      "city": "",
+      "county": "Various",
+      "state": "NM",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new mexico",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/34844"
+    },
+    {
+      "id": "bf-22418-amistad-fire",
+      "name": "Amistad Fire",
+      "description": "Broadcastify public safety feed 22418 for New Mexico.",
+      "city": "",
+      "county": "Various",
+      "state": "NM",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new mexico",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/22418"
+    },
+    {
+      "id": "bf-35195-farmington-area-noaa-weather-radio-wxj37",
+      "name": "Farmington Area NOAA Weather Radio WXJ37",
+      "description": "Broadcastify public safety feed 35195 for New Mexico.",
+      "city": "",
+      "county": "Various",
+      "state": "NM",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new mexico"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/35195"
+    },
+    {
+      "id": "bf-21397-sedan-fire",
+      "name": "Sedan Fire",
+      "description": "Broadcastify public safety feed 21397 for New Mexico.",
+      "city": "",
+      "county": "Various",
+      "state": "NM",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new mexico",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/21397"
+    },
+    {
+      "id": "bf-42867-rowe-fire",
+      "name": "Rowe Fire",
+      "description": "Broadcastify public safety feed 42867 for New Mexico.",
+      "city": "",
+      "county": "Various",
+      "state": "NM",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new mexico",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42867"
+    },
+    {
+      "id": "bf-18562-cloudcroft-fire",
+      "name": "Cloudcroft Fire",
+      "description": "Broadcastify public safety feed 18562 for New Mexico.",
+      "city": "",
+      "county": "Various",
+      "state": "NM",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new mexico",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/18562"
+    },
+    {
+      "id": "bf-35372-santa-fe-county-fire",
+      "name": "Santa Fe County Fire",
+      "description": "Broadcastify public safety feed 35372 for New Mexico.",
+      "city": "",
+      "county": "Various",
+      "state": "NM",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new mexico",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/35372"
+    },
+    {
+      "id": "bf-40012-edgewood-area-ops",
+      "name": "Edgewood Area Ops",
+      "description": "Broadcastify public safety feed 40012 for New Mexico.",
+      "city": "",
+      "county": "Various",
+      "state": "NM",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new mexico"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40012"
+    },
+    {
+      "id": "bf-24238-las-palomas-fire",
+      "name": "Las Palomas Fire",
+      "description": "Broadcastify public safety feed 24238 for New Mexico.",
+      "city": "",
+      "county": "Various",
+      "state": "NM",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new mexico",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/24238"
+    },
+    {
+      "id": "bf-37613-sierra-vista-hospital",
+      "name": "Sierra Vista Hospital",
+      "description": "Broadcastify public safety feed 37613 for New Mexico.",
+      "city": "",
+      "county": "Various",
+      "state": "NM",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new mexico"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37613"
+    },
+    {
+      "id": "bf-17595-moriarty-fire",
+      "name": "Moriarty Fire",
+      "description": "Broadcastify public safety feed 17595 for New Mexico.",
+      "city": "",
+      "county": "Various",
+      "state": "NM",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new mexico",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/17595"
+    },
+    {
+      "id": "bf-17743-estancia-volunteer-fire",
+      "name": "Estancia Volunteer Fire",
+      "description": "Broadcastify public safety feed 17743 for New Mexico.",
+      "city": "",
+      "county": "Various",
+      "state": "NM",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new mexico",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/17743"
+    },
+    {
+      "id": "bf-38706-tyrone-fire",
+      "name": "Tyrone Fire",
+      "description": "Broadcastify public safety feed 38706 for New Mexico.",
+      "city": "",
+      "county": "Various",
+      "state": "NM",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new mexico",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38706"
+    },
+    {
+      "id": "bf-19403-rosebud-fire-rescue",
+      "name": "Rosebud Fire Rescue",
+      "description": "Broadcastify public safety feed 19403 for New Mexico.",
+      "city": "",
+      "county": "Various",
+      "state": "NM",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new mexico",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/19403"
+    },
+    {
+      "id": "bf-24999-guadalupe-county-fire",
+      "name": "Guadalupe County Fire",
+      "description": "Broadcastify public safety feed 24999 for New Mexico.",
+      "city": "",
+      "county": "Various",
+      "state": "NM",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new mexico",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/24999"
+    },
+    {
+      "id": "bf-47132-grant-county-public-safety",
+      "name": "Grant County Public Safety",
+      "description": "Broadcastify public safety feed 47132 for New Mexico.",
+      "city": "",
+      "county": "Various",
+      "state": "NM",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new mexico"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47132"
+    },
+    {
+      "id": "bf-40369-grems",
+      "name": "GREMS",
+      "description": "Broadcastify public safety feed 40369 for New Mexico.",
+      "city": "",
+      "county": "Various",
+      "state": "NM",
+      "service_types": [
+        "dispatch",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new mexico",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40369"
+    },
+    {
+      "id": "bf-40261-lower-mimbres",
+      "name": "Lower Mimbres",
+      "description": "Broadcastify public safety feed 40261 for New Mexico.",
+      "city": "",
+      "county": "Various",
+      "state": "NM",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new mexico"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40261"
+    },
+    {
+      "id": "bf-39959-hurley-fire",
+      "name": "Hurley Fire",
+      "description": "Broadcastify public safety feed 39959 for New Mexico.",
+      "city": "",
+      "county": "Various",
+      "state": "NM",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new mexico",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39959"
+    },
+    {
+      "id": "bf-39888-santa-clara-fire-and-rescue",
+      "name": "Santa Clara Fire and Rescue",
+      "description": "Broadcastify public safety feed 39888 for New Mexico.",
+      "city": "",
+      "county": "Various",
+      "state": "NM",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new mexico",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39888"
+    },
+    {
+      "id": "bf-38712-grant-county-fire",
+      "name": "Grant County Fire",
+      "description": "Broadcastify public safety feed 38712 for New Mexico.",
+      "city": "",
+      "county": "Various",
+      "state": "NM",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new mexico",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38712"
+    },
+    {
+      "id": "bf-18891-maljamar-fire",
+      "name": "Maljamar Fire",
+      "description": "Broadcastify public safety feed 18891 for New Mexico.",
+      "city": "",
+      "county": "Various",
+      "state": "NM",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new mexico",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/18891"
+    },
+    {
+      "id": "bf-39209-de-baca-county-sheriff",
+      "name": "De Baca County Sheriff",
+      "description": "Broadcastify public safety feed 39209 for New Mexico.",
+      "city": "",
+      "county": "Various",
+      "state": "NM",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new mexico",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39209"
+    },
+    {
+      "id": "bf-17985-debaca-county-valley-and-lake-fire",
+      "name": "DeBaca County Valley and Lake Fire",
+      "description": "Broadcastify public safety feed 17985 for New Mexico.",
+      "city": "",
+      "county": "Various",
+      "state": "NM",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new mexico",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/17985"
+    },
+    {
+      "id": "bf-17984-debaca-county-fire-and-rescue",
+      "name": "DeBaca County Fire and Rescue",
+      "description": "Broadcastify public safety feed 17984 for New Mexico.",
+      "city": "",
+      "county": "Various",
+      "state": "NM",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new mexico",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/17984"
+    },
+    {
+      "id": "bf-43756-texico-fire",
+      "name": "Texico Fire",
+      "description": "Broadcastify public safety feed 43756 for New Mexico.",
+      "city": "",
+      "county": "Various",
+      "state": "NM",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new mexico",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43756"
+    },
+    {
+      "id": "bf-15217-melrose-fire",
+      "name": "Melrose Fire",
+      "description": "Broadcastify public safety feed 15217 for New Mexico.",
+      "city": "",
+      "county": "Various",
+      "state": "NM",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new mexico",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/15217"
+    },
+    {
+      "id": "bf-32533-raton-fire-emergency-services",
+      "name": "Raton Fire Emergency Services",
+      "description": "Broadcastify public safety feed 32533 for New Mexico.",
+      "city": "",
+      "county": "Various",
+      "state": "NM",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new mexico",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32533"
+    },
+    {
+      "id": "bf-16790-cimarron-community-ambulance",
+      "name": "Cimarron Community Ambulance",
+      "description": "Broadcastify public safety feed 16790 for New Mexico.",
+      "city": "",
+      "county": "Various",
+      "state": "NM",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new mexico"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/16790"
+    },
+    {
+      "id": "bf-34596-pueblo-of-isleta-fire",
+      "name": "Pueblo of Isleta Fire",
+      "description": "Broadcastify public safety feed 34596 for New Mexico.",
+      "city": "",
+      "county": "Various",
+      "state": "NM",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new mexico",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/34596"
+    },
+    {
+      "id": "bf-23601-ruidoso-fire",
+      "name": "Ruidoso  Fire",
+      "description": "Broadcastify public safety feed 23601 for New Mexico.",
+      "city": "",
+      "county": "Various",
+      "state": "NM",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new mexico",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/23601"
+    },
+    {
+      "id": "bf-37338-tularosa-fire",
+      "name": "Tularosa Fire",
+      "description": "Broadcastify public safety feed 37338 for New Mexico.",
+      "city": "",
+      "county": "Various",
+      "state": "NM",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new mexico",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37338"
+    },
+    {
+      "id": "bf-16872-james-canyon-volunteer-fire-dispatch",
+      "name": "James Canyon Volunteer Fire Dispatch",
+      "description": "Broadcastify public safety feed 16872 for New Mexico.",
+      "city": "",
+      "county": "Various",
+      "state": "NM",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new mexico",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/16872"
+    },
+    {
+      "id": "bf-38116-watrous-fire",
+      "name": "Watrous Fire",
+      "description": "Broadcastify public safety feed 38116 for New Mexico.",
+      "city": "",
+      "county": "Various",
+      "state": "NM",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new mexico",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38116"
+    },
+    {
+      "id": "bf-27830-ocate-fire",
+      "name": "Ocate Fire",
+      "description": "Broadcastify public safety feed 27830 for New Mexico.",
+      "city": "",
+      "county": "Various",
+      "state": "NM",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new mexico",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/27830"
+    },
+    {
+      "id": "bf-31464-luna-county-fire",
+      "name": "Luna County Fire",
+      "description": "Broadcastify public safety feed 31464 for New Mexico.",
+      "city": "",
+      "county": "Various",
+      "state": "NM",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new mexico",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/31464"
+    },
+    {
+      "id": "bf-46857-los-alamos-police-and-fire",
+      "name": "Los Alamos Police and Fire",
+      "description": "Broadcastify public safety feed 46857 for New Mexico.",
+      "city": "",
+      "county": "Various",
+      "state": "NM",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new mexico",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46857"
+    },
+    {
+      "id": "bf-43588-ruidoso-police-department",
+      "name": "Ruidoso Police Department",
+      "description": "Broadcastify public safety feed 43588 for New Mexico.",
+      "city": "",
+      "county": "Various",
+      "state": "NM",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new mexico",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43588"
+    },
+    {
+      "id": "bf-27575-lincoln-county-sheriff",
+      "name": "Lincoln County Sheriff",
+      "description": "Broadcastify public safety feed 27575 for New Mexico.",
+      "city": "",
+      "county": "Various",
+      "state": "NM",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new mexico",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/27575"
+    },
+    {
+      "id": "bf-41810-sacramento-mountains-sheriff-and-fire-ems",
+      "name": "Sacramento Mountains Sheriff and Fire/EMS",
+      "description": "Broadcastify public safety feed 41810 for New Mexico.",
+      "city": "",
+      "county": "Various",
+      "state": "NM",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new mexico",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41810"
+    },
+    {
+      "id": "bf-20288-raids-fire",
+      "name": "Raids Fire",
+      "description": "Broadcastify public safety feed 20288 for New Mexico.",
+      "city": "",
+      "county": "Various",
+      "state": "NM",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new mexico",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/20288"
+    },
+    {
+      "id": "bf-17263-lincoln-county-ems",
+      "name": "Lincoln County EMS",
+      "description": "Broadcastify public safety feed 17263 for New Mexico.",
+      "city": "",
+      "county": "Various",
+      "state": "NM",
+      "service_types": [
+        "dispatch",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new mexico",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/17263"
+    },
+    {
+      "id": "bf-45790-jal-fire-and-rescue",
+      "name": "Jal Fire and Rescue",
+      "description": "Broadcastify public safety feed 45790 for New Mexico.",
+      "city": "",
+      "county": "Various",
+      "state": "NM",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new mexico",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45790"
+    },
+    {
+      "id": "bf-40615-lovington-fire",
+      "name": "Lovington Fire",
+      "description": "Broadcastify public safety feed 40615 for New Mexico.",
+      "city": "",
+      "county": "Various",
+      "state": "NM",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new mexico",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40615"
+    },
+    {
+      "id": "bf-36787-lea-county-regional-air",
+      "name": "Lea County Regional Air",
+      "description": "Broadcastify public safety feed 36787 for New Mexico.",
+      "city": "",
+      "county": "Various",
+      "state": "NM",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new mexico"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/36787"
+    },
+    {
+      "id": "bf-28040-eunice-fire-and-ems",
+      "name": "Eunice Fire and EMS",
+      "description": "Broadcastify public safety feed 28040 for New Mexico.",
+      "city": "",
+      "county": "Various",
+      "state": "NM",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new mexico",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/28040"
+    },
+    {
+      "id": "bf-19312-monument-fire",
+      "name": "Monument Fire",
+      "description": "Broadcastify public safety feed 19312 for New Mexico.",
+      "city": "",
+      "county": "Various",
+      "state": "NM",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new mexico",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/19312"
+    },
+    {
+      "id": "bf-19197-tatum-fire",
+      "name": "Tatum Fire",
+      "description": "Broadcastify public safety feed 19197 for New Mexico.",
+      "city": "",
+      "county": "Various",
+      "state": "NM",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new mexico",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/19197"
+    }
+  ]
+}

@@ -1,0 +1,2279 @@
+{
+  "channels": [
+    {
+      "id": "bf-32602-indianapolis-metropolitan-police",
+      "name": "Indianapolis Metropolitan Police",
+      "description": "Broadcastify public safety feed 32602 for Louisiana.",
+      "city": "",
+      "county": "Various",
+      "state": "LA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "louisiana",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32602"
+    },
+    {
+      "id": "bf-5342-natchitoches-parish-sabine-parish-and-vern",
+      "name": "Natchitoches Parish, Sabine Parish, and Vernon Parish Public Safety",
+      "description": "Broadcastify public safety feed 5342 for Louisiana.",
+      "city": "",
+      "county": "Various",
+      "state": "LA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "louisiana"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/5342"
+    },
+    {
+      "id": "bf-22058-ouachita-parish-public-safety",
+      "name": "Ouachita Parish Public Safety",
+      "description": "Broadcastify public safety feed 22058 for Louisiana.",
+      "city": "",
+      "county": "Various",
+      "state": "LA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "louisiana"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/22058"
+    },
+    {
+      "id": "bf-34954-lafourche-public-safety",
+      "name": "Lafourche Public Safety",
+      "description": "Broadcastify public safety feed 34954 for Louisiana.",
+      "city": "",
+      "county": "Various",
+      "state": "LA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "louisiana"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/34954"
+    },
+    {
+      "id": "bf-38038-caldwell-parish-law-enforcement",
+      "name": "Caldwell Parish Law Enforcement",
+      "description": "Broadcastify public safety feed 38038 for Louisiana.",
+      "city": "",
+      "county": "Various",
+      "state": "LA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "louisiana",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38038"
+    },
+    {
+      "id": "bf-34938-metro-new-orleans-area-fire-departments",
+      "name": "Metro New Orleans Area Fire Departments",
+      "description": "Broadcastify public safety feed 34938 for Louisiana.",
+      "city": "",
+      "county": "Various",
+      "state": "LA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "louisiana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/34938"
+    },
+    {
+      "id": "bf-549-new-orleans-fire",
+      "name": "New Orleans Fire",
+      "description": "Broadcastify public safety feed 549 for Louisiana.",
+      "city": "",
+      "county": "Various",
+      "state": "LA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "louisiana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/549"
+    },
+    {
+      "id": "bf-40537-bossier-parish-fire",
+      "name": "Bossier Parish Fire",
+      "description": "Broadcastify public safety feed 40537 for Louisiana.",
+      "city": "",
+      "county": "Various",
+      "state": "LA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "louisiana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40537"
+    },
+    {
+      "id": "bf-26972-desoto-fire-district-8",
+      "name": "DeSoto Fire District 8",
+      "description": "Broadcastify public safety feed 26972 for Louisiana.",
+      "city": "",
+      "county": "Various",
+      "state": "LA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "louisiana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/26972"
+    },
+    {
+      "id": "bf-26086-jennings-fire",
+      "name": "Jennings Fire",
+      "description": "Broadcastify public safety feed 26086 for Louisiana.",
+      "city": "",
+      "county": "Various",
+      "state": "LA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "louisiana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/26086"
+    },
+    {
+      "id": "bf-18965-lincoln-parish-fire",
+      "name": "Lincoln Parish Fire",
+      "description": "Broadcastify public safety feed 18965 for Louisiana.",
+      "city": "",
+      "county": "Various",
+      "state": "LA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "louisiana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/18965"
+    },
+    {
+      "id": "bf-16545-alpine-volunteer-fire-dispatch",
+      "name": "Alpine Volunteer Fire Dispatch",
+      "description": "Broadcastify public safety feed 16545 for Louisiana.",
+      "city": "",
+      "county": "Various",
+      "state": "LA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "louisiana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/16545"
+    },
+    {
+      "id": "bf-38801-aefpd-fire",
+      "name": "AEFPD Fire",
+      "description": "Broadcastify public safety feed 38801 for Louisiana.",
+      "city": "",
+      "county": "Various",
+      "state": "LA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "louisiana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38801"
+    },
+    {
+      "id": "bf-28275-north-bienville-fire",
+      "name": "North Bienville Fire",
+      "description": "Broadcastify public safety feed 28275 for Louisiana.",
+      "city": "",
+      "county": "Various",
+      "state": "LA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "louisiana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/28275"
+    },
+    {
+      "id": "bf-24246-bossier-county-fire-dist-1",
+      "name": "Bossier County Fire Dist 1",
+      "description": "Broadcastify public safety feed 24246 for Louisiana.",
+      "city": "",
+      "county": "Various",
+      "state": "LA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "louisiana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/24246"
+    },
+    {
+      "id": "bf-36794-benton-fire-district-4",
+      "name": "Benton Fire District #4",
+      "description": "Broadcastify public safety feed 36794 for Louisiana.",
+      "city": "",
+      "county": "Various",
+      "state": "LA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "louisiana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/36794"
+    },
+    {
+      "id": "bf-40724-caddo-fire-district-1",
+      "name": "Caddo Fire District 1",
+      "description": "Broadcastify public safety feed 40724 for Louisiana.",
+      "city": "",
+      "county": "Various",
+      "state": "LA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "louisiana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40724"
+    },
+    {
+      "id": "bf-36742-catahoula-dispatch",
+      "name": "Catahoula Dispatch",
+      "description": "Broadcastify public safety feed 36742 for Louisiana.",
+      "city": "",
+      "county": "Various",
+      "state": "LA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "louisiana"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/36742"
+    },
+    {
+      "id": "bf-43907-bluff-creek-fire",
+      "name": "Bluff Creek Fire",
+      "description": "Broadcastify public safety feed 43907 for Louisiana.",
+      "city": "",
+      "county": "Various",
+      "state": "LA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "louisiana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43907"
+    },
+    {
+      "id": "bf-18945-ville-platte-fire",
+      "name": "Ville Platte Fire",
+      "description": "Broadcastify public safety feed 18945 for Louisiana.",
+      "city": "",
+      "county": "Various",
+      "state": "LA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "louisiana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/18945"
+    },
+    {
+      "id": "bf-20035-ward-5-fire-protection-district",
+      "name": "Ward 5 Fire Protection District",
+      "description": "Broadcastify public safety feed 20035 for Louisiana.",
+      "city": "",
+      "county": "Various",
+      "state": "LA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "louisiana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/20035"
+    },
+    {
+      "id": "bf-24909-ward-4-fire-protection-district",
+      "name": "Ward 4 Fire Protection District",
+      "description": "Broadcastify public safety feed 24909 for Louisiana.",
+      "city": "",
+      "county": "Various",
+      "state": "LA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "louisiana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/24909"
+    },
+    {
+      "id": "bf-24724-jeff-davis-fire-district-2",
+      "name": "Jeff Davis Fire District 2",
+      "description": "Broadcastify public safety feed 24724 for Louisiana.",
+      "city": "",
+      "county": "Various",
+      "state": "LA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "louisiana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/24724"
+    },
+    {
+      "id": "bf-33935-welsh-fire",
+      "name": "Welsh Fire",
+      "description": "Broadcastify public safety feed 33935 for Louisiana.",
+      "city": "",
+      "county": "Various",
+      "state": "LA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "louisiana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/33935"
+    },
+    {
+      "id": "bf-25503-thibodaux-volunteer-fire",
+      "name": "Thibodaux Volunteer Fire",
+      "description": "Broadcastify public safety feed 25503 for Louisiana.",
+      "city": "",
+      "county": "Various",
+      "state": "LA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "louisiana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/25503"
+    },
+    {
+      "id": "bf-21083-madison-parish-fire",
+      "name": "Madison Parish Fire",
+      "description": "Broadcastify public safety feed 21083 for Louisiana.",
+      "city": "",
+      "county": "Various",
+      "state": "LA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "louisiana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/21083"
+    },
+    {
+      "id": "bf-18017-pointe-coupee-fire-district-4",
+      "name": "Pointe Coupee Fire District 4",
+      "description": "Broadcastify public safety feed 18017 for Louisiana.",
+      "city": "",
+      "county": "Various",
+      "state": "LA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "louisiana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/18017"
+    },
+    {
+      "id": "bf-41115-st-landry-fire",
+      "name": "St Landry Fire",
+      "description": "Broadcastify public safety feed 41115 for Louisiana.",
+      "city": "",
+      "county": "Various",
+      "state": "LA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "louisiana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41115"
+    },
+    {
+      "id": "bf-21633-st-martin-parish-fire",
+      "name": "St Martin Parish Fire",
+      "description": "Broadcastify public safety feed 21633 for Louisiana.",
+      "city": "",
+      "county": "Various",
+      "state": "LA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "louisiana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/21633"
+    },
+    {
+      "id": "bf-19981-st-mary-parish-fire-protection-district",
+      "name": "St Mary Parish Fire Protection District",
+      "description": "Broadcastify public safety feed 19981 for Louisiana.",
+      "city": "",
+      "county": "Various",
+      "state": "LA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "louisiana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/19981"
+    },
+    {
+      "id": "bf-25224-bayou-vista-volunteer-fire",
+      "name": "Bayou Vista Volunteer Fire",
+      "description": "Broadcastify public safety feed 25224 for Louisiana.",
+      "city": "",
+      "county": "Various",
+      "state": "LA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "louisiana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/25224"
+    },
+    {
+      "id": "bf-25915-baldwin-fire",
+      "name": "Baldwin Fire",
+      "description": "Broadcastify public safety feed 25915 for Louisiana.",
+      "city": "",
+      "county": "Various",
+      "state": "LA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "louisiana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/25915"
+    },
+    {
+      "id": "bf-29746-patterson-volunteer-fire",
+      "name": "Patterson Volunteer Fire",
+      "description": "Broadcastify public safety feed 29746 for Louisiana.",
+      "city": "",
+      "county": "Various",
+      "state": "LA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "louisiana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/29746"
+    },
+    {
+      "id": "bf-30455-franklin-fire",
+      "name": "Franklin Fire",
+      "description": "Broadcastify public safety feed 30455 for Louisiana.",
+      "city": "",
+      "county": "Various",
+      "state": "LA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "louisiana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/30455"
+    },
+    {
+      "id": "bf-32052-berwick-fire",
+      "name": "Berwick Fire",
+      "description": "Broadcastify public safety feed 32052 for Louisiana.",
+      "city": "",
+      "county": "Various",
+      "state": "LA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "louisiana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32052"
+    },
+    {
+      "id": "bf-37668-morgan-city-fire",
+      "name": "Morgan City Fire",
+      "description": "Broadcastify public safety feed 37668 for Louisiana.",
+      "city": "",
+      "county": "Various",
+      "state": "LA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "louisiana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37668"
+    },
+    {
+      "id": "bf-42318-amelia-fire",
+      "name": "Amelia Fire",
+      "description": "Broadcastify public safety feed 42318 for Louisiana.",
+      "city": "",
+      "county": "Various",
+      "state": "LA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "louisiana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42318"
+    },
+    {
+      "id": "bf-46786-east-st-mary-parish-public-safety",
+      "name": "East St. Mary Parish Public Safety",
+      "description": "Broadcastify public safety feed 46786 for Louisiana.",
+      "city": "",
+      "county": "Various",
+      "state": "LA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "louisiana"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46786"
+    },
+    {
+      "id": "bf-28688-tensas-parish-fire-protection-district-1",
+      "name": "Tensas Parish Fire Protection District 1",
+      "description": "Broadcastify public safety feed 28688 for Louisiana.",
+      "city": "",
+      "county": "Various",
+      "state": "LA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "louisiana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/28688"
+    },
+    {
+      "id": "bf-28600-bernice-fire",
+      "name": "Bernice Fire",
+      "description": "Broadcastify public safety feed 28600 for Louisiana.",
+      "city": "",
+      "county": "Various",
+      "state": "LA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "louisiana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/28600"
+    },
+    {
+      "id": "bf-41403-washington-parish-fire",
+      "name": "Washington Parish Fire",
+      "description": "Broadcastify public safety feed 41403 for Louisiana.",
+      "city": "",
+      "county": "Various",
+      "state": "LA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "louisiana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41403"
+    },
+    {
+      "id": "bf-43498-acadia-fpd",
+      "name": "Acadia FPD",
+      "description": "Broadcastify public safety feed 43498 for Louisiana.",
+      "city": "",
+      "county": "Various",
+      "state": "LA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "louisiana"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43498"
+    },
+    {
+      "id": "bf-37664-oakdale-fire",
+      "name": "Oakdale Fire",
+      "description": "Broadcastify public safety feed 37664 for Louisiana.",
+      "city": "",
+      "county": "Various",
+      "state": "LA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "louisiana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37664"
+    },
+    {
+      "id": "bf-22989-bienville-parish-fire-4-and-5",
+      "name": "Bienville Parish Fire 4 and 5",
+      "description": "Broadcastify public safety feed 22989 for Louisiana.",
+      "city": "",
+      "county": "Various",
+      "state": "LA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "louisiana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/22989"
+    },
+    {
+      "id": "bf-26342-bienville-parish-fire-district-6",
+      "name": "Bienville Parish Fire District 6",
+      "description": "Broadcastify public safety feed 26342 for Louisiana.",
+      "city": "",
+      "county": "Various",
+      "state": "LA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "louisiana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/26342"
+    },
+    {
+      "id": "bf-39697-bienville-fire-district-7",
+      "name": "Bienville Fire District 7",
+      "description": "Broadcastify public safety feed 39697 for Louisiana.",
+      "city": "",
+      "county": "Various",
+      "state": "LA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "louisiana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39697"
+    },
+    {
+      "id": "bf-36258-northeast-bossier-parish-fire-district-5",
+      "name": "Northeast Bossier Parish Fire District 5",
+      "description": "Broadcastify public safety feed 36258 for Louisiana.",
+      "city": "",
+      "county": "Various",
+      "state": "LA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "louisiana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/36258"
+    },
+    {
+      "id": "bf-37573-south-bossier-fire-district-2",
+      "name": "South Bossier Fire District 2",
+      "description": "Broadcastify public safety feed 37573 for Louisiana.",
+      "city": "",
+      "county": "Various",
+      "state": "LA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "louisiana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37573"
+    },
+    {
+      "id": "bf-23492-caddo-parish-fire-district-6",
+      "name": "Caddo Parish Fire District 6",
+      "description": "Broadcastify public safety feed 23492 for Louisiana.",
+      "city": "",
+      "county": "Various",
+      "state": "LA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "louisiana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/23492"
+    },
+    {
+      "id": "bf-34394-caddo-fire-district-7",
+      "name": "Caddo Fire District 7",
+      "description": "Broadcastify public safety feed 34394 for Louisiana.",
+      "city": "",
+      "county": "Various",
+      "state": "LA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "louisiana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/34394"
+    },
+    {
+      "id": "bf-43765-north-caddo-medical",
+      "name": "North Caddo Medical",
+      "description": "Broadcastify public safety feed 43765 for Louisiana.",
+      "city": "",
+      "county": "Various",
+      "state": "LA",
+      "service_types": [
+        "dispatch",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "louisiana",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43765"
+    },
+    {
+      "id": "bf-45985-caldwell-fd",
+      "name": "Caldwell FD",
+      "description": "Broadcastify public safety feed 45985 for Louisiana.",
+      "city": "",
+      "county": "Various",
+      "state": "LA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "louisiana"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45985"
+    },
+    {
+      "id": "bf-31424-klondike-fire",
+      "name": "Klondike Fire",
+      "description": "Broadcastify public safety feed 31424 for Louisiana.",
+      "city": "",
+      "county": "Various",
+      "state": "LA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "louisiana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/31424"
+    },
+    {
+      "id": "bf-46893-hackberryvfd",
+      "name": "HackberryVFD",
+      "description": "Broadcastify public safety feed 46893 for Louisiana.",
+      "city": "",
+      "county": "Various",
+      "state": "LA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "louisiana"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46893"
+    },
+    {
+      "id": "bf-29053-haynesville-fire",
+      "name": "Haynesville Fire",
+      "description": "Broadcastify public safety feed 29053 for Louisiana.",
+      "city": "",
+      "county": "Various",
+      "state": "LA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "louisiana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/29053"
+    },
+    {
+      "id": "bf-39143-claiborne-parish-fire-4",
+      "name": "Claiborne Parish Fire 4",
+      "description": "Broadcastify public safety feed 39143 for Louisiana.",
+      "city": "",
+      "county": "Various",
+      "state": "LA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "louisiana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39143"
+    },
+    {
+      "id": "bf-40870-evangeline-parish-fire",
+      "name": "Evangeline Parish Fire",
+      "description": "Broadcastify public safety feed 40870 for Louisiana.",
+      "city": "",
+      "county": "Various",
+      "state": "LA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "louisiana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40870"
+    },
+    {
+      "id": "bf-41651-crowville-fire",
+      "name": "Crowville Fire",
+      "description": "Broadcastify public safety feed 41651 for Louisiana.",
+      "city": "",
+      "county": "Various",
+      "state": "LA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "louisiana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41651"
+    },
+    {
+      "id": "bf-45713-district-3-fire",
+      "name": "District 3 Fire",
+      "description": "Broadcastify public safety feed 45713 for Louisiana.",
+      "city": "",
+      "county": "Various",
+      "state": "LA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "louisiana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45713"
+    },
+    {
+      "id": "bf-45990-dist-4-and-wisner-fd",
+      "name": "Dist 4 and Wisner FD",
+      "description": "Broadcastify public safety feed 45990 for Louisiana.",
+      "city": "",
+      "county": "Various",
+      "state": "LA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "louisiana"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45990"
+    },
+    {
+      "id": "bf-45991-dist-2",
+      "name": "Dist 2",
+      "description": "Broadcastify public safety feed 45991 for Louisiana.",
+      "city": "",
+      "county": "Various",
+      "state": "LA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "louisiana"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45991"
+    },
+    {
+      "id": "bf-45992-fp-rescue",
+      "name": "FP Rescue",
+      "description": "Broadcastify public safety feed 45992 for Louisiana.",
+      "city": "",
+      "county": "Various",
+      "state": "LA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "louisiana"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45992"
+    },
+    {
+      "id": "bf-45993-winnsboro-fd",
+      "name": "Winnsboro FD",
+      "description": "Broadcastify public safety feed 45993 for Louisiana.",
+      "city": "",
+      "county": "Various",
+      "state": "LA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "louisiana"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45993"
+    },
+    {
+      "id": "bf-35204-grant-parish-fire-district-6",
+      "name": "Grant Parish Fire District 6",
+      "description": "Broadcastify public safety feed 35204 for Louisiana.",
+      "city": "",
+      "county": "Various",
+      "state": "LA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "louisiana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/35204"
+    },
+    {
+      "id": "bf-46680-grant-parish-district-5",
+      "name": "Grant Parish District 5",
+      "description": "Broadcastify public safety feed 46680 for Louisiana.",
+      "city": "",
+      "county": "Various",
+      "state": "LA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "louisiana"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46680"
+    },
+    {
+      "id": "bf-45487-iberville-parish-public-safety",
+      "name": "Iberville Parish Public Safety",
+      "description": "Broadcastify public safety feed 45487 for Louisiana.",
+      "city": "",
+      "county": "Various",
+      "state": "LA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "louisiana"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45487"
+    },
+    {
+      "id": "bf-41048-hodge-fire",
+      "name": "Hodge Fire",
+      "description": "Broadcastify public safety feed 41048 for Louisiana.",
+      "city": "",
+      "county": "Various",
+      "state": "LA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "louisiana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41048"
+    },
+    {
+      "id": "bf-44638-jonesboro-fire",
+      "name": "Jonesboro Fire",
+      "description": "Broadcastify public safety feed 44638 for Louisiana.",
+      "city": "",
+      "county": "Various",
+      "state": "LA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "louisiana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44638"
+    },
+    {
+      "id": "bf-5424-louisiana-state-police-troops-b-c-l",
+      "name": "Louisiana State Police - Troops B, C, L",
+      "description": "Broadcastify public safety feed 5424 for Louisiana.",
+      "city": "",
+      "county": "Various",
+      "state": "LA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "louisiana",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/5424"
+    },
+    {
+      "id": "bf-25076-david-crockett-fire",
+      "name": "David Crockett Fire",
+      "description": "Broadcastify public safety feed 25076 for Louisiana.",
+      "city": "",
+      "county": "Various",
+      "state": "LA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "louisiana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/25076"
+    },
+    {
+      "id": "bf-42650-jefferson-parish-eastbank-fire-departments",
+      "name": "Jefferson Parish Eastbank Fire Departments",
+      "description": "Broadcastify public safety feed 42650 for Louisiana.",
+      "city": "",
+      "county": "Various",
+      "state": "LA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "louisiana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42650"
+    },
+    {
+      "id": "bf-46408-jefferson-parish-westbank-fire-departments",
+      "name": "Jefferson Parish - Westbank Fire Departments",
+      "description": "Broadcastify public safety feed 46408 for Louisiana.",
+      "city": "",
+      "county": "Various",
+      "state": "LA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "louisiana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46408"
+    },
+    {
+      "id": "bf-43060-lafourche-ambulance-fire-troop-c",
+      "name": "Lafourche/Ambulance/Fire/Troop C",
+      "description": "Broadcastify public safety feed 43060 for Louisiana.",
+      "city": "",
+      "county": "Various",
+      "state": "LA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "louisiana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43060"
+    },
+    {
+      "id": "bf-29934-la-salle-parish-public-safety",
+      "name": "La Salle Parish Public Safety",
+      "description": "Broadcastify public safety feed 29934 for Louisiana.",
+      "city": "",
+      "county": "Various",
+      "state": "LA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "louisiana"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/29934"
+    },
+    {
+      "id": "bf-43881-rogers-nebo-fire",
+      "name": "Rogers Nebo Fire",
+      "description": "Broadcastify public safety feed 43881 for Louisiana.",
+      "city": "",
+      "county": "Various",
+      "state": "LA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "louisiana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43881"
+    },
+    {
+      "id": "bf-45459-urania-fire",
+      "name": "Urania Fire",
+      "description": "Broadcastify public safety feed 45459 for Louisiana.",
+      "city": "",
+      "county": "Various",
+      "state": "LA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "louisiana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45459"
+    },
+    {
+      "id": "bf-16038-collinston-volunteer-fire-dispatch",
+      "name": "Collinston Volunteer Fire Dispatch",
+      "description": "Broadcastify public safety feed 16038 for Louisiana.",
+      "city": "",
+      "county": "Various",
+      "state": "LA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "louisiana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/16038"
+    },
+    {
+      "id": "bf-16877-sixth-ward-fire",
+      "name": "Sixth Ward Fire",
+      "description": "Broadcastify public safety feed 16877 for Louisiana.",
+      "city": "",
+      "county": "Various",
+      "state": "LA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "louisiana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/16877"
+    },
+    {
+      "id": "bf-20432-5th-ward-fire",
+      "name": "5th Ward Fire",
+      "description": "Broadcastify public safety feed 20432 for Louisiana.",
+      "city": "",
+      "county": "Various",
+      "state": "LA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "louisiana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/20432"
+    },
+    {
+      "id": "bf-20631-10th-ward-fpd-1",
+      "name": "10th Ward FPD 1",
+      "description": "Broadcastify public safety feed 20631 for Louisiana.",
+      "city": "",
+      "county": "Various",
+      "state": "LA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "louisiana"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/20631"
+    },
+    {
+      "id": "bf-26345-ward-2-fire-district-1",
+      "name": "Ward 2 Fire District 1",
+      "description": "Broadcastify public safety feed 26345 for Louisiana.",
+      "city": "",
+      "county": "Various",
+      "state": "LA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "louisiana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/26345"
+    },
+    {
+      "id": "bf-15327-rapides-parish-fire-district-6",
+      "name": "Rapides Parish Fire District 6",
+      "description": "Broadcastify public safety feed 15327 for Louisiana.",
+      "city": "",
+      "county": "Various",
+      "state": "LA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "louisiana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/15327"
+    },
+    {
+      "id": "bf-19396-woodworth-fire",
+      "name": "Woodworth Fire",
+      "description": "Broadcastify public safety feed 19396 for Louisiana.",
+      "city": "",
+      "county": "Various",
+      "state": "LA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "louisiana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/19396"
+    },
+    {
+      "id": "bf-22366-echo-poland-volunteer-fire",
+      "name": "Echo Poland Volunteer Fire",
+      "description": "Broadcastify public safety feed 22366 for Louisiana.",
+      "city": "",
+      "county": "Various",
+      "state": "LA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "louisiana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/22366"
+    },
+    {
+      "id": "bf-40300-rapides-d18",
+      "name": "Rapides D18",
+      "description": "Broadcastify public safety feed 40300 for Louisiana.",
+      "city": "",
+      "county": "Various",
+      "state": "LA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "louisiana"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40300"
+    },
+    {
+      "id": "bf-44362-rapides-parish-fpd-12",
+      "name": "Rapides Parish FPD 12",
+      "description": "Broadcastify public safety feed 44362 for Louisiana.",
+      "city": "",
+      "county": "Various",
+      "state": "LA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "louisiana"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44362"
+    },
+    {
+      "id": "bf-27733-richland-parish-fire-district-8",
+      "name": "Richland Parish Fire District 8",
+      "description": "Broadcastify public safety feed 27733 for Louisiana.",
+      "city": "",
+      "county": "Various",
+      "state": "LA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "louisiana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/27733"
+    },
+    {
+      "id": "bf-28201-mangham-fire-district",
+      "name": "Mangham Fire District",
+      "description": "Broadcastify public safety feed 28201 for Louisiana.",
+      "city": "",
+      "county": "Various",
+      "state": "LA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "louisiana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/28201"
+    },
+    {
+      "id": "bf-31224-holly-ridge-fire",
+      "name": "Holly Ridge Fire",
+      "description": "Broadcastify public safety feed 31224 for Louisiana.",
+      "city": "",
+      "county": "Various",
+      "state": "LA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "louisiana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/31224"
+    },
+    {
+      "id": "bf-33509-start-fire",
+      "name": "Start Fire",
+      "description": "Broadcastify public safety feed 33509 for Louisiana.",
+      "city": "",
+      "county": "Various",
+      "state": "LA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "louisiana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/33509"
+    },
+    {
+      "id": "bf-17526-south-sabine-fire",
+      "name": "South Sabine Fire",
+      "description": "Broadcastify public safety feed 17526 for Louisiana.",
+      "city": "",
+      "county": "Various",
+      "state": "LA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "louisiana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/17526"
+    },
+    {
+      "id": "bf-17998-north-sabine-fire",
+      "name": "North Sabine Fire",
+      "description": "Broadcastify public safety feed 17998 for Louisiana.",
+      "city": "",
+      "county": "Various",
+      "state": "LA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "louisiana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/17998"
+    },
+    {
+      "id": "bf-47434-patterson-police",
+      "name": "Patterson Police",
+      "description": "Broadcastify public safety feed 47434 for Louisiana.",
+      "city": "",
+      "county": "Various",
+      "state": "LA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "louisiana",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47434"
+    },
+    {
+      "id": "bf-47435-berwick-pd",
+      "name": "Berwick PD",
+      "description": "Broadcastify public safety feed 47435 for Louisiana.",
+      "city": "",
+      "county": "Various",
+      "state": "LA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "louisiana"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47435"
+    },
+    {
+      "id": "bf-47436-morgan-city-police-department",
+      "name": "Morgan City Police Department",
+      "description": "Broadcastify public safety feed 47436 for Louisiana.",
+      "city": "",
+      "county": "Various",
+      "state": "LA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "louisiana",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47436"
+    },
+    {
+      "id": "bf-47452-st-mary-parish-sheriff-office",
+      "name": "St. Mary Parish Sheriff Office",
+      "description": "Broadcastify public safety feed 47452 for Louisiana.",
+      "city": "",
+      "county": "Various",
+      "state": "LA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "louisiana",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47452"
+    },
+    {
+      "id": "bf-20286-farmersville-fire",
+      "name": "Farmersville Fire",
+      "description": "Broadcastify public safety feed 20286 for Louisiana.",
+      "city": "",
+      "county": "Various",
+      "state": "LA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "louisiana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/20286"
+    },
+    {
+      "id": "bf-26162-union-parish-ward-5-vfd-dispatch",
+      "name": "Union Parish Ward 5 VFD Dispatch",
+      "description": "Broadcastify public safety feed 26162 for Louisiana.",
+      "city": "",
+      "county": "Various",
+      "state": "LA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "louisiana"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/26162"
+    },
+    {
+      "id": "bf-45296-rocky-branch-crossroads-fd-dispatch",
+      "name": "Rocky Branch Crossroads FD Dispatch",
+      "description": "Broadcastify public safety feed 45296 for Louisiana.",
+      "city": "",
+      "county": "Various",
+      "state": "LA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "louisiana"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45296"
+    },
+    {
+      "id": "bf-47247-spearsville-fire",
+      "name": "Spearsville Fire",
+      "description": "Broadcastify public safety feed 47247 for Louisiana.",
+      "city": "",
+      "county": "Various",
+      "state": "LA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "louisiana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47247"
+    },
+    {
+      "id": "bf-20091-hornbeck-fire",
+      "name": "Hornbeck Fire",
+      "description": "Broadcastify public safety feed 20091 for Louisiana.",
+      "city": "",
+      "county": "Various",
+      "state": "LA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "louisiana",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/20091"
+    }
+  ]
+}

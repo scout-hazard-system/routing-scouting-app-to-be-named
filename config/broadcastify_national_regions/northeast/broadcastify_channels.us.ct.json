@@ -1,0 +1,2400 @@
+{
+  "channels": [
+    {
+      "id": "bf-32602-indianapolis-metropolitan-police",
+      "name": "Indianapolis Metropolitan Police",
+      "description": "Broadcastify public safety feed 32602 for Connecticut.",
+      "city": "",
+      "county": "Various",
+      "state": "CT",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "connecticut",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32602"
+    },
+    {
+      "id": "bf-9247-torrington-police-and-fire",
+      "name": "Torrington Police and Fire",
+      "description": "Broadcastify public safety feed 9247 for Connecticut.",
+      "city": "",
+      "county": "Various",
+      "state": "CT",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "connecticut",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/9247"
+    },
+    {
+      "id": "bf-7576-southern-rhode-island-and-southeastern-con",
+      "name": "Southern Rhode Island and Southeastern Connecticut Fire and EMS",
+      "description": "Broadcastify public safety feed 7576 for Connecticut.",
+      "city": "",
+      "county": "Various",
+      "state": "CT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "connecticut",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/7576"
+    },
+    {
+      "id": "bf-23775-litchfield-county-fire-and-ems-dispatch",
+      "name": "Litchfield County Fire and EMS Dispatch",
+      "description": "Broadcastify public safety feed 23775 for Connecticut.",
+      "city": "",
+      "county": "Various",
+      "state": "CT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "connecticut",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/23775"
+    },
+    {
+      "id": "bf-5684-lower-naugatuck-valley-fire-and-ems",
+      "name": "Lower Naugatuck Valley Fire and EMS",
+      "description": "Broadcastify public safety feed 5684 for Connecticut.",
+      "city": "",
+      "county": "Various",
+      "state": "CT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "connecticut",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/5684"
+    },
+    {
+      "id": "bf-28978-connecticut-state-police",
+      "name": "Connecticut State Police",
+      "description": "Broadcastify public safety feed 28978 for Connecticut.",
+      "city": "",
+      "county": "Various",
+      "state": "CT",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "connecticut",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/28978"
+    },
+    {
+      "id": "bf-42031-waterbury-police-and-fire",
+      "name": "Waterbury Police and Fire",
+      "description": "Broadcastify public safety feed 42031 for Connecticut.",
+      "city": "",
+      "county": "Various",
+      "state": "CT",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "connecticut",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42031"
+    },
+    {
+      "id": "bf-12357-waterford-police-fire-and-ems",
+      "name": "Waterford Police, Fire, and EMS",
+      "description": "Broadcastify public safety feed 12357 for Connecticut.",
+      "city": "",
+      "county": "Various",
+      "state": "CT",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "connecticut",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/12357"
+    },
+    {
+      "id": "bf-41875-hartford-police-fire-and-ems",
+      "name": "Hartford Police, Fire and EMS",
+      "description": "Broadcastify public safety feed 41875 for Connecticut.",
+      "city": "",
+      "county": "Various",
+      "state": "CT",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "connecticut",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41875"
+    },
+    {
+      "id": "bf-1813-newington-police-fire-and-ems",
+      "name": "Newington Police, Fire and EMS",
+      "description": "Broadcastify public safety feed 1813 for Connecticut.",
+      "city": "",
+      "county": "Various",
+      "state": "CT",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "connecticut",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/1813"
+    },
+    {
+      "id": "bf-14251-wallingford-fire",
+      "name": "Wallingford Fire",
+      "description": "Broadcastify public safety feed 14251 for Connecticut.",
+      "city": "",
+      "county": "Various",
+      "state": "CT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "connecticut",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/14251"
+    },
+    {
+      "id": "bf-42962-new-london-waterford-east-lyme-groton-fire",
+      "name": "New London, Waterford, East Lyme, Groton Fire Alarm",
+      "description": "Broadcastify public safety feed 42962 for Connecticut.",
+      "city": "",
+      "county": "Various",
+      "state": "CT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "connecticut",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42962"
+    },
+    {
+      "id": "bf-7131-enfield-police-fire-and-ems-connecticut-st",
+      "name": "Enfield Police, Fire and EMS, Connecticut State Police Troop H",
+      "description": "Broadcastify public safety feed 7131 for Connecticut.",
+      "city": "",
+      "county": "Various",
+      "state": "CT",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "connecticut",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/7131"
+    },
+    {
+      "id": "bf-44302-tolland-county-public-safety-csp",
+      "name": "Tolland County Public Safety / CSP",
+      "description": "Broadcastify public safety feed 44302 for Connecticut.",
+      "city": "",
+      "county": "Various",
+      "state": "CT",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "connecticut"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44302"
+    },
+    {
+      "id": "bf-19848-southington-police-and-fire",
+      "name": "Southington Police and Fire",
+      "description": "Broadcastify public safety feed 19848 for Connecticut.",
+      "city": "",
+      "county": "Various",
+      "state": "CT",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "connecticut",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/19848"
+    },
+    {
+      "id": "bf-31315-qvec-fire-and-ems",
+      "name": "QVEC Fire and EMS",
+      "description": "Broadcastify public safety feed 31315 for Connecticut.",
+      "city": "",
+      "county": "Various",
+      "state": "CT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "connecticut",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/31315"
+    },
+    {
+      "id": "bf-33516-danbury-fire-hq",
+      "name": "Danbury Fire HQ",
+      "description": "Broadcastify public safety feed 33516 for Connecticut.",
+      "city": "",
+      "county": "Various",
+      "state": "CT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "connecticut",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/33516"
+    },
+    {
+      "id": "bf-40926-bridgeport-fire",
+      "name": "Bridgeport Fire",
+      "description": "Broadcastify public safety feed 40926 for Connecticut.",
+      "city": "",
+      "county": "Various",
+      "state": "CT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "connecticut",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40926"
+    },
+    {
+      "id": "bf-14003-bristol-fire-and-ems-dispatch",
+      "name": "Bristol Fire and EMS Dispatch",
+      "description": "Broadcastify public safety feed 14003 for Connecticut.",
+      "city": "",
+      "county": "Various",
+      "state": "CT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "connecticut",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/14003"
+    },
+    {
+      "id": "bf-46115-branford-fire-department",
+      "name": "Branford Fire Department",
+      "description": "Broadcastify public safety feed 46115 for Connecticut.",
+      "city": "",
+      "county": "Various",
+      "state": "CT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "connecticut",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46115"
+    },
+    {
+      "id": "bf-35776-hartford-fire-department",
+      "name": "Hartford Fire Department",
+      "description": "Broadcastify public safety feed 35776 for Connecticut.",
+      "city": "",
+      "county": "Various",
+      "state": "CT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "connecticut",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/35776"
+    },
+    {
+      "id": "bf-35920-norwich-police-norwich-fire-montville-pd-c",
+      "name": "Norwich Police, Norwich Fire, Montville PD, CSP Troop E",
+      "description": "Broadcastify public safety feed 35920 for Connecticut.",
+      "city": "",
+      "county": "Various",
+      "state": "CT",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "connecticut",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/35920"
+    },
+    {
+      "id": "bf-43480-norwich-fire",
+      "name": "Norwich Fire",
+      "description": "Broadcastify public safety feed 43480 for Connecticut.",
+      "city": "",
+      "county": "Various",
+      "state": "CT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "connecticut",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43480"
+    },
+    {
+      "id": "bf-27204-stamford-fire-and-ems-digital",
+      "name": "Stamford Fire and EMS - Digital",
+      "description": "Broadcastify public safety feed 27204 for Connecticut.",
+      "city": "",
+      "county": "Various",
+      "state": "CT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "connecticut",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/27204"
+    },
+    {
+      "id": "bf-41867-west-hartford-police-fire-and-ems",
+      "name": "West Hartford Police, Fire and EMS",
+      "description": "Broadcastify public safety feed 41867 for Connecticut.",
+      "city": "",
+      "county": "Various",
+      "state": "CT",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "connecticut",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41867"
+    },
+    {
+      "id": "bf-45583-berlin-police",
+      "name": "Berlin Police",
+      "description": "Broadcastify public safety feed 45583 for Connecticut.",
+      "city": "",
+      "county": "Various",
+      "state": "CT",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "connecticut",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45583"
+    },
+    {
+      "id": "bf-33979-ansonia-derby-seymour-and-shelton-police",
+      "name": "Ansonia, Derby, Seymour and Shelton Police",
+      "description": "Broadcastify public safety feed 33979 for Connecticut.",
+      "city": "",
+      "county": "Various",
+      "state": "CT",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "connecticut",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/33979"
+    },
+    {
+      "id": "bf-22555-old-lyme-fire-and-ems",
+      "name": "Old Lyme Fire and EMS",
+      "description": "Broadcastify public safety feed 22555 for Connecticut.",
+      "city": "",
+      "county": "Various",
+      "state": "CT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "connecticut",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/22555"
+    },
+    {
+      "id": "bf-13376-willimantic-and-area-fire-police",
+      "name": "Willimantic and Area Fire/Police",
+      "description": "Broadcastify public safety feed 13376 for Connecticut.",
+      "city": "",
+      "county": "Various",
+      "state": "CT",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "connecticut",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/13376"
+    },
+    {
+      "id": "bf-30181-wethersfield-fire",
+      "name": "Wethersfield Fire",
+      "description": "Broadcastify public safety feed 30181 for Connecticut.",
+      "city": "",
+      "county": "Various",
+      "state": "CT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "connecticut",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/30181"
+    },
+    {
+      "id": "bf-41868-north-central-ct-police-fire-and-ems",
+      "name": "North Central CT Police, Fire and EMS",
+      "description": "Broadcastify public safety feed 41868 for Connecticut.",
+      "city": "",
+      "county": "Various",
+      "state": "CT",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "connecticut",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41868"
+    },
+    {
+      "id": "bf-15509-middlesex-county-fire-and-ems-northern",
+      "name": "Middlesex County Fire and EMS - Northern",
+      "description": "Broadcastify public safety feed 15509 for Connecticut.",
+      "city": "",
+      "county": "Various",
+      "state": "CT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "connecticut",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/15509"
+    },
+    {
+      "id": "bf-36666-plainfield-police-fire-and-ems",
+      "name": "Plainfield Police, Fire and EMS",
+      "description": "Broadcastify public safety feed 36666 for Connecticut.",
+      "city": "",
+      "county": "Various",
+      "state": "CT",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "connecticut",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/36666"
+    },
+    {
+      "id": "bf-32210-ct-state-police-qvec-middlesex-county-fire",
+      "name": "CT State Police, QVEC, Middlesex County Fire/EMS, Valley Shore Fire/EMS",
+      "description": "Broadcastify public safety feed 32210 for Connecticut.",
+      "city": "",
+      "county": "Various",
+      "state": "CT",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "connecticut",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32210"
+    },
+    {
+      "id": "bf-5712-stratford-fire-and-ems-analog",
+      "name": "Stratford Fire and EMS - Analog",
+      "description": "Broadcastify public safety feed 5712 for Connecticut.",
+      "city": "",
+      "county": "Various",
+      "state": "CT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "connecticut",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/5712"
+    },
+    {
+      "id": "bf-18266-south-central-region-area-fire-and-ems",
+      "name": "South Central Region Area Fire and EMS",
+      "description": "Broadcastify public safety feed 18266 for Connecticut.",
+      "city": "",
+      "county": "Various",
+      "state": "CT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "connecticut",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/18266"
+    },
+    {
+      "id": "bf-28049-ridgefield-fire",
+      "name": "Ridgefield Fire",
+      "description": "Broadcastify public safety feed 28049 for Connecticut.",
+      "city": "",
+      "county": "Various",
+      "state": "CT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "connecticut",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/28049"
+    },
+    {
+      "id": "bf-33161-connecticut-state-public-safety-troop-g-i-",
+      "name": "Connecticut State Public Safety (Troop G, I and DEEP)",
+      "description": "Broadcastify public safety feed 33161 for Connecticut.",
+      "city": "",
+      "county": "Various",
+      "state": "CT",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "connecticut"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/33161"
+    },
+    {
+      "id": "bf-19428-new-britain-fire-and-ems",
+      "name": "New Britain Fire and EMS",
+      "description": "Broadcastify public safety feed 19428 for Connecticut.",
+      "city": "",
+      "county": "Various",
+      "state": "CT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "connecticut",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/19428"
+    },
+    {
+      "id": "bf-20040-windsor-locks-police-fire-and-ems",
+      "name": "Windsor Locks Police, Fire and EMS",
+      "description": "Broadcastify public safety feed 20040 for Connecticut.",
+      "city": "",
+      "county": "Various",
+      "state": "CT",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "connecticut",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/20040"
+    },
+    {
+      "id": "bf-25087-middlesex-county-fire-and-ems-lower",
+      "name": "Middlesex County Fire and EMS - Lower",
+      "description": "Broadcastify public safety feed 25087 for Connecticut.",
+      "city": "",
+      "county": "Various",
+      "state": "CT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "connecticut",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/25087"
+    },
+    {
+      "id": "bf-30698-middlesex-county-fire-and-ems-central",
+      "name": "Middlesex County Fire and EMS - Central",
+      "description": "Broadcastify public safety feed 30698 for Connecticut.",
+      "city": "",
+      "county": "Various",
+      "state": "CT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "connecticut",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/30698"
+    },
+    {
+      "id": "bf-40033-milford-fire-department",
+      "name": "Milford Fire Department",
+      "description": "Broadcastify public safety feed 40033 for Connecticut.",
+      "city": "",
+      "county": "Various",
+      "state": "CT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "connecticut",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40033"
+    },
+    {
+      "id": "bf-31273-new-london-city-police-fire-and-ems-dispat",
+      "name": "New London City Police, Fire and EMS Dispatch",
+      "description": "Broadcastify public safety feed 31273 for Connecticut.",
+      "city": "",
+      "county": "Various",
+      "state": "CT",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "connecticut",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/31273"
+    },
+    {
+      "id": "bf-16093-life-star-air-medical-service",
+      "name": "LIFE STAR Air Medical Service",
+      "description": "Broadcastify public safety feed 16093 for Connecticut.",
+      "city": "",
+      "county": "Various",
+      "state": "CT",
+      "service_types": [
+        "dispatch",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "connecticut",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/16093"
+    },
+    {
+      "id": "bf-41968-bethel-fire-and-ems",
+      "name": "Bethel Fire and EMS",
+      "description": "Broadcastify public safety feed 41968 for Connecticut.",
+      "city": "",
+      "county": "Various",
+      "state": "CT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "connecticut",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41968"
+    },
+    {
+      "id": "bf-11979-berlin-fire-dispatch",
+      "name": "Berlin Fire Dispatch",
+      "description": "Broadcastify public safety feed 11979 for Connecticut.",
+      "city": "",
+      "county": "Various",
+      "state": "CT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "connecticut",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/11979"
+    },
+    {
+      "id": "bf-38120-simsbury-police-p25-ambulance",
+      "name": "Simsbury Police (P25) & Ambulance",
+      "description": "Broadcastify public safety feed 38120 for Connecticut.",
+      "city": "",
+      "county": "Various",
+      "state": "CT",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "connecticut",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38120"
+    },
+    {
+      "id": "bf-42103-middlesex-county-public-safety-clmrn-syste",
+      "name": "Middlesex County Public Safety (CLMRN System)",
+      "description": "Broadcastify public safety feed 42103 for Connecticut.",
+      "city": "",
+      "county": "Various",
+      "state": "CT",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "connecticut"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42103"
+    },
+    {
+      "id": "bf-26093-cheshire-police-and-fire-dispatch",
+      "name": "Cheshire Police and Fire Dispatch",
+      "description": "Broadcastify public safety feed 26093 for Connecticut.",
+      "city": "",
+      "county": "Various",
+      "state": "CT",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "connecticut",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/26093"
+    },
+    {
+      "id": "bf-30813-ansonia-and-derby-police-fire-and-ems",
+      "name": "Ansonia and Derby, Police, Fire and EMS",
+      "description": "Broadcastify public safety feed 30813 for Connecticut.",
+      "city": "",
+      "county": "Various",
+      "state": "CT",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "connecticut",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/30813"
+    },
+    {
+      "id": "bf-47104-meriden-fire-department",
+      "name": "Meriden Fire Department",
+      "description": "Broadcastify public safety feed 47104 for Connecticut.",
+      "city": "",
+      "county": "Various",
+      "state": "CT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "connecticut",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47104"
+    },
+    {
+      "id": "bf-35927-groton-ledyard-stonington-police-csp-troop",
+      "name": "Groton, Ledyard, Stonington Police, CSP Troop E",
+      "description": "Broadcastify public safety feed 35927 for Connecticut.",
+      "city": "",
+      "county": "Various",
+      "state": "CT",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "connecticut",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/35927"
+    },
+    {
+      "id": "bf-9079-tolland-county-fire-departments",
+      "name": "Tolland County Fire Departments",
+      "description": "Broadcastify public safety feed 9079 for Connecticut.",
+      "city": "",
+      "county": "Various",
+      "state": "CT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "connecticut",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/9079"
+    },
+    {
+      "id": "bf-19416-darien-fire-dispatch",
+      "name": "Darien Fire Dispatch",
+      "description": "Broadcastify public safety feed 19416 for Connecticut.",
+      "city": "",
+      "county": "Various",
+      "state": "CT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "connecticut",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/19416"
+    },
+    {
+      "id": "bf-10676-granby-and-windsor-public-safety",
+      "name": "Granby and Windsor Public Safety",
+      "description": "Broadcastify public safety feed 10676 for Connecticut.",
+      "city": "",
+      "county": "Various",
+      "state": "CT",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "connecticut"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/10676"
+    },
+    {
+      "id": "bf-11797-farmington-police-fire-and-ems",
+      "name": "Farmington Police, Fire and EMS",
+      "description": "Broadcastify public safety feed 11797 for Connecticut.",
+      "city": "",
+      "county": "Various",
+      "state": "CT",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "connecticut",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/11797"
+    },
+    {
+      "id": "bf-15635-hartford-tolland-and-middlesex-counties-fi",
+      "name": "Hartford, Tolland and Middlesex Counties Fire",
+      "description": "Broadcastify public safety feed 15635 for Connecticut.",
+      "city": "",
+      "county": "Various",
+      "state": "CT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "connecticut",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/15635"
+    },
+    {
+      "id": "bf-16014-simsbury-fire-dispatch",
+      "name": "Simsbury Fire Dispatch",
+      "description": "Broadcastify public safety feed 16014 for Connecticut.",
+      "city": "",
+      "county": "Various",
+      "state": "CT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "connecticut",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/16014"
+    },
+    {
+      "id": "bf-34188-plymouth-ems-and-plymouth-terryville-fire",
+      "name": "Plymouth EMS and Plymouth/Terryville Fire",
+      "description": "Broadcastify public safety feed 34188 for Connecticut.",
+      "city": "",
+      "county": "Various",
+      "state": "CT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "connecticut",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/34188"
+    },
+    {
+      "id": "bf-30491-east-hampton-marlborough-fire-ems",
+      "name": "East Hampton, Marlborough, FIRE/EMS",
+      "description": "Broadcastify public safety feed 30491 for Connecticut.",
+      "city": "",
+      "county": "Various",
+      "state": "CT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "connecticut",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/30491"
+    },
+    {
+      "id": "bf-8705-greater-new-haven-police",
+      "name": "Greater New Haven Police",
+      "description": "Broadcastify public safety feed 8705 for Connecticut.",
+      "city": "",
+      "county": "Various",
+      "state": "CT",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "connecticut",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/8705"
+    },
+    {
+      "id": "bf-25541-wolcott-fire",
+      "name": "Wolcott Fire",
+      "description": "Broadcastify public safety feed 25541 for Connecticut.",
+      "city": "",
+      "county": "Various",
+      "state": "CT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "connecticut",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/25541"
+    },
+    {
+      "id": "bf-35282-new-haven-fire-dispatch",
+      "name": "New Haven Fire Dispatch",
+      "description": "Broadcastify public safety feed 35282 for Connecticut.",
+      "city": "",
+      "county": "Various",
+      "state": "CT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "connecticut",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/35282"
+    },
+    {
+      "id": "bf-22977-colchester-fire-and-ems",
+      "name": "Colchester Fire and EMS",
+      "description": "Broadcastify public safety feed 22977 for Connecticut.",
+      "city": "",
+      "county": "Various",
+      "state": "CT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "connecticut",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/22977"
+    },
+    {
+      "id": "bf-2142-westport-fire",
+      "name": "Westport Fire",
+      "description": "Broadcastify public safety feed 2142 for Connecticut.",
+      "city": "",
+      "county": "Various",
+      "state": "CT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "connecticut",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/2142"
+    },
+    {
+      "id": "bf-18265-south-central-region-area-police",
+      "name": "South Central Region Area Police",
+      "description": "Broadcastify public safety feed 18265 for Connecticut.",
+      "city": "",
+      "county": "Various",
+      "state": "CT",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "connecticut",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/18265"
+    },
+    {
+      "id": "bf-22685-wilton-fire-dispatch-analog",
+      "name": "Wilton Fire Dispatch - Analog",
+      "description": "Broadcastify public safety feed 22685 for Connecticut.",
+      "city": "",
+      "county": "Various",
+      "state": "CT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "connecticut",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/22685"
+    },
+    {
+      "id": "bf-23854-norwalk-police-dispatch",
+      "name": "Norwalk Police Dispatch",
+      "description": "Broadcastify public safety feed 23854 for Connecticut.",
+      "city": "",
+      "county": "Various",
+      "state": "CT",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "connecticut",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/23854"
+    },
+    {
+      "id": "bf-30076-stevenson-fire",
+      "name": "Stevenson Fire",
+      "description": "Broadcastify public safety feed 30076 for Connecticut.",
+      "city": "",
+      "county": "Various",
+      "state": "CT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "connecticut",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/30076"
+    },
+    {
+      "id": "bf-39856-shelton-fire",
+      "name": "Shelton Fire",
+      "description": "Broadcastify public safety feed 39856 for Connecticut.",
+      "city": "",
+      "county": "Various",
+      "state": "CT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "connecticut",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39856"
+    },
+    {
+      "id": "bf-46859-litchfield-fairfield-county-fire-ems",
+      "name": "Litchfield / Fairfield County Fire/EMS",
+      "description": "Broadcastify public safety feed 46859 for Connecticut.",
+      "city": "",
+      "county": "Various",
+      "state": "CT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "connecticut",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46859"
+    },
+    {
+      "id": "bf-2421-east-hartford-police",
+      "name": "East Hartford Police",
+      "description": "Broadcastify public safety feed 2421 for Connecticut.",
+      "city": "",
+      "county": "Various",
+      "state": "CT",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "connecticut",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/2421"
+    },
+    {
+      "id": "bf-2915-south-windsor-fire-and-ems",
+      "name": "South Windsor Fire and EMS",
+      "description": "Broadcastify public safety feed 2915 for Connecticut.",
+      "city": "",
+      "county": "Various",
+      "state": "CT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "connecticut",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/2915"
+    },
+    {
+      "id": "bf-8690-east-windsor-fire-and-ems",
+      "name": "East Windsor Fire and EMS",
+      "description": "Broadcastify public safety feed 8690 for Connecticut.",
+      "city": "",
+      "county": "Various",
+      "state": "CT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "connecticut",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/8690"
+    },
+    {
+      "id": "bf-25889-manchester-fire-and-ems",
+      "name": "Manchester Fire and EMS",
+      "description": "Broadcastify public safety feed 25889 for Connecticut.",
+      "city": "",
+      "county": "Various",
+      "state": "CT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "connecticut",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/25889"
+    },
+    {
+      "id": "bf-36185-suffield-police-fire-and-ems",
+      "name": "Suffield Police, Fire and EMS",
+      "description": "Broadcastify public safety feed 36185 for Connecticut.",
+      "city": "",
+      "county": "Various",
+      "state": "CT",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "connecticut",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/36185"
+    },
+    {
+      "id": "bf-40378-blue-hills-fire",
+      "name": "Blue Hills Fire",
+      "description": "Broadcastify public safety feed 40378 for Connecticut.",
+      "city": "",
+      "county": "Various",
+      "state": "CT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "connecticut",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40378"
+    },
+    {
+      "id": "bf-46153-east-hartford-fire-department",
+      "name": "East Hartford Fire Department",
+      "description": "Broadcastify public safety feed 46153 for Connecticut.",
+      "city": "",
+      "county": "Various",
+      "state": "CT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "connecticut",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46153"
+    },
+    {
+      "id": "bf-5053-connecticut-state-police-and-bristol-fire-",
+      "name": "Connecticut State Police and Bristol Fire and EMS",
+      "description": "Broadcastify public safety feed 5053 for Connecticut.",
+      "city": "",
+      "county": "Various",
+      "state": "CT",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "connecticut",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/5053"
+    },
+    {
+      "id": "bf-18501-winchester-winsted-fire-response",
+      "name": "Winchester/Winsted Fire Response",
+      "description": "Broadcastify public safety feed 18501 for Connecticut.",
+      "city": "",
+      "county": "Various",
+      "state": "CT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "connecticut",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/18501"
+    },
+    {
+      "id": "bf-29340-thomaston-ambulance",
+      "name": "Thomaston Ambulance",
+      "description": "Broadcastify public safety feed 29340 for Connecticut.",
+      "city": "",
+      "county": "Various",
+      "state": "CT",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "connecticut"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/29340"
+    },
+    {
+      "id": "bf-20315-cromwell-police",
+      "name": "Cromwell Police",
+      "description": "Broadcastify public safety feed 20315 for Connecticut.",
+      "city": "",
+      "county": "Various",
+      "state": "CT",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "connecticut",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/20315"
+    },
+    {
+      "id": "bf-27490-east-haddam-fire-and-ems",
+      "name": "East Haddam Fire and EMS",
+      "description": "Broadcastify public safety feed 27490 for Connecticut.",
+      "city": "",
+      "county": "Various",
+      "state": "CT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "connecticut",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/27490"
+    },
+    {
+      "id": "bf-27793-cromwell-fire-and-ems",
+      "name": "Cromwell Fire and EMS",
+      "description": "Broadcastify public safety feed 27793 for Connecticut.",
+      "city": "",
+      "county": "Various",
+      "state": "CT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "connecticut",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/27793"
+    },
+    {
+      "id": "bf-41998-clinton-police",
+      "name": "Clinton Police",
+      "description": "Broadcastify public safety feed 41998 for Connecticut.",
+      "city": "",
+      "county": "Various",
+      "state": "CT",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "connecticut",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41998"
+    },
+    {
+      "id": "bf-4575-branford-fire",
+      "name": "Branford Fire",
+      "description": "Broadcastify public safety feed 4575 for Connecticut.",
+      "city": "",
+      "county": "Various",
+      "state": "CT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "connecticut",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/4575"
+    },
+    {
+      "id": "bf-15546-southbury-fire-dispatch",
+      "name": "Southbury Fire Dispatch",
+      "description": "Broadcastify public safety feed 15546 for Connecticut.",
+      "city": "",
+      "county": "Various",
+      "state": "CT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "connecticut",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/15546"
+    },
+    {
+      "id": "bf-24726-cheshire-fire",
+      "name": "Cheshire Fire",
+      "description": "Broadcastify public safety feed 24726 for Connecticut.",
+      "city": "",
+      "county": "Various",
+      "state": "CT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "connecticut",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/24726"
+    },
+    {
+      "id": "bf-32358-guilford-fire-and-police",
+      "name": "Guilford Fire and Police",
+      "description": "Broadcastify public safety feed 32358 for Connecticut.",
+      "city": "",
+      "county": "Various",
+      "state": "CT",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "connecticut",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32358"
+    },
+    {
+      "id": "bf-40377-seymour-fire",
+      "name": "Seymour Fire",
+      "description": "Broadcastify public safety feed 40377 for Connecticut.",
+      "city": "",
+      "county": "Various",
+      "state": "CT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "connecticut",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40377"
+    },
+    {
+      "id": "bf-42770-new-haven-fire-firegrounds",
+      "name": "New Haven Fire Firegrounds",
+      "description": "Broadcastify public safety feed 42770 for Connecticut.",
+      "city": "",
+      "county": "Various",
+      "state": "CT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "connecticut",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42770"
+    },
+    {
+      "id": "bf-30305-north-stonington-fire-and-ems",
+      "name": "North Stonington Fire and EMS",
+      "description": "Broadcastify public safety feed 30305 for Connecticut.",
+      "city": "",
+      "county": "Various",
+      "state": "CT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "connecticut",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/30305"
+    },
+    {
+      "id": "bf-44642-old-mystic-fire-operations",
+      "name": "Old Mystic Fire Operations",
+      "description": "Broadcastify public safety feed 44642 for Connecticut.",
+      "city": "",
+      "county": "Various",
+      "state": "CT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "connecticut",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44642"
+    },
+    {
+      "id": "bf-46099-groton-fire",
+      "name": "Groton Fire",
+      "description": "Broadcastify public safety feed 46099 for Connecticut.",
+      "city": "",
+      "county": "Various",
+      "state": "CT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "connecticut",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46099"
+    },
+    {
+      "id": "bf-36444-willimantic-fire",
+      "name": "Willimantic Fire",
+      "description": "Broadcastify public safety feed 36444 for Connecticut.",
+      "city": "",
+      "county": "Various",
+      "state": "CT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "connecticut",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/36444"
+    },
+    {
+      "id": "bf-45750-clmrn-sw-talkgroups",
+      "name": "CLMRN-SW TalkGroups",
+      "description": "Broadcastify public safety feed 45750 for Connecticut.",
+      "city": "",
+      "county": "Various",
+      "state": "CT",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "connecticut"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45750"
+    },
+    {
+      "id": "bf-20697-stamford-fire-analog",
+      "name": "Stamford Fire - Analog",
+      "description": "Broadcastify public safety feed 20697 for Connecticut.",
+      "city": "",
+      "county": "Various",
+      "state": "CT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "connecticut",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/20697"
+    },
+    {
+      "id": "bf-33515-danbury-fire-ops",
+      "name": "Danbury Fire Ops",
+      "description": "Broadcastify public safety feed 33515 for Connecticut.",
+      "city": "",
+      "county": "Various",
+      "state": "CT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "connecticut",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/33515"
+    },
+    {
+      "id": "bf-34486-shelton-fire-dispatch",
+      "name": "Shelton Fire Dispatch",
+      "description": "Broadcastify public safety feed 34486 for Connecticut.",
+      "city": "",
+      "county": "Various",
+      "state": "CT",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "connecticut",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/34486"
+    },
+    {
+      "id": "bf-37592-bridgeport-area-ems",
+      "name": "Bridgeport Area EMS",
+      "description": "Broadcastify public safety feed 37592 for Connecticut.",
+      "city": "",
+      "county": "Various",
+      "state": "CT",
+      "service_types": [
+        "dispatch",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "connecticut",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37592"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+[Unit]
+Description=Vehicle Scanner Stack (pipeline + backend + UI)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+WorkingDirectory=/home/gibi/Desktop
+Environment=VEHICLE_STACK_CONFIG_FILE=/home/gibi/Desktop/config/vehicle_stack.env
+ExecStart=/home/gibi/Desktop/run_vehicle_stack.sh start
+ExecStop=/home/gibi/Desktop/run_vehicle_stack.sh stop
+ExecReload=/home/gibi/Desktop/run_vehicle_stack.sh restart
+Restart=on-failure
+RestartSec=10
+StartLimitIntervalSec=120
+StartLimitBurst=5
+
+[Install]
+WantedBy=default.target

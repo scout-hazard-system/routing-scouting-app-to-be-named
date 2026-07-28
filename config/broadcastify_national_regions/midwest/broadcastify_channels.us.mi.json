@@ -1,0 +1,2340 @@
+{
+  "channels": [
+    {
+      "id": "bf-32602-indianapolis-metropolitan-police",
+      "name": "Indianapolis Metropolitan Police",
+      "description": "Broadcastify public safety feed 32602 for Michigan.",
+      "city": "",
+      "county": "Various",
+      "state": "MI",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "michigan",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32602"
+    },
+    {
+      "id": "bf-23096-monroe-county-sheriff-monroe-city-police-f",
+      "name": "Monroe County Sheriff, Monroe City Police, Fire and EMS Dispatch",
+      "description": "Broadcastify public safety feed 23096 for Michigan.",
+      "city": "",
+      "county": "Various",
+      "state": "MI",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "michigan",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/23096"
+    },
+    {
+      "id": "bf-30589-jackson-county-public-safety",
+      "name": "Jackson County Public Safety",
+      "description": "Broadcastify public safety feed 30589 for Michigan.",
+      "city": "",
+      "county": "Various",
+      "state": "MI",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "michigan"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/30589"
+    },
+    {
+      "id": "bf-41557-greater-lansing-area-public-safety",
+      "name": "Greater Lansing Area Public Safety",
+      "description": "Broadcastify public safety feed 41557 for Michigan.",
+      "city": "",
+      "county": "Various",
+      "state": "MI",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "michigan"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41557"
+    },
+    {
+      "id": "bf-13671-detroit-police-dispatch",
+      "name": "Detroit Police Dispatch",
+      "description": "Broadcastify public safety feed 13671 for Michigan.",
+      "city": "",
+      "county": "Various",
+      "state": "MI",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "michigan",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/13671"
+    },
+    {
+      "id": "bf-10911-eastern-upper-peninsula-public-safety",
+      "name": "Eastern Upper Peninsula Public Safety",
+      "description": "Broadcastify public safety feed 10911 for Michigan.",
+      "city": "",
+      "county": "Various",
+      "state": "MI",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "michigan"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/10911"
+    },
+    {
+      "id": "bf-21385-isabella-county-police-and-fire",
+      "name": "Isabella County Police and Fire",
+      "description": "Broadcastify public safety feed 21385 for Michigan.",
+      "city": "",
+      "county": "Various",
+      "state": "MI",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "michigan",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/21385"
+    },
+    {
+      "id": "bf-5266-ionia-county-sheriff-fire-and-ems",
+      "name": "Ionia County Sheriff, Fire and EMS",
+      "description": "Broadcastify public safety feed 5266 for Michigan.",
+      "city": "",
+      "county": "Various",
+      "state": "MI",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "michigan",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/5266"
+    },
+    {
+      "id": "bf-2783-north-central-michigan-counties-sheriff-po",
+      "name": "North Central Michigan Counties Sheriff, Police, Fire, MSP, DNR and EMS",
+      "description": "Broadcastify public safety feed 2783 for Michigan.",
+      "city": "",
+      "county": "Various",
+      "state": "MI",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "michigan",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/2783"
+    },
+    {
+      "id": "bf-23343-marquette-county-public-safety-dispatch",
+      "name": "Marquette County Public Safety Dispatch",
+      "description": "Broadcastify public safety feed 23343 for Michigan.",
+      "city": "",
+      "county": "Various",
+      "state": "MI",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "michigan"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/23343"
+    },
+    {
+      "id": "bf-39640-muskegon-county-police-dispatch",
+      "name": "Muskegon County Police Dispatch",
+      "description": "Broadcastify public safety feed 39640 for Michigan.",
+      "city": "",
+      "county": "Various",
+      "state": "MI",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "michigan",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39640"
+    },
+    {
+      "id": "bf-35207-lenawee-county-police-and-fire",
+      "name": "Lenawee County Police and Fire",
+      "description": "Broadcastify public safety feed 35207 for Michigan.",
+      "city": "",
+      "county": "Various",
+      "state": "MI",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "michigan",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/35207"
+    },
+    {
+      "id": "bf-29198-ottawa-county-public-safety-digital",
+      "name": "Ottawa County Public Safety - Digital",
+      "description": "Broadcastify public safety feed 29198 for Michigan.",
+      "city": "",
+      "county": "Various",
+      "state": "MI",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "michigan"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/29198"
+    },
+    {
+      "id": "bf-30088-st-clair-county-police-fire-and-ems-simulc",
+      "name": "St. Clair County Police, Fire and EMS Simulcast",
+      "description": "Broadcastify public safety feed 30088 for Michigan.",
+      "city": "",
+      "county": "Various",
+      "state": "MI",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "michigan",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/30088"
+    },
+    {
+      "id": "bf-6882-delta-county-law-fire-and-ems",
+      "name": "Delta County Law, Fire and EMS",
+      "description": "Broadcastify public safety feed 6882 for Michigan.",
+      "city": "",
+      "county": "Various",
+      "state": "MI",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "michigan",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/6882"
+    },
+    {
+      "id": "bf-24330-downriver-public-safety",
+      "name": "Downriver Public Safety",
+      "description": "Broadcastify public safety feed 24330 for Michigan.",
+      "city": "",
+      "county": "Various",
+      "state": "MI",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "michigan"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/24330"
+    },
+    {
+      "id": "bf-3671-st-joseph-county-sheriff-police-fire-and-e",
+      "name": "St. Joseph County Sheriff, Police, Fire and EMS",
+      "description": "Broadcastify public safety feed 3671 for Michigan.",
+      "city": "",
+      "county": "Various",
+      "state": "MI",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "michigan",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/3671"
+    },
+    {
+      "id": "bf-30114-livingston-county-police-fire-and-ems",
+      "name": "Livingston County Police, Fire and EMS",
+      "description": "Broadcastify public safety feed 30114 for Michigan.",
+      "city": "",
+      "county": "Various",
+      "state": "MI",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "michigan",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/30114"
+    },
+    {
+      "id": "bf-32245-washtenaw-county-metro-police-fire",
+      "name": "Washtenaw County Metro Police & Fire",
+      "description": "Broadcastify public safety feed 32245 for Michigan.",
+      "city": "",
+      "county": "Various",
+      "state": "MI",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "michigan",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32245"
+    },
+    {
+      "id": "bf-10622-kent-county-fire-and-ems",
+      "name": "Kent County Fire and EMS",
+      "description": "Broadcastify public safety feed 10622 for Michigan.",
+      "city": "",
+      "county": "Various",
+      "state": "MI",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "michigan",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/10622"
+    },
+    {
+      "id": "bf-22578-shiawassee-county-police-dispatch",
+      "name": "Shiawassee County Police Dispatch",
+      "description": "Broadcastify public safety feed 22578 for Michigan.",
+      "city": "",
+      "county": "Various",
+      "state": "MI",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "michigan",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/22578"
+    },
+    {
+      "id": "bf-34315-wayne-county-public-safety",
+      "name": "Wayne County Public Safety",
+      "description": "Broadcastify public safety feed 34315 for Michigan.",
+      "city": "",
+      "county": "Various",
+      "state": "MI",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "michigan"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/34315"
+    },
+    {
+      "id": "bf-36056-straits-area-public-safety",
+      "name": "Straits Area Public Safety",
+      "description": "Broadcastify public safety feed 36056 for Michigan.",
+      "city": "",
+      "county": "Various",
+      "state": "MI",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "michigan"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/36056"
+    },
+    {
+      "id": "bf-25924-otsego-county-sheriff-gaylord-police-msp-d",
+      "name": "Otsego County Sheriff, Gaylord Police, MSP District 7",
+      "description": "Broadcastify public safety feed 25924 for Michigan.",
+      "city": "",
+      "county": "Various",
+      "state": "MI",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "michigan",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/25924"
+    },
+    {
+      "id": "bf-5094-gratiot-county-police-and-fire",
+      "name": "Gratiot County Police and Fire",
+      "description": "Broadcastify public safety feed 5094 for Michigan.",
+      "city": "",
+      "county": "Various",
+      "state": "MI",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "michigan",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/5094"
+    },
+    {
+      "id": "bf-3503-allegan-county-police-fire-and-ems-convent",
+      "name": "Allegan County Police, Fire and EMS - Conventional / Digital",
+      "description": "Broadcastify public safety feed 3503 for Michigan.",
+      "city": "",
+      "county": "Various",
+      "state": "MI",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "michigan",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/3503"
+    },
+    {
+      "id": "bf-5849-barry-county-sheriff-fire-and-ems",
+      "name": "Barry County Sheriff, Fire, and EMS",
+      "description": "Broadcastify public safety feed 5849 for Michigan.",
+      "city": "",
+      "county": "Various",
+      "state": "MI",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "michigan",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/5849"
+    },
+    {
+      "id": "bf-41155-warren-police-and-fire-center-line-public-",
+      "name": "Warren Police and Fire, Center Line Public Safety",
+      "description": "Broadcastify public safety feed 41155 for Michigan.",
+      "city": "",
+      "county": "Various",
+      "state": "MI",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "michigan",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41155"
+    },
+    {
+      "id": "bf-23517-houghton-and-keweenaw-counties-police-fire",
+      "name": "Houghton and Keweenaw Counties Police, Fire and EMS",
+      "description": "Broadcastify public safety feed 23517 for Michigan.",
+      "city": "",
+      "county": "Various",
+      "state": "MI",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "michigan",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/23517"
+    },
+    {
+      "id": "bf-39042-hillsdale-county-public-safety",
+      "name": "Hillsdale County Public Safety",
+      "description": "Broadcastify public safety feed 39042 for Michigan.",
+      "city": "",
+      "county": "Various",
+      "state": "MI",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "michigan"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39042"
+    },
+    {
+      "id": "bf-18629-detroit-fire",
+      "name": "Detroit Fire",
+      "description": "Broadcastify public safety feed 18629 for Michigan.",
+      "city": "",
+      "county": "Various",
+      "state": "MI",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "michigan",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/18629"
+    },
+    {
+      "id": "bf-32597-oscoda-county-and-surrounding-area-police-",
+      "name": "Oscoda County and Surrounding Area Police, Fire, and EMS",
+      "description": "Broadcastify public safety feed 32597 for Michigan.",
+      "city": "",
+      "county": "Various",
+      "state": "MI",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "michigan",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32597"
+    },
+    {
+      "id": "bf-10651-traverse-city-and-grand-traverse-county-di",
+      "name": "Traverse City and Grand Traverse County District 7 MSP Digital Fire / Police",
+      "description": "Broadcastify public safety feed 10651 for Michigan.",
+      "city": "",
+      "county": "Various",
+      "state": "MI",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "michigan",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/10651"
+    },
+    {
+      "id": "bf-31502-kalamazoo-county-fire-and-msp-district-5",
+      "name": "Kalamazoo County Fire and MSP District 5",
+      "description": "Broadcastify public safety feed 31502 for Michigan.",
+      "city": "",
+      "county": "Various",
+      "state": "MI",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "michigan",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/31502"
+    },
+    {
+      "id": "bf-44058-manistee-county-public-safety",
+      "name": "Manistee County Public Safety",
+      "description": "Broadcastify public safety feed 44058 for Michigan.",
+      "city": "",
+      "county": "Various",
+      "state": "MI",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "michigan"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44058"
+    },
+    {
+      "id": "bf-38591-muskegon-county-police-fire-and-ems",
+      "name": "Muskegon County Police, Fire, and EMS",
+      "description": "Broadcastify public safety feed 38591 for Michigan.",
+      "city": "",
+      "county": "Various",
+      "state": "MI",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "michigan",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38591"
+    },
+    {
+      "id": "bf-40914-montcalm-county-police-fire",
+      "name": "Montcalm County Police & Fire",
+      "description": "Broadcastify public safety feed 40914 for Michigan.",
+      "city": "",
+      "county": "Various",
+      "state": "MI",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "michigan",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40914"
+    },
+    {
+      "id": "bf-23336-newaygo-county-public-safety",
+      "name": "Newaygo County Public Safety",
+      "description": "Broadcastify public safety feed 23336 for Michigan.",
+      "city": "",
+      "county": "Various",
+      "state": "MI",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "michigan"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/23336"
+    },
+    {
+      "id": "bf-40561-cheboygan-county-public-safety",
+      "name": "Cheboygan County Public Safety",
+      "description": "Broadcastify public safety feed 40561 for Michigan.",
+      "city": "",
+      "county": "Various",
+      "state": "MI",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "michigan"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40561"
+    },
+    {
+      "id": "bf-18842-gogebic-county-fire-and-ems",
+      "name": "Gogebic County Fire and EMS",
+      "description": "Broadcastify public safety feed 18842 for Michigan.",
+      "city": "",
+      "county": "Various",
+      "state": "MI",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "michigan",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/18842"
+    },
+    {
+      "id": "bf-17927-huron-county-fire-and-ems",
+      "name": "Huron County Fire and EMS",
+      "description": "Broadcastify public safety feed 17927 for Michigan.",
+      "city": "",
+      "county": "Various",
+      "state": "MI",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "michigan",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/17927"
+    },
+    {
+      "id": "bf-683-kalamazoo-city-township-and-county-fire-di",
+      "name": "Kalamazoo City, Township and County Fire Dispatch",
+      "description": "Broadcastify public safety feed 683 for Michigan.",
+      "city": "",
+      "county": "Various",
+      "state": "MI",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "michigan",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/683"
+    },
+    {
+      "id": "bf-40564-mackinac-county-public-safety",
+      "name": "Mackinac County Public Safety",
+      "description": "Broadcastify public safety feed 40564 for Michigan.",
+      "city": "",
+      "county": "Various",
+      "state": "MI",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "michigan"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40564"
+    },
+    {
+      "id": "bf-43093-westland-garden-city-police-and-fire",
+      "name": "Westland-Garden City Police and Fire",
+      "description": "Broadcastify public safety feed 43093 for Michigan.",
+      "city": "",
+      "county": "Various",
+      "state": "MI",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "michigan",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43093"
+    },
+    {
+      "id": "bf-35466-charlevoix-county-public-safety",
+      "name": "Charlevoix County Public Safety",
+      "description": "Broadcastify public safety feed 35466 for Michigan.",
+      "city": "",
+      "county": "Various",
+      "state": "MI",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "michigan"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/35466"
+    },
+    {
+      "id": "bf-27762-emmet-county-police-dispatch",
+      "name": "Emmet County Police Dispatch",
+      "description": "Broadcastify public safety feed 27762 for Michigan.",
+      "city": "",
+      "county": "Various",
+      "state": "MI",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "michigan",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/27762"
+    },
+    {
+      "id": "bf-7792-genesee-county-fire",
+      "name": "Genesee County Fire",
+      "description": "Broadcastify public safety feed 7792 for Michigan.",
+      "city": "",
+      "county": "Various",
+      "state": "MI",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "michigan",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/7792"
+    },
+    {
+      "id": "bf-28121-kalkaska-county-police-and-fire-dispatch",
+      "name": "Kalkaska County Police and Fire Dispatch",
+      "description": "Broadcastify public safety feed 28121 for Michigan.",
+      "city": "",
+      "county": "Various",
+      "state": "MI",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "michigan",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/28121"
+    },
+    {
+      "id": "bf-34829-muskegon-county-fire-dispatch",
+      "name": "Muskegon County Fire Dispatch",
+      "description": "Broadcastify public safety feed 34829 for Michigan.",
+      "city": "",
+      "county": "Various",
+      "state": "MI",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "michigan",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/34829"
+    },
+    {
+      "id": "bf-43148-berrien-county-met-north-public-safety",
+      "name": "Berrien County Met North Public Safety",
+      "description": "Broadcastify public safety feed 43148 for Michigan.",
+      "city": "",
+      "county": "Various",
+      "state": "MI",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "michigan"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43148"
+    },
+    {
+      "id": "bf-39245-branch-county-public-safety",
+      "name": "Branch County Public Safety",
+      "description": "Broadcastify public safety feed 39245 for Michigan.",
+      "city": "",
+      "county": "Various",
+      "state": "MI",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "michigan"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39245"
+    },
+    {
+      "id": "bf-7791-genesee-county-ems",
+      "name": "Genesee County EMS",
+      "description": "Broadcastify public safety feed 7791 for Michigan.",
+      "city": "",
+      "county": "Various",
+      "state": "MI",
+      "service_types": [
+        "dispatch",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "michigan",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/7791"
+    },
+    {
+      "id": "bf-19856-shiawassee-county-fire-and-ems-dispatch",
+      "name": "Shiawassee County Fire and EMS Dispatch",
+      "description": "Broadcastify public safety feed 19856 for Michigan.",
+      "city": "",
+      "county": "Various",
+      "state": "MI",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "michigan",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/19856"
+    },
+    {
+      "id": "bf-23883-van-buren-county-fire-dispatch-west",
+      "name": "Van Buren County Fire Dispatch - West",
+      "description": "Broadcastify public safety feed 23883 for Michigan.",
+      "city": "",
+      "county": "Various",
+      "state": "MI",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "michigan",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/23883"
+    },
+    {
+      "id": "bf-43097-dearborn-police-and-fire",
+      "name": "Dearborn Police and Fire",
+      "description": "Broadcastify public safety feed 43097 for Michigan.",
+      "city": "",
+      "county": "Various",
+      "state": "MI",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "michigan",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43097"
+    },
+    {
+      "id": "bf-13598-southwest-michigan-counties-fire",
+      "name": "Southwest Michigan Counties Fire",
+      "description": "Broadcastify public safety feed 13598 for Michigan.",
+      "city": "",
+      "county": "Various",
+      "state": "MI",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "michigan",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/13598"
+    },
+    {
+      "id": "bf-15698-berrien-county-law-fire-and-ambulance",
+      "name": "Berrien County Law, Fire and Ambulance",
+      "description": "Broadcastify public safety feed 15698 for Michigan.",
+      "city": "",
+      "county": "Various",
+      "state": "MI",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "michigan",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/15698"
+    },
+    {
+      "id": "bf-39321-traverse-bay-area-public-safety",
+      "name": "Traverse Bay Area Public Safety",
+      "description": "Broadcastify public safety feed 39321 for Michigan.",
+      "city": "",
+      "county": "Various",
+      "state": "MI",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "michigan"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39321"
+    },
+    {
+      "id": "bf-5980-lapeer-county-and-surrounding-townships-fi",
+      "name": "Lapeer County and Surrounding Townships Fire/EMS Dispatch",
+      "description": "Broadcastify public safety feed 5980 for Michigan.",
+      "city": "",
+      "county": "Various",
+      "state": "MI",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "michigan",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/5980"
+    },
+    {
+      "id": "bf-7160-ingham-out-county-fire-and-ems",
+      "name": "Ingham Out-County Fire and EMS",
+      "description": "Broadcastify public safety feed 7160 for Michigan.",
+      "city": "",
+      "county": "Various",
+      "state": "MI",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "michigan",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/7160"
+    },
+    {
+      "id": "bf-47097-oakland-county-fire-ems-mabas-3201-north-d",
+      "name": "Oakland County Fire/EMS MABAS 3201 (North) - Dispatch/Tac/Talk (P25)",
+      "description": "Broadcastify public safety feed 47097 for Michigan.",
+      "city": "",
+      "county": "Various",
+      "state": "MI",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "michigan",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47097"
+    },
+    {
+      "id": "bf-47498-saginaw-county-mi-police-fire-and-ems",
+      "name": "Saginaw County, MI Police, Fire, and EMS",
+      "description": "Broadcastify public safety feed 47498 for Michigan.",
+      "city": "",
+      "county": "Various",
+      "state": "MI",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "michigan",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47498"
+    },
+    {
+      "id": "bf-47294-sanilac-county-public-safety",
+      "name": "Sanilac County Public Safety",
+      "description": "Broadcastify public safety feed 47294 for Michigan.",
+      "city": "",
+      "county": "Various",
+      "state": "MI",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "michigan"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47294"
+    },
+    {
+      "id": "bf-46540-antrim-county-public-safety",
+      "name": "Antrim County Public Safety",
+      "description": "Broadcastify public safety feed 46540 for Michigan.",
+      "city": "",
+      "county": "Various",
+      "state": "MI",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "michigan"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46540"
+    },
+    {
+      "id": "bf-38744-leelanau-county-public-safety",
+      "name": "Leelanau County Public Safety",
+      "description": "Broadcastify public safety feed 38744 for Michigan.",
+      "city": "",
+      "county": "Various",
+      "state": "MI",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "michigan"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38744"
+    },
+    {
+      "id": "bf-46304-menominee-county-public-safety",
+      "name": "Menominee County Public Safety",
+      "description": "Broadcastify public safety feed 46304 for Michigan.",
+      "city": "",
+      "county": "Various",
+      "state": "MI",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "michigan"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46304"
+    },
+    {
+      "id": "bf-39700-oceana-county-fire-and-ems-dispatch",
+      "name": "Oceana County Fire and EMS Dispatch",
+      "description": "Broadcastify public safety feed 39700 for Michigan.",
+      "city": "",
+      "county": "Various",
+      "state": "MI",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "michigan",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39700"
+    },
+    {
+      "id": "bf-7800-fenton-city-police-and-fire",
+      "name": "Fenton City Police and Fire",
+      "description": "Broadcastify public safety feed 7800 for Michigan.",
+      "city": "",
+      "county": "Various",
+      "state": "MI",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "michigan",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/7800"
+    },
+    {
+      "id": "bf-7815-flint-city-fire",
+      "name": "Flint City Fire",
+      "description": "Broadcastify public safety feed 7815 for Michigan.",
+      "city": "",
+      "county": "Various",
+      "state": "MI",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "michigan",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/7815"
+    },
+    {
+      "id": "bf-38250-jackson-county-and-hillsdale-county-public",
+      "name": "Jackson County and Hillsdale County Public Safety",
+      "description": "Broadcastify public safety feed 38250 for Michigan.",
+      "city": "",
+      "county": "Various",
+      "state": "MI",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "michigan"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38250"
+    },
+    {
+      "id": "bf-45785-otsego-county-ems",
+      "name": "Otsego County EMS",
+      "description": "Broadcastify public safety feed 45785 for Michigan.",
+      "city": "",
+      "county": "Various",
+      "state": "MI",
+      "service_types": [
+        "dispatch",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "michigan",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45785"
+    },
+    {
+      "id": "bf-40563-presque-isle-public-safety",
+      "name": "Presque Isle Public Safety",
+      "description": "Broadcastify public safety feed 40563 for Michigan.",
+      "city": "",
+      "county": "Various",
+      "state": "MI",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "michigan"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40563"
+    },
+    {
+      "id": "bf-43376-bay-county-public-safety-msp-dnr",
+      "name": "Bay County Public Safety, MSP, DNR",
+      "description": "Broadcastify public safety feed 43376 for Michigan.",
+      "city": "",
+      "county": "Various",
+      "state": "MI",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "michigan"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43376"
+    },
+    {
+      "id": "bf-40899-clare-county-police-and-fire",
+      "name": "Clare County Police and Fire",
+      "description": "Broadcastify public safety feed 40899 for Michigan.",
+      "city": "",
+      "county": "Various",
+      "state": "MI",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "michigan",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40899"
+    },
+    {
+      "id": "bf-21897-emmet-county-fire-dispatch",
+      "name": "Emmet County Fire Dispatch",
+      "description": "Broadcastify public safety feed 21897 for Michigan.",
+      "city": "",
+      "county": "Various",
+      "state": "MI",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "michigan",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/21897"
+    },
+    {
+      "id": "bf-40562-emmet-county-public-safety",
+      "name": "Emmet County Public Safety",
+      "description": "Broadcastify public safety feed 40562 for Michigan.",
+      "city": "",
+      "county": "Various",
+      "state": "MI",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "michigan"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40562"
+    },
+    {
+      "id": "bf-41561-ingham-county-fire-and-ems",
+      "name": "Ingham County Fire and EMS",
+      "description": "Broadcastify public safety feed 41561 for Michigan.",
+      "city": "",
+      "county": "Various",
+      "state": "MI",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "michigan",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41561"
+    },
+    {
+      "id": "bf-19405-otsego-county-fire-dispatch-analog",
+      "name": "Otsego County Fire Dispatch - Analog",
+      "description": "Broadcastify public safety feed 19405 for Michigan.",
+      "city": "",
+      "county": "Various",
+      "state": "MI",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "michigan",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/19405"
+    },
+    {
+      "id": "bf-38960-seale-rp",
+      "name": "Seale RP",
+      "description": "Broadcastify public safety feed 38960 for Michigan.",
+      "city": "",
+      "county": "Various",
+      "state": "MI",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "michigan"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38960"
+    },
+    {
+      "id": "bf-41763-detroit-eastpointe-and-warren-police-fire",
+      "name": "Detroit, Eastpointe, and Warren Police & Fire",
+      "description": "Broadcastify public safety feed 41763 for Michigan.",
+      "city": "",
+      "county": "Various",
+      "state": "MI",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "michigan",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41763"
+    },
+    {
+      "id": "bf-37951-northern-lower-peninsula-dnr-fire",
+      "name": "Northern Lower Peninsula DNR Fire",
+      "description": "Broadcastify public safety feed 37951 for Michigan.",
+      "city": "",
+      "county": "Various",
+      "state": "MI",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "michigan",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37951"
+    },
+    {
+      "id": "bf-21656-cheboygan-county-fire",
+      "name": "Cheboygan County Fire",
+      "description": "Broadcastify public safety feed 21656 for Michigan.",
+      "city": "",
+      "county": "Various",
+      "state": "MI",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "michigan",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/21656"
+    },
+    {
+      "id": "bf-20954-eaton-county-public-service",
+      "name": "Eaton County Public Service",
+      "description": "Broadcastify public safety feed 20954 for Michigan.",
+      "city": "",
+      "county": "Various",
+      "state": "MI",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "michigan"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/20954"
+    },
+    {
+      "id": "bf-46620-kalkaska-county-public-safety",
+      "name": "Kalkaska County Public Safety",
+      "description": "Broadcastify public safety feed 46620 for Michigan.",
+      "city": "",
+      "county": "Various",
+      "state": "MI",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "michigan"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46620"
+    },
+    {
+      "id": "bf-41589-muskegon-county-ems-dispatch-promed-white-",
+      "name": "Muskegon County EMS Dispatch (ProMed, White Lake, Med Paging)",
+      "description": "Broadcastify public safety feed 41589 for Michigan.",
+      "city": "",
+      "county": "Various",
+      "state": "MI",
+      "service_types": [
+        "dispatch",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "michigan",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41589"
+    },
+    {
+      "id": "bf-21818-st-clair-county-fire",
+      "name": "St Clair County Fire",
+      "description": "Broadcastify public safety feed 21818 for Michigan.",
+      "city": "",
+      "county": "Various",
+      "state": "MI",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "michigan",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/21818"
+    },
+    {
+      "id": "bf-15309-grosse-pointes-and-harper-woods-police-and",
+      "name": "Grosse Pointes and Harper Woods Police and Fire",
+      "description": "Broadcastify public safety feed 15309 for Michigan.",
+      "city": "",
+      "county": "Various",
+      "state": "MI",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "michigan",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/15309"
+    },
+    {
+      "id": "bf-29497-detroit-ems-dispatch",
+      "name": "Detroit EMS Dispatch",
+      "description": "Broadcastify public safety feed 29497 for Michigan.",
+      "city": "",
+      "county": "Various",
+      "state": "MI",
+      "service_types": [
+        "dispatch",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "michigan",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/29497"
+    },
+    {
+      "id": "bf-43889-plymouth-northville-area-public-safety",
+      "name": "Plymouth-Northville Area Public Safety",
+      "description": "Broadcastify public safety feed 43889 for Michigan.",
+      "city": "",
+      "county": "Various",
+      "state": "MI",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "michigan"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43889"
+    },
+    {
+      "id": "bf-44086-southwestern-wayne-county-police-fire",
+      "name": "Southwestern Wayne County Police/Fire",
+      "description": "Broadcastify public safety feed 44086 for Michigan.",
+      "city": "",
+      "county": "Various",
+      "state": "MI",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "michigan",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44086"
+    },
+    {
+      "id": "bf-36525-cheboygan-fire",
+      "name": "Cheboygan Fire",
+      "description": "Broadcastify public safety feed 36525 for Michigan.",
+      "city": "",
+      "county": "Various",
+      "state": "MI",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "michigan",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/36525"
+    },
+    {
+      "id": "bf-24616-clinton-gratiot-and-montcalm-county-fire-e",
+      "name": "Clinton, Gratiot and Montcalm County Fire/EMS",
+      "description": "Broadcastify public safety feed 24616 for Michigan.",
+      "city": "",
+      "county": "Various",
+      "state": "MI",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "michigan",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/24616"
+    },
+    {
+      "id": "bf-29901-beaverton-area-fire",
+      "name": "Beaverton Area Fire",
+      "description": "Broadcastify public safety feed 29901 for Michigan.",
+      "city": "",
+      "county": "Various",
+      "state": "MI",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "michigan",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/29901"
+    },
+    {
+      "id": "bf-33503-gladwin-rural-fire",
+      "name": "Gladwin Rural Fire",
+      "description": "Broadcastify public safety feed 33503 for Michigan.",
+      "city": "",
+      "county": "Various",
+      "state": "MI",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "michigan",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/33503"
+    },
+    {
+      "id": "bf-28508-whittemore-fire",
+      "name": "Whittemore Fire",
+      "description": "Broadcastify public safety feed 28508 for Michigan.",
+      "city": "",
+      "county": "Various",
+      "state": "MI",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "michigan",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/28508"
+    },
+    {
+      "id": "bf-32683-grand-rapids-area-police-and-fire-dispatch",
+      "name": "Grand Rapids Area Police and Fire Dispatch",
+      "description": "Broadcastify public safety feed 32683 for Michigan.",
+      "city": "",
+      "county": "Various",
+      "state": "MI",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "michigan",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32683"
+    },
+    {
+      "id": "bf-8182-livingston-county-fire-and-emer",
+      "name": "Livingston County Fire and EMER",
+      "description": "Broadcastify public safety feed 8182 for Michigan.",
+      "city": "",
+      "county": "Various",
+      "state": "MI",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "michigan",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/8182"
+    },
+    {
+      "id": "bf-45422-clinton-twp-police-fire-dispatch",
+      "name": "Clinton Twp Police - Fire Dispatch",
+      "description": "Broadcastify public safety feed 45422 for Michigan.",
+      "city": "",
+      "county": "Various",
+      "state": "MI",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "michigan",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45422"
+    },
+    {
+      "id": "bf-42286-muskegon-county-fire-departments-paging-on",
+      "name": "Muskegon County Fire Departments Paging Only",
+      "description": "Broadcastify public safety feed 42286 for Michigan.",
+      "city": "",
+      "county": "Various",
+      "state": "MI",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "michigan",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42286"
+    },
+    {
+      "id": "bf-47075-troy-fire-department",
+      "name": "Troy Fire Department",
+      "description": "Broadcastify public safety feed 47075 for Michigan.",
+      "city": "",
+      "county": "Various",
+      "state": "MI",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "michigan",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47075"
+    },
+    {
+      "id": "bf-47096-oakland-county-fire-ems-mabas-3202-south-o",
+      "name": "Oakland County Fire/EMS MABAS 3202 (South/Oakway) - Dispatch/Tac/Talk (P25)",
+      "description": "Broadcastify public safety feed 47096 for Michigan.",
+      "city": "",
+      "county": "Various",
+      "state": "MI",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "michigan",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47096"
+    }
+  ]
+}

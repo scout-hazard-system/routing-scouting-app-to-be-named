@@ -1,0 +1,2201 @@
+{
+  "channels": [
+    {
+      "id": "bf-32602-indianapolis-metropolitan-police",
+      "name": "Indianapolis Metropolitan Police",
+      "description": "Broadcastify public safety feed 32602 for Mississippi.",
+      "city": "",
+      "county": "Various",
+      "state": "MS",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "mississippi",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32602"
+    },
+    {
+      "id": "bf-40725-lincoln-county-sheriff-brookhaven-police-a",
+      "name": "Lincoln County Sheriff, Brookhaven Police, and Brookhaven Fire",
+      "description": "Broadcastify public safety feed 40725 for Mississippi.",
+      "city": "",
+      "county": "Various",
+      "state": "MS",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "mississippi",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40725"
+    },
+    {
+      "id": "bf-41308-smith-county-public-safety",
+      "name": "Smith County Public Safety",
+      "description": "Broadcastify public safety feed 41308 for Mississippi.",
+      "city": "",
+      "county": "Various",
+      "state": "MS",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "mississippi"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41308"
+    },
+    {
+      "id": "bf-31712-george-county-law-enforcement",
+      "name": "George County Law Enforcement",
+      "description": "Broadcastify public safety feed 31712 for Mississippi.",
+      "city": "",
+      "county": "Various",
+      "state": "MS",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "mississippi",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/31712"
+    },
+    {
+      "id": "bf-1719-grenada-police-fire-ems-and-weather-alerts",
+      "name": "Grenada Police, Fire, EMS and Weather Alerts",
+      "description": "Broadcastify public safety feed 1719 for Mississippi.",
+      "city": "",
+      "county": "Various",
+      "state": "MS",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "mississippi",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/1719"
+    },
+    {
+      "id": "bf-27409-forrest-county-public-safety",
+      "name": "Forrest County Public Safety",
+      "description": "Broadcastify public safety feed 27409 for Mississippi.",
+      "city": "",
+      "county": "Various",
+      "state": "MS",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "mississippi"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/27409"
+    },
+    {
+      "id": "bf-4157-jackson-police-and-fire",
+      "name": "Jackson Police and Fire",
+      "description": "Broadcastify public safety feed 4157 for Mississippi.",
+      "city": "",
+      "county": "Various",
+      "state": "MS",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "mississippi",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/4157"
+    },
+    {
+      "id": "bf-4041-rankin-county-police-and-fire",
+      "name": "Rankin County Police and Fire",
+      "description": "Broadcastify public safety feed 4041 for Mississippi.",
+      "city": "",
+      "county": "Various",
+      "state": "MS",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "mississippi",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/4041"
+    },
+    {
+      "id": "bf-22217-lamar-county-sheriff-and-fire-dispatch",
+      "name": "Lamar County Sheriff and Fire Dispatch",
+      "description": "Broadcastify public safety feed 22217 for Mississippi.",
+      "city": "",
+      "county": "Various",
+      "state": "MS",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "mississippi",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/22217"
+    },
+    {
+      "id": "bf-40133-lafayette-county-public-safety",
+      "name": "Lafayette County Public Safety",
+      "description": "Broadcastify public safety feed 40133 for Mississippi.",
+      "city": "",
+      "county": "Various",
+      "state": "MS",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "mississippi"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40133"
+    },
+    {
+      "id": "bf-9768-jackson-county-public-safety-and-mswin",
+      "name": "Jackson County Public Safety and MSWIN",
+      "description": "Broadcastify public safety feed 9768 for Mississippi.",
+      "city": "",
+      "county": "Various",
+      "state": "MS",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "mississippi"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/9768"
+    },
+    {
+      "id": "bf-44304-simpson-county-public-safety",
+      "name": "Simpson County Public Safety",
+      "description": "Broadcastify public safety feed 44304 for Mississippi.",
+      "city": "",
+      "county": "Various",
+      "state": "MS",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "mississippi"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44304"
+    },
+    {
+      "id": "bf-42874-harrison-county-fire-dispatch",
+      "name": "Harrison County Fire Dispatch",
+      "description": "Broadcastify public safety feed 42874 for Mississippi.",
+      "city": "",
+      "county": "Various",
+      "state": "MS",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "mississippi",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42874"
+    },
+    {
+      "id": "bf-27010-yazoo-county-fire",
+      "name": "Yazoo County Fire",
+      "description": "Broadcastify public safety feed 27010 for Mississippi.",
+      "city": "",
+      "county": "Various",
+      "state": "MS",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "mississippi",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/27010"
+    },
+    {
+      "id": "bf-41019-jasper-county-public-safety",
+      "name": "Jasper County Public Safety",
+      "description": "Broadcastify public safety feed 41019 for Mississippi.",
+      "city": "",
+      "county": "Various",
+      "state": "MS",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "mississippi"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41019"
+    },
+    {
+      "id": "bf-41199-lawrence-county-sheriff-fire-dispatch",
+      "name": "Lawrence County Sheriff & Fire Dispatch",
+      "description": "Broadcastify public safety feed 41199 for Mississippi.",
+      "city": "",
+      "county": "Various",
+      "state": "MS",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "mississippi",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41199"
+    },
+    {
+      "id": "bf-41767-hancock-county-fire",
+      "name": "Hancock County Fire",
+      "description": "Broadcastify public safety feed 41767 for Mississippi.",
+      "city": "",
+      "county": "Various",
+      "state": "MS",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "mississippi",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41767"
+    },
+    {
+      "id": "bf-47310-covington-county-public-safety",
+      "name": "Covington County Public Safety",
+      "description": "Broadcastify public safety feed 47310 for Mississippi.",
+      "city": "",
+      "county": "Various",
+      "state": "MS",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "mississippi"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47310"
+    },
+    {
+      "id": "bf-23777-madison-county-fire",
+      "name": "Madison County Fire",
+      "description": "Broadcastify public safety feed 23777 for Mississippi.",
+      "city": "",
+      "county": "Various",
+      "state": "MS",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "mississippi",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/23777"
+    },
+    {
+      "id": "bf-42969-tupelo-fd",
+      "name": "Tupelo FD",
+      "description": "Broadcastify public safety feed 42969 for Mississippi.",
+      "city": "",
+      "county": "Various",
+      "state": "MS",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "mississippi"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42969"
+    },
+    {
+      "id": "bf-37381-hinds-county-fire",
+      "name": "Hinds County Fire",
+      "description": "Broadcastify public safety feed 37381 for Mississippi.",
+      "city": "",
+      "county": "Various",
+      "state": "MS",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "mississippi",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37381"
+    },
+    {
+      "id": "bf-47533-wayne-county-public-safety",
+      "name": "Wayne County Public Safety",
+      "description": "Broadcastify public safety feed 47533 for Mississippi.",
+      "city": "",
+      "county": "Various",
+      "state": "MS",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "mississippi"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47533"
+    },
+    {
+      "id": "bf-27590-tishomingo-county-fire-north",
+      "name": "Tishomingo County Fire - North",
+      "description": "Broadcastify public safety feed 27590 for Mississippi.",
+      "city": "",
+      "county": "Various",
+      "state": "MS",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "mississippi",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/27590"
+    },
+    {
+      "id": "bf-44273-clarke-county-fire-and-police",
+      "name": "Clarke County Fire and Police",
+      "description": "Broadcastify public safety feed 44273 for Mississippi.",
+      "city": "",
+      "county": "Various",
+      "state": "MS",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "mississippi",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44273"
+    },
+    {
+      "id": "bf-42355-grenada-local-city-fd-pd-grenada-county-vf",
+      "name": "Grenada LOCAL City FD & PD,Grenada County VFD,SO,EMS Dispatch",
+      "description": "Broadcastify public safety feed 42355 for Mississippi.",
+      "city": "",
+      "county": "Various",
+      "state": "MS",
+      "service_types": [
+        "dispatch",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "mississippi",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42355"
+    },
+    {
+      "id": "bf-46801-richland-fire",
+      "name": "Richland Fire",
+      "description": "Broadcastify public safety feed 46801 for Mississippi.",
+      "city": "",
+      "county": "Various",
+      "state": "MS",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "mississippi",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46801"
+    },
+    {
+      "id": "bf-45922-noxubee-fd",
+      "name": "Noxubee FD",
+      "description": "Broadcastify public safety feed 45922 for Mississippi.",
+      "city": "",
+      "county": "Various",
+      "state": "MS",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "mississippi"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45922"
+    },
+    {
+      "id": "bf-25701-warren-county-fire",
+      "name": "Warren County Fire",
+      "description": "Broadcastify public safety feed 25701 for Mississippi.",
+      "city": "",
+      "county": "Various",
+      "state": "MS",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "mississippi",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/25701"
+    },
+    {
+      "id": "bf-33627-greene-county-fire",
+      "name": "Greene County Fire",
+      "description": "Broadcastify public safety feed 33627 for Mississippi.",
+      "city": "",
+      "county": "Various",
+      "state": "MS",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "mississippi",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/33627"
+    },
+    {
+      "id": "bf-37793-monroe-county-fire",
+      "name": "Monroe County Fire",
+      "description": "Broadcastify public safety feed 37793 for Mississippi.",
+      "city": "",
+      "county": "Various",
+      "state": "MS",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "mississippi",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37793"
+    },
+    {
+      "id": "bf-47346-wiggins-fire",
+      "name": "Wiggins Fire",
+      "description": "Broadcastify public safety feed 47346 for Mississippi.",
+      "city": "",
+      "county": "Various",
+      "state": "MS",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "mississippi",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47346"
+    },
+    {
+      "id": "bf-43300-jones-county-fire",
+      "name": "Jones County Fire",
+      "description": "Broadcastify public safety feed 43300 for Mississippi.",
+      "city": "",
+      "county": "Various",
+      "state": "MS",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "mississippi",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43300"
+    },
+    {
+      "id": "bf-28991-union-county-fire-dispatch",
+      "name": "Union County Fire Dispatch",
+      "description": "Broadcastify public safety feed 28991 for Mississippi.",
+      "city": "",
+      "county": "Various",
+      "state": "MS",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "mississippi",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/28991"
+    },
+    {
+      "id": "bf-23209-mccomb-fire",
+      "name": "McComb Fire",
+      "description": "Broadcastify public safety feed 23209 for Mississippi.",
+      "city": "",
+      "county": "Various",
+      "state": "MS",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "mississippi",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/23209"
+    },
+    {
+      "id": "bf-22171-quitman-county-fire",
+      "name": "Quitman County Fire",
+      "description": "Broadcastify public safety feed 22171 for Mississippi.",
+      "city": "",
+      "county": "Various",
+      "state": "MS",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "mississippi",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/22171"
+    },
+    {
+      "id": "bf-31734-sherman-fire",
+      "name": "Sherman Fire",
+      "description": "Broadcastify public safety feed 31734 for Mississippi.",
+      "city": "",
+      "county": "Various",
+      "state": "MS",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "mississippi",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/31734"
+    },
+    {
+      "id": "bf-29950-pontotoc-fire",
+      "name": "Pontotoc Fire",
+      "description": "Broadcastify public safety feed 29950 for Mississippi.",
+      "city": "",
+      "county": "Various",
+      "state": "MS",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "mississippi",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/29950"
+    },
+    {
+      "id": "bf-28855-centreville-fire",
+      "name": "Centreville Fire",
+      "description": "Broadcastify public safety feed 28855 for Mississippi.",
+      "city": "",
+      "county": "Various",
+      "state": "MS",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "mississippi",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/28855"
+    },
+    {
+      "id": "bf-45917-victoria-fd",
+      "name": "Victoria FD",
+      "description": "Broadcastify public safety feed 45917 for Mississippi.",
+      "city": "",
+      "county": "Various",
+      "state": "MS",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "mississippi"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45917"
+    },
+    {
+      "id": "bf-38970-batesville-fire",
+      "name": "Batesville Fire",
+      "description": "Broadcastify public safety feed 38970 for Mississippi.",
+      "city": "",
+      "county": "Various",
+      "state": "MS",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "mississippi",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38970"
+    },
+    {
+      "id": "bf-45741-aberdeen-fire",
+      "name": "Aberdeen Fire",
+      "description": "Broadcastify public safety feed 45741 for Mississippi.",
+      "city": "",
+      "county": "Various",
+      "state": "MS",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "mississippi",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45741"
+    },
+    {
+      "id": "bf-47108-chulahoma-fd",
+      "name": "Chulahoma FD",
+      "description": "Broadcastify public safety feed 47108 for Mississippi.",
+      "city": "",
+      "county": "Various",
+      "state": "MS",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "mississippi"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47108"
+    },
+    {
+      "id": "bf-40509-sun-flower-fire",
+      "name": "Sun Flower Fire",
+      "description": "Broadcastify public safety feed 40509 for Mississippi.",
+      "city": "",
+      "county": "Various",
+      "state": "MS",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "mississippi",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40509"
+    },
+    {
+      "id": "bf-29232-new-albany-fire-dispatch",
+      "name": "New Albany Fire Dispatch",
+      "description": "Broadcastify public safety feed 29232 for Mississippi.",
+      "city": "",
+      "county": "Various",
+      "state": "MS",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "mississippi",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/29232"
+    },
+    {
+      "id": "bf-39488-rankin-county-emergency-management",
+      "name": "Rankin County Emergency Management",
+      "description": "Broadcastify public safety feed 39488 for Mississippi.",
+      "city": "",
+      "county": "Various",
+      "state": "MS",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "mississippi"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39488"
+    },
+    {
+      "id": "bf-27589-tishomingo-county-fire-south",
+      "name": "Tishomingo County Fire - South",
+      "description": "Broadcastify public safety feed 27589 for Mississippi.",
+      "city": "",
+      "county": "Various",
+      "state": "MS",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "mississippi",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/27589"
+    },
+    {
+      "id": "bf-23768-braxton-fire-rescue",
+      "name": "Braxton Fire-Rescue",
+      "description": "Broadcastify public safety feed 23768 for Mississippi.",
+      "city": "",
+      "county": "Various",
+      "state": "MS",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "mississippi",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/23768"
+    },
+    {
+      "id": "bf-23917-magee-fire",
+      "name": "Magee Fire",
+      "description": "Broadcastify public safety feed 23917 for Mississippi.",
+      "city": "",
+      "county": "Various",
+      "state": "MS",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "mississippi",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/23917"
+    },
+    {
+      "id": "bf-24404-mendenhall-volunteer-fire",
+      "name": "Mendenhall Volunteer Fire",
+      "description": "Broadcastify public safety feed 24404 for Mississippi.",
+      "city": "",
+      "county": "Various",
+      "state": "MS",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "mississippi",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/24404"
+    },
+    {
+      "id": "bf-26169-iuka-fire",
+      "name": "Iuka Fire",
+      "description": "Broadcastify public safety feed 26169 for Mississippi.",
+      "city": "",
+      "county": "Various",
+      "state": "MS",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "mississippi",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/26169"
+    },
+    {
+      "id": "bf-38196-dumas-fire",
+      "name": "Dumas Fire",
+      "description": "Broadcastify public safety feed 38196 for Mississippi.",
+      "city": "",
+      "county": "Various",
+      "state": "MS",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "mississippi",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38196"
+    },
+    {
+      "id": "bf-42415-leflore-county-ems",
+      "name": "Leflore County EMS",
+      "description": "Broadcastify public safety feed 42415 for Mississippi.",
+      "city": "",
+      "county": "Various",
+      "state": "MS",
+      "service_types": [
+        "dispatch",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "mississippi",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42415"
+    },
+    {
+      "id": "bf-24197-ripley-volunteer-fire",
+      "name": "Ripley Volunteer Fire",
+      "description": "Broadcastify public safety feed 24197 for Mississippi.",
+      "city": "",
+      "county": "Various",
+      "state": "MS",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "mississippi",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/24197"
+    },
+    {
+      "id": "bf-45666-smith-county",
+      "name": "Smith County",
+      "description": "Broadcastify public safety feed 45666 for Mississippi.",
+      "city": "",
+      "county": "Various",
+      "state": "MS",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "mississippi"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45666"
+    },
+    {
+      "id": "bf-46944-comsouthsmithcounty2",
+      "name": "ComsouthSmithCounty2",
+      "description": "Broadcastify public safety feed 46944 for Mississippi.",
+      "city": "",
+      "county": "Various",
+      "state": "MS",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "mississippi"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46944"
+    },
+    {
+      "id": "bf-43901-tate-county-fire",
+      "name": "Tate County Fire",
+      "description": "Broadcastify public safety feed 43901 for Mississippi.",
+      "city": "",
+      "county": "Various",
+      "state": "MS",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "mississippi",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43901"
+    },
+    {
+      "id": "bf-22948-senatobia-fire",
+      "name": "Senatobia Fire",
+      "description": "Broadcastify public safety feed 22948 for Mississippi.",
+      "city": "",
+      "county": "Various",
+      "state": "MS",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "mississippi",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/22948"
+    },
+    {
+      "id": "bf-18753-indianola-fire",
+      "name": "Indianola Fire",
+      "description": "Broadcastify public safety feed 18753 for Mississippi.",
+      "city": "",
+      "county": "Various",
+      "state": "MS",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "mississippi",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/18753"
+    },
+    {
+      "id": "bf-21161-tallahatchie-fire",
+      "name": "Tallahatchie Fire",
+      "description": "Broadcastify public safety feed 21161 for Mississippi.",
+      "city": "",
+      "county": "Various",
+      "state": "MS",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "mississippi",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/21161"
+    },
+    {
+      "id": "bf-29763-bywy-and-panhandle-fire",
+      "name": "Bywy and Panhandle Fire",
+      "description": "Broadcastify public safety feed 29763 for Mississippi.",
+      "city": "",
+      "county": "Various",
+      "state": "MS",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "mississippi",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/29763"
+    },
+    {
+      "id": "bf-26745-grenada-county-fire-dispatch",
+      "name": "Grenada County Fire Dispatch",
+      "description": "Broadcastify public safety feed 26745 for Mississippi.",
+      "city": "",
+      "county": "Various",
+      "state": "MS",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "mississippi",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/26745"
+    },
+    {
+      "id": "bf-43513-franklin-county-fire",
+      "name": "Franklin County Fire",
+      "description": "Broadcastify public safety feed 43513 for Mississippi.",
+      "city": "",
+      "county": "Various",
+      "state": "MS",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "mississippi",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43513"
+    },
+    {
+      "id": "bf-45424-forrest-county-volunteer-fire-dispatch",
+      "name": "Forrest County Volunteer Fire Dispatch",
+      "description": "Broadcastify public safety feed 45424 for Mississippi.",
+      "city": "",
+      "county": "Various",
+      "state": "MS",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "mississippi",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45424"
+    },
+    {
+      "id": "bf-34128-covington-county-fire",
+      "name": "Covington County Fire",
+      "description": "Broadcastify public safety feed 34128 for Mississippi.",
+      "city": "",
+      "county": "Various",
+      "state": "MS",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "mississippi",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/34128"
+    },
+    {
+      "id": "bf-17990-collins-fire",
+      "name": "Collins Fire",
+      "description": "Broadcastify public safety feed 17990 for Mississippi.",
+      "city": "",
+      "county": "Various",
+      "state": "MS",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "mississippi",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/17990"
+    },
+    {
+      "id": "bf-45504-copiah-county-fire",
+      "name": "Copiah County Fire",
+      "description": "Broadcastify public safety feed 45504 for Mississippi.",
+      "city": "",
+      "county": "Various",
+      "state": "MS",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "mississippi",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45504"
+    },
+    {
+      "id": "bf-21523-coahoma-county-fire",
+      "name": "Coahoma County Fire",
+      "description": "Broadcastify public safety feed 21523 for Mississippi.",
+      "city": "",
+      "county": "Various",
+      "state": "MS",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "mississippi",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/21523"
+    },
+    {
+      "id": "bf-38149-clay-county-ema",
+      "name": "Clay County EMA",
+      "description": "Broadcastify public safety feed 38149 for Mississippi.",
+      "city": "",
+      "county": "Various",
+      "state": "MS",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "mississippi"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38149"
+    },
+    {
+      "id": "bf-29764-weir-fire",
+      "name": "Weir Fire",
+      "description": "Broadcastify public safety feed 29764 for Mississippi.",
+      "city": "",
+      "county": "Various",
+      "state": "MS",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "mississippi",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/29764"
+    },
+    {
+      "id": "bf-29280-grenada-county-volunteer-fire-dispatch-dig",
+      "name": "Grenada County Volunteer Fire Dispatch - Digital",
+      "description": "Broadcastify public safety feed 29280 for Mississippi.",
+      "city": "",
+      "county": "Various",
+      "state": "MS",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "mississippi",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/29280"
+    },
+    {
+      "id": "bf-29170-choctaw-county-fire",
+      "name": "Choctaw County Fire",
+      "description": "Broadcastify public safety feed 29170 for Mississippi.",
+      "city": "",
+      "county": "Various",
+      "state": "MS",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "mississippi",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/29170"
+    },
+    {
+      "id": "bf-39089-calhoun-county-fire",
+      "name": "Calhoun County Fire",
+      "description": "Broadcastify public safety feed 39089 for Mississippi.",
+      "city": "",
+      "county": "Various",
+      "state": "MS",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "mississippi",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39089"
+    },
+    {
+      "id": "bf-46988-rosedale-vfd",
+      "name": "Rosedale VFD",
+      "description": "Broadcastify public safety feed 46988 for Mississippi.",
+      "city": "",
+      "county": "Various",
+      "state": "MS",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "mississippi"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46988"
+    },
+    {
+      "id": "bf-30919-bolivar-ema-1",
+      "name": "Bolivar EMA 1",
+      "description": "Broadcastify public safety feed 30919 for Mississippi.",
+      "city": "",
+      "county": "Various",
+      "state": "MS",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "mississippi"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/30919"
+    },
+    {
+      "id": "bf-18185-cleveland-volunteer-fire",
+      "name": "Cleveland Volunteer Fire",
+      "description": "Broadcastify public safety feed 18185 for Mississippi.",
+      "city": "",
+      "county": "Various",
+      "state": "MS",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "mississippi",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/18185"
+    },
+    {
+      "id": "bf-24150-benton-county-sheriff-fire-and-ems-ashland",
+      "name": "Benton County Sheriff, Fire and EMS, Ashland Police",
+      "description": "Broadcastify public safety feed 24150 for Mississippi.",
+      "city": "",
+      "county": "Various",
+      "state": "MS",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "mississippi",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/24150"
+    },
+    {
+      "id": "bf-36983-attala-county-fire",
+      "name": "Attala County Fire",
+      "description": "Broadcastify public safety feed 36983 for Mississippi.",
+      "city": "",
+      "county": "Various",
+      "state": "MS",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "mississippi",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/36983"
+    },
+    {
+      "id": "bf-26963-kosciusko-fire",
+      "name": "Kosciusko Fire",
+      "description": "Broadcastify public safety feed 26963 for Mississippi.",
+      "city": "",
+      "county": "Various",
+      "state": "MS",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "mississippi",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/26963"
+    },
+    {
+      "id": "bf-44527-meridian-fire",
+      "name": "Meridian Fire",
+      "description": "Broadcastify public safety feed 44527 for Mississippi.",
+      "city": "",
+      "county": "Various",
+      "state": "MS",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "mississippi",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44527"
+    },
+    {
+      "id": "bf-25539-holly-springs-fire",
+      "name": "Holly Springs Fire",
+      "description": "Broadcastify public safety feed 25539 for Mississippi.",
+      "city": "",
+      "county": "Various",
+      "state": "MS",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "mississippi",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/25539"
+    },
+    {
+      "id": "bf-41302-columbia-fire",
+      "name": "Columbia Fire",
+      "description": "Broadcastify public safety feed 41302 for Mississippi.",
+      "city": "",
+      "county": "Various",
+      "state": "MS",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "mississippi",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41302"
+    },
+    {
+      "id": "bf-35478-tri-community-fire",
+      "name": "Tri Community Fire",
+      "description": "Broadcastify public safety feed 35478 for Mississippi.",
+      "city": "",
+      "county": "Various",
+      "state": "MS",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "mississippi",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/35478"
+    },
+    {
+      "id": "bf-35477-south-marion-fire",
+      "name": "South Marion Fire",
+      "description": "Broadcastify public safety feed 35477 for Mississippi.",
+      "city": "",
+      "county": "Various",
+      "state": "MS",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "mississippi",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/35477"
+    },
+    {
+      "id": "bf-47377-madison-fire",
+      "name": "Madison Fire",
+      "description": "Broadcastify public safety feed 47377 for Mississippi.",
+      "city": "",
+      "county": "Various",
+      "state": "MS",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "mississippi",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47377"
+    },
+    {
+      "id": "bf-19000-madison-county-emergency-management-servic",
+      "name": "Madison County Emergency Management Services",
+      "description": "Broadcastify public safety feed 19000 for Mississippi.",
+      "city": "",
+      "county": "Various",
+      "state": "MS",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "mississippi"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/19000"
+    },
+    {
+      "id": "bf-41469-lincoln-county-fire",
+      "name": "Lincoln County Fire",
+      "description": "Broadcastify public safety feed 41469 for Mississippi.",
+      "city": "",
+      "county": "Various",
+      "state": "MS",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "mississippi",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41469"
+    },
+    {
+      "id": "bf-27302-amite-county-fire-departments",
+      "name": "Amite County Fire Departments",
+      "description": "Broadcastify public safety feed 27302 for Mississippi.",
+      "city": "",
+      "county": "Various",
+      "state": "MS",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "mississippi",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/27302"
+    },
+    {
+      "id": "bf-19382-leflore-county-fire",
+      "name": "Leflore County Fire",
+      "description": "Broadcastify public safety feed 19382 for Mississippi.",
+      "city": "",
+      "county": "Various",
+      "state": "MS",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "mississippi",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/19382"
+    },
+    {
+      "id": "bf-32776-mount-pleasant-fire",
+      "name": "Mount Pleasant Fire",
+      "description": "Broadcastify public safety feed 32776 for Mississippi.",
+      "city": "",
+      "county": "Various",
+      "state": "MS",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "mississippi",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32776"
+    },
+    {
+      "id": "bf-34393-comsouth",
+      "name": "Comsouth",
+      "description": "Broadcastify public safety feed 34393 for Mississippi.",
+      "city": "",
+      "county": "Various",
+      "state": "MS",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "mississippi"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/34393"
+    },
+    {
+      "id": "bf-40547-prentiss-fire",
+      "name": "Prentiss Fire",
+      "description": "Broadcastify public safety feed 40547 for Mississippi.",
+      "city": "",
+      "county": "Various",
+      "state": "MS",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "mississippi",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40547"
+    },
+    {
+      "id": "bf-41170-jasper-county-fire",
+      "name": "Jasper County Fire",
+      "description": "Broadcastify public safety feed 41170 for Mississippi.",
+      "city": "",
+      "county": "Various",
+      "state": "MS",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "mississippi",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41170"
+    },
+    {
+      "id": "bf-43892-fulton-fire",
+      "name": "Fulton Fire",
+      "description": "Broadcastify public safety feed 43892 for Mississippi.",
+      "city": "",
+      "county": "Various",
+      "state": "MS",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "mississippi",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43892"
+    },
+    {
+      "id": "bf-40908-mantachie-fire",
+      "name": "Mantachie Fire",
+      "description": "Broadcastify public safety feed 40908 for Mississippi.",
+      "city": "",
+      "county": "Various",
+      "state": "MS",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "mississippi",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40908"
+    },
+    {
+      "id": "bf-40624-dorsey-friendship-vfd",
+      "name": "Dorsey Friendship VFD",
+      "description": "Broadcastify public safety feed 40624 for Mississippi.",
+      "city": "",
+      "county": "Various",
+      "state": "MS",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "mississippi"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40624"
+    },
+    {
+      "id": "bf-44854-grenada-county-vfd-ops",
+      "name": "Grenada County VFD OPs",
+      "description": "Broadcastify public safety feed 44854 for Mississippi.",
+      "city": "",
+      "county": "Various",
+      "state": "MS",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "mississippi"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44854"
+    },
+    {
+      "id": "bf-41075-grenada-city-fire-dispatch-digital",
+      "name": "Grenada City Fire Dispatch - Digital",
+      "description": "Broadcastify public safety feed 41075 for Mississippi.",
+      "city": "",
+      "county": "Various",
+      "state": "MS",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "mississippi",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41075"
+    }
+  ]
+}

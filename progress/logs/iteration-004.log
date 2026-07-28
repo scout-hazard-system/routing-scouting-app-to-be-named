@@ -1,0 +1,15 @@
+[ITERATION] 004
+[FOCUS] Unified launcher + local deployment hardening
+[TIMESTAMP_UTC] 2026-07-26T07:59:34Z
+[CHANGES]
+- Added `run_vehicle_stack.sh` with health-gated startup and status checks
+- Added `config/vehicle_stack.env`, systemd user unit, and log maintenance script
+[SAMPLE_OUTPUT]
+[START] Vehicle stack started
+[STATUS] backend: running, frontend: running, pipeline: running
+[HEALTH] {"status":"ok","bind_host":"0.0.0.0","bind_port":18080}
+[PROVIDERS] {"weather":{"configured_provider":"mock","ready":true},"waze":{"ready":true}}
+[MOBILE_BOOTSTRAP] {"status":"ok","version":"v1"}
+[MAINTENANCE] Log maintenance complete.
+[STOP] backend: stopped, frontend: stopped, pipeline: stopped
+[RESULT] One-command local stack lifecycle verified end-to-end

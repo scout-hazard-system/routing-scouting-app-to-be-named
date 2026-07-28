@@ -1,0 +1,1852 @@
+{
+  "channels": [
+    {
+      "id": "bf-32602-indianapolis-metropolitan-police",
+      "name": "Indianapolis Metropolitan Police",
+      "description": "Broadcastify public safety feed 32602 for South Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "SC",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south carolina",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32602"
+    },
+    {
+      "id": "bf-29343-chester-county-fire-and-ems",
+      "name": "Chester County Fire and EMS",
+      "description": "Broadcastify public safety feed 29343 for South Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "SC",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south carolina",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/29343"
+    },
+    {
+      "id": "bf-25965-york-county-sheriff-dispatch",
+      "name": "York County Sheriff Dispatch",
+      "description": "Broadcastify public safety feed 25965 for South Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "SC",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south carolina",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/25965"
+    },
+    {
+      "id": "bf-40847-aiken-county-sheriff-dispatch",
+      "name": "Aiken County Sheriff Dispatch",
+      "description": "Broadcastify public safety feed 40847 for South Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "SC",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south carolina",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40847"
+    },
+    {
+      "id": "bf-38164-anderson-county-public-safety",
+      "name": "Anderson County Public Safety",
+      "description": "Broadcastify public safety feed 38164 for South Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "SC",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south carolina"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38164"
+    },
+    {
+      "id": "bf-41935-newberry-county-public-safety",
+      "name": "Newberry County Public Safety",
+      "description": "Broadcastify public safety feed 41935 for South Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "SC",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south carolina"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41935"
+    },
+    {
+      "id": "bf-25648-myrtle-beach-fire-rescue",
+      "name": "Myrtle Beach Fire Rescue",
+      "description": "Broadcastify public safety feed 25648 for South Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "SC",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south carolina",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/25648"
+    },
+    {
+      "id": "bf-39069-spartanburg-city-county-public-safety",
+      "name": "Spartanburg City County Public Safety",
+      "description": "Broadcastify public safety feed 39069 for South Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "SC",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south carolina"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39069"
+    },
+    {
+      "id": "bf-18234-york-county-fire-and-ems",
+      "name": "York County Fire and EMS",
+      "description": "Broadcastify public safety feed 18234 for South Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "SC",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south carolina",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/18234"
+    },
+    {
+      "id": "bf-46862-greenwood-county-fire-services",
+      "name": "Greenwood County Fire Services",
+      "description": "Broadcastify public safety feed 46862 for South Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "SC",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south carolina",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46862"
+    },
+    {
+      "id": "bf-44159-greenville-county-fire-ems",
+      "name": "Greenville County Fire/EMS",
+      "description": "Broadcastify public safety feed 44159 for South Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "SC",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south carolina",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44159"
+    },
+    {
+      "id": "bf-27283-north-augusta-police-and-fire",
+      "name": "North Augusta Police and Fire",
+      "description": "Broadcastify public safety feed 27283 for South Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "SC",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south carolina",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/27283"
+    },
+    {
+      "id": "bf-47211-georgetown-county-fire-departments",
+      "name": "Georgetown County Fire Departments",
+      "description": "Broadcastify public safety feed 47211 for South Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "SC",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south carolina",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47211"
+    },
+    {
+      "id": "bf-3050-darlington-county-fire-ems-and-state-fores",
+      "name": "Darlington County Fire, EMS, and State Forestry",
+      "description": "Broadcastify public safety feed 3050 for South Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "SC",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south carolina",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/3050"
+    },
+    {
+      "id": "bf-42711-clover-public-safety",
+      "name": "Clover Public Safety",
+      "description": "Broadcastify public safety feed 42711 for South Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "SC",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south carolina"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42711"
+    },
+    {
+      "id": "bf-46713-cherokee-county-sheriff",
+      "name": "Cherokee County Sheriff",
+      "description": "Broadcastify public safety feed 46713 for South Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "SC",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south carolina",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46713"
+    },
+    {
+      "id": "bf-6053-anderson-county-law-enforcement",
+      "name": "Anderson County Law Enforcement",
+      "description": "Broadcastify public safety feed 6053 for South Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "SC",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south carolina",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/6053"
+    },
+    {
+      "id": "bf-45129-berkeley-county-fire-ems-dispatch-vhf",
+      "name": "Berkeley County Fire/ EMS Dispatch - VHF",
+      "description": "Broadcastify public safety feed 45129 for South Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "SC",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south carolina",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45129"
+    },
+    {
+      "id": "bf-9783-chesterfied-county-ems-mcbee-rescue-and-al",
+      "name": "Chesterfied County EMS, McBee Rescue, and Alligator Fire District",
+      "description": "Broadcastify public safety feed 9783 for South Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "SC",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south carolina",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/9783"
+    },
+    {
+      "id": "bf-29869-barnwell-county-fire-service",
+      "name": "Barnwell County Fire Service",
+      "description": "Broadcastify public safety feed 29869 for South Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "SC",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south carolina",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/29869"
+    },
+    {
+      "id": "bf-46433-york-county-public-safety",
+      "name": "York County Public Safety",
+      "description": "Broadcastify public safety feed 46433 for South Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "SC",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south carolina"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46433"
+    },
+    {
+      "id": "bf-45905-oconee-county-public-safety",
+      "name": "Oconee County Public Safety",
+      "description": "Broadcastify public safety feed 45905 for South Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "SC",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south carolina"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45905"
+    },
+    {
+      "id": "bf-45894-laurens-county-fire-service",
+      "name": "Laurens County Fire Service",
+      "description": "Broadcastify public safety feed 45894 for South Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "SC",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south carolina",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45894"
+    },
+    {
+      "id": "bf-46200-lexington-county-fire-dispatch",
+      "name": "Lexington County Fire Dispatch",
+      "description": "Broadcastify public safety feed 46200 for South Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "SC",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south carolina",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46200"
+    },
+    {
+      "id": "bf-30973-lee-surrounding-county-feeds",
+      "name": "Lee & Surrounding County Feeds",
+      "description": "Broadcastify public safety feed 30973 for South Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "SC",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south carolina"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/30973"
+    },
+    {
+      "id": "bf-19503-lee-county-fire",
+      "name": "Lee County Fire",
+      "description": "Broadcastify public safety feed 19503 for South Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "SC",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south carolina",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/19503"
+    },
+    {
+      "id": "bf-46905-florence-county-public-safety",
+      "name": "Florence County Public Safety",
+      "description": "Broadcastify public safety feed 46905 for South Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "SC",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south carolina"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46905"
+    },
+    {
+      "id": "bf-43668-tigerville-public-safety",
+      "name": "Tigerville Public Safety",
+      "description": "Broadcastify public safety feed 43668 for South Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "SC",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south carolina"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43668"
+    },
+    {
+      "id": "bf-32335-marion-county-fire-and-ems-dispatch",
+      "name": "Marion County Fire and EMS Dispatch",
+      "description": "Broadcastify public safety feed 32335 for South Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "SC",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south carolina",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32335"
+    },
+    {
+      "id": "bf-33153-easley-fire",
+      "name": "Easley Fire",
+      "description": "Broadcastify public safety feed 33153 for South Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "SC",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south carolina",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/33153"
+    },
+    {
+      "id": "bf-34066-cherokee-county-fire-dispatch",
+      "name": "Cherokee County Fire Dispatch",
+      "description": "Broadcastify public safety feed 34066 for South Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "SC",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south carolina",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/34066"
+    },
+    {
+      "id": "bf-46797-columbia-police",
+      "name": "Columbia Police",
+      "description": "Broadcastify public safety feed 46797 for South Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "SC",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south carolina",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46797"
+    },
+    {
+      "id": "bf-18248-langley-volunteer-fire",
+      "name": "Langley Volunteer Fire",
+      "description": "Broadcastify public safety feed 18248 for South Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "SC",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south carolina",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/18248"
+    },
+    {
+      "id": "bf-42745-greer-fire-ops-80",
+      "name": "Greer Fire Ops 80",
+      "description": "Broadcastify public safety feed 42745 for South Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "SC",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south carolina",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42745"
+    },
+    {
+      "id": "bf-42693-greer-police-dispatch",
+      "name": "Greer Police Dispatch",
+      "description": "Broadcastify public safety feed 42693 for South Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "SC",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south carolina",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42693"
+    },
+    {
+      "id": "bf-45679-williamsburg-county-fire-department",
+      "name": "Williamsburg County Fire Department",
+      "description": "Broadcastify public safety feed 45679 for South Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "SC",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south carolina",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45679"
+    },
+    {
+      "id": "bf-41514-greer-fire-dispatch",
+      "name": "Greer Fire Dispatch",
+      "description": "Broadcastify public safety feed 41514 for South Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "SC",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south carolina",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41514"
+    },
+    {
+      "id": "bf-27755-howe-springs-fire-rescue",
+      "name": "Howe Springs Fire Rescue",
+      "description": "Broadcastify public safety feed 27755 for South Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "SC",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south carolina",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/27755"
+    },
+    {
+      "id": "bf-46560-horry-county-west-public-safety",
+      "name": "Horry County West Public Safety",
+      "description": "Broadcastify public safety feed 46560 for South Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "SC",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south carolina"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46560"
+    },
+    {
+      "id": "bf-22306-edgefield-county-fire-dispatch",
+      "name": "Edgefield County Fire Dispatch",
+      "description": "Broadcastify public safety feed 22306 for South Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "SC",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south carolina",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/22306"
+    },
+    {
+      "id": "bf-47293-dillon-county-public-safety",
+      "name": "Dillon County Public Safety",
+      "description": "Broadcastify public safety feed 47293 for South Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "SC",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south carolina"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47293"
+    },
+    {
+      "id": "bf-30537-floyddale-fire-rescue",
+      "name": "Floyddale Fire Rescue",
+      "description": "Broadcastify public safety feed 30537 for South Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "SC",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south carolina",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/30537"
+    },
+    {
+      "id": "bf-25494-dillon-county-fire-dispatch",
+      "name": "Dillon County Fire Dispatch",
+      "description": "Broadcastify public safety feed 25494 for South Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "SC",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south carolina",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/25494"
+    },
+    {
+      "id": "bf-32101-darlington-county-fire",
+      "name": "Darlington County Fire",
+      "description": "Broadcastify public safety feed 32101 for South Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "SC",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south carolina",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32101"
+    },
+    {
+      "id": "bf-36431-williamston-fire",
+      "name": "Williamston Fire",
+      "description": "Broadcastify public safety feed 36431 for South Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "SC",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south carolina",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/36431"
+    },
+    {
+      "id": "bf-46339-richland-county-ems",
+      "name": "Richland County EMS",
+      "description": "Broadcastify public safety feed 46339 for South Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "SC",
+      "service_types": [
+        "dispatch",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south carolina",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46339"
+    },
+    {
+      "id": "bf-44929-easley-fire-ops",
+      "name": "Easley Fire Ops",
+      "description": "Broadcastify public safety feed 44929 for South Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "SC",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south carolina",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44929"
+    },
+    {
+      "id": "bf-22177-lugoff-fire-dispatch",
+      "name": "Lugoff Fire Dispatch",
+      "description": "Broadcastify public safety feed 22177 for South Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "SC",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south carolina",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/22177"
+    },
+    {
+      "id": "bf-28082-saluda-county-sheriff-and-police",
+      "name": "Saluda County Sheriff and Police",
+      "description": "Broadcastify public safety feed 28082 for South Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "SC",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south carolina",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/28082"
+    },
+    {
+      "id": "bf-31492-saluda-county-fire-dispatch",
+      "name": "Saluda County Fire Dispatch",
+      "description": "Broadcastify public safety feed 31492 for South Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "SC",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south carolina",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/31492"
+    },
+    {
+      "id": "bf-38195-spartanburg-county-fire-and-spartanburg-ci",
+      "name": "Spartanburg County Fire and Spartanburg City Fire",
+      "description": "Broadcastify public safety feed 38195 for South Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "SC",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south carolina",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38195"
+    },
+    {
+      "id": "bf-46340-lexington-county-ems",
+      "name": "Lexington County EMS",
+      "description": "Broadcastify public safety feed 46340 for South Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "SC",
+      "service_types": [
+        "dispatch",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south carolina",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46340"
+    },
+    {
+      "id": "bf-45256-newberry-county-fire",
+      "name": "Newberry County Fire",
+      "description": "Broadcastify public safety feed 45256 for South Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "SC",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south carolina",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45256"
+    },
+    {
+      "id": "bf-26096-merriwether-fire",
+      "name": "Merriwether Fire",
+      "description": "Broadcastify public safety feed 26096 for South Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "SC",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south carolina",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/26096"
+    },
+    {
+      "id": "bf-22884-allendale-county-fire",
+      "name": "Allendale County Fire",
+      "description": "Broadcastify public safety feed 22884 for South Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "SC",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south carolina",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/22884"
+    },
+    {
+      "id": "bf-17361-gvw-fire",
+      "name": "GVW Fire",
+      "description": "Broadcastify public safety feed 17361 for South Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "SC",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south carolina",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/17361"
+    },
+    {
+      "id": "bf-17932-midland-valley-fire",
+      "name": "Midland Valley Fire",
+      "description": "Broadcastify public safety feed 17932 for South Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "SC",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south carolina",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/17932"
+    },
+    {
+      "id": "bf-22515-beech-island-fire",
+      "name": "Beech Island Fire",
+      "description": "Broadcastify public safety feed 22515 for South Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "SC",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south carolina",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/22515"
+    },
+    {
+      "id": "bf-24773-new-ellenton-fire-dispatch",
+      "name": "New Ellenton Fire Dispatch",
+      "description": "Broadcastify public safety feed 24773 for South Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "SC",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south carolina",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/24773"
+    },
+    {
+      "id": "bf-27887-windsor-fire",
+      "name": "Windsor Fire",
+      "description": "Broadcastify public safety feed 27887 for South Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "SC",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south carolina",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/27887"
+    },
+    {
+      "id": "bf-30545-couchton-fire",
+      "name": "Couchton Fire",
+      "description": "Broadcastify public safety feed 30545 for South Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "SC",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south carolina",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/30545"
+    },
+    {
+      "id": "bf-33092-center-vfd",
+      "name": "Center VFD",
+      "description": "Broadcastify public safety feed 33092 for South Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "SC",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south carolina"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/33092"
+    },
+    {
+      "id": "bf-44637-jackson-fire",
+      "name": "Jackson Fire",
+      "description": "Broadcastify public safety feed 44637 for South Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "SC",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south carolina",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44637"
+    },
+    {
+      "id": "bf-46953-eureka-vfd",
+      "name": "Eureka VFD",
+      "description": "Broadcastify public safety feed 46953 for South Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "SC",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south carolina"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46953"
+    },
+    {
+      "id": "bf-46954-silver-bluff-vfd",
+      "name": "Silver Bluff VFD",
+      "description": "Broadcastify public safety feed 46954 for South Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "SC",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south carolina"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46954"
+    },
+    {
+      "id": "bf-46955-montmorenci-fire-and-ems",
+      "name": "Montmorenci Fire and EMS",
+      "description": "Broadcastify public safety feed 46955 for South Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "SC",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south carolina",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46955"
+    },
+    {
+      "id": "bf-46956-salley-vfd",
+      "name": "Salley VFD",
+      "description": "Broadcastify public safety feed 46956 for South Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "SC",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south carolina"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46956"
+    },
+    {
+      "id": "bf-46958-belvedere-fd",
+      "name": "Belvedere FD",
+      "description": "Broadcastify public safety feed 46958 for South Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "SC",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south carolina"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46958"
+    },
+    {
+      "id": "bf-42963-greer-fire-ops-90",
+      "name": "Greer Fire Ops 90",
+      "description": "Broadcastify public safety feed 42963 for South Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "SC",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south carolina",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42963"
+    },
+    {
+      "id": "bf-42171-barnwell-fire-department",
+      "name": "Barnwell Fire Department",
+      "description": "Broadcastify public safety feed 42171 for South Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "SC",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south carolina",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42171"
+    },
+    {
+      "id": "bf-46400-calhoun-county-fire-dispatch",
+      "name": "Calhoun County Fire Dispatch",
+      "description": "Broadcastify public safety feed 46400 for South Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "SC",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south carolina",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46400"
+    },
+    {
+      "id": "bf-42560-charleston-and-lowcountry-public-safety-po",
+      "name": "Charleston and Lowcountry Public Safety \u2013 Police, Fire, EMS, Marine SAR",
+      "description": "Broadcastify public safety feed 42560 for South Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "SC",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south carolina",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42560"
+    },
+    {
+      "id": "bf-18027-hartsville-fire",
+      "name": "Hartsville Fire",
+      "description": "Broadcastify public safety feed 18027 for South Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "SC",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south carolina",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/18027"
+    },
+    {
+      "id": "bf-18430-darlington-county-fire-dispatch",
+      "name": "Darlington County Fire Dispatch",
+      "description": "Broadcastify public safety feed 18430 for South Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "SC",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south carolina",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/18430"
+    },
+    {
+      "id": "bf-41672-dorchester-county-fire-and-ems",
+      "name": "Dorchester County Fire and EMS",
+      "description": "Broadcastify public safety feed 41672 for South Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "SC",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south carolina",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41672"
+    },
+    {
+      "id": "bf-13254-edgefield-county-sheriff-fire-and-ems",
+      "name": "Edgefield County Sheriff, Fire and EMS",
+      "description": "Broadcastify public safety feed 13254 for South Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "SC",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south carolina",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/13254"
+    },
+    {
+      "id": "bf-15353-monetta-fire-dispatch",
+      "name": "Monetta Fire Dispatch",
+      "description": "Broadcastify public safety feed 15353 for South Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "SC",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south carolina",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/15353"
+    },
+    {
+      "id": "bf-31283-johnston-fire",
+      "name": "Johnston Fire",
+      "description": "Broadcastify public safety feed 31283 for South Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "SC",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south carolina",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/31283"
+    },
+    {
+      "id": "bf-32020-edgefield-fire",
+      "name": "Edgefield Fire",
+      "description": "Broadcastify public safety feed 32020 for South Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "SC",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south carolina",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32020"
+    },
+    {
+      "id": "bf-39610-trenton-fire",
+      "name": "Trenton Fire",
+      "description": "Broadcastify public safety feed 39610 for South Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "SC",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south carolina",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39610"
+    },
+    {
+      "id": "bf-42690-greer-fire-admin-80",
+      "name": "Greer Fire Admin 80",
+      "description": "Broadcastify public safety feed 42690 for South Carolina.",
+      "city": "",
+      "county": "Various",
+      "state": "SC",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south carolina",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42690"
+    }
+  ]
+}
