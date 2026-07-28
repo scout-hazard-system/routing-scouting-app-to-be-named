@@ -15,4 +15,12 @@
     <string name="driving_mode_label">Driving Mode: manual</string>
     <string name="map_target_none">Map Target: waiting for alert coordinates</string>
     <string name="stream_placeholder">Waiting for stream events…</string>
+    <string name="menu_open">☰ Menu</string>
+    <string name="menu_close">✕ Close</string>
+    <string name="control_panel_title">Control Panel</string>
+    <string name="stream_log_title">Stream Log</string>
+    <string name="destination_hint">Search destination address (OpenStreetMap)</string>
+    <string name="search_go">Route</string>
+    <string name="map_style_osm">Style: OSM</string>
+    <string name="map_style_matrix">Style: Matrix</string>
 </resources>

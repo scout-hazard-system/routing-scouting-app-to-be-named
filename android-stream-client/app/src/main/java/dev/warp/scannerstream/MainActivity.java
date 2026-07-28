@@ -5,6 +5,7 @@ import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -19,6 +20,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.SystemClock;
 import android.text.TextUtils;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -26,6 +28,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -47,6 +50,12 @@ import okhttp3.Response;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.osmdroid.config.Configuration;
+import org.osmdroid.tileprovider.tilesource.TileSourceFactory;
+import org.osmdroid.util.GeoPoint;
+import org.osmdroid.views.MapView;
+import org.osmdroid.views.overlay.Marker;
+import org.osmdroid.views.overlay.Polyline;
 
 public class MainActivity extends AppCompatActivity {
   private static final float MOTION_FORCE_THRESHOLD_MS2 = 1.8f;
@@ -65,12 +74,22 @@ public class MainActivity extends AppCompatActivity {
       Pattern.compile("\\b(-?\\d{1,2}\\.\\d+)\\s*[, ]\\s*(-?\\d{1,3}\\.\\d+)\\b");
 
   private EditText baseUrlInput;
+  private EditText destinationInput;
   private TextView statusText;
   private TextView drivingModeText;
   private TextView mapTargetText;
   private TextView outputText;
   private Button toggle3dBtn;
+  private Button menuBtn;
+  private Button mapStyleBtn;
+  private View controlPanel;
   private MatrixMapView matrixMapView;
+  private MapView osmMapView;
+  private Polyline osmRoutePolyline;
+  private Marker osmDeviceMarker;
+  private Marker osmTargetMarker;
+  private boolean matrixStyleEnabled = false;
+  private boolean osmCenteredOnFix = false;
   private final Handler uiHandler = new Handler(Looper.getMainLooper());
   private final OkHttpClient client = new OkHttpClient.Builder().build();
   private volatile boolean running = false;
@@ -122,19 +141,30 @@ public class MainActivity extends AppCompatActivity {
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
+    Configuration.getInstance().setUserAgentValue(getPackageName());
+    Configuration.getInstance().setOsmdroidBasePath(new File(getCacheDir(), "osmdroid"));
+    Configuration.getInstance().setOsmdroidTileCache(new File(getCacheDir(), "osmdroid/tiles"));
     setContentView(R.layout.activity_main);
     baseUrlInput = findViewById(R.id.baseUrlInput);
+    destinationInput = findViewById(R.id.destinationInput);
     statusText = findViewById(R.id.statusText);
     drivingModeText = findViewById(R.id.drivingModeText);
     mapTargetText = findViewById(R.id.mapTargetText);
     outputText = findViewById(R.id.outputText);
     matrixMapView = findViewById(R.id.matrixMapView);
+    osmMapView = findViewById(R.id.osmMapView);
     toggle3dBtn = findViewById(R.id.toggle3dBtn);
+    menuBtn = findViewById(R.id.menuBtn);
+    mapStyleBtn = findViewById(R.id.mapStyleBtn);
+    controlPanel = findViewById(R.id.controlPanel);
     Button connectBtn = findViewById(R.id.connectBtn);
     Button disconnectBtn = findViewById(R.id.disconnectBtn);
     Button clearLogBtn = findViewById(R.id.clearLogBtn);
     Button openMapsBtn = findViewById(R.id.openMapsBtn);
     Button drawRouteBtn = findViewById(R.id.drawRouteBtn);
+    Button searchBtn = findViewById(R.id.searchBtn);
+
+    setupOsmMap();
 
     sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
     if (sensorManager != null) {
@@ -148,8 +178,11 @@ public class MainActivity extends AppCompatActivity {
     openMapsBtn.setOnClickListener(v -> openLatestMapTarget());
     drawRouteBtn.setOnClickListener(v -> renderRouteOnMap(true));
     toggle3dBtn.setOnClickListener(v -> toggle3dMode());
+    menuBtn.setOnClickListener(v -> setControlPanelVisible(controlPanel.getVisibility() != View.VISIBLE));
+    mapStyleBtn.setOnClickListener(v -> toggleMapStyle());
+    searchBtn.setOnClickListener(v -> searchDestination());
     update3dToggleUi();
-    appendLine("MAP", "standalone matrix renderer active (server-routed mode)");
+    appendLine("MAP", "OpenStreetMap base layer active (osmdroid + OSRM routing)");
 
     setStatus("idle");
     updateDrivingModeUi(0f);
@@ -157,15 +190,133 @@ public class MainActivity extends AppCompatActivity {
     renderRouteOnMap(true);
   }
 
+  private void setupOsmMap() {
+    osmMapView.setTileSource(TileSourceFactory.MAPNIK);
+    osmMapView.setMultiTouchControls(true);
+    osmMapView.getController().setZoom(15.5d);
+    osmMapView.getController().setCenter(new GeoPoint(DEFAULT_MAP_LAT, DEFAULT_MAP_LON));
+
+    osmRoutePolyline = new Polyline(osmMapView);
+    osmRoutePolyline.getOutlinePaint().setColor(Color.parseColor("#2B6BE6"));
+    osmRoutePolyline.getOutlinePaint().setStrokeWidth(10f);
+
+    osmDeviceMarker = new Marker(osmMapView);
+    osmDeviceMarker.setTitle("You");
+    osmDeviceMarker.setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM);
+
+    osmTargetMarker = new Marker(osmMapView);
+    osmTargetMarker.setTitle("Destination");
+    osmTargetMarker.setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM);
+
+    osmMapView.getOverlays().add(osmRoutePolyline);
+    osmMapView.getOverlays().add(osmDeviceMarker);
+    osmMapView.getOverlays().add(osmTargetMarker);
+  }
+
+  private void toggleMapStyle() {
+    matrixStyleEnabled = !matrixStyleEnabled;
+    matrixMapView.setVisibility(matrixStyleEnabled ? View.VISIBLE : View.GONE);
+    osmMapView.setVisibility(matrixStyleEnabled ? View.GONE : View.VISIBLE);
+    mapStyleBtn.setText(
+        matrixStyleEnabled
+            ? getString(R.string.map_style_matrix)
+            : getString(R.string.map_style_osm));
+    appendLine("MAP", matrixStyleEnabled ? "matrix style enabled" : "OSM style enabled");
+  }
+
+  private void searchDestination() {
+    String query = destinationInput.getText().toString().trim();
+    if (query.isEmpty()) {
+      appendLine("SEARCH", "enter a destination address first");
+      return;
+    }
+    String base = normalizedBaseUrl();
+    if (base == null) {
+      setStatus("invalid URL");
+      return;
+    }
+    appendLine("SEARCH", "geocoding via OSM: " + query);
+    String url = base + "/api/platform/geocode?q=" + Uri.encode(query);
+    Request request = new Request.Builder().url(url).build();
+    client.newCall(request)
+        .enqueue(
+            new Callback() {
+              @Override
+              public void onFailure(Call call, IOException e) {
+                appendLine("SEARCH", "geocode failed: " + e.getMessage());
+              }
+
+              @Override
+              public void onResponse(Call call, Response response) throws IOException {
+                try (response) {
+                  if (!response.isSuccessful() || response.body() == null) {
+                    appendLine("SEARCH", "geocode unavailable (HTTP " + response.code() + ")");
+                    return;
+                  }
+                  JSONObject json = new JSONObject(response.body().string());
+                  JSONArray results = json.optJSONArray("results");
+                  if (results == null || results.length() == 0) {
+                    appendLine("SEARCH", "no OSM matches for: " + query);
+                    return;
+                  }
+                  JSONObject first = results.optJSONObject(0);
+                  if (first == null) {
+                    appendLine("SEARCH", "malformed geocode result");
+                    return;
+                  }
+                  double lat = Double.parseDouble(first.optString("lat", "nan"));
+                  double lon = Double.parseDouble(first.optString("lon", "nan"));
+                  if (!Double.isFinite(lat) || !Double.isFinite(lon)) {
+                    appendLine("SEARCH", "geocode result missing coordinates");
+                    return;
+                  }
+                  String displayName = first.optString("display_name", query);
+                  lastMapLat = lat;
+                  lastMapLon = lon;
+                  updateMapTargetUi();
+                  appendLine("SEARCH", "destination: " + displayName);
+                  uiHandler.post(
+                      () -> {
+                        osmMapView.getController().animateTo(new GeoPoint(lat, lon));
+                        destinationInput.clearFocus();
+                      });
+                  renderRouteOnMap(true);
+                } catch (Exception e) {
+                  appendLine("SEARCH", "geocode parse error: " + e.getMessage());
+                }
+              }
+            });
+  }
+
+  private void setControlPanelVisible(boolean visible) {
+    controlPanel.setVisibility(visible ? View.VISIBLE : View.GONE);
+    menuBtn.setText(visible ? getString(R.string.menu_close) : getString(R.string.menu_open));
+  }
+
+  @Override
+  public void onBackPressed() {
+    if (controlPanel != null && controlPanel.getVisibility() == View.VISIBLE) {
+      setControlPanelVisible(false);
+      return;
+    }
+    super.onBackPressed();
+  }
+
   @Override
   protected void onResume() {
     super.onResume();
+    if (osmMapView != null) {
+      osmMapView.onResume();
+    }
     registerMotionDetection();
     registerLocationTracking();
   }
 
   @Override
   protected void onPause() {
+    if (osmMapView != null) {
+      osmMapView.onPause();
+    }
     unregisterLocationTracking();
     unregisterMotionDetection();
     super.onPause();
@@ -790,16 +941,44 @@ public class MainActivity extends AppCompatActivity {
     float heading = lastDeviceHeadingDeg != null ? lastDeviceHeadingDeg : 0f;
     boolean hasFix = lastDeviceLat != null && lastDeviceLon != null;
     uiHandler.post(
-        () ->
-            matrixMapView.renderScene(
-                originLat,
-                originLon,
-                targetLat,
-                targetLon,
-                routeSnapshot,
-                streetSnapshot,
-                heading,
-                hasFix));
+        () -> {
+          matrixMapView.renderScene(
+              originLat,
+              originLon,
+              targetLat,
+              targetLon,
+              routeSnapshot,
+              streetSnapshot,
+              heading,
+              hasFix);
+          updateOsmOverlays(originLat, originLon, targetLat, targetLon, routeSnapshot, hasFix);
+        });
+  }
+
+  private void updateOsmOverlays(
+      double originLat,
+      double originLon,
+      double targetLat,
+      double targetLon,
+      List<double[]> route,
+      boolean hasFix) {
+    if (osmMapView == null || osmRoutePolyline == null) {
+      return;
+    }
+    List<GeoPoint> geoPoints = new ArrayList<>();
+    for (double[] point : route) {
+      if (point != null && point.length >= 2) {
+        geoPoints.add(new GeoPoint(point[0], point[1]));
+      }
+    }
+    osmRoutePolyline.setPoints(geoPoints);
+    osmDeviceMarker.setPosition(new GeoPoint(originLat, originLon));
+    osmTargetMarker.setPosition(new GeoPoint(targetLat, targetLon));
+    if (hasFix && !osmCenteredOnFix) {
+      osmCenteredOnFix = true;
+      osmMapView.getController().animateTo(new GeoPoint(originLat, originLon));
+    }
+    osmMapView.invalidate();
   }
 
   private List<double[]> buildFallbackMatrixRoute(

@@ -42,11 +42,21 @@ public final class ScannerBackendServer {
   private static final Pattern TS_PATTERN = Pattern.compile("\"ts\"\\s*:\\s*\"([^\"]+)\"");
   private static final Pattern TRANSCRIPT_PATTERN = Pattern.compile("\"transcript\"\\s*:\\s*\"([^\"]*)\"");
   private static final Pattern ALERT_PATTERN = Pattern.compile("\"alert\"\\s*:\\s*\"([^\"]*)\"");
+  private static final Pattern OSRM_DISTANCE_PATTERN =
+      Pattern.compile("\"distance\"\\s*:\\s*([0-9]+(?:\\.[0-9]+)?)");
   private static final String WEATHER_PROVIDER = System.getenv().getOrDefault("WEATHER_PROVIDER", "mock");
   private static final String WAZE_DEEPLINK_BASE_URL =
       System.getenv().getOrDefault("WAZE_DEEPLINK_BASE_URL", "https://waze.com/ul");
   private static final String WAZE_EMBED_BASE_URL =
       System.getenv().getOrDefault("WAZE_EMBED_BASE_URL", "https://embed.waze.com/iframe");
+  private static final String NOMINATIM_SEARCH_URL =
+      System.getenv().getOrDefault("NOMINATIM_SEARCH_URL", "https://nominatim.openstreetmap.org/search");
+  private static final String OSRM_ROUTE_BASE_URL =
+      System.getenv().getOrDefault("OSRM_ROUTE_BASE_URL", "https://router.project-osrm.org/route/v1/driving");
+  private static final String EXTERNAL_HTTP_USER_AGENT =
+      System.getenv().getOrDefault("EXTERNAL_HTTP_USER_AGENT", "scanner-stream-backend/0.1 (self-hosted)");
+  private static final int EXTERNAL_HTTP_TIMEOUT_MS =
+      parseIntOrDefault(System.getenv("EXTERNAL_HTTP_TIMEOUT_MS"), 6000);
   private static final String SELECTOR_PYTHON_BIN =
       System.getenv().getOrDefault("SELECTOR_PYTHON_BIN", "/home/gibi/Desktop/cop_pipeline/bin/python3");
   private static final String SELECTOR_SCRIPT_PATH =
@@ -103,6 +113,7 @@ public final class ScannerBackendServer {
     registerContext(server, "/api/platform/weather/forecast", new PlatformWeatherHandler());
     registerContext(server, "/api/platform/waze/route", new WazeRouteHandler());
     registerContext(server, "/api/platform/route/local", new LocalRouteHandler());
+    registerContext(server, "/api/platform/geocode", new GeocodeHandler());
     registerContext(server, "/api/gps/update", new GpsUpdateHandler());
     registerContext(server, "/api/gps/latest", new GpsLatestHandler());
     registerContext(server, "/api/gps/track", new GpsTrackHandler());
@@ -585,6 +596,7 @@ public final class ScannerBackendServer {
         + "\"stream\":\"/api/mobile/stream\","
         + "\"weather\":\"/api/platform/weather/forecast\","
         + "\"waze\":\"/api/platform/waze/route\","
+        + "\"geocode\":\"/api/platform/geocode\","
         + "\"local_route\":\"/api/platform/route/local\""
         + "},"
         + "\"notes\":\"Compact endpoints are intended for low-bandwidth mobile companion clients.\""
@@ -681,13 +693,27 @@ public final class ScannerBackendServer {
     }
 
     String condition = query.getOrDefault("condition", "idle");
-    List<RouteNode> routeNodes = buildStandaloneRouteNodes(originLat, originLon, destLat, destLon, condition);
+    String engine = "standalone_matrix_router";
+    List<RouteNode> routeNodes = null;
+    Double externalMeters = null;
+    String osrmBody = fetchOsrmRouteBody(originLat, originLon, destLat, destLon);
+    if (osrmBody != null) {
+      List<RouteNode> osrmNodes = parseOsrmCoordinates(osrmBody);
+      if (osrmNodes != null) {
+        routeNodes = osrmNodes;
+        externalMeters = parseOsrmDistanceMeters(osrmBody);
+        engine = "osrm_openstreetmap";
+      }
+    }
+    if (routeNodes == null) {
+      routeNodes = buildStandaloneRouteNodes(originLat, originLon, destLat, destLon, condition);
+    }
     List<StreetSegmentData> streetSegments = buildStandaloneStreetSegments(originLat, originLon, destLat, destLon);
-    double meters = approximateRouteMeters(routeNodes);
+    double meters = externalMeters != null ? externalMeters : approximateRouteMeters(routeNodes);
     return "{"
         + "\"ts\":\"" + Instant.now().toString() + "\","
         + "\"status\":\"ok\","
-        + "\"engine\":\"standalone_matrix_router\","
+        + "\"engine\":\"" + jsonEscape(engine) + "\","
         + "\"condition\":\"" + jsonEscape(condition) + "\","
         + "\"origin\":{\"lat\":" + trimDouble(originLat) + ",\"lon\":" + trimDouble(originLon) + "},"
         + "\"destination\":{\"lat\":" + trimDouble(destLat) + ",\"lon\":" + trimDouble(destLon) + "},"
@@ -1122,6 +1148,127 @@ public final class ScannerBackendServer {
       String routeJson = buildStandaloneLocalRouteJson(query);
       writeJson(exchange, helperResponseStatus(routeJson), routeJson);
     }
+  }
+
+  private static final class GeocodeHandler implements HttpHandler {
+    @Override
+    public void handle(HttpExchange exchange) throws IOException {
+      if (!isGet(exchange)) {
+        writeJson(exchange, 405, "{\"error\":\"method_not_allowed\"}");
+        return;
+      }
+      URI uri = exchange.getRequestURI();
+      Map<String, String> query = parseQuery(uri.getRawQuery());
+      String q = query.getOrDefault("q", "").trim();
+      if (q.isEmpty()) {
+        writeJson(exchange, 400, "{\"error\":\"missing_query\"}");
+        return;
+      }
+      String url = NOMINATIM_SEARCH_URL + "?format=json&limit=5&q=" + urlEncode(q);
+      String body = httpGetExternal(url);
+      if (body == null || !looksLikeJson(body)) {
+        writeJson(
+            exchange,
+            502,
+            "{\"status\":\"error\",\"error\":\"geocode_unavailable\",\"provider\":\"nominatim\"}");
+        return;
+      }
+      writeJson(
+          exchange,
+          200,
+          "{"
+              + "\"ts\":\"" + Instant.now().toString() + "\","
+              + "\"status\":\"ok\","
+              + "\"provider\":\"nominatim\","
+              + "\"query\":\"" + jsonEscape(q) + "\","
+              + "\"results\":" + body
+              + "}");
+    }
+  }
+
+  private static String httpGetExternal(String urlString) {
+    java.net.HttpURLConnection connection = null;
+    try {
+      connection = (java.net.HttpURLConnection) new java.net.URL(urlString).openConnection();
+      connection.setConnectTimeout(EXTERNAL_HTTP_TIMEOUT_MS);
+      connection.setReadTimeout(EXTERNAL_HTTP_TIMEOUT_MS);
+      connection.setRequestProperty("User-Agent", EXTERNAL_HTTP_USER_AGENT);
+      connection.setRequestProperty("Accept", "application/json");
+      int status = connection.getResponseCode();
+      if (status < 200 || status >= 300) {
+        return null;
+      }
+      try (java.io.InputStream in = connection.getInputStream()) {
+        return new String(in.readAllBytes(), StandardCharsets.UTF_8);
+      }
+    } catch (Exception ex) {
+      return null;
+    } finally {
+      if (connection != null) {
+        connection.disconnect();
+      }
+    }
+  }
+
+  private static String fetchOsrmRouteBody(
+      double originLat, double originLon, double destLat, double destLon) {
+    String url =
+        OSRM_ROUTE_BASE_URL
+            + "/"
+            + trimDouble(originLon)
+            + ","
+            + trimDouble(originLat)
+            + ";"
+            + trimDouble(destLon)
+            + ","
+            + trimDouble(destLat)
+            + "?overview=full&geometries=geojson&alternatives=false&steps=false";
+    String body = httpGetExternal(url);
+    if (body == null || !body.contains("\"code\":\"Ok\"")) {
+      return null;
+    }
+    return body;
+  }
+
+  private static List<RouteNode> parseOsrmCoordinates(String osrmBody) {
+    int keyIdx = osrmBody.indexOf("\"coordinates\":[[");
+    if (keyIdx < 0) {
+      return null;
+    }
+    int start = keyIdx + "\"coordinates\":[[".length();
+    int end = osrmBody.indexOf("]]", start);
+    if (end < 0) {
+      return null;
+    }
+    String coords = osrmBody.substring(start, end);
+    String[] pairs = coords.split("\\],\\[");
+    List<RouteNode> nodes = new ArrayList<>();
+    for (String pair : pairs) {
+      String[] parts = pair.split(",");
+      if (parts.length < 2) {
+        continue;
+      }
+      try {
+        double lon = Double.parseDouble(parts[0].trim());
+        double lat = Double.parseDouble(parts[1].trim());
+        nodes.add(new RouteNode(lat, lon));
+      } catch (NumberFormatException ignored) {
+        // skip malformed coordinate pair
+      }
+    }
+    return nodes.size() >= 2 ? nodes : null;
+  }
+
+  private static Double parseOsrmDistanceMeters(String osrmBody) {
+    Matcher matcher = OSRM_DISTANCE_PATTERN.matcher(osrmBody);
+    if (matcher.find()) {
+      try {
+        return Double.parseDouble(matcher.group(1));
+      } catch (NumberFormatException ignored) {
+        return null;
+      }
+    }
+    return null;
   }
   private static boolean looksLikeJson(String raw) {
     if (raw == null) {

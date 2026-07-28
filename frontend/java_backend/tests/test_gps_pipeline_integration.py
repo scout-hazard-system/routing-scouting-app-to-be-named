@@ -203,17 +203,20 @@ class GpsPipelineIntegrationTests(unittest.TestCase):
             "/api/platform/route/local?origin_lat=47.6205&origin_lon=-122.3493&dest_lat=47.6220&dest_lon=-122.3410&condition=driving_streaming",
         )
         self.assertEqual(route.get("status"), "ok")
-        self.assertEqual(route.get("engine"), "standalone_matrix_router")
+        self.assertIn(
+            route.get("engine"), ("standalone_matrix_router", "osrm_openstreetmap")
+        )
         self.assertIn("route_points", route)
         self.assertGreaterEqual(len(route["route_points"]), 2)
         self.assertIn("street_segments", route)
         self.assertGreaterEqual(len(route["street_segments"]), 1)
         start = route["route_points"][0]
         end = route["route_points"][-1]
-        self.assertAlmostEqual(start["lat"], 47.6205, places=3)
-        self.assertAlmostEqual(start["lon"], -122.3493, places=3)
-        self.assertAlmostEqual(end["lat"], 47.6220, places=3)
-        self.assertAlmostEqual(end["lon"], -122.3410, places=3)
+        # OSRM snaps endpoints to the road network, so allow ~1km tolerance.
+        self.assertAlmostEqual(start["lat"], 47.6205, places=2)
+        self.assertAlmostEqual(start["lon"], -122.3493, places=2)
+        self.assertAlmostEqual(end["lat"], 47.6220, places=2)
+        self.assertAlmostEqual(end["lon"], -122.3410, places=2)
 
 
 if __name__ == "__main__":
