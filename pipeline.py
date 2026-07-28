@@ -13,6 +13,10 @@ import numpy as np
 from faster_whisper import WhisperModel
 from channel_selector import SelectorContext, load_channels, select_channels
 from optional_audio_routes import ensure_optional_route_enabled
+try:
+    import scanner_llm_set
+except Exception:
+    scanner_llm_set = None
 
 
 FS = 16000          # Audio frequency standard for Whisper
@@ -616,6 +620,11 @@ parser.add_argument("--log-file", type=str, default="/tmp/pipeline_runtime.log",
 parser.add_argument("--alert-debug", action=argparse.BooleanOptionalAction, default=True, help="Emit detailed [ALERT_DEBUG] lines for cue matching and Ollama decisions")
 parser.add_argument("--ollama-timeout", type=float, default=8.0, help="Ollama request timeout in seconds")
 parser.add_argument("--ollama-retries", type=int, default=1, help="Retry attempts after first Ollama failure")
+parser.add_argument("--llm-set", action=argparse.BooleanOptionalAction, default=True, help="Use the proprietary scout LLM set (scout-alert/scout-intel); falls back to base llama3.1 prompts when models are not built")
+parser.add_argument("--llm-alert-model", type=str, default="scout-alert", help="Scout model for the alert decision")
+parser.add_argument("--llm-intel-model", type=str, default="scout-intel", help="Scout model for structured intel extraction")
+parser.add_argument("--llm-intel", action=argparse.BooleanOptionalAction, default=True, help="Run structured intel extraction on alert-worthy transcripts")
+parser.add_argument("--llm-intel-timeout", type=float, default=10.0, help="Intel extraction request timeout in seconds")
 parser.add_argument("--rms-threshold", type=float, default=0.01, help="Skip chunk when RMS is below this value")
 parser.add_argument("--clip-threshold", type=float, default=0.15, help="Skip chunk when clipped sample ratio exceeds this value")
 parser.add_argument("--soft-alert-fallback", action=argparse.BooleanOptionalAction, default=True, help="Emit SOFT_ALERT when dispatch cues meet threshold but LLM does not emit ALERT")
@@ -715,6 +724,18 @@ else:
     print(f"Input source node: {input_device_name}")
     print(f"Input selection strategy: {input_selection_reason}")
 print(f"Capture sample rate: {capture_fs}")
+llm_set_info = None
+use_llm_set = bool(args.llm_set and scanner_llm_set is not None)
+if use_llm_set:
+    llm_set_info = scanner_llm_set.llm_set_status(force_refresh=True)
+    print(
+        "LLM set (scout): "
+        f"ollama_up={llm_set_info['ollama_up']} "
+        f"complete={llm_set_info['complete']} "
+        f"models={llm_set_info['models']}"
+    )
+elif args.llm_set:
+    print("LLM set requested but scanner_llm_set module unavailable; using legacy inline prompt.")
 emit_event_json(
     "pipeline_ready",
     enabled=args.integration_json,
@@ -729,6 +750,7 @@ emit_event_json(
     soft_alert_fallback=args.soft_alert_fallback,
     channel_id=selected_channel.get("id") if selected_channel else None,
     channel_name=selected_channel.get("name") if selected_channel else None,
+    llm_set=llm_set_info,
 )
 run_stats = {
     "captured": 0,
@@ -894,8 +916,16 @@ try:
                 strong_enforcement = has_strong_enforcement_signal(cue_map)
                 has_location = bool(cue_map.get("location_markers"))
                 
-                # 4. Offload text to local Ollama Llama 3.1 framework
-                llm_result = query_llm(raw_text, timeout_seconds=args.ollama_timeout, retries=args.ollama_retries)
+                # 4. Offload text to the proprietary scout LLM set (Ollama-backed)
+                if use_llm_set:
+                    llm_result = scanner_llm_set.query_alert(
+                        raw_text,
+                        timeout_seconds=args.ollama_timeout,
+                        retries=args.ollama_retries,
+                        model=args.llm_alert_model,
+                    )
+                else:
+                    llm_result = query_llm(raw_text, timeout_seconds=args.ollama_timeout, retries=args.ollama_retries)
                 ai_response = llm_result["response"]
                 llm_alert = "ALERT:" in ai_response
                 rule_expected_alert = dispatch_score >= args.rule_score_threshold
@@ -921,6 +951,37 @@ try:
                     and (not llm_alert)
                     and (strong_enforcement or has_location)
                 )
+                # 4b. Structured intel extraction (scout-intel) on alert-worthy transcripts
+                llm_intel = None
+                if (llm_alert or hard_rule_alert or fallback_soft_alert) and use_llm_set and args.llm_intel:
+                    intel_result = scanner_llm_set.query_intel(
+                        raw_text,
+                        timeout_seconds=args.llm_intel_timeout,
+                        model=args.llm_intel_model,
+                    )
+                    llm_intel = intel_result["intel"]
+                    if llm_intel:
+                        location_mentions = _dedupe_mentions(location_mentions + llm_intel["locations"])
+                        poi_mentions = _dedupe_mentions(poi_mentions + llm_intel["pois"])
+                        if args.alert_debug:
+                            print(
+                                "[INTEL] "
+                                f"model={intel_result['model']} "
+                                f"fallback={intel_result['used_fallback']} "
+                                f"call_types={llm_intel['call_types']} "
+                                f"priority={llm_intel['priority']} "
+                                f"codes={llm_intel['codes']} "
+                                f"units={llm_intel['units']} "
+                                f"locations={llm_intel['locations']} "
+                                f"pois={llm_intel['pois']} "
+                                f"summary=\"{log_safe(llm_intel['summary'])}\""
+                            )
+                    elif args.alert_debug:
+                        print(
+                            "[INTEL] extraction failed: "
+                            f"error={log_safe(str(intel_result['error'])) if intel_result['error'] else 'none'} "
+                            f"parse_error={log_safe(str(intel_result['parse_error'])) if intel_result['parse_error'] else 'none'}"
+                        )
                 emit_event_json(
                     "alert_decision",
                     enabled=args.integration_json,
@@ -940,6 +1001,7 @@ try:
                     classification=classification,
                     location_mentions=location_mentions,
                     poi_mentions=poi_mentions,
+                    llm_intel=llm_intel,
                     rms=rms,
                     clip_ratio=clip_ratio,
                 )
@@ -993,6 +1055,7 @@ try:
                         classification=classification,
                         location_mentions=location_mentions,
                         poi_mentions=poi_mentions,
+                        llm_intel=llm_intel,
                         rms=rms,
                         clip_ratio=clip_ratio,
                     )
@@ -1025,6 +1088,7 @@ try:
                         classification=classification,
                         location_mentions=location_mentions,
                         poi_mentions=poi_mentions,
+                        llm_intel=llm_intel,
                         cue_count=cue_count,
                         dispatch_score=dispatch_score,
                         rms=rms,
@@ -1071,6 +1135,7 @@ try:
                         classification=classification,
                         location_mentions=location_mentions,
                         poi_mentions=poi_mentions,
+                        llm_intel=llm_intel,
                         cue_count=cue_count,
                         rms=rms,
                         clip_ratio=clip_ratio,

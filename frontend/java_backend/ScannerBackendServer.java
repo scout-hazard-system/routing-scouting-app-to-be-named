@@ -89,6 +89,12 @@ public final class ScannerBackendServer {
       System.getenv().getOrDefault("BROADCASTIFY_SELECTOR_OLLAMA_WEIGHT", "0.2");
   private static final int HELPER_PROCESS_TIMEOUT_SECONDS =
       parseIntOrDefault(System.getenv("BACKEND_HELPER_TIMEOUT_SECONDS"), 90);
+  private static final String OLLAMA_TAGS_URL =
+      System.getenv().getOrDefault("OLLAMA_TAGS_URL", "http://localhost:11434/api/tags");
+  private static final String LLM_BASE_MODEL =
+      System.getenv().getOrDefault("LLM_BASE_MODEL", "llama3.1");
+  private static final String[] SCOUT_MODELS = {"scout-alert", "scout-intel", "scout-rank"};
+  private static final Pattern MODEL_NAME_PATTERN = Pattern.compile("\"name\"\\s*:\\s*\"([^\"]+)\"");
   private static final int METRICS_MAX_ITEMS =
       parseIntOrDefault(System.getenv("BACKEND_METRICS_MAX_ITEMS"), 12);
   private static final int GPS_TRACK_MAX_POINTS =
@@ -121,6 +127,7 @@ public final class ScannerBackendServer {
     registerContext(server, "/api/platform/broadcastify/select", new BroadcastifySelectHandler());
     registerContext(server, "/api/platform/broadcastify/catalog", new BroadcastifyCatalogHandler());
     registerContext(server, "/api/platform/providers/status", new ProviderStatusHandler());
+    registerContext(server, "/api/platform/llm/status", new LlmStatusHandler());
     registerContext(server, "/api/mobile/bootstrap", new MobileBootstrapHandler());
     registerContext(server, "/api/mobile/snapshot", new MobileSnapshotHandler());
     registerContext(server, "/api/mobile/stream", new MobileStreamHandler());
@@ -1096,6 +1103,54 @@ public final class ScannerBackendServer {
               + "\"results\":" + body
               + "}");
     }
+  }
+
+  private static final class LlmStatusHandler implements HttpHandler {
+    @Override
+    public void handle(HttpExchange exchange) throws IOException {
+      if (!isGet(exchange)) {
+        writeJson(exchange, 405, "{\"error\":\"method_not_allowed\"}");
+        return;
+      }
+      writeJson(exchange, 200, llmStatusJson());
+    }
+  }
+
+  private static String llmStatusJson() {
+    String body = httpGetExternal(OLLAMA_TAGS_URL);
+    boolean ollamaUp = body != null && looksLikeJson(body);
+    java.util.Set<String> installed = new java.util.HashSet<>();
+    if (ollamaUp) {
+      Matcher matcher = MODEL_NAME_PATTERN.matcher(body);
+      while (matcher.find()) {
+        String name = matcher.group(1);
+        installed.add(name);
+        if (name.endsWith(":latest")) {
+          installed.add(name.substring(0, name.length() - ":latest".length()));
+        }
+      }
+    }
+    StringBuilder models = new StringBuilder("{");
+    boolean complete = true;
+    for (int i = 0; i < SCOUT_MODELS.length; i++) {
+      boolean present = installed.contains(SCOUT_MODELS[i]);
+      complete = complete && present;
+      if (i > 0) {
+        models.append(",");
+      }
+      models.append("\"").append(SCOUT_MODELS[i]).append("\":").append(present);
+    }
+    models.append("}");
+    return "{"
+        + "\"ts\":\"" + Instant.now().toString() + "\","
+        + "\"status\":\"ok\","
+        + "\"ollama_up\":" + ollamaUp + ","
+        + "\"tags_url\":\"" + jsonEscape(OLLAMA_TAGS_URL) + "\","
+        + "\"base_model\":\"" + jsonEscape(LLM_BASE_MODEL) + "\","
+        + "\"base_model_installed\":" + installed.contains(LLM_BASE_MODEL) + ","
+        + "\"models\":" + models + ","
+        + "\"complete\":" + (ollamaUp && complete)
+        + "}";
   }
 
   private static String httpGetExternal(String urlString) {

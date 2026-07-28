@@ -300,6 +300,21 @@ class GpsPipelineIntegrationTests(unittest.TestCase):
         )
         self.assertIn(scene_snap.get("zoom"), (11, 13))
 
+    def test_llm_status_shape(self):
+        status = self._request_json("GET", "/api/platform/llm/status")
+        self.assertEqual(status.get("status"), "ok")
+        self.assertIn("ollama_up", status)
+        self.assertEqual(status.get("base_model"), "llama3.1")
+        models = status.get("models", {})
+        for name in ("scout-alert", "scout-intel", "scout-rank"):
+            self.assertIn(name, models)
+        # "complete" must be a bool consistent with model availability.
+        self.assertIsInstance(status.get("complete"), bool)
+        if status["ollama_up"] and all(models.values()):
+            self.assertTrue(status["complete"])
+        else:
+            self.assertFalse(status["complete"])
+
     def test_map_shard_validation(self):
         with self.assertRaises(HTTPError) as ctx:
             self._request_json("GET", "/api/map/shard?state=ZZ")
