@@ -496,6 +496,149 @@ def capture_scrcpy_chunk_to_wav(source_name, duration_seconds, output_path, samp
         "-t", str(duration_seconds),
         output_path
     ], check=True)
+BROWSER_USER_AGENT = (
+    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
+    "(KHTML, like Gecko) Chrome/126.0 Safari/537.36"
+)
+BROADCASTIFY_LISTEN_RE = re.compile(r"https?://(?:www\.)?broadcastify\.com/listen/feed/(\d+)")
+_broadcastify_sessions = {}
+def resolve_broadcastify_stream(stream_url):
+    """Resolve a Broadcastify listen-page URL to a playable signed HLS URL.
+
+    Catalog stream_urls point at HTML listen pages. Each page embeds a
+    short-lived signed session (hlsUrl + sessionId); the playable stream is
+    hlsUrl?s=<sessionId>. Sessions are cached per feed and kept alive with
+    beacon pings; call invalidate_broadcastify_session on capture failure so
+    the next attempt fetches a fresh session. Non-Broadcastify URLs pass
+    through unchanged.
+    """
+    match = BROADCASTIFY_LISTEN_RE.match(stream_url or "")
+    if not match:
+        return stream_url
+    feed_id = match.group(1)
+    cached = _broadcastify_sessions.get(feed_id)
+    if cached:
+        return cached["url"]
+    page = requests.get(
+        f"https://www.broadcastify.com/listen/feed/{feed_id}?_={int(time.time() * 1000)}",
+        headers={
+            "User-Agent": BROWSER_USER_AGENT,
+            "Cache-Control": "no-cache",
+            "Pragma": "no-cache",
+        },
+        timeout=10,
+    ).text
+    hls_match = re.search(r'hlsUrl:\s*"([^"]+)"', page)
+    sid_match = re.search(r'sessionId:\s*"([^"]+)"', page)
+    if not hls_match or not sid_match:
+        raise RuntimeError(f"Could not extract HLS session from Broadcastify feed {feed_id} listen page.")
+    hls_url = hls_match.group(1).replace("\\/", "/")
+    session_id = sid_match.group(1)
+    beacon_match = re.search(r"beaconUrl:\s*'([^']+)'", page)
+    _broadcastify_sessions[feed_id] = {
+        "url": f"{hls_url}?s={session_id}",
+        "session_id": session_id,
+        "feed_id": feed_id,
+        "beacon_url": beacon_match.group(1) if beacon_match else None,
+        "resolved_at": time.time(),
+    }
+    print(f"[BroadcastifyResolve] feed={feed_id} resolved listen page to signed HLS session.")
+    return _broadcastify_sessions[feed_id]["url"]
+def invalidate_broadcastify_session(stream_url):
+    match = BROADCASTIFY_LISTEN_RE.match(stream_url or "")
+    if match:
+        _broadcastify_sessions.pop(match.group(1), None)
+def broadcastify_beacon_ping(stream_url):
+    """Keep the signed HLS session alive (server expects a ping every ~60s)."""
+    match = BROADCASTIFY_LISTEN_RE.match(stream_url or "")
+    if not match:
+        return
+    cached = _broadcastify_sessions.get(match.group(1))
+    if not cached or not cached.get("beacon_url"):
+        return
+    try:
+        requests.post(
+            cached["beacon_url"],
+            json={"feedId": int(cached["feed_id"]), "sessionId": cached["session_id"]},
+            headers={"User-Agent": BROWSER_USER_AGENT},
+            timeout=5,
+        )
+    except Exception:
+        pass
+_hls_seen_segments = {}
+def capture_hls_chunk_to_wav(playlist_url, duration_seconds, output_path, sample_rate):
+    """Capture ~duration_seconds of a live HLS stream without ffmpeg networking.
+
+    Broadcastify's edge rejects ffmpeg's TLS fingerprint (403) while browser
+    clients (requests) pass, so segments are downloaded with requests and
+    concatenated to a local MPEG-TS file that ffmpeg then transcodes to wav.
+    Tracks consumed segment URIs per playlist so consecutive chunks continue
+    from the live edge instead of re-reading the backlog.
+    """
+    headers = {"User-Agent": BROWSER_USER_AGENT}
+    base = playlist_url.split("?")[0].rsplit("/", 1)[0]
+    seen = _hls_seen_segments.setdefault(playlist_url, set())
+    if len(_hls_seen_segments) > 32:
+        for key in list(_hls_seen_segments):
+            if key != playlist_url:
+                _hls_seen_segments.pop(key, None)
+    ts_path = output_path + ".ts"
+    collected = 0.0
+    deadline = time.time() + duration_seconds * 2 + 20
+    with open(ts_path, "wb") as out:
+        while collected < duration_seconds and time.time() < deadline and not SHOULD_EXIT:
+            response = requests.get(playlist_url, headers=headers, timeout=10)
+            response.raise_for_status()
+            segment_entries = []
+            entry_duration = None
+            for line in response.text.splitlines():
+                line = line.strip()
+                if line.startswith("#EXTINF:"):
+                    try:
+                        entry_duration = float(line[len("#EXTINF:"):].split(",")[0])
+                    except ValueError:
+                        entry_duration = None
+                elif line and not line.startswith("#"):
+                    segment_entries.append((line, entry_duration if entry_duration else 4.0))
+                    entry_duration = None
+            got_new_segment = False
+            for uri, seg_duration in segment_entries:
+                if uri in seen:
+                    continue
+                seen.add(uri)
+                if len(seen) > 512:
+                    seen.clear()
+                    seen.add(uri)
+                seg_url = uri if uri.startswith("http") else f"{base}/{uri}"
+                seg_response = requests.get(seg_url, headers=headers, timeout=10)
+                seg_response.raise_for_status()
+                out.write(seg_response.content)
+                collected += seg_duration
+                got_new_segment = True
+                if collected >= duration_seconds:
+                    break
+            if not got_new_segment and collected < duration_seconds:
+                time.sleep(1.0)
+    if collected <= 0.0:
+        try:
+            os.remove(ts_path)
+        except OSError:
+            pass
+        raise RuntimeError(f"No HLS segments collected from {playlist_url.split('?')[0]}")
+    try:
+        subprocess.run([
+            "ffmpeg", "-hide_banner", "-loglevel", "error", "-y",
+            "-i", ts_path,
+            "-vn",
+            "-ac", "1",
+            "-ar", str(sample_rate),
+            output_path
+        ], check=True)
+    finally:
+        try:
+            os.remove(ts_path)
+        except OSError:
+            pass
 def capture_stream_chunk_to_wav(stream_url, duration_seconds, output_path, sample_rate):
     cmd = [
         "ffmpeg", "-hide_banner", "-loglevel", "error", "-y",
@@ -503,7 +646,7 @@ def capture_stream_chunk_to_wav(stream_url, duration_seconds, output_path, sampl
     ]
     if stream_url.startswith("http://") or stream_url.startswith("https://"):
         cmd.extend([
-            "-user_agent", "Mozilla/5.0 (X11; Linux x86_64) ScannerStream/1.0",
+            "-user_agent", BROWSER_USER_AGENT,
             "-reconnect", "1",
             "-reconnect_streamed", "1",
             "-reconnect_delay_max", "5",
@@ -946,8 +1089,16 @@ try:
                                     to_channel_name=selected_channel.get("name"),
                                 )
                 try:
-                    capture_stream_chunk_to_wav(stream_url, chunk_duration, "buffer_chunk.wav", capture_fs)
-                except subprocess.CalledProcessError as stream_err:
+                    capture_url = resolve_broadcastify_stream(stream_url)
+                    if ".m3u8" in capture_url.split("?")[0]:
+                        capture_hls_chunk_to_wav(capture_url, chunk_duration, "buffer_chunk.wav", capture_fs)
+                    else:
+                        capture_stream_chunk_to_wav(capture_url, chunk_duration, "buffer_chunk.wav", capture_fs)
+                except (subprocess.CalledProcessError, requests.RequestException, RuntimeError) as stream_err:
+                    # Signed sessions are short-lived; force a fresh resolve on
+                    # the next attempt for this feed.
+                    invalidate_broadcastify_session(stream_url)
+                    stream_err_code = getattr(stream_err, "returncode", None)
                     broadcast_failures += 1
                     candidate_count = max(1, len(broadcast_candidates))
                     failed_cycles = broadcast_failures // candidate_count
@@ -965,7 +1116,8 @@ try:
                         stream_url = selected_channel.get("stream_url")
                         print(
                             "[BroadcastifyFallback] "
-                            f"capture_failed_exit={stream_err.returncode} "
+                            f"capture_failed_exit={stream_err_code} "
+                            f"error={type(stream_err).__name__} "
                             f"consecutive_failures={broadcast_failures} "
                             f"retry_delay={retry_delay:.1f}s "
                             f"from={from_channel.get('id')} -> to={selected_channel.get('id')} "
@@ -979,7 +1131,8 @@ try:
                             from_channel_name=from_channel.get("name"),
                             to_channel_id=selected_channel.get("id"),
                             to_channel_name=selected_channel.get("name"),
-                            ffmpeg_exit_code=stream_err.returncode,
+                            ffmpeg_exit_code=stream_err_code,
+                            error_kind=type(stream_err).__name__,
                             consecutive_failures=broadcast_failures,
                             retry_delay_seconds=round(retry_delay, 3),
                         )
@@ -987,7 +1140,8 @@ try:
                         continue
                     print(
                         "[BroadcastifyFallback] "
-                        f"capture_failed_exit={stream_err.returncode} "
+                        f"capture_failed_exit={stream_err_code} "
+                        f"error={type(stream_err).__name__} "
                         f"consecutive_failures={broadcast_failures} "
                         f"retry_delay={retry_delay:.1f}s (single stream; retrying)"
                     )
@@ -997,12 +1151,14 @@ try:
                         reason="capture_failed",
                         channel_id=selected_channel.get("id") if selected_channel else None,
                         channel_name=selected_channel.get("name") if selected_channel else None,
-                        ffmpeg_exit_code=stream_err.returncode,
+                        ffmpeg_exit_code=stream_err_code,
+                        error_kind=type(stream_err).__name__,
                         consecutive_failures=broadcast_failures,
                         retry_delay_seconds=round(retry_delay, 3),
                     )
                     time.sleep(retry_delay)
                     continue
+                broadcastify_beacon_ping(stream_url)
                 if broadcast_failures:
                     print(f"[BroadcastifyRecovered] stream capture succeeded after {broadcast_failures} consecutive failures.")
                     emit_event_json(
