@@ -14,16 +14,22 @@ import java.util.Locale;
 public final class MatrixMapView extends View {
   private static final float PADDING_RATIO = 0.12f;
   private static final int GRID_LINES = 10;
+  private static final double DEFAULT_LAT = 37.7749;
+  private static final double DEFAULT_LON = -122.4194;
 
   private final Paint backgroundPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
   private final Paint gridPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
   private final Paint routePaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+  private final Paint streetMajorPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+  private final Paint streetMinorPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+  private final Paint streetLabelPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
   private final Paint devicePaint = new Paint(Paint.ANTI_ALIAS_FLAG);
   private final Paint targetPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
   private final Paint textPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
   private final Paint headingPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
 
   private final List<double[]> routePoints = new ArrayList<>();
+  private final List<StreetSegment> streetSegments = new ArrayList<>();
   private double deviceLat = Double.NaN;
   private double deviceLon = Double.NaN;
   private double targetLat = Double.NaN;
@@ -50,8 +56,8 @@ public final class MatrixMapView extends View {
   private void initPaints() {
     backgroundPaint.setColor(Color.parseColor("#101820"));
 
-    gridPaint.setColor(Color.parseColor("#55FFFFFF"));
-    gridPaint.setStrokeWidth(1.8f);
+    gridPaint.setColor(Color.parseColor("#33FFFFFF"));
+    gridPaint.setStrokeWidth(1.4f);
     gridPaint.setStyle(Paint.Style.STROKE);
 
     routePaint.setColor(Color.parseColor("#2B9BFF"));
@@ -59,6 +65,21 @@ public final class MatrixMapView extends View {
     routePaint.setStyle(Paint.Style.STROKE);
     routePaint.setStrokeCap(Paint.Cap.ROUND);
     routePaint.setStrokeJoin(Paint.Join.ROUND);
+
+    streetMajorPaint.setColor(Color.parseColor("#DCE6F7"));
+    streetMajorPaint.setStrokeWidth(5f);
+    streetMajorPaint.setStyle(Paint.Style.STROKE);
+    streetMajorPaint.setStrokeCap(Paint.Cap.ROUND);
+    streetMajorPaint.setStrokeJoin(Paint.Join.ROUND);
+
+    streetMinorPaint.setColor(Color.parseColor("#88A0C4"));
+    streetMinorPaint.setStrokeWidth(2.8f);
+    streetMinorPaint.setStyle(Paint.Style.STROKE);
+    streetMinorPaint.setStrokeCap(Paint.Cap.ROUND);
+    streetMinorPaint.setStrokeJoin(Paint.Join.ROUND);
+
+    streetLabelPaint.setColor(Color.parseColor("#BFD3ED"));
+    streetLabelPaint.setTextSize(22f);
 
     devicePaint.setColor(Color.parseColor("#26D07C"));
     devicePaint.setStyle(Paint.Style.FILL);
@@ -86,6 +107,7 @@ public final class MatrixMapView extends View {
       double targetLat,
       double targetLon,
       List<double[]> route,
+      List<StreetSegment> streets,
       float headingDeg,
       boolean hasFix) {
     this.deviceLat = deviceLat;
@@ -97,6 +119,10 @@ public final class MatrixMapView extends View {
     routePoints.clear();
     if (route != null) {
       routePoints.addAll(route);
+    }
+    streetSegments.clear();
+    if (streets != null) {
+      streetSegments.addAll(streets);
     }
     invalidate();
   }
@@ -111,6 +137,7 @@ public final class MatrixMapView extends View {
     }
     canvas.drawRect(0, 0, width, height, backgroundPaint);
     drawGrid(canvas, width, height);
+    drawStreets(canvas, width, height);
     drawRouteAndMarkers(canvas, width, height);
     drawLegend(canvas, width, height);
   }
@@ -129,10 +156,28 @@ public final class MatrixMapView extends View {
     }
   }
 
-  private void drawRouteAndMarkers(Canvas canvas, float width, float height) {
-    if (!Double.isFinite(deviceLat) || !Double.isFinite(deviceLon)) {
-      return;
+  private void drawStreets(Canvas canvas, float width, float height) {
+    Bounds bounds = computeBounds();
+    for (StreetSegment segment : streetSegments) {
+      if (segment == null || segment.points.size() < 2) {
+        continue;
+      }
+      Path streetPath = new Path();
+      float[] first = project(segment.points.get(0), bounds, width, height);
+      streetPath.moveTo(first[0], first[1]);
+      for (int i = 1; i < segment.points.size(); i++) {
+        float[] p = project(segment.points.get(i), bounds, width, height);
+        streetPath.lineTo(p[0], p[1]);
+      }
+      canvas.drawPath(streetPath, segment.major ? streetMajorPaint : streetMinorPaint);
+      if (!segment.name.isEmpty()) {
+        float[] labelPoint = project(segment.points.get(segment.points.size() / 2), bounds, width, height);
+        canvas.drawText(segment.name, labelPoint[0] + 6f, labelPoint[1] - 6f, streetLabelPaint);
+      }
     }
+  }
+
+  private void drawRouteAndMarkers(Canvas canvas, float width, float height) {
     Bounds bounds = computeBounds();
     if (routePoints.size() >= 2) {
       Path routePath = new Path();
@@ -145,6 +190,9 @@ public final class MatrixMapView extends View {
       canvas.drawPath(routePath, routePaint);
     }
 
+    if (!Double.isFinite(deviceLat) || !Double.isFinite(deviceLon)) {
+      return;
+    }
     float[] device = project(new double[] {deviceLat, deviceLon}, bounds, width, height);
     float[] target = project(new double[] {targetLat, targetLon}, bounds, width, height);
     float markerRadius = Math.max(10f, width * 0.015f);
@@ -164,18 +212,21 @@ public final class MatrixMapView extends View {
     String text =
         String.format(
             Locale.ROOT,
-            "%s  |  %s  |  pts:%d",
+            "%s  |  %s  |  streets:%d route_pts:%d",
             mode,
             fix,
+            streetSegments.size(),
             routePoints.size());
     canvas.drawText(text, width * 0.05f, height * 0.08f, textPaint);
   }
 
   private Bounds computeBounds() {
-    double minLat = deviceLat;
-    double maxLat = deviceLat;
-    double minLon = deviceLon;
-    double maxLon = deviceLon;
+    double anchorLat = Double.isFinite(deviceLat) ? deviceLat : DEFAULT_LAT;
+    double anchorLon = Double.isFinite(deviceLon) ? deviceLon : DEFAULT_LON;
+    double minLat = anchorLat;
+    double maxLat = anchorLat;
+    double minLon = anchorLon;
+    double maxLon = anchorLon;
     if (Double.isFinite(targetLat) && Double.isFinite(targetLon)) {
       minLat = Math.min(minLat, targetLat);
       maxLat = Math.max(maxLat, targetLat);
@@ -190,6 +241,20 @@ public final class MatrixMapView extends View {
       maxLat = Math.max(maxLat, point[0]);
       minLon = Math.min(minLon, point[1]);
       maxLon = Math.max(maxLon, point[1]);
+    }
+    for (StreetSegment segment : streetSegments) {
+      if (segment == null) {
+        continue;
+      }
+      for (double[] point : segment.points) {
+        if (point == null || point.length < 2) {
+          continue;
+        }
+        minLat = Math.min(minLat, point[0]);
+        maxLat = Math.max(maxLat, point[0]);
+        minLon = Math.min(minLon, point[1]);
+        maxLon = Math.max(maxLon, point[1]);
+      }
     }
 
     double latSpan = Math.max(0.00025d, maxLat - minLat);
@@ -217,6 +282,18 @@ public final class MatrixMapView extends View {
     float depthScale = 0.68f + (0.32f * normalizedY);
     float projectedX = centerX + ((x - centerX) * depthScale);
     return new float[] {projectedX, projectedY};
+  }
+
+  public static final class StreetSegment {
+    public final String name;
+    public final boolean major;
+    public final List<double[]> points;
+
+    public StreetSegment(String name, boolean major, List<double[]> points) {
+      this.name = name == null ? "" : name;
+      this.major = major;
+      this.points = points == null ? List.of() : points;
+    }
   }
 
   private static final class Bounds {

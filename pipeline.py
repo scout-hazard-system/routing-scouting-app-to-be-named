@@ -7,18 +7,27 @@ import sys
 import signal
 import json
 from datetime import datetime, UTC
-import sounddevice as sd
 import scipy.io.wavfile as wav
 import requests
 import numpy as np
 from faster_whisper import WhisperModel
 from channel_selector import SelectorContext, load_channels, select_channels
+from optional_audio_routes import ensure_optional_route_enabled
 
 
 FS = 16000          # Audio frequency standard for Whisper
 DURATION = 12       # Grabs audio in 12-second intervals to minimize processing lag
 OLLAMA_URL = "http://localhost:11434/api/generate"
 SHOULD_EXIT = False
+sd = None
+
+
+def require_sounddevice():
+    global sd
+    if sd is None:
+        import sounddevice as _sd
+        sd = _sd
+    return sd
 
 def request_shutdown(signum, _frame):
     global SHOULD_EXIT
@@ -48,6 +57,7 @@ If traffic enforcement is explicit OR dispatch-style clues strongly suggest acti
 Example: 'ALERT: State trooper clocking speed near mile marker 85.'
 If transcript is ambiguous, prefer ALERT only when at least 2 dispatch/enforcement clues are present; otherwise reply 'IGNORE'.
 If it is generic chatter, static, or irrelevant noise, reply strictly with 'IGNORE'.
+If possible, include location context in the alert sentence (address, intersection, exit, mile marker, or point of interest).
 """
 
 CALL_TYPE_KEYWORDS = {
@@ -121,6 +131,34 @@ def extract_codes(text):
     generic_codes = [f"code {m.group(1)}" for m in re.finditer(r"\bcode[-\s]?(\d{1,3})\b", text, flags=re.IGNORECASE)]
     return sorted(set(ten_codes + generic_codes))
 
+def extract_location_mentions(text):
+    patterns = [
+        r"\b\d{1,5}\s+[A-Za-z0-9.'-]+(?:\s+[A-Za-z0-9.'-]+){0,4}\s+(?:st|street|ave|avenue|rd|road|blvd|boulevard|dr|drive|ln|lane|ct|court|hwy|highway)\b",
+        r"\b(?:at|near|on)\s+([A-Za-z0-9.'-]+(?:\s+[A-Za-z0-9.'-]+){0,4}\s+(?:and|&)\s+[A-Za-z0-9.'-]+(?:\s+[A-Za-z0-9.'-]+){0,4})\b",
+        r"\b(?:mile marker|mm)\s*\d{1,3}(?:\.\d+)?\b",
+        r"\bexit\s+\d+[A-Za-z]?\b",
+        r"\b(?:northbound|southbound|eastbound|westbound)\b",
+        r"\b(?:on-ramp|off-ramp|shoulder|interchange)\b",
+    ]
+    mentions = []
+    for pattern in patterns:
+        for match in re.finditer(pattern, text, flags=re.IGNORECASE):
+            if match.groups():
+                candidate = match.group(1)
+            else:
+                candidate = match.group(0)
+            clean = re.sub(r"\s+", " ", candidate).strip(" ,.;:")
+            if clean:
+                mentions.append(clean)
+    deduped = []
+    seen = set()
+    for mention in mentions:
+        key = mention.lower()
+        if key not in seen:
+            seen.add(key)
+            deduped.append(mention)
+    return deduped
+
 def classify_transcript(text):
     lower = text.lower()
     matched_types = []
@@ -190,9 +228,10 @@ def query_llm(transcript_text, timeout_seconds=3.0, retries=0):
         "attempts": attempts,
     }
 def list_input_devices():
-    devices = sd.query_devices()
+    devices = require_sounddevice().query_devices()
     return [(idx, dev) for idx, dev in enumerate(devices) if dev["max_input_channels"] > 0]
 def pick_default_input_device():
+    sdev = require_sounddevice()
     input_devices = list_input_devices()
     if not input_devices:
         raise RuntimeError("No audio input devices detected by sounddevice.")
@@ -200,21 +239,22 @@ def pick_default_input_device():
         if "pipewire" in dev["name"].lower():
             return idx, dev["name"], "preferred_pipewire_match"
     default_input_idx = None
-    default_device = sd.default.device
+    default_device = sdev.default.device
     if isinstance(default_device, (list, tuple)) and len(default_device) >= 1:
         default_input_idx = default_device[0]
     elif isinstance(default_device, int):
         default_input_idx = default_device
     if isinstance(default_input_idx, int) and default_input_idx >= 0:
-        default_info = sd.query_devices(default_input_idx)
+        default_info = sdev.query_devices(default_input_idx)
         if default_info["max_input_channels"] > 0:
             return default_input_idx, default_info["name"], "system_default_input"
     first_idx, first_dev = input_devices[0]
     return first_idx, first_dev["name"], "first_available_input"
 def resolve_input_device(device_index=None, source_name=None, strict_source_match=False):
+    sdev = require_sounddevice()
     input_devices = list_input_devices()
     if device_index is not None:
-        devices = sd.query_devices()
+        devices = sdev.query_devices()
         dev = devices[device_index]
         if dev["max_input_channels"] <= 0:
             raise RuntimeError(f"Selected device index {device_index} is not an input device: {dev['name']}")
@@ -242,11 +282,12 @@ def resolve_input_device(device_index=None, source_name=None, strict_source_matc
     )
     return idx, dev_name, selection_reason
 def resolve_capture_samplerate(device_index, requested_rate):
+    sdev = require_sounddevice()
     try:
-        sd.check_input_settings(device=device_index, samplerate=requested_rate, channels=1, dtype="float32")
+        sdev.check_input_settings(device=device_index, samplerate=requested_rate, channels=1, dtype="float32")
         return requested_rate
     except Exception:
-        device_info = sd.query_devices(device_index)
+        device_info = sdev.query_devices(device_index)
         fallback_rate = int(device_info["default_samplerate"])
         print(f"Requested sample rate {requested_rate} unsupported on this source; using {fallback_rate} Hz.")
         return fallback_rate
@@ -414,9 +455,9 @@ def capture_stream_chunk_to_wav(stream_url, duration_seconds, output_path, sampl
         "-t", str(duration_seconds),
         output_path
     ], check=True)
-def resolve_broadcast_stream(args):
+def resolve_broadcast_streams(args):
     if args.stream_url:
-        return args.stream_url, {"id": "manual_stream", "name": "manual_stream", "stream_url": args.stream_url}, None
+        return [{"id": "manual_stream", "name": "manual_stream", "stream_url": args.stream_url}], None
     if not args.channels_file:
         raise RuntimeError("Broadcastify mode requires --stream-url or --channels-file for selector-based auto-selection.")
     desired_types = [token.strip() for token in args.selector_desired_types.split(",") if token.strip()]
@@ -441,11 +482,17 @@ def resolve_broadcast_stream(args):
     )
     if not ranked:
         raise RuntimeError("Channel selector did not return any ranked candidates.")
-    selected = ranked[0]["channel"]
-    stream_url = selected.get("stream_url")
-    if not stream_url:
-        raise RuntimeError(f"Selected channel '{selected.get('id')}' has no stream_url.")
-    return stream_url, selected, rerank_error
+    candidates = []
+    for item in ranked:
+        channel = dict(item["channel"])
+        stream_url = channel.get("stream_url")
+        if not stream_url:
+            continue
+        channel["_rank_score"] = item.get("score")
+        candidates.append(channel)
+    if not candidates:
+        raise RuntimeError("Channel selector returned no streamable channels (missing stream_url).")
+    return candidates, rerank_error
 class TeeStream:
     def __init__(self, *streams):
         self.streams = streams
@@ -484,7 +531,18 @@ def start_scrcpy(scrcpy_bin, serial=None):
     return subprocess.Popen(cmd, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
 parser = argparse.ArgumentParser(description="Live police scanner -> Whisper -> LLM alert pipeline")
-parser.add_argument("--mode", choices=["direct", "scrcpy", "broadcastify"], default="scrcpy", help="Audio capture mode: direct input, scrcpy phone stream, or broadcastify stream")
+parser.add_argument(
+    "--mode",
+    choices=["broadcastify", "direct", "scrcpy", "audiorelay", "voicemeeter"],
+    default="broadcastify",
+    help="Audio capture mode. Scanner base defaults to broadcastify; other routes are optional.",
+)
+parser.add_argument(
+    "--enable-optional-audio-routes",
+    action=argparse.BooleanOptionalAction,
+    default=False,
+    help="Enable optional non-broadcast routes (direct, scrcpy, audiorelay, voicemeeter).",
+)
 parser.add_argument("--device", type=int, default=None, help="Input device index (use --list-devices to inspect)")
 parser.add_argument("--source-node", type=str, default=None, help="Input source name substring (used when --device is not set)")
 parser.add_argument("--duration", type=float, default=DURATION, help="Capture duration per chunk in seconds")
@@ -531,9 +589,10 @@ log_handle = open(args.log_file, "a", buffering=1)
 sys.stdout = TeeStream(sys.stdout, log_handle)
 sys.stderr = TeeStream(sys.stderr, log_handle)
 print(f"Logging pipeline output to: {args.log_file}")
+ensure_optional_route_enabled(args.mode, args.enable_optional_audio_routes)
 
 if args.list_devices:
-    print(sd.query_devices())
+    print(require_sounddevice().query_devices())
     raise SystemExit(0)
 scrcpy_proc = None
 source_node = args.source_node
@@ -542,6 +601,8 @@ input_device_name = None
 input_selection_reason = None
 stream_url = None
 selected_channel = None
+broadcast_candidates = []
+broadcast_candidate_idx = 0
 if args.mode == "scrcpy":
     ensure_binary("ffmpeg")
     ensure_binary("pactl")
@@ -559,15 +620,20 @@ if args.mode == "scrcpy":
     print(f"Routed scrcpy sink-input #{sink_input_id} to isolated sink '{args.scrcpy_sink}'.")
 elif args.mode == "broadcastify":
     ensure_binary("ffmpeg")
-    stream_url, selected_channel, selector_rerank_error = resolve_broadcast_stream(args)
+    broadcast_candidates, selector_rerank_error = resolve_broadcast_streams(args)
+    broadcast_candidate_idx = 0
+    selected_channel = broadcast_candidates[broadcast_candidate_idx]
+    stream_url = selected_channel.get("stream_url")
     capture_fs = FS
     print(
         f"Selected broadcast stream: id={selected_channel.get('id')} "
         f"name={selected_channel.get('name')} url={stream_url}"
     )
+    if len(broadcast_candidates) > 1:
+        print(f"Broadcast fallback enabled across {len(broadcast_candidates)} ranked channels.")
     if selector_rerank_error:
         print(f"Selector rerank fallback to deterministic score due to: {selector_rerank_error}")
-else:
+elif args.mode == "direct":
     strict_source_match = False
     input_device, input_device_name, input_selection_reason = resolve_input_device(
         args.device,
@@ -575,6 +641,10 @@ else:
         strict_source_match=strict_source_match
     )
     capture_fs = resolve_capture_samplerate(input_device, FS)
+else:
+    raise RuntimeError(
+        f"Mode '{args.mode}' is optional and not wired in the scanner base runtime build."
+    )
 chunk_duration = args.duration
 print("Loading Whisper model...")
 whisper_engine = WhisperModel("medium", device="cpu", compute_type="int8")
@@ -604,9 +674,9 @@ emit_event_json(
     mode=args.mode,
     source_node=source_node if args.mode == "scrcpy" else (stream_url if args.mode == "broadcastify" else input_device_name),
     input_selection_reason=(
-        input_selection_reason
-        if args.mode == "direct"
-        else ("broadcast_stream_selector" if args.mode == "broadcastify" else "scrcpy_sink_monitor")
+        "broadcast_stream_selector"
+        if args.mode == "broadcastify"
+        else ("scrcpy_sink_monitor" if args.mode == "scrcpy" else input_selection_reason)
     ),
     sample_rate=capture_fs,
     soft_alert_fallback=args.soft_alert_fallback,
@@ -662,7 +732,32 @@ try:
                     mono = mono / 2147483648.0
                 capture_fs = chunk_fs
             elif args.mode == "broadcastify":
-                capture_stream_chunk_to_wav(stream_url, chunk_duration, "buffer_chunk.wav", capture_fs)
+                try:
+                    capture_stream_chunk_to_wav(stream_url, chunk_duration, "buffer_chunk.wav", capture_fs)
+                except subprocess.CalledProcessError as stream_err:
+                    if len(broadcast_candidates) > 1:
+                        from_channel = selected_channel
+                        broadcast_candidate_idx = (broadcast_candidate_idx + 1) % len(broadcast_candidates)
+                        selected_channel = broadcast_candidates[broadcast_candidate_idx]
+                        stream_url = selected_channel.get("stream_url")
+                        print(
+                            "[BroadcastifyFallback] "
+                            f"capture_failed_exit={stream_err.returncode} "
+                            f"from={from_channel.get('id')} -> to={selected_channel.get('id')} "
+                            f"url={stream_url}"
+                        )
+                        emit_event_json(
+                            "broadcast_channel_switch",
+                            enabled=args.integration_json,
+                            reason="capture_failed",
+                            from_channel_id=from_channel.get("id"),
+                            from_channel_name=from_channel.get("name"),
+                            to_channel_id=selected_channel.get("id"),
+                            to_channel_name=selected_channel.get("name"),
+                            ffmpeg_exit_code=stream_err.returncode,
+                        )
+                        continue
+                    raise
                 chunk_fs, chunk_data = wav.read("buffer_chunk.wav")
                 if chunk_data.ndim == 2:
                     chunk_data = chunk_data[:, 0]
@@ -674,14 +769,15 @@ try:
                 capture_fs = chunk_fs
             else:
                 # 2. Record raw scanner snippet from direct audio capture
-                audio_buffer = sd.rec(
+                sdev = require_sounddevice()
+                audio_buffer = sdev.rec(
                     int(chunk_duration * capture_fs),
                     samplerate=capture_fs,
                     channels=1,
                     dtype='float32',
                     device=input_device
                 )
-                sd.wait()
+                sdev.wait()
                 wav.write("buffer_chunk.wav", capture_fs, audio_buffer)
                 mono = audio_buffer[:, 0]
             rms = float(np.sqrt(np.mean(mono ** 2)))
@@ -725,6 +821,7 @@ try:
                 run_stats["captured"] += 1
                 print(f"[Captured Chatter]: {raw_text}")
                 classification = classify_transcript(raw_text)
+                location_mentions = extract_location_mentions(raw_text)
                 print(
                     "[Classification]: "
                     f"types={classification['call_types']} "
@@ -737,6 +834,9 @@ try:
                     enabled=args.integration_json,
                     transcript=raw_text,
                     classification=classification,
+                    location_mentions=location_mentions,
+                    rms=rms,
+                    clip_ratio=clip_ratio,
                 )
                 cue_map, cue_count = extract_dispatch_cues(raw_text)
                 dispatch_score = score_dispatch_cues(cue_map)
@@ -787,6 +887,9 @@ try:
                     llm_error=llm_result["error"],
                     llm_response=ai_response,
                     classification=classification,
+                    location_mentions=location_mentions,
+                    rms=rms,
+                    clip_ratio=clip_ratio,
                 )
                 if args.alert_debug:
                     llm_raw_excerpt = log_safe(llm_result["raw"]) if llm_result["raw"] else "none"
@@ -822,6 +925,7 @@ try:
                         f"types={classification['call_types']} "
                         f"priority={classification['priority']} "
                         f"codes={classification['codes']} "
+                        f"locations={location_mentions} "
                         f"transcript=\"{raw_text}\""
                     )
                     # 5. Linux Native Voice Notification Engine
@@ -834,6 +938,9 @@ try:
                         alert=ai_response,
                         transcript=raw_text,
                         classification=classification,
+                        location_mentions=location_mentions,
+                        rms=rms,
+                        clip_ratio=clip_ratio,
                     )
                 elif hard_rule_alert:
                     run_stats["llm_alert"] += 1
@@ -850,6 +957,7 @@ try:
                         f"types={classification['call_types']} "
                         f"priority={classification['priority']} "
                         f"codes={classification['codes']} "
+                        f"locations={location_mentions} "
                         f"transcript=\"{raw_text}\""
                     )
                     speak_alert("Potential traffic enforcement ahead. Slow down and use caution.")
@@ -860,8 +968,11 @@ try:
                         alert=hard_alert_message,
                         transcript=raw_text,
                         classification=classification,
+                        location_mentions=location_mentions,
                         cue_count=cue_count,
                         dispatch_score=dispatch_score,
+                        rms=rms,
+                        clip_ratio=clip_ratio,
                     )
                 elif fallback_soft_alert:
                     soft_alert_message = (
@@ -879,6 +990,7 @@ try:
                         f"types={classification['call_types']} "
                         f"priority={classification['priority']} "
                         f"codes={classification['codes']} "
+                        f"locations={location_mentions} "
                         f"transcript=\"{raw_text}\""
                     )
                     print(
@@ -889,6 +1001,7 @@ try:
                         f"types={classification['call_types']} "
                         f"priority={classification['priority']} "
                         f"codes={classification['codes']} "
+                        f"locations={location_mentions} "
                         f"transcript=\"{raw_text}\""
                     )
                     speak_alert("Possible traffic enforcement activity detected. Use caution.")
@@ -899,7 +1012,10 @@ try:
                         alert=soft_alert_message,
                         transcript=raw_text,
                         classification=classification,
+                        location_mentions=location_mentions,
                         cue_count=cue_count,
+                        rms=rms,
+                        clip_ratio=clip_ratio,
                     )
         except Exception as e:
             if SHOULD_EXIT:

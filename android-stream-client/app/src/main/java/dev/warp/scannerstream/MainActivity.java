@@ -58,6 +58,8 @@ public class MainActivity extends AppCompatActivity {
   private static final float LOCATION_MIN_DISTANCE_M = 3f;
   private static final long DEVICE_GPS_POST_INTERVAL_MS = 3000L;
   private static final long SERVER_ROUTE_REFRESH_MS = 5000L;
+  private static final double DEFAULT_MAP_LAT = 37.7749;
+  private static final double DEFAULT_MAP_LON = -122.4194;
   private static final MediaType JSON_MEDIA_TYPE = MediaType.get("application/json; charset=utf-8");
   private static final Pattern COORDINATE_PATTERN =
       Pattern.compile("\\b(-?\\d{1,2}\\.\\d+)\\s*[, ]\\s*(-?\\d{1,3}\\.\\d+)\\b");
@@ -95,6 +97,7 @@ public class MainActivity extends AppCompatActivity {
   private long lastServerRouteFetchMs = 0L;
   private String lastServerRouteFingerprint = "";
   private final List<double[]> currentRoutePoints = new ArrayList<>();
+  private final List<MatrixMapView.StreetSegment> currentStreetSegments = new ArrayList<>();
 
   private final SensorEventListener accelListener =
       new SensorEventListener() {
@@ -151,6 +154,7 @@ public class MainActivity extends AppCompatActivity {
     setStatus("idle");
     updateDrivingModeUi(0f);
     updateMapTargetUi();
+    renderRouteOnMap(true);
   }
 
   @Override
@@ -719,14 +723,50 @@ public class MainActivity extends AppCompatActivity {
             });
   }
 
+  private List<MatrixMapView.StreetSegment> parseStreetSegments(JSONArray streets) {
+    List<MatrixMapView.StreetSegment> parsed = new ArrayList<>();
+    if (streets == null) {
+      return parsed;
+    }
+    for (int i = 0; i < streets.length(); i++) {
+      JSONObject segment = streets.optJSONObject(i);
+      if (segment == null) {
+        continue;
+      }
+      String name = segment.optString("name", "");
+      String kind = segment.optString("kind", "minor");
+      JSONArray pointsJson = segment.optJSONArray("points");
+      if (pointsJson == null || pointsJson.length() < 2) {
+        continue;
+      }
+      List<double[]> points = new ArrayList<>();
+      for (int j = 0; j < pointsJson.length(); j++) {
+        JSONObject point = pointsJson.optJSONObject(j);
+        if (point == null) {
+          continue;
+        }
+        double lat = point.optDouble("lat", Double.NaN);
+        double lon = point.optDouble("lon", Double.NaN);
+        if (!Double.isFinite(lat) || !Double.isFinite(lon)) {
+          continue;
+        }
+        points.add(new double[] {lat, lon});
+      }
+      if (points.size() >= 2) {
+        parsed.add(new MatrixMapView.StreetSegment(name, "major".equalsIgnoreCase(kind), points));
+      }
+    }
+    return parsed;
+  }
+
   private void renderRouteOnMap(boolean forceServerRefresh) {
-    if (matrixMapView == null || lastDeviceLat == null || lastDeviceLon == null) {
+    if (matrixMapView == null) {
       return;
     }
-    double originLat = lastDeviceLat;
-    double originLon = lastDeviceLon;
-    double targetLat = (lastMapLat != null) ? lastMapLat : originLat;
-    double targetLon = (lastMapLon != null) ? lastMapLon : originLon;
+    double originLat = lastDeviceLat != null ? lastDeviceLat : (lastMapLat != null ? lastMapLat : DEFAULT_MAP_LAT);
+    double originLon = lastDeviceLon != null ? lastDeviceLon : (lastMapLon != null ? lastMapLon : DEFAULT_MAP_LON);
+    double targetLat = (lastMapLat != null) ? lastMapLat : originLat + 0.0045d;
+    double targetLon = (lastMapLon != null) ? lastMapLon : originLon + 0.0065d;
 
     synchronized (currentRoutePoints) {
       if (currentRoutePoints.size() < 2 || forceServerRefresh) {
@@ -740,8 +780,12 @@ public class MainActivity extends AppCompatActivity {
 
   private void pushRouteSceneToView(double originLat, double originLon, double targetLat, double targetLon) {
     List<double[]> routeSnapshot;
+    List<MatrixMapView.StreetSegment> streetSnapshot;
     synchronized (currentRoutePoints) {
       routeSnapshot = new ArrayList<>(currentRoutePoints);
+    }
+    synchronized (currentStreetSegments) {
+      streetSnapshot = new ArrayList<>(currentStreetSegments);
     }
     float heading = lastDeviceHeadingDeg != null ? lastDeviceHeadingDeg : 0f;
     boolean hasFix = lastDeviceLat != null && lastDeviceLon != null;
@@ -753,6 +797,7 @@ public class MainActivity extends AppCompatActivity {
                 targetLat,
                 targetLon,
                 routeSnapshot,
+                streetSnapshot,
                 heading,
                 hasFix));
   }
@@ -858,9 +903,15 @@ public class MainActivity extends AppCompatActivity {
                   if (serverRoute.size() < 2) {
                     return;
                   }
+                  JSONArray streets = json.optJSONArray("street_segments");
+                  List<MatrixMapView.StreetSegment> parsedStreets = parseStreetSegments(streets);
                   synchronized (currentRoutePoints) {
                     currentRoutePoints.clear();
                     currentRoutePoints.addAll(serverRoute);
+                  }
+                  synchronized (currentStreetSegments) {
+                    currentStreetSegments.clear();
+                    currentStreetSegments.addAll(parsedStreets);
                   }
                   pushRouteSceneToView(originLat, originLon, destLat, destLon);
                 } catch (Exception ignored) {

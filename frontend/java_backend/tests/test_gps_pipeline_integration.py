@@ -206,6 +206,8 @@ class GpsPipelineIntegrationTests(unittest.TestCase):
         self.assertEqual(route.get("engine"), "standalone_matrix_router")
         self.assertIn("route_points", route)
         self.assertGreaterEqual(len(route["route_points"]), 2)
+        self.assertIn("street_segments", route)
+        self.assertGreaterEqual(len(route["street_segments"]), 1)
         start = route["route_points"][0]
         end = route["route_points"][-1]
         self.assertAlmostEqual(start["lat"], 47.6205, places=3)
