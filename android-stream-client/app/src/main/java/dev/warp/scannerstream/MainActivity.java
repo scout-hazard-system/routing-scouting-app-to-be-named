@@ -31,7 +31,9 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -42,6 +44,7 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -54,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
   private static final long LOCATION_UPDATE_INTERVAL_MS = 2000L;
   private static final float LOCATION_MIN_DISTANCE_M = 3f;
   private static final long DEVICE_GPS_POST_INTERVAL_MS = 3000L;
+  private static final long SERVER_ROUTE_REFRESH_MS = 5000L;
   private static final MediaType JSON_MEDIA_TYPE = MediaType.get("application/json; charset=utf-8");
   private static final Pattern COORDINATE_PATTERN =
       Pattern.compile("\\b(-?\\d{1,2}\\.\\d+)\\s*[, ]\\s*(-?\\d{1,3}\\.\\d+)\\b");
@@ -63,6 +67,8 @@ public class MainActivity extends AppCompatActivity {
   private TextView drivingModeText;
   private TextView mapTargetText;
   private TextView outputText;
+  private Button toggle3dBtn;
+  private MatrixMapView matrixMapView;
   private final Handler uiHandler = new Handler(Looper.getMainLooper());
   private final OkHttpClient client = new OkHttpClient.Builder().build();
   private volatile boolean running = false;
@@ -84,6 +90,11 @@ public class MainActivity extends AppCompatActivity {
   private Float lastDeviceAccuracyM = null;
   private Float lastDeviceSpeedMps = null;
   private Float lastDeviceHeadingDeg = null;
+  private boolean is3dModeEnabled = true;
+  private boolean serverRouteRequestInFlight = false;
+  private long lastServerRouteFetchMs = 0L;
+  private String lastServerRouteFingerprint = "";
+  private final List<double[]> currentRoutePoints = new ArrayList<>();
 
   private final SensorEventListener accelListener =
       new SensorEventListener() {
@@ -114,10 +125,13 @@ public class MainActivity extends AppCompatActivity {
     drivingModeText = findViewById(R.id.drivingModeText);
     mapTargetText = findViewById(R.id.mapTargetText);
     outputText = findViewById(R.id.outputText);
+    matrixMapView = findViewById(R.id.matrixMapView);
+    toggle3dBtn = findViewById(R.id.toggle3dBtn);
     Button connectBtn = findViewById(R.id.connectBtn);
     Button disconnectBtn = findViewById(R.id.disconnectBtn);
     Button clearLogBtn = findViewById(R.id.clearLogBtn);
     Button openMapsBtn = findViewById(R.id.openMapsBtn);
+    Button drawRouteBtn = findViewById(R.id.drawRouteBtn);
 
     sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
     if (sensorManager != null) {
@@ -129,6 +143,10 @@ public class MainActivity extends AppCompatActivity {
     disconnectBtn.setOnClickListener(v -> stopStreaming("disconnected"));
     clearLogBtn.setOnClickListener(v -> outputText.setText(getString(R.string.stream_placeholder)));
     openMapsBtn.setOnClickListener(v -> openLatestMapTarget());
+    drawRouteBtn.setOnClickListener(v -> renderRouteOnMap(true));
+    toggle3dBtn.setOnClickListener(v -> toggle3dMode());
+    update3dToggleUi();
+    appendLine("MAP", "standalone matrix renderer active (server-routed mode)");
 
     setStatus("idle");
     updateDrivingModeUi(0f);
@@ -219,13 +237,6 @@ public class MainActivity extends AppCompatActivity {
     } catch (Exception ignored) {
       // no-op
     }
-  }
-
-  private boolean hasLocationPermission() {
-    return ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
-            == PackageManager.PERMISSION_GRANTED
-        || ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION)
-            == PackageManager.PERMISSION_GRANTED;
   }
 
   @Override
@@ -485,6 +496,7 @@ public class MainActivity extends AppCompatActivity {
       lastMapLat = lat;
       lastMapLon = lon;
       updateMapTargetUi();
+      renderRouteOnMap(true);
     } catch (NumberFormatException ignored) {
       // ignore malformed coordinate values
     }
@@ -620,6 +632,7 @@ public class MainActivity extends AppCompatActivity {
     if (lastMapLat == null || lastMapLon == null) {
       updateMapTargetUi();
     }
+    renderRouteOnMap(false);
     syncDeviceGpsToBackend();
   }
 
@@ -704,6 +717,177 @@ public class MainActivity extends AppCompatActivity {
                 response.close();
               }
             });
+  }
+
+  private void renderRouteOnMap(boolean forceServerRefresh) {
+    if (matrixMapView == null || lastDeviceLat == null || lastDeviceLon == null) {
+      return;
+    }
+    double originLat = lastDeviceLat;
+    double originLon = lastDeviceLon;
+    double targetLat = (lastMapLat != null) ? lastMapLat : originLat;
+    double targetLon = (lastMapLon != null) ? lastMapLon : originLon;
+
+    synchronized (currentRoutePoints) {
+      if (currentRoutePoints.size() < 2 || forceServerRefresh) {
+        currentRoutePoints.clear();
+        currentRoutePoints.addAll(buildFallbackMatrixRoute(originLat, originLon, targetLat, targetLon));
+      }
+    }
+    maybeFetchServerRoute(originLat, originLon, targetLat, targetLon, forceServerRefresh);
+    pushRouteSceneToView(originLat, originLon, targetLat, targetLon);
+  }
+
+  private void pushRouteSceneToView(double originLat, double originLon, double targetLat, double targetLon) {
+    List<double[]> routeSnapshot;
+    synchronized (currentRoutePoints) {
+      routeSnapshot = new ArrayList<>(currentRoutePoints);
+    }
+    float heading = lastDeviceHeadingDeg != null ? lastDeviceHeadingDeg : 0f;
+    boolean hasFix = lastDeviceLat != null && lastDeviceLon != null;
+    uiHandler.post(
+        () ->
+            matrixMapView.renderScene(
+                originLat,
+                originLon,
+                targetLat,
+                targetLon,
+                routeSnapshot,
+                heading,
+                hasFix));
+  }
+
+  private List<double[]> buildFallbackMatrixRoute(
+      double startLat, double startLon, double endLat, double endLon) {
+    List<double[]> points = new ArrayList<>();
+    points.add(new double[] {startLat, startLon});
+    double dLat = endLat - startLat;
+    double dLon = endLon - startLon;
+    double normalLat = -dLon;
+    double normalLon = dLat;
+    double normalLen = Math.sqrt((normalLat * normalLat) + (normalLon * normalLon));
+    if (normalLen > 0d) {
+      normalLat /= normalLen;
+      normalLon /= normalLen;
+    }
+    for (int i = 1; i < 12; i++) {
+      double t = i / 12d;
+      double sine = Math.sin(t * Math.PI);
+      double bend = 0.00010d * sine;
+      double lat = startLat + (dLat * t) + (normalLat * bend);
+      double lon = startLon + (dLon * t) + (normalLon * bend);
+      points.add(new double[] {lat, lon});
+    }
+    points.add(new double[] {endLat, endLon});
+    return points;
+  }
+
+  private void maybeFetchServerRoute(
+      double originLat, double originLon, double destLat, double destLon, boolean forceRefresh) {
+    String base = normalizedBaseUrl();
+    if (base == null) {
+      return;
+    }
+    String fingerprint =
+        String.format(
+            Locale.ROOT,
+            "%.4f,%.4f->%.4f,%.4f",
+            originLat,
+            originLon,
+            destLat,
+            destLon);
+    long now = SystemClock.elapsedRealtime();
+    if (serverRouteRequestInFlight) {
+      return;
+    }
+    if (!forceRefresh
+        && fingerprint.equals(lastServerRouteFingerprint)
+        && (now - lastServerRouteFetchMs) < SERVER_ROUTE_REFRESH_MS) {
+      return;
+    }
+    serverRouteRequestInFlight = true;
+    lastServerRouteFingerprint = fingerprint;
+    lastServerRouteFetchMs = now;
+
+    String routeUrl =
+        base
+            + "/api/platform/route/local"
+            + "?origin_lat="
+            + String.format(Locale.ROOT, "%.6f", originLat)
+            + "&origin_lon="
+            + String.format(Locale.ROOT, "%.6f", originLon)
+            + "&dest_lat="
+            + String.format(Locale.ROOT, "%.6f", destLat)
+            + "&dest_lon="
+            + String.format(Locale.ROOT, "%.6f", destLon)
+            + "&condition="
+            + Uri.encode(deriveDeviceCondition());
+    Request request = new Request.Builder().url(routeUrl).build();
+    client.newCall(request)
+        .enqueue(
+            new Callback() {
+              @Override
+              public void onFailure(Call call, IOException e) {
+                serverRouteRequestInFlight = false;
+              }
+
+              @Override
+              public void onResponse(Call call, Response response) throws IOException {
+                try (response) {
+                  if (!response.isSuccessful() || response.body() == null) {
+                    return;
+                  }
+                  JSONObject json = new JSONObject(response.body().string());
+                  JSONArray routePoints = json.optJSONArray("route_points");
+                  if (routePoints == null || routePoints.length() < 2) {
+                    return;
+                  }
+                  List<double[]> serverRoute = new ArrayList<>();
+                  for (int i = 0; i < routePoints.length(); i++) {
+                    JSONObject point = routePoints.optJSONObject(i);
+                    if (point == null) {
+                      continue;
+                    }
+                    double lat = point.optDouble("lat", Double.NaN);
+                    double lon = point.optDouble("lon", Double.NaN);
+                    if (!Double.isFinite(lat) || !Double.isFinite(lon)) {
+                      continue;
+                    }
+                    serverRoute.add(new double[] {lat, lon});
+                  }
+                  if (serverRoute.size() < 2) {
+                    return;
+                  }
+                  synchronized (currentRoutePoints) {
+                    currentRoutePoints.clear();
+                    currentRoutePoints.addAll(serverRoute);
+                  }
+                  pushRouteSceneToView(originLat, originLon, destLat, destLon);
+                } catch (Exception ignored) {
+                  // fallback route remains active
+                } finally {
+                  serverRouteRequestInFlight = false;
+                }
+              }
+            });
+  }
+
+  private void toggle3dMode() {
+    is3dModeEnabled = !is3dModeEnabled;
+    update3dToggleUi();
+    matrixMapView.setThreeDMode(is3dModeEnabled);
+    renderRouteOnMap(false);
+  }
+
+  private void update3dToggleUi() {
+    if (toggle3dBtn == null) {
+      return;
+    }
+    toggle3dBtn.setText(
+        is3dModeEnabled ? getString(R.string.map_3d_enabled) : getString(R.string.map_3d_disabled));
+    if (matrixMapView != null) {
+      matrixMapView.setThreeDMode(is3dModeEnabled);
+    }
   }
 
   private void setStatus(String status) {

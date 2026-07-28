@@ -21,12 +21,17 @@
         android:text="@string/app_subtitle"
         android:textColor="@color/text_muted"
         android:textSize="13sp" />
+    <dev.warp.scannerstream.MatrixMapView
+        android:id="@+id/matrixMapView"
+        android:layout_width="match_parent"
+        android:layout_height="260dp"
+        android:layout_marginTop="10dp" />
 
     <EditText
         android:id="@+id/baseUrlInput"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="8dp"
         android:background="@color/bg_surface"
         android:hint="@string/base_url_hint"
         android:inputType="textUri"
@@ -77,6 +82,31 @@
         android:backgroundTint="@color/accent"
         android:text="@string/open_maps"
         android:textAllCaps="false" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/toggle3dBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="@color/accent"
+            android:text="@string/map_3d_enabled"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/drawRouteBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/bg_surface"
+            android:text="@string/draw_route"
+            android:textAllCaps="false" />
+    </LinearLayout>
 
     <TextView
         android:id="@+id/statusText"

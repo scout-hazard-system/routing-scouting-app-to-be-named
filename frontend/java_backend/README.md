@@ -106,4 +106,5 @@ http://<PC_LAN_IP>:8080
 ## Platform endpoint notes
 - `/api/platform/weather/forecast` currently returns mock weather data with provider metadata.
 - `/api/platform/waze/route` returns server-built Waze `app_url` and `embed_url`.
+- `/api/platform/route/local` returns standalone server-generated route geometry (`route_points`) without external map APIs.
 - `/api/platform/providers/status` reports readiness/config for provider wiring.

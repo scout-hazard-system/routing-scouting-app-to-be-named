@@ -5,6 +5,7 @@ import com.sun.net.httpserver.HttpServer;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.io.RandomAccessFile;
 import java.net.InetSocketAddress;
 import java.net.URI;
 import java.net.URLDecoder;
@@ -15,12 +16,16 @@ import java.nio.file.Path;
 import java.time.Instant;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Deque;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicLong;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -46,6 +51,8 @@ public final class ScannerBackendServer {
       System.getenv().getOrDefault("SELECTOR_PYTHON_BIN", "/home/gibi/Desktop/cop_pipeline/bin/python3");
   private static final String SELECTOR_SCRIPT_PATH =
       System.getenv().getOrDefault("SELECTOR_SCRIPT_PATH", "/home/gibi/Desktop/channel_selector.py");
+  private static final String BROADCASTIFY_CATALOG_SCRIPT_PATH =
+      System.getenv().getOrDefault("BROADCASTIFY_CATALOG_SCRIPT_PATH", "/home/gibi/Desktop/broadcastify_catalog_service.py");
   private static final String BROADCASTIFY_CHANNELS_FILE =
       System.getenv().getOrDefault("BROADCASTIFY_CHANNELS_FILE", "/home/gibi/Desktop/config/broadcastify_channels.sample.json");
   private static final String BROADCASTIFY_SELECTOR_CITY =
@@ -70,24 +77,42 @@ public final class ScannerBackendServer {
       System.getenv().getOrDefault("BROADCASTIFY_SELECTOR_OLLAMA_TIMEOUT", "8.0");
   private static final String BROADCASTIFY_SELECTOR_OLLAMA_WEIGHT =
       System.getenv().getOrDefault("BROADCASTIFY_SELECTOR_OLLAMA_WEIGHT", "0.2");
+  private static final int HELPER_PROCESS_TIMEOUT_SECONDS =
+      parseIntOrDefault(System.getenv("BACKEND_HELPER_TIMEOUT_SECONDS"), 90);
+  private static final int METRICS_MAX_ITEMS =
+      parseIntOrDefault(System.getenv("BACKEND_METRICS_MAX_ITEMS"), 12);
+  private static final int GPS_TRACK_MAX_POINTS =
+      parseIntOrDefault(System.getenv("BACKEND_GPS_TRACK_MAX_POINTS"), 2000);
   private static final Path LOG_PATH =
       Path.of(System.getenv().getOrDefault("PIPELINE_LOG_PATH", "/tmp/pipeline_live_doordash.log"));
   private static final String HOST = System.getenv().getOrDefault("JAVA_BACKEND_HOST", DEFAULT_HOST);
   private static final int PORT = parsePort(System.getenv("JAVA_BACKEND_PORT"), DEFAULT_PORT);
+  private static final Map<String, TimingStats> REQUEST_STATS = new ConcurrentHashMap<>();
+  private static final Map<String, TimingStats> HELPER_STATS = new ConcurrentHashMap<>();
+  private static final Object GPS_LOCK = new Object();
+  private static final Deque<GpsPoint> GPS_TRACK = new ArrayDeque<>();
+  private static final Map<String, GpsPoint> GPS_BY_USER = new ConcurrentHashMap<>();
+  private static volatile GpsPoint latestGpsPoint = null;
 
   public static void main(String[] args) throws IOException {
     HttpServer server = HttpServer.create(new InetSocketAddress(HOST, PORT), 0);
-    server.createContext("/api/health", new HealthHandler());
-    server.createContext("/api/pipeline/snapshot", new SnapshotHandler());
-    server.createContext("/api/pipeline/stream", new StreamHandler());
-    server.createContext("/api/route/weather", new WeatherHandler());
-    server.createContext("/api/platform/weather/forecast", new PlatformWeatherHandler());
-    server.createContext("/api/platform/waze/route", new WazeRouteHandler());
-    server.createContext("/api/platform/broadcastify/select", new BroadcastifySelectHandler());
-    server.createContext("/api/platform/providers/status", new ProviderStatusHandler());
-    server.createContext("/api/mobile/bootstrap", new MobileBootstrapHandler());
-    server.createContext("/api/mobile/snapshot", new MobileSnapshotHandler());
-    server.createContext("/api/mobile/stream", new MobileStreamHandler());
+    registerContext(server, "/api/health", new HealthHandler());
+    registerContext(server, "/api/pipeline/snapshot", new SnapshotHandler());
+    registerContext(server, "/api/pipeline/stream", new StreamHandler());
+    registerContext(server, "/api/route/weather", new WeatherHandler());
+    registerContext(server, "/api/platform/weather/forecast", new PlatformWeatherHandler());
+    registerContext(server, "/api/platform/waze/route", new WazeRouteHandler());
+    registerContext(server, "/api/platform/route/local", new LocalRouteHandler());
+    registerContext(server, "/api/gps/update", new GpsUpdateHandler());
+    registerContext(server, "/api/gps/latest", new GpsLatestHandler());
+    registerContext(server, "/api/gps/track", new GpsTrackHandler());
+    registerContext(server, "/api/gps/triangulation", new GpsTriangulationHandler());
+    registerContext(server, "/api/platform/broadcastify/select", new BroadcastifySelectHandler());
+    registerContext(server, "/api/platform/broadcastify/catalog", new BroadcastifyCatalogHandler());
+    registerContext(server, "/api/platform/providers/status", new ProviderStatusHandler());
+    registerContext(server, "/api/mobile/bootstrap", new MobileBootstrapHandler());
+    registerContext(server, "/api/mobile/snapshot", new MobileSnapshotHandler());
+    registerContext(server, "/api/mobile/stream", new MobileStreamHandler());
     server.setExecutor(Executors.newCachedThreadPool());
     System.out.printf(
         Locale.ROOT,
@@ -96,6 +121,115 @@ public final class ScannerBackendServer {
         PORT,
         LOG_PATH);
     server.start();
+  }
+  private static final class RouteNode {
+    private final double lat;
+    private final double lon;
+
+    private RouteNode(double lat, double lon) {
+      this.lat = lat;
+      this.lon = lon;
+    }
+  }
+
+  private static final class GpsPoint {
+    private final String ts;
+    private final String userId;
+    private final String source;
+    private final long seq;
+    private final double lat;
+    private final double lon;
+    private final double accuracy;
+    private final double speed;
+    private final double heading;
+    private final long receivedAtMs;
+
+    private GpsPoint(
+        String ts,
+        String userId,
+        String source,
+        long seq,
+        double lat,
+        double lon,
+        double accuracy,
+        double speed,
+        double heading,
+        long receivedAtMs) {
+      this.ts = ts;
+      this.userId = userId;
+      this.source = source;
+      this.seq = seq;
+      this.lat = lat;
+      this.lon = lon;
+      this.accuracy = accuracy;
+      this.speed = speed;
+      this.heading = heading;
+      this.receivedAtMs = receivedAtMs;
+    }
+  }
+
+  private static final class TimingStats {
+    private final AtomicLong count = new AtomicLong();
+    private final AtomicLong errorCount = new AtomicLong();
+    private final AtomicLong totalMs = new AtomicLong();
+    private final AtomicLong maxMs = new AtomicLong();
+
+    private void record(long durationMs, boolean success) {
+      count.incrementAndGet();
+      if (!success) {
+        errorCount.incrementAndGet();
+      }
+      totalMs.addAndGet(durationMs);
+      maxMs.getAndUpdate(prev -> Math.max(prev, durationMs));
+    }
+  }
+
+  private static String timingStatsToJson(Map<String, TimingStats> statsMap) {
+    StringBuilder sb = new StringBuilder("{");
+    List<Map.Entry<String, TimingStats>> entries = new ArrayList<>(statsMap.entrySet());
+    entries.sort(Comparator.comparing(Map.Entry::getKey));
+    int emitted = 0;
+    for (Map.Entry<String, TimingStats> entry : entries) {
+      if (emitted >= METRICS_MAX_ITEMS) {
+        break;
+      }
+      if (emitted > 0) {
+        sb.append(",");
+      }
+      TimingStats stats = entry.getValue();
+      long count = stats.count.get();
+      long total = stats.totalMs.get();
+      long avg = count == 0 ? 0 : Math.round((double) total / (double) count);
+      sb.append("\"").append(jsonEscape(entry.getKey())).append("\":{")
+          .append("\"count\":").append(count).append(",")
+          .append("\"errors\":").append(stats.errorCount.get()).append(",")
+          .append("\"avg_ms\":").append(avg).append(",")
+          .append("\"max_ms\":").append(stats.maxMs.get())
+          .append("}");
+      emitted += 1;
+    }
+    sb.append("}");
+    return sb.toString();
+  }
+
+  private static void registerContext(HttpServer server, String path, HttpHandler handler) {
+    server.createContext(path, exchange -> {
+      long started = System.nanoTime();
+      boolean success = false;
+      try {
+        handler.handle(exchange);
+        success = true;
+      } catch (Exception ex) {
+        success = false;
+        try {
+          writeJson(exchange, 500, "{\"error\":\"internal_error\"}");
+        } catch (IOException ignored) {
+        }
+      } finally {
+        long durationMs = TimeUnit.NANOSECONDS.toMillis(System.nanoTime() - started);
+        REQUEST_STATS.computeIfAbsent(path, k -> new TimingStats()).record(durationMs, success);
+      }
+    });
   }
 
   private static final class EventInfo {
@@ -229,21 +363,44 @@ public final class ScannerBackendServer {
     try (BufferedReader reader = Files.newBufferedReader(LOG_PATH, StandardCharsets.UTF_8)) {
       String line;
       while ((line = reader.readLine()) != null) {
-        if (!line.startsWith(EVENT_PREFIX)) {
-          continue;
-        }
-        String raw = line.substring(EVENT_PREFIX.length()).trim();
-        String eventType = extractStringField(raw, EVENT_TYPE_PATTERN);
-        String kind = extractStringField(raw, KIND_PATTERN);
-        out.addLast(new EventInfo(raw, eventType, kind));
-        while (out.size() > maxEvents) {
-          out.removeFirst();
+        for (String raw : extractEventPayloads(line)) {
+          String eventType = extractStringField(raw, EVENT_TYPE_PATTERN);
+          String kind = extractStringField(raw, KIND_PATTERN);
+          out.addLast(new EventInfo(raw, eventType, kind));
+          while (out.size() > maxEvents) {
+            out.removeFirst();
+          }
         }
       }
     } catch (IOException ignored) {
       return List.of();
     }
     return new ArrayList<>(out);
+  }
+
+  private static List<String> extractEventPayloads(String line) {
+    List<String> payloads = new ArrayList<>();
+    if (line == null || line.isEmpty()) {
+      return payloads;
+    }
+    int searchFrom = 0;
+    while (true) {
+      int marker = line.indexOf(EVENT_PREFIX, searchFrom);
+      if (marker < 0) {
+        break;
+      }
+      int payloadStart = marker + EVENT_PREFIX.length();
+      int nextMarker = line.indexOf(EVENT_PREFIX, payloadStart);
+      String payload = (nextMarker >= 0 ? line.substring(payloadStart, nextMarker) : line.substring(payloadStart)).trim();
+      if (!payload.isEmpty()) {
+        payloads.add(payload);
+      }
+      if (nextMarker < 0) {
+        break;
+      }
+      searchFrom = nextMarker;
+    }
+    return payloads;
   }
 
   private static String extractStringField(String json, Pattern pattern) {
@@ -350,7 +507,8 @@ public final class ScannerBackendServer {
         + "\"snapshot\":\"/api/mobile/snapshot\","
         + "\"stream\":\"/api/mobile/stream\","
         + "\"weather\":\"/api/platform/weather/forecast\","
-        + "\"waze\":\"/api/platform/waze/route\""
+        + "\"waze\":\"/api/platform/waze/route\","
+        + "\"local_route\":\"/api/platform/route/local\""
         + "},"
         + "\"notes\":\"Compact endpoints are intended for low-bandwidth mobile companion clients.\""
         + "}";
@@ -408,6 +566,131 @@ public final class ScannerBackendServer {
     String embedUrl = WAZE_EMBED_BASE_URL + "?zoom=11&lat=" + lat + "&lon=" + lon;
     String mode = hasCoords ? "coords" : (!end.isBlank() ? "destination_query" : "default");
     return new WazeRouteData(appUrl, embedUrl, mode, start, end, lat, lon);
+  }
+  private static String buildStandaloneLocalRouteJson(Map<String, String> query) {
+    GpsPoint latest = latestGpsPoint;
+    double originLat = parseDouble(query.getOrDefault("origin_lat", ""), Double.NaN);
+    double originLon = parseDouble(query.getOrDefault("origin_lon", ""), Double.NaN);
+    double destLat = parseDouble(query.getOrDefault("dest_lat", ""), Double.NaN);
+    double destLon = parseDouble(query.getOrDefault("dest_lon", ""), Double.NaN);
+
+    if (!Double.isFinite(originLat) || !Double.isFinite(originLon)) {
+      if (latest != null) {
+        originLat = latest.lat;
+        originLon = latest.lon;
+      }
+    }
+    if (!Double.isFinite(destLat) || !Double.isFinite(destLon)) {
+      if (latest != null) {
+        destLat = latest.lat;
+        destLon = latest.lon;
+      }
+    }
+    if (!Double.isFinite(originLat)
+        || !Double.isFinite(originLon)
+        || !Double.isFinite(destLat)
+        || !Double.isFinite(destLon)) {
+      return "{\"error\":\"invalid_route_coordinates\"}";
+    }
+    if (originLat < -90
+        || originLat > 90
+        || destLat < -90
+        || destLat > 90
+        || originLon < -180
+        || originLon > 180
+        || destLon < -180
+        || destLon > 180) {
+      return "{\"error\":\"out_of_range_route_coordinates\"}";
+    }
+
+    String condition = query.getOrDefault("condition", "idle");
+    List<RouteNode> routeNodes = buildStandaloneRouteNodes(originLat, originLon, destLat, destLon, condition);
+    double meters = approximateRouteMeters(routeNodes);
+    return "{"
+        + "\"ts\":\"" + Instant.now().toString() + "\","
+        + "\"status\":\"ok\","
+        + "\"engine\":\"standalone_matrix_router\","
+        + "\"condition\":\"" + jsonEscape(condition) + "\","
+        + "\"origin\":{\"lat\":" + trimDouble(originLat) + ",\"lon\":" + trimDouble(originLon) + "},"
+        + "\"destination\":{\"lat\":" + trimDouble(destLat) + ",\"lon\":" + trimDouble(destLon) + "},"
+        + "\"distance_m\":" + trimDouble(meters) + ","
+        + "\"route_points\":" + routeNodesToJson(routeNodes)
+        + "}";
+  }
+
+  private static List<RouteNode> buildStandaloneRouteNodes(
+      double originLat, double originLon, double destLat, double destLon, String condition) {
+    List<RouteNode> nodes = new ArrayList<>();
+    nodes.add(new RouteNode(originLat, originLon));
+    double dLat = destLat - originLat;
+    double dLon = destLon - originLon;
+    double normalLat = -dLon;
+    double normalLon = dLat;
+    double normalLen = Math.sqrt((normalLat * normalLat) + (normalLon * normalLon));
+    if (normalLen > 0d) {
+      normalLat /= normalLen;
+      normalLon /= normalLen;
+    }
+    double curveScale = 0.00008d;
+    if (condition.toLowerCase(Locale.ROOT).contains("driving")) {
+      curveScale = 0.00003d;
+    } else if (condition.toLowerCase(Locale.ROOT).contains("idle")) {
+      curveScale = 0.00012d;
+    }
+    int segments = 14;
+    for (int i = 1; i < segments; i++) {
+      double t = i / (double) segments;
+      double bend = Math.sin(t * Math.PI) * curveScale;
+      double lat = originLat + (dLat * t) + (normalLat * bend);
+      double lon = originLon + (dLon * t) + (normalLon * bend);
+      nodes.add(new RouteNode(lat, lon));
+    }
+    nodes.add(new RouteNode(destLat, destLon));
+    return nodes;
+  }
+
+  private static double approximateRouteMeters(List<RouteNode> nodes) {
+    if (nodes.size() < 2) {
+      return 0.0;
+    }
+    double total = 0.0;
+    for (int i = 1; i < nodes.size(); i++) {
+      RouteNode a = nodes.get(i - 1);
+      RouteNode b = nodes.get(i);
+      total += haversineMeters(a.lat, a.lon, b.lat, b.lon);
+    }
+    return total;
+  }
+
+  private static double haversineMeters(double lat1, double lon1, double lat2, double lon2) {
+    double r = 6371000.0;
+    double dLat = Math.toRadians(lat2 - lat1);
+    double dLon = Math.toRadians(lon2 - lon1);
+    double a =
+        Math.sin(dLat / 2) * Math.sin(dLat / 2)
+            + Math.cos(Math.toRadians(lat1))
+                * Math.cos(Math.toRadians(lat2))
+                * Math.sin(dLon / 2)
+                * Math.sin(dLon / 2);
+    double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    return r * c;
+  }
+
+  private static String routeNodesToJson(List<RouteNode> nodes) {
+    StringBuilder sb = new StringBuilder("[");
+    for (int i = 0; i < nodes.size(); i++) {
+      if (i > 0) {
+        sb.append(",");
+      }
+      RouteNode node = nodes.get(i);
+      sb.append("{\"lat\":")
+          .append(trimDouble(node.lat))
+          .append(",\"lon\":")
+          .append(trimDouble(node.lon))
+          .append("}");
+    }
+    sb.append("]");
+    return sb.toString();
   }
 
   private static String buildWeatherJson(Map<String, String> query) {
@@ -472,6 +755,19 @@ public final class ScannerBackendServer {
         + "\"embed_url\":\"" + jsonEscape(route.embedUrl) + "\""
         + "}";
   }
+  private static final class BroadcastifyCatalogHandler implements HttpHandler {
+    @Override
+    public void handle(HttpExchange exchange) throws IOException {
+      if (!isGet(exchange)) {
+        writeJson(exchange, 405, "{\"error\":\"method_not_allowed\"}");
+        return;
+      }
+      URI uri = exchange.getRequestURI();
+      Map<String, String> query = parseQuery(uri.getRawQuery());
+      String catalogJson = runBroadcastifyCatalog(query);
+      writeJson(exchange, helperResponseStatus(catalogJson), catalogJson);
+    }
+  }
   private static String runBroadcastifySelector(Map<String, String> query) {
     String lat = query.getOrDefault("lat", "");
     String lon = query.getOrDefault("lon", "");
@@ -525,34 +821,113 @@ public final class ScannerBackendServer {
       cmd.add("--no-use-ollama-rerank");
     }
 
-    ProcessBuilder pb = new ProcessBuilder(cmd);
-    pb.redirectErrorStream(true);
-    String output;
-    int exitCode;
-    try {
-      Process process = pb.start();
-      output = new String(process.getInputStream().readAllBytes(), StandardCharsets.UTF_8).trim();
-      exitCode = process.waitFor();
-    } catch (Exception ex) {
-      return "{"
-          + "\"error\":\"selector_execution_failed\","
-          + "\"details\":\"" + jsonEscape(ex.toString()) + "\""
-          + "}";
+    return runHelperCommand(cmd, "selector");
+  }
+  private static String runBroadcastifyCatalog(Map<String, String> query) {
+    String region = query.getOrDefault("region", "").trim();
+    List<String> cmd = new ArrayList<>();
+    cmd.add(SELECTOR_PYTHON_BIN);
+    cmd.add(BROADCASTIFY_CATALOG_SCRIPT_PATH);
+    cmd.add("--manifest");
+    cmd.add(BROADCASTIFY_CHANNELS_FILE);
+    cmd.add("--output-format");
+    cmd.add("json");
+    if (!region.isBlank()) {
+      cmd.add("--region");
+      cmd.add(region);
     }
 
-    if (exitCode != 0) {
+    return runHelperCommand(cmd, "catalog");
+  }
+
+  private static String runHelperCommand(List<String> cmd, String label) {
+    Path outputPath = null;
+    long started = System.nanoTime();
+    boolean success = false;
+    try {
+      outputPath = Files.createTempFile("scanner-backend-" + label + "-", ".out");
+      ProcessBuilder pb = new ProcessBuilder(cmd);
+      pb.redirectErrorStream(true);
+      pb.redirectOutput(outputPath.toFile());
+      Process process = pb.start();
+      boolean finished = process.waitFor(HELPER_PROCESS_TIMEOUT_SECONDS, TimeUnit.SECONDS);
+      if (!finished) {
+        process.destroyForcibly();
+        Files.deleteIfExists(outputPath);
+        success = false;
+        return "{"
+            + "\"error\":\"" + jsonEscape(label) + "_timeout\","
+            + "\"timeout_seconds\":" + HELPER_PROCESS_TIMEOUT_SECONDS
+            + "}";
+      }
+      String output = Files.readString(outputPath, StandardCharsets.UTF_8).trim();
+      int exitCode = process.exitValue();
+      Files.deleteIfExists(outputPath);
+      if (exitCode != 0) {
+        success = false;
+        return helperErrorJson(label + "_exit_nonzero", output, exitCode);
+      }
+      if (output.isBlank()) {
+        success = false;
+        return helperErrorJson(label + "_empty_output", "", null);
+      }
+      if (!looksLikeJson(output)) {
+        success = false;
+        return helperErrorJson(label + "_invalid_json_output", output, null);
+      }
+      success = true;
+      return output;
+    } catch (Exception ex) {
+      if (outputPath != null) {
+        try {
+          Files.deleteIfExists(outputPath);
+        } catch (IOException ignored) {
+        }
+      }
       return "{"
-          + "\"error\":\"selector_exit_nonzero\","
-          + "\"exit_code\":" + exitCode + ","
-          + "\"details\":\"" + jsonEscape(output) + "\""
+          + "\"error\":\"" + jsonEscape(label) + "_execution_failed\","
+          + "\"details\":\"" + jsonEscape(ex.toString()) + "\""
           + "}";
+    } finally {
+      long durationMs = TimeUnit.NANOSECONDS.toMillis(System.nanoTime() - started);
+      HELPER_STATS.computeIfAbsent(label, k -> new TimingStats()).record(durationMs, success);
     }
-    if (output.isBlank()) {
-      return "{"
-          + "\"error\":\"selector_empty_output\""
-          + "}";
+  }
+
+  private static void streamEventsFromLog(OutputStream os, boolean mobileCompact) throws IOException {
+    long offset = Files.exists(LOG_PATH) ? Files.size(LOG_PATH) : 0L;
+    while (true) {
+      if (!Files.exists(LOG_PATH)) {
+        sleepQuietly(STREAM_POLL_MILLIS);
+        continue;
+      }
+      try (RandomAccessFile raf = new RandomAccessFile(LOG_PATH.toFile(), "r")) {
+        long size = raf.length();
+        if (size < offset) {
+          offset = 0L;
+        }
+        if (size == offset) {
+          sleepQuietly(STREAM_POLL_MILLIS);
+          continue;
+        }
+        raf.seek(offset);
+        String line;
+        while ((line = raf.readLine()) != null) {
+          String decodedLine = new String(line.getBytes(StandardCharsets.ISO_8859_1), StandardCharsets.UTF_8);
+          for (String payload : extractEventPayloads(decodedLine)) {
+            String eventJson = payload;
+            if (mobileCompact) {
+              String eventType = extractStringField(payload, EVENT_TYPE_PATTERN);
+              String kind = extractStringField(payload, KIND_PATTERN);
+              eventJson = compactMobileEventJson(new EventInfo(payload, eventType, kind));
+            }
+            os.write(("data: " + eventJson + "\n\n").getBytes(StandardCharsets.UTF_8));
+            os.flush();
+          }
+        }
+        offset = raf.getFilePointer();
+      }
     }
-    return output;
   }
 
   private static void writeJson(HttpExchange exchange, int statusCode, String body) throws IOException {
@@ -595,7 +970,11 @@ public final class ScannerBackendServer {
               + "\"bind_port\":" + PORT + ","
               + "\"log_exists\":" + Files.exists(LOG_PATH) + ","
               + "\"log_path\":\"" + jsonEscape(LOG_PATH.toString()) + "\","
-              + "\"weather_provider\":\"" + jsonEscape(WEATHER_PROVIDER) + "\""
+              + "\"weather_provider\":\"" + jsonEscape(WEATHER_PROVIDER) + "\","
+              + "\"metrics\":{"
+              + "\"request_timing\":" + timingStatsToJson(REQUEST_STATS) + ","
+              + "\"helper_timing\":" + timingStatsToJson(HELPER_STATS)
+              + "}"
               + "}";
       writeJson(exchange, 200, body);
     }
@@ -652,6 +1031,51 @@ public final class ScannerBackendServer {
       writeJson(exchange, 200, wazeRouteToJson(route));
     }
   }
+  private static final class LocalRouteHandler implements HttpHandler {
+    @Override
+    public void handle(HttpExchange exchange) throws IOException {
+      if (!isGet(exchange)) {
+        writeJson(exchange, 405, "{\"error\":\"method_not_allowed\"}");
+        return;
+      }
+      URI uri = exchange.getRequestURI();
+      Map<String, String> query = parseQuery(uri.getRawQuery());
+      String routeJson = buildStandaloneLocalRouteJson(query);
+      writeJson(exchange, helperResponseStatus(routeJson), routeJson);
+    }
+  }
+  private static boolean looksLikeJson(String raw) {
+    if (raw == null) {
+      return false;
+    }
+    String trimmed = raw.trim();
+    return (trimmed.startsWith("{") && trimmed.endsWith("}"))
+        || (trimmed.startsWith("[") && trimmed.endsWith("]"));
+  }
+
+  private static String helperErrorJson(String errorCode, String details, Integer exitCode) {
+    StringBuilder sb = new StringBuilder("{")
+        .append("\"error\":\"").append(jsonEscape(errorCode)).append("\"");
+    if (exitCode != null) {
+      sb.append(",\"exit_code\":").append(exitCode.intValue());
+    }
+    if (details != null && !details.isBlank()) {
+      sb.append(",\"details\":\"").append(jsonEscape(details)).append("\"");
+    }
+    sb.append("}");
+    return sb.toString();
+  }
+
+  private static int helperResponseStatus(String payload) {
+    if (payload == null || payload.isBlank()) {
+      return 502;
+    }
+    String trimmed = payload.trim();
+    if (trimmed.startsWith("{\"error\"") || trimmed.startsWith("{ \"error\"")) {
+      return 502;
+    }
+    return 200;
+  }
   private static final class BroadcastifySelectHandler implements HttpHandler {
     @Override
     public void handle(HttpExchange exchange) throws IOException {
@@ -662,7 +1086,7 @@ public final class ScannerBackendServer {
       URI uri = exchange.getRequestURI();
       Map<String, String> query = parseQuery(uri.getRawQuery());
       String selectorJson = runBroadcastifySelector(query);
-      writeJson(exchange, 200, selectorJson);
+      writeJson(exchange, helperResponseStatus(selectorJson), selectorJson);
     }
   }
 
@@ -699,6 +1123,135 @@ public final class ScannerBackendServer {
     }
   }
 
+  private static final class GpsUpdateHandler implements HttpHandler {
+    @Override
+    public void handle(HttpExchange exchange) throws IOException {
+      String method = exchange.getRequestMethod();
+      if (!"POST".equals(method) && !"GET".equals(method)) {
+        writeJson(exchange, 405, "{\"error\":\"method_not_allowed\"}");
+        return;
+      }
+      URI uri = exchange.getRequestURI();
+      Map<String, String> query = parseQuery(uri.getRawQuery());
+      String body = "POST".equals(method) ? readRequestBody(exchange) : "";
+      GpsPoint point = gpsPointFromInputs(query, body);
+      if (point == null) {
+        writeJson(exchange, 400, "{\"error\":\"invalid_gps_payload\"}");
+        return;
+      }
+      appendGpsPoint(point);
+      List<GpsPoint> recent = copyRecentTrack(40);
+      writeJson(
+          exchange,
+          200,
+          "{"
+              + "\"status\":\"ok\","
+              + "\"received_at\":\"" + Instant.now().toString() + "\","
+              + "\"active_users\":" + GPS_BY_USER.size() + ","
+              + "\"point\":" + gpsPointToJson(point) + ","
+              + "\"track\":" + gpsTrackToJson(recent)
+              + "}");
+    }
+  }
+
+  private static final class GpsLatestHandler implements HttpHandler {
+    @Override
+    public void handle(HttpExchange exchange) throws IOException {
+      if (!isGet(exchange)) {
+        writeJson(exchange, 405, "{\"error\":\"method_not_allowed\"}");
+        return;
+      }
+      GpsPoint latest = latestGpsPoint;
+      if (latest == null) {
+        writeJson(exchange, 200, "{\"status\":\"empty\",\"active_users\":0}");
+        return;
+      }
+      writeJson(
+          exchange,
+          200,
+          "{"
+              + "\"status\":\"ok\","
+              + "\"active_users\":" + GPS_BY_USER.size() + ","
+              + "\"point\":" + gpsPointToJson(latest)
+              + "}");
+    }
+  }
+
+  private static final class GpsTrackHandler implements HttpHandler {
+    @Override
+    public void handle(HttpExchange exchange) throws IOException {
+      if (!isGet(exchange)) {
+        writeJson(exchange, 405, "{\"error\":\"method_not_allowed\"}");
+        return;
+      }
+      URI uri = exchange.getRequestURI();
+      Map<String, String> query = parseQuery(uri.getRawQuery());
+      int limit = parseIntOrDefault(query.getOrDefault("limit", "120"), 120);
+      if (limit < 1) {
+        limit = 1;
+      }
+      if (limit > GPS_TRACK_MAX_POINTS) {
+        limit = GPS_TRACK_MAX_POINTS;
+      }
+      List<GpsPoint> recent = copyRecentTrack(limit);
+      writeJson(
+          exchange,
+          200,
+          "{"
+              + "\"status\":\"ok\","
+              + "\"active_users\":" + GPS_BY_USER.size() + ","
+              + "\"count\":" + recent.size() + ","
+              + "\"points\":" + gpsTrackToJson(recent)
+              + "}");
+    }
+  }
+
+  private static final class GpsTriangulationHandler implements HttpHandler {
+    @Override
+    public void handle(HttpExchange exchange) throws IOException {
+      if (!isGet(exchange)) {
+        writeJson(exchange, 405, "{\"error\":\"method_not_allowed\"}");
+        return;
+      }
+      List<GpsPoint> points = new ArrayList<>(GPS_BY_USER.values());
+      points.sort(Comparator.comparing(p -> p.userId));
+      if (points.size() < 2) {
+        writeJson(
+            exchange,
+            200,
+            "{"
+                + "\"status\":\"insufficient_users\","
+                + "\"active_users\":" + points.size() + ","
+                + "\"required_users\":2"
+                + "}");
+        return;
+      }
+      double latSum = 0.0;
+      double lonSum = 0.0;
+      double accuracySum = 0.0;
+      for (GpsPoint p : points) {
+        latSum += p.lat;
+        lonSum += p.lon;
+        accuracySum += p.accuracy;
+      }
+      double estLat = latSum / points.size();
+      double estLon = lonSum / points.size();
+      double avgAccuracy = accuracySum / points.size();
+      writeJson(
+          exchange,
+          200,
+          "{"
+              + "\"status\":\"ok\","
+              + "\"method\":\"multi_user_centroid_seed\","
+              + "\"active_users\":" + points.size() + ","
+              + "\"estimated_lat\":" + trimDouble(estLat) + ","
+              + "\"estimated_lon\":" + trimDouble(estLon) + ","
+              + "\"average_accuracy_m\":" + trimDouble(avgAccuracy) + ","
+              + "\"contributors\":" + gpsTrackToJson(points)
+              + "}");
+    }
+  }
+
   private static final class StreamHandler implements HttpHandler {
     @Override
     public void handle(HttpExchange exchange) throws IOException {
@@ -729,36 +1282,8 @@ public final class ScannerBackendServer {
         os.flush();
       }
 
-      long offset = Files.exists(LOG_PATH) ? Files.size(LOG_PATH) : 0L;
       try {
-        while (true) {
-          if (!Files.exists(LOG_PATH)) {
-            sleepQuietly(STREAM_POLL_MILLIS);
-            continue;
-          }
-          long size = Files.size(LOG_PATH);
-          if (size < offset) {
-            offset = 0L;
-          }
-          if (size == offset) {
-            sleepQuietly(STREAM_POLL_MILLIS);
-            continue;
-          }
-          String chunk = Files.readString(LOG_PATH, StandardCharsets.UTF_8);
-          if (offset > chunk.length()) {
-            offset = 0L;
-          }
-          String unread = chunk.substring((int) offset);
-          offset = chunk.length();
-          for (String line : unread.split("\\R")) {
-            if (!line.startsWith(EVENT_PREFIX)) {
-              continue;
-            }
-            String payload = line.substring(EVENT_PREFIX.length()).trim();
-            os.write(("data: " + payload + "\n\n").getBytes(StandardCharsets.UTF_8));
-            os.flush();
-          }
-        }
+        streamEventsFromLog(os, false);
       } catch (IOException ignored) {
       } finally {
         os.close();
@@ -783,39 +1308,8 @@ public final class ScannerBackendServer {
               + "}";
       os.write(("data: " + hello + "\n\n").getBytes(StandardCharsets.UTF_8));
       os.flush();
-      long offset = Files.exists(LOG_PATH) ? Files.size(LOG_PATH) : 0L;
       try {
-        while (true) {
-          if (!Files.exists(LOG_PATH)) {
-            sleepQuietly(STREAM_POLL_MILLIS);
-            continue;
-          }
-          long size = Files.size(LOG_PATH);
-          if (size < offset) {
-            offset = 0L;
-          }
-          if (size == offset) {
-            sleepQuietly(STREAM_POLL_MILLIS);
-            continue;
-          }
-          String chunk = Files.readString(LOG_PATH, StandardCharsets.UTF_8);
-          if (offset > chunk.length()) {
-            offset = 0L;
-          }
-          String unread = chunk.substring((int) offset);
-          offset = chunk.length();
-          for (String line : unread.split("\\R")) {
-            if (!line.startsWith(EVENT_PREFIX)) {
-              continue;
-            }
-            String payload = line.substring(EVENT_PREFIX.length()).trim();
-            String eventType = extractStringField(payload, EVENT_TYPE_PATTERN);
-            String kind = extractStringField(payload, KIND_PATTERN);
-            String compact = compactMobileEventJson(new EventInfo(payload, eventType, kind));
-            os.write(("data: " + compact + "\n\n").getBytes(StandardCharsets.UTF_8));
-            os.flush();
-          }
-        }
+        streamEventsFromLog(os, true);
       } catch (IOException ignored) {
       } finally {
         os.close();
@@ -829,6 +1323,148 @@ public final class ScannerBackendServer {
     } catch (InterruptedException ex) {
       Thread.currentThread().interrupt();
     }
+  }
+
+  private static String readRequestBody(HttpExchange exchange) throws IOException {
+    return new String(exchange.getRequestBody().readAllBytes(), StandardCharsets.UTF_8);
+  }
+
+  private static GpsPoint gpsPointFromInputs(Map<String, String> query, String body) {
+    double lat = parseDouble(query.getOrDefault("lat", ""), Double.NaN);
+    double lon = parseDouble(query.getOrDefault("lon", ""), Double.NaN);
+    if (!Double.isFinite(lat)) {
+      lat = extractDoubleField(body, "lat", Double.NaN);
+    }
+    if (!Double.isFinite(lon)) {
+      lon = extractDoubleField(body, "lon", Double.NaN);
+    }
+    if (!Double.isFinite(lat) || !Double.isFinite(lon)) {
+      return null;
+    }
+    if (lat < -90 || lat > 90 || lon < -180 || lon > 180) {
+      return null;
+    }
+
+    String ts = extractStringFieldByName(body, "ts", Instant.now().toString());
+    String source = extractStringFieldByName(body, "source", query.getOrDefault("source", "frontend_browser"));
+    String userId = extractStringFieldByName(body, "user_id", query.getOrDefault("user_id", "default"));
+    long seq = extractLongField(body, "seq", parseLongOrDefault(query.getOrDefault("seq", "0"), 0L));
+    double accuracy = extractDoubleField(body, "accuracy", parseDouble(query.getOrDefault("accuracy", ""), 0.0));
+    double speed = extractDoubleField(body, "speed", parseDouble(query.getOrDefault("speed", ""), 0.0));
+    double heading = extractDoubleField(body, "heading", parseDouble(query.getOrDefault("heading", ""), 0.0));
+    if (!Double.isFinite(accuracy) || accuracy < 0) accuracy = 0.0;
+    if (!Double.isFinite(speed) || speed < 0) speed = 0.0;
+    if (!Double.isFinite(heading)) heading = 0.0;
+    if (userId == null || userId.isBlank()) userId = "default";
+    if (source == null || source.isBlank()) source = "unknown";
+
+    return new GpsPoint(
+        ts,
+        userId,
+        source,
+        seq,
+        lat,
+        lon,
+        accuracy,
+        speed,
+        heading,
+        System.currentTimeMillis());
+  }
+
+  private static void appendGpsPoint(GpsPoint point) {
+    latestGpsPoint = point;
+    GPS_BY_USER.put(point.userId, point);
+    synchronized (GPS_LOCK) {
+      GPS_TRACK.addLast(point);
+      while (GPS_TRACK.size() > GPS_TRACK_MAX_POINTS) {
+        GPS_TRACK.removeFirst();
+      }
+    }
+  }
+
+  private static List<GpsPoint> copyRecentTrack(int limit) {
+    List<GpsPoint> out = new ArrayList<>();
+    synchronized (GPS_LOCK) {
+      int skip = Math.max(0, GPS_TRACK.size() - limit);
+      int idx = 0;
+      for (GpsPoint p : GPS_TRACK) {
+        if (idx++ < skip) continue;
+        out.add(p);
+      }
+    }
+    return out;
+  }
+
+  private static String gpsPointToJson(GpsPoint p) {
+    return "{"
+        + "\"ts\":\"" + jsonEscape(p.ts) + "\","
+        + "\"user_id\":\"" + jsonEscape(p.userId) + "\","
+        + "\"source\":\"" + jsonEscape(p.source) + "\","
+        + "\"seq\":" + p.seq + ","
+        + "\"lat\":" + trimDouble(p.lat) + ","
+        + "\"lon\":" + trimDouble(p.lon) + ","
+        + "\"accuracy\":" + trimDouble(p.accuracy) + ","
+        + "\"speed\":" + trimDouble(p.speed) + ","
+        + "\"heading\":" + trimDouble(p.heading) + ","
+        + "\"received_at_ms\":" + p.receivedAtMs
+        + "}";
+  }
+
+  private static String gpsTrackToJson(List<GpsPoint> points) {
+    StringBuilder sb = new StringBuilder("[");
+    for (int i = 0; i < points.size(); i++) {
+      if (i > 0) sb.append(",");
+      sb.append(gpsPointToJson(points.get(i)));
+    }
+    sb.append("]");
+    return sb.toString();
+  }
+
+  private static long parseLongOrDefault(String raw, long fallback) {
+    if (raw == null || raw.isBlank()) return fallback;
+    try {
+      return Long.parseLong(raw);
+    } catch (NumberFormatException ex) {
+      return fallback;
+    }
+  }
+
+  private static long extractLongField(String json, String fieldName, long fallback) {
+    Pattern pattern = Pattern.compile("\"" + Pattern.quote(fieldName) + "\"\\s*:\\s*(-?\\d+)");
+    Matcher matcher = pattern.matcher(json == null ? "" : json);
+    if (!matcher.find()) return fallback;
+    try {
+      return Long.parseLong(matcher.group(1));
+    } catch (NumberFormatException ex) {
+      return fallback;
+    }
+  }
+
+  private static double extractDoubleField(String json, String fieldName, double fallback) {
+    Pattern pattern = Pattern.compile("\"" + Pattern.quote(fieldName) + "\"\\s*:\\s*(-?\\d+(?:\\.\\d+)?)");
+    Matcher matcher = pattern.matcher(json == null ? "" : json);
+    if (!matcher.find()) return fallback;
+    try {
+      return Double.parseDouble(matcher.group(1));
+    } catch (NumberFormatException ex) {
+      return fallback;
+    }
+  }
+
+  private static String extractStringFieldByName(String json, String fieldName, String fallback) {
+    Pattern pattern = Pattern.compile("\"" + Pattern.quote(fieldName) + "\"\\s*:\\s*\"([^\"]*)\"");
+    Matcher matcher = pattern.matcher(json == null ? "" : json);
+    if (matcher.find()) {
+      return matcher.group(1);
+    }
+    return fallback;
+  }
+
+  private static String trimDouble(double value) {
+    if (!Double.isFinite(value)) {
+      return "0";
+    }
+    return String.format(Locale.ROOT, "%.7f", value);
   }
 
   private static Map<String, String> parseQuery(String rawQuery) {

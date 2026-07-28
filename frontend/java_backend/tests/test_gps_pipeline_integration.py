@@ -167,9 +167,21 @@ class GpsPipelineIntegrationTests(unittest.TestCase):
         self.assertEqual(tri.get("status"), "ok")
         self.assertEqual(tri.get("method"), "multi_user_centroid_seed")
         self.assertGreaterEqual(tri.get("active_users", 0), 2)
-        self.assertGreaterEqual(abs(float(tri["estimated_lat"])), 0.0)
-        self.assertGreaterEqual(abs(float(tri["estimated_lon"])), 0.0)
-        self.assertGreaterEqual(len(tri.get("contributors", [])), 2)
+        contributors = tri.get("contributors", [])
+        self.assertGreaterEqual(len(contributors), 2)
+        contributor_ids = {c.get("user_id") for c in contributors}
+        self.assertIn("tri-u1", contributor_ids)
+        self.assertIn("tri-u2", contributor_ids)
+        contributor_lats = [float(c["lat"]) for c in contributors if "lat" in c]
+        contributor_lons = [float(c["lon"]) for c in contributors if "lon" in c]
+        self.assertTrue(contributor_lats)
+        self.assertTrue(contributor_lons)
+        est_lat = float(tri["estimated_lat"])
+        est_lon = float(tri["estimated_lon"])
+        self.assertGreaterEqual(est_lat, min(contributor_lats))
+        self.assertLessEqual(est_lat, max(contributor_lats))
+        self.assertGreaterEqual(est_lon, min(contributor_lons))
+        self.assertLessEqual(est_lon, max(contributor_lons))
 
     def test_invalid_update_rejected(self):
         with self.assertRaises(HTTPError) as ctx:
@@ -179,6 +191,27 @@ class GpsPipelineIntegrationTests(unittest.TestCase):
                 {"user_id": "bad", "lat": 91.0, "lon": 0.0},
             )
         self.assertEqual(ctx.exception.code, 400)
+
+    def test_local_route_endpoint_returns_geometry(self):
+        self._request_json(
+            "POST",
+            "/api/gps/update",
+            {"user_id": "route-seed", "lat": 47.6205, "lon": -122.3493, "seq": 1},
+        )
+        route = self._request_json(
+            "GET",
+            "/api/platform/route/local?origin_lat=47.6205&origin_lon=-122.3493&dest_lat=47.6220&dest_lon=-122.3410&condition=driving_streaming",
+        )
+        self.assertEqual(route.get("status"), "ok")
+        self.assertEqual(route.get("engine"), "standalone_matrix_router")
+        self.assertIn("route_points", route)
+        self.assertGreaterEqual(len(route["route_points"]), 2)
+        start = route["route_points"][0]
+        end = route["route_points"][-1]
+        self.assertAlmostEqual(start["lat"], 47.6205, places=3)
+        self.assertAlmostEqual(start["lon"], -122.3493, places=3)
+        self.assertAlmostEqual(end["lat"], 47.6220, places=3)
+        self.assertAlmostEqual(end["lon"], -122.3410, places=3)
 
 
 if __name__ == "__main__":
