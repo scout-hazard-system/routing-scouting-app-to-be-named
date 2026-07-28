@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Scanner Stream Client</string>
+    <string name="app_subtitle">Live snapshot + SSE feed</string>
+    <string name="base_url_hint">Backend URL (for example http://192.168.1.100:18080)</string>
+    <string name="connect">Connect</string>
+    <string name="disconnect">Disconnect</string>
+    <string name="clear_log">Clear Log</string>
+    <string name="open_maps">Open in Maps</string>
+    <string name="idle">idle</string>
+    <string name="status_label">Status</string>
+    <string name="driving_mode_label">Driving Mode: manual</string>
+    <string name="map_target_none">Map Target: waiting for alert coordinates</string>
+    <string name="stream_placeholder">Waiting for stream events…</string>
+</resources>
