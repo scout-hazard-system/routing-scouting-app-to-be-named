@@ -11,7 +11,7 @@ rm -rf "$BUILD_DIR"
 mkdir -p "$BUILD_DIR"
 mkdir -p "$DIST_DIR"
 
-javac -d "$BUILD_DIR" "$SCRIPT_DIR/ScannerBackendServer.java"
+javac -d "$BUILD_DIR" "$SCRIPT_DIR"/*.java
 printf 'Main-Class: ScannerBackendServer\n' > "$MANIFEST_PATH"
 jar cfm "$JAR_PATH" "$MANIFEST_PATH" -C "$BUILD_DIR" .
 

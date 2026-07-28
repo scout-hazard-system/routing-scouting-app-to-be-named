@@ -9,6 +9,12 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
+    <dev.warp.scannerstream.Map3dView
+        android:id="@+id/map3dView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
     <!-- Top overlay: status chip + menu toggle + destination search -->
     <LinearLayout
         android:layout_width="match_parent"
@@ -83,6 +89,41 @@
         android:layout_gravity="bottom|end"
         android:layout_margin="12dp"
         android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/zoomControls"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <Button
+                android:id="@+id/zoomOutBtn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="@color/bg_surface"
+                android:text="@string/zoom_out"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/zoomInBtn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/bg_surface"
+                android:text="@string/zoom_in"
+                android:textAllCaps="false" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/mapModeBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/bg_surface"
+            android:text="@string/map_mode_osm"
+            android:textAllCaps="false" />
 
         <Button
             android:id="@+id/drawRouteBtn"

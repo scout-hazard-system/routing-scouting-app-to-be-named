@@ -23,4 +23,8 @@
     <string name="popup_title_alert">🚨 Alert location</string>
     <string name="popup_route_here">Route to this location</string>
     <string name="popup_dismiss">✕</string>
+    <string name="map_mode_osm">Map: OSM</string>
+    <string name="map_mode_3d">Map: 3D</string>
+    <string name="zoom_in">+</string>
+    <string name="zoom_out">\u2212</string>
 </resources>

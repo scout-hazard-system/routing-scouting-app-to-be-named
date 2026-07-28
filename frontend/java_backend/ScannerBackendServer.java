@@ -124,6 +124,11 @@ public final class ScannerBackendServer {
     registerContext(server, "/api/mobile/bootstrap", new MobileBootstrapHandler());
     registerContext(server, "/api/mobile/snapshot", new MobileSnapshotHandler());
     registerContext(server, "/api/mobile/stream", new MobileStreamHandler());
+    registerContext(server, "/api/map/scene", new MapSceneHandler());
+    registerContext(server, "/api/map/render", new MapRenderHandler());
+    registerContext(server, "/api/map/status", new MapStatusHandler());
+    registerContext(server, "/api/map/shard", new MapShardHandler());
+    ProprietaryMapEngine.init();
     server.setExecutor(Executors.newCachedThreadPool());
     System.out.printf(
         Locale.ROOT,
@@ -518,7 +523,11 @@ public final class ScannerBackendServer {
         + "\"weather\":\"/api/platform/weather/forecast\","
         + "\"waze\":\"/api/platform/waze/route\","
         + "\"geocode\":\"/api/platform/geocode\","
-        + "\"local_route\":\"/api/platform/route/local\""
+        + "\"local_route\":\"/api/platform/route/local\","
+        + "\"map_scene\":\"/api/map/scene\","
+        + "\"map_render\":\"/api/map/render\","
+        + "\"map_status\":\"/api/map/status\","
+        + "\"map_shard\":\"/api/map/shard\""
         + "},"
         + "\"notes\":\"Compact endpoints are intended for low-bandwidth mobile companion clients.\""
         + "}";
@@ -938,6 +947,18 @@ public final class ScannerBackendServer {
     }
   }
 
+  private static void writeBinary(HttpExchange exchange, int statusCode, byte[] payload, String contentType)
+      throws IOException {
+    Headers headers = exchange.getResponseHeaders();
+    headers.set("Content-Type", contentType);
+    headers.set("Cache-Control", "no-store");
+    headers.set("Access-Control-Allow-Origin", "*");
+    exchange.sendResponseHeaders(statusCode, payload.length);
+    try (OutputStream os = exchange.getResponseBody()) {
+      os.write(payload);
+    }
+  }
+
   private static void writeTextEventStreamHeaders(HttpExchange exchange) throws IOException {
     Headers headers = exchange.getResponseHeaders();
     headers.set("Content-Type", "text/event-stream; charset=utf-8");
@@ -1257,6 +1278,7 @@ public final class ScannerBackendServer {
         return;
       }
       appendGpsPoint(point);
+      ProprietaryMapEngine.updateGps(point.lat, point.lon);
       List<GpsPoint> recent = copyRecentTrack(40);
       writeJson(
           exchange,
@@ -1268,6 +1290,115 @@ public final class ScannerBackendServer {
               + "\"point\":" + gpsPointToJson(point) + ","
               + "\"track\":" + gpsTrackToJson(recent)
               + "}");
+    }
+  }
+
+  private static final class MapSceneHandler implements HttpHandler {
+    @Override
+    public void handle(HttpExchange exchange) throws IOException {
+      if (!isGet(exchange)) {
+        writeJson(exchange, 405, "{\"error\":\"method_not_allowed\"}");
+        return;
+      }
+      Map<String, String> query = parseQuery(exchange.getRequestURI().getRawQuery());
+      double lat = parseDouble(query.getOrDefault("lat", ""), Double.NaN);
+      double lon = parseDouble(query.getOrDefault("lon", ""), Double.NaN);
+      if (!Double.isFinite(lat) || !Double.isFinite(lon)) {
+        GpsPoint latest = latestGpsPoint;
+        if (latest == null) {
+          writeJson(exchange, 400, "{\"error\":\"missing_coordinates\"}");
+          return;
+        }
+        lat = latest.lat;
+        lon = latest.lon;
+      }
+      double radiusM = parseDouble(query.getOrDefault("radius_m", ""), 700.0);
+      int zoom = parseIntOrDefault(query.getOrDefault("zoom", ""), 0); // 0 = auto (resolution filter)
+      writeJson(exchange, 200, ProprietaryMapEngine.sceneJson(lat, lon, radiusM, zoom));
+    }
+  }
+
+  private static final class MapRenderHandler implements HttpHandler {
+    @Override
+    public void handle(HttpExchange exchange) throws IOException {
+      if (!isGet(exchange)) {
+        writeJson(exchange, 405, "{\"error\":\"method_not_allowed\"}");
+        return;
+      }
+      Map<String, String> query = parseQuery(exchange.getRequestURI().getRawQuery());
+      double lat = parseDouble(query.getOrDefault("lat", ""), Double.NaN);
+      double lon = parseDouble(query.getOrDefault("lon", ""), Double.NaN);
+      if (!Double.isFinite(lat) || !Double.isFinite(lon)) {
+        GpsPoint latest = latestGpsPoint;
+        if (latest == null) {
+          writeJson(exchange, 400, "{\"error\":\"missing_coordinates\"}");
+          return;
+        }
+        lat = latest.lat;
+        lon = latest.lon;
+      }
+      double mpp = parseDouble(query.getOrDefault("mpp", ""), 1.2);
+      double heading = parseDouble(query.getOrDefault("heading", ""), 0.0);
+      double tilt = parseDouble(query.getOrDefault("tilt", ""), 45.0);
+      int w = parseIntOrDefault(query.getOrDefault("w", ""), 720);
+      int h = parseIntOrDefault(query.getOrDefault("h", ""), 1280);
+      double destLat = parseDouble(query.getOrDefault("dest_lat", ""), Double.NaN);
+      double destLon = parseDouble(query.getOrDefault("dest_lon", ""), Double.NaN);
+      double[] routePts = null;
+      Double destLatBox = null;
+      Double destLonBox = null;
+      if (Double.isFinite(destLat) && Double.isFinite(destLon)) {
+        destLatBox = destLat;
+        destLonBox = destLon;
+        String osrmBody = fetchOsrmRouteBody(lat, lon, destLat, destLon);
+        if (osrmBody != null) {
+          List<RouteNode> nodes = parseOsrmCoordinates(osrmBody);
+          if (nodes != null) {
+            routePts = new double[nodes.size() * 2];
+            for (int i = 0; i < nodes.size(); i++) {
+              routePts[i * 2] = nodes.get(i).lat;
+              routePts[i * 2 + 1] = nodes.get(i).lon;
+            }
+          }
+        }
+      }
+      byte[] png = ProprietaryMapEngine.renderPng(
+          lat, lon, mpp, heading, tilt, w, h, routePts, destLatBox, destLonBox);
+      writeBinary(exchange, 200, png, "image/png");
+    }
+  }
+
+  private static final class MapStatusHandler implements HttpHandler {
+    @Override
+    public void handle(HttpExchange exchange) throws IOException {
+      if (!isGet(exchange)) {
+        writeJson(exchange, 405, "{\"error\":\"method_not_allowed\"}");
+        return;
+      }
+      writeJson(exchange, 200, ProprietaryMapEngine.statusJson());
+    }
+  }
+
+  private static final class MapShardHandler implements HttpHandler {
+    @Override
+    public void handle(HttpExchange exchange) throws IOException {
+      if (!isGet(exchange)) {
+        writeJson(exchange, 405, "{\"error\":\"method_not_allowed\"}");
+        return;
+      }
+      Map<String, String> query = parseQuery(exchange.getRequestURI().getRawQuery());
+      if ("1".equals(query.getOrDefault("status", ""))) {
+        writeJson(exchange, 200, "{\"status\":\"ok\",\"prefetch\":" + ProprietaryMapEngine.prefetchStatusJson() + "}");
+        return;
+      }
+      String state = query.getOrDefault("state", "").trim();
+      if (state.isEmpty()) {
+        writeJson(exchange, 400, "{\"error\":\"missing_state\"}");
+        return;
+      }
+      int maxTiles = parseIntOrDefault(query.getOrDefault("max_tiles", ""), 0);
+      String result = ProprietaryMapEngine.startShardPrefetch(state, maxTiles);
+      writeJson(exchange, result.contains("\"error\"") ? 400 : 200, result);
     }
   }
 

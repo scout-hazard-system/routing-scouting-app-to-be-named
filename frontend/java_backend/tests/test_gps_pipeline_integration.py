@@ -27,7 +27,9 @@ class GpsPipelineIntegrationTests(unittest.TestCase):
         cls.pipeline_log = Path(tempfile.mkstemp(prefix="scanner-backend-pipeline-log-", suffix=".log")[1])
         cls.base_url = f"http://127.0.0.1:{cls.port}"
 
-        compile_cmd = ["javac", "-d", str(cls.build_dir), str(cls.server_source)]
+        compile_cmd = ["javac", "-d", str(cls.build_dir)] + [
+            str(p) for p in sorted(cls.repo_dir.glob("*.java"))
+        ]
         compile_result = subprocess.run(compile_cmd, cwd=str(cls.repo_dir), capture_output=True, text=True)
         if compile_result.returncode != 0:
             raise RuntimeError(
@@ -38,6 +40,8 @@ class GpsPipelineIntegrationTests(unittest.TestCase):
         env["JAVA_BACKEND_HOST"] = "127.0.0.1"
         env["JAVA_BACKEND_PORT"] = str(cls.port)
         env["PIPELINE_LOG_PATH"] = str(cls.pipeline_log)
+        cls.map_cache_dir = Path(tempfile.mkdtemp(prefix="scanner-backend-map-cache-"))
+        env["MAP_CACHE_DIR"] = str(cls.map_cache_dir)
 
         log_handle = open(cls.log_file, "w", encoding="utf-8")
         cls._log_handle = log_handle
@@ -87,6 +91,12 @@ class GpsPipelineIntegrationTests(unittest.TestCase):
         req = Request(url, data=body, method=method, headers=headers)
         with urlopen(req, timeout=8.0) as resp:
             return json.loads(resp.read().decode("utf-8"))
+
+    @classmethod
+    def _request_bytes(cls, path: str, timeout: float = 30.0):
+        req = Request(cls.base_url + path, method="GET")
+        with urlopen(req, timeout=timeout) as resp:
+            return resp.status, resp.headers.get("Content-Type", ""), resp.read()
 
     def test_update_and_latest(self):
         update = self._request_json(
@@ -216,6 +226,90 @@ class GpsPipelineIntegrationTests(unittest.TestCase):
         self.assertAlmostEqual(start["lon"], -122.3493, places=2)
         self.assertAlmostEqual(end["lat"], 47.6220, places=2)
         self.assertAlmostEqual(end["lon"], -122.3410, places=2)
+
+    def test_map_status_shape(self):
+        status = self._request_json("GET", "/api/map/status")
+        self.assertEqual(status.get("status"), "ok")
+        self.assertEqual(status.get("cell_zoom"), 15)
+        self.assertEqual(status.get("zoom_ladder"), [15, 13, 11, 9, 7, 5, 3])
+        self.assertIn("planet", status)
+        self.assertIn("overpass", status)
+        self.assertIn("shards", status)
+        self.assertIn("prefetch", status)
+        self.assertIn("OpenStreetMap", status.get("attribution", ""))
+
+    def test_map_scene_structure(self):
+        # Network-dependent: tolerate empty feature sets when the planet
+        # extract and Overpass are both unreachable, but the shape must hold.
+        scene = self._request_json("GET", "/api/map/scene?lat=48.494&lon=-122.612&radius_m=400")
+        self.assertEqual(scene.get("status"), "ok")
+        self.assertEqual(scene.get("zoom"), 15)
+        for key in ("cells", "roads", "buildings", "areas", "pois", "counts"):
+            self.assertIn(key, scene)
+        self.assertIn("OpenStreetMap", scene.get("attribution", ""))
+        if scene["counts"]["roads"] > 0:
+            road = scene["roads"][0]
+            self.assertIn("c", road)
+            self.assertIn("p", road)
+            self.assertEqual(len(road["p"]) % 2, 0)
+            self.assertGreaterEqual(len(road["p"]), 4)
+            self.assertEqual({c["source"] for c in scene["cells"]} - {"planet", "overpass"}, set())
+
+    def test_map_scene_requires_coordinates_when_no_gps(self):
+        # lat/lon omitted falls back to latest GPS; a prior test may have
+        # seeded GPS, so accept either 200 (fallback used) or 400.
+        try:
+            scene = self._request_json("GET", "/api/map/scene")
+            self.assertEqual(scene.get("status"), "ok")
+        except HTTPError as err:
+            self.assertEqual(err.code, 400)
+
+    def test_map_render_returns_png(self):
+        status, content_type, body = self._request_bytes(
+            "/api/map/render?lat=48.494&lon=-122.612&mpp=1.5&heading=0&tilt=45&w=320&h=320"
+        )
+        self.assertEqual(status, 200)
+        self.assertEqual(content_type, "image/png")
+        self.assertEqual(body[:8], b"\x89PNG\r\n\x1a\n")
+        self.assertGreater(len(body), 1000)
+
+    def test_map_scene_zoom_ladder_by_radius(self):
+        # The resolution filter must drop to lower planet zooms as the
+        # requested radius grows (multi-resolution global map support).
+        scene_region = self._request_json(
+            "GET", "/api/map/scene?lat=48.494&lon=-122.612&radius_m=250000"
+        )
+        self.assertEqual(scene_region.get("status"), "ok")
+        self.assertLessEqual(scene_region.get("zoom"), 9)
+        scene_global = self._request_json(
+            "GET", "/api/map/scene?lat=48.494&lon=-122.612&radius_m=3000000"
+        )
+        self.assertEqual(scene_global.get("status"), "ok")
+        self.assertLessEqual(scene_global.get("zoom"), 5)
+        # Zoomed-out scenes never include buildings (resolution filter).
+        self.assertEqual(scene_global["counts"]["buildings"], 0)
+
+    def test_map_scene_explicit_zoom_snaps_to_ladder(self):
+        scene = self._request_json(
+            "GET", "/api/map/scene?lat=48.494&lon=-122.612&radius_m=700&zoom=7"
+        )
+        self.assertEqual(scene.get("status"), "ok")
+        self.assertEqual(scene.get("zoom"), 7)
+        scene_snap = self._request_json(
+            "GET", "/api/map/scene?lat=48.494&lon=-122.612&radius_m=700&zoom=12"
+        )
+        self.assertIn(scene_snap.get("zoom"), (11, 13))
+
+    def test_map_shard_validation(self):
+        with self.assertRaises(HTTPError) as ctx:
+            self._request_json("GET", "/api/map/shard?state=ZZ")
+        self.assertEqual(ctx.exception.code, 400)
+        with self.assertRaises(HTTPError) as ctx2:
+            self._request_json("GET", "/api/map/shard")
+        self.assertEqual(ctx2.exception.code, 400)
+        shard_status = self._request_json("GET", "/api/map/shard?status=1")
+        self.assertEqual(shard_status.get("status"), "ok")
+        self.assertIn("prefetch", shard_status)
 
 
 if __name__ == "__main__":

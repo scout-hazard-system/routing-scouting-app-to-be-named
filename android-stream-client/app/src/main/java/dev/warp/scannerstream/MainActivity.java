@@ -85,6 +85,15 @@ public class MainActivity extends AppCompatActivity {
   private Button menuBtn;
   private View controlPanel;
   private MapView osmMapView;
+  private Map3dView map3dView;
+  private Button mapModeBtn;
+  private View zoomControls;
+  private boolean map3dEnabled = false;
+  private volatile boolean sceneFetchInFlight = false;
+  private volatile long lastSceneFetchMs = 0L;
+  private volatile double lastSceneLat = Double.NaN;
+  private volatile double lastSceneLon = Double.NaN;
+  private volatile double lastSceneRadiusM = 700.0;
   private Polyline osmRoutePolyline;
   private Marker osmDeviceMarker;
   private Marker osmTargetMarker;
@@ -158,6 +167,13 @@ public class MainActivity extends AppCompatActivity {
     mapTargetText = findViewById(R.id.mapTargetText);
     outputText = findViewById(R.id.outputText);
     osmMapView = findViewById(R.id.osmMapView);
+    map3dView = findViewById(R.id.map3dView);
+    mapModeBtn = findViewById(R.id.mapModeBtn);
+    zoomControls = findViewById(R.id.zoomControls);
+    Button zoomInBtn = findViewById(R.id.zoomInBtn);
+    Button zoomOutBtn = findViewById(R.id.zoomOutBtn);
+    zoomInBtn.setOnClickListener(v -> map3dView.zoomBy(0.5f));
+    zoomOutBtn.setOnClickListener(v -> map3dView.zoomBy(2.0f));
     menuBtn = findViewById(R.id.menuBtn);
     controlPanel = findViewById(R.id.controlPanel);
     locationPopup = findViewById(R.id.locationPopup);
@@ -182,6 +198,8 @@ public class MainActivity extends AppCompatActivity {
     }
     locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
 
+    mapModeBtn.setOnClickListener(v -> toggleMapMode());
+    map3dView.setRefetchListener((lat, lon, radiusM) -> fetchMapScene(lat, lon, radiusM, false));
     connectBtn.setOnClickListener(v -> startStreaming());
     disconnectBtn.setOnClickListener(v -> stopStreaming("disconnected"));
     clearLogBtn.setOnClickListener(v -> outputText.setText(getString(R.string.stream_placeholder)));
@@ -288,6 +306,105 @@ public class MainActivity extends AppCompatActivity {
                 }
               }
             });
+  }
+
+  private void toggleMapMode() {
+    map3dEnabled = !map3dEnabled;
+    mapModeBtn.setText(map3dEnabled ? getString(R.string.map_mode_3d) : getString(R.string.map_mode_osm));
+    map3dView.setVisibility(map3dEnabled ? View.VISIBLE : View.GONE);
+    osmMapView.setVisibility(map3dEnabled ? View.GONE : View.VISIBLE);
+    zoomControls.setVisibility(map3dEnabled ? View.VISIBLE : View.GONE);
+    if (map3dEnabled) {
+      double lat;
+      double lon;
+      if (lastDeviceLat != null && lastDeviceLon != null) {
+        lat = lastDeviceLat;
+        lon = lastDeviceLon;
+      } else if (lastMapLat != null && lastMapLon != null) {
+        lat = lastMapLat;
+        lon = lastMapLon;
+      } else {
+        lat = DEFAULT_MAP_LAT;
+        lon = DEFAULT_MAP_LON;
+      }
+      map3dView.recenter();
+      fetchMapScene(lat, lon, 700.0, true);
+      appendLine("MAP", "3D vector mode on (proprietary engine)");
+    } else {
+      appendLine("MAP", "OSM raster mode on");
+    }
+  }
+
+  private void fetchMapScene(double lat, double lon, double radiusM, boolean force) {
+    String base = normalizedBaseUrl();
+    if (base == null || !map3dEnabled) {
+      return;
+    }
+    long now = SystemClock.elapsedRealtime();
+    if (sceneFetchInFlight) {
+      return;
+    }
+    if (!force && (now - lastSceneFetchMs) < 4000L) {
+      return;
+    }
+    sceneFetchInFlight = true;
+    lastSceneFetchMs = now;
+    String url =
+        base
+            + "/api/map/scene?lat="
+            + String.format(Locale.ROOT, "%.6f", lat)
+            + "&lon="
+            + String.format(Locale.ROOT, "%.6f", lon)
+            + "&radius_m="
+            + Math.round(radiusM);
+    Request request = new Request.Builder().url(url).build();
+    client.newCall(request)
+        .enqueue(
+            new Callback() {
+              @Override
+              public void onFailure(Call call, IOException e) {
+                sceneFetchInFlight = false;
+                appendLine("MAP3D", "scene fetch failed: " + e.getMessage());
+              }
+
+              @Override
+              public void onResponse(Call call, Response response) throws IOException {
+                try (response) {
+                  if (!response.isSuccessful() || response.body() == null) {
+                    appendLine("MAP3D", "scene unavailable (HTTP " + response.code() + ")");
+                    return;
+                  }
+                  String body = response.body().string();
+                  map3dView.setSceneJson(body);
+                  lastSceneLat = lat;
+                  lastSceneLon = lon;
+                  lastSceneRadiusM = radiusM;
+                } catch (Exception e) {
+                  appendLine("MAP3D", "scene parse failed: " + e.getMessage());
+                } finally {
+                  sceneFetchInFlight = false;
+                }
+              }
+            });
+  }
+
+  private void maybeRefreshSceneForDevice() {
+    if (!map3dEnabled || lastDeviceLat == null || lastDeviceLon == null) {
+      return;
+    }
+    if (Double.isNaN(lastSceneLat) || Double.isNaN(lastSceneLon)) {
+      fetchMapScene(lastDeviceLat, lastDeviceLon, 700.0, true);
+      return;
+    }
+    double dLat = (lastDeviceLat - lastSceneLat) * 110540.0;
+    double dLon =
+        (lastDeviceLon - lastSceneLon)
+            * 111320.0
+            * Math.max(0.2, Math.cos(Math.toRadians(lastDeviceLat)));
+    // Refetch when the device leaves ~40% of the loaded scene radius.
+    if (Math.hypot(dLat, dLon) > Math.max(280.0, lastSceneRadiusM * 0.4)) {
+      fetchMapScene(lastDeviceLat, lastDeviceLon, lastSceneRadiusM, false);
+    }
   }
 
   private void setControlPanelVisible(boolean visible) {
@@ -856,6 +973,9 @@ public class MainActivity extends AppCompatActivity {
     if (lastMapLat == null || lastMapLon == null) {
       updateMapTargetUi();
     }
+    map3dView.updateDevice(
+        location.getLatitude(), location.getLongitude(), lastDeviceHeadingDeg, lastDeviceSpeedMps);
+    maybeRefreshSceneForDevice();
     renderRouteOnMap(false);
     syncDeviceGpsToBackend();
   }
@@ -959,6 +1079,12 @@ public class MainActivity extends AppCompatActivity {
       routeSnapshot = new ArrayList<>(currentRoutePoints);
     }
     boolean hasFix = lastDeviceLat != null && lastDeviceLon != null;
+    map3dView.setRoute(routeSnapshot);
+    if (lastMapLat != null && lastMapLon != null) {
+      map3dView.setDestination(lastMapLat, lastMapLon);
+    } else {
+      map3dView.setDestination(null, null);
+    }
     uiHandler.post(
         () -> updateOsmOverlays(originLat, originLon, targetLat, targetLon, routeSnapshot, hasFix));
   }

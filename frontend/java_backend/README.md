@@ -108,3 +108,27 @@ http://<PC_LAN_IP>:8080
 - `/api/platform/waze/route` returns server-built Waze `app_url` and `embed_url`.
 - `/api/platform/route/local` returns OSRM (OpenStreetMap) road route geometry (`route_points`), falling back to a direct origin->destination segment when OSRM is unreachable.
 - `/api/platform/providers/status` reports readiness/config for provider wiring.
+
+## Proprietary map engine
+Self-hosted vector map pipeline (`MapModel.java`, `PlanetTileStore.java`, `ProprietaryMapEngine.java`) with no external map SDK. Data flows: in-memory LRU -> jurisdiction-sharded disk cache -> planet PMTiles extract (HTTP range reads) -> Overpass fallback (z15 only).
+
+### Endpoints
+- `GET /api/map/scene?lat=..&lon=..&radius_m=..[&zoom=..]` - vector scene JSON (roads, buildings, areas, POIs, place labels). `radius_m` up to `8000000` (global). `zoom` optional: `0`/omitted = auto-selected from radius; explicit values snap to the zoom ladder.
+- `GET /api/map/render?lat=..&lon=..&radius_m=..` - server-rendered PNG preview.
+- `GET /api/map/status` - engine status: cache stats, `cell_zoom`, `zoom_ladder`, prefetch state.
+- `GET /api/map/shard?state=..` - trigger background shard prefetch for a state (low-zoom pyramid first, then z15 ring walk).
+
+### Zoom ladder and resolution filtering
+Scenes are built from one of the ladder zooms `{15, 13, 11, 9, 7, 5, 3}`, all cut from the same planet PMTiles archive. Auto-selection picks the highest zoom whose tile span covers the requested radius. Per-zoom filters keep payloads small at scale: minor roads/buildings/POIs drop out at low zooms (motorways always kept, primaries z>=7, buildings z>=13), geometry is decimated and coordinate precision reduced, and `places` layer names (cities/towns) label zoomed-out views.
+
+### Cache layout
+- `shards/<STATE>/` - z>=10 tiles, sharded by state (e.g. `shards/WA/15_5241_11445.mvt.gz`)
+- `shards/_z##/` - global low-zoom tiles (e.g. `shards/_z07/`)
+
+### Environment variables
+- `PLANET_PMTILES_URL` (default: `https://build.protomaps.com/20260727.pmtiles`) - point at a self-hosted PMTiles file for production; the public build endpoint is not for heavy production use.
+- `MAP_CACHE_DIR` (default: `~/.scanner_stream/map_cache`)
+- `OVERPASS_API_URL` (default: public Overpass API) - z15 fallback only.
+
+### Attribution
+Map data is © OpenStreetMap contributors, licensed under ODbL. Any UI displaying this data must show OpenStreetMap attribution; derived tile/extract databases must also comply with ODbL share-alike terms.
