@@ -8,8 +8,6 @@
     <string name="clear_log">Clear Log</string>
     <string name="open_maps">Open in Maps</string>
     <string name="draw_route">Draw Route</string>
-    <string name="map_3d_enabled">3D View: ON</string>
-    <string name="map_3d_disabled">3D View: OFF</string>
     <string name="idle">idle</string>
     <string name="status_label">Status</string>
     <string name="driving_mode_label">Driving Mode: manual</string>
@@ -21,6 +19,8 @@
     <string name="stream_log_title">Stream Log</string>
     <string name="destination_hint">Search destination address (OpenStreetMap)</string>
     <string name="search_go">Route</string>
-    <string name="map_style_osm">Style: OSM</string>
-    <string name="map_style_matrix">Style: Matrix</string>
+    <string name="popup_title_location">Location mentioned on scanner</string>
+    <string name="popup_title_alert">🚨 Alert location</string>
+    <string name="popup_route_here">Route to this location</string>
+    <string name="popup_dismiss">✕</string>
 </resources>

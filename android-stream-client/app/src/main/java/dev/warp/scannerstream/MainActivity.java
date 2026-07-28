@@ -23,6 +23,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
@@ -67,6 +68,8 @@ public class MainActivity extends AppCompatActivity {
   private static final float LOCATION_MIN_DISTANCE_M = 3f;
   private static final long DEVICE_GPS_POST_INTERVAL_MS = 3000L;
   private static final long SERVER_ROUTE_REFRESH_MS = 5000L;
+  private static final long POPUP_REPEAT_SUPPRESS_MS = 30000L;
+  private static final long POPUP_AUTO_HIDE_MS = 12000L;
   private static final double DEFAULT_MAP_LAT = 37.7749;
   private static final double DEFAULT_MAP_LON = -122.4194;
   private static final MediaType JSON_MEDIA_TYPE = MediaType.get("application/json; charset=utf-8");
@@ -79,18 +82,23 @@ public class MainActivity extends AppCompatActivity {
   private TextView drivingModeText;
   private TextView mapTargetText;
   private TextView outputText;
-  private Button toggle3dBtn;
   private Button menuBtn;
-  private Button mapStyleBtn;
   private View controlPanel;
-  private MatrixMapView matrixMapView;
   private MapView osmMapView;
   private Polyline osmRoutePolyline;
   private Marker osmDeviceMarker;
   private Marker osmTargetMarker;
-  private boolean matrixStyleEnabled = false;
+  private LinearLayout locationPopup;
+  private TextView popupTitle;
+  private TextView popupLocationText;
+  private TextView popupTranscriptText;
+  private AudioVisualizerView popupVisualizer;
+  private volatile String pendingPopupQuery = null;
+  private String lastPopupMentionKey = "";
+  private long lastPopupShownMs = 0L;
   private boolean osmCenteredOnFix = false;
   private final Handler uiHandler = new Handler(Looper.getMainLooper());
+  private final Runnable popupAutoHideRunnable = this::hideLocationPopup;
   private final OkHttpClient client = new OkHttpClient.Builder().build();
   private volatile boolean running = false;
   private Call streamCall;
@@ -111,12 +119,10 @@ public class MainActivity extends AppCompatActivity {
   private Float lastDeviceAccuracyM = null;
   private Float lastDeviceSpeedMps = null;
   private Float lastDeviceHeadingDeg = null;
-  private boolean is3dModeEnabled = true;
   private boolean serverRouteRequestInFlight = false;
   private long lastServerRouteFetchMs = 0L;
   private String lastServerRouteFingerprint = "";
   private final List<double[]> currentRoutePoints = new ArrayList<>();
-  private final List<MatrixMapView.StreetSegment> currentStreetSegments = new ArrayList<>();
 
   private final SensorEventListener accelListener =
       new SensorEventListener() {
@@ -151,18 +157,22 @@ public class MainActivity extends AppCompatActivity {
     drivingModeText = findViewById(R.id.drivingModeText);
     mapTargetText = findViewById(R.id.mapTargetText);
     outputText = findViewById(R.id.outputText);
-    matrixMapView = findViewById(R.id.matrixMapView);
     osmMapView = findViewById(R.id.osmMapView);
-    toggle3dBtn = findViewById(R.id.toggle3dBtn);
     menuBtn = findViewById(R.id.menuBtn);
-    mapStyleBtn = findViewById(R.id.mapStyleBtn);
     controlPanel = findViewById(R.id.controlPanel);
+    locationPopup = findViewById(R.id.locationPopup);
+    popupTitle = findViewById(R.id.popupTitle);
+    popupLocationText = findViewById(R.id.popupLocationText);
+    popupTranscriptText = findViewById(R.id.popupTranscriptText);
+    popupVisualizer = findViewById(R.id.popupVisualizer);
     Button connectBtn = findViewById(R.id.connectBtn);
     Button disconnectBtn = findViewById(R.id.disconnectBtn);
     Button clearLogBtn = findViewById(R.id.clearLogBtn);
     Button openMapsBtn = findViewById(R.id.openMapsBtn);
     Button drawRouteBtn = findViewById(R.id.drawRouteBtn);
     Button searchBtn = findViewById(R.id.searchBtn);
+    Button popupRouteBtn = findViewById(R.id.popupRouteBtn);
+    Button popupDismissBtn = findViewById(R.id.popupDismissBtn);
 
     setupOsmMap();
 
@@ -177,11 +187,10 @@ public class MainActivity extends AppCompatActivity {
     clearLogBtn.setOnClickListener(v -> outputText.setText(getString(R.string.stream_placeholder)));
     openMapsBtn.setOnClickListener(v -> openLatestMapTarget());
     drawRouteBtn.setOnClickListener(v -> renderRouteOnMap(true));
-    toggle3dBtn.setOnClickListener(v -> toggle3dMode());
     menuBtn.setOnClickListener(v -> setControlPanelVisible(controlPanel.getVisibility() != View.VISIBLE));
-    mapStyleBtn.setOnClickListener(v -> toggleMapStyle());
     searchBtn.setOnClickListener(v -> searchDestination());
-    update3dToggleUi();
+    popupRouteBtn.setOnClickListener(v -> routeToPopupLocation());
+    popupDismissBtn.setOnClickListener(v -> hideLocationPopup());
     appendLine("MAP", "OpenStreetMap base layer active (osmdroid + OSRM routing)");
 
     setStatus("idle");
@@ -213,29 +222,22 @@ public class MainActivity extends AppCompatActivity {
     osmMapView.getOverlays().add(osmTargetMarker);
   }
 
-  private void toggleMapStyle() {
-    matrixStyleEnabled = !matrixStyleEnabled;
-    matrixMapView.setVisibility(matrixStyleEnabled ? View.VISIBLE : View.GONE);
-    osmMapView.setVisibility(matrixStyleEnabled ? View.GONE : View.VISIBLE);
-    mapStyleBtn.setText(
-        matrixStyleEnabled
-            ? getString(R.string.map_style_matrix)
-            : getString(R.string.map_style_osm));
-    appendLine("MAP", matrixStyleEnabled ? "matrix style enabled" : "OSM style enabled");
-  }
-
   private void searchDestination() {
     String query = destinationInput.getText().toString().trim();
     if (query.isEmpty()) {
       appendLine("SEARCH", "enter a destination address first");
       return;
     }
+    geocodeAndRoute(query, "SEARCH");
+  }
+
+  private void geocodeAndRoute(String query, String label) {
     String base = normalizedBaseUrl();
     if (base == null) {
       setStatus("invalid URL");
       return;
     }
-    appendLine("SEARCH", "geocoding via OSM: " + query);
+    appendLine(label, "geocoding via OSM: " + query);
     String url = base + "/api/platform/geocode?q=" + Uri.encode(query);
     Request request = new Request.Builder().url(url).build();
     client.newCall(request)
@@ -243,38 +245,38 @@ public class MainActivity extends AppCompatActivity {
             new Callback() {
               @Override
               public void onFailure(Call call, IOException e) {
-                appendLine("SEARCH", "geocode failed: " + e.getMessage());
+                appendLine(label, "geocode failed: " + e.getMessage());
               }
 
               @Override
               public void onResponse(Call call, Response response) throws IOException {
                 try (response) {
                   if (!response.isSuccessful() || response.body() == null) {
-                    appendLine("SEARCH", "geocode unavailable (HTTP " + response.code() + ")");
+                    appendLine(label, "geocode unavailable (HTTP " + response.code() + ")");
                     return;
                   }
                   JSONObject json = new JSONObject(response.body().string());
                   JSONArray results = json.optJSONArray("results");
                   if (results == null || results.length() == 0) {
-                    appendLine("SEARCH", "no OSM matches for: " + query);
+                    appendLine(label, "no OSM matches for: " + query);
                     return;
                   }
                   JSONObject first = results.optJSONObject(0);
                   if (first == null) {
-                    appendLine("SEARCH", "malformed geocode result");
+                    appendLine(label, "malformed geocode result");
                     return;
                   }
                   double lat = Double.parseDouble(first.optString("lat", "nan"));
                   double lon = Double.parseDouble(first.optString("lon", "nan"));
                   if (!Double.isFinite(lat) || !Double.isFinite(lon)) {
-                    appendLine("SEARCH", "geocode result missing coordinates");
+                    appendLine(label, "geocode result missing coordinates");
                     return;
                   }
                   String displayName = first.optString("display_name", query);
                   lastMapLat = lat;
                   lastMapLon = lon;
                   updateMapTargetUi();
-                  appendLine("SEARCH", "destination: " + displayName);
+                  appendLine(label, "destination: " + displayName);
                   uiHandler.post(
                       () -> {
                         osmMapView.getController().animateTo(new GeoPoint(lat, lon));
@@ -282,7 +284,7 @@ public class MainActivity extends AppCompatActivity {
                       });
                   renderRouteOnMap(true);
                 } catch (Exception e) {
-                  appendLine("SEARCH", "geocode parse error: " + e.getMessage());
+                  appendLine(label, "geocode parse error: " + e.getMessage());
                 }
               }
             });
@@ -624,6 +626,12 @@ public class MainActivity extends AppCompatActivity {
       captureMapTargetFromEventPayload(alert);
       captureMapTargetFromEventPayload(transcript);
       captureMapTargetFromEventPayload(message);
+      List<String> mentions = new ArrayList<>();
+      collectMentions(json.optJSONArray("location_mentions"), mentions);
+      collectMentions(json.optJSONArray("poi_mentions"), mentions);
+      if (!mentions.isEmpty()) {
+        maybeShowLocationPopup(eventType, mentions, text, json.optDouble("rms", 0.0));
+      }
       String label =
           kind.isEmpty()
               ? eventType.toUpperCase(Locale.ROOT)
@@ -632,6 +640,67 @@ public class MainActivity extends AppCompatActivity {
     } catch (JSONException e) {
       appendLine("PARSE", "error: " + e.getMessage());
     }
+  }
+
+  private void collectMentions(JSONArray array, List<String> sink) {
+    if (array == null) {
+      return;
+    }
+    for (int i = 0; i < array.length(); i++) {
+      String mention = array.optString(i, "").trim();
+      if (!mention.isEmpty() && !sink.contains(mention)) {
+        sink.add(mention);
+      }
+    }
+  }
+
+  private void maybeShowLocationPopup(
+      String eventType, List<String> mentions, String text, double rms) {
+    String key = TextUtils.join("|", mentions).toLowerCase(Locale.ROOT);
+    long now = SystemClock.elapsedRealtime();
+    boolean isAlert = "alert_triggered".equals(eventType);
+    if (!isAlert
+        && key.equals(lastPopupMentionKey)
+        && (now - lastPopupShownMs) < POPUP_REPEAT_SUPPRESS_MS) {
+      return;
+    }
+    lastPopupMentionKey = key;
+    lastPopupShownMs = now;
+    pendingPopupQuery = mentions.get(0);
+    float amplitude = (float) Math.min(1.0, Math.max(0.0, rms * 8.0));
+    String title =
+        isAlert ? getString(R.string.popup_title_alert) : getString(R.string.popup_title_location);
+    String locations = TextUtils.join("  \u2022  ", mentions);
+    appendLine("LOCATION", locations);
+    uiHandler.post(
+        () -> {
+          popupTitle.setText(title);
+          popupLocationText.setText(locations);
+          popupTranscriptText.setText(text);
+          popupVisualizer.setAmplitude(amplitude);
+          popupVisualizer.start();
+          locationPopup.setVisibility(View.VISIBLE);
+          uiHandler.removeCallbacks(popupAutoHideRunnable);
+          uiHandler.postDelayed(popupAutoHideRunnable, POPUP_AUTO_HIDE_MS);
+        });
+  }
+
+  private void hideLocationPopup() {
+    uiHandler.removeCallbacks(popupAutoHideRunnable);
+    uiHandler.post(
+        () -> {
+          popupVisualizer.stop();
+          locationPopup.setVisibility(View.GONE);
+        });
+  }
+
+  private void routeToPopupLocation() {
+    String query = pendingPopupQuery;
+    hideLocationPopup();
+    if (TextUtils.isEmpty(query)) {
+      return;
+    }
+    geocodeAndRoute(query, "LOCATION");
   }
 
   private void captureMapTargetFromEventPayload(String payloadText) {
@@ -874,85 +943,24 @@ public class MainActivity extends AppCompatActivity {
             });
   }
 
-  private List<MatrixMapView.StreetSegment> parseStreetSegments(JSONArray streets) {
-    List<MatrixMapView.StreetSegment> parsed = new ArrayList<>();
-    if (streets == null) {
-      return parsed;
-    }
-    for (int i = 0; i < streets.length(); i++) {
-      JSONObject segment = streets.optJSONObject(i);
-      if (segment == null) {
-        continue;
-      }
-      String name = segment.optString("name", "");
-      String kind = segment.optString("kind", "minor");
-      JSONArray pointsJson = segment.optJSONArray("points");
-      if (pointsJson == null || pointsJson.length() < 2) {
-        continue;
-      }
-      List<double[]> points = new ArrayList<>();
-      for (int j = 0; j < pointsJson.length(); j++) {
-        JSONObject point = pointsJson.optJSONObject(j);
-        if (point == null) {
-          continue;
-        }
-        double lat = point.optDouble("lat", Double.NaN);
-        double lon = point.optDouble("lon", Double.NaN);
-        if (!Double.isFinite(lat) || !Double.isFinite(lon)) {
-          continue;
-        }
-        points.add(new double[] {lat, lon});
-      }
-      if (points.size() >= 2) {
-        parsed.add(new MatrixMapView.StreetSegment(name, "major".equalsIgnoreCase(kind), points));
-      }
-    }
-    return parsed;
-  }
-
   private void renderRouteOnMap(boolean forceServerRefresh) {
-    if (matrixMapView == null) {
-      return;
-    }
     double originLat = lastDeviceLat != null ? lastDeviceLat : (lastMapLat != null ? lastMapLat : DEFAULT_MAP_LAT);
     double originLon = lastDeviceLon != null ? lastDeviceLon : (lastMapLon != null ? lastMapLon : DEFAULT_MAP_LON);
     double targetLat = (lastMapLat != null) ? lastMapLat : originLat + 0.0045d;
     double targetLon = (lastMapLon != null) ? lastMapLon : originLon + 0.0065d;
 
-    synchronized (currentRoutePoints) {
-      if (currentRoutePoints.size() < 2 || forceServerRefresh) {
-        currentRoutePoints.clear();
-        currentRoutePoints.addAll(buildFallbackMatrixRoute(originLat, originLon, targetLat, targetLon));
-      }
-    }
     maybeFetchServerRoute(originLat, originLon, targetLat, targetLon, forceServerRefresh);
     pushRouteSceneToView(originLat, originLon, targetLat, targetLon);
   }
 
   private void pushRouteSceneToView(double originLat, double originLon, double targetLat, double targetLon) {
     List<double[]> routeSnapshot;
-    List<MatrixMapView.StreetSegment> streetSnapshot;
     synchronized (currentRoutePoints) {
       routeSnapshot = new ArrayList<>(currentRoutePoints);
     }
-    synchronized (currentStreetSegments) {
-      streetSnapshot = new ArrayList<>(currentStreetSegments);
-    }
-    float heading = lastDeviceHeadingDeg != null ? lastDeviceHeadingDeg : 0f;
     boolean hasFix = lastDeviceLat != null && lastDeviceLon != null;
     uiHandler.post(
-        () -> {
-          matrixMapView.renderScene(
-              originLat,
-              originLon,
-              targetLat,
-              targetLon,
-              routeSnapshot,
-              streetSnapshot,
-              heading,
-              hasFix);
-          updateOsmOverlays(originLat, originLon, targetLat, targetLon, routeSnapshot, hasFix);
-        });
+        () -> updateOsmOverlays(originLat, originLon, targetLat, targetLon, routeSnapshot, hasFix));
   }
 
   private void updateOsmOverlays(
@@ -979,31 +987,6 @@ public class MainActivity extends AppCompatActivity {
       osmMapView.getController().animateTo(new GeoPoint(originLat, originLon));
     }
     osmMapView.invalidate();
-  }
-
-  private List<double[]> buildFallbackMatrixRoute(
-      double startLat, double startLon, double endLat, double endLon) {
-    List<double[]> points = new ArrayList<>();
-    points.add(new double[] {startLat, startLon});
-    double dLat = endLat - startLat;
-    double dLon = endLon - startLon;
-    double normalLat = -dLon;
-    double normalLon = dLat;
-    double normalLen = Math.sqrt((normalLat * normalLat) + (normalLon * normalLon));
-    if (normalLen > 0d) {
-      normalLat /= normalLen;
-      normalLon /= normalLen;
-    }
-    for (int i = 1; i < 12; i++) {
-      double t = i / 12d;
-      double sine = Math.sin(t * Math.PI);
-      double bend = 0.00010d * sine;
-      double lat = startLat + (dLat * t) + (normalLat * bend);
-      double lon = startLon + (dLon * t) + (normalLon * bend);
-      points.add(new double[] {lat, lon});
-    }
-    points.add(new double[] {endLat, endLon});
-    return points;
   }
 
   private void maybeFetchServerRoute(
@@ -1082,42 +1065,18 @@ public class MainActivity extends AppCompatActivity {
                   if (serverRoute.size() < 2) {
                     return;
                   }
-                  JSONArray streets = json.optJSONArray("street_segments");
-                  List<MatrixMapView.StreetSegment> parsedStreets = parseStreetSegments(streets);
                   synchronized (currentRoutePoints) {
                     currentRoutePoints.clear();
                     currentRoutePoints.addAll(serverRoute);
                   }
-                  synchronized (currentStreetSegments) {
-                    currentStreetSegments.clear();
-                    currentStreetSegments.addAll(parsedStreets);
-                  }
                   pushRouteSceneToView(originLat, originLon, destLat, destLon);
                 } catch (Exception ignored) {
-                  // fallback route remains active
+                  // previous route remains active
                 } finally {
                   serverRouteRequestInFlight = false;
                 }
               }
             });
-  }
-
-  private void toggle3dMode() {
-    is3dModeEnabled = !is3dModeEnabled;
-    update3dToggleUi();
-    matrixMapView.setThreeDMode(is3dModeEnabled);
-    renderRouteOnMap(false);
-  }
-
-  private void update3dToggleUi() {
-    if (toggle3dBtn == null) {
-      return;
-    }
-    toggle3dBtn.setText(
-        is3dModeEnabled ? getString(R.string.map_3d_enabled) : getString(R.string.map_3d_disabled));
-    if (matrixMapView != null) {
-      matrixMapView.setThreeDMode(is3dModeEnabled);
-    }
   }
 
   private void setStatus(String status) {

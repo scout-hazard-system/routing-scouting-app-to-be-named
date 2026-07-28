@@ -142,18 +142,6 @@ public final class ScannerBackendServer {
       this.lon = lon;
     }
   }
-  private static final class StreetSegmentData {
-    private final String name;
-    private final String kind;
-    private final List<RouteNode> points;
-
-    private StreetSegmentData(String name, String kind, List<RouteNode> points) {
-      this.name = name;
-      this.kind = kind;
-      this.points = points;
-    }
-  }
-
   private static final class GpsPoint {
     private final String ts;
     private final String userId;
@@ -233,73 +221,6 @@ public final class ScannerBackendServer {
     sb.append("}");
     return sb.toString();
   }
-  private static List<StreetSegmentData> buildStandaloneStreetSegments(
-      double originLat, double originLon, double destLat, double destLon) {
-    List<StreetSegmentData> segments = new ArrayList<>();
-    double midLat = (originLat + destLat) / 2.0;
-    double midLon = (originLon + destLon) / 2.0;
-    double latSpan = Math.max(Math.abs(destLat - originLat), 0.006);
-    double lonSpan = Math.max(Math.abs(destLon - originLon), 0.008);
-    double latStep = latSpan / 4.0;
-    double lonStep = lonSpan / 4.0;
-
-    for (int i = -2; i <= 2; i++) {
-      double lat = midLat + (i * latStep);
-      segments.add(
-          new StreetSegmentData(
-              "Avenue " + (i + 3),
-              (i % 2 == 0) ? "major" : "minor",
-              List.of(
-                  new RouteNode(lat, midLon - (lonSpan * 0.9)),
-                  new RouteNode(lat, midLon + (lonSpan * 0.9)))));
-    }
-    for (int i = -2; i <= 2; i++) {
-      double lon = midLon + (i * lonStep);
-      segments.add(
-          new StreetSegmentData(
-              "Street " + (i + 3),
-              (i % 2 == 0) ? "major" : "minor",
-              List.of(
-                  new RouteNode(midLat - (latSpan * 0.9), lon),
-                  new RouteNode(midLat + (latSpan * 0.9), lon))));
-    }
-
-    segments.add(
-        new StreetSegmentData(
-            "Origin Access Rd",
-            "major",
-            List.of(
-                new RouteNode(originLat, originLon),
-                new RouteNode(originLat + (latStep * 0.45), originLon + (lonStep * 0.25)))));
-    segments.add(
-        new StreetSegmentData(
-            "Destination Connector",
-            "major",
-            List.of(
-                new RouteNode(destLat - (latStep * 0.45), destLon - (lonStep * 0.25)),
-                new RouteNode(destLat, destLon))));
-    return segments;
-  }
-
-  private static String streetSegmentsToJson(List<StreetSegmentData> segments) {
-    StringBuilder sb = new StringBuilder("[");
-    for (int i = 0; i < segments.size(); i++) {
-      if (i > 0) {
-        sb.append(",");
-      }
-      StreetSegmentData segment = segments.get(i);
-      sb.append("{\"name\":\"")
-          .append(jsonEscape(segment.name))
-          .append("\",\"kind\":\"")
-          .append(jsonEscape(segment.kind))
-          .append("\",\"points\":")
-          .append(routeNodesToJson(segment.points))
-          .append("}");
-    }
-    sb.append("]");
-    return sb.toString();
-  }
-
   private static void registerContext(HttpServer server, String path, HttpHandler handler) {
     server.createContext(path, exchange -> {
       long started = System.nanoTime();
@@ -693,7 +614,7 @@ public final class ScannerBackendServer {
     }
 
     String condition = query.getOrDefault("condition", "idle");
-    String engine = "standalone_matrix_router";
+    String engine = "direct_line_fallback";
     List<RouteNode> routeNodes = null;
     Double externalMeters = null;
     String osrmBody = fetchOsrmRouteBody(originLat, originLon, destLat, destLon);
@@ -706,9 +627,11 @@ public final class ScannerBackendServer {
       }
     }
     if (routeNodes == null) {
-      routeNodes = buildStandaloneRouteNodes(originLat, originLon, destLat, destLon, condition);
+      // OSRM unreachable: return the straight origin->destination segment so the
+      // client still has real endpoint geometry to render.
+      routeNodes =
+          List.of(new RouteNode(originLat, originLon), new RouteNode(destLat, destLon));
     }
-    List<StreetSegmentData> streetSegments = buildStandaloneStreetSegments(originLat, originLon, destLat, destLon);
     double meters = externalMeters != null ? externalMeters : approximateRouteMeters(routeNodes);
     return "{"
         + "\"ts\":\"" + Instant.now().toString() + "\","
@@ -718,40 +641,8 @@ public final class ScannerBackendServer {
         + "\"origin\":{\"lat\":" + trimDouble(originLat) + ",\"lon\":" + trimDouble(originLon) + "},"
         + "\"destination\":{\"lat\":" + trimDouble(destLat) + ",\"lon\":" + trimDouble(destLon) + "},"
         + "\"distance_m\":" + trimDouble(meters) + ","
-        + "\"route_points\":" + routeNodesToJson(routeNodes) + ","
-        + "\"street_segments\":" + streetSegmentsToJson(streetSegments)
+        + "\"route_points\":" + routeNodesToJson(routeNodes)
         + "}";
-  }
-
-  private static List<RouteNode> buildStandaloneRouteNodes(
-      double originLat, double originLon, double destLat, double destLon, String condition) {
-    List<RouteNode> nodes = new ArrayList<>();
-    nodes.add(new RouteNode(originLat, originLon));
-    double dLat = destLat - originLat;
-    double dLon = destLon - originLon;
-    double normalLat = -dLon;
-    double normalLon = dLat;
-    double normalLen = Math.sqrt((normalLat * normalLat) + (normalLon * normalLon));
-    if (normalLen > 0d) {
-      normalLat /= normalLen;
-      normalLon /= normalLen;
-    }
-    double curveScale = 0.00008d;
-    if (condition.toLowerCase(Locale.ROOT).contains("driving")) {
-      curveScale = 0.00003d;
-    } else if (condition.toLowerCase(Locale.ROOT).contains("idle")) {
-      curveScale = 0.00012d;
-    }
-    int segments = 14;
-    for (int i = 1; i < segments; i++) {
-      double t = i / (double) segments;
-      double bend = Math.sin(t * Math.PI) * curveScale;
-      double lat = originLat + (dLat * t) + (normalLat * bend);
-      double lon = originLon + (dLon * t) + (normalLon * bend);
-      nodes.add(new RouteNode(lat, lon));
-    }
-    nodes.add(new RouteNode(destLat, destLon));
-    return nodes;
   }
 
   private static double approximateRouteMeters(List<RouteNode> nodes) {

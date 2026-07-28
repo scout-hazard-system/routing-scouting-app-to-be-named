@@ -9,12 +9,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
-    <dev.warp.scannerstream.MatrixMapView
-        android:id="@+id/matrixMapView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:visibility="gone" />
-
     <!-- Top overlay: status chip + menu toggle + destination search -->
     <LinearLayout
         android:layout_width="match_parent"
@@ -91,29 +85,87 @@
         android:orientation="vertical">
 
         <Button
-            android:id="@+id/mapStyleBtn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/bg_surface"
-            android:text="@string/map_style_osm"
-            android:textAllCaps="false" />
-
-        <Button
-            android:id="@+id/toggle3dBtn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="6dp"
-            android:backgroundTint="@color/accent"
-            android:text="@string/map_3d_enabled"
-            android:textAllCaps="false" />
-
-        <Button
             android:id="@+id/drawRouteBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="6dp"
             android:backgroundTint="@color/bg_surface"
             android:text="@string/draw_route"
+            android:textAllCaps="false" />
+    </LinearLayout>
+
+    <!-- Location mention popup with live audio visualizer -->
+    <LinearLayout
+        android:id="@+id/locationPopup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="130dp"
+        android:layout_marginEnd="12dp"
+        android:background="@color/bg_chip"
+        android:orientation="vertical"
+        android:padding="12dp"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/popupTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/popup_title_location"
+                android:textColor="@color/text_primary"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/popupDismissBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:backgroundTint="@color/bg_surface"
+                android:minWidth="48dp"
+                android:text="@string/popup_dismiss"
+                android:textAllCaps="false" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/popupLocationText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textColor="@color/accent"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/popupTranscriptText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:ellipsize="end"
+            android:maxLines="3"
+            android:textColor="@color/text_muted"
+            android:textSize="12sp" />
+
+        <dev.warp.scannerstream.AudioVisualizerView
+            android:id="@+id/popupVisualizer"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:layout_marginTop="8dp" />
+
+        <Button
+            android:id="@+id/popupRouteBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="@color/accent"
+            android:text="@string/popup_route_here"
             android:textAllCaps="false" />
     </LinearLayout>
 

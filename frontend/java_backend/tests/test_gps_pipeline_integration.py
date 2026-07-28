@@ -204,12 +204,11 @@ class GpsPipelineIntegrationTests(unittest.TestCase):
         )
         self.assertEqual(route.get("status"), "ok")
         self.assertIn(
-            route.get("engine"), ("standalone_matrix_router", "osrm_openstreetmap")
+            route.get("engine"), ("osrm_openstreetmap", "direct_line_fallback")
         )
         self.assertIn("route_points", route)
         self.assertGreaterEqual(len(route["route_points"]), 2)
-        self.assertIn("street_segments", route)
-        self.assertGreaterEqual(len(route["street_segments"]), 1)
+        self.assertNotIn("street_segments", route)
         start = route["route_points"][0]
         end = route["route_points"][-1]
         # OSRM snaps endpoints to the road network, so allow ~1km tolerance.

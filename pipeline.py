@@ -57,7 +57,9 @@ If traffic enforcement is explicit OR dispatch-style clues strongly suggest acti
 Example: 'ALERT: State trooper clocking speed near mile marker 85.'
 If transcript is ambiguous, prefer ALERT only when at least 2 dispatch/enforcement clues are present; otherwise reply 'IGNORE'.
 If it is generic chatter, static, or irrelevant noise, reply strictly with 'IGNORE'.
-If possible, include location context in the alert sentence (address, intersection, exit, mile marker, or point of interest).
+Always note location context in the alert sentence when it is present in the transcript:
+street addresses, intersections, highways/routes, exits, mile markers, and points of interest
+(businesses, schools, parks, gas stations, hotels, landmarks). Repeat the location wording verbatim.
 """
 
 CALL_TYPE_KEYWORDS = {
@@ -131,10 +133,36 @@ def extract_codes(text):
     generic_codes = [f"code {m.group(1)}" for m in re.finditer(r"\bcode[-\s]?(\d{1,3})\b", text, flags=re.IGNORECASE)]
     return sorted(set(ten_codes + generic_codes))
 
+POI_KEYWORDS = [
+    "gas station", "truck stop", "rest area", "rest stop", "weigh station",
+    "high school", "middle school", "elementary school", "school", "college", "university",
+    "hospital", "clinic", "fire station", "police station", "courthouse", "post office",
+    "library", "city hall", "park", "fairgrounds", "campground", "marina", "ferry terminal",
+    "airport", "train station", "bus station", "transit center",
+    "mall", "shopping center", "plaza", "supermarket", "grocery store", "convenience store",
+    "liquor store", "pharmacy", "bank", "casino", "church",
+    "hotel", "motel", "inn", "apartment complex", "trailer park", "mobile home park",
+    "restaurant", "diner", "bar", "tavern", "car wash", "parking lot", "parking garage",
+    "bridge", "overpass", "underpass", "tunnel", "roundabout", "railroad crossing",
+]
+
+def _dedupe_mentions(mentions):
+    deduped = []
+    seen = set()
+    for mention in mentions:
+        key = mention.lower()
+        if key not in seen:
+            seen.add(key)
+            deduped.append(mention)
+    return deduped
+
 def extract_location_mentions(text):
     patterns = [
-        r"\b\d{1,5}\s+[A-Za-z0-9.'-]+(?:\s+[A-Za-z0-9.'-]+){0,4}\s+(?:st|street|ave|avenue|rd|road|blvd|boulevard|dr|drive|ln|lane|ct|court|hwy|highway)\b",
+        r"\b\d{1,5}\s+[A-Za-z0-9.'-]+(?:\s+[A-Za-z0-9.'-]+){0,4}\s+(?:st|street|ave|avenue|rd|road|blvd|boulevard|dr|drive|ln|lane|ct|court|hwy|highway|pkwy|parkway|way|pl|place)\b",
+        r"\b\d{2,5}\s+block\s+of\s+[A-Za-z0-9.'-]+(?:\s+[A-Za-z0-9.'-]+){0,4}\b",
         r"\b(?:at|near|on)\s+([A-Za-z0-9.'-]+(?:\s+[A-Za-z0-9.'-]+){0,4}\s+(?:and|&)\s+[A-Za-z0-9.'-]+(?:\s+[A-Za-z0-9.'-]+){0,4})\b",
+        r"\b(?:interstate|i)[-\s]?\d{1,3}\b",
+        r"\b(?:us|state route|sr|route|highway|hwy)[-\s]?\d{1,3}\b",
         r"\b(?:mile marker|mm)\s*\d{1,3}(?:\.\d+)?\b",
         r"\bexit\s+\d+[A-Za-z]?\b",
         r"\b(?:northbound|southbound|eastbound|westbound)\b",
@@ -148,16 +176,35 @@ def extract_location_mentions(text):
             else:
                 candidate = match.group(0)
             clean = re.sub(r"\s+", " ", candidate).strip(" ,.;:")
+            # Trim trailing connector clauses (e.g. '... Avenue near the Shell').
+            clean = re.split(r"\s+(?:near|by|at)\s+", clean, maxsplit=1, flags=re.IGNORECASE)[0]
             if clean:
                 mentions.append(clean)
-    deduped = []
-    seen = set()
-    for mention in mentions:
-        key = mention.lower()
-        if key not in seen:
-            seen.add(key)
-            deduped.append(mention)
-    return deduped
+    return _dedupe_mentions(mentions)
+
+def extract_poi_mentions(text):
+    mentions = []
+    for keyword in POI_KEYWORDS:
+        for match in re.finditer(r"\b" + re.escape(keyword) + r"\b", text, flags=re.IGNORECASE):
+            # Pull up to three preceding capitalized name words so named POIs are
+            # captured whole (e.g. 'Anacortes High School', 'Shell gas station').
+            prefix = text[: match.start()]
+            lead = re.search(r"((?:[A-Z][A-Za-z0-9'&.-]*\s+){1,3})$", prefix)
+            mention = (lead.group(1) if lead else "") + match.group(0)
+            clean = re.sub(r"\s+", " ", mention).strip(" ,.;:")
+            if clean:
+                mentions.append(clean)
+    # Drop shorter mentions fully contained in a longer one (keyword-only vs named POI).
+    filtered = []
+    lowered = [m.lower() for m in mentions]
+    for i, mention in enumerate(mentions):
+        contained = any(
+            j != i and lowered[i] in lowered[j] and len(lowered[j]) > len(lowered[i])
+            for j in range(len(mentions))
+        )
+        if not contained:
+            filtered.append(mention)
+    return _dedupe_mentions(filtered)
 
 def classify_transcript(text):
     lower = text.lower()
@@ -822,6 +869,9 @@ try:
                 print(f"[Captured Chatter]: {raw_text}")
                 classification = classify_transcript(raw_text)
                 location_mentions = extract_location_mentions(raw_text)
+                poi_mentions = extract_poi_mentions(raw_text)
+                if location_mentions or poi_mentions:
+                    print(f"[Location Notes]: locations={location_mentions} pois={poi_mentions}")
                 print(
                     "[Classification]: "
                     f"types={classification['call_types']} "
@@ -835,6 +885,7 @@ try:
                     transcript=raw_text,
                     classification=classification,
                     location_mentions=location_mentions,
+                    poi_mentions=poi_mentions,
                     rms=rms,
                     clip_ratio=clip_ratio,
                 )
@@ -888,6 +939,7 @@ try:
                     llm_response=ai_response,
                     classification=classification,
                     location_mentions=location_mentions,
+                    poi_mentions=poi_mentions,
                     rms=rms,
                     clip_ratio=clip_ratio,
                 )
@@ -926,6 +978,7 @@ try:
                         f"priority={classification['priority']} "
                         f"codes={classification['codes']} "
                         f"locations={location_mentions} "
+                        f"pois={poi_mentions} "
                         f"transcript=\"{raw_text}\""
                     )
                     # 5. Linux Native Voice Notification Engine
@@ -939,6 +992,7 @@ try:
                         transcript=raw_text,
                         classification=classification,
                         location_mentions=location_mentions,
+                        poi_mentions=poi_mentions,
                         rms=rms,
                         clip_ratio=clip_ratio,
                     )
@@ -958,6 +1012,7 @@ try:
                         f"priority={classification['priority']} "
                         f"codes={classification['codes']} "
                         f"locations={location_mentions} "
+                        f"pois={poi_mentions} "
                         f"transcript=\"{raw_text}\""
                     )
                     speak_alert("Potential traffic enforcement ahead. Slow down and use caution.")
@@ -969,6 +1024,7 @@ try:
                         transcript=raw_text,
                         classification=classification,
                         location_mentions=location_mentions,
+                        poi_mentions=poi_mentions,
                         cue_count=cue_count,
                         dispatch_score=dispatch_score,
                         rms=rms,
@@ -1002,6 +1058,7 @@ try:
                         f"priority={classification['priority']} "
                         f"codes={classification['codes']} "
                         f"locations={location_mentions} "
+                        f"pois={poi_mentions} "
                         f"transcript=\"{raw_text}\""
                     )
                     speak_alert("Possible traffic enforcement activity detected. Use caution.")
@@ -1013,6 +1070,7 @@ try:
                         transcript=raw_text,
                         classification=classification,
                         location_mentions=location_mentions,
+                        poi_mentions=poi_mentions,
                         cue_count=cue_count,
                         rms=rms,
                         clip_ratio=clip_ratio,
