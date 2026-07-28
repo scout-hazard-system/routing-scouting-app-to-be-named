@@ -39,6 +39,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
+import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import okhttp3.Call;
@@ -109,6 +110,11 @@ public class MainActivity extends AppCompatActivity {
   private final Handler uiHandler = new Handler(Looper.getMainLooper());
   private final Runnable popupAutoHideRunnable = this::hideLocationPopup;
   private final OkHttpClient client = new OkHttpClient.Builder().build();
+  // SSE stream can be quiet for long stretches (pipeline emits ~every 12s or
+  // slower); the default 10s read timeout was killing the connection, so the
+  // stream client reads forever and streamSse() reconnects on failure.
+  private final OkHttpClient sseClient =
+      new OkHttpClient.Builder().readTimeout(0, TimeUnit.SECONDS).build();
   private volatile boolean running = false;
   private Call streamCall;
   private SensorManager sensorManager;
@@ -687,39 +693,55 @@ public class MainActivity extends AppCompatActivity {
   }
 
   private void streamSse(String base) {
-    Request request = new Request.Builder().url(base + "/api/pipeline/stream").build();
-    streamCall = client.newCall(request);
-    try (Response response = streamCall.execute()) {
-      if (!response.isSuccessful() || response.body() == null) {
-        setStatus("stream unavailable");
-        return;
-      }
-      setStatus("streaming");
-      InputStream stream = response.body().byteStream();
-      try (BufferedReader reader = new BufferedReader(new InputStreamReader(stream, StandardCharsets.UTF_8))) {
-        String line;
-        while (running && (line = reader.readLine()) != null) {
-          if (!line.startsWith("data:")) {
-            continue;
+    int attempt = 0;
+    while (running) {
+      Request request = new Request.Builder().url(base + "/api/pipeline/stream").build();
+      streamCall = sseClient.newCall(request);
+      try (Response response = streamCall.execute()) {
+        if (!response.isSuccessful() || response.body() == null) {
+          setStatus("stream unavailable");
+        } else {
+          setStatus("streaming");
+          attempt = 0;
+          InputStream stream = response.body().byteStream();
+          try (BufferedReader reader =
+              new BufferedReader(new InputStreamReader(stream, StandardCharsets.UTF_8))) {
+            String line;
+            while (running && (line = reader.readLine()) != null) {
+              if (!line.startsWith("data:")) {
+                continue;
+              }
+              String payload = line.substring(5).trim();
+              if (payload.isEmpty()) {
+                continue;
+              }
+              appendEvent(payload);
+            }
           }
-          String payload = line.substring(5).trim();
-          if (payload.isEmpty()) {
-            continue;
-          }
-          appendEvent(payload);
+        }
+      } catch (IOException e) {
+        if (running) {
+          appendLine("STREAM", "error: " + e.getMessage());
         }
       }
-    } catch (IOException e) {
-      if (running) {
-        setStatus("stream error");
-        appendLine("STREAM", "error: " + e.getMessage());
+      if (!running) {
+        break;
       }
-    } finally {
-      if (running) {
-        setStatus("idle");
+      // Server closed the stream or the connection dropped: back off and retry.
+      attempt++;
+      long delayMs = Math.min(15000L, 1000L << Math.min(attempt, 4));
+      setStatus("stream reconnecting...");
+      try {
+        Thread.sleep(delayMs);
+      } catch (InterruptedException ie) {
+        Thread.currentThread().interrupt();
+        break;
       }
-      running = false;
     }
+    if (running) {
+      setStatus("idle");
+    }
+    running = false;
   }
 
   private void appendEvent(String payload) {
