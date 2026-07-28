@@ -134,6 +134,7 @@ public class Map3dView extends View {
   }
 
   private volatile Scene scene;
+  private volatile String loadingHint = "";
 
   // Camera state (meters in scene space).
   private float camX;
@@ -220,6 +221,17 @@ public class Map3dView extends View {
 
   public void setRefetchListener(RefetchListener listener) {
     refetchListener = listener;
+  }
+
+  /** True once a scene has been parsed and is renderable. */
+  public boolean hasScene() {
+    return scene != null;
+  }
+
+  /** Status line drawn under the loading text while no scene is available. */
+  public void setLoadingHint(String hint) {
+    loadingHint = hint == null ? "" : hint;
+    postInvalidateOnAnimation();
   }
 
   /** Parse scene JSON (call from a background thread), then swap it in. */
@@ -316,6 +328,7 @@ public class Map3dView extends View {
 
       Scene previous = scene;
       scene = s;
+      loadingHint = "";
       if (previous == null || !followDevice) {
         // First scene: snap camera to scene center unless device fix exists.
         if (!hasDevice) {
@@ -567,6 +580,10 @@ public class Map3dView extends View {
     if (s == null) {
       textPaint.setTextAlign(Paint.Align.CENTER);
       canvas.drawText("3D map loading\u2026", w / 2f, h / 2f, textPaint);
+      String hint = loadingHint;
+      if (!hint.isEmpty()) {
+        canvas.drawText(hint, w / 2f, h / 2f + 18f * density, textPaint);
+      }
       textPaint.setTextAlign(Paint.Align.LEFT);
       postInvalidateOnAnimation();
       return;

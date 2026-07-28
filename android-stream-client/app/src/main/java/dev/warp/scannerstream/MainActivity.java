@@ -74,6 +74,11 @@ public class MainActivity extends AppCompatActivity {
   private static final double DEFAULT_MAP_LAT = 37.7749;
   private static final double DEFAULT_MAP_LON = -122.4194;
   private static final MediaType JSON_MEDIA_TYPE = MediaType.get("application/json; charset=utf-8");
+  private static final String STATE_MAP3D_ENABLED = "state_map3d_enabled";
+  private static final String STATE_MAP_LAT = "state_map_lat";
+  private static final String STATE_MAP_LON = "state_map_lon";
+  private static final String STATE_DEVICE_LAT = "state_device_lat";
+  private static final String STATE_DEVICE_LON = "state_device_lon";
   private static final Pattern COORDINATE_PATTERN =
       Pattern.compile("\\b(-?\\d{1,2}\\.\\d+)\\s*[, ]\\s*(-?\\d{1,3}\\.\\d+)\\b");
 
@@ -91,6 +96,7 @@ public class MainActivity extends AppCompatActivity {
   private View zoomControls;
   private boolean map3dEnabled = false;
   private volatile boolean sceneFetchInFlight = false;
+  private volatile boolean sceneRetryScheduled = false;
   private volatile long lastSceneFetchMs = 0L;
   private volatile double lastSceneLat = Double.NaN;
   private volatile double lastSceneLon = Double.NaN;
@@ -217,10 +223,44 @@ public class MainActivity extends AppCompatActivity {
     popupDismissBtn.setOnClickListener(v -> hideLocationPopup());
     appendLine("MAP", "OpenStreetMap base layer active (osmdroid + OSRM routing)");
 
+    restoreUiState(savedInstanceState);
+
     setStatus("idle");
     updateDrivingModeUi(0f);
     updateMapTargetUi();
     renderRouteOnMap(true);
+  }
+
+  /** Restores map mode and coordinates after a configuration change (e.g. rotation). */
+  private void restoreUiState(Bundle saved) {
+    if (saved == null) {
+      return;
+    }
+    if (saved.containsKey(STATE_MAP_LAT) && saved.containsKey(STATE_MAP_LON)) {
+      lastMapLat = saved.getDouble(STATE_MAP_LAT);
+      lastMapLon = saved.getDouble(STATE_MAP_LON);
+    }
+    if (saved.containsKey(STATE_DEVICE_LAT) && saved.containsKey(STATE_DEVICE_LON)) {
+      lastDeviceLat = saved.getDouble(STATE_DEVICE_LAT);
+      lastDeviceLon = saved.getDouble(STATE_DEVICE_LON);
+    }
+    if (saved.getBoolean(STATE_MAP3D_ENABLED, false)) {
+      applyMapMode(true);
+    }
+  }
+
+  @Override
+  protected void onSaveInstanceState(Bundle outState) {
+    super.onSaveInstanceState(outState);
+    outState.putBoolean(STATE_MAP3D_ENABLED, map3dEnabled);
+    if (lastMapLat != null && lastMapLon != null) {
+      outState.putDouble(STATE_MAP_LAT, lastMapLat);
+      outState.putDouble(STATE_MAP_LON, lastMapLon);
+    }
+    if (lastDeviceLat != null && lastDeviceLon != null) {
+      outState.putDouble(STATE_DEVICE_LAT, lastDeviceLat);
+      outState.putDouble(STATE_DEVICE_LON, lastDeviceLon);
+    }
   }
 
   private void setupOsmMap() {
@@ -315,7 +355,11 @@ public class MainActivity extends AppCompatActivity {
   }
 
   private void toggleMapMode() {
-    map3dEnabled = !map3dEnabled;
+    applyMapMode(!map3dEnabled);
+  }
+
+  private void applyMapMode(boolean enable3d) {
+    map3dEnabled = enable3d;
     mapModeBtn.setText(map3dEnabled ? getString(R.string.map_mode_3d) : getString(R.string.map_mode_osm));
     map3dView.setVisibility(map3dEnabled ? View.VISIBLE : View.GONE);
     osmMapView.setVisibility(map3dEnabled ? View.GONE : View.VISIBLE);
@@ -371,6 +415,8 @@ public class MainActivity extends AppCompatActivity {
               public void onFailure(Call call, IOException e) {
                 sceneFetchInFlight = false;
                 appendLine("MAP3D", "scene fetch failed: " + e.getMessage());
+                map3dView.setLoadingHint("backend unreachable \u2014 retrying\u2026");
+                scheduleSceneRetry();
               }
 
               @Override
@@ -378,6 +424,9 @@ public class MainActivity extends AppCompatActivity {
                 try (response) {
                   if (!response.isSuccessful() || response.body() == null) {
                     appendLine("MAP3D", "scene unavailable (HTTP " + response.code() + ")");
+                    map3dView.setLoadingHint(
+                        "scene unavailable (HTTP " + response.code() + ") \u2014 retrying\u2026");
+                    scheduleSceneRetry();
                     return;
                   }
                   String body = response.body().string();
@@ -387,11 +436,46 @@ public class MainActivity extends AppCompatActivity {
                   lastSceneRadiusM = radiusM;
                 } catch (Exception e) {
                   appendLine("MAP3D", "scene parse failed: " + e.getMessage());
+                  map3dView.setLoadingHint("scene parse failed \u2014 retrying\u2026");
+                  scheduleSceneRetry();
                 } finally {
                   sceneFetchInFlight = false;
                 }
               }
             });
+  }
+
+  /**
+   * The 3D view has no scene to render until a fetch succeeds; keep retrying
+   * (one pending retry at a time) so a transient backend failure does not
+   * leave the map stuck on the loading screen.
+   */
+  private void scheduleSceneRetry() {
+    if (sceneRetryScheduled) {
+      return;
+    }
+    sceneRetryScheduled = true;
+    uiHandler.postDelayed(
+        () -> {
+          sceneRetryScheduled = false;
+          if (!map3dEnabled || map3dView.hasScene()) {
+            return;
+          }
+          double lat;
+          double lon;
+          if (lastDeviceLat != null && lastDeviceLon != null) {
+            lat = lastDeviceLat;
+            lon = lastDeviceLon;
+          } else if (lastMapLat != null && lastMapLon != null) {
+            lat = lastMapLat;
+            lon = lastMapLon;
+          } else {
+            lat = DEFAULT_MAP_LAT;
+            lon = DEFAULT_MAP_LON;
+          }
+          fetchMapScene(lat, lon, 700.0, true);
+        },
+        3000L);
   }
 
   private void maybeRefreshSceneForDevice() {
