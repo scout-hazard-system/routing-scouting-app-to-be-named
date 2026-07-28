@@ -107,8 +107,10 @@ public class MainActivity extends AppCompatActivity {
   private LinearLayout locationPopup;
   private TextView popupTitle;
   private TextView popupLocationText;
+  private TextView popupIntelText;
   private TextView popupTranscriptText;
   private AudioVisualizerView popupVisualizer;
+  private Button popupRouteBtn;
   private volatile String pendingPopupQuery = null;
   private String lastPopupMentionKey = "";
   private long lastPopupShownMs = 0L;
@@ -191,6 +193,7 @@ public class MainActivity extends AppCompatActivity {
     locationPopup = findViewById(R.id.locationPopup);
     popupTitle = findViewById(R.id.popupTitle);
     popupLocationText = findViewById(R.id.popupLocationText);
+    popupIntelText = findViewById(R.id.popupIntelText);
     popupTranscriptText = findViewById(R.id.popupTranscriptText);
     popupVisualizer = findViewById(R.id.popupVisualizer);
     Button connectBtn = findViewById(R.id.connectBtn);
@@ -199,7 +202,7 @@ public class MainActivity extends AppCompatActivity {
     Button openMapsBtn = findViewById(R.id.openMapsBtn);
     Button drawRouteBtn = findViewById(R.id.drawRouteBtn);
     Button searchBtn = findViewById(R.id.searchBtn);
-    Button popupRouteBtn = findViewById(R.id.popupRouteBtn);
+    popupRouteBtn = findViewById(R.id.popupRouteBtn);
     Button popupDismissBtn = findViewById(R.id.popupDismissBtn);
 
     setupOsmMap();
@@ -853,8 +856,10 @@ public class MainActivity extends AppCompatActivity {
       List<String> mentions = new ArrayList<>();
       collectMentions(json.optJSONArray("location_mentions"), mentions);
       collectMentions(json.optJSONArray("poi_mentions"), mentions);
-      if (!mentions.isEmpty()) {
-        maybeShowLocationPopup(eventType, mentions, text, json.optDouble("rms", 0.0));
+      String intelLine = buildIntelLine(json.optJSONObject("llm_intel"));
+      boolean isAlert = "alert_triggered".equals(eventType);
+      if (!mentions.isEmpty() || (isAlert && !TextUtils.isEmpty(text))) {
+        maybeShowLocationPopup(eventType, mentions, intelLine, text, json.optDouble("rms", 0.0));
       }
       String label =
           kind.isEmpty()
@@ -878,8 +883,36 @@ public class MainActivity extends AppCompatActivity {
     }
   }
 
+  /** One-line summary of the scout-intel extraction; empty when intel is unavailable. */
+  private String buildIntelLine(JSONObject intel) {
+    if (intel == null) {
+      return "";
+    }
+    List<String> parts = new ArrayList<>();
+    List<String> callTypes = new ArrayList<>();
+    collectMentions(intel.optJSONArray("call_types"), callTypes);
+    if (!callTypes.isEmpty()) {
+      parts.add(TextUtils.join(", ", callTypes).replace('_', ' '));
+    }
+    String priority = intel.optString("priority", "").trim();
+    if (!priority.isEmpty() && !"unknown".equalsIgnoreCase(priority)) {
+      parts.add("priority " + priority);
+    }
+    List<String> units = new ArrayList<>();
+    collectMentions(intel.optJSONArray("units"), units);
+    if (!units.isEmpty()) {
+      parts.add("units " + TextUtils.join(", ", units));
+    }
+    String line = TextUtils.join("  \u2022  ", parts);
+    String summary = intel.optString("summary", "").trim();
+    if (!summary.isEmpty()) {
+      line = line.isEmpty() ? summary : line + "\n" + summary;
+    }
+    return line;
+  }
+
   private void maybeShowLocationPopup(
-      String eventType, List<String> mentions, String text, double rms) {
+      String eventType, List<String> mentions, String intelLine, String text, double rms) {
     String key = TextUtils.join("|", mentions).toLowerCase(Locale.ROOT);
     long now = SystemClock.elapsedRealtime();
     boolean isAlert = "alert_triggered".equals(eventType);
@@ -890,16 +923,27 @@ public class MainActivity extends AppCompatActivity {
     }
     lastPopupMentionKey = key;
     lastPopupShownMs = now;
-    pendingPopupQuery = mentions.get(0);
+    boolean hasMention = !mentions.isEmpty();
+    pendingPopupQuery = hasMention ? mentions.get(0) : null;
     float amplitude = (float) Math.min(1.0, Math.max(0.0, rms * 8.0));
     String title =
         isAlert ? getString(R.string.popup_title_alert) : getString(R.string.popup_title_location);
-    String locations = TextUtils.join("  \u2022  ", mentions);
-    appendLine("LOCATION", locations);
+    String locations =
+        hasMention ? TextUtils.join("  \u2022  ", mentions) : getString(R.string.popup_no_location);
+    if (hasMention) {
+      appendLine("LOCATION", locations);
+    }
+    if (!TextUtils.isEmpty(intelLine)) {
+      appendLine("INTEL", intelLine.replace('\n', ' '));
+    }
     uiHandler.post(
         () -> {
           popupTitle.setText(title);
           popupLocationText.setText(locations);
+          popupIntelText.setText(intelLine);
+          popupIntelText.setVisibility(TextUtils.isEmpty(intelLine) ? View.GONE : View.VISIBLE);
+          popupRouteBtn.setEnabled(hasMention);
+          popupRouteBtn.setAlpha(hasMention ? 1f : 0.5f);
           popupTranscriptText.setText(text);
           popupVisualizer.setAmplitude(amplitude);
           popupVisualizer.start();

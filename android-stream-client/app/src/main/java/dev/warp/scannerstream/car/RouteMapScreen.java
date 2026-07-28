@@ -433,6 +433,13 @@ public final class RouteMapScreen extends Screen implements DefaultLifecycleObse
         if (alertText.isEmpty()) {
           alertText = event.optString("transcript", "Scanner alert");
         }
+        JSONObject intel = event.optJSONObject("llm_intel");
+        if (intel != null) {
+          String priority = intel.optString("priority", "").trim();
+          if (!priority.isEmpty() && !"unknown".equalsIgnoreCase(priority)) {
+            alertText = "[" + priority.toUpperCase(Locale.ROOT) + "] " + alertText;
+          }
+        }
         final String toastText =
             alertText.length() > 120 ? alertText.substring(0, 117) + "..." : alertText;
         carContext

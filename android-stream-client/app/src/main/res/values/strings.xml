@@ -21,6 +21,7 @@
     <string name="search_go">Route</string>
     <string name="popup_title_location">Location mentioned on scanner</string>
     <string name="popup_title_alert">🚨 Alert location</string>
+    <string name="popup_no_location">No location mentioned</string>
     <string name="popup_route_here">Route to this location</string>
     <string name="popup_dismiss">✕</string>
     <string name="map_mode_osm">Map: OSM</string>

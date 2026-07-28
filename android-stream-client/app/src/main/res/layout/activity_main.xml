@@ -185,6 +185,15 @@
             android:textStyle="bold" />
 
         <TextView
+            android:id="@+id/popupIntelText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:textColor="@color/text_primary"
+            android:textSize="12sp"
+            android:visibility="gone" />
+
+        <TextView
             android:id="@+id/popupTranscriptText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

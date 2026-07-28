@@ -49,23 +49,34 @@ def emit_event_json(event_type, enabled=True, **payload):
     }
     print(f"[EVENT_JSON] {json.dumps(event, ensure_ascii=False)}")
 
-# The system prompt context maps out local 10-codes into plain speech warnings
+# Legacy inline alert prompt: only used when scanner_llm_set cannot be imported.
+# Kept in sync with the finalized scout-alert SYSTEM block
+# (llm_set/Modelfile.scout-alert / scanner_llm_set.ALERT_FALLBACK_SYSTEM).
 SYSTEM_PROMPT = """
 You are an in-car speed trap and radar alert assistant for a driver on a cross country trip.
-Analyze the following police scanner transcript. Look exclusively for traffic or highway enforcement events.
-Primary keywords: 'radar', 'laser', 'clocked', 'speed trap', 'pacing', '10-38' (traffic stop), 'staged near marker'.
-Also treat dispatch-style cues as alert-worthy when they plausibly indicate traffic enforcement activity:
-- unit callouts and acknowledgements ('unit', 'copy', 'go ahead', '10-xx', 'code xx')
-- lane/highway/location markers ('mile marker', 'exit', 'northbound', 'southbound', 'on-ramp', 'shoulder')
-- coordination language ('switch to channel', 'in progress', 'vehicle stop', 'running traffic')
-If traffic enforcement is explicit OR dispatch-style clues strongly suggest active roadway enforcement, reply EXACTLY with a 1-sentence warning starting with 'ALERT:'.
-Example: 'ALERT: State trooper clocking speed near mile marker 85.'
-If transcript is ambiguous, prefer ALERT only when at least 2 dispatch/enforcement clues are present; otherwise reply 'IGNORE'.
-If it is generic chatter, static, or irrelevant noise, reply strictly with 'IGNORE'.
-Always note location context in the alert sentence when it is present in the transcript:
-street addresses, intersections, highways/routes, exits, mile markers, and points of interest
-(businesses, schools, parks, gas stations, hotels, landmarks). Repeat the location wording verbatim.
+The user gives you one police scanner transcript. Decide if it describes ACTIVE or PLANNED roadway traffic enforcement.
+
+Reply ALERT for any of these (a single clue is enough):
+- radar, laser, lidar, speed trap, clocking, pacing, speed enforcement (ground or aircraft)
+- traffic stop / vehicle stop / 10-38 / pulling a vehicle over
+- pursuit, spike strips, PIT maneuver, subject vehicle at high speed
+- DUI checkpoint or emphasis patrol; seatbelt, cell phone, or school-zone emphasis
+- officers "running traffic", traffic detail issuing citations, motor units working traffic
+
+Reply IGNORE for everything else, including:
+- fire/EMS/medical calls, welfare checks, alarms, thefts, noise complaints, warrants, K9 tracks
+- accidents/collisions UNLESS enforcement activity is also mentioned
+- radio checks, shift/admin chatter, meal breaks, plate returns with no stop, parades/road closures, static/unreadable audio
+
+Output contract:
+- If ALERT: reply EXACTLY one sentence starting with 'ALERT:' describing the enforcement.
+- Repeat every location mentioned VERBATIM in your sentence: streets, intersections, highways/routes,
+  exits, mile markers, directions of travel, and points of interest (businesses, schools, parks, landmarks).
+- If IGNORE: reply with the single word IGNORE.
+- Never add explanations, quotes, or extra lines.
 """
+if scanner_llm_set is not None:
+    SYSTEM_PROMPT = scanner_llm_set.ALERT_FALLBACK_SYSTEM
 
 CALL_TYPE_KEYWORDS = {
     "traffic_stop": ["traffic stop", "stopped", "vehicle stop", "10-38", "10 38"],
@@ -675,12 +686,18 @@ def resolve_broadcast_streams(args):
         desired_types=desired_types,
     )
     channels = load_channels(args.channels_file, ctx=ctx)
+    rerank_model = args.selector_ollama_model
+    if scanner_llm_set is not None:
+        # Prefer the scout-rank model when built; fall back to base llama3.1.
+        rerank_model, rank_fallback = scanner_llm_set.resolve_model(rerank_model)
+        if rank_fallback:
+            print(f"Selector rerank model '{args.selector_ollama_model}' not installed; using '{rerank_model}'.")
     ranked, rerank_error = select_channels(
         channels=channels,
         ctx=ctx,
         top_k=args.selector_top_k,
         use_ollama_rerank=args.selector_use_ollama_rerank,
-        ollama_model=args.selector_ollama_model,
+        ollama_model=rerank_model,
         ollama_url=args.selector_ollama_url,
         ollama_timeout=args.selector_ollama_timeout,
         ollama_weight=args.selector_ollama_weight,
@@ -805,7 +822,7 @@ parser.add_argument("--selector-lon", type=float, default=None, help="Longitude 
 parser.add_argument("--selector-desired-types", type=str, default="law,dispatch", help="Comma-separated desired channel type tokens")
 parser.add_argument("--selector-top-k", type=int, default=8, help="Top deterministic candidates to consider before reranking")
 parser.add_argument("--selector-use-ollama-rerank", action=argparse.BooleanOptionalAction, default=True, help="Enable optional Ollama rerank for selector")
-parser.add_argument("--selector-ollama-model", type=str, default="llama3.1", help="Ollama model for selector reranking")
+parser.add_argument("--selector-ollama-model", type=str, default="scout-rank", help="Ollama model for selector reranking (scout-rank from the proprietary LLM set; falls back to llama3.1 when not built)")
 parser.add_argument("--selector-ollama-url", type=str, default="http://localhost:11434/api/generate", help="Ollama endpoint for selector reranking")
 parser.add_argument("--selector-ollama-timeout", type=float, default=8.0, help="Ollama timeout in seconds for selector reranking")
 parser.add_argument("--selector-ollama-weight", type=float, default=0.2, help="Blend weight [0..1] for Ollama rerank influence")
