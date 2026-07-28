@@ -139,4 +139,4 @@ The scanner pipeline uses a purpose-built Ollama model set derived from the loca
 - `scout-intel` - structured dispatch intel JSON (call types, priority, codes, units, locations, POIs, summary), run on alert-worthy transcripts
 - `scout-rank` - channel selector reranking (set `BROADCASTIFY_SELECTOR_OLLAMA_MODEL=scout-rank`)
 
-`GET /api/platform/llm/status` reports Ollama reachability and per-model availability. Env vars: `OLLAMA_TAGS_URL` (default `http://localhost:11434/api/tags`), `LLM_BASE_MODEL` (default `llama3.1`). The Python client layer (`scanner_llm_set.py`) falls back to inline `llama3.1` prompts when scout models are not built.
+`GET /api/platform/llm/status` reports Ollama reachability and per-model availability. Env vars: `OLLAMA_TAGS_URL` (default `http://localhost:11434/api/tags`), `LLM_BASE_MODEL` (default `llama3.1`). The Python client layer (`scanner_llm_set.py`) falls back to inline `llama3.1` prompts when scout models are not built. Full documentation: `llm_set/README.md` at repo root.
