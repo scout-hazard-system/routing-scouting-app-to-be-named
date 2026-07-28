@@ -1,4 +1,5 @@
 import argparse
+import os
 import subprocess
 import shutil
 import time
@@ -11,7 +12,7 @@ import scipy.io.wavfile as wav
 import requests
 import numpy as np
 from faster_whisper import WhisperModel
-from channel_selector import SelectorContext, load_channels, select_channels
+from channel_selector import SelectorContext, haversine_km, load_channels, select_channels
 from optional_audio_routes import ensure_optional_route_enabled
 try:
     import scanner_llm_set
@@ -496,16 +497,26 @@ def capture_scrcpy_chunk_to_wav(source_name, duration_seconds, output_path, samp
         output_path
     ], check=True)
 def capture_stream_chunk_to_wav(stream_url, duration_seconds, output_path, sample_rate):
-    subprocess.run([
+    cmd = [
         "ffmpeg", "-hide_banner", "-loglevel", "error", "-y",
         "-rw_timeout", "15000000",
+    ]
+    if stream_url.startswith("http://") or stream_url.startswith("https://"):
+        cmd.extend([
+            "-user_agent", "Mozilla/5.0 (X11; Linux x86_64) ScannerStream/1.0",
+            "-reconnect", "1",
+            "-reconnect_streamed", "1",
+            "-reconnect_delay_max", "5",
+        ])
+    cmd.extend([
         "-i", stream_url,
         "-vn",
         "-ac", "1",
         "-ar", str(sample_rate),
         "-t", str(duration_seconds),
         output_path
-    ], check=True)
+    ])
+    subprocess.run(cmd, check=True)
 def resolve_broadcast_streams(args):
     if args.stream_url:
         return [{"id": "manual_stream", "name": "manual_stream", "stream_url": args.stream_url}], None
@@ -544,6 +555,45 @@ def resolve_broadcast_streams(args):
     if not candidates:
         raise RuntimeError("Channel selector returned no streamable channels (missing stream_url).")
     return candidates, rerank_error
+def fetch_device_gps(url, timeout_seconds=3.0):
+    """Fetch the latest streaming-device GPS fix from the Java backend.
+
+    Returns {lat, lon, source, user_id, ts} when a device fix is available,
+    otherwise None. The backend only reports fixes posted by streaming
+    clients (e.g. the Android app via /api/gps/update), so this never
+    silently falls back to server-side coordinates.
+    """
+    try:
+        response = requests.get(url, timeout=timeout_seconds)
+        payload = response.json()
+    except Exception:
+        return None
+    if not isinstance(payload, dict) or payload.get("status") != "ok":
+        return None
+    point = payload.get("point")
+    if not isinstance(point, dict):
+        return None
+    try:
+        lat = float(point["lat"])
+        lon = float(point["lon"])
+    except (KeyError, TypeError, ValueError):
+        return None
+    return {
+        "lat": lat,
+        "lon": lon,
+        "source": str(point.get("source", "")),
+        "user_id": str(point.get("user_id", "")),
+        "ts": str(point.get("ts", "")),
+    }
+def wait_for_device_gps(url, wait_seconds, poll_seconds=2.0):
+    deadline = time.time() + max(0.0, wait_seconds)
+    while True:
+        fix = fetch_device_gps(url)
+        if fix is not None:
+            return fix
+        if SHOULD_EXIT or time.time() >= deadline:
+            return None
+        time.sleep(poll_seconds)
 class TeeStream:
     def __init__(self, *streams):
         self.streams = streams
@@ -616,6 +666,14 @@ parser.add_argument("--selector-ollama-model", type=str, default="llama3.1", hel
 parser.add_argument("--selector-ollama-url", type=str, default="http://localhost:11434/api/generate", help="Ollama endpoint for selector reranking")
 parser.add_argument("--selector-ollama-timeout", type=float, default=8.0, help="Ollama timeout in seconds for selector reranking")
 parser.add_argument("--selector-ollama-weight", type=float, default=0.2, help="Blend weight [0..1] for Ollama rerank influence")
+parser.add_argument("--use-device-gps", action=argparse.BooleanOptionalAction, default=True, help="Route selector coordinates from the streaming device GPS (backend /api/gps/latest) instead of static server-side values")
+parser.add_argument("--gps-latest-url", type=str, default=f"http://127.0.0.1:{os.environ.get('JAVA_BACKEND_PORT', os.environ.get('BACKEND_PORT', '18080'))}/api/gps/latest", help="Backend endpoint reporting the latest streaming-device GPS fix")
+parser.add_argument("--gps-startup-wait", type=float, default=20.0, help="Seconds to wait for a device GPS fix at startup before falling back to configured selector coordinates")
+parser.add_argument("--gps-refresh-seconds", type=float, default=45.0, help="How often to re-poll the device GPS while scanning")
+parser.add_argument("--gps-reselect-km", type=float, default=30.0, help="Re-run channel selection when the device moves at least this many km from the coordinates used for the current selection")
+parser.add_argument("--stream-switch-delay", type=float, default=1.5, help="Seconds to wait before switching streams after a capture failure (first failover cycle)")
+parser.add_argument("--stream-backoff-base", type=float, default=5.0, help="Base backoff seconds once every candidate has failed a full cycle")
+parser.add_argument("--stream-backoff-max", type=float, default=60.0, help="Maximum backoff seconds between capture retries")
 parser.add_argument("--log-file", type=str, default="/tmp/pipeline_runtime.log", help="Path to append pipeline logs")
 parser.add_argument("--alert-debug", action=argparse.BooleanOptionalAction, default=True, help="Emit detailed [ALERT_DEBUG] lines for cue matching and Ollama decisions")
 parser.add_argument("--ollama-timeout", type=float, default=8.0, help="Ollama request timeout in seconds")
@@ -659,6 +717,10 @@ stream_url = None
 selected_channel = None
 broadcast_candidates = []
 broadcast_candidate_idx = 0
+broadcast_failures = 0
+gps_source = "config"
+selection_gps = None
+last_gps_poll = 0.0
 if args.mode == "scrcpy":
     ensure_binary("ffmpeg")
     ensure_binary("pactl")
@@ -676,6 +738,32 @@ if args.mode == "scrcpy":
     print(f"Routed scrcpy sink-input #{sink_input_id} to isolated sink '{args.scrcpy_sink}'.")
 elif args.mode == "broadcastify":
     ensure_binary("ffmpeg")
+    if args.stream_url:
+        gps_source = "manual_stream_url"
+    elif args.use_device_gps:
+        print(f"Waiting up to {args.gps_startup_wait:.0f}s for streaming-device GPS fix from {args.gps_latest_url} ...")
+        device_fix = wait_for_device_gps(args.gps_latest_url, args.gps_startup_wait)
+        if device_fix is not None:
+            args.selector_lat = device_fix["lat"]
+            args.selector_lon = device_fix["lon"]
+            # Static city/county describe the server-configured home location;
+            # drop them so ranking follows the device position (state is kept
+            # because it selects the catalog shard).
+            args.selector_city = ""
+            args.selector_county = ""
+            selection_gps = (device_fix["lat"], device_fix["lon"])
+            gps_source = "device"
+            print(
+                "Using streaming-device GPS for channel selection: "
+                f"lat={device_fix['lat']:.5f} lon={device_fix['lon']:.5f} "
+                f"(source={device_fix['source']} user={device_fix['user_id']})"
+            )
+        else:
+            gps_source = "config_fallback"
+            print(
+                "No streaming-device GPS fix available yet; starting with configured selector coordinates "
+                f"lat={args.selector_lat} lon={args.selector_lon} (will switch to device GPS once it reports)."
+            )
     broadcast_candidates, selector_rerank_error = resolve_broadcast_streams(args)
     broadcast_candidate_idx = 0
     selected_channel = broadcast_candidates[broadcast_candidate_idx]
@@ -750,6 +838,9 @@ emit_event_json(
     soft_alert_fallback=args.soft_alert_fallback,
     channel_id=selected_channel.get("id") if selected_channel else None,
     channel_name=selected_channel.get("name") if selected_channel else None,
+    gps_source=gps_source if args.mode == "broadcastify" else None,
+    selector_lat=args.selector_lat,
+    selector_lon=args.selector_lon,
     llm_set=llm_set_info,
 )
 run_stats = {
@@ -801,9 +892,72 @@ try:
                     mono = mono / 2147483648.0
                 capture_fs = chunk_fs
             elif args.mode == "broadcastify":
+                if (
+                    args.use_device_gps
+                    and not args.stream_url
+                    and time.time() - last_gps_poll >= args.gps_refresh_seconds
+                ):
+                    last_gps_poll = time.time()
+                    device_fix = fetch_device_gps(args.gps_latest_url)
+                    if device_fix is not None:
+                        moved_km = (
+                            haversine_km(selection_gps[0], selection_gps[1], device_fix["lat"], device_fix["lon"])
+                            if selection_gps is not None
+                            else None
+                        )
+                        if selection_gps is None or moved_km >= args.gps_reselect_km:
+                            reselect_reason = "gps_acquired" if selection_gps is None else "gps_moved"
+                            args.selector_lat = device_fix["lat"]
+                            args.selector_lon = device_fix["lon"]
+                            args.selector_city = ""
+                            args.selector_county = ""
+                            new_candidates = None
+                            try:
+                                new_candidates, _ = resolve_broadcast_streams(args)
+                            except Exception as reselect_err:
+                                print(f"[DeviceGpsReselect] selection failed ({reselect_err}); keeping current channel.")
+                            if new_candidates:
+                                previous_channel = selected_channel
+                                broadcast_candidates = new_candidates
+                                broadcast_candidate_idx = 0
+                                broadcast_failures = 0
+                                selected_channel = broadcast_candidates[0]
+                                stream_url = selected_channel.get("stream_url")
+                                selection_gps = (device_fix["lat"], device_fix["lon"])
+                                gps_source = "device"
+                                print(
+                                    "[DeviceGpsReselect] "
+                                    f"reason={reselect_reason} "
+                                    f"moved_km={None if moved_km is None else round(moved_km, 2)} "
+                                    f"lat={device_fix['lat']:.5f} lon={device_fix['lon']:.5f} "
+                                    f"from={previous_channel.get('id') if previous_channel else None} "
+                                    f"-> to={selected_channel.get('id')}"
+                                )
+                                emit_event_json(
+                                    "broadcast_reselect",
+                                    enabled=args.integration_json,
+                                    reason=reselect_reason,
+                                    gps_source="device",
+                                    lat=device_fix["lat"],
+                                    lon=device_fix["lon"],
+                                    moved_km=None if moved_km is None else round(moved_km, 3),
+                                    from_channel_id=previous_channel.get("id") if previous_channel else None,
+                                    to_channel_id=selected_channel.get("id"),
+                                    to_channel_name=selected_channel.get("name"),
+                                )
                 try:
                     capture_stream_chunk_to_wav(stream_url, chunk_duration, "buffer_chunk.wav", capture_fs)
                 except subprocess.CalledProcessError as stream_err:
+                    broadcast_failures += 1
+                    candidate_count = max(1, len(broadcast_candidates))
+                    failed_cycles = broadcast_failures // candidate_count
+                    if failed_cycles <= 0:
+                        retry_delay = args.stream_switch_delay
+                    else:
+                        retry_delay = min(
+                            args.stream_backoff_max,
+                            args.stream_backoff_base * (2 ** min(failed_cycles - 1, 6)),
+                        )
                     if len(broadcast_candidates) > 1:
                         from_channel = selected_channel
                         broadcast_candidate_idx = (broadcast_candidate_idx + 1) % len(broadcast_candidates)
@@ -812,6 +966,8 @@ try:
                         print(
                             "[BroadcastifyFallback] "
                             f"capture_failed_exit={stream_err.returncode} "
+                            f"consecutive_failures={broadcast_failures} "
+                            f"retry_delay={retry_delay:.1f}s "
                             f"from={from_channel.get('id')} -> to={selected_channel.get('id')} "
                             f"url={stream_url}"
                         )
@@ -824,9 +980,39 @@ try:
                             to_channel_id=selected_channel.get("id"),
                             to_channel_name=selected_channel.get("name"),
                             ffmpeg_exit_code=stream_err.returncode,
+                            consecutive_failures=broadcast_failures,
+                            retry_delay_seconds=round(retry_delay, 3),
                         )
+                        time.sleep(retry_delay)
                         continue
-                    raise
+                    print(
+                        "[BroadcastifyFallback] "
+                        f"capture_failed_exit={stream_err.returncode} "
+                        f"consecutive_failures={broadcast_failures} "
+                        f"retry_delay={retry_delay:.1f}s (single stream; retrying)"
+                    )
+                    emit_event_json(
+                        "broadcast_capture_retry",
+                        enabled=args.integration_json,
+                        reason="capture_failed",
+                        channel_id=selected_channel.get("id") if selected_channel else None,
+                        channel_name=selected_channel.get("name") if selected_channel else None,
+                        ffmpeg_exit_code=stream_err.returncode,
+                        consecutive_failures=broadcast_failures,
+                        retry_delay_seconds=round(retry_delay, 3),
+                    )
+                    time.sleep(retry_delay)
+                    continue
+                if broadcast_failures:
+                    print(f"[BroadcastifyRecovered] stream capture succeeded after {broadcast_failures} consecutive failures.")
+                    emit_event_json(
+                        "broadcast_stream_recovered",
+                        enabled=args.integration_json,
+                        channel_id=selected_channel.get("id") if selected_channel else None,
+                        channel_name=selected_channel.get("name") if selected_channel else None,
+                        consecutive_failures=broadcast_failures,
+                    )
+                    broadcast_failures = 0
                 chunk_fs, chunk_data = wav.read("buffer_chunk.wav")
                 if chunk_data.ndim == 2:
                     chunk_data = chunk_data[:, 0]

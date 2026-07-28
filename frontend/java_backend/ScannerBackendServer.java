@@ -783,6 +783,16 @@ public final class ScannerBackendServer {
   private static String runBroadcastifySelector(Map<String, String> query) {
     String lat = query.getOrDefault("lat", "");
     String lon = query.getOrDefault("lon", "");
+    if (lat.isBlank() || lon.isBlank()) {
+      // Route selection from the streaming device's GPS (posted via
+      // /api/gps/update) instead of server-side defaults whenever a device
+      // fix is available.
+      GpsPoint deviceGps = latestGpsPoint;
+      if (deviceGps != null) {
+        lat = trimDouble(deviceGps.lat);
+        lon = trimDouble(deviceGps.lon);
+      }
+    }
     String city = query.getOrDefault("city", BROADCASTIFY_SELECTOR_CITY);
     String county = query.getOrDefault("county", BROADCASTIFY_SELECTOR_COUNTY);
     String state = query.getOrDefault("state", BROADCASTIFY_SELECTOR_STATE);
