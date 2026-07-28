@@ -107,6 +107,7 @@ http://<PC_LAN_IP>:8080
 - `/api/platform/weather/forecast` currently returns mock weather data with provider metadata.
 - `/api/platform/waze/route` returns server-built Waze `app_url` and `embed_url`.
 - `/api/platform/route/local` returns OSRM (OpenStreetMap) road route geometry (`route_points`), falling back to a direct origin->destination segment when OSRM is unreachable.
+- `/api/platform/geocode?q=..[&lat=..&lon=..]` returns Nominatim results. When `lat`/`lon` are supplied, the search is first bounded to a local viewbox (±0.35°, override via `GEOCODE_BIAS_RADIUS_DEGREES`) and falls back to a global search when nothing matches locally; the response's `bounded` flag reports which path produced the results.
 - `/api/platform/providers/status` reports readiness/config for provider wiring.
 
 ## Proprietary map engine
