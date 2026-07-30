@@ -1,0 +1,2366 @@
+{
+  "channels": [
+    {
+      "id": "bf-32602-indianapolis-metropolitan-police",
+      "name": "Indianapolis Metropolitan Police",
+      "description": "Broadcastify public safety feed 32602 for Ohio.",
+      "city": "",
+      "county": "Various",
+      "state": "OH",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "ohio",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32602"
+    },
+    {
+      "id": "bf-11446-cleveland-police-and-metro-housing-authori",
+      "name": "Cleveland Police and Metro Housing Authority",
+      "description": "Broadcastify public safety feed 11446 for Ohio.",
+      "city": "",
+      "county": "Various",
+      "state": "OH",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "ohio",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/11446"
+    },
+    {
+      "id": "bf-13928-marion-county-public-safety",
+      "name": "Marion County Public Safety",
+      "description": "Broadcastify public safety feed 13928 for Ohio.",
+      "city": "",
+      "county": "Various",
+      "state": "OH",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "ohio"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/13928"
+    },
+    {
+      "id": "bf-32252-toledo-police-central-dispatch",
+      "name": "Toledo Police Central Dispatch",
+      "description": "Broadcastify public safety feed 32252 for Ohio.",
+      "city": "",
+      "county": "Various",
+      "state": "OH",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "ohio",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32252"
+    },
+    {
+      "id": "bf-11208-columbus-police-dispatch-citywide",
+      "name": "Columbus Police Dispatch - Citywide",
+      "description": "Broadcastify public safety feed 11208 for Ohio.",
+      "city": "",
+      "county": "Various",
+      "state": "OH",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "ohio",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/11208"
+    },
+    {
+      "id": "bf-188-allen-county-public-safety",
+      "name": "Allen County Public Safety",
+      "description": "Broadcastify public safety feed 188 for Ohio.",
+      "city": "",
+      "county": "Various",
+      "state": "OH",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "ohio"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/188"
+    },
+    {
+      "id": "bf-34563-lake-county-police-fire",
+      "name": "Lake County Police & Fire",
+      "description": "Broadcastify public safety feed 34563 for Ohio.",
+      "city": "",
+      "county": "Various",
+      "state": "OH",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "ohio",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/34563"
+    },
+    {
+      "id": "bf-24798-muskingum-county-sheriff-fire-and-ems-marc",
+      "name": "Muskingum County Sheriff, Fire and EMS - MARCS",
+      "description": "Broadcastify public safety feed 24798 for Ohio.",
+      "city": "",
+      "county": "Various",
+      "state": "OH",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "ohio",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/24798"
+    },
+    {
+      "id": "bf-40029-belmont-fire-ems-marshall-ohio-county-wv-f",
+      "name": "Belmont Fire EMS, Marshall, Ohio County WV Fire EMS PD, WVSP Trp 1 Cmd",
+      "description": "Broadcastify public safety feed 40029 for Ohio.",
+      "city": "",
+      "county": "Various",
+      "state": "OH",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "ohio",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40029"
+    },
+    {
+      "id": "bf-33333-central-and-eastern-greene-county-public-s",
+      "name": "Central and Eastern Greene County Public Safety",
+      "description": "Broadcastify public safety feed 33333 for Ohio.",
+      "city": "",
+      "county": "Various",
+      "state": "OH",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "ohio"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/33333"
+    },
+    {
+      "id": "bf-28284-darke-county-public-safety",
+      "name": "Darke County Public Safety",
+      "description": "Broadcastify public safety feed 28284 for Ohio.",
+      "city": "",
+      "county": "Various",
+      "state": "OH",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "ohio"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/28284"
+    },
+    {
+      "id": "bf-5974-richland-county-public-safety",
+      "name": "Richland County Public Safety",
+      "description": "Broadcastify public safety feed 5974 for Ohio.",
+      "city": "",
+      "county": "Various",
+      "state": "OH",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "ohio"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/5974"
+    },
+    {
+      "id": "bf-14527-hamilton-county-police-fire-and-ems-dispat",
+      "name": "Hamilton County Police, Fire and EMS Dispatch",
+      "description": "Broadcastify public safety feed 14527 for Ohio.",
+      "city": "",
+      "county": "Various",
+      "state": "OH",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "ohio",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/14527"
+    },
+    {
+      "id": "bf-14027-geauga-county-public-safety",
+      "name": "Geauga County Public Safety",
+      "description": "Broadcastify public safety feed 14027 for Ohio.",
+      "city": "",
+      "county": "Various",
+      "state": "OH",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "ohio"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/14027"
+    },
+    {
+      "id": "bf-1692-ross-county-public-safety",
+      "name": "Ross County Public Safety",
+      "description": "Broadcastify public safety feed 1692 for Ohio.",
+      "city": "",
+      "county": "Various",
+      "state": "OH",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "ohio"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/1692"
+    },
+    {
+      "id": "bf-26366-sandusky-county-sheriff-fire-ems-fremont-a",
+      "name": "Sandusky County Sheriff, Fire / EMS, Fremont and Clyde Police / Fire",
+      "description": "Broadcastify public safety feed 26366 for Ohio.",
+      "city": "",
+      "county": "Various",
+      "state": "OH",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "ohio",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/26366"
+    },
+    {
+      "id": "bf-1086-licking-county-public-safety",
+      "name": "Licking County Public Safety",
+      "description": "Broadcastify public safety feed 1086 for Ohio.",
+      "city": "",
+      "county": "Various",
+      "state": "OH",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "ohio"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/1086"
+    },
+    {
+      "id": "bf-24681-defiance-county-sheriff-city-police-fire-a",
+      "name": "Defiance County Sheriff, City Police, Fire and EMS - Digital",
+      "description": "Broadcastify public safety feed 24681 for Ohio.",
+      "city": "",
+      "county": "Various",
+      "state": "OH",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "ohio",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/24681"
+    },
+    {
+      "id": "bf-2932-lorain-county-police-fire-and-ems",
+      "name": "Lorain County Police, Fire and EMS",
+      "description": "Broadcastify public safety feed 2932 for Ohio.",
+      "city": "",
+      "county": "Various",
+      "state": "OH",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "ohio",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/2932"
+    },
+    {
+      "id": "bf-46421-morgan-county-public-safety",
+      "name": "Morgan County Public Safety",
+      "description": "Broadcastify public safety feed 46421 for Ohio.",
+      "city": "",
+      "county": "Various",
+      "state": "OH",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "ohio"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46421"
+    },
+    {
+      "id": "bf-23681-jefferson-county-public-safety-divisions-1",
+      "name": "Jefferson County Public Safety Divisions 1, 2, and 3",
+      "description": "Broadcastify public safety feed 23681 for Ohio.",
+      "city": "",
+      "county": "Various",
+      "state": "OH",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "ohio"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/23681"
+    },
+    {
+      "id": "bf-28393-putnam-county-sheriff-fire-ems-and-pw",
+      "name": "Putnam County Sheriff, Fire, EMS and PW",
+      "description": "Broadcastify public safety feed 28393 for Ohio.",
+      "city": "",
+      "county": "Various",
+      "state": "OH",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "ohio",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/28393"
+    },
+    {
+      "id": "bf-20081-sidney-police-and-fire-dispatch",
+      "name": "Sidney Police and Fire Dispatch",
+      "description": "Broadcastify public safety feed 20081 for Ohio.",
+      "city": "",
+      "county": "Various",
+      "state": "OH",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "ohio",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/20081"
+    },
+    {
+      "id": "bf-13705-southwest-summit-county-public-safety",
+      "name": "Southwest Summit County Public Safety",
+      "description": "Broadcastify public safety feed 13705 for Ohio.",
+      "city": "",
+      "county": "Various",
+      "state": "OH",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "ohio"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/13705"
+    },
+    {
+      "id": "bf-5493-portage-county-fire-ems-and-police",
+      "name": "Portage County Fire, EMS and Police",
+      "description": "Broadcastify public safety feed 5493 for Ohio.",
+      "city": "",
+      "county": "Various",
+      "state": "OH",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "ohio",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/5493"
+    },
+    {
+      "id": "bf-13681-guernsey-county-fire-and-ems",
+      "name": "Guernsey County Fire and EMS",
+      "description": "Broadcastify public safety feed 13681 for Ohio.",
+      "city": "",
+      "county": "Various",
+      "state": "OH",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "ohio",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/13681"
+    },
+    {
+      "id": "bf-38702-cuyahoga-falls-police-fire",
+      "name": "Cuyahoga Falls Police & Fire",
+      "description": "Broadcastify public safety feed 38702 for Ohio.",
+      "city": "",
+      "county": "Various",
+      "state": "OH",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "ohio",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38702"
+    },
+    {
+      "id": "bf-36477-lucas-county-fire-ems",
+      "name": "Lucas County Fire/EMS",
+      "description": "Broadcastify public safety feed 36477 for Ohio.",
+      "city": "",
+      "county": "Various",
+      "state": "OH",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "ohio",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/36477"
+    },
+    {
+      "id": "bf-38526-parma-parma-heights-police-and-fire",
+      "name": "Parma / Parma Heights Police and Fire",
+      "description": "Broadcastify public safety feed 38526 for Ohio.",
+      "city": "",
+      "county": "Various",
+      "state": "OH",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "ohio",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38526"
+    },
+    {
+      "id": "bf-44208-stark-county-fire",
+      "name": "Stark County Fire",
+      "description": "Broadcastify public safety feed 44208 for Ohio.",
+      "city": "",
+      "county": "Various",
+      "state": "OH",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "ohio",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44208"
+    },
+    {
+      "id": "bf-30706-preble-county-sheriff-and-fire-eaton-polic",
+      "name": "Preble County Sheriff and Fire, Eaton Police",
+      "description": "Broadcastify public safety feed 30706 for Ohio.",
+      "city": "",
+      "county": "Various",
+      "state": "OH",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "ohio",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/30706"
+    },
+    {
+      "id": "bf-3998-union-county-public-safety",
+      "name": "Union County Public Safety",
+      "description": "Broadcastify public safety feed 3998 for Ohio.",
+      "city": "",
+      "county": "Various",
+      "state": "OH",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "ohio"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/3998"
+    },
+    {
+      "id": "bf-27938-van-wert-county-public-safety",
+      "name": "Van Wert County Public Safety",
+      "description": "Broadcastify public safety feed 27938 for Ohio.",
+      "city": "",
+      "county": "Various",
+      "state": "OH",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "ohio"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/27938"
+    },
+    {
+      "id": "bf-32256-toledo-police-south-dispatch",
+      "name": "Toledo Police South Dispatch",
+      "description": "Broadcastify public safety feed 32256 for Ohio.",
+      "city": "",
+      "county": "Various",
+      "state": "OH",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "ohio",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32256"
+    },
+    {
+      "id": "bf-40405-clermont-county-public-safety",
+      "name": "Clermont County Public Safety",
+      "description": "Broadcastify public safety feed 40405 for Ohio.",
+      "city": "",
+      "county": "Various",
+      "state": "OH",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "ohio"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40405"
+    },
+    {
+      "id": "bf-41709-fulton-county-public-safety",
+      "name": "Fulton County Public Safety",
+      "description": "Broadcastify public safety feed 41709 for Ohio.",
+      "city": "",
+      "county": "Various",
+      "state": "OH",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "ohio"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41709"
+    },
+    {
+      "id": "bf-171-findlay-fire-hancock-county-sheriff-fire-a",
+      "name": "Findlay Fire, Hancock County Sheriff, Fire and EMS, Ohio State Highway Patrol",
+      "description": "Broadcastify public safety feed 171 for Ohio.",
+      "city": "",
+      "county": "Various",
+      "state": "OH",
+      "service_types": [
+        "dispatch",
+        "law",
+        "highway",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "ohio",
+        "law",
+        "highway",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/171"
+    },
+    {
+      "id": "bf-3683-wayne-county-sheriff-and-fire-wooster-ritt",
+      "name": "Wayne County Sheriff and Fire, Wooster, Rittman, Doylestown Police, Rittamn EMS",
+      "description": "Broadcastify public safety feed 3683 for Ohio.",
+      "city": "",
+      "county": "Various",
+      "state": "OH",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "ohio",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/3683"
+    },
+    {
+      "id": "bf-29683-middletown-police-and-fire",
+      "name": "Middletown Police and Fire",
+      "description": "Broadcastify public safety feed 29683 for Ohio.",
+      "city": "",
+      "county": "Various",
+      "state": "OH",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "ohio",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/29683"
+    },
+    {
+      "id": "bf-42529-brown-county-public-safety",
+      "name": "Brown County Public Safety",
+      "description": "Broadcastify public safety feed 42529 for Ohio.",
+      "city": "",
+      "county": "Various",
+      "state": "OH",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "ohio"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42529"
+    },
+    {
+      "id": "bf-22390-holmes-county-fire-and-ems",
+      "name": "Holmes County Fire and EMS",
+      "description": "Broadcastify public safety feed 22390 for Ohio.",
+      "city": "",
+      "county": "Various",
+      "state": "OH",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "ohio",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/22390"
+    },
+    {
+      "id": "bf-18420-seneca-county-fire-and-ems-dispatch",
+      "name": "Seneca County Fire and EMS Dispatch",
+      "description": "Broadcastify public safety feed 18420 for Ohio.",
+      "city": "",
+      "county": "Various",
+      "state": "OH",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "ohio",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/18420"
+    },
+    {
+      "id": "bf-15234-westcom-fire-and-west-suburbs-police-digit",
+      "name": "WestCom Fire and West Suburbs Police - Digital MARCS",
+      "description": "Broadcastify public safety feed 15234 for Ohio.",
+      "city": "",
+      "county": "Various",
+      "state": "OH",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "ohio",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/15234"
+    },
+    {
+      "id": "bf-44211-stark-county-police",
+      "name": "Stark County Police",
+      "description": "Broadcastify public safety feed 44211 for Ohio.",
+      "city": "",
+      "county": "Various",
+      "state": "OH",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "ohio",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44211"
+    },
+    {
+      "id": "bf-34495-western-greene-county-public-safety",
+      "name": "Western Greene County Public Safety",
+      "description": "Broadcastify public safety feed 34495 for Ohio.",
+      "city": "",
+      "county": "Various",
+      "state": "OH",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "ohio"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/34495"
+    },
+    {
+      "id": "bf-41012-wood-county-sheriff-dispatch-parkersburg-p",
+      "name": "Wood County Sheriff Dispatch, Parkersburg PD/Fire,  Belpre PD/Fire",
+      "description": "Broadcastify public safety feed 41012 for Ohio.",
+      "city": "",
+      "county": "Various",
+      "state": "OH",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "ohio",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41012"
+    },
+    {
+      "id": "bf-34385-belmont-county-fire-and-ems",
+      "name": "Belmont County Fire and EMS",
+      "description": "Broadcastify public safety feed 34385 for Ohio.",
+      "city": "",
+      "county": "Various",
+      "state": "OH",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "ohio",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/34385"
+    },
+    {
+      "id": "bf-32943-columbus-police-dispatch-zone-3",
+      "name": "Columbus Police Dispatch - Zone 3",
+      "description": "Broadcastify public safety feed 32943 for Ohio.",
+      "city": "",
+      "county": "Various",
+      "state": "OH",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "ohio",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32943"
+    },
+    {
+      "id": "bf-25008-cleveland-police-west",
+      "name": "Cleveland Police - West",
+      "description": "Broadcastify public safety feed 25008 for Ohio.",
+      "city": "",
+      "county": "Various",
+      "state": "OH",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "ohio",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/25008"
+    },
+    {
+      "id": "bf-37282-stow-police-and-fire",
+      "name": "Stow Police and Fire",
+      "description": "Broadcastify public safety feed 37282 for Ohio.",
+      "city": "",
+      "county": "Various",
+      "state": "OH",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "ohio",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37282"
+    },
+    {
+      "id": "bf-30440-mercer-county-fire-ems-trumbull-and-mahoni",
+      "name": "Mercer County Fire / EMS, Trumbull and Mahoning Counties Fire, EMS / Police",
+      "description": "Broadcastify public safety feed 30440 for Ohio.",
+      "city": "",
+      "county": "Various",
+      "state": "OH",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "ohio",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/30440"
+    },
+    {
+      "id": "bf-35157-lakewood-police-and-fire",
+      "name": "Lakewood Police and Fire",
+      "description": "Broadcastify public safety feed 35157 for Ohio.",
+      "city": "",
+      "county": "Various",
+      "state": "OH",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "ohio",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/35157"
+    },
+    {
+      "id": "bf-22988-henry-county-fire-ems-napoleon-police-fire",
+      "name": "Henry County Fire, EMS, Napoleon Police / Fire Dispatch",
+      "description": "Broadcastify public safety feed 22988 for Ohio.",
+      "city": "",
+      "county": "Various",
+      "state": "OH",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "ohio",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/22988"
+    },
+    {
+      "id": "bf-21314-perry-county-fire-and-ems",
+      "name": "Perry County Fire and EMS",
+      "description": "Broadcastify public safety feed 21314 for Ohio.",
+      "city": "",
+      "county": "Various",
+      "state": "OH",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "ohio",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/21314"
+    },
+    {
+      "id": "bf-3619-wadsworth-police-fire-and-ems",
+      "name": "Wadsworth Police, Fire and EMS",
+      "description": "Broadcastify public safety feed 3619 for Ohio.",
+      "city": "",
+      "county": "Various",
+      "state": "OH",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "ohio",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/3619"
+    },
+    {
+      "id": "bf-21419-garfield-and-maple-heights-police-digital",
+      "name": "Garfield and Maple Heights Police - Digital",
+      "description": "Broadcastify public safety feed 21419 for Ohio.",
+      "city": "",
+      "county": "Various",
+      "state": "OH",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "ohio",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/21419"
+    },
+    {
+      "id": "bf-9121-miami-county-police-fire-and-ems-central",
+      "name": "Miami County Police, Fire and EMS - Central",
+      "description": "Broadcastify public safety feed 9121 for Ohio.",
+      "city": "",
+      "county": "Various",
+      "state": "OH",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "ohio",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/9121"
+    },
+    {
+      "id": "bf-39998-ashtabula-county-fire-dispatch-and-tac-1",
+      "name": "Ashtabula County Fire Dispatch and Tac 1",
+      "description": "Broadcastify public safety feed 39998 for Ohio.",
+      "city": "",
+      "county": "Various",
+      "state": "OH",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "ohio",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39998"
+    },
+    {
+      "id": "bf-25761-ottawa-county-public-safety",
+      "name": "Ottawa County Public Safety",
+      "description": "Broadcastify public safety feed 25761 for Ohio.",
+      "city": "",
+      "county": "Various",
+      "state": "OH",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "ohio"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/25761"
+    },
+    {
+      "id": "bf-24189-ohio-state-highway-patrol-district-5",
+      "name": "Ohio State Highway Patrol District 5",
+      "description": "Broadcastify public safety feed 24189 for Ohio.",
+      "city": "",
+      "county": "Various",
+      "state": "OH",
+      "service_types": [
+        "dispatch",
+        "law",
+        "highway"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "ohio",
+        "law",
+        "highway"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/24189"
+    },
+    {
+      "id": "bf-33511-henry-county-public-safety-police-sheriff-",
+      "name": "Henry County Public Safety (Police/Sheriff/Fire/EMS)",
+      "description": "Broadcastify public safety feed 33511 for Ohio.",
+      "city": "",
+      "county": "Various",
+      "state": "OH",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "ohio",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/33511"
+    },
+    {
+      "id": "bf-37284-hudson-police-fire",
+      "name": "Hudson Police & Fire",
+      "description": "Broadcastify public safety feed 37284 for Ohio.",
+      "city": "",
+      "county": "Various",
+      "state": "OH",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "ohio",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37284"
+    },
+    {
+      "id": "bf-30206-summit-county-fire-and-ems",
+      "name": "Summit County Fire and EMS",
+      "description": "Broadcastify public safety feed 30206 for Ohio.",
+      "city": "",
+      "county": "Various",
+      "state": "OH",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "ohio",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/30206"
+    },
+    {
+      "id": "bf-17922-tuscarawas-county-fire-and-ems",
+      "name": "Tuscarawas County Fire and EMS",
+      "description": "Broadcastify public safety feed 17922 for Ohio.",
+      "city": "",
+      "county": "Various",
+      "state": "OH",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "ohio",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/17922"
+    },
+    {
+      "id": "bf-36697-delaware-county-public-safety",
+      "name": "Delaware County Public Safety",
+      "description": "Broadcastify public safety feed 36697 for Ohio.",
+      "city": "",
+      "county": "Various",
+      "state": "OH",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "ohio"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/36697"
+    },
+    {
+      "id": "bf-5184-cincinnati-fire",
+      "name": "Cincinnati Fire",
+      "description": "Broadcastify public safety feed 5184 for Ohio.",
+      "city": "",
+      "county": "Various",
+      "state": "OH",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "ohio",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/5184"
+    },
+    {
+      "id": "bf-13799-macedonia-northfield-village-and-sagamore-",
+      "name": "Macedonia, Northfield Village and Sagamore Hills Police, Fire / EMS",
+      "description": "Broadcastify public safety feed 13799 for Ohio.",
+      "city": "",
+      "county": "Various",
+      "state": "OH",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "ohio",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/13799"
+    },
+    {
+      "id": "bf-46856-butler-county-public-safety",
+      "name": "Butler County Public Safety",
+      "description": "Broadcastify public safety feed 46856 for Ohio.",
+      "city": "",
+      "county": "Various",
+      "state": "OH",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "ohio"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46856"
+    },
+    {
+      "id": "bf-28411-wood-county-fire-grounds",
+      "name": "Wood County Fire Grounds",
+      "description": "Broadcastify public safety feed 28411 for Ohio.",
+      "city": "",
+      "county": "Various",
+      "state": "OH",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "ohio",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/28411"
+    },
+    {
+      "id": "bf-43311-huron-erie-county-public-safety",
+      "name": "Huron / Erie County Public Safety",
+      "description": "Broadcastify public safety feed 43311 for Ohio.",
+      "city": "",
+      "county": "Various",
+      "state": "OH",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "ohio"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43311"
+    },
+    {
+      "id": "bf-26272-lake-township-and-walbridge-police",
+      "name": "Lake Township and Walbridge Police",
+      "description": "Broadcastify public safety feed 26272 for Ohio.",
+      "city": "",
+      "county": "Various",
+      "state": "OH",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "ohio",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/26272"
+    },
+    {
+      "id": "bf-18498-hardin-county-sheriff-and-ohio-state-patro",
+      "name": "Hardin County Sheriff and Ohio State Patrol",
+      "description": "Broadcastify public safety feed 18498 for Ohio.",
+      "city": "",
+      "county": "Various",
+      "state": "OH",
+      "service_types": [
+        "dispatch",
+        "law",
+        "highway"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "ohio",
+        "law",
+        "highway"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/18498"
+    },
+    {
+      "id": "bf-44597-sebring-and-alliance-police-and-fire",
+      "name": "Sebring and Alliance - Police and Fire",
+      "description": "Broadcastify public safety feed 44597 for Ohio.",
+      "city": "",
+      "county": "Various",
+      "state": "OH",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "ohio",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44597"
+    },
+    {
+      "id": "bf-24877-twinsburg-hudson-and-reminderville-police-",
+      "name": "Twinsburg, Hudson and Reminderville Police, Fire / EMS",
+      "description": "Broadcastify public safety feed 24877 for Ohio.",
+      "city": "",
+      "county": "Various",
+      "state": "OH",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "ohio",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/24877"
+    },
+    {
+      "id": "bf-38090-tri-county-public-safety",
+      "name": "Tri County Public Safety",
+      "description": "Broadcastify public safety feed 38090 for Ohio.",
+      "city": "",
+      "county": "Various",
+      "state": "OH",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "ohio"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38090"
+    },
+    {
+      "id": "bf-25341-miami-county-fire-and-ems-west-central",
+      "name": "Miami County Fire and EMS - West Central",
+      "description": "Broadcastify public safety feed 25341 for Ohio.",
+      "city": "",
+      "county": "Various",
+      "state": "OH",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "ohio",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/25341"
+    },
+    {
+      "id": "bf-36560-lucas-county-law-enforcement-northwest-dis",
+      "name": "Lucas County Law Enforcement - Northwest Dispatch",
+      "description": "Broadcastify public safety feed 36560 for Ohio.",
+      "city": "",
+      "county": "Various",
+      "state": "OH",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "ohio",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/36560"
+    },
+    {
+      "id": "bf-14386-warren-county-police-fire-and-ems",
+      "name": "Warren County Police, Fire, and EMS",
+      "description": "Broadcastify public safety feed 14386 for Ohio.",
+      "city": "",
+      "county": "Various",
+      "state": "OH",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "ohio",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/14386"
+    },
+    {
+      "id": "bf-2506-lorain-county-public-safety-north",
+      "name": "Lorain County Public Safety - North",
+      "description": "Broadcastify public safety feed 2506 for Ohio.",
+      "city": "",
+      "county": "Various",
+      "state": "OH",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "ohio"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/2506"
+    },
+    {
+      "id": "bf-38340-city-of-urbana-police",
+      "name": "City of Urbana Police",
+      "description": "Broadcastify public safety feed 38340 for Ohio.",
+      "city": "",
+      "county": "Various",
+      "state": "OH",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "ohio",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38340"
+    },
+    {
+      "id": "bf-30931-niles-police-and-fire",
+      "name": "Niles Police and Fire",
+      "description": "Broadcastify public safety feed 30931 for Ohio.",
+      "city": "",
+      "county": "Various",
+      "state": "OH",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "ohio",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/30931"
+    },
+    {
+      "id": "bf-43552-pike-county-public-safety",
+      "name": "Pike County Public Safety",
+      "description": "Broadcastify public safety feed 43552 for Ohio.",
+      "city": "",
+      "county": "Various",
+      "state": "OH",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "ohio"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43552"
+    },
+    {
+      "id": "bf-45565-trumbull-county-public-safety",
+      "name": "Trumbull County Public Safety",
+      "description": "Broadcastify public safety feed 45565 for Ohio.",
+      "city": "",
+      "county": "Various",
+      "state": "OH",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "ohio"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45565"
+    },
+    {
+      "id": "bf-31282-south-euclid-cleveland-heights-richmond-he",
+      "name": "South Euclid, Cleveland Heights, Richmond Heights, and University Heights Police Dispatch",
+      "description": "Broadcastify public safety feed 31282 for Ohio.",
+      "city": "",
+      "county": "Various",
+      "state": "OH",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "ohio",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/31282"
+    },
+    {
+      "id": "bf-42700-chagrin-valley-dispatch-brecksville",
+      "name": "Chagrin Valley Dispatch - Brecksville",
+      "description": "Broadcastify public safety feed 42700 for Ohio.",
+      "city": "",
+      "county": "Various",
+      "state": "OH",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "ohio"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42700"
+    },
+    {
+      "id": "bf-30516-grove-city-police-franklin-county-sheriff-",
+      "name": "Grove City Police, Franklin County Sheriff Dispatch West",
+      "description": "Broadcastify public safety feed 30516 for Ohio.",
+      "city": "",
+      "county": "Various",
+      "state": "OH",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "ohio",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/30516"
+    },
+    {
+      "id": "bf-20203-washington-county-public-safety",
+      "name": "Washington County Public Safety",
+      "description": "Broadcastify public safety feed 20203 for Ohio.",
+      "city": "",
+      "county": "Various",
+      "state": "OH",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "ohio"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/20203"
+    },
+    {
+      "id": "bf-24920-medina-county-fire-wadsworth-fire-and-ems",
+      "name": "Medina County Fire, Wadsworth Fire and EMS",
+      "description": "Broadcastify public safety feed 24920 for Ohio.",
+      "city": "",
+      "county": "Various",
+      "state": "OH",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "ohio",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/24920"
+    },
+    {
+      "id": "bf-3331-jackson-mason-and-meigs-counties-fire-and-",
+      "name": "Jackson, Mason, and Meigs Counties Fire and EMS",
+      "description": "Broadcastify public safety feed 3331 for Ohio.",
+      "city": "",
+      "county": "Various",
+      "state": "OH",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "ohio",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/3331"
+    },
+    {
+      "id": "bf-36561-lucas-county-law-enforcement-southeast-dis",
+      "name": "Lucas County Law Enforcement - Southeast Dispatch",
+      "description": "Broadcastify public safety feed 36561 for Ohio.",
+      "city": "",
+      "county": "Various",
+      "state": "OH",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "ohio",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/36561"
+    },
+    {
+      "id": "bf-45551-ohio-state-highway-patrol-post-84-marietta",
+      "name": "Ohio State Highway Patrol Post 84 Marietta and West Virginia State Police Troop 4 Parkersburg",
+      "description": "Broadcastify public safety feed 45551 for Ohio.",
+      "city": "",
+      "county": "Various",
+      "state": "OH",
+      "service_types": [
+        "dispatch",
+        "law",
+        "highway"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "ohio",
+        "law",
+        "highway"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45551"
+    },
+    {
+      "id": "bf-39579-paulding-county-fire-and-ems",
+      "name": "Paulding County Fire and EMS",
+      "description": "Broadcastify public safety feed 39579 for Ohio.",
+      "city": "",
+      "county": "Various",
+      "state": "OH",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "ohio",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39579"
+    },
+    {
+      "id": "bf-41598-leetonia-fire-ems",
+      "name": "Leetonia Fire/EMS",
+      "description": "Broadcastify public safety feed 41598 for Ohio.",
+      "city": "",
+      "county": "Various",
+      "state": "OH",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "ohio",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41598"
+    },
+    {
+      "id": "bf-5675-darke-mercer-randolph-shelby-and-jay-count",
+      "name": "Darke, Mercer, Randolph, Shelby and Jay Counties Fire and EMS",
+      "description": "Broadcastify public safety feed 5675 for Ohio.",
+      "city": "",
+      "county": "Various",
+      "state": "OH",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "ohio",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/5675"
+    },
+    {
+      "id": "bf-14086-delaware-county-fire-and-ems",
+      "name": "Delaware County Fire and EMS",
+      "description": "Broadcastify public safety feed 14086 for Ohio.",
+      "city": "",
+      "county": "Various",
+      "state": "OH",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "ohio",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/14086"
+    },
+    {
+      "id": "bf-38127-brook-park-police",
+      "name": "Brook Park Police",
+      "description": "Broadcastify public safety feed 38127 for Ohio.",
+      "city": "",
+      "county": "Various",
+      "state": "OH",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "ohio",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38127"
+    },
+    {
+      "id": "bf-26236-westerville-police-fire-and-ems",
+      "name": "Westerville Police, Fire and EMS",
+      "description": "Broadcastify public safety feed 26236 for Ohio.",
+      "city": "",
+      "county": "Various",
+      "state": "OH",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "ohio",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/26236"
+    },
+    {
+      "id": "bf-35754-bath-peninsula-and-richfield-police-fire-e",
+      "name": "Bath, Peninsula and Richfield Police, Fire & EMS",
+      "description": "Broadcastify public safety feed 35754 for Ohio.",
+      "city": "",
+      "county": "Various",
+      "state": "OH",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "ohio",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/35754"
+    },
+    {
+      "id": "bf-32204-rosemount-fire-and-ems",
+      "name": "Rosemount Fire and EMS",
+      "description": "Broadcastify public safety feed 32204 for Ohio.",
+      "city": "",
+      "county": "Various",
+      "state": "OH",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "ohio",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32204"
+    },
+    {
+      "id": "bf-33691-coshocton-county-ems",
+      "name": "Coshocton County EMS",
+      "description": "Broadcastify public safety feed 33691 for Ohio.",
+      "city": "",
+      "county": "Various",
+      "state": "OH",
+      "service_types": [
+        "dispatch",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "ohio",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/33691"
+    },
+    {
+      "id": "bf-21047-miami-county-fire-dispatch",
+      "name": "Miami County Fire Dispatch",
+      "description": "Broadcastify public safety feed 21047 for Ohio.",
+      "city": "",
+      "county": "Various",
+      "state": "OH",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "ohio",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/21047"
+    }
+  ]
+}

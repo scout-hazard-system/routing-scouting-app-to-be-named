@@ -1,0 +1,720 @@
+{
+  "channels": [
+    {
+      "id": "bf-32602-indianapolis-metropolitan-police",
+      "name": "Indianapolis Metropolitan Police",
+      "description": "Broadcastify public safety feed 32602 for Rhode Island.",
+      "city": "",
+      "county": "Various",
+      "state": "RI",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "rhode island",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32602"
+    },
+    {
+      "id": "bf-7576-southern-rhode-island-and-southeastern-con",
+      "name": "Southern Rhode Island and Southeastern Connecticut Fire and EMS",
+      "description": "Broadcastify public safety feed 7576 for Rhode Island.",
+      "city": "",
+      "county": "Various",
+      "state": "RI",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "rhode island",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/7576"
+    },
+    {
+      "id": "bf-33869-providence-fire",
+      "name": "Providence Fire",
+      "description": "Broadcastify public safety feed 33869 for Rhode Island.",
+      "city": "",
+      "county": "Various",
+      "state": "RI",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "rhode island",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/33869"
+    },
+    {
+      "id": "bf-45071-town-of-lincoln-fire-and-ems",
+      "name": "Town of Lincoln Fire and EMS",
+      "description": "Broadcastify public safety feed 45071 for Rhode Island.",
+      "city": "",
+      "county": "Various",
+      "state": "RI",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "rhode island",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45071"
+    },
+    {
+      "id": "bf-36733-pawtucket-fire-channels-1-and-2",
+      "name": "Pawtucket Fire Channels 1 and 2",
+      "description": "Broadcastify public safety feed 36733 for Rhode Island.",
+      "city": "",
+      "county": "Various",
+      "state": "RI",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "rhode island",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/36733"
+    },
+    {
+      "id": "bf-45498-newport-fire",
+      "name": "Newport Fire",
+      "description": "Broadcastify public safety feed 45498 for Rhode Island.",
+      "city": "",
+      "county": "Various",
+      "state": "RI",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "rhode island",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45498"
+    },
+    {
+      "id": "bf-33654-east-providence-fire-department-and-marine",
+      "name": "East Providence Fire Department And Marine Task Force",
+      "description": "Broadcastify public safety feed 33654 for Rhode Island.",
+      "city": "",
+      "county": "Various",
+      "state": "RI",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "rhode island",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/33654"
+    },
+    {
+      "id": "bf-43012-north-kingstown-fire-dispatch",
+      "name": "North Kingstown Fire Dispatch",
+      "description": "Broadcastify public safety feed 43012 for Rhode Island.",
+      "city": "",
+      "county": "Various",
+      "state": "RI",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "rhode island",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43012"
+    },
+    {
+      "id": "bf-46168-cumberland-fire-primary",
+      "name": "Cumberland Fire - Primary",
+      "description": "Broadcastify public safety feed 46168 for Rhode Island.",
+      "city": "",
+      "county": "Various",
+      "state": "RI",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "rhode island",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46168"
+    },
+    {
+      "id": "bf-18308-north-providence-fire-and-ems",
+      "name": "North Providence Fire and EMS",
+      "description": "Broadcastify public safety feed 18308 for Rhode Island.",
+      "city": "",
+      "county": "Various",
+      "state": "RI",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "rhode island",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/18308"
+    },
+    {
+      "id": "bf-33358-coventry-fire",
+      "name": "Coventry Fire",
+      "description": "Broadcastify public safety feed 33358 for Rhode Island.",
+      "city": "",
+      "county": "Various",
+      "state": "RI",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "rhode island",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/33358"
+    },
+    {
+      "id": "bf-25787-west-warwick-fire",
+      "name": "West Warwick Fire",
+      "description": "Broadcastify public safety feed 25787 for Rhode Island.",
+      "city": "",
+      "county": "Various",
+      "state": "RI",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "rhode island",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/25787"
+    },
+    {
+      "id": "bf-40425-rhode-island-intercity-police-and-fire",
+      "name": "Rhode Island Intercity Police and Fire",
+      "description": "Broadcastify public safety feed 40425 for Rhode Island.",
+      "city": "",
+      "county": "Various",
+      "state": "RI",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "rhode island",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40425"
+    },
+    {
+      "id": "bf-46478-bristol-fire",
+      "name": "Bristol Fire",
+      "description": "Broadcastify public safety feed 46478 for Rhode Island.",
+      "city": "",
+      "county": "Various",
+      "state": "RI",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "rhode island",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46478"
+    },
+    {
+      "id": "bf-39333-westerly-chariho-area-fire-departments",
+      "name": "Westerly & Chariho Area Fire Departments",
+      "description": "Broadcastify public safety feed 39333 for Rhode Island.",
+      "city": "",
+      "county": "Various",
+      "state": "RI",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "rhode island",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39333"
+    },
+    {
+      "id": "bf-36921-south-kingstown-fire-dispatch-ufd-kfd",
+      "name": "South Kingstown Fire Dispatch (UFD & KFD)",
+      "description": "Broadcastify public safety feed 36921 for Rhode Island.",
+      "city": "",
+      "county": "Various",
+      "state": "RI",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "rhode island",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/36921"
+    },
+    {
+      "id": "bf-45550-portsmouth-fire-department",
+      "name": "Portsmouth Fire Department",
+      "description": "Broadcastify public safety feed 45550 for Rhode Island.",
+      "city": "",
+      "county": "Various",
+      "state": "RI",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "rhode island",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45550"
+    },
+    {
+      "id": "bf-16523-south-foster-fire-dispatch",
+      "name": "South Foster Fire Dispatch",
+      "description": "Broadcastify public safety feed 16523 for Rhode Island.",
+      "city": "",
+      "county": "Various",
+      "state": "RI",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "rhode island",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/16523"
+    },
+    {
+      "id": "bf-33239-warren-fire",
+      "name": "Warren Fire",
+      "description": "Broadcastify public safety feed 33239 for Rhode Island.",
+      "city": "",
+      "county": "Various",
+      "state": "RI",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "rhode island",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/33239"
+    },
+    {
+      "id": "bf-17663-westerly-ambulance-corp",
+      "name": "Westerly Ambulance Corp",
+      "description": "Broadcastify public safety feed 17663 for Rhode Island.",
+      "city": "",
+      "county": "Various",
+      "state": "RI",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "rhode island"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/17663"
+    },
+    {
+      "id": "bf-45181-barringtonfd-800",
+      "name": "BarringtonFD 800",
+      "description": "Broadcastify public safety feed 45181 for Rhode Island.",
+      "city": "",
+      "county": "Various",
+      "state": "RI",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "rhode island"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45181"
+    },
+    {
+      "id": "bf-17551-watch-hill-fire",
+      "name": "Watch Hill Fire",
+      "description": "Broadcastify public safety feed 17551 for Rhode Island.",
+      "city": "",
+      "county": "Various",
+      "state": "RI",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "rhode island",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/17551"
+    },
+    {
+      "id": "bf-34857-town-of-scituate-fire-and-ems",
+      "name": "Town of Scituate Fire and EMS",
+      "description": "Broadcastify public safety feed 34857 for Rhode Island.",
+      "city": "",
+      "county": "Various",
+      "state": "RI",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "rhode island",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/34857"
+    },
+    {
+      "id": "bf-37896-jamestown-fire-ops",
+      "name": "Jamestown Fire Ops",
+      "description": "Broadcastify public safety feed 37896 for Rhode Island.",
+      "city": "",
+      "county": "Various",
+      "state": "RI",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "rhode island",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37896"
+    },
+    {
+      "id": "bf-27494-jamestown-fire",
+      "name": "Jamestown Fire",
+      "description": "Broadcastify public safety feed 27494 for Rhode Island.",
+      "city": "",
+      "county": "Various",
+      "state": "RI",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "rhode island",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/27494"
+    },
+    {
+      "id": "bf-12297-tiverton-fire",
+      "name": "Tiverton Fire",
+      "description": "Broadcastify public safety feed 12297 for Rhode Island.",
+      "city": "",
+      "county": "Various",
+      "state": "RI",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "rhode island",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/12297"
+    },
+    {
+      "id": "bf-46767-bristol-police",
+      "name": "Bristol Police",
+      "description": "Broadcastify public safety feed 46767 for Rhode Island.",
+      "city": "",
+      "county": "Various",
+      "state": "RI",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "rhode island",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46767"
+    },
+    {
+      "id": "bf-29566-quinnville-fire",
+      "name": "Quinnville Fire",
+      "description": "Broadcastify public safety feed 29566 for Rhode Island.",
+      "city": "",
+      "county": "Various",
+      "state": "RI",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "rhode island",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/29566"
+    },
+    {
+      "id": "bf-24290-manville-fire",
+      "name": "Manville Fire",
+      "description": "Broadcastify public safety feed 24290 for Rhode Island.",
+      "city": "",
+      "county": "Various",
+      "state": "RI",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "rhode island",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/24290"
+    },
+    {
+      "id": "bf-40414-central-coventry-fire",
+      "name": "Central Coventry Fire",
+      "description": "Broadcastify public safety feed 40414 for Rhode Island.",
+      "city": "",
+      "county": "Various",
+      "state": "RI",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "rhode island",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40414"
+    },
+    {
+      "id": "bf-46074-charlestown-fire-district",
+      "name": "Charlestown Fire District",
+      "description": "Broadcastify public safety feed 46074 for Rhode Island.",
+      "city": "",
+      "county": "Various",
+      "state": "RI",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "rhode island",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46074"
+    }
+  ]
+}

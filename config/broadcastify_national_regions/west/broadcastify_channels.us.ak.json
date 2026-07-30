@@ -1,0 +1,452 @@
+{
+  "channels": [
+    {
+      "id": "bf-32602-indianapolis-metropolitan-police",
+      "name": "Indianapolis Metropolitan Police",
+      "description": "Broadcastify public safety feed 32602 for Alaska.",
+      "city": "",
+      "county": "Various",
+      "state": "AK",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alaska",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32602"
+    },
+    {
+      "id": "bf-31544-juneau-police-and-fire",
+      "name": "Juneau Police and Fire",
+      "description": "Broadcastify public safety feed 31544 for Alaska.",
+      "city": "",
+      "county": "Various",
+      "state": "AK",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alaska",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/31544"
+    },
+    {
+      "id": "bf-32547-east-peninsula-ems",
+      "name": "East Peninsula EMS",
+      "description": "Broadcastify public safety feed 32547 for Alaska.",
+      "city": "",
+      "county": "Various",
+      "state": "AK",
+      "service_types": [
+        "dispatch",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alaska",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32547"
+    },
+    {
+      "id": "bf-46407-matcom-fire-and-ems",
+      "name": "MATCOM Fire and EMS",
+      "description": "Broadcastify public safety feed 46407 for Alaska.",
+      "city": "",
+      "county": "Various",
+      "state": "AK",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alaska",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46407"
+    },
+    {
+      "id": "bf-17948-central-emergency-services-fire-and-ems",
+      "name": "Central Emergency Services Fire and EMS",
+      "description": "Broadcastify public safety feed 17948 for Alaska.",
+      "city": "",
+      "county": "Various",
+      "state": "AK",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alaska",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/17948"
+    },
+    {
+      "id": "bf-36157-bethel-fire",
+      "name": "Bethel Fire",
+      "description": "Broadcastify public safety feed 36157 for Alaska.",
+      "city": "",
+      "county": "Various",
+      "state": "AK",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alaska",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/36157"
+    },
+    {
+      "id": "bf-35972-kachemak-emergency-services-fire-and-ems",
+      "name": "Kachemak Emergency Services Fire and EMS",
+      "description": "Broadcastify public safety feed 35972 for Alaska.",
+      "city": "",
+      "county": "Various",
+      "state": "AK",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alaska",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/35972"
+    },
+    {
+      "id": "bf-40991-petersburg-fire-and-ems",
+      "name": "Petersburg Fire and EMS",
+      "description": "Broadcastify public safety feed 40991 for Alaska.",
+      "city": "",
+      "county": "Various",
+      "state": "AK",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alaska",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40991"
+    },
+    {
+      "id": "bf-45711-cordova-fire",
+      "name": "Cordova Fire",
+      "description": "Broadcastify public safety feed 45711 for Alaska.",
+      "city": "",
+      "county": "Various",
+      "state": "AK",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alaska",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45711"
+    },
+    {
+      "id": "bf-44975-kotzebue-fire-v-tac12",
+      "name": "Kotzebue Fire V Tac12",
+      "description": "Broadcastify public safety feed 44975 for Alaska.",
+      "city": "",
+      "county": "Various",
+      "state": "AK",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alaska",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44975"
+    },
+    {
+      "id": "bf-46627-matcom-fire-ems-east-repeater-sutton-butte",
+      "name": "MATCOM - Fire/EMS East Repeater (Sutton/Butte)",
+      "description": "Broadcastify public safety feed 46627 for Alaska.",
+      "city": "",
+      "county": "Various",
+      "state": "AK",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alaska",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46627"
+    },
+    {
+      "id": "bf-10341-mat-su-borough-police-fire-and-ems-dispatc",
+      "name": "Mat-Su Borough Police, Fire and EMS Dispatch",
+      "description": "Broadcastify public safety feed 10341 for Alaska.",
+      "city": "",
+      "county": "Various",
+      "state": "AK",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alaska",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/10341"
+    },
+    {
+      "id": "bf-42672-bear-creek-fire",
+      "name": "Bear Creek Fire",
+      "description": "Broadcastify public safety feed 42672 for Alaska.",
+      "city": "",
+      "county": "Various",
+      "state": "AK",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alaska",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42672"
+    },
+    {
+      "id": "bf-36096-seward-ambulance",
+      "name": "Seward Ambulance",
+      "description": "Broadcastify public safety feed 36096 for Alaska.",
+      "city": "",
+      "county": "Various",
+      "state": "AK",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alaska"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/36096"
+    },
+    {
+      "id": "bf-27886-lowell-point-fire",
+      "name": "Lowell Point Fire",
+      "description": "Broadcastify public safety feed 27886 for Alaska.",
+      "city": "",
+      "county": "Various",
+      "state": "AK",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alaska",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/27886"
+    },
+    {
+      "id": "bf-20398-seward-fire",
+      "name": "Seward Fire",
+      "description": "Broadcastify public safety feed 20398 for Alaska.",
+      "city": "",
+      "county": "Various",
+      "state": "AK",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alaska",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/20398"
+    },
+    {
+      "id": "bf-18542-seldovia-volunteer-fire-and-ems",
+      "name": "Seldovia Volunteer Fire and EMS",
+      "description": "Broadcastify public safety feed 18542 for Alaska.",
+      "city": "",
+      "county": "Various",
+      "state": "AK",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alaska",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/18542"
+    },
+    {
+      "id": "bf-47500-noaa-weather-radio-juneau-hoonah-angoon-co",
+      "name": "NOAA Weather Radio Juneau/Hoonah-Angoon County (WXJ25)",
+      "description": "Broadcastify public safety feed 47500 for Alaska.",
+      "city": "",
+      "county": "Various",
+      "state": "AK",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alaska"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47500"
+    },
+    {
+      "id": "bf-25198-dillingham-fire-rescue",
+      "name": "Dillingham Fire Rescue",
+      "description": "Broadcastify public safety feed 25198 for Alaska.",
+      "city": "",
+      "county": "Various",
+      "state": "AK",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alaska",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/25198"
+    }
+  ]
+}

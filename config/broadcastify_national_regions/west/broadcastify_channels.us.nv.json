@@ -1,0 +1,645 @@
+{
+  "channels": [
+    {
+      "id": "bf-32602-indianapolis-metropolitan-police",
+      "name": "Indianapolis Metropolitan Police",
+      "description": "Broadcastify public safety feed 32602 for Nevada.",
+      "city": "",
+      "county": "Various",
+      "state": "NV",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "nevada",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32602"
+    },
+    {
+      "id": "bf-8543-elko-city-and-county-public-safety",
+      "name": "Elko City and County Public Safety",
+      "description": "Broadcastify public safety feed 8543 for Nevada.",
+      "city": "",
+      "county": "Various",
+      "state": "NV",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "nevada"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/8543"
+    },
+    {
+      "id": "bf-7364-reno-and-sparks-police-and-fire",
+      "name": "Reno and Sparks Police and Fire",
+      "description": "Broadcastify public safety feed 7364 for Nevada.",
+      "city": "",
+      "county": "Various",
+      "state": "NV",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "nevada",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/7364"
+    },
+    {
+      "id": "bf-32969-lyon-county-dispatch-sheriff-and-fire",
+      "name": "Lyon County Dispatch (Sheriff and Fire)",
+      "description": "Broadcastify public safety feed 32969 for Nevada.",
+      "city": "",
+      "county": "Various",
+      "state": "NV",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "nevada",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32969"
+    },
+    {
+      "id": "bf-44271-nevada-highway-patrol-clark",
+      "name": "Nevada Highway Patrol - Clark County",
+      "description": "Broadcastify feed 44271 focused on Nevada Highway Patrol in Clark County / Las Vegas approaches.",
+      "city": "Las Vegas",
+      "county": "Clark County",
+      "state": "NV",
+      "service_types": [
+        "law",
+        "dispatch",
+        "highway"
+      ],
+      "tags": [
+        "nhp",
+        "highway patrol",
+        "state police",
+        "i-15",
+        "us-93"
+      ],
+      "lat": 36.1699,
+      "lon": -115.1398,
+      "listeners": 145,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44271"
+    },
+    {
+      "id": "bf-44370-nye-county-public-safety",
+      "name": "Nye County Public Safety",
+      "description": "Broadcastify public safety feed 44370 for Nevada.",
+      "city": "",
+      "county": "Various",
+      "state": "NV",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "nevada"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44370"
+    },
+    {
+      "id": "bf-35245-churchill-county-sheriff-dispatch",
+      "name": "Churchill County Sheriff Dispatch",
+      "description": "Broadcastify public safety feed 35245 for Nevada.",
+      "city": "",
+      "county": "Various",
+      "state": "NV",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "nevada",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/35245"
+    },
+    {
+      "id": "bf-33204-churchill-county-fire-tactical-ambulance",
+      "name": "Churchill County Fire Tactical/Ambulance",
+      "description": "Broadcastify public safety feed 33204 for Nevada.",
+      "city": "",
+      "county": "Various",
+      "state": "NV",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "nevada",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/33204"
+    },
+    {
+      "id": "bf-6413-douglas-county-sheriff-and-fire",
+      "name": "Douglas County Sheriff and Fire",
+      "description": "Broadcastify public safety feed 6413 for Nevada.",
+      "city": "",
+      "county": "Various",
+      "state": "NV",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "nevada",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/6413"
+    },
+    {
+      "id": "bf-43538-carson-city-sheriff",
+      "name": "Carson City Sheriff",
+      "description": "Broadcastify public safety feed 43538 for Nevada.",
+      "city": "",
+      "county": "Various",
+      "state": "NV",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "nevada",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43538"
+    },
+    {
+      "id": "bf-30507-henderson-fire-dispatch",
+      "name": "Henderson Fire Dispatch",
+      "description": "Broadcastify public safety feed 30507 for Nevada.",
+      "city": "",
+      "county": "Various",
+      "state": "NV",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "nevada",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/30507"
+    },
+    {
+      "id": "bf-46903-white-pine-county-fire",
+      "name": "White Pine County Fire",
+      "description": "Broadcastify public safety feed 46903 for Nevada.",
+      "city": "",
+      "county": "Various",
+      "state": "NV",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "nevada",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46903"
+    },
+    {
+      "id": "bf-43896-carson-city-fire-main",
+      "name": "Carson City Fire Main",
+      "description": "Broadcastify public safety feed 43896 for Nevada.",
+      "city": "",
+      "county": "Various",
+      "state": "NV",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "nevada",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43896"
+    },
+    {
+      "id": "bf-38238-pyramid-lake-fire-digital",
+      "name": "Pyramid Lake Fire Digital",
+      "description": "Broadcastify public safety feed 38238 for Nevada.",
+      "city": "",
+      "county": "Various",
+      "state": "NV",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "nevada",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38238"
+    },
+    {
+      "id": "bf-44438-las-vegas-city-marshals",
+      "name": "Las Vegas City Marshals",
+      "description": "Broadcastify feed 44438 for Las Vegas City Marshals public safety traffic.",
+      "city": "Las Vegas",
+      "county": "Clark County",
+      "state": "NV",
+      "service_types": [
+        "law",
+        "dispatch"
+      ],
+      "tags": [
+        "marshals",
+        "law",
+        "dispatch",
+        "downtown"
+      ],
+      "lat": 36.1716,
+      "lon": -115.1391,
+      "listeners": 65,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44438"
+    },
+    {
+      "id": "bf-20192-boulder-city-fire-and-lake-mead-park-range",
+      "name": "Boulder City Fire and Lake Mead Park Rangers",
+      "description": "Broadcastify public safety feed 20192 for Nevada.",
+      "city": "",
+      "county": "Various",
+      "state": "NV",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "nevada",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/20192"
+    },
+    {
+      "id": "bf-33821-fish-lake-valley-fire-and-ambulance-servic",
+      "name": "Fish Lake Valley Fire and Ambulance Service",
+      "description": "Broadcastify public safety feed 33821 for Nevada.",
+      "city": "",
+      "county": "Various",
+      "state": "NV",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "nevada",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/33821"
+    },
+    {
+      "id": "bf-41660-humboldt-county-public-safety",
+      "name": "Humboldt County Public Safety",
+      "description": "Broadcastify public safety feed 41660 for Nevada.",
+      "city": "",
+      "county": "Various",
+      "state": "NV",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "nevada"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41660"
+    },
+    {
+      "id": "bf-23719-lincoln-county-sheriff",
+      "name": "Lincoln County Sheriff",
+      "description": "Broadcastify public safety feed 23719 for Nevada.",
+      "city": "",
+      "county": "Various",
+      "state": "NV",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "nevada",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/23719"
+    },
+    {
+      "id": "bf-23720-caliente-fire-ems",
+      "name": "Caliente Fire/EMS",
+      "description": "Broadcastify public safety feed 23720 for Nevada.",
+      "city": "",
+      "county": "Various",
+      "state": "NV",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "nevada",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/23720"
+    },
+    {
+      "id": "bf-30848-silverpeak-fire",
+      "name": "Silverpeak Fire",
+      "description": "Broadcastify public safety feed 30848 for Nevada.",
+      "city": "",
+      "county": "Various",
+      "state": "NV",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "nevada",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/30848"
+    },
+    {
+      "id": "bf-24240-beatty-fire-and-ems",
+      "name": "Beatty Fire and EMS",
+      "description": "Broadcastify public safety feed 24240 for Nevada.",
+      "city": "",
+      "county": "Various",
+      "state": "NV",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "nevada",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/24240"
+    },
+    {
+      "id": "bf-30684-goldfield-ems",
+      "name": "Goldfield EMS",
+      "description": "Broadcastify public safety feed 30684 for Nevada.",
+      "city": "",
+      "county": "Various",
+      "state": "NV",
+      "service_types": [
+        "dispatch",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "nevada",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/30684"
+    },
+    {
+      "id": "bf-47279-pershing-county-dispatch",
+      "name": "Pershing County Dispatch",
+      "description": "Broadcastify public safety feed 47279 for Nevada.",
+      "city": "",
+      "county": "Various",
+      "state": "NV",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "nevada"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47279"
+    },
+    {
+      "id": "bf-32150-elko-city-fire",
+      "name": "Elko City Fire",
+      "description": "Broadcastify public safety feed 32150 for Nevada.",
+      "city": "",
+      "county": "Various",
+      "state": "NV",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "nevada",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32150"
+    },
+    {
+      "id": "bf-45476-p25-lake-mead-law-net-boulder-beach-lower-",
+      "name": "P25 Lake Mead Law Net - Boulder Beach: Lower Basin + Southern Nevada Ham Radio",
+      "description": "Broadcastify public safety feed 45476 for Nevada.",
+      "city": "",
+      "county": "Various",
+      "state": "NV",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "nevada"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45476"
+    },
+    {
+      "id": "bf-26400-las-vegas-clark-fire",
+      "name": "Las Vegas and Clark County Fire",
+      "description": "Broadcastify feed 26400 for Las Vegas and Clark County fire dispatch.",
+      "city": "Las Vegas",
+      "county": "Clark County",
+      "state": "NV",
+      "service_types": [
+        "fire",
+        "dispatch",
+        "ems"
+      ],
+      "tags": [
+        "fire",
+        "ems",
+        "dispatch",
+        "clark county",
+        "las vegas"
+      ],
+      "lat": 36.1699,
+      "lon": -115.1398,
+      "listeners": 100,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/26400"
+    },
+    {
+      "id": "bf-43895-carson-city-fire-command",
+      "name": "Carson City Fire Command",
+      "description": "Broadcastify public safety feed 43895 for Nevada.",
+      "city": "",
+      "county": "Various",
+      "state": "NV",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "nevada",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43895"
+    }
+  ]
+}

@@ -1,0 +1,2291 @@
+{
+  "channels": [
+    {
+      "id": "bf-32602-indianapolis-metropolitan-police",
+      "name": "Indianapolis Metropolitan Police",
+      "description": "Broadcastify public safety feed 32602 for Oklahoma.",
+      "city": "",
+      "county": "Various",
+      "state": "OK",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oklahoma",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32602"
+    },
+    {
+      "id": "bf-31352-comanche-county-public-safety",
+      "name": "Comanche County Public Safety",
+      "description": "Broadcastify public safety feed 31352 for Oklahoma.",
+      "city": "",
+      "county": "Various",
+      "state": "OK",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oklahoma"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/31352"
+    },
+    {
+      "id": "bf-17430-tulsa-regional-public-safety",
+      "name": "Tulsa Regional Public Safety",
+      "description": "Broadcastify public safety feed 17430 for Oklahoma.",
+      "city": "",
+      "county": "Various",
+      "state": "OK",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oklahoma"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/17430"
+    },
+    {
+      "id": "bf-318-oklahoma-city-area-police-and-fire",
+      "name": "Oklahoma City Area Police and Fire",
+      "description": "Broadcastify public safety feed 318 for Oklahoma.",
+      "city": "",
+      "county": "Various",
+      "state": "OK",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oklahoma",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/318"
+    },
+    {
+      "id": "bf-8394-jackson-county-police-fire-and-ems",
+      "name": "Jackson County Police, Fire, and EMS",
+      "description": "Broadcastify public safety feed 8394 for Oklahoma.",
+      "city": "",
+      "county": "Various",
+      "state": "OK",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oklahoma",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/8394"
+    },
+    {
+      "id": "bf-35096-sequoyah-county-public-safety",
+      "name": "Sequoyah County Public Safety",
+      "description": "Broadcastify public safety feed 35096 for Oklahoma.",
+      "city": "",
+      "county": "Various",
+      "state": "OK",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oklahoma"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/35096"
+    },
+    {
+      "id": "bf-16726-bryan-county-fire-departments",
+      "name": "Bryan County Fire Departments",
+      "description": "Broadcastify public safety feed 16726 for Oklahoma.",
+      "city": "",
+      "county": "Various",
+      "state": "OK",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oklahoma",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/16726"
+    },
+    {
+      "id": "bf-7632-edmond-police-and-fire",
+      "name": "Edmond Police and Fire",
+      "description": "Broadcastify public safety feed 7632 for Oklahoma.",
+      "city": "",
+      "county": "Various",
+      "state": "OK",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oklahoma",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/7632"
+    },
+    {
+      "id": "bf-27252-oklahoma-city-fire",
+      "name": "Oklahoma City Fire",
+      "description": "Broadcastify public safety feed 27252 for Oklahoma.",
+      "city": "",
+      "county": "Various",
+      "state": "OK",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oklahoma",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/27252"
+    },
+    {
+      "id": "bf-39207-creek-county-ohp-and-sapulpa-regional-publ",
+      "name": "Creek County, OHP, and Sapulpa Regional Public Safety",
+      "description": "Broadcastify public safety feed 39207 for Oklahoma.",
+      "city": "",
+      "county": "Various",
+      "state": "OK",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oklahoma"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39207"
+    },
+    {
+      "id": "bf-46254-muskogee-county-public-safety",
+      "name": "Muskogee County Public Safety",
+      "description": "Broadcastify public safety feed 46254 for Oklahoma.",
+      "city": "",
+      "county": "Various",
+      "state": "OK",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oklahoma"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46254"
+    },
+    {
+      "id": "bf-33486-woodward-county-public-safety",
+      "name": "Woodward County Public Safety",
+      "description": "Broadcastify public safety feed 33486 for Oklahoma.",
+      "city": "",
+      "county": "Various",
+      "state": "OK",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oklahoma"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/33486"
+    },
+    {
+      "id": "bf-3458-north-central-oklahoma-fire-and-rescue",
+      "name": "North Central Oklahoma Fire and Rescue",
+      "description": "Broadcastify public safety feed 3458 for Oklahoma.",
+      "city": "",
+      "county": "Various",
+      "state": "OK",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oklahoma",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/3458"
+    },
+    {
+      "id": "bf-33154-collinsville-fire",
+      "name": "Collinsville Fire",
+      "description": "Broadcastify public safety feed 33154 for Oklahoma.",
+      "city": "",
+      "county": "Various",
+      "state": "OK",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oklahoma",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/33154"
+    },
+    {
+      "id": "bf-42541-claremore-fire",
+      "name": "Claremore Fire",
+      "description": "Broadcastify public safety feed 42541 for Oklahoma.",
+      "city": "",
+      "county": "Various",
+      "state": "OK",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oklahoma",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42541"
+    },
+    {
+      "id": "bf-32599-garfield-county-sheriff-and-enid-police-fi",
+      "name": "Garfield County Sheriff and Enid Police, Fire and EMS",
+      "description": "Broadcastify public safety feed 32599 for Oklahoma.",
+      "city": "",
+      "county": "Various",
+      "state": "OK",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oklahoma",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32599"
+    },
+    {
+      "id": "bf-31855-haskell-county-sheriff-and-fire",
+      "name": "Haskell County Sheriff and Fire",
+      "description": "Broadcastify public safety feed 31855 for Oklahoma.",
+      "city": "",
+      "county": "Various",
+      "state": "OK",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oklahoma",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/31855"
+    },
+    {
+      "id": "bf-43081-oklahoma-highway-patrol-troop-a",
+      "name": "Oklahoma Highway Patrol - Troop A",
+      "description": "Broadcastify public safety feed 43081 for Oklahoma.",
+      "city": "",
+      "county": "Various",
+      "state": "OK",
+      "service_types": [
+        "dispatch",
+        "law",
+        "highway"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oklahoma",
+        "law",
+        "highway"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43081"
+    },
+    {
+      "id": "bf-35227-pawnee-fire",
+      "name": "Pawnee Fire",
+      "description": "Broadcastify public safety feed 35227 for Oklahoma.",
+      "city": "",
+      "county": "Various",
+      "state": "OK",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oklahoma",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/35227"
+    },
+    {
+      "id": "bf-47083-pittsburg-county-mcalester-pd-fire-ems",
+      "name": "Pittsburg County McAlester: PD, Fire, EMS",
+      "description": "Broadcastify public safety feed 47083 for Oklahoma.",
+      "city": "",
+      "county": "Various",
+      "state": "OK",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oklahoma",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47083"
+    },
+    {
+      "id": "bf-20700-pushmataha-county-fire",
+      "name": "Pushmataha County Fire",
+      "description": "Broadcastify public safety feed 20700 for Oklahoma.",
+      "city": "",
+      "county": "Various",
+      "state": "OK",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oklahoma",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/20700"
+    },
+    {
+      "id": "bf-17884-verdigris-fire",
+      "name": "Verdigris Fire",
+      "description": "Broadcastify public safety feed 17884 for Oklahoma.",
+      "city": "",
+      "county": "Various",
+      "state": "OK",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oklahoma",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/17884"
+    },
+    {
+      "id": "bf-37929-tulsa-police-tulsa-county-sheriff-and-ohp-",
+      "name": "Tulsa Police, Tulsa County Sheriff, and OHP Troop B",
+      "description": "Broadcastify public safety feed 37929 for Oklahoma.",
+      "city": "",
+      "county": "Various",
+      "state": "OK",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oklahoma",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37929"
+    },
+    {
+      "id": "bf-23269-washington-county-public-safety",
+      "name": "Washington County Public Safety",
+      "description": "Broadcastify public safety feed 23269 for Oklahoma.",
+      "city": "",
+      "county": "Various",
+      "state": "OK",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oklahoma"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/23269"
+    },
+    {
+      "id": "bf-28064-stilwell-fire-dispatch",
+      "name": "Stilwell Fire Dispatch",
+      "description": "Broadcastify public safety feed 28064 for Oklahoma.",
+      "city": "",
+      "county": "Various",
+      "state": "OK",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oklahoma",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/28064"
+    },
+    {
+      "id": "bf-35946-beaver-county-fire",
+      "name": "Beaver County Fire",
+      "description": "Broadcastify public safety feed 35946 for Oklahoma.",
+      "city": "",
+      "county": "Various",
+      "state": "OK",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oklahoma",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/35946"
+    },
+    {
+      "id": "bf-45161-blaine-county-fire-and-ems",
+      "name": "Blaine County Fire and EMS",
+      "description": "Broadcastify public safety feed 45161 for Oklahoma.",
+      "city": "",
+      "county": "Various",
+      "state": "OK",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oklahoma",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45161"
+    },
+    {
+      "id": "bf-46952-okeene-and-hitchcock-fire-and-ems",
+      "name": "Okeene and Hitchcock Fire and EMS",
+      "description": "Broadcastify public safety feed 46952 for Oklahoma.",
+      "city": "",
+      "county": "Various",
+      "state": "OK",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oklahoma",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46952"
+    },
+    {
+      "id": "bf-29190-hinton-fire",
+      "name": "Hinton Fire",
+      "description": "Broadcastify public safety feed 29190 for Oklahoma.",
+      "city": "",
+      "county": "Various",
+      "state": "OK",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oklahoma",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/29190"
+    },
+    {
+      "id": "bf-32655-hydro-fire",
+      "name": "Hydro Fire",
+      "description": "Broadcastify public safety feed 32655 for Oklahoma.",
+      "city": "",
+      "county": "Various",
+      "state": "OK",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oklahoma",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32655"
+    },
+    {
+      "id": "bf-37558-gracemont-fire",
+      "name": "Gracemont Fire",
+      "description": "Broadcastify public safety feed 37558 for Oklahoma.",
+      "city": "",
+      "county": "Various",
+      "state": "OK",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oklahoma",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37558"
+    },
+    {
+      "id": "bf-37807-lookeba-sickles-vfd",
+      "name": "Lookeba Sickles VFD",
+      "description": "Broadcastify public safety feed 37807 for Oklahoma.",
+      "city": "",
+      "county": "Various",
+      "state": "OK",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oklahoma"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37807"
+    },
+    {
+      "id": "bf-40096-lawton-area-noaa-weather-radio-wxk86",
+      "name": "Lawton Area NOAA Weather Radio WXK86",
+      "description": "Broadcastify public safety feed 40096 for Oklahoma.",
+      "city": "",
+      "county": "Various",
+      "state": "OK",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oklahoma"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40096"
+    },
+    {
+      "id": "bf-39336-yukon-mustang-public-safety",
+      "name": "Yukon - Mustang Public Safety",
+      "description": "Broadcastify public safety feed 39336 for Oklahoma.",
+      "city": "",
+      "county": "Various",
+      "state": "OK",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oklahoma"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39336"
+    },
+    {
+      "id": "bf-33876-medicine-park-fire",
+      "name": "Medicine Park Fire",
+      "description": "Broadcastify public safety feed 33876 for Oklahoma.",
+      "city": "",
+      "county": "Various",
+      "state": "OK",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oklahoma",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/33876"
+    },
+    {
+      "id": "bf-42999-creek-county-and-kellyville-public-safety",
+      "name": "Creek County and Kellyville Public Safety",
+      "description": "Broadcastify public safety feed 42999 for Oklahoma.",
+      "city": "",
+      "county": "Various",
+      "state": "OK",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oklahoma"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42999"
+    },
+    {
+      "id": "bf-47461-delaware-county-e911",
+      "name": "Delaware County E911",
+      "description": "Broadcastify public safety feed 47461 for Oklahoma.",
+      "city": "",
+      "county": "Various",
+      "state": "OK",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oklahoma"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47461"
+    },
+    {
+      "id": "bf-28671-bridge-creek-blanchard-newcastle-and-tuttl",
+      "name": "Bridge Creek, Blanchard, Newcastle, and Tuttle Fire Departments",
+      "description": "Broadcastify public safety feed 28671 for Oklahoma.",
+      "city": "",
+      "county": "Various",
+      "state": "OK",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oklahoma",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/28671"
+    },
+    {
+      "id": "bf-19698-jackson-county-fire",
+      "name": "Jackson County Fire",
+      "description": "Broadcastify public safety feed 19698 for Oklahoma.",
+      "city": "",
+      "county": "Various",
+      "state": "OK",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oklahoma",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/19698"
+    },
+    {
+      "id": "bf-20935-gotebo-fire",
+      "name": "Gotebo Fire",
+      "description": "Broadcastify public safety feed 20935 for Oklahoma.",
+      "city": "",
+      "county": "Various",
+      "state": "OK",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oklahoma",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/20935"
+    },
+    {
+      "id": "bf-44234-latimer-county-fire",
+      "name": "Latimer County Fire",
+      "description": "Broadcastify public safety feed 44234 for Oklahoma.",
+      "city": "",
+      "county": "Various",
+      "state": "OK",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oklahoma",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44234"
+    },
+    {
+      "id": "bf-19722-marshall-county-fire-and-rescue",
+      "name": "Marshall County Fire and Rescue",
+      "description": "Broadcastify public safety feed 19722 for Oklahoma.",
+      "city": "",
+      "county": "Various",
+      "state": "OK",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oklahoma",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/19722"
+    },
+    {
+      "id": "bf-32001-chouteau-fire",
+      "name": "Chouteau Fire",
+      "description": "Broadcastify public safety feed 32001 for Oklahoma.",
+      "city": "",
+      "county": "Various",
+      "state": "OK",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oklahoma",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32001"
+    },
+    {
+      "id": "bf-34359-tiawah-fire-department",
+      "name": "Tiawah Fire Department",
+      "description": "Broadcastify public safety feed 34359 for Oklahoma.",
+      "city": "",
+      "county": "Various",
+      "state": "OK",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oklahoma",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/34359"
+    },
+    {
+      "id": "bf-20768-comanche-fire",
+      "name": "Comanche Fire",
+      "description": "Broadcastify public safety feed 20768 for Oklahoma.",
+      "city": "",
+      "county": "Various",
+      "state": "OK",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oklahoma",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/20768"
+    },
+    {
+      "id": "bf-20150-tullahassee-fire",
+      "name": "Tullahassee Fire",
+      "description": "Broadcastify public safety feed 20150 for Oklahoma.",
+      "city": "",
+      "county": "Various",
+      "state": "OK",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oklahoma",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/20150"
+    },
+    {
+      "id": "bf-21258-okay-fire",
+      "name": "Okay Fire",
+      "description": "Broadcastify public safety feed 21258 for Oklahoma.",
+      "city": "",
+      "county": "Various",
+      "state": "OK",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oklahoma",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/21258"
+    },
+    {
+      "id": "bf-21485-wagoner-fire",
+      "name": "Wagoner Fire",
+      "description": "Broadcastify public safety feed 21485 for Oklahoma.",
+      "city": "",
+      "county": "Various",
+      "state": "OK",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oklahoma",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/21485"
+    },
+    {
+      "id": "bf-41569-taylor-ferry-fire",
+      "name": "Taylor Ferry Fire",
+      "description": "Broadcastify public safety feed 41569 for Oklahoma.",
+      "city": "",
+      "county": "Various",
+      "state": "OK",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oklahoma",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41569"
+    },
+    {
+      "id": "bf-25953-dewey-fire",
+      "name": "Dewey Fire",
+      "description": "Broadcastify public safety feed 25953 for Oklahoma.",
+      "city": "",
+      "county": "Various",
+      "state": "OK",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oklahoma",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/25953"
+    },
+    {
+      "id": "bf-24602-washita-county-fire",
+      "name": "Washita County Fire",
+      "description": "Broadcastify public safety feed 24602 for Oklahoma.",
+      "city": "",
+      "county": "Various",
+      "state": "OK",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oklahoma",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/24602"
+    },
+    {
+      "id": "bf-46547-ac-51westfd",
+      "name": "AC 51WestFD",
+      "description": "Broadcastify public safety feed 46547 for Oklahoma.",
+      "city": "",
+      "county": "Various",
+      "state": "OK",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oklahoma"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46547"
+    },
+    {
+      "id": "bf-47285-hwy-51-west-fd",
+      "name": "Hwy 51 West FD",
+      "description": "Broadcastify public safety feed 47285 for Oklahoma.",
+      "city": "",
+      "county": "Various",
+      "state": "OK",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oklahoma"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47285"
+    },
+    {
+      "id": "bf-19459-atoka-fire-dispatch",
+      "name": "Atoka Fire Dispatch",
+      "description": "Broadcastify public safety feed 19459 for Oklahoma.",
+      "city": "",
+      "county": "Various",
+      "state": "OK",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oklahoma",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/19459"
+    },
+    {
+      "id": "bf-35914-beaver-ems-dispatch",
+      "name": "Beaver EMS Dispatch",
+      "description": "Broadcastify public safety feed 35914 for Oklahoma.",
+      "city": "",
+      "county": "Various",
+      "state": "OK",
+      "service_types": [
+        "dispatch",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oklahoma",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/35914"
+    },
+    {
+      "id": "bf-16194-sayre-fire",
+      "name": "Sayre Fire",
+      "description": "Broadcastify public safety feed 16194 for Oklahoma.",
+      "city": "",
+      "county": "Various",
+      "state": "OK",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oklahoma",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/16194"
+    },
+    {
+      "id": "bf-40766-elk-city-police",
+      "name": "Elk City Police",
+      "description": "Broadcastify public safety feed 40766 for Oklahoma.",
+      "city": "",
+      "county": "Various",
+      "state": "OK",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oklahoma",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40766"
+    },
+    {
+      "id": "bf-40805-elk-city-fire-and-ems",
+      "name": "Elk City Fire and EMS",
+      "description": "Broadcastify public safety feed 40805 for Oklahoma.",
+      "city": "",
+      "county": "Various",
+      "state": "OK",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oklahoma",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40805"
+    },
+    {
+      "id": "bf-40806-beckham-county-sheriff",
+      "name": "Beckham County Sheriff",
+      "description": "Broadcastify public safety feed 40806 for Oklahoma.",
+      "city": "",
+      "county": "Various",
+      "state": "OK",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oklahoma",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40806"
+    },
+    {
+      "id": "bf-36644-durant-bryan-county-emergency-management-s",
+      "name": "Durant/Bryan County Emergency Management Storm Spotters",
+      "description": "Broadcastify public safety feed 36644 for Oklahoma.",
+      "city": "",
+      "county": "Various",
+      "state": "OK",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oklahoma"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/36644"
+    },
+    {
+      "id": "bf-33645-apache-fire",
+      "name": "Apache Fire",
+      "description": "Broadcastify public safety feed 33645 for Oklahoma.",
+      "city": "",
+      "county": "Various",
+      "state": "OK",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oklahoma",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/33645"
+    },
+    {
+      "id": "bf-38392-cyril-fire",
+      "name": "Cyril Fire",
+      "description": "Broadcastify public safety feed 38392 for Oklahoma.",
+      "city": "",
+      "county": "Various",
+      "state": "OK",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oklahoma",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38392"
+    },
+    {
+      "id": "bf-38598-binger-vfd",
+      "name": "Binger VFD",
+      "description": "Broadcastify public safety feed 38598 for Oklahoma.",
+      "city": "",
+      "county": "Various",
+      "state": "OK",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oklahoma"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38598"
+    },
+    {
+      "id": "bf-43147-cogar-fire",
+      "name": "Cogar Fire",
+      "description": "Broadcastify public safety feed 43147 for Oklahoma.",
+      "city": "",
+      "county": "Various",
+      "state": "OK",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oklahoma",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43147"
+    },
+    {
+      "id": "bf-22772-richland-rural-fire-dispatch",
+      "name": "Richland Rural Fire Dispatch",
+      "description": "Broadcastify public safety feed 22772 for Oklahoma.",
+      "city": "",
+      "county": "Various",
+      "state": "OK",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oklahoma",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/22772"
+    },
+    {
+      "id": "bf-17811-woodall-volunteer-fire",
+      "name": "Woodall Volunteer Fire",
+      "description": "Broadcastify public safety feed 17811 for Oklahoma.",
+      "city": "",
+      "county": "Various",
+      "state": "OK",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oklahoma",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/17811"
+    },
+    {
+      "id": "bf-45820-east-central-oklahoma-public-safety",
+      "name": "East Central Oklahoma Public Safety",
+      "description": "Broadcastify public safety feed 45820 for Oklahoma.",
+      "city": "",
+      "county": "Various",
+      "state": "OK",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oklahoma"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45820"
+    },
+    {
+      "id": "bf-16052-coalgate-fire-dispatch",
+      "name": "Coalgate Fire Dispatch",
+      "description": "Broadcastify public safety feed 16052 for Oklahoma.",
+      "city": "",
+      "county": "Various",
+      "state": "OK",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oklahoma",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/16052"
+    },
+    {
+      "id": "bf-39926-centralia-fire",
+      "name": "Centralia Fire",
+      "description": "Broadcastify public safety feed 39926 for Oklahoma.",
+      "city": "",
+      "county": "Various",
+      "state": "OK",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oklahoma",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39926"
+    },
+    {
+      "id": "bf-41461-big-cabin-vfd",
+      "name": "Big Cabin VFD",
+      "description": "Broadcastify public safety feed 41461 for Oklahoma.",
+      "city": "",
+      "county": "Various",
+      "state": "OK",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oklahoma"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41461"
+    },
+    {
+      "id": "bf-42338-welch-fire",
+      "name": "Welch Fire",
+      "description": "Broadcastify public safety feed 42338 for Oklahoma.",
+      "city": "",
+      "county": "Various",
+      "state": "OK",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oklahoma",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42338"
+    },
+    {
+      "id": "bf-42600-ketchum-vfd",
+      "name": "Ketchum VFD",
+      "description": "Broadcastify public safety feed 42600 for Oklahoma.",
+      "city": "",
+      "county": "Various",
+      "state": "OK",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oklahoma"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42600"
+    },
+    {
+      "id": "bf-21658-clinton-fire",
+      "name": "Clinton Fire",
+      "description": "Broadcastify public safety feed 21658 for Oklahoma.",
+      "city": "",
+      "county": "Various",
+      "state": "OK",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oklahoma",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/21658"
+    },
+    {
+      "id": "bf-36898-sinor-ems",
+      "name": "Sinor EMS",
+      "description": "Broadcastify public safety feed 36898 for Oklahoma.",
+      "city": "",
+      "county": "Various",
+      "state": "OK",
+      "service_types": [
+        "dispatch",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oklahoma",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/36898"
+    },
+    {
+      "id": "bf-40677-clinton-police-dispatch",
+      "name": "Clinton Police Dispatch",
+      "description": "Broadcastify public safety feed 40677 for Oklahoma.",
+      "city": "",
+      "county": "Various",
+      "state": "OK",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oklahoma",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40677"
+    },
+    {
+      "id": "bf-40767-weatherford-police",
+      "name": "Weatherford Police",
+      "description": "Broadcastify public safety feed 40767 for Oklahoma.",
+      "city": "",
+      "county": "Various",
+      "state": "OK",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oklahoma",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40767"
+    },
+    {
+      "id": "bf-40807-custer-county-sheriff",
+      "name": "Custer County Sheriff",
+      "description": "Broadcastify public safety feed 40807 for Oklahoma.",
+      "city": "",
+      "county": "Various",
+      "state": "OK",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oklahoma",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40807"
+    },
+    {
+      "id": "bf-40821-weatherford-fire",
+      "name": "Weatherford Fire",
+      "description": "Broadcastify public safety feed 40821 for Oklahoma.",
+      "city": "",
+      "county": "Various",
+      "state": "OK",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oklahoma",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40821"
+    },
+    {
+      "id": "bf-45573-hobart-fire",
+      "name": "Hobart Fire",
+      "description": "Broadcastify public safety feed 45573 for Oklahoma.",
+      "city": "",
+      "county": "Various",
+      "state": "OK",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oklahoma",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45573"
+    },
+    {
+      "id": "bf-44344-delaware-county-public-safety",
+      "name": "Delaware County Public Safety",
+      "description": "Broadcastify public safety feed 44344 for Oklahoma.",
+      "city": "",
+      "county": "Various",
+      "state": "OK",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oklahoma"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44344"
+    },
+    {
+      "id": "bf-46991-garfield-county-and-enid-emergency-service",
+      "name": "Garfield County and Enid Emergency Services",
+      "description": "Broadcastify public safety feed 46991 for Oklahoma.",
+      "city": "",
+      "county": "Various",
+      "state": "OK",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oklahoma"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46991"
+    },
+    {
+      "id": "bf-47174-chickasha-police-and-fire-grady-county-she",
+      "name": "Chickasha Police and Fire/Grady County Sheriff's Department",
+      "description": "Broadcastify public safety feed 47174 for Oklahoma.",
+      "city": "",
+      "county": "Various",
+      "state": "OK",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oklahoma",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47174"
+    },
+    {
+      "id": "bf-37507-grant-county-fire",
+      "name": "Grant County Fire",
+      "description": "Broadcastify public safety feed 37507 for Oklahoma.",
+      "city": "",
+      "county": "Various",
+      "state": "OK",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oklahoma",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37507"
+    },
+    {
+      "id": "bf-30026-mangum-fire-dispatch",
+      "name": "Mangum Fire Dispatch",
+      "description": "Broadcastify public safety feed 30026 for Oklahoma.",
+      "city": "",
+      "county": "Various",
+      "state": "OK",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oklahoma",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/30026"
+    },
+    {
+      "id": "bf-46502-granite-vfd",
+      "name": "Granite VFD",
+      "description": "Broadcastify public safety feed 46502 for Oklahoma.",
+      "city": "",
+      "county": "Various",
+      "state": "OK",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oklahoma"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46502"
+    },
+    {
+      "id": "bf-46506-greer-county-ems",
+      "name": "Greer County EMS",
+      "description": "Broadcastify public safety feed 46506 for Oklahoma.",
+      "city": "",
+      "county": "Various",
+      "state": "OK",
+      "service_types": [
+        "dispatch",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oklahoma",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46506"
+    },
+    {
+      "id": "bf-31632-gould-fire",
+      "name": "Gould Fire",
+      "description": "Broadcastify public safety feed 31632 for Oklahoma.",
+      "city": "",
+      "county": "Various",
+      "state": "OK",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oklahoma",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/31632"
+    },
+    {
+      "id": "bf-38320-sw-ambulance",
+      "name": "SW Ambulance",
+      "description": "Broadcastify public safety feed 38320 for Oklahoma.",
+      "city": "",
+      "county": "Various",
+      "state": "OK",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oklahoma"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38320"
+    },
+    {
+      "id": "bf-38621-waurika-fire",
+      "name": "Waurika Fire",
+      "description": "Broadcastify public safety feed 38621 for Oklahoma.",
+      "city": "",
+      "county": "Various",
+      "state": "OK",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oklahoma",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38621"
+    },
+    {
+      "id": "bf-17208-johnston-county-firefighters-association",
+      "name": "Johnston County Firefighters Association",
+      "description": "Broadcastify public safety feed 17208 for Oklahoma.",
+      "city": "",
+      "county": "Various",
+      "state": "OK",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oklahoma",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/17208"
+    },
+    {
+      "id": "bf-46213-braman-fd",
+      "name": "Braman FD",
+      "description": "Broadcastify public safety feed 46213 for Oklahoma.",
+      "city": "",
+      "county": "Various",
+      "state": "OK",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oklahoma"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46213"
+    },
+    {
+      "id": "bf-39893-kingfisher-county-fire",
+      "name": "Kingfisher County Fire",
+      "description": "Broadcastify public safety feed 39893 for Oklahoma.",
+      "city": "",
+      "county": "Various",
+      "state": "OK",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oklahoma",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39893"
+    },
+    {
+      "id": "bf-46886-kingfisher-county-public-safety",
+      "name": "Kingfisher County Public Safety",
+      "description": "Broadcastify public safety feed 46886 for Oklahoma.",
+      "city": "",
+      "county": "Various",
+      "state": "OK",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oklahoma"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46886"
+    },
+    {
+      "id": "bf-31389-poteau-fire",
+      "name": "Poteau Fire",
+      "description": "Broadcastify public safety feed 31389 for Oklahoma.",
+      "city": "",
+      "county": "Various",
+      "state": "OK",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oklahoma",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/31389"
+    },
+    {
+      "id": "bf-41803-shady-point-fire",
+      "name": "Shady Point Fire",
+      "description": "Broadcastify public safety feed 41803 for Oklahoma.",
+      "city": "",
+      "county": "Various",
+      "state": "OK",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oklahoma",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41803"
+    },
+    {
+      "id": "bf-44390-bokoshe-fire",
+      "name": "Bokoshe Fire",
+      "description": "Broadcastify public safety feed 44390 for Oklahoma.",
+      "city": "",
+      "county": "Various",
+      "state": "OK",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oklahoma",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44390"
+    },
+    {
+      "id": "bf-45073-big-cedar-fire",
+      "name": "Big Cedar Fire",
+      "description": "Broadcastify public safety feed 45073 for Oklahoma.",
+      "city": "",
+      "county": "Various",
+      "state": "OK",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oklahoma",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45073"
+    },
+    {
+      "id": "bf-47508-logan-county-fire-dispatch",
+      "name": "Logan County Fire Dispatch",
+      "description": "Broadcastify public safety feed 47508 for Oklahoma.",
+      "city": "",
+      "county": "Various",
+      "state": "OK",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oklahoma",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47508"
+    },
+    {
+      "id": "bf-45697-love-county-fire-ems",
+      "name": "Love County Fire & EMS",
+      "description": "Broadcastify public safety feed 45697 for Oklahoma.",
+      "city": "",
+      "county": "Various",
+      "state": "OK",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oklahoma",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45697"
+    },
+    {
+      "id": "bf-23913-tom-fire",
+      "name": "Tom Fire",
+      "description": "Broadcastify public safety feed 23913 for Oklahoma.",
+      "city": "",
+      "county": "Various",
+      "state": "OK",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oklahoma",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/23913"
+    },
+    {
+      "id": "bf-37185-haworth-fire",
+      "name": "Haworth Fire",
+      "description": "Broadcastify public safety feed 37185 for Oklahoma.",
+      "city": "",
+      "county": "Various",
+      "state": "OK",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "oklahoma",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37185"
+    }
+  ]
+}

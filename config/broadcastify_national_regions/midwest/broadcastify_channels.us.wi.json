@@ -1,0 +1,2323 @@
+{
+  "channels": [
+    {
+      "id": "bf-32602-indianapolis-metropolitan-police",
+      "name": "Indianapolis Metropolitan Police",
+      "description": "Broadcastify public safety feed 32602 for Wisconsin.",
+      "city": "",
+      "county": "Various",
+      "state": "WI",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wisconsin",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32602"
+    },
+    {
+      "id": "bf-16904-outagamie-county-public-safety",
+      "name": "Outagamie County Public Safety",
+      "description": "Broadcastify public safety feed 16904 for Wisconsin.",
+      "city": "",
+      "county": "Various",
+      "state": "WI",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wisconsin"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/16904"
+    },
+    {
+      "id": "bf-6901-washington-county-police-fire-and-ems",
+      "name": "Washington County Police, Fire and EMS",
+      "description": "Broadcastify public safety feed 6901 for Wisconsin.",
+      "city": "",
+      "county": "Various",
+      "state": "WI",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wisconsin",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/6901"
+    },
+    {
+      "id": "bf-38965-rock-county-public-safety",
+      "name": "Rock County Public Safety",
+      "description": "Broadcastify public safety feed 38965 for Wisconsin.",
+      "city": "",
+      "county": "Various",
+      "state": "WI",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wisconsin"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38965"
+    },
+    {
+      "id": "bf-17752-st-croix-county-sheriff-fire-and-ems-state",
+      "name": "St Croix County Sheriff, Fire and EMS, State Patrol Eau Claire Post",
+      "description": "Broadcastify public safety feed 17752 for Wisconsin.",
+      "city": "",
+      "county": "Various",
+      "state": "WI",
+      "service_types": [
+        "dispatch",
+        "law",
+        "highway",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wisconsin",
+        "law",
+        "highway",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/17752"
+    },
+    {
+      "id": "bf-13743-brown-county-public-safety",
+      "name": "Brown County Public Safety",
+      "description": "Broadcastify public safety feed 13743 for Wisconsin.",
+      "city": "",
+      "county": "Various",
+      "state": "WI",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wisconsin"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/13743"
+    },
+    {
+      "id": "bf-4822-eau-claire-county-law-enforcement",
+      "name": "Eau Claire County Law Enforcement",
+      "description": "Broadcastify public safety feed 4822 for Wisconsin.",
+      "city": "",
+      "county": "Various",
+      "state": "WI",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wisconsin",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/4822"
+    },
+    {
+      "id": "bf-40155-kenosha-county-public-safety",
+      "name": "Kenosha County Public Safety",
+      "description": "Broadcastify public safety feed 40155 for Wisconsin.",
+      "city": "",
+      "county": "Various",
+      "state": "WI",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wisconsin"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40155"
+    },
+    {
+      "id": "bf-40481-waupaca-county-fire-ems-paging-dispatch",
+      "name": "Waupaca County Fire/EMS Paging/Dispatch",
+      "description": "Broadcastify public safety feed 40481 for Wisconsin.",
+      "city": "",
+      "county": "Various",
+      "state": "WI",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wisconsin",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40481"
+    },
+    {
+      "id": "bf-31670-chippewa-county-sheriff-and-chippewa-falls",
+      "name": "Chippewa County Sheriff and Chippewa Falls Police",
+      "description": "Broadcastify public safety feed 31670 for Wisconsin.",
+      "city": "",
+      "county": "Various",
+      "state": "WI",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wisconsin",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/31670"
+    },
+    {
+      "id": "bf-12261-waukesha-county-law-enforcement",
+      "name": "Waukesha County Law Enforcement",
+      "description": "Broadcastify public safety feed 12261 for Wisconsin.",
+      "city": "",
+      "county": "Various",
+      "state": "WI",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wisconsin",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/12261"
+    },
+    {
+      "id": "bf-30324-polk-county-public-safety",
+      "name": "Polk County Public Safety",
+      "description": "Broadcastify public safety feed 30324 for Wisconsin.",
+      "city": "",
+      "county": "Various",
+      "state": "WI",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wisconsin"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/30324"
+    },
+    {
+      "id": "bf-8846-west-allis-police-fire-ems-and-dpw",
+      "name": "West Allis Police, Fire, EMS and DPW",
+      "description": "Broadcastify public safety feed 8846 for Wisconsin.",
+      "city": "",
+      "county": "Various",
+      "state": "WI",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wisconsin",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/8846"
+    },
+    {
+      "id": "bf-14705-trempealeau-county-fire-law-and-ems",
+      "name": "Trempealeau County Fire, Law and EMS",
+      "description": "Broadcastify public safety feed 14705 for Wisconsin.",
+      "city": "",
+      "county": "Various",
+      "state": "WI",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wisconsin",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/14705"
+    },
+    {
+      "id": "bf-19394-lake-mills-police-fire-jefferson-county-sh",
+      "name": "Lake Mills Police/Fire, Jefferson County Sheriff, Fire and EMS",
+      "description": "Broadcastify public safety feed 19394 for Wisconsin.",
+      "city": "",
+      "county": "Various",
+      "state": "WI",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wisconsin",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/19394"
+    },
+    {
+      "id": "bf-9840-milwaukee-county-law-enforcement",
+      "name": "Milwaukee County Law Enforcement",
+      "description": "Broadcastify public safety feed 9840 for Wisconsin.",
+      "city": "",
+      "county": "Various",
+      "state": "WI",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wisconsin",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/9840"
+    },
+    {
+      "id": "bf-38259-ashland-bayfield-counties-public-safety",
+      "name": "Ashland Bayfield Counties Public Safety",
+      "description": "Broadcastify public safety feed 38259 for Wisconsin.",
+      "city": "",
+      "county": "Various",
+      "state": "WI",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wisconsin"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38259"
+    },
+    {
+      "id": "bf-19107-lafayette-and-grant-counties-fire-ems-pagi",
+      "name": "Lafayette and Grant Counties Fire / EMS Paging",
+      "description": "Broadcastify public safety feed 19107 for Wisconsin.",
+      "city": "",
+      "county": "Various",
+      "state": "WI",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wisconsin",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/19107"
+    },
+    {
+      "id": "bf-22112-jackson-county-public-safety",
+      "name": "Jackson County Public Safety",
+      "description": "Broadcastify public safety feed 22112 for Wisconsin.",
+      "city": "",
+      "county": "Various",
+      "state": "WI",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wisconsin"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/22112"
+    },
+    {
+      "id": "bf-30652-dodge-county-public-safety",
+      "name": "Dodge County Public Safety",
+      "description": "Broadcastify public safety feed 30652 for Wisconsin.",
+      "city": "",
+      "county": "Various",
+      "state": "WI",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wisconsin"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/30652"
+    },
+    {
+      "id": "bf-4913-oneida-vilas-lincoln-and-langlade-counties",
+      "name": "Oneida, Vilas, Lincoln, and Langlade Counties Police, Fire and EMS / Forest EMS",
+      "description": "Broadcastify public safety feed 4913 for Wisconsin.",
+      "city": "",
+      "county": "Various",
+      "state": "WI",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wisconsin",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/4913"
+    },
+    {
+      "id": "bf-15083-merrill-police-and-fire-dispatch",
+      "name": "Merrill Police and Fire Dispatch",
+      "description": "Broadcastify public safety feed 15083 for Wisconsin.",
+      "city": "",
+      "county": "Various",
+      "state": "WI",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wisconsin",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/15083"
+    },
+    {
+      "id": "bf-44889-marathon-county-fire-departments",
+      "name": "Marathon County Fire Departments",
+      "description": "Broadcastify public safety feed 44889 for Wisconsin.",
+      "city": "",
+      "county": "Various",
+      "state": "WI",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wisconsin",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44889"
+    },
+    {
+      "id": "bf-27239-portage-county-fire-and-ems",
+      "name": "Portage County Fire and EMS",
+      "description": "Broadcastify public safety feed 27239 for Wisconsin.",
+      "city": "",
+      "county": "Various",
+      "state": "WI",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wisconsin",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/27239"
+    },
+    {
+      "id": "bf-14852-sheboygan-county-fire-and-ems",
+      "name": "Sheboygan County Fire and EMS",
+      "description": "Broadcastify public safety feed 14852 for Wisconsin.",
+      "city": "",
+      "county": "Various",
+      "state": "WI",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wisconsin",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/14852"
+    },
+    {
+      "id": "bf-13891-green-county-sheriff-fire-monroe-and-brodh",
+      "name": "Green County Sheriff / Fire, Monroe and Brodhead Police",
+      "description": "Broadcastify public safety feed 13891 for Wisconsin.",
+      "city": "",
+      "county": "Various",
+      "state": "WI",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wisconsin",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/13891"
+    },
+    {
+      "id": "bf-6043-monroe-county-public-safety",
+      "name": "Monroe County Public Safety",
+      "description": "Broadcastify public safety feed 6043 for Wisconsin.",
+      "city": "",
+      "county": "Various",
+      "state": "WI",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wisconsin"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/6043"
+    },
+    {
+      "id": "bf-17484-columbia-and-sauk-counties-public-safety",
+      "name": "Columbia and Sauk Counties Public Safety",
+      "description": "Broadcastify public safety feed 17484 for Wisconsin.",
+      "city": "",
+      "county": "Various",
+      "state": "WI",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wisconsin"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/17484"
+    },
+    {
+      "id": "bf-17213-dane-county-fire-sun-prairie-police-and-fi",
+      "name": "Dane County Fire, Sun Prairie Police and Fire",
+      "description": "Broadcastify public safety feed 17213 for Wisconsin.",
+      "city": "",
+      "county": "Various",
+      "state": "WI",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wisconsin",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/17213"
+    },
+    {
+      "id": "bf-39665-brown-county-fire-ems",
+      "name": "Brown County Fire & EMS",
+      "description": "Broadcastify public safety feed 39665 for Wisconsin.",
+      "city": "",
+      "county": "Various",
+      "state": "WI",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wisconsin",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39665"
+    },
+    {
+      "id": "bf-36978-milwaukee-county-public-safety-south-subur",
+      "name": "Milwaukee County Public Safety - South Suburbs",
+      "description": "Broadcastify public safety feed 36978 for Wisconsin.",
+      "city": "",
+      "county": "Various",
+      "state": "WI",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wisconsin"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/36978"
+    },
+    {
+      "id": "bf-40912-waupaca-shawano-and-outagamie-county-fire-",
+      "name": "Waupaca, Shawano, and Outagamie County Fire/EMS",
+      "description": "Broadcastify public safety feed 40912 for Wisconsin.",
+      "city": "",
+      "county": "Various",
+      "state": "WI",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wisconsin",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40912"
+    },
+    {
+      "id": "bf-23421-crawford-county-public-safety",
+      "name": "Crawford County Public Safety",
+      "description": "Broadcastify public safety feed 23421 for Wisconsin.",
+      "city": "",
+      "county": "Various",
+      "state": "WI",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wisconsin"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/23421"
+    },
+    {
+      "id": "bf-42024-door-county-fire-ems",
+      "name": "Door County Fire/EMS",
+      "description": "Broadcastify public safety feed 42024 for Wisconsin.",
+      "city": "",
+      "county": "Various",
+      "state": "WI",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wisconsin",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42024"
+    },
+    {
+      "id": "bf-29496-glendale-whitefish-bay-and-shorewood-polic",
+      "name": "Glendale, Whitefish Bay and Shorewood Police",
+      "description": "Broadcastify public safety feed 29496 for Wisconsin.",
+      "city": "",
+      "county": "Various",
+      "state": "WI",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wisconsin",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/29496"
+    },
+    {
+      "id": "bf-19375-winnebago-county-sheriff-and-fire-oshkosh-",
+      "name": "Winnebago County Sheriff and Fire, Oshkosh Police, Fire / EMS",
+      "description": "Broadcastify public safety feed 19375 for Wisconsin.",
+      "city": "",
+      "county": "Various",
+      "state": "WI",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wisconsin",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/19375"
+    },
+    {
+      "id": "bf-33856-marshfield-police-and-fire",
+      "name": "Marshfield Police and Fire",
+      "description": "Broadcastify public safety feed 33856 for Wisconsin.",
+      "city": "",
+      "county": "Various",
+      "state": "WI",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wisconsin",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/33856"
+    },
+    {
+      "id": "bf-31773-eau-claire-county-fire-and-ems",
+      "name": "Eau Claire County Fire and EMS",
+      "description": "Broadcastify public safety feed 31773 for Wisconsin.",
+      "city": "",
+      "county": "Various",
+      "state": "WI",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wisconsin",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/31773"
+    },
+    {
+      "id": "bf-34420-mt-pleasant-caledonia-sturtevant-police",
+      "name": "Mt Pleasant/Caledonia/Sturtevant Police",
+      "description": "Broadcastify public safety feed 34420 for Wisconsin.",
+      "city": "",
+      "county": "Various",
+      "state": "WI",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wisconsin",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/34420"
+    },
+    {
+      "id": "bf-46742-richland-county-public-safety",
+      "name": "Richland County Public Safety",
+      "description": "Broadcastify public safety feed 46742 for Wisconsin.",
+      "city": "",
+      "county": "Various",
+      "state": "WI",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wisconsin"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46742"
+    },
+    {
+      "id": "bf-45924-wood-county-public-safety",
+      "name": "Wood County Public Safety",
+      "description": "Broadcastify public safety feed 45924 for Wisconsin.",
+      "city": "",
+      "county": "Various",
+      "state": "WI",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wisconsin"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45924"
+    },
+    {
+      "id": "bf-44124-barron-county-public-safety",
+      "name": "Barron County Public Safety",
+      "description": "Broadcastify public safety feed 44124 for Wisconsin.",
+      "city": "",
+      "county": "Various",
+      "state": "WI",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wisconsin"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44124"
+    },
+    {
+      "id": "bf-42916-green-lake-county-public-safety",
+      "name": "Green Lake County Public Safety",
+      "description": "Broadcastify public safety feed 42916 for Wisconsin.",
+      "city": "",
+      "county": "Various",
+      "state": "WI",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wisconsin"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42916"
+    },
+    {
+      "id": "bf-34743-fort-atkinson-police-fire-jefferson-county",
+      "name": "Fort Atkinson Police/Fire, Jefferson County Sheriff/Paging/Fire, MABAS/IFERN",
+      "description": "Broadcastify public safety feed 34743 for Wisconsin.",
+      "city": "",
+      "county": "Various",
+      "state": "WI",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wisconsin",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/34743"
+    },
+    {
+      "id": "bf-41063-manitowoc-county-fire-ems",
+      "name": "Manitowoc County Fire/EMS",
+      "description": "Broadcastify public safety feed 41063 for Wisconsin.",
+      "city": "",
+      "county": "Various",
+      "state": "WI",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wisconsin",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41063"
+    },
+    {
+      "id": "bf-21767-fond-du-lac-county-law-enforcement-and-fdl",
+      "name": "Fond du Lac County Law Enforcement and FDL City Police",
+      "description": "Broadcastify public safety feed 21767 for Wisconsin.",
+      "city": "",
+      "county": "Various",
+      "state": "WI",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wisconsin",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/21767"
+    },
+    {
+      "id": "bf-29550-lake-and-kenosha-counties-fire",
+      "name": "Lake and Kenosha Counties Fire",
+      "description": "Broadcastify public safety feed 29550 for Wisconsin.",
+      "city": "",
+      "county": "Various",
+      "state": "WI",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wisconsin",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/29550"
+    },
+    {
+      "id": "bf-45997-pierce-county-public-safety",
+      "name": "Pierce County Public Safety",
+      "description": "Broadcastify public safety feed 45997 for Wisconsin.",
+      "city": "",
+      "county": "Various",
+      "state": "WI",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wisconsin"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45997"
+    },
+    {
+      "id": "bf-34452-racine-county-sheriff",
+      "name": "Racine County Sheriff",
+      "description": "Broadcastify public safety feed 34452 for Wisconsin.",
+      "city": "",
+      "county": "Various",
+      "state": "WI",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wisconsin",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/34452"
+    },
+    {
+      "id": "bf-15386-northern-illinois-and-southern-wisconsin-m",
+      "name": "Northern Illinois and Southern Wisconsin MABAS",
+      "description": "Broadcastify public safety feed 15386 for Wisconsin.",
+      "city": "",
+      "county": "Various",
+      "state": "WI",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wisconsin"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/15386"
+    },
+    {
+      "id": "bf-32167-waukesha-county-fire-west",
+      "name": "Waukesha County Fire - West",
+      "description": "Broadcastify public safety feed 32167 for Wisconsin.",
+      "city": "",
+      "county": "Various",
+      "state": "WI",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wisconsin",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32167"
+    },
+    {
+      "id": "bf-40123-columbia-county-sheriff-dispatch",
+      "name": "Columbia County Sheriff Dispatch",
+      "description": "Broadcastify public safety feed 40123 for Wisconsin.",
+      "city": "",
+      "county": "Various",
+      "state": "WI",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wisconsin",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40123"
+    },
+    {
+      "id": "bf-27347-lacrosse-county-sheriff-dispatch",
+      "name": "LaCrosse County Sheriff Dispatch",
+      "description": "Broadcastify public safety feed 27347 for Wisconsin.",
+      "city": "",
+      "county": "Various",
+      "state": "WI",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wisconsin",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/27347"
+    },
+    {
+      "id": "bf-41939-taylor-county-area-public-safety",
+      "name": "Taylor County Area Public Safety",
+      "description": "Broadcastify public safety feed 41939 for Wisconsin.",
+      "city": "",
+      "county": "Various",
+      "state": "WI",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wisconsin"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41939"
+    },
+    {
+      "id": "bf-36846-adams-county-law-enforcement-and-paging",
+      "name": "Adams County Law Enforcement and Paging",
+      "description": "Broadcastify public safety feed 36846 for Wisconsin.",
+      "city": "",
+      "county": "Various",
+      "state": "WI",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wisconsin",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/36846"
+    },
+    {
+      "id": "bf-8666-middleton-police",
+      "name": "Middleton Police",
+      "description": "Broadcastify public safety feed 8666 for Wisconsin.",
+      "city": "",
+      "county": "Various",
+      "state": "WI",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wisconsin",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/8666"
+    },
+    {
+      "id": "bf-13764-dane-county-fire-and-ems",
+      "name": "Dane County Fire and EMS",
+      "description": "Broadcastify public safety feed 13764 for Wisconsin.",
+      "city": "",
+      "county": "Various",
+      "state": "WI",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wisconsin",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/13764"
+    },
+    {
+      "id": "bf-21590-jefferson-county-fire-and-ems-paging",
+      "name": "Jefferson County Fire and EMS Paging",
+      "description": "Broadcastify public safety feed 21590 for Wisconsin.",
+      "city": "",
+      "county": "Various",
+      "state": "WI",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wisconsin",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/21590"
+    },
+    {
+      "id": "bf-22116-la-crosse-city-fire-digital",
+      "name": "La Crosse City Fire - Digital",
+      "description": "Broadcastify public safety feed 22116 for Wisconsin.",
+      "city": "",
+      "county": "Various",
+      "state": "WI",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wisconsin",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/22116"
+    },
+    {
+      "id": "bf-44687-oneida-emr-1-dispatch",
+      "name": "Oneida EMR-1 Dispatch",
+      "description": "Broadcastify public safety feed 44687 for Wisconsin.",
+      "city": "",
+      "county": "Various",
+      "state": "WI",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wisconsin"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44687"
+    },
+    {
+      "id": "bf-18720-park-falls-and-fifield-fire",
+      "name": "Park Falls and Fifield Fire",
+      "description": "Broadcastify public safety feed 18720 for Wisconsin.",
+      "city": "",
+      "county": "Various",
+      "state": "WI",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wisconsin",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/18720"
+    },
+    {
+      "id": "bf-3289-walworth-county-sheriff-and-ems-racine-cou",
+      "name": "Walworth County Sheriff and EMS, Racine County Fire / EMS - West of I-94",
+      "description": "Broadcastify public safety feed 3289 for Wisconsin.",
+      "city": "",
+      "county": "Various",
+      "state": "WI",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wisconsin",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/3289"
+    },
+    {
+      "id": "bf-36643-kilbourn-fire-repeater",
+      "name": "Kilbourn Fire Repeater",
+      "description": "Broadcastify public safety feed 36643 for Wisconsin.",
+      "city": "",
+      "county": "Various",
+      "state": "WI",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wisconsin",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/36643"
+    },
+    {
+      "id": "bf-32682-kewaunee-county-police-fire-and-ems",
+      "name": "Kewaunee County Police, Fire and EMS",
+      "description": "Broadcastify public safety feed 32682 for Wisconsin.",
+      "city": "",
+      "county": "Various",
+      "state": "WI",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wisconsin",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32682"
+    },
+    {
+      "id": "bf-45784-kewaunee-county-police-fire-and-ems",
+      "name": "Kewaunee County Police Fire and EMS",
+      "description": "Broadcastify public safety feed 45784 for Wisconsin.",
+      "city": "",
+      "county": "Various",
+      "state": "WI",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wisconsin",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45784"
+    },
+    {
+      "id": "bf-1661-lacrosse-county-fire-and-ems",
+      "name": "LaCrosse County Fire and EMS",
+      "description": "Broadcastify public safety feed 1661 for Wisconsin.",
+      "city": "",
+      "county": "Various",
+      "state": "WI",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wisconsin",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/1661"
+    },
+    {
+      "id": "bf-16857-marinette-county-fire-dispatch",
+      "name": "Marinette County Fire Dispatch",
+      "description": "Broadcastify public safety feed 16857 for Wisconsin.",
+      "city": "",
+      "county": "Various",
+      "state": "WI",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wisconsin",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/16857"
+    },
+    {
+      "id": "bf-46000-oconto-county-fire-ems",
+      "name": "Oconto County Fire/EMS",
+      "description": "Broadcastify public safety feed 46000 for Wisconsin.",
+      "city": "",
+      "county": "Various",
+      "state": "WI",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wisconsin",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46000"
+    },
+    {
+      "id": "bf-16387-turtle-fire",
+      "name": "Turtle Fire",
+      "description": "Broadcastify public safety feed 16387 for Wisconsin.",
+      "city": "",
+      "county": "Various",
+      "state": "WI",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wisconsin",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/16387"
+    },
+    {
+      "id": "bf-21291-lyons-fire-rescue",
+      "name": "Lyons Fire Rescue",
+      "description": "Broadcastify public safety feed 21291 for Wisconsin.",
+      "city": "",
+      "county": "Various",
+      "state": "WI",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wisconsin",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/21291"
+    },
+    {
+      "id": "bf-31182-barron-county-fire-and-ems",
+      "name": "Barron County Fire and EMS",
+      "description": "Broadcastify public safety feed 31182 for Wisconsin.",
+      "city": "",
+      "county": "Various",
+      "state": "WI",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wisconsin",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/31182"
+    },
+    {
+      "id": "bf-45776-brown-county-fire-ems",
+      "name": "Brown County Fire/EMS",
+      "description": "Broadcastify public safety feed 45776 for Wisconsin.",
+      "city": "",
+      "county": "Various",
+      "state": "WI",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wisconsin",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45776"
+    },
+    {
+      "id": "bf-45777-brown-county-public-safety",
+      "name": "Brown County Public Safety",
+      "description": "Broadcastify public safety feed 45777 for Wisconsin.",
+      "city": "",
+      "county": "Various",
+      "state": "WI",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wisconsin"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45777"
+    },
+    {
+      "id": "bf-29799-calumet-county-public-safety",
+      "name": "Calumet County Public Safety",
+      "description": "Broadcastify public safety feed 29799 for Wisconsin.",
+      "city": "",
+      "county": "Various",
+      "state": "WI",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wisconsin"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/29799"
+    },
+    {
+      "id": "bf-44207-calumet-county-fire-first-responders",
+      "name": "Calumet County Fire / First Responders",
+      "description": "Broadcastify public safety feed 44207 for Wisconsin.",
+      "city": "",
+      "county": "Various",
+      "state": "WI",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wisconsin",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44207"
+    },
+    {
+      "id": "bf-44256-gold-cross-ambulance",
+      "name": "Gold Cross Ambulance",
+      "description": "Broadcastify public safety feed 44256 for Wisconsin.",
+      "city": "",
+      "county": "Various",
+      "state": "WI",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wisconsin"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44256"
+    },
+    {
+      "id": "bf-1374-city-of-madison-fire",
+      "name": "City of Madison Fire",
+      "description": "Broadcastify public safety feed 1374 for Wisconsin.",
+      "city": "",
+      "county": "Various",
+      "state": "WI",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wisconsin",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/1374"
+    },
+    {
+      "id": "bf-9597-dane-county-fire",
+      "name": "Dane County Fire",
+      "description": "Broadcastify public safety feed 9597 for Wisconsin.",
+      "city": "",
+      "county": "Various",
+      "state": "WI",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wisconsin",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/9597"
+    },
+    {
+      "id": "bf-20997-solon-springs-fire",
+      "name": "Solon Springs Fire",
+      "description": "Broadcastify public safety feed 20997 for Wisconsin.",
+      "city": "",
+      "county": "Various",
+      "state": "WI",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wisconsin",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/20997"
+    },
+    {
+      "id": "bf-44650-lincoln-county-public-safety",
+      "name": "Lincoln County Public Safety",
+      "description": "Broadcastify public safety feed 44650 for Wisconsin.",
+      "city": "",
+      "county": "Various",
+      "state": "WI",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wisconsin"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44650"
+    },
+    {
+      "id": "bf-46928-marquette-county-and-montello-city-public-",
+      "name": "Marquette County and Montello City Public Safety",
+      "description": "Broadcastify public safety feed 46928 for Wisconsin.",
+      "city": "",
+      "county": "Various",
+      "state": "WI",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wisconsin"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46928"
+    },
+    {
+      "id": "bf-14966-west-allis-fire",
+      "name": "West Allis Fire",
+      "description": "Broadcastify public safety feed 14966 for Wisconsin.",
+      "city": "",
+      "county": "Various",
+      "state": "WI",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wisconsin",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/14966"
+    },
+    {
+      "id": "bf-34416-milwaukee-south-east-suburbs-fire-ems",
+      "name": "Milwaukee South East Suburbs Fire & EMS",
+      "description": "Broadcastify public safety feed 34416 for Wisconsin.",
+      "city": "",
+      "county": "Various",
+      "state": "WI",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wisconsin",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/34416"
+    },
+    {
+      "id": "bf-44629-north-shore-fire",
+      "name": "North Shore Fire",
+      "description": "Broadcastify public safety feed 44629 for Wisconsin.",
+      "city": "",
+      "county": "Various",
+      "state": "WI",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wisconsin",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44629"
+    },
+    {
+      "id": "bf-46499-southeast-milwaukee-county-suburbs-pd-fd",
+      "name": "Southeast Milwaukee County Suburbs PD/FD",
+      "description": "Broadcastify public safety feed 46499 for Wisconsin.",
+      "city": "",
+      "county": "Various",
+      "state": "WI",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wisconsin"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46499"
+    },
+    {
+      "id": "bf-17086-burlington-city-police",
+      "name": "Burlington City Police",
+      "description": "Broadcastify public safety feed 17086 for Wisconsin.",
+      "city": "",
+      "county": "Various",
+      "state": "WI",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wisconsin",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/17086"
+    },
+    {
+      "id": "bf-37579-sauk-county-paging",
+      "name": "Sauk County Paging",
+      "description": "Broadcastify public safety feed 37579 for Wisconsin.",
+      "city": "",
+      "county": "Various",
+      "state": "WI",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wisconsin"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37579"
+    },
+    {
+      "id": "bf-32302-vilas-county-fire-and-rescue",
+      "name": "Vilas County Fire and Rescue",
+      "description": "Broadcastify public safety feed 32302 for Wisconsin.",
+      "city": "",
+      "county": "Various",
+      "state": "WI",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wisconsin",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32302"
+    },
+    {
+      "id": "bf-31139-walworth-county-fire-and-ems-paging",
+      "name": "Walworth County Fire and EMS Paging",
+      "description": "Broadcastify public safety feed 31139 for Wisconsin.",
+      "city": "",
+      "county": "Various",
+      "state": "WI",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wisconsin",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/31139"
+    },
+    {
+      "id": "bf-44014-wood-county-fire",
+      "name": "Wood County Fire",
+      "description": "Broadcastify public safety feed 44014 for Wisconsin.",
+      "city": "",
+      "county": "Various",
+      "state": "WI",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wisconsin",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44014"
+    },
+    {
+      "id": "bf-46045-ashland-fire",
+      "name": "Ashland Fire",
+      "description": "Broadcastify public safety feed 46045 for Wisconsin.",
+      "city": "",
+      "county": "Various",
+      "state": "WI",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wisconsin",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46045"
+    },
+    {
+      "id": "bf-46668-ashland-sherrifs-office",
+      "name": "Ashland Sherrifs Office",
+      "description": "Broadcastify public safety feed 46668 for Wisconsin.",
+      "city": "",
+      "county": "Various",
+      "state": "WI",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wisconsin"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46668"
+    },
+    {
+      "id": "bf-46752-ashland-county",
+      "name": "Ashland County",
+      "description": "Broadcastify public safety feed 46752 for Wisconsin.",
+      "city": "",
+      "county": "Various",
+      "state": "WI",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wisconsin"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46752"
+    },
+    {
+      "id": "bf-34629-sauk-and-north-and-surrounding-county-fire",
+      "name": "Sauk and North and Surrounding County Fire Departments",
+      "description": "Broadcastify public safety feed 34629 for Wisconsin.",
+      "city": "",
+      "county": "Various",
+      "state": "WI",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wisconsin",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/34629"
+    },
+    {
+      "id": "bf-47417-door-county-public-safety",
+      "name": "Door County Public Safety",
+      "description": "Broadcastify public safety feed 47417 for Wisconsin.",
+      "city": "",
+      "county": "Various",
+      "state": "WI",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wisconsin"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47417"
+    },
+    {
+      "id": "bf-39173-dunn-fire-ems",
+      "name": "Dunn Fire/EMS",
+      "description": "Broadcastify public safety feed 39173 for Wisconsin.",
+      "city": "",
+      "county": "Various",
+      "state": "WI",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wisconsin",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39173"
+    },
+    {
+      "id": "bf-42644-ridgeland-fire",
+      "name": "Ridgeland Fire",
+      "description": "Broadcastify public safety feed 42644 for Wisconsin.",
+      "city": "",
+      "county": "Various",
+      "state": "WI",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wisconsin",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42644"
+    },
+    {
+      "id": "bf-44897-dunn-county-sherriff-law-backup-patch-to-d",
+      "name": "Dunn County Sherriff Law Backup Patch to DULAW1",
+      "description": "Broadcastify public safety feed 44897 for Wisconsin.",
+      "city": "",
+      "county": "Various",
+      "state": "WI",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wisconsin"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44897"
+    },
+    {
+      "id": "bf-17909-aurora-fire",
+      "name": "Aurora Fire",
+      "description": "Broadcastify public safety feed 17909 for Wisconsin.",
+      "city": "",
+      "county": "Various",
+      "state": "WI",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wisconsin",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/17909"
+    },
+    {
+      "id": "bf-39744-monroe-green-county-le",
+      "name": "Monroe/Green County LE",
+      "description": "Broadcastify public safety feed 39744 for Wisconsin.",
+      "city": "",
+      "county": "Various",
+      "state": "WI",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wisconsin"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39744"
+    },
+    {
+      "id": "bf-21388-mercer-fire-and-ems",
+      "name": "Mercer Fire and EMS",
+      "description": "Broadcastify public safety feed 21388 for Wisconsin.",
+      "city": "",
+      "county": "Various",
+      "state": "WI",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "wisconsin",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/21388"
+    }
+  ]
+}

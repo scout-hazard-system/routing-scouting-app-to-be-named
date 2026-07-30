@@ -1,0 +1,249 @@
+{
+  "description": "Labeled scanner transcripts for evaluating the proprietary scout LLM set. alert: expected scout-alert decision (true=ALERT, false=IGNORE). intel: expected substrings per field for scout-intel (case-insensitive containment against joined field values). location_echo: substrings that must appear in the ALERT sentence.",
+  "cases": [
+    {
+      "id": "radar_mile_marker",
+      "group": "enforcement_explicit",
+      "transcript": "Unit 23 copy, running radar on I-5 northbound at mile marker 212, vehicle stop in progress.",
+      "alert": true,
+      "location_echo": ["mile marker 212"],
+      "intel": {"call_types_any": ["speed_enforcement", "traffic_stop"], "units": ["23"], "locations": ["mile marker 212"]}
+    },
+    {
+      "id": "laser_exit",
+      "group": "enforcement_explicit",
+      "transcript": "Dispatch, 41, we are set up with laser on the exit 226 off-ramp clocking southbound traffic.",
+      "alert": true,
+      "location_echo": ["exit 226"],
+      "intel": {"call_types_any": ["speed_enforcement"], "units": ["41"], "locations": ["exit 226"]}
+    },
+    {
+      "id": "speed_trap_poi",
+      "group": "enforcement_explicit",
+      "transcript": "Setting up a speed trap on G Avenue near the Shell gas station, will advise when in position.",
+      "alert": true,
+      "location_echo": ["G Avenue"],
+      "intel": {"call_types_any": ["speed_enforcement"], "locations": ["G Avenue"], "pois": ["Shell"]}
+    },
+    {
+      "id": "ten38_stop",
+      "group": "enforcement_explicit",
+      "transcript": "Central, 14, 10-38 on a silver pickup, Commercial Avenue and 22nd Street, plate coming.",
+      "alert": true,
+      "location_echo": ["Commercial Avenue"],
+      "intel": {"call_types_any": ["traffic_stop"], "codes": ["10-38"], "units": ["14"], "locations": ["Commercial"]}
+    },
+    {
+      "id": "pacing_highway",
+      "group": "enforcement_explicit",
+      "transcript": "I'm pacing a red sedan doing about 85 on State Route 20 westbound past the casino.",
+      "alert": true,
+      "location_echo": ["State Route 20"],
+      "intel": {"call_types_any": ["speed_enforcement", "pursuit"], "locations": ["State Route 20"]}
+    },
+    {
+      "id": "staged_marker",
+      "group": "enforcement_explicit",
+      "transcript": "We'll be staged near marker 45 for the rest of the shift running traffic.",
+      "alert": true,
+      "location_echo": ["marker 45"],
+      "intel": {"call_types_any": ["speed_enforcement"], "locations": ["marker 45"]}
+    },
+    {
+      "id": "dispatch_cues_stop",
+      "group": "enforcement_dispatch_cues",
+      "transcript": "Copy 12, go ahead. Vehicle stop northbound on the shoulder just past the on-ramp, one occupant.",
+      "alert": true,
+      "intel": {"call_types_any": ["traffic_stop"], "units": ["12"]}
+    },
+    {
+      "id": "dispatch_cues_running_traffic",
+      "group": "enforcement_dispatch_cues",
+      "transcript": "Unit 7 switching to channel 2, we're running traffic at the construction zone on Highway 99.",
+      "alert": true,
+      "location_echo": ["Highway 99"],
+      "intel": {"call_types_any": ["speed_enforcement", "units_coordination"], "units": ["7"], "locations": ["Highway 99"]}
+    },
+    {
+      "id": "motor_unit_school_zone",
+      "group": "enforcement_dispatch_cues",
+      "transcript": "Motor 3 copy, working the school zone on D Avenue by Anacortes Middle School this morning.",
+      "alert": true,
+      "location_echo": ["D Avenue"],
+      "intel": {"call_types_any": ["speed_enforcement"], "locations": ["D Avenue"], "pois": ["Anacortes Middle School"]}
+    },
+    {
+      "id": "benign_coffee",
+      "group": "benign",
+      "transcript": "Yeah just grabbing coffee, weather is nice today, see you back at the station later.",
+      "alert": false
+    },
+    {
+      "id": "benign_radio_check",
+      "group": "benign",
+      "transcript": "Central, unit 5, radio check. Unit 5 you're loud and clear. Copy, thanks.",
+      "alert": false
+    },
+    {
+      "id": "benign_shift_change",
+      "group": "benign",
+      "transcript": "All units be advised shift change at 1800, briefing room B, bring your paperwork.",
+      "alert": false
+    },
+    {
+      "id": "benign_static",
+      "group": "benign",
+      "transcript": "…kssshh… go… kssshh… unreadable… kssshh…",
+      "alert": false
+    },
+    {
+      "id": "benign_lunch",
+      "group": "benign",
+      "transcript": "Show me code 7 at the diner on 12th, back in thirty.",
+      "alert": false
+    },
+    {
+      "id": "fire_ems_call",
+      "group": "non_traffic",
+      "transcript": "Engine 51, medic 3, respond to a fall with injury at 1204 M Avenue, code 3.",
+      "alert": false,
+      "intel": {"call_types_any": ["unclassified", "accident"], "locations": ["1204 M Avenue"]}
+    },
+    {
+      "id": "welfare_check",
+      "group": "non_traffic",
+      "transcript": "Take a welfare check at the Bayview Apartments, third floor, neighbor hasn't seen the resident in two days.",
+      "alert": false,
+      "intel": {"call_types_any": ["welfare_check"], "pois": ["Bayview Apartments"]}
+    },
+    {
+      "id": "shoplifter",
+      "group": "non_traffic",
+      "transcript": "Unit 9 copy, shoplifter in custody at the Safeway on Commercial, paperwork en route.",
+      "alert": false,
+      "intel": {"call_types_any": ["suspicious_activity", "unclassified"], "units": ["9"], "pois": ["Safeway"]}
+    },
+    {
+      "id": "noise_complaint",
+      "group": "non_traffic",
+      "transcript": "Loud music complaint again at the trailer park, advise them to keep it down after ten.",
+      "alert": false
+    },
+    {
+      "id": "accident_no_enforcement",
+      "group": "ambiguous",
+      "transcript": "Two vehicle non-injury accident blocking the right lane at 12th and Q Avenue, tow is en route.",
+      "alert": false,
+      "intel": {"call_types_any": ["accident"], "locations": ["12th and Q Avenue"]}
+    },
+    {
+      "id": "pursuit_active",
+      "group": "enforcement_explicit",
+      "transcript": "All units, pursuit in progress southbound Highway 20 from Sharpes Corner, speeds one hundred plus.",
+      "alert": true,
+      "location_echo": ["Highway 20"],
+      "intel": {"call_types_any": ["pursuit"], "priority": "high", "locations": ["Highway 20"]}
+    },
+    {
+      "id": "dui_checkpoint",
+      "group": "enforcement_explicit",
+      "transcript": "Reminder the DUI emphasis patrol starts at 2200 on the Highway 20 corridor between the roundabouts.",
+      "alert": true,
+      "location_echo": ["Highway 20"],
+      "intel": {"call_types_any": ["speed_enforcement", "units_coordination"], "locations": ["Highway 20"]}
+    },
+    {
+      "id": "clocked_verbatim",
+      "group": "enforcement_explicit",
+      "transcript": "Just clocked a motorcycle at 92 in a 60 passing the weigh station, stand by.",
+      "alert": true,
+      "intel": {"call_types_any": ["speed_enforcement"]}
+    },
+    {
+      "id": "k9_track",
+      "group": "non_traffic",
+      "transcript": "K9 unit starting a track from the trailhead parking lot, hold radio traffic on this channel.",
+      "alert": false
+    },
+    {
+      "id": "alarm_call",
+      "group": "non_traffic",
+      "transcript": "Audible alarm at the marina office, keyholder responding, 4 to check the exterior.",
+      "alert": false
+    },
+    {
+      "id": "info_only_clear",
+      "group": "benign",
+      "transcript": "You can clear the earlier call, everything is code 4, no report needed.",
+      "alert": false
+    },
+    {
+      "id": "traffic_detail_verbal",
+      "group": "enforcement_dispatch_cues",
+      "transcript": "I'll be on the traffic detail at the fairgrounds entrance, flagging and citations as needed.",
+      "alert": true,
+      "intel": {"call_types_any": ["speed_enforcement", "units_coordination"], "places": ["fairgrounds"]}
+    },
+    {
+      "id": "plate_return",
+      "group": "ambiguous",
+      "transcript": "Return on Adam-Boy-Charlie one two three comes back clear and current out of Oak Harbor.",
+      "alert": false
+    },
+    {
+      "id": "parade_route",
+      "group": "non_traffic",
+      "transcript": "Barricades go up at 0800 for the parade route on Commercial Avenue, expect closures till noon.",
+      "alert": false
+    },
+    {
+      "id": "spike_strips",
+      "group": "enforcement_explicit",
+      "transcript": "Get spike strips ready at the March Point off-ramp, subject vehicle approaching at high speed.",
+      "alert": true,
+      "location_echo": ["March Point"],
+      "intel": {"call_types_any": ["pursuit"], "priority": "high", "locations": ["March Point"]}
+    },
+    {
+      "id": "warrant_service",
+      "group": "non_traffic",
+      "transcript": "Team is staging for warrant service on the 3800 block of W Avenue, hold all radio traffic.",
+      "alert": false
+    },
+    {
+      "id": "cell_phone_emphasis",
+      "group": "enforcement_explicit",
+      "transcript": "Running the cell phone emphasis on 32nd Street eastbound by the library, cite and release.",
+      "alert": true,
+      "location_echo": ["32nd Street"],
+      "intel": {"call_types_any": ["speed_enforcement"], "locations": ["32nd Street"], "pois": ["library"]}
+    },
+    {
+      "id": "ferry_traffic",
+      "group": "benign",
+      "transcript": "Ferry offload is heavy this afternoon, expect slow traffic on 12th all the way to the light.",
+      "alert": false
+    },
+    {
+      "id": "unit_relocation",
+      "group": "ambiguous",
+      "transcript": "Unit 6, when you're clear, swing by the office to grab the new citation books.",
+      "alert": false
+    },
+    {
+      "id": "aircraft_speed",
+      "group": "enforcement_explicit",
+      "transcript": "Aircraft is up, working speed enforcement on the flats, ground units stage at the Farmhouse restaurant.",
+      "alert": true,
+      "intel": {"call_types_any": ["speed_enforcement"], "pois": ["Farmhouse"]}
+    },
+    {
+      "id": "seatbelt_emphasis",
+      "group": "enforcement_explicit",
+      "transcript": "Seatbelt emphasis patrol this week on Oakes Avenue near the ferry terminal, day shift only.",
+      "alert": true,
+      "location_echo": ["Oakes Avenue"],
+      "intel": {"call_types_any": ["speed_enforcement"], "locations": ["Oakes Avenue"], "pois": ["ferry terminal"]}
+    }
+  ]
+}

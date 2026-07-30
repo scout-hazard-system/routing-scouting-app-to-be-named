@@ -1,0 +1,2322 @@
+{
+  "channels": [
+    {
+      "id": "bf-32602-indianapolis-metropolitan-police",
+      "name": "Indianapolis Metropolitan Police",
+      "description": "Broadcastify public safety feed 32602 for Kansas.",
+      "city": "",
+      "county": "Various",
+      "state": "KS",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kansas",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32602"
+    },
+    {
+      "id": "bf-46848-wichita-police-fire-ems",
+      "name": "Wichita Police/Fire/EMS",
+      "description": "Broadcastify public safety feed 46848 for Kansas.",
+      "city": "",
+      "county": "Various",
+      "state": "KS",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kansas",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46848"
+    },
+    {
+      "id": "bf-25619-clay-county-sheriff-clay-center-police-and",
+      "name": "Clay County Sheriff, Clay Center Police and EMS",
+      "description": "Broadcastify public safety feed 25619 for Kansas.",
+      "city": "",
+      "county": "Various",
+      "state": "KS",
+      "service_types": [
+        "dispatch",
+        "law",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kansas",
+        "law",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/25619"
+    },
+    {
+      "id": "bf-6903-butler-county-area-sheriff-police-ems-and-",
+      "name": "Butler County Area Sheriff, Police, EMS and EMA",
+      "description": "Broadcastify public safety feed 6903 for Kansas.",
+      "city": "",
+      "county": "Various",
+      "state": "KS",
+      "service_types": [
+        "dispatch",
+        "law",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kansas",
+        "law",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/6903"
+    },
+    {
+      "id": "bf-41892-cowley-county-public-safety",
+      "name": "Cowley County Public Safety",
+      "description": "Broadcastify public safety feed 41892 for Kansas.",
+      "city": "",
+      "county": "Various",
+      "state": "KS",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kansas"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41892"
+    },
+    {
+      "id": "bf-24280-salina-city-police-and-county-fire-ems",
+      "name": "Salina City Police and County Fire / EMS",
+      "description": "Broadcastify public safety feed 24280 for Kansas.",
+      "city": "",
+      "county": "Various",
+      "state": "KS",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kansas",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/24280"
+    },
+    {
+      "id": "bf-6149-barton-county-sheriff-police-fire-and-ems",
+      "name": "Barton County Sheriff, Police, Fire and EMS",
+      "description": "Broadcastify public safety feed 6149 for Kansas.",
+      "city": "",
+      "county": "Various",
+      "state": "KS",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kansas",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/6149"
+    },
+    {
+      "id": "bf-5035-crawford-county-sheriff-police-fire-and-em",
+      "name": "Crawford County Sheriff, Police, Fire and EMS",
+      "description": "Broadcastify public safety feed 5035 for Kansas.",
+      "city": "",
+      "county": "Various",
+      "state": "KS",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kansas",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/5035"
+    },
+    {
+      "id": "bf-28798-southwest-kansas-counties-sheriff-and-fire",
+      "name": "Southwest Kansas Counties Sheriff and Fire, Highway Patrol Troop E",
+      "description": "Broadcastify public safety feed 28798 for Kansas.",
+      "city": "",
+      "county": "Various",
+      "state": "KS",
+      "service_types": [
+        "dispatch",
+        "law",
+        "highway",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kansas",
+        "law",
+        "highway",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/28798"
+    },
+    {
+      "id": "bf-8609-jefferson-county-police-and-fire",
+      "name": "Jefferson County Police and Fire",
+      "description": "Broadcastify public safety feed 8609 for Kansas.",
+      "city": "",
+      "county": "Various",
+      "state": "KS",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kansas",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/8609"
+    },
+    {
+      "id": "bf-36412-topeka-and-shawnee-county-fire-departments",
+      "name": "Topeka and Shawnee County Fire Departments",
+      "description": "Broadcastify public safety feed 36412 for Kansas.",
+      "city": "",
+      "county": "Various",
+      "state": "KS",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kansas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/36412"
+    },
+    {
+      "id": "bf-42909-reno-and-rice-county-public-safety",
+      "name": "Reno and Rice County Public Safety",
+      "description": "Broadcastify public safety feed 42909 for Kansas.",
+      "city": "",
+      "county": "Various",
+      "state": "KS",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kansas"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42909"
+    },
+    {
+      "id": "bf-37813-allen-county-and-iola-public-safety",
+      "name": "Allen County and Iola Public Safety",
+      "description": "Broadcastify public safety feed 37813 for Kansas.",
+      "city": "",
+      "county": "Various",
+      "state": "KS",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kansas"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37813"
+    },
+    {
+      "id": "bf-39193-franklin-county-miami-county-public-safety",
+      "name": "Franklin County/Miami County Public Safety",
+      "description": "Broadcastify public safety feed 39193 for Kansas.",
+      "city": "",
+      "county": "Various",
+      "state": "KS",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kansas"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39193"
+    },
+    {
+      "id": "bf-37193-sedgwick-county-ems-dispatch-tac-channels",
+      "name": "Sedgwick County EMS Dispatch/Tac Channels",
+      "description": "Broadcastify public safety feed 37193 for Kansas.",
+      "city": "",
+      "county": "Various",
+      "state": "KS",
+      "service_types": [
+        "dispatch",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kansas",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37193"
+    },
+    {
+      "id": "bf-12151-osage-county-fire-and-ems",
+      "name": "Osage County Fire and EMS",
+      "description": "Broadcastify public safety feed 12151 for Kansas.",
+      "city": "",
+      "county": "Various",
+      "state": "KS",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kansas",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/12151"
+    },
+    {
+      "id": "bf-28763-douglas-county-law-dispatch",
+      "name": "Douglas County Law Dispatch",
+      "description": "Broadcastify public safety feed 28763 for Kansas.",
+      "city": "",
+      "county": "Various",
+      "state": "KS",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kansas"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/28763"
+    },
+    {
+      "id": "bf-20967-labette-county-sheriff-fire-and-ems",
+      "name": "Labette County Sheriff, Fire and EMS",
+      "description": "Broadcastify public safety feed 20967 for Kansas.",
+      "city": "",
+      "county": "Various",
+      "state": "KS",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kansas",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/20967"
+    },
+    {
+      "id": "bf-17713-wellington-fire",
+      "name": "Wellington Fire",
+      "description": "Broadcastify public safety feed 17713 for Kansas.",
+      "city": "",
+      "county": "Various",
+      "state": "KS",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kansas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/17713"
+    },
+    {
+      "id": "bf-42078-miltonvale-kansas-emergency-services",
+      "name": "Miltonvale Kansas Emergency Services",
+      "description": "Broadcastify public safety feed 42078 for Kansas.",
+      "city": "",
+      "county": "Various",
+      "state": "KS",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kansas"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42078"
+    },
+    {
+      "id": "bf-14332-cowley-county-fire",
+      "name": "Cowley County Fire",
+      "description": "Broadcastify public safety feed 14332 for Kansas.",
+      "city": "",
+      "county": "Various",
+      "state": "KS",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kansas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/14332"
+    },
+    {
+      "id": "bf-45344-lawrence-douglas-county-fire-and-medical",
+      "name": "Lawrence Douglas County Fire and Medical",
+      "description": "Broadcastify public safety feed 45344 for Kansas.",
+      "city": "",
+      "county": "Various",
+      "state": "KS",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kansas",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45344"
+    },
+    {
+      "id": "bf-44991-pottawatomie-county-ks-fire-1-800mhz",
+      "name": "Pottawatomie County, KS- Fire 1 (800MHz)",
+      "description": "Broadcastify public safety feed 44991 for Kansas.",
+      "city": "",
+      "county": "Various",
+      "state": "KS",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kansas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44991"
+    },
+    {
+      "id": "bf-31809-pratt-county-fire-and-ems-dispatch",
+      "name": "Pratt County Fire and EMS Dispatch",
+      "description": "Broadcastify public safety feed 31809 for Kansas.",
+      "city": "",
+      "county": "Various",
+      "state": "KS",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kansas",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/31809"
+    },
+    {
+      "id": "bf-31810-pratt-city-fire-dispatch",
+      "name": "Pratt City Fire Dispatch",
+      "description": "Broadcastify public safety feed 31810 for Kansas.",
+      "city": "",
+      "county": "Various",
+      "state": "KS",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kansas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/31810"
+    },
+    {
+      "id": "bf-36552-pratt-county-ems",
+      "name": "Pratt County EMS",
+      "description": "Broadcastify public safety feed 36552 for Kansas.",
+      "city": "",
+      "county": "Various",
+      "state": "KS",
+      "service_types": [
+        "dispatch",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kansas",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/36552"
+    },
+    {
+      "id": "bf-36609-pratt-county-sheriff",
+      "name": "Pratt County Sheriff",
+      "description": "Broadcastify public safety feed 36609 for Kansas.",
+      "city": "",
+      "county": "Various",
+      "state": "KS",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kansas",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/36609"
+    },
+    {
+      "id": "bf-43796-salina-fire-ems-county-fire",
+      "name": "Salina Fire / EMS / County Fire",
+      "description": "Broadcastify public safety feed 43796 for Kansas.",
+      "city": "",
+      "county": "Various",
+      "state": "KS",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kansas",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43796"
+    },
+    {
+      "id": "bf-43797-salina-police-saline-county-sheriff",
+      "name": "Salina Police / Saline County Sheriff",
+      "description": "Broadcastify public safety feed 43797 for Kansas.",
+      "city": "",
+      "county": "Various",
+      "state": "KS",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kansas",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43797"
+    },
+    {
+      "id": "bf-44487-kansas-highway-patrol-troop-b",
+      "name": "Kansas Highway Patrol - Troop B",
+      "description": "Broadcastify public safety feed 44487 for Kansas.",
+      "city": "",
+      "county": "Various",
+      "state": "KS",
+      "service_types": [
+        "dispatch",
+        "law",
+        "highway"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kansas",
+        "law",
+        "highway"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44487"
+    },
+    {
+      "id": "bf-34325-atchison-ems",
+      "name": "Atchison EMS",
+      "description": "Broadcastify public safety feed 34325 for Kansas.",
+      "city": "",
+      "county": "Various",
+      "state": "KS",
+      "service_types": [
+        "dispatch",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kansas",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/34325"
+    },
+    {
+      "id": "bf-41653-brown-county-sheriff-fire-and-ambulance",
+      "name": "Brown County Sheriff, Fire, and Ambulance",
+      "description": "Broadcastify public safety feed 41653 for Kansas.",
+      "city": "",
+      "county": "Various",
+      "state": "KS",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kansas",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41653"
+    },
+    {
+      "id": "bf-16788-cherokee-county-sheriff-dispatch",
+      "name": "Cherokee County Sheriff Dispatch",
+      "description": "Broadcastify public safety feed 16788 for Kansas.",
+      "city": "",
+      "county": "Various",
+      "state": "KS",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kansas",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/16788"
+    },
+    {
+      "id": "bf-43712-kansas-highway-patrol-troop-c",
+      "name": "Kansas Highway Patrol Troop C",
+      "description": "Broadcastify public safety feed 43712 for Kansas.",
+      "city": "",
+      "county": "Various",
+      "state": "KS",
+      "service_types": [
+        "dispatch",
+        "law",
+        "highway"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kansas",
+        "law",
+        "highway"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43712"
+    },
+    {
+      "id": "bf-43732-ellsworth-city-county-public-safety",
+      "name": "Ellsworth City / County Public Safety",
+      "description": "Broadcastify public safety feed 43732 for Kansas.",
+      "city": "",
+      "county": "Various",
+      "state": "KS",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kansas"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43732"
+    },
+    {
+      "id": "bf-28241-leavenworth-county-volunteer-fire-dispatch",
+      "name": "Leavenworth County Volunteer Fire Dispatch",
+      "description": "Broadcastify public safety feed 28241 for Kansas.",
+      "city": "",
+      "county": "Various",
+      "state": "KS",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kansas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/28241"
+    },
+    {
+      "id": "bf-28242-leavenworth-county-volunteer-fire-grounds",
+      "name": "Leavenworth County Volunteer Fire Grounds",
+      "description": "Broadcastify public safety feed 28242 for Kansas.",
+      "city": "",
+      "county": "Various",
+      "state": "KS",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kansas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/28242"
+    },
+    {
+      "id": "bf-16720-lincoln-county-fire-departments",
+      "name": "Lincoln County Fire Departments",
+      "description": "Broadcastify public safety feed 16720 for Kansas.",
+      "city": "",
+      "county": "Various",
+      "state": "KS",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kansas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/16720"
+    },
+    {
+      "id": "bf-46775-lyon-county-public-safety",
+      "name": "Lyon County Public Safety",
+      "description": "Broadcastify public safety feed 46775 for Kansas.",
+      "city": "",
+      "county": "Various",
+      "state": "KS",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kansas"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46775"
+    },
+    {
+      "id": "bf-23691-miami-county-ems-and-osawatomie-fire-depar",
+      "name": "Miami County EMS and Osawatomie Fire Department",
+      "description": "Broadcastify public safety feed 23691 for Kansas.",
+      "city": "",
+      "county": "Various",
+      "state": "KS",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kansas",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/23691"
+    },
+    {
+      "id": "bf-39201-neosho-county-ems-digital",
+      "name": "Neosho County EMS Digital",
+      "description": "Broadcastify public safety feed 39201 for Kansas.",
+      "city": "",
+      "county": "Various",
+      "state": "KS",
+      "service_types": [
+        "dispatch",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kansas",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39201"
+    },
+    {
+      "id": "bf-38246-rooks-county-public-safety",
+      "name": "Rooks County Public Safety",
+      "description": "Broadcastify public safety feed 38246 for Kansas.",
+      "city": "",
+      "county": "Various",
+      "state": "KS",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kansas"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38246"
+    },
+    {
+      "id": "bf-946-mulvane-fire-and-ems",
+      "name": "Mulvane Fire and EMS",
+      "description": "Broadcastify public safety feed 946 for Kansas.",
+      "city": "",
+      "county": "Various",
+      "state": "KS",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kansas",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/946"
+    },
+    {
+      "id": "bf-39989-woodson-county-fire",
+      "name": "Woodson County Fire",
+      "description": "Broadcastify public safety feed 39989 for Kansas.",
+      "city": "",
+      "county": "Various",
+      "state": "KS",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kansas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39989"
+    },
+    {
+      "id": "bf-18819-anderson-county-fire",
+      "name": "Anderson County Fire",
+      "description": "Broadcastify public safety feed 18819 for Kansas.",
+      "city": "",
+      "county": "Various",
+      "state": "KS",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kansas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/18819"
+    },
+    {
+      "id": "bf-26600-barber-county-fire-dispatch-west",
+      "name": "Barber County Fire Dispatch - West",
+      "description": "Broadcastify public safety feed 26600 for Kansas.",
+      "city": "",
+      "county": "Various",
+      "state": "KS",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kansas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/26600"
+    },
+    {
+      "id": "bf-26751-kiowa-ems",
+      "name": "Kiowa EMS",
+      "description": "Broadcastify public safety feed 26751 for Kansas.",
+      "city": "",
+      "county": "Various",
+      "state": "KS",
+      "service_types": [
+        "dispatch",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kansas",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/26751"
+    },
+    {
+      "id": "bf-26789-medicine-lodge-ems",
+      "name": "Medicine Lodge EMS",
+      "description": "Broadcastify public safety feed 26789 for Kansas.",
+      "city": "",
+      "county": "Various",
+      "state": "KS",
+      "service_types": [
+        "dispatch",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kansas",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/26789"
+    },
+    {
+      "id": "bf-43966-great-bend-barton-county-public-safety",
+      "name": "Great Bend / Barton County Public Safety",
+      "description": "Broadcastify public safety feed 43966 for Kansas.",
+      "city": "",
+      "county": "Various",
+      "state": "KS",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kansas"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43966"
+    },
+    {
+      "id": "bf-42722-chase-county-ems",
+      "name": "Chase County EMS",
+      "description": "Broadcastify public safety feed 42722 for Kansas.",
+      "city": "",
+      "county": "Various",
+      "state": "KS",
+      "service_types": [
+        "dispatch",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kansas",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42722"
+    },
+    {
+      "id": "bf-42723-chase-county-fire",
+      "name": "Chase County Fire",
+      "description": "Broadcastify public safety feed 42723 for Kansas.",
+      "city": "",
+      "county": "Various",
+      "state": "KS",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kansas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42723"
+    },
+    {
+      "id": "bf-21933-sedan-city-fire",
+      "name": "Sedan City Fire",
+      "description": "Broadcastify public safety feed 21933 for Kansas.",
+      "city": "",
+      "county": "Various",
+      "state": "KS",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kansas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/21933"
+    },
+    {
+      "id": "bf-21713-baxter-springs-fire",
+      "name": "Baxter Springs Fire",
+      "description": "Broadcastify public safety feed 21713 for Kansas.",
+      "city": "",
+      "county": "Various",
+      "state": "KS",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kansas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/21713"
+    },
+    {
+      "id": "bf-46999-noaa-weather-radio-avillla-wxj61",
+      "name": "NOAA Weather Radio Avillla (WXJ61)",
+      "description": "Broadcastify public safety feed 46999 for Kansas.",
+      "city": "",
+      "county": "Various",
+      "state": "KS",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kansas"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46999"
+    },
+    {
+      "id": "bf-36462-ellis-county-khp-troop-d",
+      "name": "Ellis County KHP Troop D",
+      "description": "Broadcastify public safety feed 36462 for Kansas.",
+      "city": "",
+      "county": "Various",
+      "state": "KS",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kansas"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/36462"
+    },
+    {
+      "id": "bf-26333-comanche-county-fire",
+      "name": "Comanche County Fire",
+      "description": "Broadcastify public safety feed 26333 for Kansas.",
+      "city": "",
+      "county": "Various",
+      "state": "KS",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kansas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/26333"
+    },
+    {
+      "id": "bf-47240-comanche-county-public-safety",
+      "name": "Comanche County Public Safety",
+      "description": "Broadcastify public safety feed 47240 for Kansas.",
+      "city": "",
+      "county": "Various",
+      "state": "KS",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kansas"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47240"
+    },
+    {
+      "id": "bf-39163-crawford-county-fire",
+      "name": "Crawford County Fire",
+      "description": "Broadcastify public safety feed 39163 for Kansas.",
+      "city": "",
+      "county": "Various",
+      "state": "KS",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kansas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39163"
+    },
+    {
+      "id": "bf-40566-crawford-county-fire-and-ems",
+      "name": "Crawford County Fire and EMS",
+      "description": "Broadcastify public safety feed 40566 for Kansas.",
+      "city": "",
+      "county": "Various",
+      "state": "KS",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kansas",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40566"
+    },
+    {
+      "id": "bf-27855-dickinson-county-public-safety",
+      "name": "Dickinson County Public Safety",
+      "description": "Broadcastify public safety feed 27855 for Kansas.",
+      "city": "",
+      "county": "Various",
+      "state": "KS",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kansas"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/27855"
+    },
+    {
+      "id": "bf-46268-dickinson-county-public-safety",
+      "name": "Dickinson County Public Safety",
+      "description": "Broadcastify public safety feed 46268 for Kansas.",
+      "city": "",
+      "county": "Various",
+      "state": "KS",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kansas"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46268"
+    },
+    {
+      "id": "bf-33971-elwood-fire",
+      "name": "Elwood Fire",
+      "description": "Broadcastify public safety feed 33971 for Kansas.",
+      "city": "",
+      "county": "Various",
+      "state": "KS",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kansas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/33971"
+    },
+    {
+      "id": "bf-39696-doniphan-county-ems",
+      "name": "Doniphan County EMS",
+      "description": "Broadcastify public safety feed 39696 for Kansas.",
+      "city": "",
+      "county": "Various",
+      "state": "KS",
+      "service_types": [
+        "dispatch",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kansas",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39696"
+    },
+    {
+      "id": "bf-44982-doniphan-co-troy-dispatch",
+      "name": "Doniphan Co Troy Dispatch",
+      "description": "Broadcastify public safety feed 44982 for Kansas.",
+      "city": "",
+      "county": "Various",
+      "state": "KS",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kansas"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44982"
+    },
+    {
+      "id": "bf-27511-elk-county-sheriff",
+      "name": "Elk County Sheriff",
+      "description": "Broadcastify public safety feed 27511 for Kansas.",
+      "city": "",
+      "county": "Various",
+      "state": "KS",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kansas",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/27511"
+    },
+    {
+      "id": "bf-27134-ellis-county-law-fire-and-ems",
+      "name": "Ellis County Law, Fire and EMS",
+      "description": "Broadcastify public safety feed 27134 for Kansas.",
+      "city": "",
+      "county": "Various",
+      "state": "KS",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kansas",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/27134"
+    },
+    {
+      "id": "bf-19670-ellsworth-fire-and-ems",
+      "name": "Ellsworth Fire and EMS",
+      "description": "Broadcastify public safety feed 19670 for Kansas.",
+      "city": "",
+      "county": "Various",
+      "state": "KS",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kansas",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/19670"
+    },
+    {
+      "id": "bf-46277-southwest-kansas-ksics-ford-gray-edwards-c",
+      "name": "Southwest Kansas KSICS (Ford, Gray, Edwards, Clark, Meade)",
+      "description": "Broadcastify public safety feed 46277 for Kansas.",
+      "city": "",
+      "county": "Various",
+      "state": "KS",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kansas"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46277"
+    },
+    {
+      "id": "bf-19119-gove-city-fire",
+      "name": "Gove City Fire",
+      "description": "Broadcastify public safety feed 19119 for Kansas.",
+      "city": "",
+      "county": "Various",
+      "state": "KS",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kansas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/19119"
+    },
+    {
+      "id": "bf-21007-gray-county-rural-fire",
+      "name": "Gray County Rural Fire",
+      "description": "Broadcastify public safety feed 21007 for Kansas.",
+      "city": "",
+      "county": "Various",
+      "state": "KS",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kansas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/21007"
+    },
+    {
+      "id": "bf-22333-eureka-fire",
+      "name": "Eureka Fire",
+      "description": "Broadcastify public safety feed 22333 for Kansas.",
+      "city": "",
+      "county": "Various",
+      "state": "KS",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kansas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/22333"
+    },
+    {
+      "id": "bf-22724-greenwood-county-fire-district-1-south",
+      "name": "Greenwood County Fire District 1 - South",
+      "description": "Broadcastify public safety feed 22724 for Kansas.",
+      "city": "",
+      "county": "Various",
+      "state": "KS",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kansas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/22724"
+    },
+    {
+      "id": "bf-22725-greenwood-county-fire-district-1-central",
+      "name": "Greenwood County  Fire District 1 - Central",
+      "description": "Broadcastify public safety feed 22725 for Kansas.",
+      "city": "",
+      "county": "Various",
+      "state": "KS",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kansas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/22725"
+    },
+    {
+      "id": "bf-22726-greenwood-county-fire-district-1-north",
+      "name": "Greenwood County Fire District 1 - North",
+      "description": "Broadcastify public safety feed 22726 for Kansas.",
+      "city": "",
+      "county": "Various",
+      "state": "KS",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kansas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/22726"
+    },
+    {
+      "id": "bf-27431-greenwood-fire-central",
+      "name": "Greenwood Fire - Central",
+      "description": "Broadcastify public safety feed 27431 for Kansas.",
+      "city": "",
+      "county": "Various",
+      "state": "KS",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kansas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/27431"
+    },
+    {
+      "id": "bf-27434-greenwood-fire-and-ems",
+      "name": "Greenwood Fire and EMS",
+      "description": "Broadcastify public safety feed 27434 for Kansas.",
+      "city": "",
+      "county": "Various",
+      "state": "KS",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kansas",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/27434"
+    },
+    {
+      "id": "bf-14541-hamilton-county-fire",
+      "name": "Hamilton County Fire",
+      "description": "Broadcastify public safety feed 14541 for Kansas.",
+      "city": "",
+      "county": "Various",
+      "state": "KS",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kansas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/14541"
+    },
+    {
+      "id": "bf-14542-hamilton-county-ems",
+      "name": "Hamilton County EMS",
+      "description": "Broadcastify public safety feed 14542 for Kansas.",
+      "city": "",
+      "county": "Various",
+      "state": "KS",
+      "service_types": [
+        "dispatch",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kansas",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/14542"
+    },
+    {
+      "id": "bf-37385-hanston-fire",
+      "name": "Hanston Fire",
+      "description": "Broadcastify public safety feed 37385 for Kansas.",
+      "city": "",
+      "county": "Various",
+      "state": "KS",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kansas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37385"
+    },
+    {
+      "id": "bf-27926-jackson-county-sheriff",
+      "name": "Jackson County Sheriff",
+      "description": "Broadcastify public safety feed 27926 for Kansas.",
+      "city": "",
+      "county": "Various",
+      "state": "KS",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kansas",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/27926"
+    },
+    {
+      "id": "bf-35755-prairie-band-potawatomi-nation-fire",
+      "name": "Prairie Band Potawatomi Nation Fire",
+      "description": "Broadcastify public safety feed 35755 for Kansas.",
+      "city": "",
+      "county": "Various",
+      "state": "KS",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kansas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/35755"
+    },
+    {
+      "id": "bf-36072-jackson-county-public-safety",
+      "name": "Jackson County Public Safety",
+      "description": "Broadcastify public safety feed 36072 for Kansas.",
+      "city": "",
+      "county": "Various",
+      "state": "KS",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kansas"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/36072"
+    },
+    {
+      "id": "bf-43383-kearny-county-ems",
+      "name": "Kearny County EMS",
+      "description": "Broadcastify public safety feed 43383 for Kansas.",
+      "city": "",
+      "county": "Various",
+      "state": "KS",
+      "service_types": [
+        "dispatch",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kansas",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43383"
+    },
+    {
+      "id": "bf-43419-kearny-county-fire",
+      "name": "Kearny County Fire",
+      "description": "Broadcastify public safety feed 43419 for Kansas.",
+      "city": "",
+      "county": "Various",
+      "state": "KS",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kansas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43419"
+    },
+    {
+      "id": "bf-26554-kiowa-county-fire",
+      "name": "Kiowa County Fire",
+      "description": "Broadcastify public safety feed 26554 for Kansas.",
+      "city": "",
+      "county": "Various",
+      "state": "KS",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kansas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/26554"
+    },
+    {
+      "id": "bf-43679-labette-county-fire-ems",
+      "name": "Labette County Fire & EMS",
+      "description": "Broadcastify public safety feed 43679 for Kansas.",
+      "city": "",
+      "county": "Various",
+      "state": "KS",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kansas",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43679"
+    },
+    {
+      "id": "bf-43680-labette-county-sheriff",
+      "name": "Labette County Sheriff",
+      "description": "Broadcastify public safety feed 43680 for Kansas.",
+      "city": "",
+      "county": "Various",
+      "state": "KS",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kansas",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43680"
+    },
+    {
+      "id": "bf-21365-lane-county-fire",
+      "name": "Lane County Fire",
+      "description": "Broadcastify public safety feed 21365 for Kansas.",
+      "city": "",
+      "county": "Various",
+      "state": "KS",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kansas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/21365"
+    },
+    {
+      "id": "bf-40818-lane-county-ems",
+      "name": "Lane County EMS",
+      "description": "Broadcastify public safety feed 40818 for Kansas.",
+      "city": "",
+      "county": "Various",
+      "state": "KS",
+      "service_types": [
+        "dispatch",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kansas",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40818"
+    },
+    {
+      "id": "bf-28243-leavenworth-county-volunteer-fire-tac-5",
+      "name": "Leavenworth County Volunteer Fire Tac 5",
+      "description": "Broadcastify public safety feed 28243 for Kansas.",
+      "city": "",
+      "county": "Various",
+      "state": "KS",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kansas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/28243"
+    },
+    {
+      "id": "bf-21517-oakley-fire",
+      "name": "Oakley Fire",
+      "description": "Broadcastify public safety feed 21517 for Kansas.",
+      "city": "",
+      "county": "Various",
+      "state": "KS",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kansas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/21517"
+    },
+    {
+      "id": "bf-42724-cvillersc",
+      "name": "CVilleRSC",
+      "description": "Broadcastify public safety feed 42724 for Kansas.",
+      "city": "",
+      "county": "Various",
+      "state": "KS",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kansas"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42724"
+    },
+    {
+      "id": "bf-42840-montgomery-county-public-safety",
+      "name": "Montgomery County Public Safety",
+      "description": "Broadcastify public safety feed 42840 for Kansas.",
+      "city": "",
+      "county": "Various",
+      "state": "KS",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kansas"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42840"
+    },
+    {
+      "id": "bf-45406-montgomery-county-south",
+      "name": "Montgomery County South",
+      "description": "Broadcastify public safety feed 45406 for Kansas.",
+      "city": "",
+      "county": "Various",
+      "state": "KS",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kansas"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45406"
+    },
+    {
+      "id": "bf-45407-montgomery-county-north",
+      "name": "Montgomery County North",
+      "description": "Broadcastify public safety feed 45407 for Kansas.",
+      "city": "",
+      "county": "Various",
+      "state": "KS",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kansas"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45407"
+    },
+    {
+      "id": "bf-23024-morris-county-fire",
+      "name": "Morris County Fire",
+      "description": "Broadcastify public safety feed 23024 for Kansas.",
+      "city": "",
+      "county": "Various",
+      "state": "KS",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kansas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/23024"
+    },
+    {
+      "id": "bf-26886-morris-county-ems",
+      "name": "Morris County EMS",
+      "description": "Broadcastify public safety feed 26886 for Kansas.",
+      "city": "",
+      "county": "Various",
+      "state": "KS",
+      "service_types": [
+        "dispatch",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kansas",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/26886"
+    },
+    {
+      "id": "bf-29891-dunlap-rural-fire",
+      "name": "Dunlap Rural Fire",
+      "description": "Broadcastify public safety feed 29891 for Kansas.",
+      "city": "",
+      "county": "Various",
+      "state": "KS",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kansas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/29891"
+    },
+    {
+      "id": "bf-33529-chanute-fire",
+      "name": "Chanute Fire",
+      "description": "Broadcastify public safety feed 33529 for Kansas.",
+      "city": "",
+      "county": "Various",
+      "state": "KS",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kansas",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/33529"
+    },
+    {
+      "id": "bf-33762-chanute-ems",
+      "name": "Chanute EMS",
+      "description": "Broadcastify public safety feed 33762 for Kansas.",
+      "city": "",
+      "county": "Various",
+      "state": "KS",
+      "service_types": [
+        "dispatch",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kansas",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/33762"
+    },
+    {
+      "id": "bf-33763-neosho-ems",
+      "name": "Neosho EMS",
+      "description": "Broadcastify public safety feed 33763 for Kansas.",
+      "city": "",
+      "county": "Various",
+      "state": "KS",
+      "service_types": [
+        "dispatch",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "kansas",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/33763"
+    }
+  ]
+}

@@ -3,7 +3,8 @@ This runbook executes the current production plan for local-first vehicle operat
 ## Components
 - Pipeline process (`pipeline.py`)
 - Java backend (`frontend/java_backend/ScannerBackendServer.java`, executable JAR)
-- Frontend dev server (`frontend/dev_server.py`)
+- Frontend executable (`frontend/build_executable.sh` -> `frontend/dist/scanner-frontend-lite/scanner-frontend-lite`)
+- Frontend dev server fallback (`frontend/dev_server.py`)
 - Unified launcher (`run_vehicle_stack.sh`)
 ## Configuration
 Edit `config/vehicle_stack.env` before deployment:
@@ -11,6 +12,8 @@ Edit `config/vehicle_stack.env` before deployment:
 - `ENABLE_PIPELINE_AUTOSTART`
 - `BACKEND_PORT`
 - `FRONTEND_PORT`
+- `FRONTEND_EXECUTABLE_PATH`
+- `FRONTEND_BUILD_ON_START`
 - `JAVA_BACKEND_HOST`
 - `MAX_LOG_SIZE_MB`
 - `MAX_LOG_BACKUPS`

@@ -1,0 +1,2295 @@
+{
+  "channels": [
+    {
+      "id": "bf-32602-indianapolis-metropolitan-police",
+      "name": "Indianapolis Metropolitan Police",
+      "description": "Broadcastify public safety feed 32602 for Tennessee.",
+      "city": "",
+      "county": "Various",
+      "state": "TN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "tennessee",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32602"
+    },
+    {
+      "id": "bf-9119-bradley-county-sheriff-cleveland-police-fi",
+      "name": "Bradley County Sheriff, Cleveland Police, Fire Rescue and MAC",
+      "description": "Broadcastify public safety feed 9119 for Tennessee.",
+      "city": "",
+      "county": "Various",
+      "state": "TN",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "tennessee",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/9119"
+    },
+    {
+      "id": "bf-215-memphis-police-and-shelby-county-sheriff",
+      "name": "Memphis Police and Shelby County Sheriff",
+      "description": "Broadcastify public safety feed 215 for Tennessee.",
+      "city": "",
+      "county": "Various",
+      "state": "TN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "tennessee",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/215"
+    },
+    {
+      "id": "bf-1113-blount-county-public-safety",
+      "name": "Blount County Public Safety",
+      "description": "Broadcastify public safety feed 1113 for Tennessee.",
+      "city": "",
+      "county": "Various",
+      "state": "TN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "tennessee"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/1113"
+    },
+    {
+      "id": "bf-44571-hamilton-county-public-safety",
+      "name": "Hamilton County Public Safety",
+      "description": "Broadcastify public safety feed 44571 for Tennessee.",
+      "city": "",
+      "county": "Various",
+      "state": "TN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "tennessee"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44571"
+    },
+    {
+      "id": "bf-13209-cocke-county-sheriff-fire-and-ems-newport-",
+      "name": "Cocke County Sheriff, Fire, and EMS, Newport Police and Fire",
+      "description": "Broadcastify public safety feed 13209 for Tennessee.",
+      "city": "",
+      "county": "Various",
+      "state": "TN",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "tennessee",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/13209"
+    },
+    {
+      "id": "bf-24580-gibson-county-public-safety",
+      "name": "Gibson County Public Safety",
+      "description": "Broadcastify public safety feed 24580 for Tennessee.",
+      "city": "",
+      "county": "Various",
+      "state": "TN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "tennessee"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/24580"
+    },
+    {
+      "id": "bf-11618-tennessee-highway-patrol-district-8",
+      "name": "Tennessee Highway Patrol District 8",
+      "description": "Broadcastify public safety feed 11618 for Tennessee.",
+      "city": "",
+      "county": "Various",
+      "state": "TN",
+      "service_types": [
+        "dispatch",
+        "law",
+        "highway"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "tennessee",
+        "law",
+        "highway"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/11618"
+    },
+    {
+      "id": "bf-25336-hardin-county-sheriff-and-fire-savannah-po",
+      "name": "Hardin County Sheriff and Fire, Savannah Police / Fire",
+      "description": "Broadcastify public safety feed 25336 for Tennessee.",
+      "city": "",
+      "county": "Various",
+      "state": "TN",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "tennessee",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/25336"
+    },
+    {
+      "id": "bf-44617-rhea-county-public-safety",
+      "name": "Rhea County Public Safety",
+      "description": "Broadcastify public safety feed 44617 for Tennessee.",
+      "city": "",
+      "county": "Various",
+      "state": "TN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "tennessee"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44617"
+    },
+    {
+      "id": "bf-43964-memphis-fire-department",
+      "name": "Memphis Fire Department",
+      "description": "Broadcastify public safety feed 43964 for Tennessee.",
+      "city": "",
+      "county": "Various",
+      "state": "TN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "tennessee",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43964"
+    },
+    {
+      "id": "bf-2411-weakley-county-public-safety",
+      "name": "Weakley County Public Safety",
+      "description": "Broadcastify public safety feed 2411 for Tennessee.",
+      "city": "",
+      "county": "Various",
+      "state": "TN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "tennessee"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/2411"
+    },
+    {
+      "id": "bf-8972-roane-county-fire-and-ems",
+      "name": "Roane County Fire and EMS",
+      "description": "Broadcastify public safety feed 8972 for Tennessee.",
+      "city": "",
+      "county": "Various",
+      "state": "TN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "tennessee",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/8972"
+    },
+    {
+      "id": "bf-43944-giles-county-public-safety",
+      "name": "Giles County Public Safety",
+      "description": "Broadcastify public safety feed 43944 for Tennessee.",
+      "city": "",
+      "county": "Various",
+      "state": "TN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "tennessee"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43944"
+    },
+    {
+      "id": "bf-217-germantown-police-and-fire",
+      "name": "Germantown Police and Fire",
+      "description": "Broadcastify public safety feed 217 for Tennessee.",
+      "city": "",
+      "county": "Various",
+      "state": "TN",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "tennessee",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/217"
+    },
+    {
+      "id": "bf-3209-anderson-county-public-safety",
+      "name": "Anderson County Public Safety",
+      "description": "Broadcastify public safety feed 3209 for Tennessee.",
+      "city": "",
+      "county": "Various",
+      "state": "TN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "tennessee"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/3209"
+    },
+    {
+      "id": "bf-12439-benton-county-sheriff-and-camden-police",
+      "name": "Benton County Sheriff and Camden Police",
+      "description": "Broadcastify public safety feed 12439 for Tennessee.",
+      "city": "",
+      "county": "Various",
+      "state": "TN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "tennessee",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/12439"
+    },
+    {
+      "id": "bf-42114-tennessee-highway-patrol-tdot-help-distric",
+      "name": "Tennessee Highway Patrol & TDOT HELP District 3  - Nashville",
+      "description": "Broadcastify public safety feed 42114 for Tennessee.",
+      "city": "",
+      "county": "Various",
+      "state": "TN",
+      "service_types": [
+        "dispatch",
+        "law",
+        "highway"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "tennessee",
+        "law",
+        "highway"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42114"
+    },
+    {
+      "id": "bf-46392-union-city-police-obion-county-sherrif-dep",
+      "name": "Union City Police / Obion County Sherrif Department",
+      "description": "Broadcastify public safety feed 46392 for Tennessee.",
+      "city": "",
+      "county": "Various",
+      "state": "TN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "tennessee",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46392"
+    },
+    {
+      "id": "bf-38207-smith-county-sheriff-fire-and-ems-dispatch",
+      "name": "Smith County Sheriff, Fire, and EMS Dispatch",
+      "description": "Broadcastify public safety feed 38207 for Tennessee.",
+      "city": "",
+      "county": "Various",
+      "state": "TN",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "tennessee",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38207"
+    },
+    {
+      "id": "bf-21841-morgan-county-sheriff-fire-and-ems",
+      "name": "Morgan County Sheriff, Fire and EMS",
+      "description": "Broadcastify public safety feed 21841 for Tennessee.",
+      "city": "",
+      "county": "Various",
+      "state": "TN",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "tennessee",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/21841"
+    },
+    {
+      "id": "bf-36352-obion-county-fire-departments",
+      "name": "Obion County Fire Departments",
+      "description": "Broadcastify public safety feed 36352 for Tennessee.",
+      "city": "",
+      "county": "Various",
+      "state": "TN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "tennessee",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/36352"
+    },
+    {
+      "id": "bf-15517-carroll-county-sheriff-and-fire-huntingdon",
+      "name": "Carroll County Sheriff and Fire, Huntingdon Police, Fire, and PW",
+      "description": "Broadcastify public safety feed 15517 for Tennessee.",
+      "city": "",
+      "county": "Various",
+      "state": "TN",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "tennessee",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/15517"
+    },
+    {
+      "id": "bf-37220-polk-county-public-safety",
+      "name": "Polk County Public Safety",
+      "description": "Broadcastify public safety feed 37220 for Tennessee.",
+      "city": "",
+      "county": "Various",
+      "state": "TN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "tennessee"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37220"
+    },
+    {
+      "id": "bf-29255-tennessee-highway-patrol-district-2-dispat",
+      "name": "Tennessee Highway Patrol District 2 Dispatch - Chattanooga",
+      "description": "Broadcastify public safety feed 29255 for Tennessee.",
+      "city": "",
+      "county": "Various",
+      "state": "TN",
+      "service_types": [
+        "dispatch",
+        "law",
+        "highway"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "tennessee",
+        "law",
+        "highway"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/29255"
+    },
+    {
+      "id": "bf-45120-bradley-county-cleveland-fire",
+      "name": "Bradley County & Cleveland Fire",
+      "description": "Broadcastify public safety feed 45120 for Tennessee.",
+      "city": "",
+      "county": "Various",
+      "state": "TN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "tennessee",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45120"
+    },
+    {
+      "id": "bf-43172-dyer-county-newbern-police-fire-and-ems",
+      "name": "Dyer County/Newbern Police, Fire, and Ems",
+      "description": "Broadcastify public safety feed 43172 for Tennessee.",
+      "city": "",
+      "county": "Various",
+      "state": "TN",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "tennessee",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43172"
+    },
+    {
+      "id": "bf-41802-oakland-fire",
+      "name": "Oakland Fire",
+      "description": "Broadcastify public safety feed 41802 for Tennessee.",
+      "city": "",
+      "county": "Various",
+      "state": "TN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "tennessee",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41802"
+    },
+    {
+      "id": "bf-45706-soddy-daisy-police-and-fire",
+      "name": "Soddy Daisy - Police and Fire",
+      "description": "Broadcastify public safety feed 45706 for Tennessee.",
+      "city": "",
+      "county": "Various",
+      "state": "TN",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "tennessee",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45706"
+    },
+    {
+      "id": "bf-47270-life-force-air-medical-services",
+      "name": "Life Force Air Medical Services",
+      "description": "Broadcastify public safety feed 47270 for Tennessee.",
+      "city": "",
+      "county": "Various",
+      "state": "TN",
+      "service_types": [
+        "dispatch",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "tennessee",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47270"
+    },
+    {
+      "id": "bf-17603-new-prospect-fire-and-rescue",
+      "name": "New Prospect Fire and Rescue",
+      "description": "Broadcastify public safety feed 17603 for Tennessee.",
+      "city": "",
+      "county": "Various",
+      "state": "TN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "tennessee",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/17603"
+    },
+    {
+      "id": "bf-26885-lawrenceburg-fire",
+      "name": "Lawrenceburg Fire",
+      "description": "Broadcastify public safety feed 26885 for Tennessee.",
+      "city": "",
+      "county": "Various",
+      "state": "TN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "tennessee",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/26885"
+    },
+    {
+      "id": "bf-39654-trousdale-county-sheriff",
+      "name": "Trousdale County Sheriff",
+      "description": "Broadcastify public safety feed 39654 for Tennessee.",
+      "city": "",
+      "county": "Various",
+      "state": "TN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "tennessee",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39654"
+    },
+    {
+      "id": "bf-46284-bledsoe-county-fire-1",
+      "name": "Bledsoe County Fire 1",
+      "description": "Broadcastify public safety feed 46284 for Tennessee.",
+      "city": "",
+      "county": "Various",
+      "state": "TN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "tennessee",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46284"
+    },
+    {
+      "id": "bf-46551-bledsoe-county-fire-2",
+      "name": "Bledsoe County Fire 2",
+      "description": "Broadcastify public safety feed 46551 for Tennessee.",
+      "city": "",
+      "county": "Various",
+      "state": "TN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "tennessee",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46551"
+    },
+    {
+      "id": "bf-42783-franklin-county-public-safety",
+      "name": "Franklin County Public Safety",
+      "description": "Broadcastify public safety feed 42783 for Tennessee.",
+      "city": "",
+      "county": "Various",
+      "state": "TN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "tennessee"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42783"
+    },
+    {
+      "id": "bf-46917-greene-county-volunteer-fire-departments-a",
+      "name": "Greene County Volunteer Fire Departments and Rescue Squad Dispatch",
+      "description": "Broadcastify public safety feed 46917 for Tennessee.",
+      "city": "",
+      "county": "Various",
+      "state": "TN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "tennessee",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46917"
+    },
+    {
+      "id": "bf-39164-west-hamblen-fire",
+      "name": "West Hamblen Fire",
+      "description": "Broadcastify public safety feed 39164 for Tennessee.",
+      "city": "",
+      "county": "Various",
+      "state": "TN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "tennessee",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39164"
+    },
+    {
+      "id": "bf-21572-hamilton-county-fire-departments",
+      "name": "Hamilton County Fire Departments",
+      "description": "Broadcastify public safety feed 21572 for Tennessee.",
+      "city": "",
+      "county": "Various",
+      "state": "TN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "tennessee",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/21572"
+    },
+    {
+      "id": "bf-45601-east-ridge-public-safety",
+      "name": "East Ridge Public Safety",
+      "description": "Broadcastify public safety feed 45601 for Tennessee.",
+      "city": "",
+      "county": "Various",
+      "state": "TN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "tennessee"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45601"
+    },
+    {
+      "id": "bf-45708-chattanooga-police-department",
+      "name": "Chattanooga Police Department",
+      "description": "Broadcastify public safety feed 45708 for Tennessee.",
+      "city": "",
+      "county": "Various",
+      "state": "TN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "tennessee",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45708"
+    },
+    {
+      "id": "bf-45709-chattanooga-public-safety",
+      "name": "Chattanooga Public Safety",
+      "description": "Broadcastify public safety feed 45709 for Tennessee.",
+      "city": "",
+      "county": "Various",
+      "state": "TN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "tennessee"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45709"
+    },
+    {
+      "id": "bf-45812-chattanooga-airport-public-safety",
+      "name": "Chattanooga Airport Public Safety",
+      "description": "Broadcastify public safety feed 45812 for Tennessee.",
+      "city": "",
+      "county": "Various",
+      "state": "TN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "tennessee"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45812"
+    },
+    {
+      "id": "bf-14940-centerville-fire",
+      "name": "Centerville Fire",
+      "description": "Broadcastify public safety feed 14940 for Tennessee.",
+      "city": "",
+      "county": "Various",
+      "state": "TN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "tennessee",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/14940"
+    },
+    {
+      "id": "bf-41624-knox-county-public-safety",
+      "name": "Knox County Public Safety",
+      "description": "Broadcastify public safety feed 41624 for Tennessee.",
+      "city": "",
+      "county": "Various",
+      "state": "TN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "tennessee"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41624"
+    },
+    {
+      "id": "bf-23504-hohenwald-fire",
+      "name": "Hohenwald Fire",
+      "description": "Broadcastify public safety feed 23504 for Tennessee.",
+      "city": "",
+      "county": "Various",
+      "state": "TN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "tennessee",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/23504"
+    },
+    {
+      "id": "bf-37159-macon-county-public-safety",
+      "name": "Macon County Public Safety",
+      "description": "Broadcastify public safety feed 37159 for Tennessee.",
+      "city": "",
+      "county": "Various",
+      "state": "TN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "tennessee"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37159"
+    },
+    {
+      "id": "bf-46630-maury-county-fire-department",
+      "name": "Maury County Fire Department",
+      "description": "Broadcastify public safety feed 46630 for Tennessee.",
+      "city": "",
+      "county": "Various",
+      "state": "TN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "tennessee",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46630"
+    },
+    {
+      "id": "bf-46297-montgomery-county-ems-helicopters",
+      "name": "Montgomery County EMS Helicopters",
+      "description": "Broadcastify public safety feed 46297 for Tennessee.",
+      "city": "",
+      "county": "Various",
+      "state": "TN",
+      "service_types": [
+        "dispatch",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "tennessee",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46297"
+    },
+    {
+      "id": "bf-17729-la-vergne-fire",
+      "name": "La Vergne Fire",
+      "description": "Broadcastify public safety feed 17729 for Tennessee.",
+      "city": "",
+      "county": "Various",
+      "state": "TN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "tennessee",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/17729"
+    },
+    {
+      "id": "bf-18694-collierville-police-dispatch",
+      "name": "Collierville Police Dispatch",
+      "description": "Broadcastify public safety feed 18694 for Tennessee.",
+      "city": "",
+      "county": "Various",
+      "state": "TN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "tennessee",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/18694"
+    },
+    {
+      "id": "bf-19498-collierville-fire-dispatch",
+      "name": "Collierville Fire Dispatch",
+      "description": "Broadcastify public safety feed 19498 for Tennessee.",
+      "city": "",
+      "county": "Various",
+      "state": "TN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "tennessee",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/19498"
+    },
+    {
+      "id": "bf-34476-sumner-county-sheriff-dispatch",
+      "name": "Sumner County Sheriff Dispatch",
+      "description": "Broadcastify public safety feed 34476 for Tennessee.",
+      "city": "",
+      "county": "Various",
+      "state": "TN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "tennessee",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/34476"
+    },
+    {
+      "id": "bf-934-union-county-sheriff-fire-and-ems",
+      "name": "Union County Sheriff, Fire and EMS",
+      "description": "Broadcastify public safety feed 934 for Tennessee.",
+      "city": "",
+      "county": "Various",
+      "state": "TN",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "tennessee",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/934"
+    },
+    {
+      "id": "bf-43556-watertown-fire",
+      "name": "Watertown Fire",
+      "description": "Broadcastify public safety feed 43556 for Tennessee.",
+      "city": "",
+      "county": "Various",
+      "state": "TN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "tennessee",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43556"
+    },
+    {
+      "id": "bf-40770-jackson-area-noaa-weather-radio-wxk60",
+      "name": "Jackson Area NOAA Weather Radio WXK60",
+      "description": "Broadcastify public safety feed 40770 for Tennessee.",
+      "city": "",
+      "county": "Various",
+      "state": "TN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "tennessee"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40770"
+    },
+    {
+      "id": "bf-20100-pegram-fire",
+      "name": "Pegram Fire",
+      "description": "Broadcastify public safety feed 20100 for Tennessee.",
+      "city": "",
+      "county": "Various",
+      "state": "TN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "tennessee",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/20100"
+    },
+    {
+      "id": "bf-37101-cumberland-and-surrounding-severe-weather-",
+      "name": "Cumberland and surrounding, Severe Weather Alerts, Skywarn Storm Spotters, MTEARS, ARES",
+      "description": "Broadcastify public safety feed 37101 for Tennessee.",
+      "city": "",
+      "county": "Various",
+      "state": "TN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "tennessee"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37101"
+    },
+    {
+      "id": "bf-17721-aoc-fire-brigade",
+      "name": "AOC Fire Brigade",
+      "description": "Broadcastify public safety feed 17721 for Tennessee.",
+      "city": "",
+      "county": "Various",
+      "state": "TN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "tennessee",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/17721"
+    },
+    {
+      "id": "bf-36071-decherd-fire-rescue",
+      "name": "Decherd Fire & Rescue",
+      "description": "Broadcastify public safety feed 36071 for Tennessee.",
+      "city": "",
+      "county": "Various",
+      "state": "TN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "tennessee",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/36071"
+    },
+    {
+      "id": "bf-24227-pulaski-fire",
+      "name": "Pulaski Fire",
+      "description": "Broadcastify public safety feed 24227 for Tennessee.",
+      "city": "",
+      "county": "Various",
+      "state": "TN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "tennessee",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/24227"
+    },
+    {
+      "id": "bf-18517-altamont-fire",
+      "name": "Altamont Fire",
+      "description": "Broadcastify public safety feed 18517 for Tennessee.",
+      "city": "",
+      "county": "Various",
+      "state": "TN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "tennessee",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/18517"
+    },
+    {
+      "id": "bf-21037-beersheba-springs-fire",
+      "name": "Beersheba Springs Fire",
+      "description": "Broadcastify public safety feed 21037 for Tennessee.",
+      "city": "",
+      "county": "Various",
+      "state": "TN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "tennessee",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/21037"
+    },
+    {
+      "id": "bf-23023-pelham-valley-fire-and-rescue",
+      "name": "Pelham Valley Fire and Rescue",
+      "description": "Broadcastify public safety feed 23023 for Tennessee.",
+      "city": "",
+      "county": "Various",
+      "state": "TN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "tennessee",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/23023"
+    },
+    {
+      "id": "bf-31222-palmer-fire",
+      "name": "Palmer Fire",
+      "description": "Broadcastify public safety feed 31222 for Tennessee.",
+      "city": "",
+      "county": "Various",
+      "state": "TN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "tennessee",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/31222"
+    },
+    {
+      "id": "bf-33799-monteagle-fire-and-rescue",
+      "name": "Monteagle Fire and Rescue",
+      "description": "Broadcastify public safety feed 33799 for Tennessee.",
+      "city": "",
+      "county": "Various",
+      "state": "TN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "tennessee",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/33799"
+    },
+    {
+      "id": "bf-37522-north-hamblin-county-vfd",
+      "name": "North Hamblin County VFD",
+      "description": "Broadcastify public safety feed 37522 for Tennessee.",
+      "city": "",
+      "county": "Various",
+      "state": "TN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "tennessee"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37522"
+    },
+    {
+      "id": "bf-46003-hamblen-county-public-safety",
+      "name": "Hamblen County Public Safety",
+      "description": "Broadcastify public safety feed 46003 for Tennessee.",
+      "city": "",
+      "county": "Various",
+      "state": "TN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "tennessee"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46003"
+    },
+    {
+      "id": "bf-25063-tri-community-volunteer-fire-digital",
+      "name": "Tri-Community Volunteer Fire - Digital",
+      "description": "Broadcastify public safety feed 25063 for Tennessee.",
+      "city": "",
+      "county": "Various",
+      "state": "TN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "tennessee",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/25063"
+    },
+    {
+      "id": "bf-34716-chattanooga-fire-department",
+      "name": "Chattanooga Fire Department",
+      "description": "Broadcastify public safety feed 34716 for Tennessee.",
+      "city": "",
+      "county": "Various",
+      "state": "TN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "tennessee",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/34716"
+    },
+    {
+      "id": "bf-45705-lookout-mountain-police-fire",
+      "name": "Lookout Mountain Police/Fire",
+      "description": "Broadcastify public safety feed 45705 for Tennessee.",
+      "city": "",
+      "county": "Various",
+      "state": "TN",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "tennessee",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45705"
+    },
+    {
+      "id": "bf-45707-hamilton-county-sheriff-s-department",
+      "name": "Hamilton County Sheriff's Department",
+      "description": "Broadcastify public safety feed 45707 for Tennessee.",
+      "city": "",
+      "county": "Various",
+      "state": "TN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "tennessee",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45707"
+    },
+    {
+      "id": "bf-36685-treadway-vfd",
+      "name": "Treadway VFD",
+      "description": "Broadcastify public safety feed 36685 for Tennessee.",
+      "city": "",
+      "county": "Various",
+      "state": "TN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "tennessee"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/36685"
+    },
+    {
+      "id": "bf-44981-whiteville-fire",
+      "name": "Whiteville Fire",
+      "description": "Broadcastify public safety feed 44981 for Tennessee.",
+      "city": "",
+      "county": "Various",
+      "state": "TN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "tennessee",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44981"
+    },
+    {
+      "id": "bf-19602-bulls-gap-fire",
+      "name": "Bulls Gap Fire",
+      "description": "Broadcastify public safety feed 19602 for Tennessee.",
+      "city": "",
+      "county": "Various",
+      "state": "TN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "tennessee",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/19602"
+    },
+    {
+      "id": "bf-36776-church-hill-fire",
+      "name": "Church Hill Fire",
+      "description": "Broadcastify public safety feed 36776 for Tennessee.",
+      "city": "",
+      "county": "Various",
+      "state": "TN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "tennessee",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/36776"
+    },
+    {
+      "id": "bf-21580-saint-joseph-fire",
+      "name": "Saint Joseph Fire",
+      "description": "Broadcastify public safety feed 21580 for Tennessee.",
+      "city": "",
+      "county": "Various",
+      "state": "TN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "tennessee",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/21580"
+    },
+    {
+      "id": "bf-47232-fayetteville-lincoln-county-public-safety",
+      "name": "Fayetteville/Lincoln County Public Safety",
+      "description": "Broadcastify public safety feed 47232 for Tennessee.",
+      "city": "",
+      "county": "Various",
+      "state": "TN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "tennessee"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47232"
+    },
+    {
+      "id": "bf-35261-selmer-fire",
+      "name": "Selmer Fire",
+      "description": "Broadcastify public safety feed 35261 for Tennessee.",
+      "city": "",
+      "county": "Various",
+      "state": "TN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "tennessee",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/35261"
+    },
+    {
+      "id": "bf-36317-byrdlocke-fire",
+      "name": "ByrdLocke Fire",
+      "description": "Broadcastify public safety feed 36317 for Tennessee.",
+      "city": "",
+      "county": "Various",
+      "state": "TN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "tennessee",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/36317"
+    },
+    {
+      "id": "bf-39746-mount-pleasant-fire-dispatch",
+      "name": "Mount Pleasant Fire Dispatch",
+      "description": "Broadcastify public safety feed 39746 for Tennessee.",
+      "city": "",
+      "county": "Various",
+      "state": "TN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "tennessee",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39746"
+    },
+    {
+      "id": "bf-46629-maury-regional-ems",
+      "name": "Maury Regional EMS",
+      "description": "Broadcastify public safety feed 46629 for Tennessee.",
+      "city": "",
+      "county": "Various",
+      "state": "TN",
+      "service_types": [
+        "dispatch",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "tennessee",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46629"
+    },
+    {
+      "id": "bf-18036-monroe-county-fire",
+      "name": "Monroe County Fire",
+      "description": "Broadcastify public safety feed 18036 for Tennessee.",
+      "city": "",
+      "county": "Various",
+      "state": "TN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "tennessee",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/18036"
+    },
+    {
+      "id": "bf-27861-coker-creek-fire",
+      "name": "Coker Creek Fire",
+      "description": "Broadcastify public safety feed 27861 for Tennessee.",
+      "city": "",
+      "county": "Various",
+      "state": "TN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "tennessee",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/27861"
+    },
+    {
+      "id": "bf-43657-cookeville-pd-and-fire-dispatch",
+      "name": "Cookeville PD and Fire Dispatch",
+      "description": "Broadcastify public safety feed 43657 for Tennessee.",
+      "city": "",
+      "county": "Various",
+      "state": "TN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "tennessee",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43657"
+    },
+    {
+      "id": "bf-23555-rutherford-county-fire-and-ems-dispatch",
+      "name": "Rutherford County Fire and EMS Dispatch",
+      "description": "Broadcastify public safety feed 23555 for Tennessee.",
+      "city": "",
+      "county": "Various",
+      "state": "TN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "tennessee",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/23555"
+    },
+    {
+      "id": "bf-23556-rutherford-county-fire-and-rescue-ops",
+      "name": "Rutherford County Fire and Rescue Ops",
+      "description": "Broadcastify public safety feed 23556 for Tennessee.",
+      "city": "",
+      "county": "Various",
+      "state": "TN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "tennessee",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/23556"
+    },
+    {
+      "id": "bf-25197-smyrna-fire-dispatch",
+      "name": "Smyrna Fire Dispatch",
+      "description": "Broadcastify public safety feed 25197 for Tennessee.",
+      "city": "",
+      "county": "Various",
+      "state": "TN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "tennessee",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/25197"
+    },
+    {
+      "id": "bf-27669-scott-county-public-safety",
+      "name": "Scott County Public Safety",
+      "description": "Broadcastify public safety feed 27669 for Tennessee.",
+      "city": "",
+      "county": "Various",
+      "state": "TN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "tennessee"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/27669"
+    },
+    {
+      "id": "bf-42142-dunlap-fire",
+      "name": "Dunlap Fire",
+      "description": "Broadcastify public safety feed 42142 for Tennessee.",
+      "city": "",
+      "county": "Various",
+      "state": "TN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "tennessee",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42142"
+    },
+    {
+      "id": "bf-27265-hendersonville-police-dispatch",
+      "name": "Hendersonville Police Dispatch",
+      "description": "Broadcastify public safety feed 27265 for Tennessee.",
+      "city": "",
+      "county": "Various",
+      "state": "TN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "tennessee",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/27265"
+    },
+    {
+      "id": "bf-34474-hendersonville-fire-dispatch",
+      "name": "Hendersonville Fire Dispatch",
+      "description": "Broadcastify public safety feed 34474 for Tennessee.",
+      "city": "",
+      "county": "Various",
+      "state": "TN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "tennessee",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/34474"
+    },
+    {
+      "id": "bf-34475-gallatin-police-dispatch",
+      "name": "Gallatin Police Dispatch",
+      "description": "Broadcastify public safety feed 34475 for Tennessee.",
+      "city": "",
+      "county": "Various",
+      "state": "TN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "tennessee",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/34475"
+    },
+    {
+      "id": "bf-34511-sumner-county-ems-dispatch",
+      "name": "Sumner County EMS Dispatch",
+      "description": "Broadcastify public safety feed 34511 for Tennessee.",
+      "city": "",
+      "county": "Various",
+      "state": "TN",
+      "service_types": [
+        "dispatch",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "tennessee",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/34511"
+    },
+    {
+      "id": "bf-34573-millersville-police-dispatch",
+      "name": "Millersville Police Dispatch",
+      "description": "Broadcastify public safety feed 34573 for Tennessee.",
+      "city": "",
+      "county": "Various",
+      "state": "TN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "tennessee",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/34573"
+    },
+    {
+      "id": "bf-34574-westmoreland-police-dispatch",
+      "name": "Westmoreland Police Dispatch",
+      "description": "Broadcastify public safety feed 34574 for Tennessee.",
+      "city": "",
+      "county": "Various",
+      "state": "TN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "tennessee",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/34574"
+    },
+    {
+      "id": "bf-34575-portland-police-dispatch",
+      "name": "Portland Police Dispatch",
+      "description": "Broadcastify public safety feed 34575 for Tennessee.",
+      "city": "",
+      "county": "Various",
+      "state": "TN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "tennessee",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/34575"
+    },
+    {
+      "id": "bf-21460-covington-fire",
+      "name": "Covington Fire",
+      "description": "Broadcastify public safety feed 21460 for Tennessee.",
+      "city": "",
+      "county": "Various",
+      "state": "TN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "tennessee",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/21460"
+    },
+    {
+      "id": "bf-23105-trousdale-county-rescue",
+      "name": "Trousdale County Rescue",
+      "description": "Broadcastify public safety feed 23105 for Tennessee.",
+      "city": "",
+      "county": "Various",
+      "state": "TN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "tennessee"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/23105"
+    },
+    {
+      "id": "bf-34132-trousdale-fire",
+      "name": "Trousdale Fire",
+      "description": "Broadcastify public safety feed 34132 for Tennessee.",
+      "city": "",
+      "county": "Various",
+      "state": "TN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "tennessee",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/34132"
+    },
+    {
+      "id": "bf-47392-union-county-vfd",
+      "name": "Union County VFD",
+      "description": "Broadcastify public safety feed 47392 for Tennessee.",
+      "city": "",
+      "county": "Various",
+      "state": "TN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "tennessee"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47392"
+    }
+  ]
+}

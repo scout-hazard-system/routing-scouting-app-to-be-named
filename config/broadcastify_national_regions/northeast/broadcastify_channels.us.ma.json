@@ -1,0 +1,2343 @@
+{
+  "channels": [
+    {
+      "id": "bf-32602-indianapolis-metropolitan-police",
+      "name": "Indianapolis Metropolitan Police",
+      "description": "Broadcastify public safety feed 32602 for Massachusetts.",
+      "city": "",
+      "county": "Various",
+      "state": "MA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "massachusetts",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32602"
+    },
+    {
+      "id": "bf-856-fall-river-police-and-fire",
+      "name": "Fall River Police and Fire",
+      "description": "Broadcastify public safety feed 856 for Massachusetts.",
+      "city": "",
+      "county": "Various",
+      "state": "MA",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "massachusetts",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/856"
+    },
+    {
+      "id": "bf-5163-worcester-city-police",
+      "name": "Worcester City Police",
+      "description": "Broadcastify public safety feed 5163 for Massachusetts.",
+      "city": "",
+      "county": "Various",
+      "state": "MA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "massachusetts",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/5163"
+    },
+    {
+      "id": "bf-19089-new-bedford-police-fire-and-ems",
+      "name": "New Bedford Police, Fire and EMS",
+      "description": "Broadcastify public safety feed 19089 for Massachusetts.",
+      "city": "",
+      "county": "Various",
+      "state": "MA",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "massachusetts",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/19089"
+    },
+    {
+      "id": "bf-32172-franklin-county-police-fire-and-ems-dispat",
+      "name": "Franklin County Police, Fire and EMS Dispatch",
+      "description": "Broadcastify public safety feed 32172 for Massachusetts.",
+      "city": "",
+      "county": "Various",
+      "state": "MA",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "massachusetts",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32172"
+    },
+    {
+      "id": "bf-45513-lowell-police-department",
+      "name": "Lowell Police Department",
+      "description": "Broadcastify public safety feed 45513 for Massachusetts.",
+      "city": "",
+      "county": "Various",
+      "state": "MA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "massachusetts",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45513"
+    },
+    {
+      "id": "bf-40359-martha-s-vineyard-public-safety",
+      "name": "Martha's Vineyard Public Safety",
+      "description": "Broadcastify public safety feed 40359 for Massachusetts.",
+      "city": "",
+      "county": "Various",
+      "state": "MA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "massachusetts"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40359"
+    },
+    {
+      "id": "bf-3969-eastern-massachusetts-state-police",
+      "name": "Eastern Massachusetts State Police",
+      "description": "Broadcastify public safety feed 3969 for Massachusetts.",
+      "city": "",
+      "county": "Various",
+      "state": "MA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "massachusetts",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/3969"
+    },
+    {
+      "id": "bf-9581-berkshire-county-fire-police-and-ems-centr",
+      "name": "Berkshire County Fire, Police and EMS - Central-Northern",
+      "description": "Broadcastify public safety feed 9581 for Massachusetts.",
+      "city": "",
+      "county": "Various",
+      "state": "MA",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "massachusetts",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/9581"
+    },
+    {
+      "id": "bf-46343-boston-fire-department",
+      "name": "Boston Fire Department",
+      "description": "Broadcastify public safety feed 46343 for Massachusetts.",
+      "city": "",
+      "county": "Various",
+      "state": "MA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "massachusetts",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46343"
+    },
+    {
+      "id": "bf-28649-weymouth-police-and-fire-dispatch",
+      "name": "Weymouth Police and Fire Dispatch",
+      "description": "Broadcastify public safety feed 28649 for Massachusetts.",
+      "city": "",
+      "county": "Various",
+      "state": "MA",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "massachusetts",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/28649"
+    },
+    {
+      "id": "bf-32037-massachusetts-state-police-dispatch-troop-",
+      "name": "Massachusetts State Police Dispatch - Troop B",
+      "description": "Broadcastify public safety feed 32037 for Massachusetts.",
+      "city": "",
+      "county": "Various",
+      "state": "MA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "massachusetts",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32037"
+    },
+    {
+      "id": "bf-28227-north-adams-police-fire-adams-williamstown",
+      "name": "North Adams Police / Fire, Adams, Williamstown and County Police",
+      "description": "Broadcastify public safety feed 28227 for Massachusetts.",
+      "city": "",
+      "county": "Various",
+      "state": "MA",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "massachusetts",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/28227"
+    },
+    {
+      "id": "bf-36379-peabody-police-and-fire",
+      "name": "Peabody Police and Fire",
+      "description": "Broadcastify public safety feed 36379 for Massachusetts.",
+      "city": "",
+      "county": "Various",
+      "state": "MA",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "massachusetts",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/36379"
+    },
+    {
+      "id": "bf-11245-haverhill-fire",
+      "name": "Haverhill Fire",
+      "description": "Broadcastify public safety feed 11245 for Massachusetts.",
+      "city": "",
+      "county": "Various",
+      "state": "MA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "massachusetts",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/11245"
+    },
+    {
+      "id": "bf-24517-barnstable-dukes-nantucket-and-plymouth-co",
+      "name": "Barnstable, Dukes, Nantucket and Plymouth Counties Fire Departments",
+      "description": "Broadcastify public safety feed 24517 for Massachusetts.",
+      "city": "",
+      "county": "Various",
+      "state": "MA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "massachusetts",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/24517"
+    },
+    {
+      "id": "bf-38531-waltham-police-fire",
+      "name": "Waltham Police & Fire",
+      "description": "Broadcastify public safety feed 38531 for Massachusetts.",
+      "city": "",
+      "county": "Various",
+      "state": "MA",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "massachusetts",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38531"
+    },
+    {
+      "id": "bf-519-essex-and-southern-rockingham-counties-fir",
+      "name": "Essex and Southern Rockingham Counties Fire / EMS",
+      "description": "Broadcastify public safety feed 519 for Massachusetts.",
+      "city": "",
+      "county": "Various",
+      "state": "MA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "massachusetts",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/519"
+    },
+    {
+      "id": "bf-34510-greenfield-police-fire-dispatch",
+      "name": "Greenfield Police & Fire Dispatch",
+      "description": "Broadcastify public safety feed 34510 for Massachusetts.",
+      "city": "",
+      "county": "Various",
+      "state": "MA",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "massachusetts",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/34510"
+    },
+    {
+      "id": "bf-22840-falmouth-police",
+      "name": "Falmouth Police",
+      "description": "Broadcastify public safety feed 22840 for Massachusetts.",
+      "city": "",
+      "county": "Various",
+      "state": "MA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "massachusetts",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/22840"
+    },
+    {
+      "id": "bf-37531-quincy-police-fire-dispatch",
+      "name": "Quincy Police & Fire Dispatch",
+      "description": "Broadcastify public safety feed 37531 for Massachusetts.",
+      "city": "",
+      "county": "Various",
+      "state": "MA",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "massachusetts",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37531"
+    },
+    {
+      "id": "bf-16648-bellingham-police-fire-and-ems-dispatch",
+      "name": "Bellingham Police, Fire and EMS Dispatch",
+      "description": "Broadcastify public safety feed 16648 for Massachusetts.",
+      "city": "",
+      "county": "Various",
+      "state": "MA",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "massachusetts",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/16648"
+    },
+    {
+      "id": "bf-5161-worcester-city-fire-and-ems",
+      "name": "Worcester City Fire and EMS",
+      "description": "Broadcastify public safety feed 5161 for Massachusetts.",
+      "city": "",
+      "county": "Various",
+      "state": "MA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "massachusetts",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/5161"
+    },
+    {
+      "id": "bf-18478-leominster-police-and-fire-dispatch",
+      "name": "Leominster Police and Fire Dispatch",
+      "description": "Broadcastify public safety feed 18478 for Massachusetts.",
+      "city": "",
+      "county": "Various",
+      "state": "MA",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "massachusetts",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/18478"
+    },
+    {
+      "id": "bf-11912-carver-fire-police-and-ems-plymouth-fire-e",
+      "name": "Carver Fire, Police, and EMS, Plymouth Fire/EMS, Wareham and Plympton Fire",
+      "description": "Broadcastify public safety feed 11912 for Massachusetts.",
+      "city": "",
+      "county": "Various",
+      "state": "MA",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "massachusetts",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/11912"
+    },
+    {
+      "id": "bf-29327-taunton-fire",
+      "name": "Taunton Fire",
+      "description": "Broadcastify public safety feed 29327 for Massachusetts.",
+      "city": "",
+      "county": "Various",
+      "state": "MA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "massachusetts",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/29327"
+    },
+    {
+      "id": "bf-41277-fitchburg-police-and-fire-dispatch",
+      "name": "Fitchburg Police and Fire Dispatch",
+      "description": "Broadcastify public safety feed 41277 for Massachusetts.",
+      "city": "",
+      "county": "Various",
+      "state": "MA",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "massachusetts",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41277"
+    },
+    {
+      "id": "bf-31951-gloucester-police-dispatch",
+      "name": "Gloucester Police Dispatch",
+      "description": "Broadcastify public safety feed 31951 for Massachusetts.",
+      "city": "",
+      "county": "Various",
+      "state": "MA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "massachusetts",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/31951"
+    },
+    {
+      "id": "bf-22653-chelmsford-police-and-fire",
+      "name": "Chelmsford Police and Fire",
+      "description": "Broadcastify public safety feed 22653 for Massachusetts.",
+      "city": "",
+      "county": "Various",
+      "state": "MA",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "massachusetts",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/22653"
+    },
+    {
+      "id": "bf-43589-lynn-fire-department",
+      "name": "Lynn Fire Department",
+      "description": "Broadcastify public safety feed 43589 for Massachusetts.",
+      "city": "",
+      "county": "Various",
+      "state": "MA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "massachusetts",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43589"
+    },
+    {
+      "id": "bf-32417-webster-police",
+      "name": "Webster Police",
+      "description": "Broadcastify public safety feed 32417 for Massachusetts.",
+      "city": "",
+      "county": "Various",
+      "state": "MA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "massachusetts",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32417"
+    },
+    {
+      "id": "bf-36789-south-coast-massachusetts-public-safety",
+      "name": "South Coast Massachusetts Public Safety",
+      "description": "Broadcastify public safety feed 36789 for Massachusetts.",
+      "city": "",
+      "county": "Various",
+      "state": "MA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "massachusetts"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/36789"
+    },
+    {
+      "id": "bf-38043-southbridge-police-dispatch",
+      "name": "Southbridge Police Dispatch",
+      "description": "Broadcastify public safety feed 38043 for Massachusetts.",
+      "city": "",
+      "county": "Various",
+      "state": "MA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "massachusetts",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38043"
+    },
+    {
+      "id": "bf-32184-leicester-police-dispatch",
+      "name": "Leicester Police Dispatch",
+      "description": "Broadcastify public safety feed 32184 for Massachusetts.",
+      "city": "",
+      "county": "Various",
+      "state": "MA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "massachusetts",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32184"
+    },
+    {
+      "id": "bf-5017-franklin-police-and-fire",
+      "name": "Franklin Police and Fire",
+      "description": "Broadcastify public safety feed 5017 for Massachusetts.",
+      "city": "",
+      "county": "Various",
+      "state": "MA",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "massachusetts",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/5017"
+    },
+    {
+      "id": "bf-28387-winthrop-police",
+      "name": "Winthrop Police",
+      "description": "Broadcastify public safety feed 28387 for Massachusetts.",
+      "city": "",
+      "county": "Various",
+      "state": "MA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "massachusetts",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/28387"
+    },
+    {
+      "id": "bf-45868-attleboro-police-and-fire",
+      "name": "Attleboro Police and Fire",
+      "description": "Broadcastify public safety feed 45868 for Massachusetts.",
+      "city": "",
+      "county": "Various",
+      "state": "MA",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "massachusetts",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45868"
+    },
+    {
+      "id": "bf-40107-clinton-public-safety",
+      "name": "Clinton Public Safety",
+      "description": "Broadcastify public safety feed 40107 for Massachusetts.",
+      "city": "",
+      "county": "Various",
+      "state": "MA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "massachusetts"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40107"
+    },
+    {
+      "id": "bf-36665-cambridge-police",
+      "name": "Cambridge Police",
+      "description": "Broadcastify public safety feed 36665 for Massachusetts.",
+      "city": "",
+      "county": "Various",
+      "state": "MA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "massachusetts",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/36665"
+    },
+    {
+      "id": "bf-35865-danvers-police",
+      "name": "Danvers Police",
+      "description": "Broadcastify public safety feed 35865 for Massachusetts.",
+      "city": "",
+      "county": "Various",
+      "state": "MA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "massachusetts",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/35865"
+    },
+    {
+      "id": "bf-21879-plymouth-county-police-fire-and-ems",
+      "name": "Plymouth County Police, Fire and EMS",
+      "description": "Broadcastify public safety feed 21879 for Massachusetts.",
+      "city": "",
+      "county": "Various",
+      "state": "MA",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "massachusetts",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/21879"
+    },
+    {
+      "id": "bf-45253-south-worcester-county-law-dispatch-oxford",
+      "name": "South Worcester County Law Dispatch, Oxford, Charlton, Webster, Dudley",
+      "description": "Broadcastify public safety feed 45253 for Massachusetts.",
+      "city": "",
+      "county": "Various",
+      "state": "MA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "massachusetts"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45253"
+    },
+    {
+      "id": "bf-36636-boston-ems",
+      "name": "Boston EMS",
+      "description": "Broadcastify public safety feed 36636 for Massachusetts.",
+      "city": "",
+      "county": "Various",
+      "state": "MA",
+      "service_types": [
+        "dispatch",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "massachusetts",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/36636"
+    },
+    {
+      "id": "bf-40643-athol-police-department",
+      "name": "Athol Police Department",
+      "description": "Broadcastify public safety feed 40643 for Massachusetts.",
+      "city": "",
+      "county": "Various",
+      "state": "MA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "massachusetts",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40643"
+    },
+    {
+      "id": "bf-36899-cambridge-fire",
+      "name": "Cambridge Fire",
+      "description": "Broadcastify public safety feed 36899 for Massachusetts.",
+      "city": "",
+      "county": "Various",
+      "state": "MA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "massachusetts",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/36899"
+    },
+    {
+      "id": "bf-2364-spencer-area-police-fire-and-ems",
+      "name": "Spencer Area Police, Fire and EMS",
+      "description": "Broadcastify public safety feed 2364 for Massachusetts.",
+      "city": "",
+      "county": "Various",
+      "state": "MA",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "massachusetts",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/2364"
+    },
+    {
+      "id": "bf-5225-south-worcester-county-communications-cent",
+      "name": "South Worcester County Communications Center",
+      "description": "Broadcastify public safety feed 5225 for Massachusetts.",
+      "city": "",
+      "county": "Various",
+      "state": "MA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "massachusetts"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/5225"
+    },
+    {
+      "id": "bf-14324-northampton-fire",
+      "name": "Northampton Fire",
+      "description": "Broadcastify public safety feed 14324 for Massachusetts.",
+      "city": "",
+      "county": "Various",
+      "state": "MA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "massachusetts",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/14324"
+    },
+    {
+      "id": "bf-12670-brockton-fire",
+      "name": "Brockton Fire",
+      "description": "Broadcastify public safety feed 12670 for Massachusetts.",
+      "city": "",
+      "county": "Various",
+      "state": "MA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "massachusetts",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/12670"
+    },
+    {
+      "id": "bf-28694-plymouth-county-fire-mutual-aid",
+      "name": "Plymouth County Fire Mutual Aid",
+      "description": "Broadcastify public safety feed 28694 for Massachusetts.",
+      "city": "",
+      "county": "Various",
+      "state": "MA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "massachusetts",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/28694"
+    },
+    {
+      "id": "bf-17050-sharon-and-foxboro-police-fire-state-polic",
+      "name": "Sharon and Foxboro Police/Fire, State Police Dispatch Troop H3",
+      "description": "Broadcastify public safety feed 17050 for Massachusetts.",
+      "city": "",
+      "county": "Various",
+      "state": "MA",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "massachusetts",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/17050"
+    },
+    {
+      "id": "bf-47387-cape-wide-public-safety",
+      "name": "Cape Wide Public Safety",
+      "description": "Broadcastify public safety feed 47387 for Massachusetts.",
+      "city": "",
+      "county": "Various",
+      "state": "MA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "massachusetts"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47387"
+    },
+    {
+      "id": "bf-11573-southern-berkshire-county-police-fire-and-",
+      "name": "Southern Berkshire County Police, Fire and EMS",
+      "description": "Broadcastify public safety feed 11573 for Massachusetts.",
+      "city": "",
+      "county": "Various",
+      "state": "MA",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "massachusetts",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/11573"
+    },
+    {
+      "id": "bf-9125-new-bedford-fire",
+      "name": "New Bedford Fire",
+      "description": "Broadcastify public safety feed 9125 for Massachusetts.",
+      "city": "",
+      "county": "Various",
+      "state": "MA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "massachusetts",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/9125"
+    },
+    {
+      "id": "bf-15736-mansfield-fire",
+      "name": "Mansfield Fire",
+      "description": "Broadcastify public safety feed 15736 for Massachusetts.",
+      "city": "",
+      "county": "Various",
+      "state": "MA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "massachusetts",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/15736"
+    },
+    {
+      "id": "bf-46306-north-attleboro-fire-1",
+      "name": "North Attleboro Fire 1",
+      "description": "Broadcastify public safety feed 46306 for Massachusetts.",
+      "city": "",
+      "county": "Various",
+      "state": "MA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "massachusetts",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46306"
+    },
+    {
+      "id": "bf-46467-chelsea-fire-channel-1",
+      "name": "Chelsea Fire Channel 1",
+      "description": "Broadcastify public safety feed 46467 for Massachusetts.",
+      "city": "",
+      "county": "Various",
+      "state": "MA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "massachusetts",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46467"
+    },
+    {
+      "id": "bf-28134-middlesex-and-essex-counties-fire",
+      "name": "Middlesex and Essex Counties Fire",
+      "description": "Broadcastify public safety feed 28134 for Massachusetts.",
+      "city": "",
+      "county": "Various",
+      "state": "MA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "massachusetts",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/28134"
+    },
+    {
+      "id": "bf-6089-waltham-fire",
+      "name": "Waltham Fire",
+      "description": "Broadcastify public safety feed 6089 for Massachusetts.",
+      "city": "",
+      "county": "Various",
+      "state": "MA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "massachusetts",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/6089"
+    },
+    {
+      "id": "bf-2859-concord-fire",
+      "name": "Concord Fire",
+      "description": "Broadcastify public safety feed 2859 for Massachusetts.",
+      "city": "",
+      "county": "Various",
+      "state": "MA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "massachusetts",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/2859"
+    },
+    {
+      "id": "bf-23478-gardner-fire",
+      "name": "Gardner Fire",
+      "description": "Broadcastify public safety feed 23478 for Massachusetts.",
+      "city": "",
+      "county": "Various",
+      "state": "MA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "massachusetts",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/23478"
+    },
+    {
+      "id": "bf-26103-bourne-fire",
+      "name": "Bourne Fire",
+      "description": "Broadcastify public safety feed 26103 for Massachusetts.",
+      "city": "",
+      "county": "Various",
+      "state": "MA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "massachusetts",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/26103"
+    },
+    {
+      "id": "bf-28572-duxbury-fire",
+      "name": "Duxbury Fire",
+      "description": "Broadcastify public safety feed 28572 for Massachusetts.",
+      "city": "",
+      "county": "Various",
+      "state": "MA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "massachusetts",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/28572"
+    },
+    {
+      "id": "bf-37651-wrentham-fire",
+      "name": "Wrentham Fire",
+      "description": "Broadcastify public safety feed 37651 for Massachusetts.",
+      "city": "",
+      "county": "Various",
+      "state": "MA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "massachusetts",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37651"
+    },
+    {
+      "id": "bf-29259-wrentham-police-dispatch",
+      "name": "Wrentham Police Dispatch",
+      "description": "Broadcastify public safety feed 29259 for Massachusetts.",
+      "city": "",
+      "county": "Various",
+      "state": "MA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "massachusetts",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/29259"
+    },
+    {
+      "id": "bf-25674-walpole-fire",
+      "name": "Walpole Fire",
+      "description": "Broadcastify public safety feed 25674 for Massachusetts.",
+      "city": "",
+      "county": "Various",
+      "state": "MA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "massachusetts",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/25674"
+    },
+    {
+      "id": "bf-46234-falmouth-fire-rescue-dept",
+      "name": "Falmouth Fire Rescue Dept",
+      "description": "Broadcastify public safety feed 46234 for Massachusetts.",
+      "city": "",
+      "county": "Various",
+      "state": "MA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "massachusetts",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46234"
+    },
+    {
+      "id": "bf-9721-norfolk-county-fire-control",
+      "name": "Norfolk County Fire Control",
+      "description": "Broadcastify public safety feed 9721 for Massachusetts.",
+      "city": "",
+      "county": "Various",
+      "state": "MA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "massachusetts",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/9721"
+    },
+    {
+      "id": "bf-28389-revere-police",
+      "name": "Revere Police",
+      "description": "Broadcastify public safety feed 28389 for Massachusetts.",
+      "city": "",
+      "county": "Various",
+      "state": "MA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "massachusetts",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/28389"
+    },
+    {
+      "id": "bf-46305-maynard-fire-department",
+      "name": "Maynard Fire Department",
+      "description": "Broadcastify public safety feed 46305 for Massachusetts.",
+      "city": "",
+      "county": "Various",
+      "state": "MA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "massachusetts",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46305"
+    },
+    {
+      "id": "bf-43722-tewksbury-police-and-fire",
+      "name": "Tewksbury Police and Fire",
+      "description": "Broadcastify public safety feed 43722 for Massachusetts.",
+      "city": "",
+      "county": "Various",
+      "state": "MA",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "massachusetts",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43722"
+    },
+    {
+      "id": "bf-719-fitchburg-and-lunenburg-fire-and-mid-state",
+      "name": "Fitchburg and Lunenburg Fire and Mid State Control",
+      "description": "Broadcastify public safety feed 719 for Massachusetts.",
+      "city": "",
+      "county": "Various",
+      "state": "MA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "massachusetts",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/719"
+    },
+    {
+      "id": "bf-1410-ashburnham-area-fire-departments",
+      "name": "Ashburnham Area Fire Departments",
+      "description": "Broadcastify public safety feed 1410 for Massachusetts.",
+      "city": "",
+      "county": "Various",
+      "state": "MA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "massachusetts",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/1410"
+    },
+    {
+      "id": "bf-1549-boylston-area-fire",
+      "name": "Boylston Area Fire",
+      "description": "Broadcastify public safety feed 1549 for Massachusetts.",
+      "city": "",
+      "county": "Various",
+      "state": "MA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "massachusetts",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/1549"
+    },
+    {
+      "id": "bf-39158-charlton-police-dispatch",
+      "name": "Charlton Police Dispatch",
+      "description": "Broadcastify public safety feed 39158 for Massachusetts.",
+      "city": "",
+      "county": "Various",
+      "state": "MA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "massachusetts",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39158"
+    },
+    {
+      "id": "bf-10387-lancaster-police-and-fire",
+      "name": "Lancaster Police and Fire",
+      "description": "Broadcastify public safety feed 10387 for Massachusetts.",
+      "city": "",
+      "county": "Various",
+      "state": "MA",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "massachusetts",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/10387"
+    },
+    {
+      "id": "bf-23702-billerica-police-and-fire",
+      "name": "Billerica Police and Fire",
+      "description": "Broadcastify public safety feed 23702 for Massachusetts.",
+      "city": "",
+      "county": "Various",
+      "state": "MA",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "massachusetts",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/23702"
+    },
+    {
+      "id": "bf-44101-gloucester-fire",
+      "name": "Gloucester Fire",
+      "description": "Broadcastify public safety feed 44101 for Massachusetts.",
+      "city": "",
+      "county": "Various",
+      "state": "MA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "massachusetts",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44101"
+    },
+    {
+      "id": "bf-21924-north-reading-police-dispatch",
+      "name": "North Reading Police Dispatch",
+      "description": "Broadcastify public safety feed 21924 for Massachusetts.",
+      "city": "",
+      "county": "Various",
+      "state": "MA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "massachusetts",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/21924"
+    },
+    {
+      "id": "bf-12830-hopkinton-police-fire-and-dpw",
+      "name": "Hopkinton Police, Fire and DPW",
+      "description": "Broadcastify public safety feed 12830 for Massachusetts.",
+      "city": "",
+      "county": "Various",
+      "state": "MA",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "massachusetts",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/12830"
+    },
+    {
+      "id": "bf-34444-amherst-fire",
+      "name": "Amherst Fire",
+      "description": "Broadcastify public safety feed 34444 for Massachusetts.",
+      "city": "",
+      "county": "Various",
+      "state": "MA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "massachusetts",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/34444"
+    },
+    {
+      "id": "bf-33017-ware-public-safety",
+      "name": "Ware Public Safety",
+      "description": "Broadcastify public safety feed 33017 for Massachusetts.",
+      "city": "",
+      "county": "Various",
+      "state": "MA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "massachusetts"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/33017"
+    },
+    {
+      "id": "bf-41664-westcomm-regional-public-safety",
+      "name": "Westcomm Regional Public Safety",
+      "description": "Broadcastify public safety feed 41664 for Massachusetts.",
+      "city": "",
+      "county": "Various",
+      "state": "MA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "massachusetts"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41664"
+    },
+    {
+      "id": "bf-46332-norwood-police",
+      "name": "Norwood Police",
+      "description": "Broadcastify public safety feed 46332 for Massachusetts.",
+      "city": "",
+      "county": "Various",
+      "state": "MA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "massachusetts",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46332"
+    },
+    {
+      "id": "bf-28578-halifax-fire",
+      "name": "Halifax Fire",
+      "description": "Broadcastify public safety feed 28578 for Massachusetts.",
+      "city": "",
+      "county": "Various",
+      "state": "MA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "massachusetts",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/28578"
+    },
+    {
+      "id": "bf-31566-franklin-fire",
+      "name": "Franklin Fire",
+      "description": "Broadcastify public safety feed 31566 for Massachusetts.",
+      "city": "",
+      "county": "Various",
+      "state": "MA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "massachusetts",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/31566"
+    },
+    {
+      "id": "bf-45945-town-of-plymouth-fire",
+      "name": "Town of Plymouth Fire",
+      "description": "Broadcastify public safety feed 45945 for Massachusetts.",
+      "city": "",
+      "county": "Various",
+      "state": "MA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "massachusetts",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45945"
+    },
+    {
+      "id": "bf-28386-winthrop-fire",
+      "name": "Winthrop Fire",
+      "description": "Broadcastify public safety feed 28386 for Massachusetts.",
+      "city": "",
+      "county": "Various",
+      "state": "MA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "massachusetts",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/28386"
+    },
+    {
+      "id": "bf-28388-revere-fire",
+      "name": "Revere Fire",
+      "description": "Broadcastify public safety feed 28388 for Massachusetts.",
+      "city": "",
+      "county": "Various",
+      "state": "MA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "massachusetts",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/28388"
+    },
+    {
+      "id": "bf-46994-melrose-fire-dispatch",
+      "name": "Melrose Fire Dispatch",
+      "description": "Broadcastify public safety feed 46994 for Massachusetts.",
+      "city": "",
+      "county": "Various",
+      "state": "MA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "massachusetts",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46994"
+    },
+    {
+      "id": "bf-45685-marlborough-police-and-fire",
+      "name": "Marlborough Police and Fire",
+      "description": "Broadcastify public safety feed 45685 for Massachusetts.",
+      "city": "",
+      "county": "Various",
+      "state": "MA",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "massachusetts",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45685"
+    },
+    {
+      "id": "bf-42492-lowell-fire-department",
+      "name": "Lowell Fire Department",
+      "description": "Broadcastify public safety feed 42492 for Massachusetts.",
+      "city": "",
+      "county": "Various",
+      "state": "MA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "massachusetts",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42492"
+    },
+    {
+      "id": "bf-712-worcester-county-fire-and-ems-northern",
+      "name": "Worcester County Fire and EMS - Northern",
+      "description": "Broadcastify public safety feed 712 for Massachusetts.",
+      "city": "",
+      "county": "Various",
+      "state": "MA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "massachusetts",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/712"
+    },
+    {
+      "id": "bf-38840-somerville-fire-department",
+      "name": "Somerville Fire Department",
+      "description": "Broadcastify public safety feed 38840 for Massachusetts.",
+      "city": "",
+      "county": "Various",
+      "state": "MA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "massachusetts",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38840"
+    },
+    {
+      "id": "bf-31442-athol-fire",
+      "name": "Athol Fire",
+      "description": "Broadcastify public safety feed 31442 for Massachusetts.",
+      "city": "",
+      "county": "Various",
+      "state": "MA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "massachusetts",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/31442"
+    },
+    {
+      "id": "bf-41743-winchendon-fire",
+      "name": "Winchendon Fire",
+      "description": "Broadcastify public safety feed 41743 for Massachusetts.",
+      "city": "",
+      "county": "Various",
+      "state": "MA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "massachusetts",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41743"
+    },
+    {
+      "id": "bf-36764-gardner-police",
+      "name": "Gardner Police",
+      "description": "Broadcastify public safety feed 36764 for Massachusetts.",
+      "city": "",
+      "county": "Various",
+      "state": "MA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "massachusetts",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/36764"
+    },
+    {
+      "id": "bf-7543-hampden-county-fire-departments",
+      "name": "Hampden County Fire Departments",
+      "description": "Broadcastify public safety feed 7543 for Massachusetts.",
+      "city": "",
+      "county": "Various",
+      "state": "MA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "massachusetts",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/7543"
+    },
+    {
+      "id": "bf-37260-merrimack-valley-police-fire-and-ems",
+      "name": "Merrimack Valley Police, Fire and EMS",
+      "description": "Broadcastify public safety feed 37260 for Massachusetts.",
+      "city": "",
+      "county": "Various",
+      "state": "MA",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "massachusetts",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37260"
+    },
+    {
+      "id": "bf-47044-southbridge-police-and-fire",
+      "name": "Southbridge Police and Fire",
+      "description": "Broadcastify public safety feed 47044 for Massachusetts.",
+      "city": "",
+      "county": "Various",
+      "state": "MA",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "massachusetts",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47044"
+    },
+    {
+      "id": "bf-23242-boxford-fire",
+      "name": "Boxford Fire",
+      "description": "Broadcastify public safety feed 23242 for Massachusetts.",
+      "city": "",
+      "county": "Various",
+      "state": "MA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "massachusetts",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/23242"
+    }
+  ]
+}

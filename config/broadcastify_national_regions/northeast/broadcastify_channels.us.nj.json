@@ -1,0 +1,2379 @@
+{
+  "channels": [
+    {
+      "id": "bf-32602-indianapolis-metropolitan-police",
+      "name": "Indianapolis Metropolitan Police",
+      "description": "Broadcastify public safety feed 32602 for New Jersey.",
+      "city": "",
+      "county": "Various",
+      "state": "NJ",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new jersey",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32602"
+    },
+    {
+      "id": "bf-7004-ocean-county-fire-and-ems-northern",
+      "name": "Ocean County Fire and EMS - Northern",
+      "description": "Broadcastify public safety feed 7004 for New Jersey.",
+      "city": "",
+      "county": "Various",
+      "state": "NJ",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new jersey",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/7004"
+    },
+    {
+      "id": "bf-28067-wantage-and-sussex-county-fire-and-ems",
+      "name": "Wantage and Sussex County Fire and EMS",
+      "description": "Broadcastify public safety feed 28067 for New Jersey.",
+      "city": "",
+      "county": "Various",
+      "state": "NJ",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new jersey",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/28067"
+    },
+    {
+      "id": "bf-16835-atlantic-county-fire-and-ems-digital",
+      "name": "Atlantic County Fire and EMS - Digital",
+      "description": "Broadcastify public safety feed 16835 for New Jersey.",
+      "city": "",
+      "county": "Various",
+      "state": "NJ",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new jersey",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/16835"
+    },
+    {
+      "id": "bf-25863-jersey-city-police",
+      "name": "Jersey City Police",
+      "description": "Broadcastify public safety feed 25863 for New Jersey.",
+      "city": "",
+      "county": "Various",
+      "state": "NJ",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new jersey",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/25863"
+    },
+    {
+      "id": "bf-27552-warren-county-police-fire-and-ems",
+      "name": "Warren County Police, Fire and EMS",
+      "description": "Broadcastify public safety feed 27552 for New Jersey.",
+      "city": "",
+      "county": "Various",
+      "state": "NJ",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new jersey",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/27552"
+    },
+    {
+      "id": "bf-33149-burlington-county-public-safety-digital",
+      "name": "Burlington County Public Safety - Digital",
+      "description": "Broadcastify public safety feed 33149 for New Jersey.",
+      "city": "",
+      "county": "Various",
+      "state": "NJ",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new jersey"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/33149"
+    },
+    {
+      "id": "bf-47065-sussex-county-public-safety",
+      "name": "Sussex County Public Safety",
+      "description": "Broadcastify public safety feed 47065 for New Jersey.",
+      "city": "",
+      "county": "Various",
+      "state": "NJ",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new jersey"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47065"
+    },
+    {
+      "id": "bf-40466-monmouth-county-fire-ems",
+      "name": "Monmouth County Fire/EMS",
+      "description": "Broadcastify public safety feed 40466 for New Jersey.",
+      "city": "",
+      "county": "Various",
+      "state": "NJ",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new jersey",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40466"
+    },
+    {
+      "id": "bf-37982-cape-may-county-public-safety",
+      "name": "Cape May County Public Safety",
+      "description": "Broadcastify public safety feed 37982 for New Jersey.",
+      "city": "",
+      "county": "Various",
+      "state": "NJ",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new jersey"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37982"
+    },
+    {
+      "id": "bf-27870-gloucester-county-fire-ems",
+      "name": "Gloucester County Fire/EMS",
+      "description": "Broadcastify public safety feed 27870 for New Jersey.",
+      "city": "",
+      "county": "Various",
+      "state": "NJ",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new jersey",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/27870"
+    },
+    {
+      "id": "bf-20795-camden-county-fire-and-ems-digital",
+      "name": "Camden County Fire and EMS - Digital",
+      "description": "Broadcastify public safety feed 20795 for New Jersey.",
+      "city": "",
+      "county": "Various",
+      "state": "NJ",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new jersey",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/20795"
+    },
+    {
+      "id": "bf-16005-cumberland-county-fire-and-ems",
+      "name": "Cumberland County Fire and EMS",
+      "description": "Broadcastify public safety feed 16005 for New Jersey.",
+      "city": "",
+      "county": "Various",
+      "state": "NJ",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new jersey",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/16005"
+    },
+    {
+      "id": "bf-29949-burlington-county-fire-and-ems-dispatch",
+      "name": "Burlington County Fire and EMS Dispatch",
+      "description": "Broadcastify public safety feed 29949 for New Jersey.",
+      "city": "",
+      "county": "Various",
+      "state": "NJ",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new jersey",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/29949"
+    },
+    {
+      "id": "bf-31193-warren-county-police-fire-ems",
+      "name": "Warren County Police, Fire & EMS",
+      "description": "Broadcastify public safety feed 31193 for New Jersey.",
+      "city": "",
+      "county": "Various",
+      "state": "NJ",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new jersey",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/31193"
+    },
+    {
+      "id": "bf-18393-west-milford-police",
+      "name": "West Milford Police",
+      "description": "Broadcastify public safety feed 18393 for New Jersey.",
+      "city": "",
+      "county": "Various",
+      "state": "NJ",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new jersey",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/18393"
+    },
+    {
+      "id": "bf-5104-middletown-and-monmouth-county-bayshore-to",
+      "name": "Middletown and Monmouth County Bayshore Towns Fire / EMS",
+      "description": "Broadcastify public safety feed 5104 for New Jersey.",
+      "city": "",
+      "county": "Various",
+      "state": "NJ",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new jersey",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/5104"
+    },
+    {
+      "id": "bf-13632-atlantic-and-cape-may-counties-fire-and-em",
+      "name": "Atlantic and Cape May Counties Fire and EMS - Southern",
+      "description": "Broadcastify public safety feed 13632 for New Jersey.",
+      "city": "",
+      "county": "Various",
+      "state": "NJ",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new jersey",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/13632"
+    },
+    {
+      "id": "bf-46816-west-hudson-fire-departments",
+      "name": "West Hudson Fire Departments",
+      "description": "Broadcastify public safety feed 46816 for New Jersey.",
+      "city": "",
+      "county": "Various",
+      "state": "NJ",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new jersey",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46816"
+    },
+    {
+      "id": "bf-27785-north-hudson-regional-fire-and-rescue",
+      "name": "North Hudson Regional Fire and Rescue",
+      "description": "Broadcastify public safety feed 27785 for New Jersey.",
+      "city": "",
+      "county": "Various",
+      "state": "NJ",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new jersey",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/27785"
+    },
+    {
+      "id": "bf-29435-essex-county-police-fire-and-ems-west",
+      "name": "Essex County Police, Fire and EMS - West",
+      "description": "Broadcastify public safety feed 29435 for New Jersey.",
+      "city": "",
+      "county": "Various",
+      "state": "NJ",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new jersey",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/29435"
+    },
+    {
+      "id": "bf-18044-ocean-city-fire-rescue",
+      "name": "Ocean City Fire Rescue",
+      "description": "Broadcastify public safety feed 18044 for New Jersey.",
+      "city": "",
+      "county": "Various",
+      "state": "NJ",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new jersey",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/18044"
+    },
+    {
+      "id": "bf-43846-somerset-county-and-franklin-twp",
+      "name": "Somerset County and Franklin Twp",
+      "description": "Broadcastify public safety feed 43846 for New Jersey.",
+      "city": "",
+      "county": "Various",
+      "state": "NJ",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new jersey"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43846"
+    },
+    {
+      "id": "bf-14215-salem-county-fire-ems-digital",
+      "name": "Salem County Fire / EMS Digital",
+      "description": "Broadcastify public safety feed 14215 for New Jersey.",
+      "city": "",
+      "county": "Various",
+      "state": "NJ",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new jersey",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/14215"
+    },
+    {
+      "id": "bf-42648-hunterdon-county-fire-ems-dispatch",
+      "name": "Hunterdon County Fire & EMS Dispatch",
+      "description": "Broadcastify public safety feed 42648 for New Jersey.",
+      "city": "",
+      "county": "Various",
+      "state": "NJ",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new jersey",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42648"
+    },
+    {
+      "id": "bf-30632-hunterdon-county-fire-ems-and-police-centr",
+      "name": "Hunterdon County Fire, EMS and Police Central / North Dispatch",
+      "description": "Broadcastify public safety feed 30632 for New Jersey.",
+      "city": "",
+      "county": "Various",
+      "state": "NJ",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new jersey",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/30632"
+    },
+    {
+      "id": "bf-19129-east-rutherford-fire-and-police",
+      "name": "East Rutherford Fire and Police",
+      "description": "Broadcastify public safety feed 19129 for New Jersey.",
+      "city": "",
+      "county": "Various",
+      "state": "NJ",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new jersey",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/19129"
+    },
+    {
+      "id": "bf-43534-newark-channels-1-4",
+      "name": "Newark Channels 1-4",
+      "description": "Broadcastify public safety feed 43534 for New Jersey.",
+      "city": "",
+      "county": "Various",
+      "state": "NJ",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new jersey"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43534"
+    },
+    {
+      "id": "bf-17027-verona-police-fire-and-ems",
+      "name": "Verona Police, Fire, and EMS",
+      "description": "Broadcastify public safety feed 17027 for New Jersey.",
+      "city": "",
+      "county": "Various",
+      "state": "NJ",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new jersey",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/17027"
+    },
+    {
+      "id": "bf-43984-trenton-fire",
+      "name": "Trenton Fire",
+      "description": "Broadcastify public safety feed 43984 for New Jersey.",
+      "city": "",
+      "county": "Various",
+      "state": "NJ",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new jersey",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43984"
+    },
+    {
+      "id": "bf-45951-phillipsburg-easton-public-safety",
+      "name": "Phillipsburg / Easton Public Safety",
+      "description": "Broadcastify public safety feed 45951 for New Jersey.",
+      "city": "",
+      "county": "Various",
+      "state": "NJ",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new jersey"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45951"
+    },
+    {
+      "id": "bf-13730-summit-police-fire-and-ems",
+      "name": "Summit Police, Fire and EMS",
+      "description": "Broadcastify public safety feed 13730 for New Jersey.",
+      "city": "",
+      "county": "Various",
+      "state": "NJ",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new jersey",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/13730"
+    },
+    {
+      "id": "bf-41350-pompton-lakes-and-riverdale-police-fire-an",
+      "name": "Pompton Lakes and Riverdale Police, Fire, and EMS",
+      "description": "Broadcastify public safety feed 41350 for New Jersey.",
+      "city": "",
+      "county": "Various",
+      "state": "NJ",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new jersey",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41350"
+    },
+    {
+      "id": "bf-7296-clifton-fire-and-ems",
+      "name": "Clifton Fire and EMS",
+      "description": "Broadcastify public safety feed 7296 for New Jersey.",
+      "city": "",
+      "county": "Various",
+      "state": "NJ",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new jersey",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/7296"
+    },
+    {
+      "id": "bf-33266-lakewood-fire-department",
+      "name": "Lakewood Fire Department",
+      "description": "Broadcastify public safety feed 33266 for New Jersey.",
+      "city": "",
+      "county": "Various",
+      "state": "NJ",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new jersey",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/33266"
+    },
+    {
+      "id": "bf-12999-jackson-fire-and-ems",
+      "name": "Jackson Fire and EMS",
+      "description": "Broadcastify public safety feed 12999 for New Jersey.",
+      "city": "",
+      "county": "Various",
+      "state": "NJ",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new jersey",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/12999"
+    },
+    {
+      "id": "bf-37699-mount-olive-public-safety",
+      "name": "Mount Olive Public Safety",
+      "description": "Broadcastify public safety feed 37699 for New Jersey.",
+      "city": "",
+      "county": "Various",
+      "state": "NJ",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new jersey"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37699"
+    },
+    {
+      "id": "bf-37410-morris-county-fire-ems-paging",
+      "name": "Morris County Fire/EMS Paging",
+      "description": "Broadcastify public safety feed 37410 for New Jersey.",
+      "city": "",
+      "county": "Various",
+      "state": "NJ",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new jersey",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37410"
+    },
+    {
+      "id": "bf-38376-hightstown-fire-east-windsor-police-and-fi",
+      "name": "Hightstown Fire, East Windsor Police and Fire",
+      "description": "Broadcastify public safety feed 38376 for New Jersey.",
+      "city": "",
+      "county": "Various",
+      "state": "NJ",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new jersey",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38376"
+    },
+    {
+      "id": "bf-35798-mercer-county-fire-ems-dispatch-ewing-resp",
+      "name": "Mercer County Fire/EMS Dispatch, Ewing Response and Fireground",
+      "description": "Broadcastify public safety feed 35798 for New Jersey.",
+      "city": "",
+      "county": "Various",
+      "state": "NJ",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new jersey",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/35798"
+    },
+    {
+      "id": "bf-23103-essex-county-fire-mutual-aid",
+      "name": "Essex County Fire Mutual Aid",
+      "description": "Broadcastify public safety feed 23103 for New Jersey.",
+      "city": "",
+      "county": "Various",
+      "state": "NJ",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new jersey",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/23103"
+    },
+    {
+      "id": "bf-1558-livingston-fire-and-ems",
+      "name": "Livingston Fire and EMS",
+      "description": "Broadcastify public safety feed 1558 for New Jersey.",
+      "city": "",
+      "county": "Various",
+      "state": "NJ",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new jersey",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/1558"
+    },
+    {
+      "id": "bf-42836-florham-park-fd",
+      "name": "Florham Park FD",
+      "description": "Broadcastify public safety feed 42836 for New Jersey.",
+      "city": "",
+      "county": "Various",
+      "state": "NJ",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new jersey"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42836"
+    },
+    {
+      "id": "bf-13408-new-jersey-statewide-medevac",
+      "name": "New Jersey Statewide Medevac",
+      "description": "Broadcastify public safety feed 13408 for New Jersey.",
+      "city": "",
+      "county": "Various",
+      "state": "NJ",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new jersey"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/13408"
+    },
+    {
+      "id": "bf-29209-hammonton-fire-company-1",
+      "name": "Hammonton Fire Company 1",
+      "description": "Broadcastify public safety feed 29209 for New Jersey.",
+      "city": "",
+      "county": "Various",
+      "state": "NJ",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new jersey",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/29209"
+    },
+    {
+      "id": "bf-24026-middlesex-county-fire-and-ems-northwest",
+      "name": "Middlesex County Fire and EMS - Northwest",
+      "description": "Broadcastify public safety feed 24026 for New Jersey.",
+      "city": "",
+      "county": "Various",
+      "state": "NJ",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new jersey",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/24026"
+    },
+    {
+      "id": "bf-28311-paramus-and-area-towns-police-fire",
+      "name": "Paramus and Area Towns Police / Fire",
+      "description": "Broadcastify public safety feed 28311 for New Jersey.",
+      "city": "",
+      "county": "Various",
+      "state": "NJ",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new jersey",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/28311"
+    },
+    {
+      "id": "bf-44613-morris-county-paging",
+      "name": "Morris County Paging",
+      "description": "Broadcastify public safety feed 44613 for New Jersey.",
+      "city": "",
+      "county": "Various",
+      "state": "NJ",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new jersey"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44613"
+    },
+    {
+      "id": "bf-18004-fairfield-fire",
+      "name": "Fairfield Fire",
+      "description": "Broadcastify public safety feed 18004 for New Jersey.",
+      "city": "",
+      "county": "Various",
+      "state": "NJ",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new jersey",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/18004"
+    },
+    {
+      "id": "bf-20917-caldwell-fire",
+      "name": "Caldwell Fire",
+      "description": "Broadcastify public safety feed 20917 for New Jersey.",
+      "city": "",
+      "county": "Various",
+      "state": "NJ",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new jersey",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/20917"
+    },
+    {
+      "id": "bf-23261-clark-fire",
+      "name": "Clark Fire",
+      "description": "Broadcastify public safety feed 23261 for New Jersey.",
+      "city": "",
+      "county": "Various",
+      "state": "NJ",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new jersey",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/23261"
+    },
+    {
+      "id": "bf-29858-passaic-fire-dispatch",
+      "name": "Passaic Fire Dispatch",
+      "description": "Broadcastify public safety feed 29858 for New Jersey.",
+      "city": "",
+      "county": "Various",
+      "state": "NJ",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new jersey",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/29858"
+    },
+    {
+      "id": "bf-26977-south-plainfield-fire",
+      "name": "South Plainfield Fire",
+      "description": "Broadcastify public safety feed 26977 for New Jersey.",
+      "city": "",
+      "county": "Various",
+      "state": "NJ",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new jersey",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/26977"
+    },
+    {
+      "id": "bf-19689-bergen-county-metro-fire-and-rescue-east",
+      "name": "Bergen County Metro Fire and Rescue - East",
+      "description": "Broadcastify public safety feed 19689 for New Jersey.",
+      "city": "",
+      "county": "Various",
+      "state": "NJ",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new jersey",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/19689"
+    },
+    {
+      "id": "bf-6956-westfield-fire-and-union-county-fire-mutua",
+      "name": "Westfield Fire and Union County Fire Mutual Aid",
+      "description": "Broadcastify public safety feed 6956 for New Jersey.",
+      "city": "",
+      "county": "Various",
+      "state": "NJ",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new jersey",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/6956"
+    },
+    {
+      "id": "bf-40450-new-jersey-state-police-troop-a-digital",
+      "name": "New Jersey State Police Troop A - Digital",
+      "description": "Broadcastify public safety feed 40450 for New Jersey.",
+      "city": "",
+      "county": "Various",
+      "state": "NJ",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new jersey",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40450"
+    },
+    {
+      "id": "bf-21074-wyckoff-fire-and-norcon",
+      "name": "Wyckoff Fire and NORCON",
+      "description": "Broadcastify public safety feed 21074 for New Jersey.",
+      "city": "",
+      "county": "Various",
+      "state": "NJ",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new jersey",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/21074"
+    },
+    {
+      "id": "bf-25201-gloucester-county-fire-radio",
+      "name": "Gloucester County Fire Radio",
+      "description": "Broadcastify public safety feed 25201 for New Jersey.",
+      "city": "",
+      "county": "Various",
+      "state": "NJ",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new jersey",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/25201"
+    },
+    {
+      "id": "bf-45516-east-hanover-fire",
+      "name": "East Hanover Fire",
+      "description": "Broadcastify public safety feed 45516 for New Jersey.",
+      "city": "",
+      "county": "Various",
+      "state": "NJ",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new jersey",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45516"
+    },
+    {
+      "id": "bf-17048-little-ferry-fire-dispatch",
+      "name": "Little Ferry Fire Dispatch",
+      "description": "Broadcastify public safety feed 17048 for New Jersey.",
+      "city": "",
+      "county": "Various",
+      "state": "NJ",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new jersey",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/17048"
+    },
+    {
+      "id": "bf-39663-irvington-fire-and-essex-county-mutual-aid",
+      "name": "Irvington Fire and Essex County Mutual Aid",
+      "description": "Broadcastify public safety feed 39663 for New Jersey.",
+      "city": "",
+      "county": "Various",
+      "state": "NJ",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new jersey",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39663"
+    },
+    {
+      "id": "bf-40861-maplewood-police-department",
+      "name": "Maplewood Police Department",
+      "description": "Broadcastify public safety feed 40861 for New Jersey.",
+      "city": "",
+      "county": "Various",
+      "state": "NJ",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new jersey",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40861"
+    },
+    {
+      "id": "bf-23028-carlstadt-fire",
+      "name": "Carlstadt Fire",
+      "description": "Broadcastify public safety feed 23028 for New Jersey.",
+      "city": "",
+      "county": "Various",
+      "state": "NJ",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new jersey",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/23028"
+    },
+    {
+      "id": "bf-16719-east-brunswick-south-river-and-spotswood-f",
+      "name": "East Brunswick, South River and Spotswood Fire / EMS",
+      "description": "Broadcastify public safety feed 16719 for New Jersey.",
+      "city": "",
+      "county": "Various",
+      "state": "NJ",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new jersey",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/16719"
+    },
+    {
+      "id": "bf-19726-monroe-township-fire",
+      "name": "Monroe Township Fire",
+      "description": "Broadcastify public safety feed 19726 for New Jersey.",
+      "city": "",
+      "county": "Various",
+      "state": "NJ",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new jersey",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/19726"
+    },
+    {
+      "id": "bf-15541-east-brunswick-fire-and-ems-paging-low-ban",
+      "name": "East Brunswick Fire and EMS Paging - Low Band",
+      "description": "Broadcastify public safety feed 15541 for New Jersey.",
+      "city": "",
+      "county": "Various",
+      "state": "NJ",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new jersey",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/15541"
+    },
+    {
+      "id": "bf-2052-monroe-township-fire-operations",
+      "name": "Monroe Township Fire Operations",
+      "description": "Broadcastify public safety feed 2052 for New Jersey.",
+      "city": "",
+      "county": "Various",
+      "state": "NJ",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new jersey",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/2052"
+    },
+    {
+      "id": "bf-34697-ocean-county-fire-and-ems-dispatch",
+      "name": "Ocean County Fire and EMS Dispatch",
+      "description": "Broadcastify public safety feed 34697 for New Jersey.",
+      "city": "",
+      "county": "Various",
+      "state": "NJ",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new jersey",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/34697"
+    },
+    {
+      "id": "bf-46167-cheesequake-fire",
+      "name": "Cheesequake Fire",
+      "description": "Broadcastify public safety feed 46167 for New Jersey.",
+      "city": "",
+      "county": "Various",
+      "state": "NJ",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new jersey",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46167"
+    },
+    {
+      "id": "bf-26582-parsippany-police-fire-and-ems-digital",
+      "name": "Parsippany Police, Fire and EMS - Digital",
+      "description": "Broadcastify public safety feed 26582 for New Jersey.",
+      "city": "",
+      "county": "Various",
+      "state": "NJ",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new jersey",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/26582"
+    },
+    {
+      "id": "bf-9974-harrison-metro-area-fire-ems",
+      "name": "Harrison Metro Area Fire & EMS",
+      "description": "Broadcastify public safety feed 9974 for New Jersey.",
+      "city": "",
+      "county": "Various",
+      "state": "NJ",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new jersey",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/9974"
+    },
+    {
+      "id": "bf-42866-asbury-park-fire-department",
+      "name": "Asbury Park Fire Department",
+      "description": "Broadcastify public safety feed 42866 for New Jersey.",
+      "city": "",
+      "county": "Various",
+      "state": "NJ",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new jersey",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42866"
+    },
+    {
+      "id": "bf-20241-elmwood-park-fire",
+      "name": "Elmwood Park Fire",
+      "description": "Broadcastify public safety feed 20241 for New Jersey.",
+      "city": "",
+      "county": "Various",
+      "state": "NJ",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new jersey",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/20241"
+    },
+    {
+      "id": "bf-25950-south-old-bridge-fire",
+      "name": "South Old Bridge Fire",
+      "description": "Broadcastify public safety feed 25950 for New Jersey.",
+      "city": "",
+      "county": "Various",
+      "state": "NJ",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new jersey",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/25950"
+    },
+    {
+      "id": "bf-38357-pequannock-fire",
+      "name": "Pequannock Fire",
+      "description": "Broadcastify public safety feed 38357 for New Jersey.",
+      "city": "",
+      "county": "Various",
+      "state": "NJ",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new jersey",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38357"
+    },
+    {
+      "id": "bf-1836-totowa-police-fire-and-ems",
+      "name": "Totowa Police, Fire and EMS",
+      "description": "Broadcastify public safety feed 1836 for New Jersey.",
+      "city": "",
+      "county": "Various",
+      "state": "NJ",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new jersey",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/1836"
+    },
+    {
+      "id": "bf-13197-robbinsville-mercer-county-fire-and-ems",
+      "name": "Robbinsville & Mercer County Fire and EMS",
+      "description": "Broadcastify public safety feed 13197 for New Jersey.",
+      "city": "",
+      "county": "Various",
+      "state": "NJ",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new jersey",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/13197"
+    },
+    {
+      "id": "bf-38495-hillsdale-vac",
+      "name": "Hillsdale VAC",
+      "description": "Broadcastify public safety feed 38495 for New Jersey.",
+      "city": "",
+      "county": "Various",
+      "state": "NJ",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new jersey"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38495"
+    },
+    {
+      "id": "bf-30063-hunterdon-county-and-raritan-twp-fire",
+      "name": "Hunterdon County and Raritan Twp Fire",
+      "description": "Broadcastify public safety feed 30063 for New Jersey.",
+      "city": "",
+      "county": "Various",
+      "state": "NJ",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new jersey",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/30063"
+    },
+    {
+      "id": "bf-33146-east-hanover-police-fire-and-ems",
+      "name": "East Hanover Police, Fire and EMS",
+      "description": "Broadcastify public safety feed 33146 for New Jersey.",
+      "city": "",
+      "county": "Various",
+      "state": "NJ",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new jersey",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/33146"
+    },
+    {
+      "id": "bf-41912-bergen-county-battalion-2-fire-operations",
+      "name": "Bergen County Battalion 2 Fire Operations",
+      "description": "Broadcastify public safety feed 41912 for New Jersey.",
+      "city": "",
+      "county": "Various",
+      "state": "NJ",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new jersey",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41912"
+    },
+    {
+      "id": "bf-40401-atlantic-county-fire",
+      "name": "Atlantic County Fire",
+      "description": "Broadcastify public safety feed 40401 for New Jersey.",
+      "city": "",
+      "county": "Various",
+      "state": "NJ",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new jersey",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40401"
+    },
+    {
+      "id": "bf-46772-jefferson-township-public-safety",
+      "name": "Jefferson Township Public Safety",
+      "description": "Broadcastify public safety feed 46772 for New Jersey.",
+      "city": "",
+      "county": "Various",
+      "state": "NJ",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new jersey"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46772"
+    },
+    {
+      "id": "bf-802-jersey-city-fire",
+      "name": "Jersey City Fire",
+      "description": "Broadcastify public safety feed 802 for New Jersey.",
+      "city": "",
+      "county": "Various",
+      "state": "NJ",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new jersey",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/802"
+    },
+    {
+      "id": "bf-45627-belleville-fire",
+      "name": "Belleville Fire",
+      "description": "Broadcastify public safety feed 45627 for New Jersey.",
+      "city": "",
+      "county": "Various",
+      "state": "NJ",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new jersey",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45627"
+    },
+    {
+      "id": "bf-22202-wayne-fire-dispatch-1",
+      "name": "Wayne Fire Dispatch 1",
+      "description": "Broadcastify public safety feed 22202 for New Jersey.",
+      "city": "",
+      "county": "Various",
+      "state": "NJ",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new jersey",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/22202"
+    },
+    {
+      "id": "bf-45236-little-falls-fire",
+      "name": "Little Falls Fire",
+      "description": "Broadcastify public safety feed 45236 for New Jersey.",
+      "city": "",
+      "county": "Various",
+      "state": "NJ",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new jersey",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45236"
+    },
+    {
+      "id": "bf-46224-north-brunswick-fire-and-paging",
+      "name": "North Brunswick Fire and Paging",
+      "description": "Broadcastify public safety feed 46224 for New Jersey.",
+      "city": "",
+      "county": "Various",
+      "state": "NJ",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new jersey",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46224"
+    },
+    {
+      "id": "bf-43920-morris-county-dispatch-channel",
+      "name": "Morris County Dispatch Channel",
+      "description": "Broadcastify public safety feed 43920 for New Jersey.",
+      "city": "",
+      "county": "Various",
+      "state": "NJ",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new jersey"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43920"
+    },
+    {
+      "id": "bf-20547-cresskill-fire",
+      "name": "Cresskill Fire",
+      "description": "Broadcastify public safety feed 20547 for New Jersey.",
+      "city": "",
+      "county": "Various",
+      "state": "NJ",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new jersey",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/20547"
+    },
+    {
+      "id": "bf-38741-cumberland-county-fire-and-ems-digital",
+      "name": "Cumberland County Fire and EMS - Digital",
+      "description": "Broadcastify public safety feed 38741 for New Jersey.",
+      "city": "",
+      "county": "Various",
+      "state": "NJ",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new jersey",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38741"
+    },
+    {
+      "id": "bf-31563-edison-township-fire-dispatch",
+      "name": "Edison Township Fire Dispatch",
+      "description": "Broadcastify public safety feed 31563 for New Jersey.",
+      "city": "",
+      "county": "Various",
+      "state": "NJ",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new jersey",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/31563"
+    },
+    {
+      "id": "bf-29849-ringwood-fire-and-ems-dispatch",
+      "name": "Ringwood Fire and EMS Dispatch",
+      "description": "Broadcastify public safety feed 29849 for New Jersey.",
+      "city": "",
+      "county": "Various",
+      "state": "NJ",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new jersey",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/29849"
+    },
+    {
+      "id": "bf-38235-cedar-grove-fire-digital",
+      "name": "Cedar Grove Fire Digital",
+      "description": "Broadcastify public safety feed 38235 for New Jersey.",
+      "city": "",
+      "county": "Various",
+      "state": "NJ",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new jersey",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38235"
+    },
+    {
+      "id": "bf-34916-ocean-county-ems-medics",
+      "name": "Ocean County EMS & Medics",
+      "description": "Broadcastify public safety feed 34916 for New Jersey.",
+      "city": "",
+      "county": "Various",
+      "state": "NJ",
+      "service_types": [
+        "dispatch",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new jersey",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/34916"
+    },
+    {
+      "id": "bf-35529-mercer-county-fire-dispatch",
+      "name": "Mercer County Fire Dispatch",
+      "description": "Broadcastify public safety feed 35529 for New Jersey.",
+      "city": "",
+      "county": "Various",
+      "state": "NJ",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new jersey",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/35529"
+    },
+    {
+      "id": "bf-25301-woodbridge-fire-dispatch",
+      "name": "Woodbridge Fire Dispatch",
+      "description": "Broadcastify public safety feed 25301 for New Jersey.",
+      "city": "",
+      "county": "Various",
+      "state": "NJ",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new jersey",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/25301"
+    },
+    {
+      "id": "bf-18058-mahwah-fire",
+      "name": "Mahwah Fire",
+      "description": "Broadcastify public safety feed 18058 for New Jersey.",
+      "city": "",
+      "county": "Various",
+      "state": "NJ",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new jersey",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/18058"
+    },
+    {
+      "id": "bf-17835-bergen-county-fire-south",
+      "name": "Bergen County Fire - South",
+      "description": "Broadcastify public safety feed 17835 for New Jersey.",
+      "city": "",
+      "county": "Various",
+      "state": "NJ",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new jersey",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/17835"
+    },
+    {
+      "id": "bf-16515-stafford-ems",
+      "name": "Stafford EMS",
+      "description": "Broadcastify public safety feed 16515 for New Jersey.",
+      "city": "",
+      "county": "Various",
+      "state": "NJ",
+      "service_types": [
+        "dispatch",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new jersey",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/16515"
+    },
+    {
+      "id": "bf-18389-woodbridge-fire",
+      "name": "Woodbridge Fire",
+      "description": "Broadcastify public safety feed 18389 for New Jersey.",
+      "city": "",
+      "county": "Various",
+      "state": "NJ",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new jersey",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/18389"
+    }
+  ]
+}

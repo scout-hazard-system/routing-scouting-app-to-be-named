@@ -1,0 +1,110 @@
+{
+  "channels": [
+    {
+      "id": "bf-32602-indianapolis-metropolitan-police",
+      "name": "Indianapolis Metropolitan Police",
+      "description": "Broadcastify public safety feed 32602 for Hawaii.",
+      "city": "",
+      "county": "Various",
+      "state": "HI",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "hawaii",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32602"
+    },
+    {
+      "id": "bf-40256-big-island-hawaii-puna-volcano-kau-public-",
+      "name": "Big Island Hawaii Puna, Volcano, Kau Public Safety",
+      "description": "Broadcastify public safety feed 40256 for Hawaii.",
+      "city": "",
+      "county": "Various",
+      "state": "HI",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "hawaii"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40256"
+    },
+    {
+      "id": "bf-43585-hawaii-island-public-safety-west",
+      "name": "Hawaii Island Public Safety - West",
+      "description": "Broadcastify public safety feed 43585 for Hawaii.",
+      "city": "",
+      "county": "Various",
+      "state": "HI",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "hawaii"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43585"
+    },
+    {
+      "id": "bf-40602-hawaii-county-public-safety-hamakua-north-",
+      "name": "Hawaii County Public Safety - Hamakua/North Hilo",
+      "description": "Broadcastify public safety feed 40602 for Hawaii.",
+      "city": "",
+      "county": "Various",
+      "state": "HI",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "hawaii"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40602"
+    },
+    {
+      "id": "bf-46769-hawaii-volcano-national-park-service",
+      "name": "Hawaii Volcano National Park Service",
+      "description": "Broadcastify public safety feed 46769 for Hawaii.",
+      "city": "",
+      "county": "Various",
+      "state": "HI",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "hawaii"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46769"
+    }
+  ]
+}

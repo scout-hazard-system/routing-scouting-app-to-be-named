@@ -1,0 +1,649 @@
+{
+  "channels": [
+    {
+      "id": "bf-32602-indianapolis-metropolitan-police",
+      "name": "Indianapolis Metropolitan Police",
+      "description": "Broadcastify public safety feed 32602 for Delaware.",
+      "city": "",
+      "county": "Various",
+      "state": "DE",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "delaware",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32602"
+    },
+    {
+      "id": "bf-44791-sussex-county-fire-ems-p25",
+      "name": "Sussex County Fire/EMS P25",
+      "description": "Broadcastify public safety feed 44791 for Delaware.",
+      "city": "",
+      "county": "Various",
+      "state": "DE",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "delaware",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44791"
+    },
+    {
+      "id": "bf-19805-new-castle-county-fire",
+      "name": "New Castle County Fire",
+      "description": "Broadcastify public safety feed 19805 for Delaware.",
+      "city": "",
+      "county": "Various",
+      "state": "DE",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "delaware",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/19805"
+    },
+    {
+      "id": "bf-45273-kent-fire-ems-countywide",
+      "name": "Kent Fire/EMS Countywide",
+      "description": "Broadcastify public safety feed 45273 for Delaware.",
+      "city": "",
+      "county": "Various",
+      "state": "DE",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "delaware",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45273"
+    },
+    {
+      "id": "bf-45279-k-dovfir1",
+      "name": "K-DOVFIR1",
+      "description": "Broadcastify public safety feed 45279 for Delaware.",
+      "city": "",
+      "county": "Various",
+      "state": "DE",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "delaware"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45279"
+    },
+    {
+      "id": "bf-45244-ncc-fire-ems-countywide",
+      "name": "NCC Fire/EMS Countywide",
+      "description": "Broadcastify public safety feed 45244 for Delaware.",
+      "city": "",
+      "county": "Various",
+      "state": "DE",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "delaware",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45244"
+    },
+    {
+      "id": "bf-45274-k-fire-1",
+      "name": "K-FIRE 1",
+      "description": "Broadcastify public safety feed 45274 for Delaware.",
+      "city": "",
+      "county": "Various",
+      "state": "DE",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "delaware",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45274"
+    },
+    {
+      "id": "bf-45275-k-tac4",
+      "name": "K-TAC4",
+      "description": "Broadcastify public safety feed 45275 for Delaware.",
+      "city": "",
+      "county": "Various",
+      "state": "DE",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "delaware"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45275"
+    },
+    {
+      "id": "bf-6544-wilmington-fire",
+      "name": "Wilmington Fire",
+      "description": "Broadcastify public safety feed 6544 for Delaware.",
+      "city": "",
+      "county": "Various",
+      "state": "DE",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "delaware",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/6544"
+    },
+    {
+      "id": "bf-45769-sussex-fire-5",
+      "name": "Sussex Fire 5",
+      "description": "Broadcastify public safety feed 45769 for Delaware.",
+      "city": "",
+      "county": "Various",
+      "state": "DE",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "delaware",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45769"
+    },
+    {
+      "id": "bf-45767-sussex-ems-2",
+      "name": "Sussex EMS 2",
+      "description": "Broadcastify public safety feed 45767 for Delaware.",
+      "city": "",
+      "county": "Various",
+      "state": "DE",
+      "service_types": [
+        "dispatch",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "delaware",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45767"
+    },
+    {
+      "id": "bf-45770-sussex-fire-4",
+      "name": "Sussex Fire 4",
+      "description": "Broadcastify public safety feed 45770 for Delaware.",
+      "city": "",
+      "county": "Various",
+      "state": "DE",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "delaware",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45770"
+    },
+    {
+      "id": "bf-45766-sussex-ems-3",
+      "name": "Sussex EMS 3",
+      "description": "Broadcastify public safety feed 45766 for Delaware.",
+      "city": "",
+      "county": "Various",
+      "state": "DE",
+      "service_types": [
+        "dispatch",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "delaware",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45766"
+    },
+    {
+      "id": "bf-45765-sussex-fire-ops-1",
+      "name": "Sussex Fire Ops 1",
+      "description": "Broadcastify public safety feed 45765 for Delaware.",
+      "city": "",
+      "county": "Various",
+      "state": "DE",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "delaware",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45765"
+    },
+    {
+      "id": "bf-45764-sussex-fire-ops-2",
+      "name": "Sussex Fire Ops 2",
+      "description": "Broadcastify public safety feed 45764 for Delaware.",
+      "city": "",
+      "county": "Various",
+      "state": "DE",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "delaware",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45764"
+    },
+    {
+      "id": "bf-45763-sussex-fire-ops-3",
+      "name": "Sussex Fire Ops 3",
+      "description": "Broadcastify public safety feed 45763 for Delaware.",
+      "city": "",
+      "county": "Various",
+      "state": "DE",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "delaware",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45763"
+    },
+    {
+      "id": "bf-45762-sussex-fire-ops-4",
+      "name": "Sussex Fire Ops 4",
+      "description": "Broadcastify public safety feed 45762 for Delaware.",
+      "city": "",
+      "county": "Various",
+      "state": "DE",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "delaware",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45762"
+    },
+    {
+      "id": "bf-45761-sussex-fire-ops-5",
+      "name": "Sussex Fire Ops 5",
+      "description": "Broadcastify public safety feed 45761 for Delaware.",
+      "city": "",
+      "county": "Various",
+      "state": "DE",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "delaware",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45761"
+    },
+    {
+      "id": "bf-45759-sussex-ems-ops-countywide",
+      "name": "Sussex EMS Ops Countywide",
+      "description": "Broadcastify public safety feed 45759 for Delaware.",
+      "city": "",
+      "county": "Various",
+      "state": "DE",
+      "service_types": [
+        "dispatch",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "delaware",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45759"
+    },
+    {
+      "id": "bf-14500-sussex-county-fire-and-seaford-fire-ems",
+      "name": "Sussex County Fire and Seaford Fire / EMS",
+      "description": "Broadcastify public safety feed 14500 for Delaware.",
+      "city": "",
+      "county": "Various",
+      "state": "DE",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "delaware",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/14500"
+    },
+    {
+      "id": "bf-45247-ncc-fire-ems-dispatch",
+      "name": "NCC Fire/EMS Dispatch",
+      "description": "Broadcastify public safety feed 45247 for Delaware.",
+      "city": "",
+      "county": "Various",
+      "state": "DE",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "delaware",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45247"
+    },
+    {
+      "id": "bf-45246-ncc-fire-tac-6",
+      "name": "NCC Fire TAC 6",
+      "description": "Broadcastify public safety feed 45246 for Delaware.",
+      "city": "",
+      "county": "Various",
+      "state": "DE",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "delaware",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45246"
+    },
+    {
+      "id": "bf-45245-ncc-fire-tac-4",
+      "name": "NCC Fire TAC 4",
+      "description": "Broadcastify public safety feed 45245 for Delaware.",
+      "city": "",
+      "county": "Various",
+      "state": "DE",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "delaware",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45245"
+    },
+    {
+      "id": "bf-45232-ncc-ems-ops-1",
+      "name": "NCC EMS Ops 1",
+      "description": "Broadcastify public safety feed 45232 for Delaware.",
+      "city": "",
+      "county": "Various",
+      "state": "DE",
+      "service_types": [
+        "dispatch",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "delaware",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45232"
+    },
+    {
+      "id": "bf-45200-ncc-fire-tac-3",
+      "name": "NCC Fire TAC 3",
+      "description": "Broadcastify public safety feed 45200 for Delaware.",
+      "city": "",
+      "county": "Various",
+      "state": "DE",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "delaware",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45200"
+    },
+    {
+      "id": "bf-45278-k-emso1",
+      "name": "K-EMSO1",
+      "description": "Broadcastify public safety feed 45278 for Delaware.",
+      "city": "",
+      "county": "Various",
+      "state": "DE",
+      "service_types": [
+        "dispatch",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "delaware",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45278"
+    },
+    {
+      "id": "bf-45277-k-tac6",
+      "name": "K-TAC6",
+      "description": "Broadcastify public safety feed 45277 for Delaware.",
+      "city": "",
+      "county": "Various",
+      "state": "DE",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "delaware"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45277"
+    },
+    {
+      "id": "bf-45276-k-tac5",
+      "name": "K-TAC5",
+      "description": "Broadcastify public safety feed 45276 for Delaware.",
+      "city": "",
+      "county": "Various",
+      "state": "DE",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "delaware"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45276"
+    }
+  ]
+}

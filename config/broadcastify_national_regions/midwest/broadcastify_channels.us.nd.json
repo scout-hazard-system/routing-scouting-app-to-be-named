@@ -1,0 +1,1910 @@
+{
+  "channels": [
+    {
+      "id": "bf-32602-indianapolis-metropolitan-police",
+      "name": "Indianapolis Metropolitan Police",
+      "description": "Broadcastify public safety feed 32602 for North Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "ND",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north dakota",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32602"
+    },
+    {
+      "id": "bf-27496-bismark-rural-fire",
+      "name": "Bismark Rural Fire",
+      "description": "Broadcastify public safety feed 27496 for North Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "ND",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north dakota",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/27496"
+    },
+    {
+      "id": "bf-33269-almont-fire",
+      "name": "Almont Fire",
+      "description": "Broadcastify public safety feed 33269 for North Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "ND",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north dakota",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/33269"
+    },
+    {
+      "id": "bf-14719-golden-valley-fire-and-ems",
+      "name": "Golden Valley Fire and EMS",
+      "description": "Broadcastify public safety feed 14719 for North Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "ND",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north dakota",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/14719"
+    },
+    {
+      "id": "bf-46040-barnes-county-public-safety",
+      "name": "Barnes County Public Safety",
+      "description": "Broadcastify public safety feed 46040 for North Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "ND",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north dakota"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46040"
+    },
+    {
+      "id": "bf-46454-ward-fire-and-ems-ward-nd-mutual-aid",
+      "name": "Ward Fire and EMS, Ward/ND Mutual Aid",
+      "description": "Broadcastify public safety feed 46454 for North Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "ND",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north dakota",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46454"
+    },
+    {
+      "id": "bf-15751-new-town-fire",
+      "name": "New Town Fire",
+      "description": "Broadcastify public safety feed 15751 for North Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "ND",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north dakota",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/15751"
+    },
+    {
+      "id": "bf-15677-fargo-fire",
+      "name": "Fargo Fire",
+      "description": "Broadcastify public safety feed 15677 for North Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "ND",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north dakota",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/15677"
+    },
+    {
+      "id": "bf-37545-mercer-county-fire-and-rescue",
+      "name": "Mercer County Fire and Rescue",
+      "description": "Broadcastify public safety feed 37545 for North Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "ND",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north dakota",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37545"
+    },
+    {
+      "id": "bf-22055-stanley-fire",
+      "name": "Stanley Fire",
+      "description": "Broadcastify public safety feed 22055 for North Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "ND",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north dakota",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/22055"
+    },
+    {
+      "id": "bf-16406-plaza-fire-and-ambulance",
+      "name": "Plaza Fire and Ambulance",
+      "description": "Broadcastify public safety feed 16406 for North Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "ND",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north dakota",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/16406"
+    },
+    {
+      "id": "bf-15482-stanley-ambulance",
+      "name": "Stanley Ambulance",
+      "description": "Broadcastify public safety feed 15482 for North Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "ND",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north dakota"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/15482"
+    },
+    {
+      "id": "bf-47489-mandan-rural-fire-ops",
+      "name": "Mandan Rural Fire Ops",
+      "description": "Broadcastify public safety feed 47489 for North Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "ND",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north dakota",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47489"
+    },
+    {
+      "id": "bf-35099-new-salem-fire-and-ems",
+      "name": "New Salem Fire and EMS",
+      "description": "Broadcastify public safety feed 35099 for North Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "ND",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north dakota",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/35099"
+    },
+    {
+      "id": "bf-20698-mandan-fire",
+      "name": "Mandan Fire",
+      "description": "Broadcastify public safety feed 20698 for North Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "ND",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north dakota",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/20698"
+    },
+    {
+      "id": "bf-20431-mandan-fire",
+      "name": "Mandan Fire",
+      "description": "Broadcastify public safety feed 20431 for North Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "ND",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north dakota",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/20431"
+    },
+    {
+      "id": "bf-15192-mandan-rural-fire",
+      "name": "Mandan Rural Fire",
+      "description": "Broadcastify public safety feed 15192 for North Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "ND",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north dakota",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/15192"
+    },
+    {
+      "id": "bf-23073-rugby-volunteer-fire",
+      "name": "Rugby Volunteer Fire",
+      "description": "Broadcastify public safety feed 23073 for North Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "ND",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north dakota",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/23073"
+    },
+    {
+      "id": "bf-37544-oliver-fire-and-ambulance",
+      "name": "Oliver Fire and Ambulance",
+      "description": "Broadcastify public safety feed 37544 for North Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "ND",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north dakota",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37544"
+    },
+    {
+      "id": "bf-45907-turtle-lake-ambulance",
+      "name": "Turtle Lake Ambulance",
+      "description": "Broadcastify public safety feed 45907 for North Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "ND",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north dakota"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45907"
+    },
+    {
+      "id": "bf-45139-whiteshield-fpd",
+      "name": "WhiteShield FPD",
+      "description": "Broadcastify public safety feed 45139 for North Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "ND",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north dakota"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45139"
+    },
+    {
+      "id": "bf-38530-garrison-max-ambulance-district",
+      "name": "Garrison Max Ambulance District",
+      "description": "Broadcastify public safety feed 38530 for North Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "ND",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north dakota"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38530"
+    },
+    {
+      "id": "bf-38087-wilton-fire-ops-channel",
+      "name": "Wilton Fire Ops Channel",
+      "description": "Broadcastify public safety feed 38087 for North Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "ND",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north dakota",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38087"
+    },
+    {
+      "id": "bf-29540-white-shield-ems",
+      "name": "White Shield EMS",
+      "description": "Broadcastify public safety feed 29540 for North Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "ND",
+      "service_types": [
+        "dispatch",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north dakota",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/29540"
+    },
+    {
+      "id": "bf-25624-riverdale-ems",
+      "name": "Riverdale EMS",
+      "description": "Broadcastify public safety feed 25624 for North Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "ND",
+      "service_types": [
+        "dispatch",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north dakota",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/25624"
+    },
+    {
+      "id": "bf-16288-dickinson-ambulance",
+      "name": "Dickinson Ambulance",
+      "description": "Broadcastify public safety feed 16288 for North Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "ND",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north dakota"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/16288"
+    },
+    {
+      "id": "bf-27993-sykeston-fire",
+      "name": "Sykeston Fire",
+      "description": "Broadcastify public safety feed 27993 for North Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "ND",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north dakota",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/27993"
+    },
+    {
+      "id": "bf-24050-fessenden-fire-protection-district",
+      "name": "Fessenden Fire Protection District",
+      "description": "Broadcastify public safety feed 24050 for North Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "ND",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north dakota",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/24050"
+    },
+    {
+      "id": "bf-19899-harvey-fire",
+      "name": "Harvey Fire",
+      "description": "Broadcastify public safety feed 19899 for North Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "ND",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north dakota",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/19899"
+    },
+    {
+      "id": "bf-43940-burlington-fire",
+      "name": "Burlington Fire",
+      "description": "Broadcastify public safety feed 43940 for North Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "ND",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north dakota",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43940"
+    },
+    {
+      "id": "bf-16398-ryder-makoti-fire-and-ambulance",
+      "name": "Ryder Makoti Fire and Ambulance",
+      "description": "Broadcastify public safety feed 16398 for North Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "ND",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north dakota",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/16398"
+    },
+    {
+      "id": "bf-39071-jamestown-city-fire",
+      "name": "Jamestown City Fire",
+      "description": "Broadcastify public safety feed 39071 for North Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "ND",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north dakota",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39071"
+    },
+    {
+      "id": "bf-23034-stutsman-county-fire",
+      "name": "Stutsman County Fire",
+      "description": "Broadcastify public safety feed 23034 for North Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "ND",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north dakota",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/23034"
+    },
+    {
+      "id": "bf-33172-steele-county-dispatch",
+      "name": "Steele County Dispatch",
+      "description": "Broadcastify public safety feed 33172 for North Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "ND",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north dakota"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/33172"
+    },
+    {
+      "id": "bf-26161-hope-fire-and-ems",
+      "name": "Hope Fire and EMS",
+      "description": "Broadcastify public safety feed 26161 for North Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "ND",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north dakota",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/26161"
+    },
+    {
+      "id": "bf-41522-nelson-county-fire",
+      "name": "Nelson County Fire",
+      "description": "Broadcastify public safety feed 41522 for North Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "ND",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north dakota",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41522"
+    },
+    {
+      "id": "bf-16287-belfield-fire-and-richardton-ambulance",
+      "name": "Belfield Fire and Richardton Ambulance",
+      "description": "Broadcastify public safety feed 16287 for North Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "ND",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north dakota",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/16287"
+    },
+    {
+      "id": "bf-16286-southheart-gladstone-taylor-and-richardton",
+      "name": "SouthHeart, Gladstone, Taylor, and Richardton Fire Dispatch",
+      "description": "Broadcastify public safety feed 16286 for North Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "ND",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north dakota",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/16286"
+    },
+    {
+      "id": "bf-16285-dickinson-fire-dispatch",
+      "name": "Dickinson Fire Dispatch",
+      "description": "Broadcastify public safety feed 16285 for North Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "ND",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north dakota",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/16285"
+    },
+    {
+      "id": "bf-43891-gwinner-fire",
+      "name": "Gwinner Fire",
+      "description": "Broadcastify public safety feed 43891 for North Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "ND",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north dakota",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43891"
+    },
+    {
+      "id": "bf-27987-mantador-fire",
+      "name": "Mantador Fire",
+      "description": "Broadcastify public safety feed 27987 for North Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "ND",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north dakota",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/27987"
+    },
+    {
+      "id": "bf-33882-tolley-fire",
+      "name": "Tolley Fire",
+      "description": "Broadcastify public safety feed 33882 for North Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "ND",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north dakota",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/33882"
+    },
+    {
+      "id": "bf-16503-enderlin-rural-fire-protection-district-di",
+      "name": "Enderlin Rural Fire Protection District Dispatch",
+      "description": "Broadcastify public safety feed 16503 for North Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "ND",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north dakota",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/16503"
+    },
+    {
+      "id": "bf-14783-first-medic-ambulance",
+      "name": "First Medic Ambulance",
+      "description": "Broadcastify public safety feed 14783 for North Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "ND",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north dakota"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/14783"
+    },
+    {
+      "id": "bf-18578-max-rural-fire",
+      "name": "Max Rural Fire",
+      "description": "Broadcastify public safety feed 18578 for North Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "ND",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north dakota",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/18578"
+    },
+    {
+      "id": "bf-23928-oakes-fire",
+      "name": "Oakes Fire",
+      "description": "Broadcastify public safety feed 23928 for North Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "ND",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north dakota",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/23928"
+    },
+    {
+      "id": "bf-47515-emmons-county-ambulance",
+      "name": "Emmons County Ambulance",
+      "description": "Broadcastify public safety feed 47515 for North Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "ND",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north dakota"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47515"
+    },
+    {
+      "id": "bf-25890-strasburg-rural-fire-protection-district",
+      "name": "Strasburg Rural Fire Protection District",
+      "description": "Broadcastify public safety feed 25890 for North Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "ND",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north dakota",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/25890"
+    },
+    {
+      "id": "bf-24799-hazleton-fire",
+      "name": "Hazleton Fire",
+      "description": "Broadcastify public safety feed 24799 for North Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "ND",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north dakota",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/24799"
+    },
+    {
+      "id": "bf-25247-new-rockford-fire",
+      "name": "New Rockford Fire",
+      "description": "Broadcastify public safety feed 25247 for North Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "ND",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north dakota",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/25247"
+    },
+    {
+      "id": "bf-14944-killdeer-area-ambulance",
+      "name": "Killdeer Area Ambulance",
+      "description": "Broadcastify public safety feed 14944 for North Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "ND",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north dakota"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/14944"
+    },
+    {
+      "id": "bf-43368-fortuna-rural-fire",
+      "name": "Fortuna Rural FIre",
+      "description": "Broadcastify public safety feed 43368 for North Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "ND",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north dakota",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43368"
+    },
+    {
+      "id": "bf-38996-crosby-ems",
+      "name": "Crosby EMS",
+      "description": "Broadcastify public safety feed 38996 for North Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "ND",
+      "service_types": [
+        "dispatch",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north dakota",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38996"
+    },
+    {
+      "id": "bf-29589-noonan-fire",
+      "name": "Noonan Fire",
+      "description": "Broadcastify public safety feed 29589 for North Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "ND",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north dakota",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/29589"
+    },
+    {
+      "id": "bf-19444-crosby-fire",
+      "name": "Crosby Fire",
+      "description": "Broadcastify public safety feed 19444 for North Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "ND",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north dakota",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/19444"
+    },
+    {
+      "id": "bf-37508-carrington-fire",
+      "name": "Carrington Fire",
+      "description": "Broadcastify public safety feed 37508 for North Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "ND",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north dakota",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37508"
+    },
+    {
+      "id": "bf-20561-cavalier-county",
+      "name": "Cavalier County",
+      "description": "Broadcastify public safety feed 20561 for North Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "ND",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north dakota"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/20561"
+    },
+    {
+      "id": "bf-38057-sterling-rural-fire",
+      "name": "Sterling Rural Fire",
+      "description": "Broadcastify public safety feed 38057 for North Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "ND",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north dakota",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38057"
+    },
+    {
+      "id": "bf-23821-burleigh-county-fire-and-ems",
+      "name": "Burleigh County Fire and  EMS",
+      "description": "Broadcastify public safety feed 23821 for North Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "ND",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north dakota",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/23821"
+    },
+    {
+      "id": "bf-31033-burke-county-fire",
+      "name": "Burke County Fire",
+      "description": "Broadcastify public safety feed 31033 for North Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "ND",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north dakota",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/31033"
+    },
+    {
+      "id": "bf-25395-powers-lake-fire",
+      "name": "Powers Lake Fire",
+      "description": "Broadcastify public safety feed 25395 for North Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "ND",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north dakota",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/25395"
+    },
+    {
+      "id": "bf-18490-belfield-ambulance",
+      "name": "Belfield Ambulance",
+      "description": "Broadcastify public safety feed 18490 for North Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "ND",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north dakota"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/18490"
+    },
+    {
+      "id": "bf-18489-billings-county-ems",
+      "name": "Billings County EMS",
+      "description": "Broadcastify public safety feed 18489 for North Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "ND",
+      "service_types": [
+        "dispatch",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north dakota",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/18489"
+    },
+    {
+      "id": "bf-40110-esmond-rural-fire",
+      "name": "Esmond Rural Fire",
+      "description": "Broadcastify public safety feed 40110 for North Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "ND",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north dakota",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40110"
+    },
+    {
+      "id": "bf-22791-maddock-fire",
+      "name": "Maddock Fire",
+      "description": "Broadcastify public safety feed 22791 for North Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "ND",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north dakota",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/22791"
+    },
+    {
+      "id": "bf-22385-cross-rural-fire",
+      "name": "Cross Rural Fire",
+      "description": "Broadcastify public safety feed 22385 for North Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "ND",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north dakota",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/22385"
+    },
+    {
+      "id": "bf-19322-turtle-lake-fire",
+      "name": "Turtle Lake Fire",
+      "description": "Broadcastify public safety feed 19322 for North Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "ND",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north dakota",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/19322"
+    },
+    {
+      "id": "bf-17772-washburn-fire",
+      "name": "Washburn Fire",
+      "description": "Broadcastify public safety feed 17772 for North Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "ND",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north dakota",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/17772"
+    },
+    {
+      "id": "bf-15824-mclean-county-public-safety",
+      "name": "McLean County Public Safety",
+      "description": "Broadcastify public safety feed 15824 for North Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "ND",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north dakota"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/15824"
+    },
+    {
+      "id": "bf-42607-mckenzie-county-sheriffs-office",
+      "name": "McKenzie County Sheriffs Office",
+      "description": "Broadcastify public safety feed 42607 for North Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "ND",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north dakota",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42607"
+    },
+    {
+      "id": "bf-38546-lehr-fire-dispatch",
+      "name": "Lehr Fire Dispatch",
+      "description": "Broadcastify public safety feed 38546 for North Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "ND",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north dakota",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38546"
+    },
+    {
+      "id": "bf-28747-wishek-fire",
+      "name": "Wishek Fire",
+      "description": "Broadcastify public safety feed 28747 for North Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "ND",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north dakota",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/28747"
+    },
+    {
+      "id": "bf-39467-towner-fire-ambulance-rescue",
+      "name": "Towner Fire Ambulance Rescue",
+      "description": "Broadcastify public safety feed 39467 for North Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "ND",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north dakota",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39467"
+    },
+    {
+      "id": "bf-16479-anamoose-fire-protection-district-dispatch",
+      "name": "Anamoose Fire Protection District Dispatch",
+      "description": "Broadcastify public safety feed 16479 for North Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "ND",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north dakota",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/16479"
+    },
+    {
+      "id": "bf-34823-napoleon-rural-fire",
+      "name": "Napoleon Rural Fire",
+      "description": "Broadcastify public safety feed 34823 for North Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "ND",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north dakota",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/34823"
+    },
+    {
+      "id": "bf-20929-wilton-fire",
+      "name": "Wilton Fire",
+      "description": "Broadcastify public safety feed 20929 for North Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "ND",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north dakota",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/20929"
+    },
+    {
+      "id": "bf-38777-regent-ambulance",
+      "name": "Regent Ambulance",
+      "description": "Broadcastify public safety feed 38777 for North Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "ND",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north dakota"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38777"
+    },
+    {
+      "id": "bf-32068-mott-ambulance-service",
+      "name": "Mott Ambulance Service",
+      "description": "Broadcastify public safety feed 32068 for North Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "ND",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north dakota"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32068"
+    },
+    {
+      "id": "bf-17646-mott-volunteer-fire-brigade",
+      "name": "Mott Volunteer Fire Brigade",
+      "description": "Broadcastify public safety feed 17646 for North Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "ND",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north dakota",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/17646"
+    },
+    {
+      "id": "bf-19865-carson-fire",
+      "name": "Carson Fire",
+      "description": "Broadcastify public safety feed 19865 for North Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "ND",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north dakota",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/19865"
+    },
+    {
+      "id": "bf-19664-new-leipzig-ambulance",
+      "name": "New Leipzig Ambulance",
+      "description": "Broadcastify public safety feed 19664 for North Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "ND",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north dakota"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/19664"
+    },
+    {
+      "id": "bf-18922-carson-ambulace",
+      "name": "Carson Ambulace",
+      "description": "Broadcastify public safety feed 18922 for North Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "ND",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north dakota"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/18922"
+    },
+    {
+      "id": "bf-16431-new-leipzig-fire",
+      "name": "New Leipzig Fire",
+      "description": "Broadcastify public safety feed 16431 for North Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "ND",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north dakota",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/16431"
+    },
+    {
+      "id": "bf-41886-carrington-fire",
+      "name": "Carrington Fire",
+      "description": "Broadcastify public safety feed 41886 for North Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "ND",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "north dakota",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41886"
+    }
+  ]
+}

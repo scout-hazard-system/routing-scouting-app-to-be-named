@@ -1,0 +1,2174 @@
+{
+  "channels": [
+    {
+      "id": "bf-32602-indianapolis-metropolitan-police",
+      "name": "Indianapolis Metropolitan Police",
+      "description": "Broadcastify public safety feed 32602 for Alabama.",
+      "city": "",
+      "county": "Various",
+      "state": "AL",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alabama",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32602"
+    },
+    {
+      "id": "bf-2994-decatur-and-morgan-county-public-safety",
+      "name": "Decatur and Morgan County Public Safety",
+      "description": "Broadcastify public safety feed 2994 for Alabama.",
+      "city": "",
+      "county": "Various",
+      "state": "AL",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alabama"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/2994"
+    },
+    {
+      "id": "bf-29375-cherokee-county-police-fire-and-ems-dispat",
+      "name": "Cherokee County Police, Fire and EMS Dispatch",
+      "description": "Broadcastify public safety feed 29375 for Alabama.",
+      "city": "",
+      "county": "Various",
+      "state": "AL",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alabama",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/29375"
+    },
+    {
+      "id": "bf-27289-huntsville-police",
+      "name": "Huntsville Police",
+      "description": "Broadcastify public safety feed 27289 for Alabama.",
+      "city": "",
+      "county": "Various",
+      "state": "AL",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alabama",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/27289"
+    },
+    {
+      "id": "bf-290-mobile-county-city-and-area-fire",
+      "name": "Mobile County/City and Area Fire",
+      "description": "Broadcastify public safety feed 290 for Alabama.",
+      "city": "",
+      "county": "Various",
+      "state": "AL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alabama",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/290"
+    },
+    {
+      "id": "bf-47114-alexander-city-police-and-fire",
+      "name": "Alexander City Police and Fire",
+      "description": "Broadcastify public safety feed 47114 for Alabama.",
+      "city": "",
+      "county": "Various",
+      "state": "AL",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alabama",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47114"
+    },
+    {
+      "id": "bf-42980-lee-county-public-safety",
+      "name": "Lee County Public Safety",
+      "description": "Broadcastify public safety feed 42980 for Alabama.",
+      "city": "",
+      "county": "Various",
+      "state": "AL",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alabama"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42980"
+    },
+    {
+      "id": "bf-39187-lawrence-county-law-enforcement",
+      "name": "Lawrence County Law Enforcement",
+      "description": "Broadcastify public safety feed 39187 for Alabama.",
+      "city": "",
+      "county": "Various",
+      "state": "AL",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alabama",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39187"
+    },
+    {
+      "id": "bf-45076-ozark-dale-county-public-safety",
+      "name": "Ozark/Dale County Public Safety",
+      "description": "Broadcastify public safety feed 45076 for Alabama.",
+      "city": "",
+      "county": "Various",
+      "state": "AL",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alabama"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45076"
+    },
+    {
+      "id": "bf-45086-dothan-public-safety",
+      "name": "Dothan Public Safety",
+      "description": "Broadcastify public safety feed 45086 for Alabama.",
+      "city": "",
+      "county": "Various",
+      "state": "AL",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alabama"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45086"
+    },
+    {
+      "id": "bf-43473-jefferson-county-sheriff-ch-1",
+      "name": "Jefferson County Sheriff Ch 1",
+      "description": "Broadcastify public safety feed 43473 for Alabama.",
+      "city": "",
+      "county": "Various",
+      "state": "AL",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alabama",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43473"
+    },
+    {
+      "id": "bf-43647-winston-county-public-safety",
+      "name": "Winston County Public Safety",
+      "description": "Broadcastify public safety feed 43647 for Alabama.",
+      "city": "",
+      "county": "Various",
+      "state": "AL",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alabama"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43647"
+    },
+    {
+      "id": "bf-47113-tallapoosa-county-sheriff-s-office-dispatc",
+      "name": "Tallapoosa County Sheriff's Office Dispatch",
+      "description": "Broadcastify public safety feed 47113 for Alabama.",
+      "city": "",
+      "county": "Various",
+      "state": "AL",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alabama",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47113"
+    },
+    {
+      "id": "bf-29488-florence-police-and-fire-dispatch",
+      "name": "Florence Police and Fire Dispatch",
+      "description": "Broadcastify public safety feed 29488 for Alabama.",
+      "city": "",
+      "county": "Various",
+      "state": "AL",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alabama",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/29488"
+    },
+    {
+      "id": "bf-8621-blount-county-fire-ems-dispatch",
+      "name": "Blount County Fire & EMS Dispatch",
+      "description": "Broadcastify public safety feed 8621 for Alabama.",
+      "city": "",
+      "county": "Various",
+      "state": "AL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alabama",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/8621"
+    },
+    {
+      "id": "bf-36251-hoover-and-vestavia-hills-police-and-fire",
+      "name": "Hoover and Vestavia Hills Police and Fire",
+      "description": "Broadcastify public safety feed 36251 for Alabama.",
+      "city": "",
+      "county": "Various",
+      "state": "AL",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alabama",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/36251"
+    },
+    {
+      "id": "bf-45944-alabama-air-medical-transport-dispatch-air",
+      "name": "Alabama Air Medical Transport Dispatch (Aircom)",
+      "description": "Broadcastify public safety feed 45944 for Alabama.",
+      "city": "",
+      "county": "Various",
+      "state": "AL",
+      "service_types": [
+        "dispatch",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alabama",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45944"
+    },
+    {
+      "id": "bf-46520-dekalb-county-law-enforcement",
+      "name": "Dekalb County Law Enforcement",
+      "description": "Broadcastify public safety feed 46520 for Alabama.",
+      "city": "",
+      "county": "Various",
+      "state": "AL",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alabama",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46520"
+    },
+    {
+      "id": "bf-44282-colbert-county-sheriff",
+      "name": "Colbert County Sheriff",
+      "description": "Broadcastify public safety feed 44282 for Alabama.",
+      "city": "",
+      "county": "Various",
+      "state": "AL",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alabama",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44282"
+    },
+    {
+      "id": "bf-34773-north-jefferson-police",
+      "name": "North Jefferson Police",
+      "description": "Broadcastify public safety feed 34773 for Alabama.",
+      "city": "",
+      "county": "Various",
+      "state": "AL",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alabama",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/34773"
+    },
+    {
+      "id": "bf-46606-lee-county-sheriff-s-office-dispatch",
+      "name": "Lee County Sheriff's Office Dispatch",
+      "description": "Broadcastify public safety feed 46606 for Alabama.",
+      "city": "",
+      "county": "Various",
+      "state": "AL",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alabama",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46606"
+    },
+    {
+      "id": "bf-45111-lauderdale-county-sheriff",
+      "name": "Lauderdale County Sheriff",
+      "description": "Broadcastify public safety feed 45111 for Alabama.",
+      "city": "",
+      "county": "Various",
+      "state": "AL",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alabama",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45111"
+    },
+    {
+      "id": "bf-31867-north-jefferson-fire-departments",
+      "name": "North Jefferson Fire Departments",
+      "description": "Broadcastify public safety feed 31867 for Alabama.",
+      "city": "",
+      "county": "Various",
+      "state": "AL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alabama",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/31867"
+    },
+    {
+      "id": "bf-22462-elmore-county-fire-dispatch",
+      "name": "Elmore County Fire Dispatch",
+      "description": "Broadcastify public safety feed 22462 for Alabama.",
+      "city": "",
+      "county": "Various",
+      "state": "AL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alabama",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/22462"
+    },
+    {
+      "id": "bf-25906-baldwin-county-fire-and-ems",
+      "name": "Baldwin County Fire and EMS",
+      "description": "Broadcastify public safety feed 25906 for Alabama.",
+      "city": "",
+      "county": "Various",
+      "state": "AL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alabama",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/25906"
+    },
+    {
+      "id": "bf-46916-lauderdale-county-fire-ems-colbert-county-",
+      "name": "Lauderdale County Fire/EMS, Colbert County Fire",
+      "description": "Broadcastify public safety feed 46916 for Alabama.",
+      "city": "",
+      "county": "Various",
+      "state": "AL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alabama",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46916"
+    },
+    {
+      "id": "bf-47386-houston-county-public-safety",
+      "name": "Houston County Public Safety",
+      "description": "Broadcastify public safety feed 47386 for Alabama.",
+      "city": "",
+      "county": "Various",
+      "state": "AL",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alabama"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47386"
+    },
+    {
+      "id": "bf-28095-goodway-fire",
+      "name": "Goodway Fire",
+      "description": "Broadcastify public safety feed 28095 for Alabama.",
+      "city": "",
+      "county": "Various",
+      "state": "AL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alabama",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/28095"
+    },
+    {
+      "id": "bf-42940-jackson-county-sheriff-dispatch",
+      "name": "Jackson County Sheriff Dispatch",
+      "description": "Broadcastify public safety feed 42940 for Alabama.",
+      "city": "",
+      "county": "Various",
+      "state": "AL",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alabama",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42940"
+    },
+    {
+      "id": "bf-31462-butler-county-rural-fire-dispatch",
+      "name": "Butler County Rural Fire Dispatch",
+      "description": "Broadcastify public safety feed 31462 for Alabama.",
+      "city": "",
+      "county": "Various",
+      "state": "AL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alabama",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/31462"
+    },
+    {
+      "id": "bf-44283-colbert-county-fire",
+      "name": "Colbert County Fire",
+      "description": "Broadcastify public safety feed 44283 for Alabama.",
+      "city": "",
+      "county": "Various",
+      "state": "AL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alabama",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44283"
+    },
+    {
+      "id": "bf-46038-huntsville-fire-rescue-and-madison-fire-re",
+      "name": "Huntsville Fire/Rescue and Madison Fire/Rescue",
+      "description": "Broadcastify public safety feed 46038 for Alabama.",
+      "city": "",
+      "county": "Various",
+      "state": "AL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alabama",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46038"
+    },
+    {
+      "id": "bf-39123-pigeon-creek-fire",
+      "name": "Pigeon Creek Fire",
+      "description": "Broadcastify public safety feed 39123 for Alabama.",
+      "city": "",
+      "county": "Various",
+      "state": "AL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alabama",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39123"
+    },
+    {
+      "id": "bf-2771-saraland-fire-and-rescue-dispatch",
+      "name": "Saraland Fire and Rescue Dispatch",
+      "description": "Broadcastify public safety feed 2771 for Alabama.",
+      "city": "",
+      "county": "Various",
+      "state": "AL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alabama",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/2771"
+    },
+    {
+      "id": "bf-38974-providence-and-mount-pisgah-fire",
+      "name": "Providence and Mount Pisgah Fire",
+      "description": "Broadcastify public safety feed 38974 for Alabama.",
+      "city": "",
+      "county": "Various",
+      "state": "AL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alabama",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38974"
+    },
+    {
+      "id": "bf-37405-marshall-county-911-dispatch",
+      "name": "Marshall County 911 Dispatch",
+      "description": "Broadcastify public safety feed 37405 for Alabama.",
+      "city": "",
+      "county": "Various",
+      "state": "AL",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alabama"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37405"
+    },
+    {
+      "id": "bf-46353-huntsville-and-madison-county-public-safet",
+      "name": "Huntsville and Madison County Public Safety",
+      "description": "Broadcastify public safety feed 46353 for Alabama.",
+      "city": "",
+      "county": "Various",
+      "state": "AL",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alabama"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46353"
+    },
+    {
+      "id": "bf-41772-madison-county-public-safety",
+      "name": "Madison County Public Safety",
+      "description": "Broadcastify public safety feed 41772 for Alabama.",
+      "city": "",
+      "county": "Various",
+      "state": "AL",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alabama"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41772"
+    },
+    {
+      "id": "bf-19342-uriah-fire",
+      "name": "Uriah Fire",
+      "description": "Broadcastify public safety feed 19342 for Alabama.",
+      "city": "",
+      "county": "Various",
+      "state": "AL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alabama",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/19342"
+    },
+    {
+      "id": "bf-42992-finchburg-vfd",
+      "name": "Finchburg VFD",
+      "description": "Broadcastify public safety feed 42992 for Alabama.",
+      "city": "",
+      "county": "Various",
+      "state": "AL",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alabama"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42992"
+    },
+    {
+      "id": "bf-45448-limestone-county-fire-dispatch",
+      "name": "Limestone County Fire Dispatch",
+      "description": "Broadcastify public safety feed 45448 for Alabama.",
+      "city": "",
+      "county": "Various",
+      "state": "AL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alabama",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45448"
+    },
+    {
+      "id": "bf-17580-clements-volunteer-fire",
+      "name": "Clements Volunteer Fire",
+      "description": "Broadcastify public safety feed 17580 for Alabama.",
+      "city": "",
+      "county": "Various",
+      "state": "AL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alabama",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/17580"
+    },
+    {
+      "id": "bf-46608-lee-county-fire-dispatch-east",
+      "name": "Lee County Fire Dispatch (East)",
+      "description": "Broadcastify public safety feed 46608 for Alabama.",
+      "city": "",
+      "county": "Various",
+      "state": "AL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alabama",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46608"
+    },
+    {
+      "id": "bf-46607-east-alabama-health-ems-dispatch",
+      "name": "East Alabama Health EMS Dispatch",
+      "description": "Broadcastify public safety feed 46607 for Alabama.",
+      "city": "",
+      "county": "Various",
+      "state": "AL",
+      "service_types": [
+        "dispatch",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alabama",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46607"
+    },
+    {
+      "id": "bf-40742-brushey-mashy-creek-fire",
+      "name": "Brushey Mashy Creek Fire",
+      "description": "Broadcastify public safety feed 40742 for Alabama.",
+      "city": "",
+      "county": "Various",
+      "state": "AL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alabama",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40742"
+    },
+    {
+      "id": "bf-46605-alabama-state-troopers-dispatch-troop-d-op",
+      "name": "Alabama State Troopers Dispatch (Troop D, Opelika)",
+      "description": "Broadcastify public safety feed 46605 for Alabama.",
+      "city": "",
+      "county": "Various",
+      "state": "AL",
+      "service_types": [
+        "dispatch",
+        "law",
+        "highway"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alabama",
+        "law",
+        "highway"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46605"
+    },
+    {
+      "id": "bf-43601-st-clair-county-fire",
+      "name": "St. Clair County Fire",
+      "description": "Broadcastify public safety feed 43601 for Alabama.",
+      "city": "",
+      "county": "Various",
+      "state": "AL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alabama",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43601"
+    },
+    {
+      "id": "bf-21160-autauga-county-rescue-squad",
+      "name": "Autauga County Rescue Squad",
+      "description": "Broadcastify public safety feed 21160 for Alabama.",
+      "city": "",
+      "county": "Various",
+      "state": "AL",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alabama"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/21160"
+    },
+    {
+      "id": "bf-23911-georgiana-fire-rescue",
+      "name": "Georgiana Fire Rescue",
+      "description": "Broadcastify public safety feed 23911 for Alabama.",
+      "city": "",
+      "county": "Various",
+      "state": "AL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alabama",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/23911"
+    },
+    {
+      "id": "bf-28915-camden-fire",
+      "name": "Camden Fire",
+      "description": "Broadcastify public safety feed 28915 for Alabama.",
+      "city": "",
+      "county": "Various",
+      "state": "AL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alabama",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/28915"
+    },
+    {
+      "id": "bf-45688-walker-county-fire",
+      "name": "Walker County Fire",
+      "description": "Broadcastify public safety feed 45688 for Alabama.",
+      "city": "",
+      "county": "Various",
+      "state": "AL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alabama",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45688"
+    },
+    {
+      "id": "bf-41916-lakeview-fire",
+      "name": "Lakeview Fire",
+      "description": "Broadcastify public safety feed 41916 for Alabama.",
+      "city": "",
+      "county": "Various",
+      "state": "AL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alabama",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41916"
+    },
+    {
+      "id": "bf-47116-tallapoosa-county-ems",
+      "name": "Tallapoosa County EMS",
+      "description": "Broadcastify public safety feed 47116 for Alabama.",
+      "city": "",
+      "county": "Various",
+      "state": "AL",
+      "service_types": [
+        "dispatch",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alabama",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47116"
+    },
+    {
+      "id": "bf-47115-tallapoosa-county-fire-departments",
+      "name": "Tallapoosa County Fire Departments",
+      "description": "Broadcastify public safety feed 47115 for Alabama.",
+      "city": "",
+      "county": "Various",
+      "state": "AL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alabama",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47115"
+    },
+    {
+      "id": "bf-37924-forest-home-fire",
+      "name": "Forest Home Fire",
+      "description": "Broadcastify public safety feed 37924 for Alabama.",
+      "city": "",
+      "county": "Various",
+      "state": "AL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alabama",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37924"
+    },
+    {
+      "id": "bf-45932-opelika-fire-department",
+      "name": "Opelika Fire Department",
+      "description": "Broadcastify public safety feed 45932 for Alabama.",
+      "city": "",
+      "county": "Various",
+      "state": "AL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alabama",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45932"
+    },
+    {
+      "id": "bf-36469-forest-fire",
+      "name": "Forest Fire",
+      "description": "Broadcastify public safety feed 36469 for Alabama.",
+      "city": "",
+      "county": "Various",
+      "state": "AL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alabama",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/36469"
+    },
+    {
+      "id": "bf-46665-morgan-county-fire-net-radio",
+      "name": "Morgan County Fire Net Radio",
+      "description": "Broadcastify public safety feed 46665 for Alabama.",
+      "city": "",
+      "county": "Various",
+      "state": "AL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alabama",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46665"
+    },
+    {
+      "id": "bf-38295-fiw-fire",
+      "name": "FIW Fire",
+      "description": "Broadcastify public safety feed 38295 for Alabama.",
+      "city": "",
+      "county": "Various",
+      "state": "AL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alabama",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38295"
+    },
+    {
+      "id": "bf-41995-pike-road-fire-department",
+      "name": "Pike Road Fire Department",
+      "description": "Broadcastify public safety feed 41995 for Alabama.",
+      "city": "",
+      "county": "Various",
+      "state": "AL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alabama",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41995"
+    },
+    {
+      "id": "bf-31348-burkville-fire",
+      "name": "Burkville Fire",
+      "description": "Broadcastify public safety feed 31348 for Alabama.",
+      "city": "",
+      "county": "Various",
+      "state": "AL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alabama",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/31348"
+    },
+    {
+      "id": "bf-47516-north-baldwin-south-monroe-fire",
+      "name": "North Baldwin South Monroe Fire",
+      "description": "Broadcastify public safety feed 47516 for Alabama.",
+      "city": "",
+      "county": "Various",
+      "state": "AL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alabama",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47516"
+    },
+    {
+      "id": "bf-37546-excel-vfd",
+      "name": "Excel VFD",
+      "description": "Broadcastify public safety feed 37546 for Alabama.",
+      "city": "",
+      "county": "Various",
+      "state": "AL",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alabama"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37546"
+    },
+    {
+      "id": "bf-39323-geraldine-rescue",
+      "name": "Geraldine Rescue",
+      "description": "Broadcastify public safety feed 39323 for Alabama.",
+      "city": "",
+      "county": "Various",
+      "state": "AL",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alabama"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39323"
+    },
+    {
+      "id": "bf-39263-flomaton-fire",
+      "name": "Flomaton Fire",
+      "description": "Broadcastify public safety feed 39263 for Alabama.",
+      "city": "",
+      "county": "Various",
+      "state": "AL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alabama",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39263"
+    },
+    {
+      "id": "bf-36415-atmore-fire-dispatch",
+      "name": "Atmore Fire Dispatch",
+      "description": "Broadcastify public safety feed 36415 for Alabama.",
+      "city": "",
+      "county": "Various",
+      "state": "AL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alabama",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/36415"
+    },
+    {
+      "id": "bf-23741-escambia-county-fire",
+      "name": "Escambia County Fire",
+      "description": "Broadcastify public safety feed 23741 for Alabama.",
+      "city": "",
+      "county": "Various",
+      "state": "AL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alabama",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/23741"
+    },
+    {
+      "id": "bf-16465-brewton-fire",
+      "name": "Brewton Fire",
+      "description": "Broadcastify public safety feed 16465 for Alabama.",
+      "city": "",
+      "county": "Various",
+      "state": "AL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alabama",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/16465"
+    },
+    {
+      "id": "bf-21064-conecuh-rescue",
+      "name": "Conecuh Rescue",
+      "description": "Broadcastify public safety feed 21064 for Alabama.",
+      "city": "",
+      "county": "Various",
+      "state": "AL",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alabama"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/21064"
+    },
+    {
+      "id": "bf-25058-bermuda-volunteer-fire",
+      "name": "Bermuda Volunteer Fire",
+      "description": "Broadcastify public safety feed 25058 for Alabama.",
+      "city": "",
+      "county": "Various",
+      "state": "AL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alabama",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/25058"
+    },
+    {
+      "id": "bf-41929-rainsville-fire",
+      "name": "Rainsville Fire",
+      "description": "Broadcastify public safety feed 41929 for Alabama.",
+      "city": "",
+      "county": "Various",
+      "state": "AL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alabama",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41929"
+    },
+    {
+      "id": "bf-41909-dekalb-county-fire",
+      "name": "DeKalb County Fire",
+      "description": "Broadcastify public safety feed 41909 for Alabama.",
+      "city": "",
+      "county": "Various",
+      "state": "AL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alabama",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41909"
+    },
+    {
+      "id": "bf-40760-springfield-vfd",
+      "name": "Springfield VFD",
+      "description": "Broadcastify public safety feed 40760 for Alabama.",
+      "city": "",
+      "county": "Various",
+      "state": "AL",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alabama"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40760"
+    },
+    {
+      "id": "bf-33361-hendricksville-rescue",
+      "name": "Hendricksville Rescue",
+      "description": "Broadcastify public safety feed 33361 for Alabama.",
+      "city": "",
+      "county": "Various",
+      "state": "AL",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alabama"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/33361"
+    },
+    {
+      "id": "bf-20205-fort-payne-fire",
+      "name": "Fort Payne Fire",
+      "description": "Broadcastify public safety feed 20205 for Alabama.",
+      "city": "",
+      "county": "Various",
+      "state": "AL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alabama",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/20205"
+    },
+    {
+      "id": "bf-8051-fort-payne-police",
+      "name": "Fort Payne Police",
+      "description": "Broadcastify public safety feed 8051 for Alabama.",
+      "city": "",
+      "county": "Various",
+      "state": "AL",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alabama",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/8051"
+    },
+    {
+      "id": "bf-30842-castleberry-fire",
+      "name": "Castleberry Fire",
+      "description": "Broadcastify public safety feed 30842 for Alabama.",
+      "city": "",
+      "county": "Various",
+      "state": "AL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alabama",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/30842"
+    },
+    {
+      "id": "bf-45290-cullman-county-public-safety",
+      "name": "Cullman County Public Safety",
+      "description": "Broadcastify public safety feed 45290 for Alabama.",
+      "city": "",
+      "county": "Various",
+      "state": "AL",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alabama"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45290"
+    },
+    {
+      "id": "bf-27705-goodwater-fire",
+      "name": "Goodwater Fire",
+      "description": "Broadcastify public safety feed 27705 for Alabama.",
+      "city": "",
+      "county": "Various",
+      "state": "AL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alabama",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/27705"
+    },
+    {
+      "id": "bf-36520-sandcut-vfd",
+      "name": "Sandcut VFD",
+      "description": "Broadcastify public safety feed 36520 for Alabama.",
+      "city": "",
+      "county": "Various",
+      "state": "AL",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alabama"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/36520"
+    },
+    {
+      "id": "bf-46303-oakboweryfire",
+      "name": "OakBoweryFire",
+      "description": "Broadcastify public safety feed 46303 for Alabama.",
+      "city": "",
+      "county": "Various",
+      "state": "AL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alabama",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46303"
+    },
+    {
+      "id": "bf-42954-lower-gainesville-fire",
+      "name": "Lower Gainesville Fire",
+      "description": "Broadcastify public safety feed 42954 for Alabama.",
+      "city": "",
+      "county": "Various",
+      "state": "AL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alabama",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42954"
+    },
+    {
+      "id": "bf-43902-boligee-fire",
+      "name": "Boligee Fire",
+      "description": "Broadcastify public safety feed 43902 for Alabama.",
+      "city": "",
+      "county": "Various",
+      "state": "AL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alabama",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43902"
+    },
+    {
+      "id": "bf-14996-stevenson-fire",
+      "name": "Stevenson Fire",
+      "description": "Broadcastify public safety feed 14996 for Alabama.",
+      "city": "",
+      "county": "Various",
+      "state": "AL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alabama",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/14996"
+    },
+    {
+      "id": "bf-20800-hollywood-fire-and-rescue",
+      "name": "Hollywood Fire and Rescue",
+      "description": "Broadcastify public safety feed 20800 for Alabama.",
+      "city": "",
+      "county": "Various",
+      "state": "AL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alabama",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/20800"
+    },
+    {
+      "id": "bf-27597-paint-rock-fire",
+      "name": "Paint Rock Fire",
+      "description": "Broadcastify public safety feed 27597 for Alabama.",
+      "city": "",
+      "county": "Various",
+      "state": "AL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alabama",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/27597"
+    },
+    {
+      "id": "bf-45281-muscle-shoals-police-fire",
+      "name": "Muscle Shoals Police & Fire",
+      "description": "Broadcastify public safety feed 45281 for Alabama.",
+      "city": "",
+      "county": "Various",
+      "state": "AL",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alabama",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45281"
+    },
+    {
+      "id": "bf-45115-tuscumbia-police-fire",
+      "name": "Tuscumbia Police & Fire",
+      "description": "Broadcastify public safety feed 45115 for Alabama.",
+      "city": "",
+      "county": "Various",
+      "state": "AL",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alabama",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45115"
+    },
+    {
+      "id": "bf-45112-sheffield-police-fire",
+      "name": "Sheffield Police & Fire",
+      "description": "Broadcastify public safety feed 45112 for Alabama.",
+      "city": "",
+      "county": "Various",
+      "state": "AL",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alabama",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45112"
+    },
+    {
+      "id": "bf-41192-hoover-fire-department",
+      "name": "Hoover Fire Department",
+      "description": "Broadcastify public safety feed 41192 for Alabama.",
+      "city": "",
+      "county": "Various",
+      "state": "AL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alabama",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41192"
+    },
+    {
+      "id": "bf-42160-noaa-weather-radio-nw-alabama-kih57",
+      "name": "NOAA Weather Radio - NW Alabama KIH57",
+      "description": "Broadcastify public safety feed 42160 for Alabama.",
+      "city": "",
+      "county": "Various",
+      "state": "AL",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alabama"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42160"
+    },
+    {
+      "id": "bf-46245-clay-county-ems",
+      "name": "Clay County EMS",
+      "description": "Broadcastify public safety feed 46245 for Alabama.",
+      "city": "",
+      "county": "Various",
+      "state": "AL",
+      "service_types": [
+        "dispatch",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alabama",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46245"
+    },
+    {
+      "id": "bf-47239-valley-lanett-dispatch",
+      "name": "Valley/Lanett Dispatch",
+      "description": "Broadcastify public safety feed 47239 for Alabama.",
+      "city": "",
+      "county": "Various",
+      "state": "AL",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alabama"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47239"
+    },
+    {
+      "id": "bf-46257-m-and-d",
+      "name": "M and D",
+      "description": "Broadcastify public safety feed 46257 for Alabama.",
+      "city": "",
+      "county": "Various",
+      "state": "AL",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alabama"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46257"
+    },
+    {
+      "id": "bf-32286-flat-rock-fire",
+      "name": "Flat Rock Fire",
+      "description": "Broadcastify public safety feed 32286 for Alabama.",
+      "city": "",
+      "county": "Various",
+      "state": "AL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alabama",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32286"
+    },
+    {
+      "id": "bf-46158-lee-county-fire-dispatch-west",
+      "name": "Lee County Fire Dispatch (West)",
+      "description": "Broadcastify public safety feed 46158 for Alabama.",
+      "city": "",
+      "county": "Various",
+      "state": "AL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "alabama",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46158"
+    }
+  ]
+}

@@ -1,0 +1,570 @@
+{
+  "channels": [
+    {
+      "id": "bf-32602-indianapolis-metropolitan-police",
+      "name": "Indianapolis Metropolitan Police",
+      "description": "Broadcastify public safety feed 32602 for Idaho.",
+      "city": "",
+      "county": "Various",
+      "state": "ID",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "idaho",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32602"
+    },
+    {
+      "id": "bf-38688-mountain-home-police-elmore-county-sheriff",
+      "name": "Mountain Home Police, Elmore County Sheriff & EMS",
+      "description": "Broadcastify public safety feed 38688 for Idaho.",
+      "city": "",
+      "county": "Various",
+      "state": "ID",
+      "service_types": [
+        "dispatch",
+        "law",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "idaho",
+        "law",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38688"
+    },
+    {
+      "id": "bf-41851-south-boundary-county-public-safety",
+      "name": "South Boundary County Public Safety",
+      "description": "Broadcastify public safety feed 41851 for Idaho.",
+      "city": "",
+      "county": "Various",
+      "state": "ID",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "idaho"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41851"
+    },
+    {
+      "id": "bf-43653-ada-county-area-public-safety",
+      "name": "Ada County Area Public Safety",
+      "description": "Broadcastify public safety feed 43653 for Idaho.",
+      "city": "",
+      "county": "Various",
+      "state": "ID",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "idaho"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43653"
+    },
+    {
+      "id": "bf-10637-nez-perce-and-asotin-counties-sheriff-fire",
+      "name": "Nez Perce and Asotin Counties Sheriff, Fire and EMS",
+      "description": "Broadcastify public safety feed 10637 for Idaho.",
+      "city": "",
+      "county": "Various",
+      "state": "ID",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "idaho",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/10637"
+    },
+    {
+      "id": "bf-47030-kootenai-county-fire-and-ems",
+      "name": "Kootenai County Fire and EMS",
+      "description": "Broadcastify public safety feed 47030 for Idaho.",
+      "city": "",
+      "county": "Various",
+      "state": "ID",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "idaho",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47030"
+    },
+    {
+      "id": "bf-42011-southern-idaho-regional-communications-cen",
+      "name": "Southern Idaho Regional Communications Center (SIRCOMM) Primary Dispatch",
+      "description": "Broadcastify public safety feed 42011 for Idaho.",
+      "city": "",
+      "county": "Various",
+      "state": "ID",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "idaho"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42011"
+    },
+    {
+      "id": "bf-23529-bear-lake-county-ambulance",
+      "name": "Bear Lake County Ambulance",
+      "description": "Broadcastify public safety feed 23529 for Idaho.",
+      "city": "",
+      "county": "Various",
+      "state": "ID",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "idaho"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/23529"
+    },
+    {
+      "id": "bf-43995-franklin-county-ambulance-assoc",
+      "name": "Franklin County Ambulance Assoc",
+      "description": "Broadcastify public safety feed 43995 for Idaho.",
+      "city": "",
+      "county": "Various",
+      "state": "ID",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "idaho"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43995"
+    },
+    {
+      "id": "bf-44031-boise-county-public-safety-boise-national-",
+      "name": "Boise County Public Safety / Boise National Forest",
+      "description": "Broadcastify public safety feed 44031 for Idaho.",
+      "city": "",
+      "county": "Various",
+      "state": "ID",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "idaho"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44031"
+    },
+    {
+      "id": "bf-31483-emmett-fire",
+      "name": "Emmett Fire",
+      "description": "Broadcastify public safety feed 31483 for Idaho.",
+      "city": "",
+      "county": "Various",
+      "state": "ID",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "idaho",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/31483"
+    },
+    {
+      "id": "bf-31534-bear-lake-fire",
+      "name": "Bear Lake Fire",
+      "description": "Broadcastify public safety feed 31534 for Idaho.",
+      "city": "",
+      "county": "Various",
+      "state": "ID",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "idaho",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/31534"
+    },
+    {
+      "id": "bf-38715-grand-view-fire",
+      "name": "Grand View Fire",
+      "description": "Broadcastify public safety feed 38715 for Idaho.",
+      "city": "",
+      "county": "Various",
+      "state": "ID",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "idaho",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38715"
+    },
+    {
+      "id": "bf-19029-oakley-fire",
+      "name": "Oakley Fire",
+      "description": "Broadcastify public safety feed 19029 for Idaho.",
+      "city": "",
+      "county": "Various",
+      "state": "ID",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "idaho",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/19029"
+    },
+    {
+      "id": "bf-25783-raft-river-fire",
+      "name": "Raft River Fire",
+      "description": "Broadcastify public safety feed 25783 for Idaho.",
+      "city": "",
+      "county": "Various",
+      "state": "ID",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "idaho",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/25783"
+    },
+    {
+      "id": "bf-30416-declo-fire",
+      "name": "Declo Fire",
+      "description": "Broadcastify public safety feed 30416 for Idaho.",
+      "city": "",
+      "county": "Various",
+      "state": "ID",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "idaho",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/30416"
+    },
+    {
+      "id": "bf-33270-burley-fire-2",
+      "name": "Burley Fire 2",
+      "description": "Broadcastify public safety feed 33270 for Idaho.",
+      "city": "",
+      "county": "Various",
+      "state": "ID",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "idaho",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/33270"
+    },
+    {
+      "id": "bf-25382-caribou-county-fire-and-ems",
+      "name": "Caribou County Fire and EMS",
+      "description": "Broadcastify public safety feed 25382 for Idaho.",
+      "city": "",
+      "county": "Various",
+      "state": "ID",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "idaho",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/25382"
+    },
+    {
+      "id": "bf-43149-mountain-home-fire-department",
+      "name": "Mountain Home Fire Department",
+      "description": "Broadcastify public safety feed 43149 for Idaho.",
+      "city": "",
+      "county": "Various",
+      "state": "ID",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "idaho",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43149"
+    },
+    {
+      "id": "bf-38633-panhandle-public-safety",
+      "name": "Panhandle Public Safety",
+      "description": "Broadcastify public safety feed 38633 for Idaho.",
+      "city": "",
+      "county": "Various",
+      "state": "ID",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "idaho"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38633"
+    },
+    {
+      "id": "bf-26892-boundary-county-public-safety",
+      "name": "Boundary County Public Safety",
+      "description": "Broadcastify public safety feed 26892 for Idaho.",
+      "city": "",
+      "county": "Various",
+      "state": "ID",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "idaho"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/26892"
+    },
+    {
+      "id": "bf-22020-sand-hollow-fpd",
+      "name": "Sand Hollow FPD",
+      "description": "Broadcastify public safety feed 22020 for Idaho.",
+      "city": "",
+      "county": "Various",
+      "state": "ID",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "idaho"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/22020"
+    },
+    {
+      "id": "bf-24036-cascade-rural-fire-protection-dist",
+      "name": "Cascade Rural Fire Protection Dist",
+      "description": "Broadcastify public safety feed 24036 for Idaho.",
+      "city": "",
+      "county": "Various",
+      "state": "ID",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "idaho",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/24036"
+    },
+    {
+      "id": "bf-6074-washington-county-sheriff-dispatch",
+      "name": "Washington County Sheriff Dispatch",
+      "description": "Broadcastify public safety feed 6074 for Idaho.",
+      "city": "",
+      "county": "Various",
+      "state": "ID",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "idaho",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/6074"
+    },
+    {
+      "id": "bf-30818-weiser-police-and-fire-washington-county-e",
+      "name": "Weiser Police and Fire, Washington County EMS",
+      "description": "Broadcastify public safety feed 30818 for Idaho.",
+      "city": "",
+      "county": "Various",
+      "state": "ID",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "idaho",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/30818"
+    }
+  ]
+}
