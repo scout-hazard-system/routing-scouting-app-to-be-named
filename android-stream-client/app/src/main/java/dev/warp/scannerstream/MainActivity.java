@@ -25,6 +25,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
@@ -244,6 +245,13 @@ public class MainActivity extends AppCompatActivity {
     searchBtn.setOnClickListener(v -> searchDestination());
     popupRouteBtn.setOnClickListener(v -> routeToPopupLocation());
     popupDismissBtn.setOnClickListener(v -> hideLocationPopup());
+    if (!ENABLE_DEV_CONTROLS) {
+      statusText.setOnLongClickListener(
+          v -> {
+            showEndpointOverrideDialog();
+            return true;
+          });
+    }
     appendLine("MAP", "OpenStreetMap base layer active (osmdroid + OSRM routing)");
     applyAppModeUi();
 
@@ -253,6 +261,45 @@ public class MainActivity extends AppCompatActivity {
     updateDrivingModeUi(0f);
     updateMapTargetUi();
     renderRouteOnMap(true);
+  }
+
+  private void showEndpointOverrideDialog() {
+    EditText input = new EditText(this);
+    input.setSingleLine(true);
+    input.setText(AppPrefs.baseUrl(this));
+    input.setSelection(input.getText().length());
+    new AlertDialog.Builder(this)
+        .setTitle("Server URL")
+        .setMessage("Set backend URL for Internet/off-network use.")
+        .setView(input)
+        .setPositiveButton(
+            "Save",
+            (dialog, which) -> {
+              String normalized = normalizeBaseUrlCandidate(input.getText().toString());
+              if (normalized == null) {
+                appendLine("NET", "invalid server URL (must start with http:// or https://)");
+                return;
+              }
+              AppPrefs.saveBaseUrl(this, normalized);
+              baseUrlInput.setText(normalized);
+              appendLine("NET", "server URL updated to " + normalized);
+            })
+        .setNegativeButton("Cancel", null)
+        .show();
+  }
+
+  private String normalizeBaseUrlCandidate(String rawValue) {
+    if (rawValue == null) {
+      return null;
+    }
+    String base = rawValue.trim();
+    if (base.endsWith("/")) {
+      base = base.substring(0, base.length() - 1);
+    }
+    if (!base.startsWith("http://") && !base.startsWith("https://")) {
+      return null;
+    }
+    return base;
   }
 
   /** Restores map mode and coordinates after a configuration change (e.g. rotation). */
@@ -539,6 +586,9 @@ public class MainActivity extends AppCompatActivity {
     if (baseUrlInput != null) {
       baseUrlInput.setEnabled(false);
     }
+    appendLine(
+        "NET",
+        "long-press status to set remote server URL when off local network");
   }
 
   @Override
@@ -777,17 +827,11 @@ public class MainActivity extends AppCompatActivity {
   private String normalizedBaseUrl() {
     String base;
     if (ENABLE_DEV_CONTROLS) {
-      base = baseUrlInput.getText().toString().trim();
+      base = baseUrlInput.getText().toString();
     } else {
-      base = AppPrefs.baseUrl(this).trim();
+      base = AppPrefs.baseUrl(this);
     }
-    if (base.endsWith("/")) {
-      base = base.substring(0, base.length() - 1);
-    }
-    if (!base.startsWith("http://") && !base.startsWith("https://")) {
-      return null;
-    }
-    return base;
+    return normalizeBaseUrlCandidate(base);
   }
 
   private void stopStreaming(String reason) {
