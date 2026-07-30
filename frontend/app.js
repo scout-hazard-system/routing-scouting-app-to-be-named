@@ -1033,6 +1033,10 @@ async function fetchSnapshotFallback() {
 async function fetchRouteWeather() {
   const start = ui.startInput.value.trim();
   const end = ui.endInput.value.trim();
+  return fetchRouteWeatherFor(start, end);
+}
+
+async function fetchRouteWeatherFor(start, end) {
   if (!start || !end) {
     ui.weatherList.innerHTML = "<li>Enter start and destination to load route weather.</li>";
     return;
@@ -1066,12 +1070,127 @@ async function fetchWazeRouteFromBackend({ start, end, lat, lon }) {
   if (!r.ok) throw new Error("waze route endpoint unavailable");
   return r.json();
 }
+function asFiniteNumber(value) {
+  const num = Number(value);
+  return Number.isFinite(num) ? num : null;
+}
 
-function planRoute() {
+function readBiasCoordinates() {
+  if (state.currentGps?.lat != null && state.currentGps?.lon != null) {
+    return { lat: state.currentGps.lat, lon: state.currentGps.lon };
+  }
+  const lat = asFiniteNumber(ui.latInput.value);
+  const lon = asFiniteNumber(ui.lonInput.value);
+  if (lat != null && lon != null) {
+    return { lat, lon };
+  }
+  return null;
+}
+
+function buildBiasQueryString(bias) {
+  if (!bias || !Number.isFinite(bias.lat) || !Number.isFinite(bias.lon)) return "";
+  return `&lat=${encodeURIComponent(bias.lat)}&lon=${encodeURIComponent(bias.lon)}`;
+}
+
+function parseAddressCandidate(candidate, fallbackName) {
+  if (!candidate || typeof candidate !== "object") return null;
+  const lat = asFiniteNumber(candidate.lat);
+  const lon = asFiniteNumber(candidate.lon);
+  if (lat == null || lon == null) return null;
+  const displayName = String(candidate.display_name || candidate.name || fallbackName || "").trim() || fallbackName;
+  return { lat, lon, displayName };
+}
+
+function firstObjectFromArray(value) {
+  return Array.isArray(value) && value.length && value[0] && typeof value[0] === "object" ? value[0] : null;
+}
+
+function extractCatalogCandidate(payload, fallbackName) {
+  if (!payload || typeof payload !== "object") return null;
+  return parseAddressCandidate(
+    payload.entry ||
+      payload.result ||
+      payload.address ||
+      firstObjectFromArray(payload.results) ||
+      firstObjectFromArray(payload.entries),
+    fallbackName
+  );
+}
+
+async function resolveFromAddressCatalog(query, bias) {
+  const url =
+    apiUrl(`/api/platform/address-catalog/resolve?q=${encodeURIComponent(query)}`) + buildBiasQueryString(bias);
+  const response = await fetch(url);
+  if (!response.ok) return null;
+  const payload = await response.json();
+  return extractCatalogCandidate(payload, query);
+}
+
+async function resolveFromGeocode(query, bias) {
+  const url = apiUrl(`/api/platform/geocode?q=${encodeURIComponent(query)}`) + buildBiasQueryString(bias);
+  const response = await fetch(url);
+  if (!response.ok) return null;
+  const payload = await response.json();
+  const first = Array.isArray(payload?.results) ? payload.results[0] : null;
+  return parseAddressCandidate(first, query);
+}
+
+async function upsertAddressCatalog(query, candidate, bias) {
+  if (!candidate) return;
+  const body = {
+    query,
+    display_name: candidate.displayName,
+    lat: candidate.lat,
+    lon: candidate.lon,
+    source: "frontend_web_client",
+  };
+  if (bias && Number.isFinite(bias.lat) && Number.isFinite(bias.lon)) {
+    body.bias_lat = bias.lat;
+    body.bias_lon = bias.lon;
+  }
+  try {
+    await fetch(apiUrl("/api/platform/address-catalog/upsert"), {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(body),
+    });
+  } catch {
+    // best effort warm-up
+  }
+}
+
+async function resolveAddressWithFunnel(query, bias) {
+  if (!query) return null;
+  const fromCatalog = await resolveFromAddressCatalog(query, bias).catch(() => null);
+  if (fromCatalog) return { candidate: fromCatalog, fromCatalog: true };
+  const fromGeocode = await resolveFromGeocode(query, bias).catch(() => null);
+  if (!fromGeocode) return null;
+  upsertAddressCatalog(query, fromGeocode, bias);
+  return { candidate: fromGeocode, fromCatalog: false };
+}
+
+async function planRoute() {
   const endRaw = ui.endInput.value.trim();
   const startRaw = ui.startInput.value.trim();
-  const parsedEnd = parseLatLonInput(endRaw);
+  let parsedEnd = parseLatLonInput(endRaw);
   const parsedStart = parseLatLonInput(startRaw);
+  const bias = readBiasCoordinates() || parsedStart || null;
+  let resolvedEndLabel = endRaw;
+  if (!parsedEnd && endRaw) {
+    setRun("resolving destination", "warn");
+    const resolved = await resolveAddressWithFunnel(endRaw, bias);
+    if (resolved?.candidate) {
+      parsedEnd = { lat: resolved.candidate.lat, lon: resolved.candidate.lon };
+      resolvedEndLabel = resolved.candidate.displayName || endRaw;
+      addListItem(
+        ui.jurisdictionNotices,
+        `Address funnel: ${resolved.fromCatalog ? "catalog" : "osm-fallback"} → ${resolvedEndLabel}`
+      );
+      setRun("route destination resolved", "ok");
+    } else {
+      setRun("route destination unresolved", "bad");
+    }
+  }
   const lat = parsedEnd?.lat ?? parsedStart?.lat;
   const lon = parsedEnd?.lon ?? parsedStart?.lon;
 
@@ -1096,7 +1215,12 @@ function planRoute() {
     ui.latInput.value = parsedStart.lat;
     ui.lonInput.value = parsedStart.lon;
   }
-  fetchRouteWeather();
+  if (parsedEnd) {
+    ui.latInput.value = parsedEnd.lat;
+    ui.lonInput.value = parsedEnd.lon;
+  }
+  const weatherEnd = resolvedEndLabel || endRaw;
+  fetchRouteWeatherFor(startRaw, weatherEnd);
 }
 
 ui.enableNotifyBtn.addEventListener("click", async () => {
