@@ -73,6 +73,7 @@ public class Map3dView extends View {
 
   private static final long FOLLOW_RESUME_AFTER_TOUCH_MS = 8000L;
   private static final long REFETCH_MIN_INTERVAL_MS = 5000L;
+  private static final long REFETCH_AFTER_SCALE_COOLDOWN_MS = 450L;
   private static final double REFETCH_EDGE_FRACTION = 0.55;
   private static final float MIN_MPP = 0.2f;
   // Global scale: at ~60000 m/dp a phone screen spans a continent and beyond.
@@ -156,9 +157,12 @@ public class Map3dView extends View {
   private volatile double[] routeLatLon; // interleaved
   private volatile Double destLat;
   private volatile Double destLon;
+  private volatile double[] alertClusterLatLon;
+  private volatile int[] alertClusterCounts;
 
   private RefetchListener refetchListener;
   private long lastRefetchMs;
+  private long lastScaleGestureMs;
 
   // Reused draw objects (no allocations per frame where possible)
   private final Paint fillPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
@@ -209,12 +213,23 @@ public class Map3dView extends View {
             context,
             new ScaleGestureDetector.SimpleOnScaleGestureListener() {
               @Override
-              public boolean onScale(ScaleGestureDetector detector) {
-                float factor = detector.getScaleFactor();
-                if (factor > 0f) {
-                  mpp = clamp(mpp / factor, MIN_MPP, MAX_MPP);
-                }
+              public boolean onScaleBegin(ScaleGestureDetector detector) {
+                followDevice = false;
+                lastTouchMs = SystemClock.elapsedRealtime();
                 return true;
+              }
+              @Override
+              public boolean onScale(ScaleGestureDetector detector) {
+                applyScaleAroundFocus(
+                    detector.getScaleFactor(), detector.getFocusX(), detector.getFocusY());
+                lastScaleGestureMs = SystemClock.elapsedRealtime();
+                lastTouchMs = lastScaleGestureMs;
+                return true;
+              }
+
+              @Override
+              public void onScaleEnd(ScaleGestureDetector detector) {
+                lastScaleGestureMs = SystemClock.elapsedRealtime();
               }
             });
   }
@@ -325,11 +340,48 @@ public class Map3dView extends View {
         s.poiX[i] = s.toX(p.optDouble("lon", 0));
         s.poiY[i] = s.toY(p.optDouble("lat", 0));
       }
+      JSONArray alertClusters = root.optJSONArray("alert_clusters");
+      if (alertClusters == null || alertClusters.length() == 0) {
+        alertClusterLatLon = null;
+        alertClusterCounts = null;
+      } else {
+        double[] latLon = new double[alertClusters.length() * 2];
+        int[] counts = new int[alertClusters.length()];
+        int accepted = 0;
+        for (int i = 0; i < alertClusters.length(); i++) {
+          JSONObject c = alertClusters.optJSONObject(i);
+          if (c == null) {
+            continue;
+          }
+          double lat = c.optDouble("lat", Double.NaN);
+          double lon = c.optDouble("lon", Double.NaN);
+          if (!Double.isFinite(lat) || !Double.isFinite(lon)) {
+            continue;
+          }
+          latLon[accepted * 2] = lat;
+          latLon[accepted * 2 + 1] = lon;
+          counts[accepted] = Math.max(1, c.optInt("count", 1));
+          accepted++;
+        }
+        if (accepted == 0) {
+          alertClusterLatLon = null;
+          alertClusterCounts = null;
+        } else {
+          alertClusterLatLon = Arrays.copyOf(latLon, accepted * 2);
+          alertClusterCounts = Arrays.copyOf(counts, accepted);
+        }
+      }
 
       Scene previous = scene;
       scene = s;
       loadingHint = "";
-      if (previous == null || !followDevice) {
+      if (previous != null && !followDevice) {
+        // Keep the same world point centered when a refetch swaps scene origin/zoom.
+        double centerLat = previous.toLat(camY);
+        double centerLon = previous.toLon(camX);
+        camX = s.toX(centerLon);
+        camY = s.toY(centerLat);
+      } else if (previous == null || !followDevice) {
         // First scene: snap camera to scene center unless device fix exists.
         if (!hasDevice) {
           camX = 0f;
@@ -553,6 +605,44 @@ public class Map3dView extends View {
     double ry = (dyPx * mppPx) / cosTilt;
     camX += (float) (rx * cosH + ry * sinH);
     camY += (float) (-rx * sinH + ry * cosH);
+  }
+
+  private void applyScaleAroundFocus(float scaleFactor, float focusX, float focusY) {
+    if (scaleFactor <= 0f) {
+      return;
+    }
+    float oldMpp = mpp;
+    float nextMpp = clamp(oldMpp / scaleFactor, MIN_MPP, MAX_MPP);
+    if (Math.abs(nextMpp - oldMpp) < 0.0001f) {
+      return;
+    }
+    if (scene == null || getWidth() <= 0 || getHeight() <= 0) {
+      mpp = nextMpp;
+      postInvalidateOnAnimation();
+      return;
+    }
+    float[] before = screenToWorld(focusX, focusY, oldMpp);
+    mpp = nextMpp;
+    float[] after = screenToWorld(focusX, focusY, nextMpp);
+    camX += before[0] - after[0];
+    camY += before[1] - after[1];
+    postInvalidateOnAnimation();
+  }
+
+  private float[] screenToWorld(float screenX, float screenY, float mppForCalc) {
+    float pxPerM = density / mppForCalc;
+    double headingRad = Math.toRadians(headingDeg);
+    float cosH = (float) Math.cos(headingRad);
+    float sinH = (float) Math.sin(headingRad);
+    float cosT = (float) Math.max(0.2, Math.cos(Math.toRadians(tiltDeg)));
+    float sinT = (float) Math.sin(Math.toRadians(tiltDeg));
+    float cx = getWidth() / 2f;
+    float cy = getHeight() / 2f + (getHeight() * 0.22f * sinT);
+    float rx = (screenX - cx) / pxPerM;
+    float ry = (cy - screenY) / (cosT * pxPerM);
+    float dx = rx * cosH + ry * sinH;
+    float dy = -rx * sinH + ry * cosH;
+    return new float[] {camX + dx, camY + dy};
   }
 
   private static float clamp(float v, float lo, float hi) {
@@ -781,6 +871,7 @@ public class Map3dView extends View {
       drawLabels(canvas, s, cosH, sinH, cosT, sinT, pxPerM, cx, cy, w, h);
     } else if (mpp >= PLACE_LABEL_MIN_MPP) {
       drawPlaceLabels(canvas, s, cosH, sinH, cosT, sinT, pxPerM, cx, cy, w, h);
+      drawAlertClusters(canvas, s, cosH, sinH, cosT, sinT, pxPerM, cx, cy, w, h);
     }
 
     // 8. Attribution
@@ -856,6 +947,44 @@ public class Map3dView extends View {
       drawn.add(name);
       canvas.drawText(name, px, py, textHaloPaint);
       canvas.drawText(name, px, py, textPaint);
+    }
+  }
+
+  private void drawAlertClusters(
+      Canvas canvas,
+      Scene s,
+      float cosH,
+      float sinH,
+      float cosT,
+      float sinT,
+      float pxPerM,
+      float cx,
+      float cy,
+      int w,
+      int h) {
+    double[] clusterLatLon = alertClusterLatLon;
+    int[] clusterCounts = alertClusterCounts;
+    if (clusterLatLon == null || clusterCounts == null || clusterCounts.length == 0) {
+      return;
+    }
+    for (int i = 0; i < clusterCounts.length; i++) {
+      float x = s.toX(clusterLatLon[i * 2 + 1]);
+      float y = s.toY(clusterLatLon[i * 2]);
+      float px = sx(x, y, 0f, cosH, sinH, cosT, sinT, pxPerM, cx);
+      float py = sy(x, y, 0f, cosH, sinH, cosT, sinT, pxPerM, cy);
+      if (px < 12 || px > w - 12 || py < 12 || py > h - 12) {
+        continue;
+      }
+      float r = Math.min(26f * density, (8f + (float) Math.sqrt(clusterCounts[i]) * 2.5f) * density);
+      fillPaint.setColor(0xB0E67E22);
+      canvas.drawCircle(px, py, r, fillPaint);
+      strokePaint.setColor(0xFFE67E22);
+      strokePaint.setStrokeWidth(2f * density);
+      canvas.drawCircle(px, py, r, strokePaint);
+      String label = String.valueOf(clusterCounts[i]);
+      float textW = textPaint.measureText(label);
+      canvas.drawText(label, px - textW / 2f, py + 4f * density, textHaloPaint);
+      canvas.drawText(label, px - textW / 2f, py + 4f * density, textPaint);
     }
   }
 
@@ -936,6 +1065,9 @@ public class Map3dView extends View {
     }
     long now = SystemClock.elapsedRealtime();
     if (now - lastRefetchMs < REFETCH_MIN_INTERVAL_MS) {
+      return;
+    }
+    if (now - lastScaleGestureMs < REFETCH_AFTER_SCALE_COOLDOWN_MS) {
       return;
     }
     double dist = Math.hypot(camX, camY);

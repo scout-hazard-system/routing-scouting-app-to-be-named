@@ -140,6 +140,7 @@ public class MainActivity extends AppCompatActivity {
   // stream client reads forever and streamSse() reconnects on failure.
   private final OkHttpClient sseClient =
       new OkHttpClient.Builder().readTimeout(0, TimeUnit.SECONDS).build();
+  private final AddressCatalogRouter addressCatalogRouter = new AddressCatalogRouter(client);
   private volatile boolean running = false;
   private Call streamCall;
   private SensorManager sensorManager;
@@ -321,64 +322,54 @@ public class MainActivity extends AppCompatActivity {
       setStatus("invalid URL");
       return;
     }
-    appendLine(label, "geocoding via OSM: " + query);
-    String url = base + "/api/platform/geocode?q=" + Uri.encode(query);
-    // Bias geocoding toward the device (or current map target) so short street
-    // names resolve near us instead of anywhere on the planet.
+    appendLine(label, "address catalog lookup: " + query);
     Double biasLat = lastDeviceLat != null ? lastDeviceLat : lastMapLat;
     Double biasLon = lastDeviceLon != null ? lastDeviceLon : lastMapLon;
-    if (biasLat != null && biasLon != null) {
-      url += String.format(Locale.ROOT, "&lat=%.6f&lon=%.6f", biasLat, biasLon);
-    }
-    Request request = new Request.Builder().url(url).build();
-    client.newCall(request)
-        .enqueue(
-            new Callback() {
-              @Override
-              public void onFailure(Call call, IOException e) {
-                appendLine(label, "geocode failed: " + e.getMessage());
-              }
+    addressCatalogRouter.resolve(
+        base,
+        query,
+        biasLat,
+        biasLon,
+        new AddressCatalogRouter.ResolveCallback() {
+          @Override
+          public void onResolved(AddressCatalogRouter.AddressCandidate candidate, boolean fromCatalog) {
+            lastMapLat = candidate.lat;
+            lastMapLon = candidate.lon;
+            updateMapTargetUi();
+            appendLine(
+                label,
+                "destination (" + (fromCatalog ? "catalog" : "osm-fallback") + "): " + candidate.displayName);
+            uiHandler.post(
+                () -> {
+                  osmMapView.getController().animateTo(new GeoPoint(candidate.lat, candidate.lon));
+                  destinationInput.clearFocus();
+                });
+            renderRouteOnMap(true);
+            openRouteOptionsScreen(candidate.lat, candidate.lon, candidate.displayName);
+          }
 
-              @Override
-              public void onResponse(Call call, Response response) throws IOException {
-                try (response) {
-                  if (!response.isSuccessful() || response.body() == null) {
-                    appendLine(label, "geocode unavailable (HTTP " + response.code() + ")");
-                    return;
-                  }
-                  JSONObject json = new JSONObject(response.body().string());
-                  JSONArray results = json.optJSONArray("results");
-                  if (results == null || results.length() == 0) {
-                    appendLine(label, "no OSM matches for: " + query);
-                    return;
-                  }
-                  JSONObject first = results.optJSONObject(0);
-                  if (first == null) {
-                    appendLine(label, "malformed geocode result");
-                    return;
-                  }
-                  double lat = Double.parseDouble(first.optString("lat", "nan"));
-                  double lon = Double.parseDouble(first.optString("lon", "nan"));
-                  if (!Double.isFinite(lat) || !Double.isFinite(lon)) {
-                    appendLine(label, "geocode result missing coordinates");
-                    return;
-                  }
-                  String displayName = first.optString("display_name", query);
-                  lastMapLat = lat;
-                  lastMapLon = lon;
-                  updateMapTargetUi();
-                  appendLine(label, "destination: " + displayName);
-                  uiHandler.post(
-                      () -> {
-                        osmMapView.getController().animateTo(new GeoPoint(lat, lon));
-                        destinationInput.clearFocus();
-                      });
-                  renderRouteOnMap(true);
-                } catch (Exception e) {
-                  appendLine(label, "geocode parse error: " + e.getMessage());
-                }
-              }
-            });
+          @Override
+          public void onFailure(String message) {
+            appendLine(label, message);
+          }
+        });
+  }
+
+  private void openRouteOptionsScreen(double destLat, double destLon, String destLabel) {
+    String base = normalizedBaseUrl();
+    if (base == null) {
+      return;
+    }
+    double originLat = lastDeviceLat != null ? lastDeviceLat : destLat;
+    double originLon = lastDeviceLon != null ? lastDeviceLon : destLon;
+    Intent intent = new Intent(this, RouteOptionsActivity.class);
+    intent.putExtra(RouteOptionsActivity.EXTRA_BASE_URL, base);
+    intent.putExtra(RouteOptionsActivity.EXTRA_ORIGIN_LAT, originLat);
+    intent.putExtra(RouteOptionsActivity.EXTRA_ORIGIN_LON, originLon);
+    intent.putExtra(RouteOptionsActivity.EXTRA_DEST_LAT, destLat);
+    intent.putExtra(RouteOptionsActivity.EXTRA_DEST_LON, destLon);
+    intent.putExtra(RouteOptionsActivity.EXTRA_DEST_LABEL, destLabel);
+    startActivity(intent);
   }
 
   private void toggleMapMode() {

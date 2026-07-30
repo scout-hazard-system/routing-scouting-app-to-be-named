@@ -44,11 +44,17 @@ public final class ScannerBackendServer {
   private static final Pattern ALERT_PATTERN = Pattern.compile("\"alert\"\\s*:\\s*\"([^\"]*)\"");
   private static final Pattern OSRM_DISTANCE_PATTERN =
       Pattern.compile("\"distance\"\\s*:\\s*([0-9]+(?:\\.[0-9]+)?)");
+  private static final Pattern OSRM_DURATION_PATTERN =
+      Pattern.compile("\"duration\"\\s*:\\s*([0-9]+(?:\\.[0-9]+)?)");
+  private static final Pattern ALERT_COORD_PATTERN =
+      Pattern.compile("\\b(-?\\d{1,2}\\.\\d+)\\s*[, ]\\s*(-?\\d{1,3}\\.\\d+)\\b");
   private static final String WEATHER_PROVIDER = System.getenv().getOrDefault("WEATHER_PROVIDER", "mock");
   private static final String WAZE_DEEPLINK_BASE_URL =
       System.getenv().getOrDefault("WAZE_DEEPLINK_BASE_URL", "https://waze.com/ul");
   private static final String WAZE_EMBED_BASE_URL =
       System.getenv().getOrDefault("WAZE_EMBED_BASE_URL", "https://embed.waze.com/iframe");
+  private static final String WAZE_HAZARDS_API_URL =
+      System.getenv().getOrDefault("WAZE_HAZARDS_API_URL", "");
   private static final String NOMINATIM_SEARCH_URL =
       System.getenv().getOrDefault("NOMINATIM_SEARCH_URL", "https://nominatim.openstreetmap.org/search");
   private static final double GEOCODE_BIAS_RADIUS_DEGREES =
@@ -107,6 +113,7 @@ public final class ScannerBackendServer {
   private static final int PORT = parsePort(System.getenv("JAVA_BACKEND_PORT"), DEFAULT_PORT);
   private static final Map<String, TimingStats> REQUEST_STATS = new ConcurrentHashMap<>();
   private static final Map<String, TimingStats> HELPER_STATS = new ConcurrentHashMap<>();
+  private static final Map<String, AddressCatalogEntry> ADDRESS_CATALOG = new ConcurrentHashMap<>();
   private static final Object GPS_LOCK = new Object();
   private static final Deque<GpsPoint> GPS_TRACK = new ArrayDeque<>();
   private static final Map<String, GpsPoint> GPS_BY_USER = new ConcurrentHashMap<>();
@@ -121,7 +128,11 @@ public final class ScannerBackendServer {
     registerContext(server, "/api/platform/weather/forecast", new PlatformWeatherHandler());
     registerContext(server, "/api/platform/waze/route", new WazeRouteHandler());
     registerContext(server, "/api/platform/route/local", new LocalRouteHandler());
+    registerContext(server, "/api/platform/route/options", new RouteOptionsHandler());
     registerContext(server, "/api/platform/geocode", new GeocodeHandler());
+    registerContext(server, "/api/platform/address-catalog/resolve", new AddressCatalogResolveHandler());
+    registerContext(server, "/api/platform/address-catalog/upsert", new AddressCatalogUpsertHandler());
+    registerContext(server, "/api/platform/alerts/clusters", new AlertClustersHandler());
     registerContext(server, "/api/gps/update", new GpsUpdateHandler());
     registerContext(server, "/api/gps/latest", new GpsLatestHandler());
     registerContext(server, "/api/gps/track", new GpsTrackHandler());
@@ -154,6 +165,41 @@ public final class ScannerBackendServer {
     private RouteNode(double lat, double lon) {
       this.lat = lat;
       this.lon = lon;
+    }
+  }
+  private static final class AddressCatalogEntry {
+    private final String queryKey;
+    private final String displayName;
+    private final String source;
+    private final double lat;
+    private final double lon;
+    private final long updatedAtMs;
+
+    private AddressCatalogEntry(
+        String queryKey, String displayName, String source, double lat, double lon, long updatedAtMs) {
+      this.queryKey = queryKey;
+      this.displayName = displayName;
+      this.source = source;
+      this.lat = lat;
+      this.lon = lon;
+      this.updatedAtMs = updatedAtMs;
+    }
+  }
+
+  private static final class RouteAlternative {
+    private final List<RouteNode> nodes;
+    private final double distanceMeters;
+    private final double durationSeconds;
+    private final boolean hasTollHint;
+    private final boolean hasFerryHint;
+
+    private RouteAlternative(
+        List<RouteNode> nodes, double distanceMeters, double durationSeconds, boolean hasTollHint, boolean hasFerryHint) {
+      this.nodes = nodes;
+      this.distanceMeters = distanceMeters;
+      this.durationSeconds = durationSeconds;
+      this.hasTollHint = hasTollHint;
+      this.hasFerryHint = hasFerryHint;
     }
   }
   private static final class GpsPoint {
@@ -532,7 +578,11 @@ public final class ScannerBackendServer {
         + "\"weather\":\"/api/platform/weather/forecast\","
         + "\"waze\":\"/api/platform/waze/route\","
         + "\"geocode\":\"/api/platform/geocode\","
+        + "\"address_catalog_resolve\":\"/api/platform/address-catalog/resolve\","
+        + "\"address_catalog_upsert\":\"/api/platform/address-catalog/upsert\","
         + "\"local_route\":\"/api/platform/route/local\","
+        + "\"route_options\":\"/api/platform/route/options\","
+        + "\"alert_clusters\":\"/api/platform/alerts/clusters\","
         + "\"map_scene\":\"/api/map/scene\","
         + "\"map_render\":\"/api/map/render\","
         + "\"map_status\":\"/api/map/status\","
@@ -705,6 +755,386 @@ public final class ScannerBackendServer {
     }
     sb.append("]");
     return sb.toString();
+  }
+
+  private static String normalizeCatalogQuery(String raw) {
+    if (raw == null) {
+      return "";
+    }
+    return raw.toLowerCase(Locale.ROOT).replaceAll("\\s+", " ").trim();
+  }
+
+  private static String addressCatalogEntryToJson(AddressCatalogEntry entry) {
+    return "{"
+        + "\"query\":\"" + jsonEscape(entry.queryKey) + "\","
+        + "\"display_name\":\"" + jsonEscape(entry.displayName) + "\","
+        + "\"source\":\"" + jsonEscape(entry.source) + "\","
+        + "\"lat\":" + trimDouble(entry.lat) + ","
+        + "\"lon\":" + trimDouble(entry.lon) + ","
+        + "\"updated_at_ms\":" + entry.updatedAtMs
+        + "}";
+  }
+
+  private static String buildAddressCatalogResolveJson(Map<String, String> query) {
+    String q = query.getOrDefault("q", "").trim();
+    String key = normalizeCatalogQuery(q);
+    if (key.isEmpty()) {
+      return "{\"error\":\"missing_query\"}";
+    }
+    AddressCatalogEntry exact = ADDRESS_CATALOG.get(key);
+    if (exact != null) {
+      return "{"
+          + "\"ts\":\"" + Instant.now().toString() + "\","
+          + "\"status\":\"ok\","
+          + "\"match\":\"exact\","
+          + "\"entry\":" + addressCatalogEntryToJson(exact)
+          + "}";
+    }
+    AddressCatalogEntry fuzzy = null;
+    for (AddressCatalogEntry entry : ADDRESS_CATALOG.values()) {
+      if (entry.queryKey.contains(key) || key.contains(entry.queryKey)) {
+        if (fuzzy == null || entry.updatedAtMs > fuzzy.updatedAtMs) {
+          fuzzy = entry;
+        }
+      }
+    }
+    if (fuzzy == null) {
+      return "{"
+          + "\"ts\":\"" + Instant.now().toString() + "\","
+          + "\"status\":\"miss\","
+          + "\"results\":[]"
+          + "}";
+    }
+    return "{"
+        + "\"ts\":\"" + Instant.now().toString() + "\","
+        + "\"status\":\"ok\","
+        + "\"match\":\"fuzzy\","
+        + "\"entry\":" + addressCatalogEntryToJson(fuzzy)
+        + "}";
+  }
+
+  private static String buildAddressCatalogUpsertJson(Map<String, String> query, String body) {
+    String queryRaw = extractStringFieldByName(body, "query", query.getOrDefault("query", ""));
+    String display =
+        extractStringFieldByName(
+            body, "display_name", query.getOrDefault("display_name", queryRaw));
+    String source =
+        extractStringFieldByName(body, "source", query.getOrDefault("source", "unknown_client"));
+    double lat = parseDouble(query.getOrDefault("lat", ""), Double.NaN);
+    double lon = parseDouble(query.getOrDefault("lon", ""), Double.NaN);
+    if (!Double.isFinite(lat)) {
+      lat = extractDoubleField(body, "lat", Double.NaN);
+    }
+    if (!Double.isFinite(lon)) {
+      lon = extractDoubleField(body, "lon", Double.NaN);
+    }
+    String key = normalizeCatalogQuery(queryRaw);
+    if (key.isEmpty() || !Double.isFinite(lat) || !Double.isFinite(lon)) {
+      return "{\"error\":\"invalid_catalog_entry\"}";
+    }
+    if (display == null || display.isBlank()) {
+      display = queryRaw;
+    }
+    AddressCatalogEntry entry =
+        new AddressCatalogEntry(key, display.trim(), source.trim(), lat, lon, System.currentTimeMillis());
+    ADDRESS_CATALOG.put(key, entry);
+    return "{"
+        + "\"ts\":\"" + Instant.now().toString() + "\","
+        + "\"status\":\"ok\","
+        + "\"catalog_size\":" + ADDRESS_CATALOG.size() + ","
+        + "\"entry\":" + addressCatalogEntryToJson(entry)
+        + "}";
+  }
+
+  private static String fetchOsrmRouteAlternativesBody(
+      double originLat, double originLon, double destLat, double destLon) {
+    String url =
+        OSRM_ROUTE_BASE_URL
+            + "/"
+            + trimDouble(originLon)
+            + ","
+            + trimDouble(originLat)
+            + ";"
+            + trimDouble(destLon)
+            + ","
+            + trimDouble(destLat)
+            + "?overview=full&geometries=geojson&alternatives=true&steps=false";
+    String body = httpGetExternal(url);
+    if (body == null || !body.contains("\"code\":\"Ok\"")) {
+      return null;
+    }
+    return body;
+  }
+
+  private static String extractJsonArrayContent(String rawJson, String fieldName) {
+    String key = "\"" + fieldName + "\"";
+    int keyIndex = rawJson.indexOf(key);
+    if (keyIndex < 0) {
+      return null;
+    }
+    int arrayStart = rawJson.indexOf('[', keyIndex + key.length());
+    if (arrayStart < 0) {
+      return null;
+    }
+    int depth = 0;
+    boolean inString = false;
+    for (int i = arrayStart; i < rawJson.length(); i++) {
+      char ch = rawJson.charAt(i);
+      if (ch == '"' && (i == 0 || rawJson.charAt(i - 1) != '\\')) {
+        inString = !inString;
+      }
+      if (inString) {
+        continue;
+      }
+      if (ch == '[') {
+        depth++;
+      } else if (ch == ']') {
+        depth--;
+        if (depth == 0) {
+          return rawJson.substring(arrayStart + 1, i);
+        }
+      }
+    }
+    return null;
+  }
+
+  private static List<String> splitTopLevelObjects(String arrayBody) {
+    List<String> out = new ArrayList<>();
+    if (arrayBody == null || arrayBody.isBlank()) {
+      return out;
+    }
+    int depth = 0;
+    boolean inString = false;
+    int objectStart = -1;
+    for (int i = 0; i < arrayBody.length(); i++) {
+      char ch = arrayBody.charAt(i);
+      if (ch == '"' && (i == 0 || arrayBody.charAt(i - 1) != '\\')) {
+        inString = !inString;
+      }
+      if (inString) {
+        continue;
+      }
+      if (ch == '{') {
+        if (depth == 0) {
+          objectStart = i;
+        }
+        depth++;
+      } else if (ch == '}') {
+        depth--;
+        if (depth == 0 && objectStart >= 0) {
+          out.add(arrayBody.substring(objectStart, i + 1));
+          objectStart = -1;
+        }
+      }
+    }
+    return out;
+  }
+
+  private static List<RouteAlternative> parseOsrmAlternatives(String osrmBody) {
+    String routesArray = extractJsonArrayContent(osrmBody, "routes");
+    List<RouteAlternative> alternatives = new ArrayList<>();
+    for (String routeObject : splitTopLevelObjects(routesArray)) {
+      List<RouteNode> nodes = parseOsrmCoordinates(routeObject);
+      if (nodes == null || nodes.size() < 2) {
+        continue;
+      }
+      Double dist = parseOsrmDistanceMeters(routeObject);
+      Double duration = parseOsrmDurationSeconds(routeObject);
+      alternatives.add(
+          new RouteAlternative(
+              nodes,
+              dist != null ? dist : approximateRouteMeters(nodes),
+              duration != null ? duration : 0.0,
+              routeObject.contains("toll"),
+              routeObject.contains("ferry")));
+    }
+    return alternatives;
+  }
+
+  private static Double parseOsrmDurationSeconds(String osrmBody) {
+    Matcher matcher = OSRM_DURATION_PATTERN.matcher(osrmBody);
+    if (matcher.find()) {
+      try {
+        return Double.parseDouble(matcher.group(1));
+      } catch (NumberFormatException ignored) {
+        return null;
+      }
+    }
+    return null;
+  }
+
+  private static String routeAlternativesToJson(List<RouteAlternative> alternatives) {
+    StringBuilder sb = new StringBuilder("[");
+    for (int i = 0; i < alternatives.size(); i++) {
+      if (i > 0) {
+        sb.append(",");
+      }
+      RouteAlternative alt = alternatives.get(i);
+      sb.append("{")
+          .append("\"index\":").append(i).append(",")
+          .append("\"distance_m\":").append(trimDouble(alt.distanceMeters)).append(",")
+          .append("\"duration_s\":").append(trimDouble(alt.durationSeconds)).append(",")
+          .append("\"has_toll_hint\":").append(alt.hasTollHint).append(",")
+          .append("\"has_ferry_hint\":").append(alt.hasFerryHint).append(",")
+          .append("\"route_points\":").append(routeNodesToJson(alt.nodes))
+          .append("}");
+    }
+    sb.append("]");
+    return sb.toString();
+  }
+
+  private static String fetchWazeHazardsJson(double originLat, double originLon, double destLat, double destLon) {
+    if (WAZE_HAZARDS_API_URL.isBlank()) {
+      return "{\"status\":\"unconfigured\",\"provider\":\"waze\",\"hazards\":[]}";
+    }
+    double minLat = Math.min(originLat, destLat);
+    double maxLat = Math.max(originLat, destLat);
+    double minLon = Math.min(originLon, destLon);
+    double maxLon = Math.max(originLon, destLon);
+    String url =
+        WAZE_HAZARDS_API_URL
+            + "?bbox="
+            + trimDouble(minLon)
+            + ","
+            + trimDouble(minLat)
+            + ","
+            + trimDouble(maxLon)
+            + ","
+            + trimDouble(maxLat);
+    String raw = httpGetExternal(url);
+    if (raw == null || !looksLikeJson(raw)) {
+      return "{\"status\":\"unavailable\",\"provider\":\"waze\",\"hazards\":[]}";
+    }
+    return "{"
+        + "\"status\":\"ok\","
+        + "\"provider\":\"waze\","
+        + "\"raw\":" + raw
+        + "}";
+  }
+
+  private static String buildRouteOptionsJson(Map<String, String> query) {
+    GpsPoint latest = latestGpsPoint;
+    double originLat = parseDouble(query.getOrDefault("origin_lat", ""), Double.NaN);
+    double originLon = parseDouble(query.getOrDefault("origin_lon", ""), Double.NaN);
+    double destLat = parseDouble(query.getOrDefault("dest_lat", ""), Double.NaN);
+    double destLon = parseDouble(query.getOrDefault("dest_lon", ""), Double.NaN);
+    if ((!Double.isFinite(originLat) || !Double.isFinite(originLon)) && latest != null) {
+      originLat = latest.lat;
+      originLon = latest.lon;
+    }
+    if ((!Double.isFinite(destLat) || !Double.isFinite(destLon)) && latest != null) {
+      destLat = latest.lat;
+      destLon = latest.lon;
+    }
+    if (!Double.isFinite(originLat)
+        || !Double.isFinite(originLon)
+        || !Double.isFinite(destLat)
+        || !Double.isFinite(destLon)) {
+      return "{\"error\":\"invalid_route_coordinates\"}";
+    }
+    List<RouteAlternative> alternatives = List.of();
+    String osrmBody = fetchOsrmRouteAlternativesBody(originLat, originLon, destLat, destLon);
+    if (osrmBody != null) {
+      alternatives = parseOsrmAlternatives(osrmBody);
+    }
+    if (alternatives.isEmpty()) {
+      List<RouteNode> fallback =
+          List.of(new RouteNode(originLat, originLon), new RouteNode(destLat, destLon));
+      alternatives =
+          List.of(
+              new RouteAlternative(
+                  fallback, approximateRouteMeters(fallback), 0.0, false, false));
+    }
+    String hazards = fetchWazeHazardsJson(originLat, originLon, destLat, destLon);
+    return "{"
+        + "\"ts\":\"" + Instant.now().toString() + "\","
+        + "\"status\":\"ok\","
+        + "\"origin\":{\"lat\":" + trimDouble(originLat) + ",\"lon\":" + trimDouble(originLon) + "},"
+        + "\"destination\":{\"lat\":" + trimDouble(destLat) + ",\"lon\":" + trimDouble(destLon) + "},"
+        + "\"alternatives\":" + routeAlternativesToJson(alternatives) + ","
+        + "\"waze_hazards\":" + hazards
+        + "}";
+  }
+
+  private static String buildAlertClustersJson(Map<String, String> query) {
+    double gridDeg = parseDouble(query.getOrDefault("grid_deg", ""), 0.60);
+    if (!Double.isFinite(gridDeg) || gridDeg <= 0.01) {
+      gridDeg = 0.60;
+    }
+    if (gridDeg > 5.0) {
+      gridDeg = 5.0;
+    }
+    Map<String, Integer> buckets = new HashMap<>();
+    for (EventInfo event : readEventLines(RECENT_EVENT_LIMIT * 3)) {
+      if (!"alert_triggered".equals(event.eventType)) {
+        continue;
+      }
+      Matcher matcher = ALERT_COORD_PATTERN.matcher(event.rawJson);
+      if (!matcher.find()) {
+        continue;
+      }
+      double lat;
+      double lon;
+      try {
+        lat = Double.parseDouble(matcher.group(1));
+        lon = Double.parseDouble(matcher.group(2));
+      } catch (NumberFormatException ex) {
+        continue;
+      }
+      int latBucket = (int) Math.floor(lat / gridDeg);
+      int lonBucket = (int) Math.floor(lon / gridDeg);
+      String key = latBucket + ":" + lonBucket;
+      buckets.merge(key, 1, Integer::sum);
+    }
+    StringBuilder clusters = new StringBuilder("[");
+    int idx = 0;
+    for (Map.Entry<String, Integer> e : buckets.entrySet()) {
+      String[] parts = e.getKey().split(":");
+      if (parts.length != 2) {
+        continue;
+      }
+      int latBucket = parseIntOrDefault(parts[0], 0);
+      int lonBucket = parseIntOrDefault(parts[1], 0);
+      double centerLat = (latBucket + 0.5) * gridDeg;
+      double centerLon = (lonBucket + 0.5) * gridDeg;
+      if (idx++ > 0) {
+        clusters.append(",");
+      }
+      clusters.append("{")
+          .append("\"lat\":").append(trimDouble(centerLat)).append(",")
+          .append("\"lon\":").append(trimDouble(centerLon)).append(",")
+          .append("\"count\":").append(e.getValue())
+          .append("}");
+    }
+    clusters.append("]");
+    return "{"
+        + "\"ts\":\"" + Instant.now().toString() + "\","
+        + "\"status\":\"ok\","
+        + "\"grid_deg\":" + trimDouble(gridDeg) + ","
+        + "\"clusters\":" + clusters
+        + "}";
+  }
+
+  private static String appendAlertClustersToSceneJson(String sceneJson, double radiusM) {
+    if (sceneJson == null || sceneJson.isBlank()) {
+      return sceneJson;
+    }
+    double gridDeg = Math.max(0.15, Math.min(2.5, radiusM / 220000.0));
+    Map<String, String> query = new HashMap<>();
+    query.put("grid_deg", trimDouble(gridDeg));
+    String clustersPayload = buildAlertClustersJson(query);
+    String clustersArray = extractJsonArrayContent(clustersPayload, "clusters");
+    if (clustersArray == null) {
+      clustersArray = "";
+    }
+    int insertAt = sceneJson.lastIndexOf('}');
+    if (insertAt <= 0) {
+      return sceneJson;
+    }
+    String prefix = sceneJson.substring(0, insertAt);
+    String suffix = sceneJson.substring(insertAt);
+    String separator = prefix.endsWith("{") ? "" : ",";
+    return prefix + separator + "\"alert_clusters\":[" + clustersArray + "]" + suffix;
   }
 
   private static String buildWeatherJson(Map<String, String> query) {
@@ -1081,6 +1511,64 @@ public final class ScannerBackendServer {
     }
   }
 
+  private static final class RouteOptionsHandler implements HttpHandler {
+    @Override
+    public void handle(HttpExchange exchange) throws IOException {
+      if (!isGet(exchange)) {
+        writeJson(exchange, 405, "{\"error\":\"method_not_allowed\"}");
+        return;
+      }
+      URI uri = exchange.getRequestURI();
+      Map<String, String> query = parseQuery(uri.getRawQuery());
+      String payload = buildRouteOptionsJson(query);
+      writeJson(exchange, helperResponseStatus(payload), payload);
+    }
+  }
+
+  private static final class AddressCatalogResolveHandler implements HttpHandler {
+    @Override
+    public void handle(HttpExchange exchange) throws IOException {
+      if (!isGet(exchange)) {
+        writeJson(exchange, 405, "{\"error\":\"method_not_allowed\"}");
+        return;
+      }
+      URI uri = exchange.getRequestURI();
+      Map<String, String> query = parseQuery(uri.getRawQuery());
+      String payload = buildAddressCatalogResolveJson(query);
+      writeJson(exchange, helperResponseStatus(payload), payload);
+    }
+  }
+
+  private static final class AddressCatalogUpsertHandler implements HttpHandler {
+    @Override
+    public void handle(HttpExchange exchange) throws IOException {
+      String method = exchange.getRequestMethod();
+      if (!"POST".equals(method) && !"GET".equals(method)) {
+        writeJson(exchange, 405, "{\"error\":\"method_not_allowed\"}");
+        return;
+      }
+      URI uri = exchange.getRequestURI();
+      Map<String, String> query = parseQuery(uri.getRawQuery());
+      String body = "POST".equals(method) ? readRequestBody(exchange) : "";
+      String payload = buildAddressCatalogUpsertJson(query, body);
+      writeJson(exchange, helperResponseStatus(payload), payload);
+    }
+  }
+
+  private static final class AlertClustersHandler implements HttpHandler {
+    @Override
+    public void handle(HttpExchange exchange) throws IOException {
+      if (!isGet(exchange)) {
+        writeJson(exchange, 405, "{\"error\":\"method_not_allowed\"}");
+        return;
+      }
+      URI uri = exchange.getRequestURI();
+      Map<String, String> query = parseQuery(uri.getRawQuery());
+      String payload = buildAlertClustersJson(query);
+      writeJson(exchange, 200, payload);
+    }
+  }
+
   private static final class GeocodeHandler implements HttpHandler {
     @Override
     public void handle(HttpExchange exchange) throws IOException {
@@ -1408,7 +1896,8 @@ public final class ScannerBackendServer {
       }
       double radiusM = parseDouble(query.getOrDefault("radius_m", ""), 700.0);
       int zoom = parseIntOrDefault(query.getOrDefault("zoom", ""), 0); // 0 = auto (resolution filter)
-      writeJson(exchange, 200, ProprietaryMapEngine.sceneJson(lat, lon, radiusM, zoom));
+      String sceneJson = ProprietaryMapEngine.sceneJson(lat, lon, radiusM, zoom);
+      writeJson(exchange, 200, appendAlertClustersToSceneJson(sceneJson, radiusM));
     }
   }
 
