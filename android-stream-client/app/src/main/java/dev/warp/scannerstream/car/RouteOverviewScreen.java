@@ -105,11 +105,9 @@ final class RouteOverviewScreen extends Screen {
     if (dest == null) {
       summaryLine = "No route summary: destination not set";
       hazardLine = "";
-      loading = false;
       invalidate();
       return;
     }
-    loading = true;
     invalidate();
     String baseUrl = AppPrefs.baseUrl(getCarContext());
     executor.submit(
@@ -118,7 +116,6 @@ final class RouteOverviewScreen extends Screen {
           if (origin == null) {
             summaryLine = "Route summary unavailable: missing origin fix";
             hazardLine = "";
-            loading = false;
             getCarContext().getMainExecutor().execute(this::invalidate);
             return;
           }
@@ -143,7 +140,6 @@ final class RouteOverviewScreen extends Screen {
                     + ("ok".equalsIgnoreCase(summary.hazardStatus) ? "available" : summary.hazardStatus);
             hazardLine = (hints + hazard).trim();
           }
-          loading = false;
           getCarContext().getMainExecutor().execute(this::invalidate);
         });
   }
