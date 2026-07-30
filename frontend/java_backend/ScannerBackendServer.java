@@ -65,6 +65,12 @@ public final class ScannerBackendServer {
       System.getenv().getOrDefault("EXTERNAL_HTTP_USER_AGENT", "scanner-stream-backend/0.1 (self-hosted)");
   private static final int EXTERNAL_HTTP_TIMEOUT_MS =
       parseIntOrDefault(System.getenv("EXTERNAL_HTTP_TIMEOUT_MS"), 6000);
+  private static final long OSRM_CACHE_TTL_MS =
+      parseLongOrDefault(System.getenv("OSRM_CACHE_TTL_MS"), 15000L);
+  private static final int OSRM_CACHE_MAX_ENTRIES =
+      parseIntOrDefault(System.getenv("OSRM_CACHE_MAX_ENTRIES"), 512);
+  private static final long LLM_STATUS_CACHE_TTL_MS =
+      parseLongOrDefault(System.getenv("LLM_STATUS_CACHE_TTL_MS"), 5000L);
   private static final String SELECTOR_PYTHON_BIN =
       System.getenv().getOrDefault("SELECTOR_PYTHON_BIN", "/home/gibi/Desktop/cop_pipeline/bin/python3");
   private static final String SELECTOR_SCRIPT_PATH =
@@ -114,6 +120,9 @@ public final class ScannerBackendServer {
   private static final Map<String, TimingStats> REQUEST_STATS = new ConcurrentHashMap<>();
   private static final Map<String, TimingStats> HELPER_STATS = new ConcurrentHashMap<>();
   private static final Map<String, AddressCatalogEntry> ADDRESS_CATALOG = new ConcurrentHashMap<>();
+  private static final Map<String, TimedStringValue> OSRM_ROUTE_CACHE = new ConcurrentHashMap<>();
+  private static final Map<String, TimedStringValue> OSRM_ALT_CACHE = new ConcurrentHashMap<>();
+  private static volatile TimedStringValue llmStatusCache = null;
   private static final Object GPS_LOCK = new Object();
   private static final Deque<GpsPoint> GPS_TRACK = new ArrayDeque<>();
   private static final Map<String, GpsPoint> GPS_BY_USER = new ConcurrentHashMap<>();
@@ -157,6 +166,16 @@ public final class ScannerBackendServer {
         PORT,
         LOG_PATH);
     server.start();
+  }
+
+  private static final class TimedStringValue {
+    private final String value;
+    private final long expiresAtMs;
+
+    private TimedStringValue(String value, long expiresAtMs) {
+      this.value = value;
+      this.expiresAtMs = expiresAtMs;
+    }
   }
   private static final class RouteNode {
     private final double lat;
@@ -761,7 +780,30 @@ public final class ScannerBackendServer {
     if (raw == null) {
       return "";
     }
-    return raw.toLowerCase(Locale.ROOT).replaceAll("\\s+", " ").trim();
+    String lower = raw.toLowerCase(Locale.ROOT);
+    StringBuilder sb = new StringBuilder(lower.length());
+    boolean previousWhitespace = false;
+    for (int i = 0; i < lower.length(); i++) {
+      char ch = lower.charAt(i);
+      if (Character.isWhitespace(ch)) {
+        if (!previousWhitespace) {
+          sb.append(' ');
+          previousWhitespace = true;
+        }
+      } else {
+        sb.append(ch);
+        previousWhitespace = false;
+      }
+    }
+    int start = 0;
+    int end = sb.length();
+    while (start < end && sb.charAt(start) == ' ') {
+      start++;
+    }
+    while (end > start && sb.charAt(end - 1) == ' ') {
+      end--;
+    }
+    return start == 0 && end == sb.length() ? sb.toString() : sb.substring(start, end);
   }
 
   private static String addressCatalogEntryToJson(AddressCatalogEntry entry) {
@@ -848,6 +890,11 @@ public final class ScannerBackendServer {
 
   private static String fetchOsrmRouteAlternativesBody(
       double originLat, double originLon, double destLat, double destLon) {
+    String cacheKey = osrmCacheKey(originLat, originLon, destLat, destLon);
+    String cached = getCachedString(OSRM_ALT_CACHE, cacheKey);
+    if (cached != null) {
+      return cached;
+    }
     String url =
         OSRM_ROUTE_BASE_URL
             + "/"
@@ -863,7 +910,67 @@ public final class ScannerBackendServer {
     if (body == null || !body.contains("\"code\":\"Ok\"")) {
       return null;
     }
+    putCachedString(OSRM_ALT_CACHE, cacheKey, body, OSRM_CACHE_TTL_MS, OSRM_CACHE_MAX_ENTRIES);
+    putCachedString(OSRM_ROUTE_CACHE, cacheKey, body, OSRM_CACHE_TTL_MS, OSRM_CACHE_MAX_ENTRIES);
     return body;
+  }
+
+  private static String osrmCacheKey(
+      double originLat, double originLon, double destLat, double destLon) {
+    return String.format(
+        Locale.ROOT,
+        "%.5f,%.5f->%.5f,%.5f",
+        originLat,
+        originLon,
+        destLat,
+        destLon);
+  }
+
+  private static String getCachedString(Map<String, TimedStringValue> cache, String key) {
+    TimedStringValue value = cache.get(key);
+    if (value == null) {
+      return null;
+    }
+    long now = System.currentTimeMillis();
+    if (now > value.expiresAtMs) {
+      cache.remove(key, value);
+      return null;
+    }
+    return value.value;
+  }
+
+  private static String getCachedValue(TimedStringValue value) {
+    if (value == null) {
+      return null;
+    }
+    long now = System.currentTimeMillis();
+    if (now > value.expiresAtMs) {
+      return null;
+    }
+    return value.value;
+  }
+
+  private static void putCachedString(
+      Map<String, TimedStringValue> cache,
+      String key,
+      String value,
+      long ttlMs,
+      int maxEntries) {
+    long now = System.currentTimeMillis();
+    cache.put(key, new TimedStringValue(value, now + Math.max(1000L, ttlMs)));
+    if (cache.size() <= maxEntries) {
+      return;
+    }
+    int removed = 0;
+    for (Map.Entry<String, TimedStringValue> entry : cache.entrySet()) {
+      if (entry.getValue().expiresAtMs <= now || cache.size() > maxEntries) {
+        cache.remove(entry.getKey());
+        removed++;
+      }
+      if (cache.size() <= maxEntries || removed >= 64) {
+        break;
+      }
+    }
   }
 
   private static String extractJsonArrayContent(String rawJson, String fieldName) {
@@ -1644,6 +1751,10 @@ public final class ScannerBackendServer {
   }
 
   private static String llmStatusJson() {
+    String cachedStatus = getCachedValue(llmStatusCache);
+    if (cachedStatus != null) {
+      return cachedStatus;
+    }
     String body = httpGetExternal(OLLAMA_TAGS_URL);
     boolean ollamaUp = body != null && looksLikeJson(body);
     java.util.Set<String> installed = new java.util.HashSet<>();
@@ -1668,7 +1779,7 @@ public final class ScannerBackendServer {
       models.append("\"").append(SCOUT_MODELS[i]).append("\":").append(present);
     }
     models.append("}");
-    return "{"
+    String payload = "{"
         + "\"ts\":\"" + Instant.now().toString() + "\","
         + "\"status\":\"ok\","
         + "\"ollama_up\":" + ollamaUp + ","
@@ -1678,6 +1789,8 @@ public final class ScannerBackendServer {
         + "\"models\":" + models + ","
         + "\"complete\":" + (ollamaUp && complete)
         + "}";
+    llmStatusCache = new TimedStringValue(payload, System.currentTimeMillis() + LLM_STATUS_CACHE_TTL_MS);
+    return payload;
   }
 
   private static String httpGetExternal(String urlString) {
@@ -1706,6 +1819,11 @@ public final class ScannerBackendServer {
 
   private static String fetchOsrmRouteBody(
       double originLat, double originLon, double destLat, double destLon) {
+    String cacheKey = osrmCacheKey(originLat, originLon, destLat, destLon);
+    String cached = getCachedString(OSRM_ROUTE_CACHE, cacheKey);
+    if (cached != null) {
+      return cached;
+    }
     String url =
         OSRM_ROUTE_BASE_URL
             + "/"
@@ -1721,6 +1839,7 @@ public final class ScannerBackendServer {
     if (body == null || !body.contains("\"code\":\"Ok\"")) {
       return null;
     }
+    putCachedString(OSRM_ROUTE_CACHE, cacheKey, body, OSRM_CACHE_TTL_MS, OSRM_CACHE_MAX_ENTRIES);
     return body;
   }
 

@@ -25,6 +25,8 @@ DURATION = 12       # Grabs audio in 12-second intervals to minimize processing 
 OLLAMA_URL = "http://localhost:11434/api/generate"
 SHOULD_EXIT = False
 sd = None
+HTTP_SESSION = requests.Session()
+ALERT_PREFIX_RE = re.compile(r"^\s*ALERT\s*:", flags=re.IGNORECASE)
 
 
 def require_sounddevice():
@@ -276,9 +278,20 @@ def classify_transcript(text):
         "codes": codes,
         "confidence": round(confidence, 2),
     }
+
+def normalize_llm_response_text(response_text):
+    if response_text is None:
+        return "IGNORE"
+    normalized = str(response_text).strip()
+    if len(normalized) >= 2 and normalized[0] == normalized[-1] and normalized[0] in {"\"", "'"}:
+        normalized = normalized[1:-1].strip()
+    return normalized or "IGNORE"
+
+def is_alert_response(response_text):
+    return bool(ALERT_PREFIX_RE.match(normalize_llm_response_text(response_text)))
 def query_llm(transcript_text, timeout_seconds=3.0, retries=0):
     payload = {
-        "model": "llama3.1", 
+        "model": os.getenv("OLLAMA_ALERT_MODEL", "llama3.1"),
         "prompt": f"{SYSTEM_PROMPT}\n\nTranscript: {transcript_text}",
         "stream": False
     }
@@ -286,26 +299,36 @@ def query_llm(transcript_text, timeout_seconds=3.0, retries=0):
     last_error = None
     last_status = None
     last_raw = None
-    for _ in range(attempts):
+    for attempt_idx in range(attempts):
         try:
-            response = requests.post(OLLAMA_URL, json=payload, timeout=timeout_seconds)
+            response = HTTP_SESSION.post(OLLAMA_URL, json=payload, timeout=timeout_seconds)
             last_status = response.status_code
-            raw_text = response.text
+            raw_text = response.text or ""
             last_raw = raw_text[:500]
             try:
                 parsed = response.json()
             except Exception:
                 parsed = {}
-            model_response = parsed.get("response", "IGNORE")
+            model_response = parsed.get("response")
+            if not isinstance(model_response, str):
+                model_response = raw_text
+            model_response = normalize_llm_response_text(model_response)
+            if response.status_code >= 400 and model_response == "IGNORE":
+                last_error = f"ollama_http_{response.status_code}"
+                if attempt_idx < attempts - 1:
+                    time.sleep(min(0.6 * (2 ** attempt_idx), 2.5))
+                    continue
             return {
                 "response": model_response,
                 "status_code": last_status,
                 "error": None,
                 "raw": last_raw,
-                "attempts": attempts,
+                "attempts": attempt_idx + 1,
             }
         except Exception as e:
             last_error = repr(e)
+            if attempt_idx < attempts - 1:
+                time.sleep(min(0.6 * (2 ** attempt_idx), 2.5))
     return {
         "response": "IGNORE",
         "status_code": last_status,
@@ -553,7 +576,7 @@ def resolve_broadcastify_stream(stream_url):
     cached = _broadcastify_sessions.get(feed_id)
     if cached:
         return cached["url"]
-    page = requests.get(
+    page = HTTP_SESSION.get(
         f"https://www.broadcastify.com/listen/feed/{feed_id}?_={int(time.time() * 1000)}",
         headers={
             "User-Agent": BROWSER_USER_AGENT,
@@ -591,7 +614,7 @@ def broadcastify_beacon_ping(stream_url):
     if not cached or not cached.get("beacon_url"):
         return
     try:
-        requests.post(
+        HTTP_SESSION.post(
             cached["beacon_url"],
             json={"feedId": int(cached["feed_id"]), "sessionId": cached["session_id"]},
             headers={"User-Agent": BROWSER_USER_AGENT},
@@ -621,7 +644,7 @@ def capture_hls_chunk_to_wav(playlist_url, duration_seconds, output_path, sample
     deadline = time.time() + duration_seconds * 2 + 20
     with open(ts_path, "wb") as out:
         while collected < duration_seconds and time.time() < deadline and not SHOULD_EXIT:
-            response = requests.get(playlist_url, headers=headers, timeout=10)
+            response = HTTP_SESSION.get(playlist_url, headers=headers, timeout=10)
             response.raise_for_status()
             segment_entries = []
             entry_duration = None
@@ -644,7 +667,7 @@ def capture_hls_chunk_to_wav(playlist_url, duration_seconds, output_path, sample
                     seen.clear()
                     seen.add(uri)
                 seg_url = uri if uri.startswith("http") else f"{base}/{uri}"
-                seg_response = requests.get(seg_url, headers=headers, timeout=10)
+                seg_response = HTTP_SESSION.get(seg_url, headers=headers, timeout=10)
                 seg_response.raise_for_status()
                 out.write(seg_response.content)
                 collected += seg_duration
@@ -747,7 +770,7 @@ def fetch_device_gps(url, timeout_seconds=3.0):
     silently falls back to server-side coordinates.
     """
     try:
-        response = requests.get(url, timeout=timeout_seconds)
+        response = HTTP_SESSION.get(url, timeout=timeout_seconds)
         payload = response.json()
     except Exception:
         return None
@@ -1311,8 +1334,8 @@ try:
                     )
                 else:
                     llm_result = query_llm(raw_text, timeout_seconds=args.ollama_timeout, retries=args.ollama_retries)
-                ai_response = llm_result["response"]
-                llm_alert = "ALERT:" in ai_response
+                ai_response = normalize_llm_response_text(llm_result["response"])
+                llm_alert = is_alert_response(ai_response)
                 rule_expected_alert = dispatch_score >= args.rule_score_threshold
                 hard_rule_alert = (
                     dispatch_score >= args.hard_rule_score_threshold
@@ -1429,7 +1452,7 @@ try:
                         f"transcript=\"{raw_text}\""
                     )
                     # 5. Linux Native Voice Notification Engine
-                    clean_message = ai_response.replace("ALERT:", "").strip()
+                    clean_message = ALERT_PREFIX_RE.sub("", ai_response, count=1).strip()
                     speak_alert(clean_message)
                     emit_event_json(
                         "alert_triggered",
