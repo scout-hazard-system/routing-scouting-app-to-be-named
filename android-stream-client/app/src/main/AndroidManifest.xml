@@ -26,9 +26,11 @@
         <service
             android:name=".car.ScannerCarAppService"
             android:exported="true"
+            android:permission="androidx.car.app.ACCESS_SURFACE"
             android:foregroundServiceType="location">
             <intent-filter>
                 <action android:name="androidx.car.app.CarAppService" />
+                <action android:name="androidx.car.app.action.NAVIGATE" />
                 <category android:name="androidx.car.app.category.NAVIGATION" />
             </intent-filter>
         </service>
@@ -39,9 +41,17 @@
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <action android:name="androidx.car.app.action.NAVIGATE" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="geo" />
+                <data android:scheme="google.navigation" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".RouteOptionsActivity"
-            android:exported="false" />
+            android:exported="true" />
     </application>
 </manifest>

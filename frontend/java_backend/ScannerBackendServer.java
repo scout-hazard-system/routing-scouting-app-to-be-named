@@ -1424,13 +1424,19 @@ public final class ScannerBackendServer {
                   fallback, approximateRouteMeters(fallback), 0.0, false, false));
     }
     String hazards = fetchWazeHazardsJson(originLat, originLon, destLat, destLon);
+    Map<String, String> clusterQuery = new HashMap<>();
+    // Route options typically span larger geographies than local incident maps;
+    // use a coarser default grid so multi-state previews stay readable.
+    clusterQuery.put("grid_deg", "1.00");
+    String alertClusters = buildAlertClustersJson(clusterQuery);
     return "{"
         + "\"ts\":\"" + Instant.now().toString() + "\","
         + "\"status\":\"ok\","
         + "\"origin\":{\"lat\":" + trimDouble(originLat) + ",\"lon\":" + trimDouble(originLon) + "},"
         + "\"destination\":{\"lat\":" + trimDouble(destLat) + ",\"lon\":" + trimDouble(destLon) + "},"
         + "\"alternatives\":" + routeAlternativesToJson(alternatives) + ","
-        + "\"waze_hazards\":" + hazards
+        + "\"waze_hazards\":" + hazards + ","
+        + "\"alert_clusters\":" + alertClusters
         + "}";
   }
 
