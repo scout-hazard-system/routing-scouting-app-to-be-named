@@ -63,6 +63,7 @@ public final class RouteMapScreen extends Screen implements DefaultLifecycleObse
           .connectTimeout(4, TimeUnit.SECONDS)
           .readTimeout(8, TimeUnit.SECONDS)
           .build();
+  private final CarRoutingClient routingClient = new CarRoutingClient(httpClient);
 
   private HandlerThread renderThread;
   private Handler renderHandler;
@@ -188,8 +189,84 @@ public final class RouteMapScreen extends Screen implements DefaultLifecycleObse
                           requestRenderSoon();
                         })
                     .build())
+            .addAction(
+                new Action.Builder()
+                    .setTitle("Route")
+                    .setOnClickListener(this::openRouteOverview)
+                    .build())
             .build();
     return new NavigationTemplate.Builder().setActionStrip(actionStrip).build();
+  }
+  private void openRouteOverview() {
+    getScreenManager()
+        .push(
+            new RouteOverviewScreen(
+                carContext,
+                routingClient,
+                new RouteOverviewScreen.Controller() {
+                  @Override
+                  public void onSearchRequested() {
+                    getScreenManager().pop();
+                    openDestinationSearch();
+                  }
+
+                  @Override
+                  public void onDestinationCleared() {
+                    AppPrefs.saveDestination(carContext, null, null);
+                    AppPrefs.saveDestinationLabel(carContext, "");
+                    requestRenderSoon();
+                    CarToast.makeText(carContext, "Destination cleared", CarToast.LENGTH_SHORT)
+                        .show();
+                    getScreenManager().pop();
+                  }
+                }));
+  }
+
+  private void openDestinationSearch() {
+    Double biasLat = null;
+    Double biasLon = null;
+    Location fix = lastFix;
+    if (fix != null) {
+      biasLat = fix.getLatitude();
+      biasLon = fix.getLongitude();
+    } else {
+      double[] backendFix = fetchBackendGps(AppPrefs.baseUrl(carContext));
+      if (backendFix != null) {
+        biasLat = backendFix[0];
+        biasLon = backendFix[1];
+      }
+    }
+    getScreenManager()
+        .push(
+            new DestinationSearchScreen(
+                carContext,
+                routingClient,
+                new DestinationSearchScreen.Listener() {
+                  @Override
+                  public void onDestinationSelected(CarRoutingClient.AddressCandidate candidate) {
+                    AppPrefs.saveDestination(carContext, candidate.lat, candidate.lon);
+                    AppPrefs.saveDestinationLabel(carContext, candidate.displayName);
+                    followVehicle = true;
+                    requestRenderSoon();
+                    CarToast.makeText(
+                            carContext,
+                            "Destination set: " + truncate(candidate.displayName, 60),
+                            CarToast.LENGTH_SHORT)
+                        .show();
+                    fetchRouteOptionsPreview(candidate.lat, candidate.lon);
+                  }
+
+                  @Override
+                  public void onDestinationCleared() {
+                    AppPrefs.saveDestination(carContext, null, null);
+                    AppPrefs.saveDestinationLabel(carContext, "");
+                    requestRenderSoon();
+                    CarToast.makeText(carContext, "Destination cleared", CarToast.LENGTH_SHORT)
+                        .show();
+                  }
+                },
+                biasLat,
+                biasLon));
   }
 
   private void adjustZoom(double factor) {
@@ -451,5 +528,81 @@ public final class RouteMapScreen extends Screen implements DefaultLifecycleObse
     } catch (Exception ex) {
       Log.w(TAG, "alert poll failed: " + ex);
     }
+  }
+
+  private void fetchRouteOptionsPreview(double destLat, double destLon) {
+    Handler handler = renderHandler;
+    if (handler == null) {
+      return;
+    }
+    handler.post(
+        () -> {
+          String baseUrl = AppPrefs.baseUrl(carContext);
+          double[] origin = null;
+          Location fix = lastFix;
+          if (fix != null) {
+            origin = new double[] {fix.getLatitude(), fix.getLongitude()};
+          } else {
+            origin = fetchBackendGps(baseUrl);
+          }
+          if (origin == null) {
+            return;
+          }
+          CarRoutingClient.RouteOptionsSummary summary =
+              routingClient.fetchRouteOptions(baseUrl, origin[0], origin[1], destLat, destLon);
+          if (summary == null) {
+            return;
+          }
+          String details =
+              "alts "
+                  + summary.alternatives
+                  + " • "
+                  + formatDistance(summary.shortestMeters)
+                  + " • "
+                  + formatDuration(summary.fastestSeconds)
+                  + (summary.hasTollHint ? " • toll hint" : "")
+                  + (summary.hasFerryHint ? " • ferry hint" : "")
+                  + ("ok".equalsIgnoreCase(summary.hazardStatus) ? " • hazards" : "");
+          carContext
+              .getMainExecutor()
+              .execute(() -> CarToast.makeText(carContext, details, CarToast.LENGTH_LONG).show());
+        });
+  }
+
+  private String formatDistance(double meters) {
+    if (!Double.isFinite(meters) || meters <= 0) {
+      return "distance n/a";
+    }
+    double km = meters / 1000.0;
+    if (km >= 10.0) {
+      return String.format(Locale.US, "%.0f km", km);
+    }
+    return String.format(Locale.US, "%.1f km", km);
+  }
+
+  private String formatDuration(double seconds) {
+    if (!Double.isFinite(seconds) || seconds <= 0) {
+      return "duration n/a";
+    }
+    long minutes = Math.max(1L, Math.round(seconds / 60.0));
+    if (minutes >= 60L) {
+      long hours = minutes / 60L;
+      long rem = minutes % 60L;
+      return rem == 0 ? (hours + "h") : (hours + "h " + rem + "m");
+    }
+    return minutes + "m";
+  }
+
+  private String truncate(String value, int maxLen) {
+    if (value == null) {
+      return "";
+    }
+    if (value.length() <= maxLen) {
+      return value;
+    }
+    if (maxLen <= 1) {
+      return value.substring(0, Math.max(0, maxLen));
+    }
+    return value.substring(0, maxLen - 1) + "…";
   }
 }

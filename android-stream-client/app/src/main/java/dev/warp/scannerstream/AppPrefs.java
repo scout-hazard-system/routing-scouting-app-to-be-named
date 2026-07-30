@@ -16,6 +16,7 @@ public final class AppPrefs {
   private static final String KEY_BASE_URL = "base_url";
   private static final String KEY_DEST_LAT = "dest_lat";
   private static final String KEY_DEST_LON = "dest_lon";
+  private static final String KEY_DEST_LABEL = "dest_label";
 
   private AppPrefs() {}
 
@@ -37,10 +38,20 @@ public final class AppPrefs {
   public static void saveDestination(Context context, Double lat, Double lon) {
     SharedPreferences.Editor editor = prefs(context).edit();
     if (lat == null || lon == null) {
-      editor.remove(KEY_DEST_LAT).remove(KEY_DEST_LON);
+      editor.remove(KEY_DEST_LAT).remove(KEY_DEST_LON).remove(KEY_DEST_LABEL);
     } else {
       editor.putString(KEY_DEST_LAT, String.valueOf(lat));
       editor.putString(KEY_DEST_LON, String.valueOf(lon));
+    }
+    editor.apply();
+  }
+
+  public static void saveDestinationLabel(Context context, String label) {
+    SharedPreferences.Editor editor = prefs(context).edit();
+    if (label == null || label.trim().isEmpty()) {
+      editor.remove(KEY_DEST_LABEL);
+    } else {
+      editor.putString(KEY_DEST_LABEL, label.trim());
     }
     editor.apply();
   }
@@ -58,5 +69,9 @@ public final class AppPrefs {
     } catch (NumberFormatException ex) {
       return null;
     }
+  }
+
+  public static String destinationLabel(Context context) {
+    return prefs(context).getString(KEY_DEST_LABEL, "");
   }
 }
