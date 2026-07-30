@@ -98,6 +98,7 @@ public class MainActivity extends AppCompatActivity {
               "interchange"));
   private static final Pattern DIRECTIONAL_TOKEN_PATTERN =
       Pattern.compile("(?i)\\b(northbound|southbound|eastbound|westbound)\\b");
+  private static final boolean ENABLE_DEV_CONTROLS = BuildConfig.ENABLE_DEV_CONTROLS;
 
   private EditText baseUrlInput;
   private EditText destinationInput;
@@ -230,6 +231,7 @@ public class MainActivity extends AppCompatActivity {
       accelerometer = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
     }
     locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+    baseUrlInput.setText(AppPrefs.baseUrl(this));
 
     mapModeBtn.setOnClickListener(v -> toggleMapMode());
     map3dView.setRefetchListener((lat, lon, radiusM) -> fetchMapScene(lat, lon, radiusM, false));
@@ -243,6 +245,7 @@ public class MainActivity extends AppCompatActivity {
     popupRouteBtn.setOnClickListener(v -> routeToPopupLocation());
     popupDismissBtn.setOnClickListener(v -> hideLocationPopup());
     appendLine("MAP", "OpenStreetMap base layer active (osmdroid + OSRM routing)");
+    applyAppModeUi();
 
     restoreUiState(savedInstanceState);
 
@@ -516,8 +519,26 @@ public class MainActivity extends AppCompatActivity {
   }
 
   private void setControlPanelVisible(boolean visible) {
+    if (!ENABLE_DEV_CONTROLS) {
+      return;
+    }
     controlPanel.setVisibility(visible ? View.VISIBLE : View.GONE);
     menuBtn.setText(visible ? getString(R.string.menu_close) : getString(R.string.menu_open));
+  }
+
+  private void applyAppModeUi() {
+    if (ENABLE_DEV_CONTROLS) {
+      return;
+    }
+    if (menuBtn != null) {
+      menuBtn.setVisibility(View.GONE);
+    }
+    if (controlPanel != null) {
+      controlPanel.setVisibility(View.GONE);
+    }
+    if (baseUrlInput != null) {
+      baseUrlInput.setEnabled(false);
+    }
   }
 
   @Override
@@ -689,13 +710,15 @@ public class MainActivity extends AppCompatActivity {
   private void onForcedDrivingModeEnabled() {
     updateDrivingModeUi(MOTION_FORCE_THRESHOLD_MS2);
     appendLine("DRIVE_MODE", "forced driving mode enabled from accelerometer motion");
-    uiHandler.post(() -> baseUrlInput.setEnabled(false));
+    if (ENABLE_DEV_CONTROLS) {
+      uiHandler.post(() -> baseUrlInput.setEnabled(false));
+    }
     if (lastMapLat == null && lastDeviceLat != null && lastDeviceLon != null) {
       lastMapLat = lastDeviceLat;
       lastMapLon = lastDeviceLon;
       updateMapTargetUi();
     }
-    if (!running) {
+    if (ENABLE_DEV_CONTROLS && !running) {
       startStreaming();
     }
   }
@@ -703,7 +726,9 @@ public class MainActivity extends AppCompatActivity {
   private void onForcedDrivingModeReleased() {
     updateDrivingModeUi(0f);
     appendLine("DRIVE_MODE", "forced driving mode released after sustained idle motion");
-    uiHandler.post(() -> baseUrlInput.setEnabled(true));
+    if (ENABLE_DEV_CONTROLS) {
+      uiHandler.post(() -> baseUrlInput.setEnabled(true));
+    }
   }
 
   private void updateDrivingModeUi(float motion) {
@@ -723,6 +748,10 @@ public class MainActivity extends AppCompatActivity {
   }
 
   private void startStreaming() {
+    if (!ENABLE_DEV_CONTROLS) {
+      setStatus("dev stream controls disabled");
+      return;
+    }
     if (running) {
       return;
     }
@@ -746,7 +775,12 @@ public class MainActivity extends AppCompatActivity {
   }
 
   private String normalizedBaseUrl() {
-    String base = baseUrlInput.getText().toString().trim();
+    String base;
+    if (ENABLE_DEV_CONTROLS) {
+      base = baseUrlInput.getText().toString().trim();
+    } else {
+      base = AppPrefs.baseUrl(this).trim();
+    }
     if (base.endsWith("/")) {
       base = base.substring(0, base.length() - 1);
     }

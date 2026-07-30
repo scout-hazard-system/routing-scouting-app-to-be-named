@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Scanner Stream Client</string>
+    <string name="app_name">Scanner Stream</string>
     <string name="app_subtitle">Live snapshot + SSE feed</string>
     <string name="base_url_hint">Backend URL (for example http://192.168.1.100:18080)</string>
     <string name="connect">Connect</string>
