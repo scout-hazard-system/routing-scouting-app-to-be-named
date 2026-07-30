@@ -40,6 +40,10 @@ class GpsPipelineIntegrationTests(unittest.TestCase):
         env["JAVA_BACKEND_HOST"] = "127.0.0.1"
         env["JAVA_BACKEND_PORT"] = str(cls.port)
         env["PIPELINE_LOG_PATH"] = str(cls.pipeline_log)
+        env["SELECTOR_PYTHON_BIN"] = "python3"
+        env["BROADCASTIFY_CHANNELS_FILE"] = "/home/gibi/Desktop/config/broadcastify_channels.national.manifest.json"
+        env["BROADCASTIFY_SELECTOR_USE_OLLAMA_RERANK"] = "false"
+        env["BROADCASTIFY_SELECTOR_LOCK_STATE"] = "false"
         cls.map_cache_dir = Path(tempfile.mkdtemp(prefix="scanner-backend-map-cache-"))
         env["MAP_CACHE_DIR"] = str(cls.map_cache_dir)
 
@@ -325,6 +329,21 @@ class GpsPipelineIntegrationTests(unittest.TestCase):
         shard_status = self._request_json("GET", "/api/map/shard?status=1")
         self.assertEqual(shard_status.get("status"), "ok")
         self.assertIn("prefetch", shard_status)
+
+    def test_broadcastify_selector_cross_shard_not_locked(self):
+        wa = self._request_json("GET", "/api/platform/broadcastify/select?lat=48.5126&lon=-122.6127")
+        tx = self._request_json("GET", "/api/platform/broadcastify/select?lat=29.7604&lon=-95.3698")
+        self.assertIsInstance(wa.get("selected"), dict)
+        self.assertIsInstance(tx.get("selected"), dict)
+        wa_state = str(wa["selected"].get("state", "")).strip()
+        tx_state = str(tx["selected"].get("state", "")).strip()
+        self.assertTrue(wa_state)
+        self.assertTrue(tx_state)
+        self.assertNotEqual(
+            wa_state,
+            tx_state,
+            "Selector returned same shard/state for far-apart coordinates; expected cross-shard behavior",
+        )
 
 
 if __name__ == "__main__":

@@ -16,12 +16,15 @@ import java.nio.file.Path;
 import java.time.Instant;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.Deque;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
@@ -36,6 +39,14 @@ public final class ScannerBackendServer {
   private static final int SNAPSHOT_EVENT_RETURN_LIMIT = 30;
   private static final int MOBILE_EVENT_RETURN_LIMIT = 12;
   private static final long STREAM_POLL_MILLIS = 350L;
+  private static final long CLIENT_ROUTE_TTL_MS =
+      parseLongOrDefault(System.getenv("CLIENT_ROUTE_TTL_MS"), 300000L);
+  private static final int CLIENT_MAILBOX_MAX_MESSAGES =
+      parseIntOrDefault(System.getenv("CLIENT_MAILBOX_MAX_MESSAGES"), 120);
+  private static final int CLIENT_PULL_DEFAULT_LIMIT =
+      parseIntOrDefault(System.getenv("CLIENT_PULL_DEFAULT_LIMIT"), 20);
+  private static final int CLIENT_PULL_MAX_LIMIT =
+      parseIntOrDefault(System.getenv("CLIENT_PULL_MAX_LIMIT"), 80);
   private static final String EVENT_PREFIX = "[EVENT_JSON] ";
   private static final Pattern EVENT_TYPE_PATTERN = Pattern.compile("\"event_type\"\\s*:\\s*\"([^\"]+)\"");
   private static final Pattern KIND_PATTERN = Pattern.compile("\"kind\"\\s*:\\s*\"([^\"]+)\"");
@@ -55,6 +66,12 @@ public final class ScannerBackendServer {
       System.getenv().getOrDefault("WAZE_EMBED_BASE_URL", "https://embed.waze.com/iframe");
   private static final String WAZE_HAZARDS_API_URL =
       System.getenv().getOrDefault("WAZE_HAZARDS_API_URL", "");
+  private static final String WAZE_HAZARDS_API_AUTH_HEADER =
+      System.getenv().getOrDefault("WAZE_HAZARDS_API_AUTH_HEADER", "Authorization");
+  private static final String WAZE_HAZARDS_API_AUTH_PREFIX =
+      System.getenv().getOrDefault("WAZE_HAZARDS_API_AUTH_PREFIX", "Bearer ");
+  private static final String WAZE_HAZARDS_API_KEY =
+      System.getenv().getOrDefault("WAZE_HAZARDS_API_KEY", "");
   private static final String NOMINATIM_SEARCH_URL =
       System.getenv().getOrDefault("NOMINATIM_SEARCH_URL", "https://nominatim.openstreetmap.org/search");
   private static final double GEOCODE_BIAS_RADIUS_DEGREES =
@@ -85,6 +102,9 @@ public final class ScannerBackendServer {
       System.getenv().getOrDefault("BROADCASTIFY_SELECTOR_COUNTY", "Sample County");
   private static final String BROADCASTIFY_SELECTOR_STATE =
       System.getenv().getOrDefault("BROADCASTIFY_SELECTOR_STATE", "Sample State");
+  private static final boolean BROADCASTIFY_SELECTOR_LOCK_STATE =
+      "true".equalsIgnoreCase(
+          System.getenv().getOrDefault("BROADCASTIFY_SELECTOR_LOCK_STATE", "false"));
   private static final String BROADCASTIFY_SELECTOR_DESIRED_TYPES =
       System.getenv().getOrDefault("BROADCASTIFY_SELECTOR_DESIRED_TYPES", "law,dispatch");
   private static final int BROADCASTIFY_SELECTOR_TOP_K =
@@ -113,6 +133,12 @@ public final class ScannerBackendServer {
       parseIntOrDefault(System.getenv("BACKEND_METRICS_MAX_ITEMS"), 12);
   private static final int GPS_TRACK_MAX_POINTS =
       parseIntOrDefault(System.getenv("BACKEND_GPS_TRACK_MAX_POINTS"), 2000);
+  private static final Path ADDRESS_CATALOG_STORE_PATH =
+      Path.of(
+          System.getenv()
+              .getOrDefault(
+                  "ADDRESS_CATALOG_STORE_PATH",
+                  "/home/gibi/Desktop/config/address_catalog_store.tsv"));
   private static final Path LOG_PATH =
       Path.of(System.getenv().getOrDefault("PIPELINE_LOG_PATH", "/tmp/pipeline_live_doordash.log"));
   private static final String HOST = System.getenv().getOrDefault("JAVA_BACKEND_HOST", DEFAULT_HOST);
@@ -123,12 +149,17 @@ public final class ScannerBackendServer {
   private static final Map<String, TimedStringValue> OSRM_ROUTE_CACHE = new ConcurrentHashMap<>();
   private static final Map<String, TimedStringValue> OSRM_ALT_CACHE = new ConcurrentHashMap<>();
   private static volatile TimedStringValue llmStatusCache = null;
+  private static final Object ADDRESS_CATALOG_IO_LOCK = new Object();
   private static final Object GPS_LOCK = new Object();
+  private static final Object CLIENT_ROUTE_LOCK = new Object();
   private static final Deque<GpsPoint> GPS_TRACK = new ArrayDeque<>();
   private static final Map<String, GpsPoint> GPS_BY_USER = new ConcurrentHashMap<>();
+  private static final Map<String, ClientRoute> CLIENT_ROUTES = new ConcurrentHashMap<>();
+  private static final Map<String, Deque<ClientMessage>> CLIENT_MAILBOX = new ConcurrentHashMap<>();
   private static volatile GpsPoint latestGpsPoint = null;
 
   public static void main(String[] args) throws IOException {
+    loadAddressCatalogFromDisk();
     HttpServer server = HttpServer.create(new InetSocketAddress(HOST, PORT), 0);
     registerContext(server, "/api/health", new HealthHandler());
     registerContext(server, "/api/pipeline/snapshot", new SnapshotHandler());
@@ -141,6 +172,7 @@ public final class ScannerBackendServer {
     registerContext(server, "/api/platform/geocode", new GeocodeHandler());
     registerContext(server, "/api/platform/address-catalog/resolve", new AddressCatalogResolveHandler());
     registerContext(server, "/api/platform/address-catalog/upsert", new AddressCatalogUpsertHandler());
+    registerContext(server, "/api/platform/address-catalog/export", new AddressCatalogExportHandler());
     registerContext(server, "/api/platform/alerts/clusters", new AlertClustersHandler());
     registerContext(server, "/api/gps/update", new GpsUpdateHandler());
     registerContext(server, "/api/gps/latest", new GpsLatestHandler());
@@ -153,6 +185,10 @@ public final class ScannerBackendServer {
     registerContext(server, "/api/mobile/bootstrap", new MobileBootstrapHandler());
     registerContext(server, "/api/mobile/snapshot", new MobileSnapshotHandler());
     registerContext(server, "/api/mobile/stream", new MobileStreamHandler());
+    registerContext(server, "/api/mobile/client/register", new MobileClientRegisterHandler());
+    registerContext(server, "/api/mobile/client/send", new MobileClientSendHandler());
+    registerContext(server, "/api/mobile/client/pull", new MobileClientPullHandler());
+    registerContext(server, "/api/mobile/clients", new MobileClientsHandler());
     registerContext(server, "/api/map/scene", new MapSceneHandler());
     registerContext(server, "/api/map/render", new MapRenderHandler());
     registerContext(server, "/api/map/status", new MapStatusHandler());
@@ -166,6 +202,39 @@ public final class ScannerBackendServer {
         PORT,
         LOG_PATH);
     server.start();
+  }
+  private static final class ClientRoute {
+    private final String clientId;
+    private final String userId;
+    private final String source;
+    private final String sessionId;
+    private final String remoteAddr;
+    private final long lastSeenMs;
+
+    private ClientRoute(
+        String clientId,
+        String userId,
+        String source,
+        String sessionId,
+        String remoteAddr,
+        long lastSeenMs) {
+      this.clientId = clientId;
+      this.userId = userId;
+      this.source = source;
+      this.sessionId = sessionId;
+      this.remoteAddr = remoteAddr;
+      this.lastSeenMs = lastSeenMs;
+    }
+  }
+
+  private static final class ClientMessage {
+    private final String payloadJson;
+    private final long enqueuedAtMs;
+
+    private ClientMessage(String payloadJson, long enqueuedAtMs) {
+      this.payloadJson = payloadJson;
+      this.enqueuedAtMs = enqueuedAtMs;
+    }
   }
 
   private static final class TimedStringValue {
@@ -602,6 +671,10 @@ public final class ScannerBackendServer {
         + "\"local_route\":\"/api/platform/route/local\","
         + "\"route_options\":\"/api/platform/route/options\","
         + "\"alert_clusters\":\"/api/platform/alerts/clusters\","
+        + "\"client_register\":\"/api/mobile/client/register\","
+        + "\"client_send\":\"/api/mobile/client/send\","
+        + "\"client_pull\":\"/api/mobile/client/pull\","
+        + "\"clients\":\"/api/mobile/clients\","
         + "\"map_scene\":\"/api/map/scene\","
         + "\"map_render\":\"/api/map/render\","
         + "\"map_status\":\"/api/map/status\","
@@ -816,6 +889,71 @@ public final class ScannerBackendServer {
         + "\"updated_at_ms\":" + entry.updatedAtMs
         + "}";
   }
+  private static String addressCatalogEntriesToJson(List<AddressCatalogEntry> entries) {
+    StringBuilder sb = new StringBuilder("[");
+    for (int i = 0; i < entries.size(); i++) {
+      if (i > 0) {
+        sb.append(",");
+      }
+      sb.append(addressCatalogEntryToJson(entries.get(i)));
+    }
+    sb.append("]");
+    return sb.toString();
+  }
+
+  private static int catalogTokenOverlapScore(String queryKey, String entryKey) {
+    if (queryKey.isEmpty() || entryKey.isEmpty()) {
+      return 0;
+    }
+    Set<String> queryTokens = new HashSet<>(Arrays.asList(queryKey.split(" ")));
+    Set<String> entryTokens = new HashSet<>(Arrays.asList(entryKey.split(" ")));
+    queryTokens.remove("");
+    entryTokens.remove("");
+    if (queryTokens.isEmpty() || entryTokens.isEmpty()) {
+      return 0;
+    }
+    int overlap = 0;
+    for (String token : queryTokens) {
+      if (entryTokens.contains(token)) {
+        overlap++;
+      }
+    }
+    if (overlap == 0) {
+      return 0;
+    }
+    return overlap * 40;
+  }
+
+  private static double catalogBiasScore(
+      AddressCatalogEntry entry, double biasLat, double biasLon, boolean hasBias) {
+    if (!hasBias) {
+      return 0.0;
+    }
+    double meters = haversineMeters(entry.lat, entry.lon, biasLat, biasLon);
+    // Nearby results get a meaningful boost; distant ones decay smoothly.
+    return Math.max(0.0, 1200.0 / (1.0 + (meters / 1000.0)));
+  }
+
+  private static double catalogMatchScore(
+      String queryKey, AddressCatalogEntry entry, double biasLat, double biasLon, boolean hasBias) {
+    if (entry == null) {
+      return 0.0;
+    }
+    String entryKey = entry.queryKey;
+    if (queryKey.equals(entryKey)) {
+      return 2000.0 + catalogBiasScore(entry, biasLat, biasLon, hasBias);
+    }
+    double score = 0.0;
+    if (entryKey.startsWith(queryKey) || queryKey.startsWith(entryKey)) {
+      score += 240.0;
+    }
+    if (entryKey.contains(queryKey) || queryKey.contains(entryKey)) {
+      score += 140.0;
+    }
+    score += catalogTokenOverlapScore(queryKey, entryKey);
+    score += catalogBiasScore(entry, biasLat, biasLon, hasBias);
+    return score;
+  }
 
   private static String buildAddressCatalogResolveJson(Map<String, String> query) {
     String q = query.getOrDefault("q", "").trim();
@@ -823,35 +961,60 @@ public final class ScannerBackendServer {
     if (key.isEmpty()) {
       return "{\"error\":\"missing_query\"}";
     }
-    AddressCatalogEntry exact = ADDRESS_CATALOG.get(key);
-    if (exact != null) {
-      return "{"
-          + "\"ts\":\"" + Instant.now().toString() + "\","
-          + "\"status\":\"ok\","
-          + "\"match\":\"exact\","
-          + "\"entry\":" + addressCatalogEntryToJson(exact)
-          + "}";
-    }
-    AddressCatalogEntry fuzzy = null;
+    double biasLat = parseDouble(query.get("lat"), Double.NaN);
+    double biasLon = parseDouble(query.get("lon"), Double.NaN);
+    boolean hasBias =
+        Double.isFinite(biasLat)
+            && Double.isFinite(biasLon)
+            && Math.abs(biasLat) <= 90.0
+            && Math.abs(biasLon) <= 180.0;
+    List<Map.Entry<AddressCatalogEntry, Double>> scored = new ArrayList<>();
     for (AddressCatalogEntry entry : ADDRESS_CATALOG.values()) {
-      if (entry.queryKey.contains(key) || key.contains(entry.queryKey)) {
-        if (fuzzy == null || entry.updatedAtMs > fuzzy.updatedAtMs) {
-          fuzzy = entry;
-        }
+      double score = catalogMatchScore(key, entry, biasLat, biasLon, hasBias);
+      if (score > 0.0) {
+        scored.add(Map.entry(entry, score));
       }
     }
-    if (fuzzy == null) {
+    if (scored.isEmpty()) {
       return "{"
           + "\"ts\":\"" + Instant.now().toString() + "\","
           + "\"status\":\"miss\","
+          + "\"bias_applied\":" + hasBias + ","
           + "\"results\":[]"
           + "}";
     }
+    scored.sort(
+        (a, b) -> {
+          int byScore = Double.compare(b.getValue(), a.getValue());
+          if (byScore != 0) {
+            return byScore;
+          }
+          return Long.compare(b.getKey().updatedAtMs, a.getKey().updatedAtMs);
+        });
+    List<AddressCatalogEntry> results = new ArrayList<>();
+    for (int i = 0; i < scored.size() && i < 5; i++) {
+      results.add(scored.get(i).getKey());
+    }
+    AddressCatalogEntry best = results.get(0);
+    String matchType = key.equals(best.queryKey) ? "exact" : "fuzzy";
     return "{"
         + "\"ts\":\"" + Instant.now().toString() + "\","
         + "\"status\":\"ok\","
-        + "\"match\":\"fuzzy\","
-        + "\"entry\":" + addressCatalogEntryToJson(fuzzy)
+        + "\"match\":\"" + matchType + "\","
+        + "\"bias_applied\":" + hasBias + ","
+        + "\"entry\":" + addressCatalogEntryToJson(best) + ","
+        + "\"results\":" + addressCatalogEntriesToJson(results)
+        + "}";
+  }
+
+  private static String buildAddressCatalogExportJson() {
+    List<AddressCatalogEntry> entries = new ArrayList<>(ADDRESS_CATALOG.values());
+    entries.sort((a, b) -> Long.compare(b.updatedAtMs, a.updatedAtMs));
+    return "{"
+        + "\"ts\":\"" + Instant.now().toString() + "\","
+        + "\"status\":\"ok\","
+        + "\"catalog_size\":" + entries.size() + ","
+        + "\"entries\":" + addressCatalogEntriesToJson(entries)
         + "}";
   }
 
@@ -880,12 +1043,114 @@ public final class ScannerBackendServer {
     AddressCatalogEntry entry =
         new AddressCatalogEntry(key, display.trim(), source.trim(), lat, lon, System.currentTimeMillis());
     ADDRESS_CATALOG.put(key, entry);
+    persistAddressCatalogToDisk();
     return "{"
         + "\"ts\":\"" + Instant.now().toString() + "\","
         + "\"status\":\"ok\","
         + "\"catalog_size\":" + ADDRESS_CATALOG.size() + ","
         + "\"entry\":" + addressCatalogEntryToJson(entry)
         + "}";
+  }
+
+  private static String encodeCatalogField(String value) {
+    return urlEncode(value == null ? "" : value);
+  }
+
+  private static String decodeCatalogField(String value) {
+    if (value == null) {
+      return "";
+    }
+    try {
+      return decodeComponent(value);
+    } catch (Exception ex) {
+      return "";
+    }
+  }
+
+  private static void loadAddressCatalogFromDisk() {
+    synchronized (ADDRESS_CATALOG_IO_LOCK) {
+      try {
+        if (!Files.exists(ADDRESS_CATALOG_STORE_PATH)) {
+          return;
+        }
+        List<String> lines = Files.readAllLines(ADDRESS_CATALOG_STORE_PATH, StandardCharsets.UTF_8);
+        int loaded = 0;
+        for (String line : lines) {
+          if (line == null || line.isBlank() || line.startsWith("#")) {
+            continue;
+          }
+          String[] cols = line.split("\t", -1);
+          if (cols.length < 6) {
+            continue;
+          }
+          String queryKey = normalizeCatalogQuery(decodeCatalogField(cols[0]));
+          String displayName = decodeCatalogField(cols[1]).trim();
+          String source = decodeCatalogField(cols[2]).trim();
+          double lat = parseDouble(cols[3], Double.NaN);
+          double lon = parseDouble(cols[4], Double.NaN);
+          long updatedAtMs = parseLongOrDefault(cols[5], 0L);
+          if (queryKey.isEmpty() || !Double.isFinite(lat) || !Double.isFinite(lon)) {
+            continue;
+          }
+          if (displayName.isBlank()) {
+            displayName = queryKey;
+          }
+          if (source.isBlank()) {
+            source = "persisted";
+          }
+          ADDRESS_CATALOG.put(
+              queryKey, new AddressCatalogEntry(queryKey, displayName, source, lat, lon, updatedAtMs));
+          loaded++;
+        }
+        System.out.printf(
+            Locale.ROOT,
+            "[java-backend] address catalog loaded: %d entries from %s%n",
+            loaded,
+            ADDRESS_CATALOG_STORE_PATH);
+      } catch (Exception ex) {
+        System.err.printf(
+            Locale.ROOT,
+            "[java-backend] address catalog load failed (%s): %s%n",
+            ADDRESS_CATALOG_STORE_PATH,
+            ex.getMessage());
+      }
+    }
+  }
+
+  private static void persistAddressCatalogToDisk() {
+    synchronized (ADDRESS_CATALOG_IO_LOCK) {
+      try {
+        Path parent = ADDRESS_CATALOG_STORE_PATH.getParent();
+        if (parent != null) {
+          Files.createDirectories(parent);
+        }
+        List<AddressCatalogEntry> entries = new ArrayList<>(ADDRESS_CATALOG.values());
+        entries.sort((a, b) -> Long.compare(b.updatedAtMs, a.updatedAtMs));
+        StringBuilder sb = new StringBuilder();
+        sb.append("# query\tdisplay_name\tsource\tlat\tlon\tupdated_at_ms\n");
+        for (AddressCatalogEntry entry : entries) {
+          sb.append(encodeCatalogField(entry.queryKey))
+              .append('\t')
+              .append(encodeCatalogField(entry.displayName))
+              .append('\t')
+              .append(encodeCatalogField(entry.source))
+              .append('\t')
+              .append(trimDouble(entry.lat))
+              .append('\t')
+              .append(trimDouble(entry.lon))
+              .append('\t')
+              .append(entry.updatedAtMs)
+              .append('\n');
+        }
+        Files.writeString(ADDRESS_CATALOG_STORE_PATH, sb.toString(), StandardCharsets.UTF_8);
+      } catch (Exception ex) {
+        System.err.printf(
+            Locale.ROOT,
+            "[java-backend] address catalog persist failed (%s): %s%n",
+            ADDRESS_CATALOG_STORE_PATH,
+            ex.getMessage());
+      }
+    }
   }
 
   private static String fetchOsrmRouteAlternativesBody(
@@ -1108,7 +1373,13 @@ public final class ScannerBackendServer {
             + trimDouble(maxLon)
             + ","
             + trimDouble(maxLat);
-    String raw = httpGetExternal(url);
+    Map<String, String> extraHeaders = new HashMap<>();
+    if (!WAZE_HAZARDS_API_KEY.isBlank()) {
+      String authHeader = WAZE_HAZARDS_API_AUTH_HEADER.isBlank() ? "Authorization" : WAZE_HAZARDS_API_AUTH_HEADER;
+      String authPrefix = WAZE_HAZARDS_API_AUTH_PREFIX == null ? "" : WAZE_HAZARDS_API_AUTH_PREFIX;
+      extraHeaders.put(authHeader, authPrefix + WAZE_HAZARDS_API_KEY);
+    }
+    String raw = httpGetExternal(url, extraHeaders);
     if (raw == null || !looksLikeJson(raw)) {
       return "{\"status\":\"unavailable\",\"provider\":\"waze\",\"hazards\":[]}";
     }
@@ -1276,6 +1547,7 @@ public final class ScannerBackendServer {
   }
 
   private static String providerStatusJson() {
+    boolean hazardsConfigured = !WAZE_HAZARDS_API_URL.isBlank();
     return "{"
         + "\"ts\":\"" + Instant.now().toString() + "\","
         + "\"providers\":{"
@@ -1287,8 +1559,10 @@ public final class ScannerBackendServer {
         + "\"waze\":{"
         + "\"deeplink_base_url\":\"" + jsonEscape(WAZE_DEEPLINK_BASE_URL) + "\","
         + "\"embed_base_url\":\"" + jsonEscape(WAZE_EMBED_BASE_URL) + "\","
+        + "\"hazards_api_configured\":" + hazardsConfigured + ","
         + "\"ready\":true,"
-        + "\"notes\":\"Waze route URLs are generated server-side for frontend consumption.\""
+        + "\"notes\":\"Waze route URLs are generated server-side for frontend consumption"
+            + (hazardsConfigured ? "; hazards API configured." : "; hazards API URL not configured.") + "\""
         + "}"
         + "}"
         + "}";
@@ -1332,9 +1606,31 @@ public final class ScannerBackendServer {
         lon = trimDouble(deviceGps.lon);
       }
     }
-    String city = query.getOrDefault("city", BROADCASTIFY_SELECTOR_CITY);
-    String county = query.getOrDefault("county", BROADCASTIFY_SELECTOR_COUNTY);
-    String state = query.getOrDefault("state", BROADCASTIFY_SELECTOR_STATE);
+    boolean hasCoords = !lat.isBlank() && !lon.isBlank();
+    String city = query.getOrDefault("city", "").trim();
+    String county = query.getOrDefault("county", "").trim();
+    String state = query.getOrDefault("state", "").trim();
+    if (!hasCoords) {
+      if (city.isBlank()) {
+        city = BROADCASTIFY_SELECTOR_CITY;
+      }
+      if (county.isBlank()) {
+        county = BROADCASTIFY_SELECTOR_COUNTY;
+      }
+    }
+    if (state.isBlank() && hasCoords) {
+      double latNum = parseDouble(lat, Double.NaN);
+      double lonNum = parseDouble(lon, Double.NaN);
+      if (Double.isFinite(latNum) && Double.isFinite(lonNum)) {
+        String inferredState = MapModel.stateFor(latNum, lonNum);
+        if (inferredState != null && !inferredState.isBlank() && !"XX".equalsIgnoreCase(inferredState)) {
+          state = inferredState;
+        }
+      }
+    }
+    if (state.isBlank() && (BROADCASTIFY_SELECTOR_LOCK_STATE || !hasCoords)) {
+      state = BROADCASTIFY_SELECTOR_STATE;
+    }
     List<String> cmd = new ArrayList<>();
     cmd.add(SELECTOR_PYTHON_BIN);
     cmd.add(SELECTOR_SCRIPT_PATH);
@@ -1455,9 +1751,12 @@ public final class ScannerBackendServer {
     }
   }
 
-  private static void streamEventsFromLog(OutputStream os, boolean mobileCompact) throws IOException {
+  private static void streamEventsFromLog(OutputStream os, boolean mobileCompact, String clientId) throws IOException {
     long offset = Files.exists(LOG_PATH) ? Files.size(LOG_PATH) : 0L;
     while (true) {
+      if (clientId != null && !clientId.isBlank()) {
+        flushClientMailboxToStream(os, clientId);
+      }
       if (!Files.exists(LOG_PATH)) {
         sleepQuietly(STREAM_POLL_MILLIS);
         continue;
@@ -1487,6 +1786,9 @@ public final class ScannerBackendServer {
           }
         }
         offset = raf.getFilePointer();
+      }
+      if (clientId != null && !clientId.isBlank()) {
+        flushClientMailboxToStream(os, clientId);
       }
     }
   }
@@ -1662,6 +1964,17 @@ public final class ScannerBackendServer {
     }
   }
 
+  private static final class AddressCatalogExportHandler implements HttpHandler {
+    @Override
+    public void handle(HttpExchange exchange) throws IOException {
+      if (!isGet(exchange)) {
+        writeJson(exchange, 405, "{\"error\":\"method_not_allowed\"}");
+        return;
+      }
+      writeJson(exchange, 200, buildAddressCatalogExportJson());
+    }
+  }
+
   private static final class AlertClustersHandler implements HttpHandler {
     @Override
     public void handle(HttpExchange exchange) throws IOException {
@@ -1794,6 +2107,10 @@ public final class ScannerBackendServer {
   }
 
   private static String httpGetExternal(String urlString) {
+    return httpGetExternal(urlString, null);
+  }
+
+  private static String httpGetExternal(String urlString, Map<String, String> extraHeaders) {
     java.net.HttpURLConnection connection = null;
     try {
       connection = (java.net.HttpURLConnection) new java.net.URL(urlString).openConnection();
@@ -1801,6 +2118,14 @@ public final class ScannerBackendServer {
       connection.setReadTimeout(EXTERNAL_HTTP_TIMEOUT_MS);
       connection.setRequestProperty("User-Agent", EXTERNAL_HTTP_USER_AGENT);
       connection.setRequestProperty("Accept", "application/json");
+      if (extraHeaders != null) {
+        for (Map.Entry<String, String> header : extraHeaders.entrySet()) {
+          if (header.getKey() == null || header.getKey().isBlank() || header.getValue() == null || header.getValue().isBlank()) {
+            continue;
+          }
+          connection.setRequestProperty(header.getKey(), header.getValue());
+        }
+      }
       int status = connection.getResponseCode();
       if (status < 200 || status >= 300) {
         return null;
@@ -1915,6 +2240,126 @@ public final class ScannerBackendServer {
     }
     return 200;
   }
+
+  private static void pruneStaleClientRoutes() {
+    long now = System.currentTimeMillis();
+    synchronized (CLIENT_ROUTE_LOCK) {
+      for (Map.Entry<String, ClientRoute> entry : CLIENT_ROUTES.entrySet()) {
+        if (now - entry.getValue().lastSeenMs > CLIENT_ROUTE_TTL_MS) {
+          CLIENT_ROUTES.remove(entry.getKey());
+        }
+      }
+    }
+  }
+
+  private static String remoteAddressFromExchange(HttpExchange exchange) {
+    try {
+      if (exchange.getRemoteAddress() == null || exchange.getRemoteAddress().getAddress() == null) {
+        return "";
+      }
+      return exchange.getRemoteAddress().getAddress().getHostAddress();
+    } catch (Exception ex) {
+      return "";
+    }
+  }
+
+  private static ClientRoute upsertClientRoute(
+      String clientId, String userId, String source, String sessionId, String remoteAddr) {
+    long now = System.currentTimeMillis();
+    ClientRoute route =
+        new ClientRoute(
+            clientId,
+            userId == null || userId.isBlank() ? "unknown_user" : userId,
+            source == null || source.isBlank() ? "unknown_source" : source,
+            sessionId == null ? "" : sessionId,
+            remoteAddr == null ? "" : remoteAddr,
+            now);
+    CLIENT_ROUTES.put(clientId, route);
+    return route;
+  }
+
+  private static void enqueueClientMessage(String clientId, String payloadJson) {
+    Deque<ClientMessage> mailbox = CLIENT_MAILBOX.computeIfAbsent(clientId, key -> new ArrayDeque<>());
+    synchronized (mailbox) {
+      mailbox.addLast(new ClientMessage(payloadJson, System.currentTimeMillis()));
+      while (mailbox.size() > CLIENT_MAILBOX_MAX_MESSAGES) {
+        mailbox.removeFirst();
+      }
+    }
+  }
+
+  private static List<ClientMessage> drainClientMailbox(String clientId, int limit) {
+    Deque<ClientMessage> mailbox = CLIENT_MAILBOX.get(clientId);
+    if (mailbox == null || limit <= 0) {
+      return List.of();
+    }
+    List<ClientMessage> out = new ArrayList<>();
+    synchronized (mailbox) {
+      while (out.size() < limit && !mailbox.isEmpty()) {
+        out.add(mailbox.removeFirst());
+      }
+    }
+    return out;
+  }
+
+  private static String clientMessagesToJson(List<ClientMessage> messages) {
+    StringBuilder sb = new StringBuilder("[");
+    for (int i = 0; i < messages.size(); i++) {
+      if (i > 0) {
+        sb.append(",");
+      }
+      sb.append(messages.get(i).payloadJson);
+    }
+    sb.append("]");
+    return sb.toString();
+  }
+
+  private static String clientRouteToJson(ClientRoute route) {
+    return "{"
+        + "\"client_id\":\"" + jsonEscape(route.clientId) + "\","
+        + "\"user_id\":\"" + jsonEscape(route.userId) + "\","
+        + "\"source\":\"" + jsonEscape(route.source) + "\","
+        + "\"session_id\":\"" + jsonEscape(route.sessionId) + "\","
+        + "\"remote_addr\":\"" + jsonEscape(route.remoteAddr) + "\","
+        + "\"last_seen_ms\":" + route.lastSeenMs
+        + "}";
+  }
+
+  private static String allClientRoutesJson() {
+    pruneStaleClientRoutes();
+    List<ClientRoute> routes = new ArrayList<>(CLIENT_ROUTES.values());
+    routes.sort(Comparator.comparing(route -> route.clientId));
+    StringBuilder sb = new StringBuilder("[");
+    for (int i = 0; i < routes.size(); i++) {
+      if (i > 0) {
+        sb.append(",");
+      }
+      sb.append(clientRouteToJson(routes.get(i)));
+    }
+    sb.append("]");
+    return sb.toString();
+  }
+
+  private static String relayMessagePayloadJson(String from, String kind, String message) {
+    return "{"
+        + "\"ts\":\"" + Instant.now().toString() + "\","
+        + "\"event_type\":\"server_relay\","
+        + "\"from\":\"" + jsonEscape(from == null ? "server" : from) + "\","
+        + "\"kind\":\"" + jsonEscape(kind == null || kind.isBlank() ? "notice" : kind) + "\","
+        + "\"message\":\"" + jsonEscape(message == null ? "" : message) + "\""
+        + "}";
+  }
+
+  private static void flushClientMailboxToStream(OutputStream os, String clientId) throws IOException {
+    if (clientId == null || clientId.isBlank()) {
+      return;
+    }
+    List<ClientMessage> messages = drainClientMailbox(clientId, CLIENT_PULL_MAX_LIMIT);
+    for (ClientMessage msg : messages) {
+      os.write(("data: " + msg.payloadJson + "\n\n").getBytes(StandardCharsets.UTF_8));
+      os.flush();
+    }
+  }
   private static final class BroadcastifySelectHandler implements HttpHandler {
     @Override
     public void handle(HttpExchange exchange) throws IOException {
@@ -1959,6 +2404,125 @@ public final class ScannerBackendServer {
         return;
       }
       writeJson(exchange, 200, mobileSnapshotJson());
+    }
+  }
+
+  private static final class MobileClientRegisterHandler implements HttpHandler {
+    @Override
+    public void handle(HttpExchange exchange) throws IOException {
+      String method = exchange.getRequestMethod();
+      if (!"POST".equals(method) && !"GET".equals(method)) {
+        writeJson(exchange, 405, "{\"error\":\"method_not_allowed\"}");
+        return;
+      }
+      Map<String, String> query = parseQuery(exchange.getRequestURI().getRawQuery());
+      String body = "POST".equals(method) ? readRequestBody(exchange) : "";
+      String clientId = extractStringFieldByName(body, "client_id", query.getOrDefault("client_id", "")).trim();
+      if (clientId.isBlank()) {
+        writeJson(exchange, 400, "{\"error\":\"missing_client_id\"}");
+        return;
+      }
+      String userId = extractStringFieldByName(body, "user_id", query.getOrDefault("user_id", ""));
+      String source = extractStringFieldByName(body, "source", query.getOrDefault("source", "mobile_client"));
+      String sessionId = extractStringFieldByName(body, "session_id", query.getOrDefault("session_id", ""));
+      ClientRoute route = upsertClientRoute(clientId, userId, source, sessionId, remoteAddressFromExchange(exchange));
+      writeJson(
+          exchange,
+          200,
+          "{"
+              + "\"status\":\"ok\","
+              + "\"ts\":\"" + Instant.now().toString() + "\","
+              + "\"route\":" + clientRouteToJson(route) + ","
+              + "\"pull_endpoint\":\"/api/mobile/client/pull?client_id=" + urlEncode(clientId) + "\""
+              + "}");
+    }
+  }
+
+  private static final class MobileClientSendHandler implements HttpHandler {
+    @Override
+    public void handle(HttpExchange exchange) throws IOException {
+      String method = exchange.getRequestMethod();
+      if (!"POST".equals(method) && !"GET".equals(method)) {
+        writeJson(exchange, 405, "{\"error\":\"method_not_allowed\"}");
+        return;
+      }
+      Map<String, String> query = parseQuery(exchange.getRequestURI().getRawQuery());
+      String body = "POST".equals(method) ? readRequestBody(exchange) : "";
+      String clientId = extractStringFieldByName(body, "client_id", query.getOrDefault("client_id", "")).trim();
+      if (clientId.isBlank()) {
+        writeJson(exchange, 400, "{\"error\":\"missing_client_id\"}");
+        return;
+      }
+      String from = extractStringFieldByName(body, "from", query.getOrDefault("from", "server"));
+      String kind = extractStringFieldByName(body, "kind", query.getOrDefault("kind", "notice"));
+      String message = extractStringFieldByName(body, "message", query.getOrDefault("message", ""));
+      if (message.isBlank()) {
+        writeJson(exchange, 400, "{\"error\":\"missing_message\"}");
+        return;
+      }
+      String payload = relayMessagePayloadJson(from, kind, message);
+      enqueueClientMessage(clientId, payload);
+      writeJson(
+          exchange,
+          200,
+          "{"
+              + "\"status\":\"queued\","
+              + "\"ts\":\"" + Instant.now().toString() + "\","
+              + "\"client_id\":\"" + jsonEscape(clientId) + "\""
+              + "}");
+    }
+  }
+
+  private static final class MobileClientPullHandler implements HttpHandler {
+    @Override
+    public void handle(HttpExchange exchange) throws IOException {
+      if (!isGet(exchange)) {
+        writeJson(exchange, 405, "{\"error\":\"method_not_allowed\"}");
+        return;
+      }
+      Map<String, String> query = parseQuery(exchange.getRequestURI().getRawQuery());
+      String clientId = query.getOrDefault("client_id", "").trim();
+      if (clientId.isBlank()) {
+        writeJson(exchange, 400, "{\"error\":\"missing_client_id\"}");
+        return;
+      }
+      int limit = parseIntOrDefault(query.getOrDefault("limit", String.valueOf(CLIENT_PULL_DEFAULT_LIMIT)), CLIENT_PULL_DEFAULT_LIMIT);
+      if (limit < 1) {
+        limit = 1;
+      }
+      if (limit > CLIENT_PULL_MAX_LIMIT) {
+        limit = CLIENT_PULL_MAX_LIMIT;
+      }
+      List<ClientMessage> messages = drainClientMailbox(clientId, limit);
+      writeJson(
+          exchange,
+          200,
+          "{"
+              + "\"status\":\"ok\","
+              + "\"ts\":\"" + Instant.now().toString() + "\","
+              + "\"client_id\":\"" + jsonEscape(clientId) + "\","
+              + "\"count\":" + messages.size() + ","
+              + "\"messages\":" + clientMessagesToJson(messages)
+              + "}");
+    }
+  }
+
+  private static final class MobileClientsHandler implements HttpHandler {
+    @Override
+    public void handle(HttpExchange exchange) throws IOException {
+      if (!isGet(exchange)) {
+        writeJson(exchange, 405, "{\"error\":\"method_not_allowed\"}");
+        return;
+      }
+      writeJson(
+          exchange,
+          200,
+          "{"
+              + "\"status\":\"ok\","
+              + "\"ts\":\"" + Instant.now().toString() + "\","
+              + "\"ttl_ms\":" + CLIENT_ROUTE_TTL_MS + ","
+              + "\"clients\":" + allClientRoutesJson()
+              + "}");
     }
   }
 
@@ -2209,6 +2773,14 @@ public final class ScannerBackendServer {
         writeJson(exchange, 405, "{\"error\":\"method_not_allowed\"}");
         return;
       }
+      Map<String, String> query = parseQuery(exchange.getRequestURI().getRawQuery());
+      String clientId = query.getOrDefault("client_id", "").trim();
+      if (!clientId.isBlank()) {
+        String userId = query.getOrDefault("user_id", "");
+        String source = query.getOrDefault("source", "pipeline_stream");
+        String sessionId = query.getOrDefault("session_id", "");
+        upsertClientRoute(clientId, userId, source, sessionId, remoteAddressFromExchange(exchange));
+      }
       writeTextEventStreamHeaders(exchange);
       OutputStream os = exchange.getResponseBody();
       String heartbeat =
@@ -2233,7 +2805,7 @@ public final class ScannerBackendServer {
       }
 
       try {
-        streamEventsFromLog(os, false);
+        streamEventsFromLog(os, false, clientId);
       } catch (IOException ignored) {
       } finally {
         os.close();
@@ -2248,6 +2820,14 @@ public final class ScannerBackendServer {
         writeJson(exchange, 405, "{\"error\":\"method_not_allowed\"}");
         return;
       }
+      Map<String, String> query = parseQuery(exchange.getRequestURI().getRawQuery());
+      String clientId = query.getOrDefault("client_id", "").trim();
+      if (!clientId.isBlank()) {
+        String userId = query.getOrDefault("user_id", "");
+        String source = query.getOrDefault("source", "mobile_stream");
+        String sessionId = query.getOrDefault("session_id", "");
+        upsertClientRoute(clientId, userId, source, sessionId, remoteAddressFromExchange(exchange));
+      }
       writeTextEventStreamHeaders(exchange);
       OutputStream os = exchange.getResponseBody();
       String hello =
@@ -2259,7 +2839,7 @@ public final class ScannerBackendServer {
       os.write(("data: " + hello + "\n\n").getBytes(StandardCharsets.UTF_8));
       os.flush();
       try {
-        streamEventsFromLog(os, true);
+        streamEventsFromLog(os, true, clientId);
       } catch (IOException ignored) {
       } finally {
         os.close();

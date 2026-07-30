@@ -136,26 +136,43 @@ def load_channels(path: str, ctx: SelectorContext | None = None) -> list[dict[st
     if isinstance(payload, dict) and isinstance(payload.get("regions"), dict):
         base_dir = Path(path).parent
         state = _state_code(ctx.state) if ctx else ""
+        cross_shard_mode = bool(
+            (ctx is not None)
+            and not state
+            and (ctx.lat is not None)
+            and (ctx.lon is not None)
+        )
         selected_files: list[str] = []
         regions = payload.get("regions", {})
         state_to_region = payload.get("state_to_region", {})
-        region_name = state_to_region.get(state) if state else None
-        if not region_name and state:
-            for rname, robj in regions.items():
+        if cross_shard_mode:
+            for _, robj in regions.items():
                 if not isinstance(robj, dict):
                     continue
                 r_state_files = robj.get("state_files", {})
-                if isinstance(r_state_files, dict) and state in r_state_files:
-                    region_name = rname
-                    break
-        if region_name and region_name in regions and isinstance(regions[region_name], dict):
-            region_obj = regions[region_name]
-            r_state_files = region_obj.get("state_files", {})
-            if isinstance(r_state_files, dict) and state and state in r_state_files:
-                selected_files.append(str(r_state_files[state]))
-            r_shared = region_obj.get("shared_files", [])
-            if isinstance(r_shared, list):
-                selected_files.extend(str(item) for item in r_shared if item)
+                if isinstance(r_state_files, dict):
+                    selected_files.extend(str(item) for item in r_state_files.values() if item)
+                r_shared = robj.get("shared_files", [])
+                if isinstance(r_shared, list):
+                    selected_files.extend(str(item) for item in r_shared if item)
+        else:
+            region_name = state_to_region.get(state) if state else None
+            if not region_name and state:
+                for rname, robj in regions.items():
+                    if not isinstance(robj, dict):
+                        continue
+                    r_state_files = robj.get("state_files", {})
+                    if isinstance(r_state_files, dict) and state in r_state_files:
+                        region_name = rname
+                        break
+            if region_name and region_name in regions and isinstance(regions[region_name], dict):
+                region_obj = regions[region_name]
+                r_state_files = region_obj.get("state_files", {})
+                if isinstance(r_state_files, dict) and state and state in r_state_files:
+                    selected_files.append(str(r_state_files[state]))
+                r_shared = region_obj.get("shared_files", [])
+                if isinstance(r_shared, list):
+                    selected_files.extend(str(item) for item in r_shared if item)
         shared_files = payload.get("shared_files", [])
         if isinstance(shared_files, list):
             selected_files.extend(str(item) for item in shared_files if item)
@@ -186,8 +203,16 @@ def load_channels(path: str, ctx: SelectorContext | None = None) -> list[dict[st
         selected_files: list[str] = []
         state_files = payload.get("state_files", {})
         state = _state_code(ctx.state) if ctx else ""
+        cross_shard_mode = bool(
+            (ctx is not None)
+            and not state
+            and (ctx.lat is not None)
+            and (ctx.lon is not None)
+        )
         if state and state in state_files:
             selected_files.append(str(state_files[state]))
+        elif cross_shard_mode:
+            selected_files.extend(str(item) for item in state_files.values() if item)
         for extra_key in ("shared_files", "fallback_files"):
             extra = payload.get(extra_key, [])
             if isinstance(extra, list):

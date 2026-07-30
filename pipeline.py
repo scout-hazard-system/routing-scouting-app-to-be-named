@@ -953,10 +953,11 @@ elif args.mode == "broadcastify":
             args.selector_lat = device_fix["lat"]
             args.selector_lon = device_fix["lon"]
             # Static city/county describe the server-configured home location;
-            # drop them so ranking follows the device position (state is kept
-            # because it selects the catalog shard).
+            # drop them so ranking follows the device position, and clear
+            # static state so cross-shard catalogs can be considered.
             args.selector_city = ""
             args.selector_county = ""
+            args.selector_state = ""
             selection_gps = (device_fix["lat"], device_fix["lon"])
             gps_source = "device"
             print(
@@ -1117,6 +1118,7 @@ try:
                             args.selector_lon = device_fix["lon"]
                             args.selector_city = ""
                             args.selector_county = ""
+                            args.selector_state = ""
                             new_candidates = None
                             try:
                                 new_candidates, _ = resolve_broadcast_streams(args)
