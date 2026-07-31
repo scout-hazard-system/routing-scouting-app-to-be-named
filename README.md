@@ -1,20 +1,63 @@
-# Routing/Scouting App Current Build Summary
-This repository now tracks the latest deployable state across backend, Android client, and scanner-model integrations.
-## Latest completed hardening and feature scope
-- Backend request handling is hardened with bounded query/body parsing and secure endpoint gating.
-- API access controls include source allowlisting, CIDR checks, pull/global API key enforcement, and per-client pull tokens.
-- Security rejection paths now log structured denial details (reason/status/method/path/source) for token, overflow, and access denials.
-- Android client includes first-launch usage disclosure, tracking controls, and analytics opt-out compatibility with backend behavior.
-- Admin/frontend surfaces were reduced to avoid exposing other-client live location details while preserving tooling workflows.
-- Java backend and Android flows remain aligned for routing, stream ingestion, and mobile pull/stream paths.
-## Current build baseline
-- Keep this branch focused on current production-intended artifacts and active runtime code only.
-- Legacy progress snapshots and superseded intermediate history are treated as obsolete once the current baseline is published.
-## Scout model baseline (post-1.0)
-- `scout-core1.0.3` is the current unified base model target.
-- `scout-vet1.0.4` is the current second-stage vet model target.
-- `scout-rank` remains the selector rerank model.
-## Validation focus
-- Backend compile: `javac BackendServer.java MapModel.java PlanetTileStore.java ProprietaryMapEngine.java`
-- Android compile/build: Gradle app compile tasks and navigation APK generation.
-- Security-sensitive changes must preserve denial behavior while increasing observability.
+# Routing/Scouting App
+Current baseline for a local-first navigation + scanner-intel stack with a hardened Java backend, Android clients, and versioned scout model integration.
+
+## Project goals (current)
+- Keep a deployable, current-only codebase (no legacy branch drift).
+- Prioritize security hardening and observable denial behavior on backend APIs.
+- Support Android phone + Android Auto usage with explicit consent controls.
+- Maintain scanner pipeline compatibility through pinned scout model versions and graceful fallback behavior.
+
+## Current state summary
+- Backend request gates include bounded query/body parsing, secure source/key controls, and per-client pull token checks.
+- Rejection paths log structured denial context for token, overflow, and access-control failures.
+- Android app defaults to hardened network posture (no cleartext, no backup) and allowlisted Android Auto host validation.
+- Analytics/tracking controls are user-configurable and backend-compatible.
+- Scout model baseline:
+  - `scout-core1.0.3`
+  - `scout-vet1.0.4`
+  - `scout-rank`
+
+## Repository map
+- `android-stream-client/` — Android app + UI module + precheck artifacts.
+- `frontend/` — web dashboard assets + local dev bridge.
+- `frontend/java_backend/` — Java backend API/runtime.
+- `llm_set/` — scout model modelfiles, build/eval scripts.
+- `deployment/` — service/launcher runbook and operations helpers.
+- `progress/` — compact iteration history and validation trail.
+
+## Quickstart (current baseline)
+From repo root:
+```bash
+./run_vehicle_stack.sh start
+./run_vehicle_stack.sh status
+```
+
+Backend-only compile check:
+```bash
+cd frontend/java_backend
+javac BackendServer.java MapModel.java PlanetTileStore.java ProprietaryMapEngine.java
+```
+
+Android compile checks:
+```bash
+/home/gibi/Desktop/android-stream-client/gradlew -p /home/gibi/Desktop/android-stream-client :app:compileDevDebugSources :app:compileNavigationDebugSources
+```
+
+## Security posture highlights
+- Android transport hardening:
+  - `android:usesCleartextTraffic="false"`
+  - `network_security_config` cleartext disabled
+  - `android:allowBackup="false"`
+- Backend hardening:
+  - query/body size limits,
+  - route-level secure pull and global API restrictions,
+  - CIDR/source allowlisting,
+  - explicit token-denial enforcement on stream/pull flows,
+  - structured rejection logging.
+
+## Documentation index
+- Deployment operations: `deployment/README.md`
+- Frontend guide: `frontend/README.md`
+- Java backend API/runtime: `frontend/java_backend/README.md`
+- Scout models and eval/build: `llm_set/README.md`
+- Iteration history: `progress/README.md`

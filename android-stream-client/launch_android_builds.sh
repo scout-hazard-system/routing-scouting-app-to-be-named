@@ -6,7 +6,8 @@ APK_NAV="$ROOT_DIR/app/build/outputs/apk/navigation/debug/app-navigation-debug.a
 APK_CLIENT="$ROOT_DIR/app/build/outputs/apk/dev/debug/app-dev-debug.apk"
 PKG_NAV="dev.warp.stream"
 PKG_CLIENT="dev.warp.stream.client"
-ACTIVITY=".MainActivity"
+# Activity class lives in the base package even when applicationId has a suffix.
+ACTIVITY_CLASS="dev.warp.stream.MainActivity"
 
 ADB_ARGS=()
 if [[ "${1:-}" == "-s" ]]; then
@@ -45,8 +46,35 @@ ensure_device() {
   fi
 }
 
+TAILSCALE_BASE_URL="${TAILSCALE_BASE_URL:-http://100.78.191.61:18080}"
+
 build_apks() {
   (cd "$ROOT_DIR" && ./gradlew assembleNavigationDebug assembleDevDebug)
+}
+
+# Point installed apps at the Tailscale backend before launch.
+configure_tailscale_backend() {
+  ensure_device
+  local tmp_prefs
+  tmp_prefs="$(mktemp)"
+  cat >"$tmp_prefs" <<EOF
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<map>
+    <string name="base_url">${TAILSCALE_BASE_URL}</string>
+    <boolean name="prefer_tailscale" value="true" />
+    <boolean name="active_tracking_enabled" value="true" />
+    <boolean name="tracking_consent_resolved" value="true" />
+    <boolean name="analytics_enabled" value="true" />
+</map>
+EOF
+  adb_cmd push "$tmp_prefs" /data/local/tmp/scanner_stream_prefs.xml >/dev/null
+  rm -f "$tmp_prefs"
+  for pkg in "$PKG_NAV" "$PKG_CLIENT"; do
+    adb_cmd shell "run-as $pkg sh -c 'mkdir -p shared_prefs && cp /data/local/tmp/scanner_stream_prefs.xml shared_prefs/scanner_stream_prefs.xml'" >/dev/null 2>&1 || true
+    adb_cmd shell am force-stop "$pkg" >/dev/null 2>&1 || true
+  done
+  adb_cmd shell rm -f /data/local/tmp/scanner_stream_prefs.xml >/dev/null 2>&1 || true
+  echo "Backend preference: Tailscale ${TAILSCALE_BASE_URL}"
 }
 
 install_apks() {
@@ -57,16 +85,19 @@ install_apks() {
   fi
   adb_cmd install -r "$APK_NAV"
   adb_cmd install -r "$APK_CLIENT"
+  configure_tailscale_backend
 }
 
 launch_nav() {
   ensure_device
-  adb_cmd shell am start -W -n "${PKG_NAV}/${ACTIVITY}"
+  configure_tailscale_backend
+  adb_cmd shell am start -W -n "${PKG_NAV}/${ACTIVITY_CLASS}"
 }
 
 launch_client() {
   ensure_device
-  adb_cmd shell am start -W -n "${PKG_CLIENT}/${ACTIVITY}"
+  configure_tailscale_backend
+  adb_cmd shell am start -W -n "${PKG_CLIENT}/${ACTIVITY_CLASS}"
 }
 
 case "$CMD" in

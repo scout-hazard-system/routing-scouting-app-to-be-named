@@ -16,7 +16,6 @@ import java.util.Set;
  * surfaces stay in sync without binding to each other.
  */
 public final class AppPrefs {
-  public static final String USB_TUNNEL_BASE_URL = "http://127.0.0.1:18080";
   public static final String TAILSCALE_BASE_URL = "http://100.78.191.61:18080";
   public static final String DEFAULT_BASE_URL = TAILSCALE_BASE_URL;
   public static final String FALLBACK_BASE_URL = "http://192.168.1.39:18080";
@@ -53,8 +52,11 @@ public final class AppPrefs {
     if (value.endsWith("/")) {
       value = value.substring(0, value.length() - 1);
     }
-    if (value.contains("localhost")) {
-      return USB_TUNNEL_BASE_URL;
+    // Legacy USB/adb-reverse endpoints are rewritten to the tailnet backend.
+    if (value.contains("localhost")
+        || value.contains("127.0.0.1")
+        || value.contains("10.0.2.2")) {
+      return TAILSCALE_BASE_URL;
     }
     return value;
   }
@@ -68,7 +70,8 @@ public final class AppPrefs {
   }
 
   public static boolean preferTailscale(Context context) {
-    return prefs(context).getBoolean(KEY_PREFER_TAILSCALE, false);
+    // Default on so phone clients reach the backend over the tailnet.
+    return prefs(context).getBoolean(KEY_PREFER_TAILSCALE, true);
   }
 
   public static void setPreferTailscale(Context context, boolean enabled) {
@@ -125,19 +128,20 @@ public final class AppPrefs {
 
   private static List<String> buildProbeChain(String preferred, boolean preferTailscale) {
     Set<String> ordered = new LinkedHashSet<>();
-    if (preferred != null && !preferred.isEmpty()) {
-      ordered.add(preferred);
-    }
     if (preferTailscale) {
       ordered.add(TAILSCALE_BASE_URL);
+      if (preferred != null && !preferred.isEmpty()) {
+        ordered.add(preferred);
+      }
       ordered.add(DEFAULT_BASE_URL);
       ordered.add(FALLBACK_BASE_URL);
-      ordered.add(USB_TUNNEL_BASE_URL);
     } else {
+      if (preferred != null && !preferred.isEmpty()) {
+        ordered.add(preferred);
+      }
+      ordered.add(FALLBACK_BASE_URL);
       ordered.add(TAILSCALE_BASE_URL);
       ordered.add(DEFAULT_BASE_URL);
-      ordered.add(FALLBACK_BASE_URL);
-      ordered.add(USB_TUNNEL_BASE_URL);
     }
     return new ArrayList<>(ordered);
   }

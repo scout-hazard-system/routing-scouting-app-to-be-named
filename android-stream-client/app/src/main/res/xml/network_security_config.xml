@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <network-security-config>
+    <!-- Keep cleartext off by default; allow only known LAN/tailnet backends. -->
     <base-config cleartextTrafficPermitted="false" />
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="false">100.78.191.61</domain>
+        <domain includeSubdomains="false">192.168.1.39</domain>
+        <domain includeSubdomains="false">192.168.1.2</domain>
+    </domain-config>
 </network-security-config>
