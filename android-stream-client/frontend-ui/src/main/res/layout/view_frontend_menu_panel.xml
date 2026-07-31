@@ -115,6 +115,15 @@
             android:textColor="#9FB0CF"
             android:textSize="12sp" />
 
+        <Button
+            android:id="@+id/autoNotificationPermissionBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="#141C2D"
+            android:text="Android Auto notification permission"
+            android:textAllCaps="false" />
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

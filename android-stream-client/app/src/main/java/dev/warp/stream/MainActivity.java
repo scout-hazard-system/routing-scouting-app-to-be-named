@@ -1,6 +1,7 @@
 package dev.warp.stream;
 
 import android.Manifest;
+import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -11,6 +12,8 @@ import android.hardware.SensorManager;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
+import android.media.AudioAttributes;
+import android.media.AudioManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -18,6 +21,9 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.SystemClock;
 import android.provider.Settings;
+import android.speech.RecognizerIntent;
+import android.speech.tts.TextToSpeech;
+import android.speech.tts.UtteranceProgressListener;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
@@ -72,6 +78,9 @@ public class MainActivity extends AppCompatActivity {
   private static final long MOTION_FORCE_HOLD_MS = 4000L;
   private static final long MOTION_IDLE_RELEASE_MS = 12000L;
   private static final int LOCATION_PERMISSION_REQUEST_CODE = 4102;
+  private static final int MICROPHONE_PERMISSION_REQUEST_CODE = 4103;
+  private static final int SCOUT_MICROPHONE_CAPTURE_REQUEST_CODE = 4104;
+  private static final int NOTIFICATION_PERMISSION_REQUEST_CODE = 4105;
   private static final long LOCATION_UPDATE_INTERVAL_MS = 2000L;
   private static final float LOCATION_MIN_DISTANCE_M = 3f;
   private static final long DEVICE_GPS_POST_INTERVAL_MS = 3000L;
@@ -80,8 +89,13 @@ public class MainActivity extends AppCompatActivity {
   private static final int ERROR_REPORT_SEEN_MAX_IDS = 180;
   private static final long POPUP_REPEAT_SUPPRESS_MS = 30000L;
   private static final long POPUP_AUTO_HIDE_MS = 12000L;
+  private static final long PIPELINE_ALERT_SPEAK_COOLDOWN_MS = 9000L;
+  private static final long ALERT_CLUSTER_CACHE_MS = 20000L;
+  private static final int PIPELINE_ALERT_SPEAK_MIN_RATING = 4;
+  private static final int MAX_LOCAL_CALL_CONTEXT_ITEMS = 8;
   private static final double DEFAULT_MAP_LAT = 37.7749;
   private static final double DEFAULT_MAP_LON = -122.4194;
+  private static final String ASSISTANT_MODEL_PREFERENCE = "scout-core0";
   private static final MediaType JSON_MEDIA_TYPE = MediaType.get("application/json; charset=utf-8");
   private static final String STATE_MAP3D_ENABLED = "state_map3d_enabled";
   private static final String STATE_MAP_LAT = "state_map_lat";
@@ -90,6 +104,17 @@ public class MainActivity extends AppCompatActivity {
   private static final String STATE_DEVICE_LON = "state_device_lon";
   private static final Pattern COORDINATE_PATTERN =
       Pattern.compile("\\b(-?\\d{1,2}\\.\\d+)\\s*[, ]\\s*(-?\\d{1,3}\\.\\d+)\\b");
+  private static final Pattern DESTINATION_INTENT_PATTERN =
+      Pattern.compile(
+          "(?i)\\b(?:navigate|route|take me|drive)\\s+(?:to|towards)\\s+(.+)$|\\bset\\s+destination\\s+(?:to\\s+)?(.+)$");
+  private static final Pattern DESTINATION_RESPONSE_PATTERN =
+      Pattern.compile("(?i)\\bdestination\\s*[:\\-]\\s*(.+)$");
+  private static final Pattern INTERNET_QUERY_PATTERN =
+      Pattern.compile(
+          "(?i)\\b(?:search( the)? web|look up|lookup|internet|online|latest news|what is|who is|when is|where is)\\b");
+  private static final Pattern SCOUT_SELF_QUERY_PATTERN =
+      Pattern.compile("(?i)\\b(?:ask|query|prompt)\\b.*\\b(?:yourself|itself|self)\\b");
+  private static final Pattern WEB_FALLBACK_HTML_STRIP = Pattern.compile("<[^>]+>");
   /** Mention-extractor tokens that are useless as geocode queries (directions, road furniture). */
   private static final Set<String> NON_ROUTABLE_MENTIONS =
       new HashSet<>(
@@ -108,6 +133,7 @@ public class MainActivity extends AppCompatActivity {
 
   private EditText baseUrlInput;
   private AutoCompleteTextView destinationInput;
+  private EditText assistantPromptInput;
   private TextView statusText;
   private TextView drivingModeText;
   private TextView mapTargetText;
@@ -134,6 +160,11 @@ public class MainActivity extends AppCompatActivity {
   private TextView popupTranscriptText;
   private TextView errorReportStatusText;
   private AudioVisualizerView popupVisualizer;
+  private View scoutSpeakingOverlay;
+  private TextView scoutSpeakingTitle;
+  private TextView scoutSpeakingBody;
+  private AudioVisualizerView scoutSpeakingVisualizer;
+  private Button scoutSpeakingCloseBtn;
   private Button popupRouteBtn;
   private volatile String pendingPopupQuery = null;
   private String lastPopupMentionKey = "";
@@ -188,6 +219,24 @@ public class MainActivity extends AppCompatActivity {
   private final Deque<String> seenErrorReportIds = new ArrayDeque<>();
   private boolean trackingConsentDialogShowing = false;
   private boolean trackingDisabledNoticeLogged = false;
+  private TextToSpeech scoutTts;
+  private volatile boolean scoutTtsReady = false;
+  private volatile boolean scoutQueryInFlight = false;
+  private String pendingScoutExpansionPrompt = null;
+  private boolean pendingMicCaptureAfterPermission = false;
+  private volatile boolean scoutTtsInitInProgress = false;
+  private String pendingScoutSpokenText = null;
+  private boolean autoAudioNotificationPermissionWarned = false;
+  private volatile String cachedAssistantEndpointPath = "/api/platform/assistant/chat";
+  private String lastSpokenPipelineAlertKey = "";
+  private long lastSpokenPipelineAlertAtMs = 0L;
+  private volatile String cachedAlertClusterSummary = "";
+  private volatile long cachedAlertClusterAtMs = 0L;
+  private final Deque<String> recentLocalCallContexts = new ArrayDeque<>();
+
+  private interface AlertClusterSummaryCallback {
+    void onReady(String summary);
+  }
 
   private final SensorEventListener accelListener =
       new SensorEventListener() {
@@ -215,6 +264,7 @@ public class MainActivity extends AppCompatActivity {
     setContentView(R.layout.activity_main);
     baseUrlInput = findViewById(R.id.baseUrlInput);
     destinationInput = findViewById(R.id.destinationInput);
+    assistantPromptInput = findViewById(R.id.assistantPromptInput);
     destinationSuggestionAdapter =
         new ArrayAdapter<>(this, android.R.layout.simple_dropdown_item_1line, destinationSuggestionLabels);
     destinationInput.setAdapter(destinationSuggestionAdapter);
@@ -272,12 +322,18 @@ public class MainActivity extends AppCompatActivity {
     popupIntelText = findViewById(R.id.popupIntelText);
     popupTranscriptText = findViewById(R.id.popupTranscriptText);
     popupVisualizer = findViewById(R.id.popupVisualizer);
+    scoutSpeakingOverlay = findViewById(R.id.scoutSpeakingOverlay);
+    scoutSpeakingTitle = findViewById(R.id.scoutSpeakingTitle);
+    scoutSpeakingBody = findViewById(R.id.scoutSpeakingBody);
+    scoutSpeakingVisualizer = findViewById(R.id.scoutSpeakingVisualizer);
+    scoutSpeakingCloseBtn = findViewById(R.id.scoutSpeakingCloseBtn);
     Button connectBtn = findViewById(R.id.connectBtn);
     Button disconnectBtn = findViewById(R.id.disconnectBtn);
     Button clearLogBtn = findViewById(R.id.clearLogBtn);
     Button openMapsBtn = findViewById(R.id.openMapsBtn);
     errorReportBtn = findViewById(R.id.errorReportBtn);
     errorReportStatusText = findViewById(R.id.errorReportStatusText);
+    Button autoNotificationPermissionBtn = findViewById(R.id.autoNotificationPermissionBtn);
     stackManageStatusText = findViewById(R.id.stackManageStatusText);
     Button stackStatusBtn = findViewById(R.id.stackStatusBtn);
     Button stackHealthBtn = findViewById(R.id.stackHealthBtn);
@@ -286,6 +342,7 @@ public class MainActivity extends AppCompatActivity {
     Button stackStopBtn = findViewById(R.id.stackStopBtn);
     Button drawRouteBtn = findViewById(R.id.drawRouteBtn);
     Button searchBtn = findViewById(R.id.searchBtn);
+    Button assistantAskBtn = findViewById(R.id.assistantAskBtn);
     popupRouteBtn = findViewById(R.id.popupRouteBtn);
     View popupDismissBtn = findViewById(R.id.popupDismissBtn);
     if (osmOdbNoticeText != null) {
@@ -320,9 +377,23 @@ public class MainActivity extends AppCompatActivity {
     drawRouteBtn.setOnClickListener(v -> renderRouteOnMap(true));
     menuBtn.setOnClickListener(v -> setControlPanelVisible(controlPanel.getVisibility() != View.VISIBLE));
     searchBtn.setOnClickListener(v -> searchDestination());
+    assistantAskBtn.setOnClickListener(v -> startScoutMicrophoneCapture());
+    if (assistantPromptInput != null) {
+      assistantPromptInput.setOnEditorActionListener(
+          (v, actionId, event) -> {
+            if (actionId == EditorInfo.IME_ACTION_DONE || actionId == EditorInfo.IME_ACTION_SEARCH) {
+              submitAssistantChatFromInput();
+              return true;
+            }
+            return false;
+          });
+    }
     if (errorReportBtn != null) {
       errorReportBtn.setText(getString(R.string.error_report_button));
       errorReportBtn.setOnClickListener(v -> showErrorReportDialog());
+    }
+    if (autoNotificationPermissionBtn != null) {
+      autoNotificationPermissionBtn.setOnClickListener(v -> runAndroidAutoNotificationPermissionCheck());
     }
     updateErrorReportStatus(getString(R.string.error_report_status_idle));
     updateStackManageStatus(getString(R.string.stack_status_idle));
@@ -343,6 +414,13 @@ public class MainActivity extends AppCompatActivity {
     }
     popupRouteBtn.setOnClickListener(v -> routeToPopupLocation());
     popupDismissBtn.setOnClickListener(v -> hideLocationPopup());
+    if (scoutSpeakingCloseBtn != null) {
+      scoutSpeakingCloseBtn.setOnClickListener(
+          v -> {
+            stopScoutSpeech();
+            hideScoutSpeakingOverlay();
+          });
+    }
     if (!ENABLE_DEV_CONTROLS) {
       statusText.setOnLongClickListener(
           v -> {
@@ -352,6 +430,7 @@ public class MainActivity extends AppCompatActivity {
     }
     appendLine("MAP", "vector map engine active (OSM road geometry as line data)");
     applyAppModeUi();
+    initScoutTts();
 
     restoreUiState(savedInstanceState);
     applyMapMode(true);
@@ -360,6 +439,859 @@ public class MainActivity extends AppCompatActivity {
     updateDrivingModeUi(0f);
     updateMapTargetUi();
     renderRouteOnMap(true);
+  }
+
+  private void executeAssistantChatRequest(
+      String base, String payload, String queryText, boolean allowDiscoveryRetry) {
+    String endpointPath = normalizeEndpointPath(cachedAssistantEndpointPath);
+    Request request =
+        new Request.Builder()
+            .url(base + endpointPath)
+            .post(RequestBody.create(payload, JSON_MEDIA_TYPE))
+            .build();
+    client.newCall(request)
+        .enqueue(
+            new Callback() {
+              @Override
+              public void onFailure(Call call, IOException e) {
+                appendLine("SCOUT", "assistant request failed: " + e.getMessage());
+                finishScoutQueryCycle();
+              }
+
+              @Override
+              public void onResponse(Call call, Response response) throws IOException {
+                try (response) {
+                  if (response.code() == 404 && allowDiscoveryRetry) {
+                    discoverAssistantEndpointAndRetry(base, payload, queryText);
+                    return;
+                  }
+                  if (!response.isSuccessful() || response.body() == null) {
+                    appendLine("SCOUT", "assistant unavailable (HTTP " + response.code() + ")");
+                    hideScoutSpeakingOverlay();
+                    finishScoutQueryCycle();
+                    return;
+                  }
+                  JSONObject payloadJson = new JSONObject(response.body().string());
+                  JSONObject llmResult = payloadJson.optJSONObject("llm_result");
+                  JSONObject chat = llmResult != null ? llmResult.optJSONObject("chat") : null;
+                  String assistantText = "";
+                  if (chat != null) {
+                    assistantText = chat.optString("response", "").trim();
+                  }
+                  if (assistantText.isEmpty() && llmResult != null) {
+                    assistantText = llmResult.optString("response", "").trim();
+                  }
+                  if (assistantText.isEmpty()) {
+                    appendLine("SCOUT", "assistant returned no response; checking local-area web results");
+                    requestInternetLookup(queryText);
+                    hideScoutSpeakingOverlay();
+                    return;
+                  }
+                  updateScoutProfileFromAssistantResponse(assistantText);
+                  appendLine("SCOUT", assistantText);
+                  maybeApplyDestinationIntent(assistantText, "SCOUT");
+                  speakScoutResponse(assistantText);
+                } catch (Exception e) {
+                  appendLine("SCOUT", "assistant parse error: " + e.getMessage());
+                  hideScoutSpeakingOverlay();
+                } finally {
+                  finishScoutQueryCycle();
+                }
+              }
+            });
+  }
+
+  private void fetchDirectAlertClusterSummary(
+      String base, double lat, double lon, AlertClusterSummaryCallback callback) {
+    String directUrl =
+        base
+            + "/api/platform/alerts/clusters?lat="
+            + String.format(Locale.ROOT, "%.6f", lat)
+            + "&lon="
+            + String.format(Locale.ROOT, "%.6f", lon)
+            + "&radius_m=6000";
+    Request request = new Request.Builder().url(directUrl).build();
+    client.newCall(request)
+        .enqueue(
+            new Callback() {
+              @Override
+              public void onFailure(Call call, IOException e) {
+                pushSharedContextEntry("hazards_api unavailable");
+                callback.onReady(cachedAlertClusterSummary);
+              }
+
+              @Override
+              public void onResponse(Call call, Response response) throws IOException {
+                try (response) {
+                  if (!response.isSuccessful() || response.body() == null) {
+                    pushSharedContextEntry("hazards_api unavailable");
+                    callback.onReady(cachedAlertClusterSummary);
+                    return;
+                  }
+                  JSONObject payload = new JSONObject(response.body().string());
+                  JSONArray clusters = payload.optJSONArray("clusters");
+                  updateTrafficHazardContextFromClusterPayload(payload, clusters);
+                  String summary = buildMapRankedAlertClusterSummary(clusters);
+                  if (!TextUtils.isEmpty(summary)) {
+                    cachedAlertClusterSummary = summary;
+                    cachedAlertClusterAtMs = SystemClock.elapsedRealtime();
+                  }
+                  callback.onReady(summary);
+                } catch (Exception e) {
+                  callback.onReady(cachedAlertClusterSummary);
+                }
+              }
+            });
+  }
+
+  private String buildLocalizedInternetQuery(String queryText) {
+    String baseQuery = queryText == null ? "" : queryText.trim();
+    if (baseQuery.isEmpty()) {
+      return "";
+    }
+    String destinationLabel =
+        destinationInput != null ? destinationInput.getText().toString().trim() : "";
+    Double areaLat = lastDeviceLat != null ? lastDeviceLat : lastMapLat;
+    Double areaLon = lastDeviceLon != null ? lastDeviceLon : lastMapLon;
+    StringBuilder builder = new StringBuilder(baseQuery);
+    if (!destinationLabel.isEmpty()) {
+      builder.append(" near ").append(destinationLabel);
+    }
+    if (areaLat != null && areaLon != null) {
+      builder
+          .append(" local area ")
+          .append(String.format(Locale.ROOT, "%.4f", areaLat))
+          .append(",")
+          .append(String.format(Locale.ROOT, "%.4f", areaLon));
+    } else {
+      builder.append(" local area near me");
+    }
+    return builder.toString();
+  }
+
+  private void discoverAssistantEndpointAndRetry(String base, String payload, String queryText) {
+    Request bootstrapRequest = new Request.Builder().url(base + "/api/mobile/bootstrap").build();
+    client.newCall(bootstrapRequest)
+        .enqueue(
+            new Callback() {
+              @Override
+              public void onFailure(Call call, IOException e) {
+                appendLine("SCOUT", "assistant path discovery failed: " + e.getMessage());
+                finishScoutQueryCycle();
+              }
+
+              @Override
+              public void onResponse(Call call, Response response) throws IOException {
+                try (response) {
+                  if (!response.isSuccessful() || response.body() == null) {
+                    appendLine("SCOUT", "assistant path discovery unavailable (HTTP " + response.code() + ")");
+                    finishScoutQueryCycle();
+                    return;
+                  }
+                  JSONObject bootstrap = new JSONObject(response.body().string());
+                  JSONObject endpoints = bootstrap.optJSONObject("endpoints");
+                  String discovered =
+                      endpoints != null ? endpoints.optString("assistant_chat", "").trim() : "";
+                  if (discovered.isEmpty()) {
+                    appendLine("SCOUT", "assistant endpoint missing in bootstrap");
+                    finishScoutQueryCycle();
+                    return;
+                  }
+                  cachedAssistantEndpointPath = normalizeEndpointPath(discovered);
+                  appendLine("SCOUT", "using endpoint " + cachedAssistantEndpointPath);
+                  executeAssistantChatRequest(base, payload, queryText, false);
+                } catch (Exception e) {
+                  appendLine("SCOUT", "assistant path parse error: " + e.getMessage());
+                  finishScoutQueryCycle();
+                }
+              }
+            });
+  }
+
+  private String normalizeEndpointPath(String rawPath) {
+    if (TextUtils.isEmpty(rawPath)) {
+      return "/api/platform/assistant/chat";
+    }
+    String path = rawPath.trim();
+    if (!path.startsWith("/")) {
+      path = "/" + path;
+    }
+    return path;
+  }
+
+  private void finishScoutQueryCycle() {
+    scoutQueryInFlight = false;
+    String queued = consumeScoutExpansionPrompt();
+    if (!TextUtils.isEmpty(queued)) {
+      uiHandler.post(() -> requestAssistantChat(queued, queued));
+    }
+  }
+
+  private void submitAssistantChatFromInput() {
+    if (assistantPromptInput == null) {
+      return;
+    }
+    String prompt = assistantPromptInput.getText() == null ? "" : assistantPromptInput.getText().toString().trim();
+    if (prompt.isEmpty()) {
+      appendLine("SCOUT", "enter a question first");
+      return;
+    }
+    if (isScoutSelfQuery(prompt)) {
+      appendLine("SCOUT", "self-query blocked");
+      return;
+    }
+    if (scoutQueryInFlight) {
+      queueScoutExpansionPrompt(prompt);
+      appendLine("SCOUT", "queued expansion prompt");
+      return;
+    }
+    maybeApplyDestinationIntent(prompt, "SCOUT");
+    if (shouldUseInternetLookup(prompt)) {
+      requestInternetLookup(prompt);
+    }
+    requestAssistantChat(prompt, prompt);
+  }
+
+  private void requestAssistantChat(String queryText, String spoofedTranscript) {
+    if (scoutQueryInFlight) {
+      appendLine("SCOUT", "query already in progress");
+      return;
+    }
+    scoutQueryInFlight = true;
+    showScoutSpeakingOverlay(getString(R.string.scout_speaking_placeholder));
+    String base = normalizedBaseUrl();
+    if (base == null) {
+      scoutQueryInFlight = false;
+      hideScoutSpeakingOverlay();
+      setStatus("invalid URL");
+      return;
+    }
+    String destinationLabel = destinationInput != null ? destinationInput.getText().toString().trim() : "";
+    double originLat = lastDeviceLat != null ? lastDeviceLat : (lastMapLat != null ? lastMapLat : DEFAULT_MAP_LAT);
+    double originLon = lastDeviceLon != null ? lastDeviceLon : (lastMapLon != null ? lastMapLon : DEFAULT_MAP_LON);
+    double destLat = lastMapLat != null ? lastMapLat : originLat;
+    double destLon = lastMapLon != null ? lastMapLon : originLon;
+    String routeSummary =
+        "origin="
+            + String.format(Locale.ROOT, "%.6f,%.6f", originLat, originLon)
+            + " destination="
+            + String.format(Locale.ROOT, "%.6f,%.6f", destLat, destLon)
+            + (destinationLabel.isEmpty() ? "" : (" label=" + destinationLabel));
+    fetchAlertClusterSummary(
+        base,
+        originLat,
+        originLon,
+        destLat,
+        destLon,
+        alertClusterSummary -> {
+          String unifiedLocalContext = buildLocalCallContextSummary();
+          JSONObject payloadJson =
+              buildAssistantPayload(
+                  queryText,
+                  spoofedTranscript,
+                  routeSummary,
+                  destinationLabel,
+                  originLat,
+                  originLon,
+                  destLat,
+                  destLon,
+                  alertClusterSummary,
+                  unifiedLocalContext);
+          String payload = payloadJson.toString();
+          appendLine("SCOUT", "querying local assistant…");
+          appendLine("SCOUT", "target " + base + normalizeEndpointPath(cachedAssistantEndpointPath));
+          executeAssistantChatRequest(base, payload, queryText, true);
+        });
+  }
+
+  private JSONObject buildAssistantPayload(
+      String queryText,
+      String spoofedTranscript,
+      String routeSummary,
+      String destinationLabel,
+      double originLat,
+      double originLon,
+      double destLat,
+      double destLon,
+      String alertClusterSummary,
+      String localCallContext) {
+    JSONObject payload = new JSONObject();
+    try {
+      payload.put("query", queryText == null ? "" : queryText);
+      payload.put("transcript", spoofedTranscript == null ? "" : spoofedTranscript);
+      payload.put("route_summary", routeSummary == null ? "" : routeSummary);
+      payload.put("destination_label", destinationLabel == null ? "" : destinationLabel);
+      payload.put("origin_lat", originLat);
+      payload.put("origin_lon", originLon);
+      payload.put("dest_lat", destLat);
+      payload.put("dest_lon", destLon);
+      payload.put("model_preference", ASSISTANT_MODEL_PREFERENCE);
+      payload.put(
+          "alert_clusters_summary",
+          TextUtils.isEmpty(alertClusterSummary)
+              ? "no_alert_clusters_available"
+              : alertClusterSummary);
+      payload.put(
+          "local_call_context",
+          TextUtils.isEmpty(localCallContext)
+              ? "no_recent_local_calls_observed"
+              : localCallContext);
+      payload.put("memory_hint", buildAndPersistScoutMemoryHint(queryText));
+      Log.i(
+          TAG,
+          "assistant context clusters="
+              + (TextUtils.isEmpty(alertClusterSummary) ? 0 : 1)
+              + " local_calls="
+              + (TextUtils.isEmpty(localCallContext) ? 0 : 1));
+    } catch (Exception e) {
+      appendLine("SCOUT", "payload build warning: " + e.getMessage());
+    }
+    return payload;
+  }
+
+  private void fetchAlertClusterSummary(
+      String base,
+      double originLat,
+      double originLon,
+      double destLat,
+      double destLon,
+      AlertClusterSummaryCallback callback) {
+    long now = SystemClock.elapsedRealtime();
+    String cached = cachedAlertClusterSummary;
+    if (!TextUtils.isEmpty(cached) && (now - cachedAlertClusterAtMs) < ALERT_CLUSTER_CACHE_MS) {
+      callback.onReady(cached);
+      return;
+    }
+    String url =
+        base
+            + "/api/platform/route/options?origin_lat="
+            + String.format(Locale.ROOT, "%.6f", originLat)
+            + "&origin_lon="
+            + String.format(Locale.ROOT, "%.6f", originLon)
+            + "&dest_lat="
+            + String.format(Locale.ROOT, "%.6f", destLat)
+            + "&dest_lon="
+            + String.format(Locale.ROOT, "%.6f", destLon);
+    Request request = new Request.Builder().url(url).build();
+    client.newCall(request)
+        .enqueue(
+            new Callback() {
+              @Override
+              public void onFailure(Call call, IOException e) {
+                pushSharedContextEntry("hazards_api unavailable");
+                fetchDirectAlertClusterSummary(base, originLat, originLon, callback);
+              }
+
+              @Override
+              public void onResponse(Call call, Response response) throws IOException {
+                try (response) {
+                  if (!response.isSuccessful() || response.body() == null) {
+                    fetchDirectAlertClusterSummary(base, originLat, originLon, callback);
+                    return;
+                  }
+                  JSONObject payload = new JSONObject(response.body().string());
+                  updateTrafficHazardContextFromRouteOptions(payload);
+                  JSONObject alertClusters = payload.optJSONObject("alert_clusters");
+                  JSONArray clusters = alertClusters != null ? alertClusters.optJSONArray("clusters") : null;
+                  String summary = buildMapRankedAlertClusterSummary(clusters);
+                  if (TextUtils.isEmpty(summary)) {
+                    fetchDirectAlertClusterSummary(base, originLat, originLon, callback);
+                    return;
+                  }
+                  cachedAlertClusterSummary = summary;
+                  cachedAlertClusterAtMs = SystemClock.elapsedRealtime();
+                  callback.onReady(summary);
+                } catch (Exception e) {
+                  fetchDirectAlertClusterSummary(base, originLat, originLon, callback);
+                }
+              }
+            });
+  }
+
+  private String buildMapRankedAlertClusterSummary(JSONArray clusters) {
+    if (clusters == null || clusters.length() == 0) {
+      return "";
+    }
+    List<String> ranked = new ArrayList<>();
+    int limit = Math.min(6, clusters.length());
+    for (int i = 0; i < limit; i++) {
+      JSONObject cluster = clusters.optJSONObject(i);
+      if (cluster == null) {
+        continue;
+      }
+      int rank = i + 1;
+      int count = cluster.optInt("count", 0);
+      JSONArray alerts = cluster.optJSONArray("alerts");
+      String headline = "";
+      if (alerts != null && alerts.length() > 0) {
+        JSONObject first = alerts.optJSONObject(0);
+        if (first != null) {
+          headline = first.optString("alert", "").trim();
+          if (headline.isEmpty()) {
+            headline = first.optString("transcript", "").trim();
+          }
+        }
+      }
+      if (headline.length() > 64) {
+        headline = headline.substring(0, 61) + "...";
+      }
+      String line = "rank " + rank + " count=" + count;
+      if (!headline.isEmpty()) {
+        line += " " + headline;
+      }
+      ranked.add(line);
+    }
+    return TextUtils.join(" | ", ranked);
+  }
+
+  private synchronized String buildLocalCallContextSummary() {
+    if (recentLocalCallContexts.isEmpty()) {
+      return "";
+    }
+    return TextUtils.join(" | ", recentLocalCallContexts);
+  }
+
+  private void updateTrafficHazardContextFromRouteOptions(JSONObject payload) {
+    if (payload == null) {
+      return;
+    }
+    JSONObject alertClusters = payload.optJSONObject("alert_clusters");
+    JSONArray clusters = alertClusters != null ? alertClusters.optJSONArray("clusters") : null;
+    int clusterCount = clusters != null ? clusters.length() : 0;
+    String routeStatus = payload.optString("status", "").trim();
+    String clusterStatus = alertClusters != null ? alertClusters.optString("status", "").trim() : "";
+    JSONArray alternatives = payload.optJSONArray("alternatives");
+    int routeAlternatives = alternatives != null ? alternatives.length() : 0;
+    JSONObject hazards = payload.optJSONObject("waze_hazards");
+    JSONObject wazeRoute = payload.optJSONObject("waze_route");
+    String hazardStatus = hazards != null ? hazards.optString("status", "").trim() : "";
+    String provider = hazards != null ? hazards.optString("provider", "").trim() : "";
+    String routeMode = wazeRoute != null ? wazeRoute.optString("mode", "").trim() : "";
+    JSONArray hazardItems =
+        hazards != null ? hazards.optJSONArray("hazards") : null;
+    if (hazardItems == null && hazards != null) {
+      hazardItems = hazards.optJSONArray("items");
+    }
+    int hazardCount = hazardItems != null ? hazardItems.length() : 0;
+    StringBuilder entry = new StringBuilder("traffic_api");
+    if (!TextUtils.isEmpty(routeStatus)) {
+      entry.append(" status=").append(routeStatus);
+    }
+    if (!TextUtils.isEmpty(clusterStatus)) {
+      entry.append(" clusters_status=").append(clusterStatus);
+    }
+    entry.append(" clusters=").append(clusterCount);
+    entry.append(" routes=").append(routeAlternatives);
+    if (!TextUtils.isEmpty(provider)) {
+      entry.append(" ").append(provider);
+    }
+    if (!TextUtils.isEmpty(hazardStatus)) {
+      entry.append(" hazards_status=").append(hazardStatus);
+    }
+    if (hazardCount > 0) {
+      entry.append(" hazards=").append(hazardCount);
+    }
+    if (!TextUtils.isEmpty(routeMode)) {
+      entry.append(" route=").append(routeMode);
+    }
+    pushSharedContextEntry(entry.toString());
+  }
+
+  private void updateTrafficHazardContextFromClusterPayload(JSONObject payload, JSONArray clusters) {
+    int clusterCount = clusters != null ? clusters.length() : 0;
+    String status = payload != null ? payload.optString("status", "").trim() : "";
+    String summary =
+        "hazards_api clusters="
+            + clusterCount
+            + (TextUtils.isEmpty(status) ? "" : (" status=" + status));
+    pushSharedContextEntry(summary);
+  }
+
+  private synchronized void pushSharedContextEntry(String entry) {
+    if (TextUtils.isEmpty(entry)) {
+      return;
+    }
+    String normalized = entry.trim();
+    if (normalized.isEmpty()) {
+      return;
+    }
+    recentLocalCallContexts.remove(normalized);
+    recentLocalCallContexts.addFirst(normalized);
+    while (recentLocalCallContexts.size() > MAX_LOCAL_CALL_CONTEXT_ITEMS) {
+      recentLocalCallContexts.removeLast();
+    }
+  }
+
+  private synchronized void updateLocalCallContext(JSONObject intel, JSONObject eventJson) {
+    if (intel == null && eventJson == null) {
+      return;
+    }
+    List<String> callTypes = new ArrayList<>();
+    if (intel != null) {
+      collectMentions(intel.optJSONArray("call_types"), callTypes);
+    }
+    if (callTypes.isEmpty() && eventJson != null) {
+      collectMentions(eventJson.optJSONArray("call_types"), callTypes);
+    }
+    String calls = callTypes.isEmpty() ? "unknown_call" : TextUtils.join("/", callTypes);
+    int rating = extractLegacyCallRating(eventJson != null ? eventJson : intel);
+    String priority = intel != null ? intel.optString("priority", "").trim() : "";
+    String summary =
+        calls
+            + (rating > 0 ? (" r" + rating) : "")
+            + (TextUtils.isEmpty(priority) ? "" : (" p=" + priority));
+    if (summary.equals("unknown_call")) {
+      return;
+    }
+    pushSharedContextEntry(summary);
+  }
+
+  private JSONObject buildAndPersistScoutMemoryHint(String queryText) {
+    ScoutProfileSketch sketch = ScoutProfileSketch.fromJson(AppPrefs.scoutProfileSketch(this));
+    sketch.observeUserPrompt(queryText);
+    String destinationLabel = destinationInput != null ? destinationInput.getText().toString().trim() : "";
+    if (!TextUtils.isEmpty(destinationLabel)) {
+      sketch.observeUserPrompt("destination " + destinationLabel);
+    }
+    AppPrefs.saveScoutProfileSketch(this, sketch.toJson());
+    JSONObject memoryHint = sketch.toMemoryHintJson();
+    JSONArray tags = memoryHint.optJSONArray("tags");
+    int tagCount = tags != null ? tags.length() : 0;
+    appendLine("SCOUT", "model " + ASSISTANT_MODEL_PREFERENCE + " memory tags=" + tagCount);
+    Log.i(TAG, "assistant payload model=" + ASSISTANT_MODEL_PREFERENCE + " memory_tags=" + tagCount);
+    return memoryHint;
+  }
+
+  private void updateScoutProfileFromAssistantResponse(String assistantText) {
+    try {
+      ScoutProfileSketch sketch = ScoutProfileSketch.fromJson(AppPrefs.scoutProfileSketch(this));
+      sketch.observeAssistantResponse(assistantText);
+      AppPrefs.saveScoutProfileSketch(this, sketch.toJson());
+    } catch (Exception ignored) {
+      // best effort personalization update
+    }
+  }
+
+  private synchronized void queueScoutExpansionPrompt(String prompt) {
+    pendingScoutExpansionPrompt = prompt;
+  }
+
+  private synchronized String consumeScoutExpansionPrompt() {
+    String queued = pendingScoutExpansionPrompt;
+    pendingScoutExpansionPrompt = null;
+    return queued;
+  }
+
+  private synchronized void queuePendingScoutSpokenText(String responseText) {
+    pendingScoutSpokenText = responseText;
+  }
+
+  private synchronized String consumePendingScoutSpokenText() {
+    String queued = pendingScoutSpokenText;
+    pendingScoutSpokenText = null;
+    return queued;
+  }
+
+  private void initScoutTts() {
+    if (scoutTtsInitInProgress) {
+      return;
+    }
+    scoutTtsInitInProgress = true;
+    scoutTts =
+        new TextToSpeech(
+            getApplicationContext(),
+            status -> {
+              scoutTtsInitInProgress = false;
+              if (status != TextToSpeech.SUCCESS || scoutTts == null) {
+                scoutTtsReady = false;
+                appendLine("SCOUT", "voice output unavailable");
+                hideScoutSpeakingOverlay();
+                return;
+              }
+              int languageStatus = scoutTts.setLanguage(Locale.US);
+              scoutTtsReady =
+                  languageStatus != TextToSpeech.LANG_MISSING_DATA
+                      && languageStatus != TextToSpeech.LANG_NOT_SUPPORTED;
+              if (scoutTtsReady) {
+                scoutTts.setAudioAttributes(
+                    new AudioAttributes.Builder()
+                        .setUsage(AudioAttributes.USAGE_ASSISTANCE_NAVIGATION_GUIDANCE)
+                        .setContentType(AudioAttributes.CONTENT_TYPE_SPEECH)
+                        .build());
+              } else {
+                appendLine("SCOUT", "voice language not supported");
+                hideScoutSpeakingOverlay();
+              }
+              scoutTts.setOnUtteranceProgressListener(
+                  new UtteranceProgressListener() {
+                    @Override
+                    public void onStart(String utteranceId) {
+                      uiHandler.post(() -> showScoutSpeakingOverlay(null));
+                    }
+
+                    @Override
+                    public void onDone(String utteranceId) {
+                      uiHandler.post(MainActivity.this::hideScoutSpeakingOverlay);
+                    }
+
+                    @Override
+                    public void onError(String utteranceId) {
+                      uiHandler.post(
+                          () -> {
+                            appendLine("SCOUT", "voice playback error");
+                            hideScoutSpeakingOverlay();
+                          });
+                    }
+                  });
+              if (scoutTtsReady) {
+                String queuedText = consumePendingScoutSpokenText();
+                if (!TextUtils.isEmpty(queuedText)) {
+                  uiHandler.post(() -> speakScoutResponse(queuedText));
+                }
+              }
+            });
+  }
+
+  private void showScoutSpeakingOverlay(String responseText) {
+    if (scoutSpeakingOverlay == null || scoutSpeakingVisualizer == null) {
+      return;
+    }
+    scoutSpeakingOverlay.bringToFront();
+    if (scoutSpeakingTitle != null) {
+      scoutSpeakingTitle.setText(getString(R.string.scout_speaking_title));
+    }
+    if (scoutSpeakingBody != null) {
+      scoutSpeakingBody.setText(
+          TextUtils.isEmpty(responseText)
+              ? getString(R.string.scout_speaking_placeholder)
+              : responseText);
+    }
+    scoutSpeakingVisualizer.setAmplitude(0.9f);
+    scoutSpeakingVisualizer.start();
+    scoutSpeakingOverlay.setVisibility(View.VISIBLE);
+  }
+
+  private void hideScoutSpeakingOverlay() {
+    if (scoutSpeakingOverlay == null || scoutSpeakingVisualizer == null) {
+      return;
+    }
+    scoutSpeakingVisualizer.stop();
+    scoutSpeakingOverlay.setVisibility(View.GONE);
+  }
+
+  private void stopScoutSpeech() {
+    synchronized (this) {
+      pendingScoutSpokenText = null;
+    }
+    if (scoutTts != null) {
+      scoutTts.stop();
+    }
+  }
+
+  private void speakScoutResponse(String responseText) {
+    if (TextUtils.isEmpty(responseText)) {
+      return;
+    }
+    showScoutSpeakingOverlay(responseText);
+    if (!scoutTtsReady || scoutTts == null || scoutTtsInitInProgress) {
+      queuePendingScoutSpokenText(responseText);
+      if (!scoutTtsInitInProgress) {
+        initScoutTts();
+      }
+      appendLine("SCOUT", "vocalizer initializing…");
+      return;
+    }
+    noteAutoAudioNotificationPermissionState();
+    AudioManager audioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
+    if (audioManager != null) {
+      audioManager.requestAudioFocus(
+          null,
+          AudioManager.STREAM_MUSIC,
+          AudioManager.AUDIOFOCUS_GAIN_TRANSIENT_MAY_DUCK);
+    }
+    String utteranceId = "scout-" + SystemClock.elapsedRealtime();
+    int result = scoutTts.speak(responseText, TextToSpeech.QUEUE_FLUSH, null, utteranceId);
+    if (result != TextToSpeech.SUCCESS) {
+      appendLine("SCOUT", "voice playback unavailable");
+      hideScoutSpeakingOverlay();
+    }
+  }
+
+  private boolean shouldUseInternetLookup(String queryText) {
+    if (TextUtils.isEmpty(queryText)) {
+      return false;
+    }
+    return INTERNET_QUERY_PATTERN.matcher(queryText).find();
+  }
+
+  private void requestInternetLookup(String queryText) {
+    String localizedQuery = buildLocalizedInternetQuery(queryText);
+    String lookupUrl =
+        "https://api.duckduckgo.com/?format=json&no_html=1&no_redirect=1&q="
+            + Uri.encode(localizedQuery);
+    appendLine("SCOUT-WEB", getString(R.string.scout_web_lookup));
+    appendLine("SCOUT-WEB", "query " + localizedQuery);
+    Request request = new Request.Builder().url(lookupUrl).build();
+    client.newCall(request)
+        .enqueue(
+            new Callback() {
+              @Override
+              public void onFailure(Call call, IOException e) {
+                appendLine("SCOUT-WEB", "lookup failed: " + e.getMessage());
+              }
+
+              @Override
+              public void onResponse(Call call, Response response) throws IOException {
+                try (response) {
+                  if (!response.isSuccessful() || response.body() == null) {
+                    appendLine("SCOUT-WEB", "lookup unavailable (HTTP " + response.code() + ")");
+                    return;
+                  }
+                  JSONObject payload = new JSONObject(response.body().string());
+                  String summary = payload.optString("AbstractText", "").trim();
+                  if (summary.isEmpty()) {
+                    JSONArray relatedTopics = payload.optJSONArray("RelatedTopics");
+                    if (relatedTopics != null && relatedTopics.length() > 0) {
+                      JSONObject first = relatedTopics.optJSONObject(0);
+                      summary = first != null ? first.optString("Text", "").trim() : "";
+                    }
+                  }
+                  if (summary.isEmpty()) {
+                    summary = getString(R.string.scout_web_no_result);
+                  }
+                  summary = WEB_FALLBACK_HTML_STRIP.matcher(summary).replaceAll("").trim();
+                  appendLine("SCOUT-WEB", summary);
+                  speakScoutResponse(summary);
+                } catch (Exception e) {
+                  appendLine("SCOUT-WEB", "lookup parse error: " + e.getMessage());
+                }
+              }
+            });
+  }
+
+  private void maybeApplyDestinationIntent(String text, String label) {
+    String destinationQuery = extractDestinationCandidate(text);
+    if (TextUtils.isEmpty(destinationQuery)) {
+      return;
+    }
+    geocodeAndRoute(destinationQuery, label);
+  }
+
+  private String extractDestinationCandidate(String text) {
+    if (TextUtils.isEmpty(text)) {
+      return null;
+    }
+    Matcher promptMatcher = DESTINATION_INTENT_PATTERN.matcher(text.trim());
+    if (promptMatcher.find()) {
+      String direct = promptMatcher.group(1);
+      String configured = promptMatcher.group(2);
+      String candidate = !TextUtils.isEmpty(direct) ? direct : configured;
+      if (!TextUtils.isEmpty(candidate)) {
+        return candidate.replaceAll("[.?!]+$", "").trim();
+      }
+    }
+    Matcher responseMatcher = DESTINATION_RESPONSE_PATTERN.matcher(text.trim());
+    if (responseMatcher.find()) {
+      String candidate = responseMatcher.group(1);
+      if (!TextUtils.isEmpty(candidate)) {
+        return candidate.replaceAll("[.?!]+$", "").trim();
+      }
+    }
+    return null;
+  }
+
+  private boolean isScoutSelfQuery(String prompt) {
+    if (TextUtils.isEmpty(prompt)) {
+      return false;
+    }
+    return SCOUT_SELF_QUERY_PATTERN.matcher(prompt).find()
+        || prompt.toLowerCase(Locale.ROOT).contains("self query");
+  }
+
+  private boolean requiresRuntimeNotificationPermission() {
+    return Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU;
+  }
+
+  private boolean hasNotificationPermission() {
+    if (!requiresRuntimeNotificationPermission()) {
+      return true;
+    }
+    return ContextCompat.checkSelfPermission(this, Manifest.permission.POST_NOTIFICATIONS)
+        == PackageManager.PERMISSION_GRANTED;
+  }
+
+  private void ensureAndroidAutoAudioNotificationPermission() {
+    if (!requiresRuntimeNotificationPermission() || hasNotificationPermission()) {
+      autoAudioNotificationPermissionWarned = false;
+      return;
+    }
+    Log.i(TAG, "requesting POST_NOTIFICATIONS for Android Auto audio alerts");
+    if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.POST_NOTIFICATIONS)) {
+      appendLine("AUDIO", "notification permission required for Android Auto audio alerts");
+    }
+    ActivityCompat.requestPermissions(
+        this,
+        new String[] {Manifest.permission.POST_NOTIFICATIONS},
+        NOTIFICATION_PERMISSION_REQUEST_CODE);
+  }
+
+  private void runAndroidAutoNotificationPermissionCheck() {
+    if (!requiresRuntimeNotificationPermission()) {
+      appendLine("AUDIO", "notification runtime permission not required on this Android version");
+      return;
+    }
+    if (hasNotificationPermission()) {
+      autoAudioNotificationPermissionWarned = false;
+      appendLine("AUDIO", "notification permission already granted for Android Auto alerts");
+      return;
+    }
+    appendLine("AUDIO", "checking Android Auto notification permission…");
+    ensureAndroidAutoAudioNotificationPermission();
+  }
+
+  private void noteAutoAudioNotificationPermissionState() {
+    if (hasNotificationPermission()) {
+      autoAudioNotificationPermissionWarned = false;
+      return;
+    }
+    if (!autoAudioNotificationPermissionWarned) {
+      autoAudioNotificationPermissionWarned = true;
+      appendLine("AUDIO", "notification permission missing; Android Auto audio notifications may be limited");
+      Log.i(TAG, "POST_NOTIFICATIONS missing; Android Auto alert-audio fallback mode active");
+    }
+  }
+
+  private void ensureMicrophonePermission() {
+    if (ContextCompat.checkSelfPermission(this, Manifest.permission.RECORD_AUDIO)
+        == PackageManager.PERMISSION_GRANTED) {
+      return;
+    }
+    if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.RECORD_AUDIO)) {
+      appendLine("AUDIO", "microphone permission required for voice chat");
+    }
+    ActivityCompat.requestPermissions(
+        this,
+        new String[] {Manifest.permission.RECORD_AUDIO},
+        MICROPHONE_PERMISSION_REQUEST_CODE);
+  }
+
+  private void startScoutMicrophoneCapture() {
+    if (ContextCompat.checkSelfPermission(this, Manifest.permission.RECORD_AUDIO)
+        != PackageManager.PERMISSION_GRANTED) {
+      pendingMicCaptureAfterPermission = true;
+      ensureMicrophonePermission();
+      return;
+    }
+    Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
+    intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
+    intent.putExtra(RecognizerIntent.EXTRA_PROMPT, "Speak to Scout");
+    intent.putExtra(RecognizerIntent.EXTRA_MAX_RESULTS, 1);
+    try {
+      startActivityForResult(intent, SCOUT_MICROPHONE_CAPTURE_REQUEST_CODE);
+      appendLine("AUDIO", "listening for microphone input…");
+    } catch (ActivityNotFoundException e) {
+      appendLine("AUDIO", "speech recognition unavailable on device");
+    }
   }
 
   private String relayUserId() {
@@ -1251,6 +2183,8 @@ public class MainActivity extends AppCompatActivity {
   protected void onResume() {
     super.onResume();
     registerMotionDetection();
+    ensureMicrophonePermission();
+    ensureAndroidAutoAudioNotificationPermission();
     maybeShowTrackingConsentDialog();
     registerLocationTracking();
     uiHandler.removeCallbacks(errorReportPollRunnable);
@@ -1272,6 +2206,11 @@ public class MainActivity extends AppCompatActivity {
     uiHandler.removeCallbacks(destinationSuggestRunnable);
     uiHandler.removeCallbacks(errorReportPollRunnable);
     stopStreaming("stopped");
+    stopScoutSpeech();
+    if (scoutTts != null) {
+      scoutTts.shutdown();
+      scoutTts = null;
+    }
     super.onDestroy();
   }
 
@@ -1354,22 +2293,88 @@ public class MainActivity extends AppCompatActivity {
   @Override
   public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
     super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-    if (requestCode != LOCATION_PERMISSION_REQUEST_CODE) {
+    if (requestCode == LOCATION_PERMISSION_REQUEST_CODE) {
+      boolean granted = false;
+      for (int result : grantResults) {
+        if (result == PackageManager.PERMISSION_GRANTED) {
+          granted = true;
+          break;
+        }
+      }
+      if (granted) {
+        appendLine("GPS", "location permission granted");
+        registerLocationTracking();
+      } else {
+        appendLine("GPS", "location permission denied");
+      }
       return;
     }
-    boolean granted = false;
-    for (int result : grantResults) {
-      if (result == PackageManager.PERMISSION_GRANTED) {
-        granted = true;
-        break;
+    if (requestCode == MICROPHONE_PERMISSION_REQUEST_CODE) {
+      boolean granted = false;
+      for (int result : grantResults) {
+        if (result == PackageManager.PERMISSION_GRANTED) {
+          granted = true;
+          break;
+        }
+      }
+      if (granted) {
+        appendLine("AUDIO", "microphone permission granted");
+        if (pendingMicCaptureAfterPermission) {
+          pendingMicCaptureAfterPermission = false;
+          startScoutMicrophoneCapture();
+        }
+      } else {
+        pendingMicCaptureAfterPermission = false;
+        appendLine("AUDIO", "microphone permission denied");
+      }
+      return;
+    }
+    if (requestCode == NOTIFICATION_PERMISSION_REQUEST_CODE) {
+      boolean granted = false;
+      for (int result : grantResults) {
+        if (result == PackageManager.PERMISSION_GRANTED) {
+          granted = true;
+          break;
+        }
+      }
+      if (granted) {
+        autoAudioNotificationPermissionWarned = false;
+        appendLine("AUDIO", "notification permission granted for Android Auto alerts");
+        Log.i(TAG, "POST_NOTIFICATIONS granted");
+      } else {
+        autoAudioNotificationPermissionWarned = true;
+        appendLine("AUDIO", "notification permission denied; Android Auto audio notifications may be limited");
+        Log.i(TAG, "POST_NOTIFICATIONS denied");
       }
     }
-    if (granted) {
-      appendLine("GPS", "location permission granted");
-      registerLocationTracking();
-    } else {
-      appendLine("GPS", "location permission denied");
+  }
+
+  @Override
+  protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+    super.onActivityResult(requestCode, resultCode, data);
+    if (requestCode != SCOUT_MICROPHONE_CAPTURE_REQUEST_CODE) {
+      return;
     }
+    if (resultCode != RESULT_OK || data == null) {
+      appendLine("AUDIO", "no microphone transcript captured");
+      return;
+    }
+    ArrayList<String> results = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
+    if (results == null || results.isEmpty()) {
+      appendLine("AUDIO", "no speech recognized");
+      return;
+    }
+    String transcript = results.get(0) == null ? "" : results.get(0).trim();
+    if (transcript.isEmpty()) {
+      appendLine("AUDIO", "empty transcript");
+      return;
+    }
+    if (assistantPromptInput != null) {
+      assistantPromptInput.setText(transcript);
+      assistantPromptInput.setSelection(transcript.length());
+    }
+    appendLine("AUDIO", "heard: " + transcript);
+    submitAssistantChatFromInput();
   }
 
   private void processAccelerometerSample(SensorEvent event) {
@@ -1646,13 +2651,16 @@ public class MainActivity extends AppCompatActivity {
       List<String> mentions = new ArrayList<>();
       collectMentions(json.optJSONArray("location_mentions"), mentions);
       collectMentions(json.optJSONArray("poi_mentions"), mentions);
-      String intelLine = buildIntelLine(json.optJSONObject("llm_intel"));
+      JSONObject llmIntel = json.optJSONObject("llm_intel");
+      String intelLine = buildIntelLine(llmIntel);
+      updateLocalCallContext(llmIntel, json);
       boolean isAlert = "alert_triggered".equals(eventType);
       if (isAlert) {
-        String vetLine = buildVetLine(json);
-        if (!TextUtils.isEmpty(vetLine)) {
-          intelLine = TextUtils.isEmpty(intelLine) ? vetLine : (vetLine + "\n" + intelLine);
+        String coreRatingLine = buildCore0RatingLine(json);
+        if (!TextUtils.isEmpty(coreRatingLine)) {
+          intelLine = TextUtils.isEmpty(intelLine) ? coreRatingLine : (coreRatingLine + "\n" + intelLine);
         }
+        maybeSpeakPipelineAlertFromRating(json, text);
       }
       if (!mentions.isEmpty() || (isAlert && !TextUtils.isEmpty(text))) {
         float[] levelSeries = parseAudioLevels(json.optJSONArray("audio_levels"));
@@ -1751,25 +2759,95 @@ public class MainActivity extends AppCompatActivity {
     return line;
   }
 
-  /** Short vet-status line shown at the top of popup intel details for alert events. */
-  private String buildVetLine(JSONObject eventJson) {
+  /** Core0 legacy call-rating line shown at the top of alert intel details. */
+  private String buildCore0RatingLine(JSONObject eventJson) {
     if (eventJson == null) {
       return "";
     }
-    boolean vetted = eventJson.optBoolean("alert_vetted", true);
-    String decision = eventJson.optString("alert_vet_decision", "").trim();
-    String reason = eventJson.optString("alert_vet_reason", "").trim();
-    if (TextUtils.isEmpty(decision) && TextUtils.isEmpty(reason) && vetted) {
-      return getString(R.string.popup_vet_pass);
+    int rating = extractLegacyCallRating(eventJson);
+    if (rating <= 0) {
+      return getString(R.string.popup_core0_unknown);
     }
-    StringBuilder sb = new StringBuilder(vetted ? getString(R.string.popup_vet_pass) : getString(R.string.popup_vet_fail));
-    if (!TextUtils.isEmpty(decision)) {
-      sb.append(" • ").append(decision);
-    }
+    StringBuilder sb = new StringBuilder(getString(R.string.popup_core0_rating));
+    sb.append(" ").append(rating).append("/5");
+    String reason = extractLegacyCallReason(eventJson);
     if (!TextUtils.isEmpty(reason)) {
-      sb.append(" • ").append(reason.replace('_', ' '));
+      sb.append(" • ").append(reason);
     }
     return sb.toString();
+  }
+
+  private int extractLegacyCallRating(JSONObject eventJson) {
+    if (eventJson == null) {
+      return 0;
+    }
+    int direct = eventJson.optInt("call_rating", Integer.MIN_VALUE);
+    if (direct != Integer.MIN_VALUE) {
+      return Math.max(0, Math.min(5, direct));
+    }
+    JSONObject intel = eventJson.optJSONObject("llm_intel");
+    if (intel != null) {
+      int intelRating = intel.optInt("call_rating", Integer.MIN_VALUE);
+      if (intelRating != Integer.MIN_VALUE) {
+        return Math.max(0, Math.min(5, intelRating));
+      }
+      int genericRating = intel.optInt("rating", Integer.MIN_VALUE);
+      if (genericRating != Integer.MIN_VALUE) {
+        return Math.max(0, Math.min(5, genericRating));
+      }
+      String priority = intel.optString("priority", "").trim().toLowerCase(Locale.ROOT);
+      if ("critical".equals(priority) || "high".equals(priority)) {
+        return 5;
+      }
+      if ("medium".equals(priority)) {
+        return 3;
+      }
+      if ("low".equals(priority)) {
+        return 2;
+      }
+    }
+    return 0;
+  }
+
+  private String extractLegacyCallReason(JSONObject eventJson) {
+    if (eventJson == null) {
+      return "";
+    }
+    String reason = eventJson.optString("call_rating_reason", "").trim();
+    if (!reason.isEmpty()) {
+      return reason.replace('_', ' ');
+    }
+    JSONObject intel = eventJson.optJSONObject("llm_intel");
+    if (intel != null) {
+      reason = intel.optString("rating_reason", "").trim();
+      if (!reason.isEmpty()) {
+        return reason.replace('_', ' ');
+      }
+      reason = intel.optString("summary", "").trim();
+      if (!reason.isEmpty()) {
+        return reason;
+      }
+    }
+    return "";
+  }
+
+  private void maybeSpeakPipelineAlertFromRating(JSONObject eventJson, String alertText) {
+    int rating = extractLegacyCallRating(eventJson);
+    if (rating < PIPELINE_ALERT_SPEAK_MIN_RATING || TextUtils.isEmpty(alertText)) {
+      return;
+    }
+    String eventTs = eventJson != null ? eventJson.optString("ts", "") : "";
+    String dedupeKey = eventTs + "|" + alertText;
+    long now = SystemClock.elapsedRealtime();
+    if (dedupeKey.equals(lastSpokenPipelineAlertKey)
+        && (now - lastSpokenPipelineAlertAtMs) < PIPELINE_ALERT_SPEAK_COOLDOWN_MS) {
+      return;
+    }
+    lastSpokenPipelineAlertKey = dedupeKey;
+    lastSpokenPipelineAlertAtMs = now;
+    String spoken = "Pipeline alert rating " + rating + ". " + alertText;
+    Log.i(TAG, "pipeline alert vocalized from legacy rating=" + rating);
+    speakScoutResponse(spoken);
   }
 
   private void maybeShowLocationPopup(
