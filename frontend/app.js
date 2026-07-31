@@ -30,7 +30,7 @@ const state = {
     isometricImg: null,
     centerLat: null,
     centerLon: null,
-    centerZoom: 12,
+    centerZoom: 9,
     currentMarker: null,
     alertMarker: null,
     trackLine: null,
@@ -72,6 +72,7 @@ const state = {
 };
 const BROWSER_NOTIFY_COOLDOWN_MS = 6000;
 const JURISDICTION_COOLDOWN_MS = 4 * 60 * 1000;
+const BACKEND_MAP_RENDER_MIN_INTERVAL_MS = 3200;
 
 const API_BASE = (window.SCANNER_API_BASE_URL || "").replace(/\/+$/, "");
 const ui = {
@@ -497,7 +498,7 @@ function setFollowMode(enabled) {
   updateFollowButtonUi();
 }
 function mapRadiusForZoom(zoom) {
-  const z = Number.isFinite(zoom) ? zoom : 12;
+  const z = Number.isFinite(zoom) ? zoom : 9;
   if (z >= 15) return 700;
   if (z >= 14) return 1100;
   if (z >= 13) return 1700;
@@ -543,19 +544,22 @@ function refreshBackendMapPreview(lat, lon, opts = {}) {
   if (!Number.isFinite(lat) || !Number.isFinite(lon)) return;
   state.map.centerLat = lat;
   state.map.centerLon = lon;
-  const zoom = Number.isFinite(opts.zoom) ? opts.zoom : state.map.instance?.getZoom?.() ?? 12;
+  const zoom = Number.isFinite(opts.zoom) ? opts.zoom : state.map.instance?.getZoom?.() ?? 9;
   state.map.centerZoom = zoom;
   const radiusM = Number.isFinite(opts.radiusM) ? opts.radiusM : mapRadiusForZoom(zoom);
   const now = Date.now();
+  if (!opts.force && now - state.map.lastBackendRenderAt < BACKEND_MAP_RENDER_MIN_INTERVAL_MS) {
+    return;
+  }
   const centerKey = `${lat.toFixed(5)},${lon.toFixed(5)}@${Math.round(radiusM)}`;
-  if (!opts.force && centerKey === state.map.lastBackendCenterKey && now - state.map.lastBackendRenderAt < 2500) {
+  if (!opts.force && centerKey === state.map.lastBackendCenterKey && now - state.map.lastBackendRenderAt < BACKEND_MAP_RENDER_MIN_INTERVAL_MS) {
     return;
   }
   state.map.lastBackendCenterKey = centerKey;
   state.map.lastBackendRenderAt = now;
   const src =
     apiUrl(
-      `/api/map/render?lat=${encodeURIComponent(lat)}&lon=${encodeURIComponent(lon)}&radius_m=${Math.round(radiusM)}&w=960&h=420`
+      `/api/map/render?lat=${encodeURIComponent(lat)}&lon=${encodeURIComponent(lon)}&radius_m=${Math.round(radiusM)}&w=880&h=390`
     ) + `&ts=${now}`;
   const isometricImg = ensureIsometricSurface();
   if (isometricImg) {
@@ -570,7 +574,7 @@ function initIntegratedMap() {
   document.querySelector(".map-card")?.classList.add("isometric-mode");
   ensureIsometricSurface();
   updateFollowButtonUi();
-  refreshBackendMapPreview(34.0522, -118.2437, { force: true, zoom: 10 });
+  refreshBackendMapPreview(34.0522, -118.2437, { force: true, zoom: 8 });
 }
 
 function updateMapTrack(points) {
@@ -636,7 +640,7 @@ async function fetchGpsTrackSnapshot() {
     updateMapTrack(data.points);
     const latest = data.points[data.points.length - 1];
     if (!state.currentGps && Number.isFinite(latest?.lat) && Number.isFinite(latest?.lon)) {
-      updateIntegratedMap(latest.lat, latest.lon, 12, "gps");
+      updateIntegratedMap(latest.lat, latest.lon, 9, "gps");
     }
     setMapHud({ users: Number(data?.active_users || 0) });
   } catch {
@@ -695,7 +699,7 @@ function updateIntegratedMap(lat, lon, zoom = 11, markerKind = "gps", opts = {})
     (markerKind === "gps" && (state.map.followMode || !state.map.hasAutoCentered));
   if (!shouldCenter) return;
   state.map.hasAutoCentered = true;
-  refreshBackendMapPreview(lat, lon, { zoom, force: true });
+  refreshBackendMapPreview(lat, lon, { zoom, force: forceCenter || markerKind === "alert" });
 }
 function setSelectorStatus(text) {
   ui.selectorStatus.textContent = text;
