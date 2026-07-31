@@ -196,6 +196,36 @@ h2 {
   grid-template-columns: 1fr 1fr;
   margin-bottom: 8px;
 }
+.dest-suggest-menu {
+  grid-column: 2 / 3;
+  border: 1px solid #3a4f72;
+  border-radius: 10px;
+  background: rgba(10, 16, 29, 0.97);
+  box-shadow: 0 10px 24px rgba(4, 10, 21, 0.45);
+  display: grid;
+  gap: 0;
+  max-height: 230px;
+  overflow-y: auto;
+  z-index: 40;
+}
+.dest-suggest-item {
+  text-align: left;
+  border: 0;
+  border-bottom: 1px solid rgba(68, 88, 122, 0.45);
+  border-radius: 0;
+  background: transparent;
+  color: #dbe7ff;
+  padding: 9px 10px;
+  font-size: 0.84rem;
+}
+.dest-suggest-item:last-child {
+  border-bottom: 0;
+}
+.dest-suggest-item:hover,
+.dest-suggest-item.active {
+  background: rgba(47, 100, 196, 0.28);
+  border-color: rgba(93, 136, 215, 0.5);
+}
 .route-visual-head {
   display: flex;
   align-items: baseline;
@@ -508,6 +538,9 @@ button:focus-visible {
   .route-grid,
   .nav-row.tri {
     grid-template-columns: 1fr;
+  }
+  .dest-suggest-menu {
+    grid-column: 1 / -1;
   }
   .map-quick-menu {
     top: 10px;

@@ -692,9 +692,26 @@ final class ProprietaryMapEngine {
     return best;
   }
 
-  /** Per-zoom road filter. Keep classes visible at all zooms; geometry decimation still simplifies output. */
+  /** Per-zoom road filter. Minor classes are dropped earlier so low-zoom views emphasize major roads. */
   private static boolean includeRoadAtZoom(String clazz, int z) {
-    return true;
+    if (z >= 15) {
+      return true;
+    }
+    switch (clazz) {
+      case "motorway":
+        return true;
+      case "primary":
+        return z >= 11;
+      case "secondary":
+      case "rail":
+        return z >= 12;
+      case "tertiary":
+        return z >= 13;
+      case "residential":
+        return z >= 14;
+      default: // service, path
+        return z >= 15;
+    }
   }
 
   private static boolean includeBuildingsAtZoom(int z) {

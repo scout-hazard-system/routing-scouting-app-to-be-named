@@ -69,10 +69,19 @@ const state = {
     activeAltIndex: 0,
     selectedClusterIndex: -1,
   },
+  routeSearch: {
+    suggestions: [],
+    activeIndex: -1,
+    debounceTimer: null,
+    requestSeq: 0,
+    appliedLabel: "",
+    menuEl: null,
+  },
 };
 const BROWSER_NOTIFY_COOLDOWN_MS = 6000;
 const JURISDICTION_COOLDOWN_MS = 4 * 60 * 1000;
 const BACKEND_MAP_RENDER_MIN_INTERVAL_MS = 3200;
+const DEST_SUGGEST_DEBOUNCE_MS = 220;
 
 const API_BASE = (window.SCANNER_API_BASE_URL || "").replace(/\/+$/, "");
 const ui = {
@@ -1377,6 +1386,153 @@ function readBiasCoordinates() {
   }
   return null;
 }
+function hideDestinationSuggestions() {
+  if (!state.routeSearch.menuEl) return;
+  state.routeSearch.menuEl.classList.add("hidden");
+  state.routeSearch.menuEl.innerHTML = "";
+  state.routeSearch.activeIndex = -1;
+}
+
+function renderDestinationSuggestions() {
+  const menu = state.routeSearch.menuEl;
+  if (!menu) return;
+  const items = state.routeSearch.suggestions;
+  if (!Array.isArray(items) || !items.length) {
+    hideDestinationSuggestions();
+    return;
+  }
+  menu.innerHTML = "";
+  items.forEach((item, idx) => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "dest-suggest-item";
+    if (idx === state.routeSearch.activeIndex) {
+      button.classList.add("active");
+    }
+    button.textContent = item.display_name;
+    button.addEventListener("mousedown", (event) => {
+      event.preventDefault();
+      applyDestinationSuggestion(item);
+    });
+    menu.appendChild(button);
+  });
+  menu.classList.remove("hidden");
+}
+
+function applyDestinationSuggestion(item) {
+  if (!item) return;
+  ui.endInput.value = item.display_name || ui.endInput.value;
+  state.routeSearch.appliedLabel = ui.endInput.value.trim();
+  if (Number.isFinite(item.lat) && Number.isFinite(item.lon)) {
+    ui.latInput.value = Number(item.lat).toFixed(6);
+    ui.lonInput.value = Number(item.lon).toFixed(6);
+  }
+  hideDestinationSuggestions();
+}
+
+async function fetchDestinationSuggestions(query) {
+  const seq = ++state.routeSearch.requestSeq;
+  const bias = readBiasCoordinates();
+  const url =
+    apiUrl(`/api/platform/address-catalog/suggest?q=${encodeURIComponent(query)}&limit=8`)
+    + buildBiasQueryString(bias);
+  try {
+    const response = await fetch(url);
+    if (!response.ok || seq !== state.routeSearch.requestSeq) {
+      return;
+    }
+    const payload = await response.json();
+    if (seq !== state.routeSearch.requestSeq) {
+      return;
+    }
+    const results = Array.isArray(payload?.results) ? payload.results : [];
+    state.routeSearch.suggestions = results
+      .map((r) => ({
+        display_name: String(r?.display_name || "").trim(),
+        lat: asFiniteNumber(r?.lat),
+        lon: asFiniteNumber(r?.lon),
+      }))
+      .filter((r) => r.display_name);
+    state.routeSearch.activeIndex = state.routeSearch.suggestions.length ? 0 : -1;
+    renderDestinationSuggestions();
+  } catch {
+    if (seq === state.routeSearch.requestSeq) {
+      hideDestinationSuggestions();
+    }
+  }
+}
+
+function scheduleDestinationSuggest() {
+  if (!ui.endInput) return;
+  const query = ui.endInput.value.trim();
+  if (!query || parseLatLonInput(query)) {
+    hideDestinationSuggestions();
+    return;
+  }
+  if (state.routeSearch.debounceTimer) {
+    clearTimeout(state.routeSearch.debounceTimer);
+  }
+  state.routeSearch.debounceTimer = setTimeout(() => {
+    fetchDestinationSuggestions(query);
+  }, DEST_SUGGEST_DEBOUNCE_MS);
+}
+
+function initDestinationSearchUi() {
+  if (!ui.endInput || state.routeSearch.menuEl) return;
+  const menu = document.createElement("div");
+  menu.className = "dest-suggest-menu hidden";
+  ui.endInput.insertAdjacentElement("afterend", menu);
+  state.routeSearch.menuEl = menu;
+
+  ui.endInput.addEventListener("input", () => {
+    if (state.routeSearch.appliedLabel && ui.endInput.value.trim() !== state.routeSearch.appliedLabel) {
+      state.routeSearch.appliedLabel = "";
+    }
+    scheduleDestinationSuggest();
+  });
+  ui.endInput.addEventListener("focus", () => {
+    scheduleDestinationSuggest();
+  });
+  ui.endInput.addEventListener("blur", () => {
+    setTimeout(() => {
+      hideDestinationSuggestions();
+    }, 120);
+  });
+  ui.endInput.addEventListener("keydown", (event) => {
+    const items = state.routeSearch.suggestions;
+    if (!items.length) {
+      return;
+    }
+    if (event.key === "ArrowDown") {
+      event.preventDefault();
+      state.routeSearch.activeIndex = (state.routeSearch.activeIndex + 1) % items.length;
+      renderDestinationSuggestions();
+      return;
+    }
+    if (event.key === "ArrowUp") {
+      event.preventDefault();
+      state.routeSearch.activeIndex =
+        (state.routeSearch.activeIndex - 1 + items.length) % items.length;
+      renderDestinationSuggestions();
+      return;
+    }
+    if (event.key === "Enter" && !event.shiftKey) {
+      if (state.routeSearch.activeIndex >= 0 && state.routeSearch.activeIndex < items.length) {
+        event.preventDefault();
+        applyDestinationSuggestion(items[state.routeSearch.activeIndex]);
+      }
+      return;
+    }
+    if (event.key === "Escape") {
+      hideDestinationSuggestions();
+    }
+  });
+  document.addEventListener("click", (event) => {
+    if (!menu.contains(event.target) && event.target !== ui.endInput) {
+      hideDestinationSuggestions();
+    }
+  });
+}
 
 function buildBiasQueryString(bias) {
   if (!bias || !Number.isFinite(bias.lat) || !Number.isFinite(bias.lon)) return "";
@@ -1464,6 +1620,13 @@ async function planRoute() {
   const endRaw = ui.endInput.value.trim();
   const startRaw = ui.startInput.value.trim();
   let parsedEnd = parseLatLonInput(endRaw);
+  if (!parsedEnd && endRaw && state.routeSearch.appliedLabel === endRaw) {
+    const suggestedLat = asFiniteNumber(ui.latInput.value);
+    const suggestedLon = asFiniteNumber(ui.lonInput.value);
+    if (suggestedLat != null && suggestedLon != null) {
+      parsedEnd = { lat: suggestedLat, lon: suggestedLon };
+    }
+  }
   const parsedStart = parseLatLonInput(startRaw);
   const bias = readBiasCoordinates() || parsedStart || null;
   let resolvedEndLabel = endRaw;
@@ -1683,6 +1846,7 @@ setRouteVisualStatus("Route visualization idle");
 setRun("waiting", "mute");
 setGpsStatus("gps: pending", "mute");
 initIntegratedMap();
+initDestinationSearchUi();
 updateFollowButtonUi();
 setSelectorModeUi();
 loadCatalogRegions();
