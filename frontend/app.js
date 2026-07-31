@@ -150,6 +150,7 @@ const ui = {
   quickAlertsBtn: document.getElementById("quickAlertsBtn"),
   routeSketchCanvas: document.getElementById("routeSketchCanvas"),
   routeAltList: document.getElementById("routeAltList"),
+  routeEtaSummary: document.getElementById("routeEtaSummary"),
   routeVisualStatus: document.getElementById("routeVisualStatus"),
   clusterList: document.getElementById("clusterList"),
   clusterDetailPanel: document.getElementById("clusterDetailPanel"),
@@ -337,6 +338,35 @@ function formatDurationLabel(seconds) {
   }
   return `${minutes}m`;
 }
+function formatCoverageLabel(value) {
+  const num = Number(value);
+  if (!Number.isFinite(num) || num <= 0) return "fallback";
+  const pct = Math.max(0, Math.min(100, Math.round(num * 100)));
+  return `${pct}%`;
+}
+function renderActiveRouteEta(alternative) {
+  if (!ui.routeEtaSummary) return;
+  if (!alternative || typeof alternative !== "object") {
+    ui.routeEtaSummary.innerHTML = "";
+    return;
+  }
+  const distanceM = Number(alternative.distance_m || 0);
+  const durationS = Number(alternative.duration_s || 0);
+  const etaSpeedS = Number(alternative.eta_speed_limit_s ?? durationS);
+  const stopDwellS = Number(alternative.stop_dwell_s || 0);
+  const etaWithStopsS = Number(alternative.eta_with_stops_s ?? (etaSpeedS + stopDwellS));
+  const coverage = formatCoverageLabel(alternative.maxspeed_coverage);
+  const toll = alternative.has_toll_hint ? "yes" : "no";
+  const ferry = alternative.has_ferry_hint ? "yes" : "no";
+  ui.routeEtaSummary.innerHTML = `
+    <div class="eta-chip"><span>Distance</span><strong>${(distanceM / 1000).toFixed(1)} km</strong></div>
+    <div class="eta-chip"><span>ETA (speed/fallback)</span><strong>${formatDurationLabel(etaSpeedS)}</strong></div>
+    <div class="eta-chip"><span>Stop dwell</span><strong>${formatDurationLabel(stopDwellS)}</strong></div>
+    <div class="eta-chip"><span>Total ETA</span><strong>${formatDurationLabel(etaWithStopsS)}</strong></div>
+    <div class="eta-chip"><span>Maxspeed coverage</span><strong>${coverage}</strong></div>
+    <div class="eta-chip"><span>Toll / Ferry hints</span><strong>${toll} / ${ferry}</strong></div>
+  `;
+}
 function renderRouteAlternatives() {
   if (!ui.routeAltList) return;
   const alternatives = Array.isArray(state.routeUi.options?.alternatives) ? state.routeUi.options.alternatives : [];
@@ -362,6 +392,7 @@ function renderRouteVisuals() {
     clearRouteDrawing();
     setRouteVisualStatus("No route geometry returned");
     if (ui.routeAltList) ui.routeAltList.innerHTML = "";
+    if (ui.routeEtaSummary) ui.routeEtaSummary.innerHTML = "";
     if (ui.clusterList) ui.clusterList.innerHTML = "";
     closeClusterDetailPanel();
     return;
@@ -374,6 +405,7 @@ function renderRouteVisuals() {
     : [];
   drawRouteSketch(activeAlternative, clusters);
   renderRouteAlternatives();
+  renderActiveRouteEta(activeAlternative);
   renderClusterList();
   const count = alternatives.length;
   const clusterCount = clusters.length;
@@ -403,6 +435,7 @@ async function loadRouteVisuals(payload) {
     state.routeUi.options = null;
     clearRouteDrawing();
     if (ui.routeAltList) ui.routeAltList.innerHTML = "";
+    if (ui.routeEtaSummary) ui.routeEtaSummary.innerHTML = "";
     if (ui.clusterList) ui.clusterList.innerHTML = "";
     closeClusterDetailPanel();
     setRouteVisualStatus("Route drawing unavailable");
