@@ -143,6 +143,53 @@ public final class RouteMapScreen extends Screen implements DefaultLifecycleObse
     getLifecycle().addObserver(this);
   }
 
+  private void openRouteAlternatives() {
+    double[] dest = AppPrefs.destination(carContext);
+    if (dest == null) {
+      CarToast.makeText(carContext, "Set a destination first", CarToast.LENGTH_SHORT).show();
+      return;
+    }
+    double originLat;
+    double originLon;
+    Location fix = lastFix;
+    if (fix != null) {
+      originLat = fix.getLatitude();
+      originLon = fix.getLongitude();
+    } else {
+      double[] backendFix = fetchBackendGps(AppPrefs.resolveReachableBaseUrl(carContext));
+      if (backendFix != null) {
+        originLat = backendFix[0];
+        originLon = backendFix[1];
+      } else {
+        originLat = dest[0];
+        originLon = dest[1];
+      }
+    }
+    getScreenManager()
+        .push(
+            new RouteAlternativesScreen(
+                carContext,
+                routingClient,
+                alternative -> {
+                  requestRenderSoon();
+                  String toast =
+                      "Preferred route "
+                          + (alternative.index + 1)
+                          + " • "
+                          + formatDistance(alternative.distanceMeters)
+                          + " • "
+                          + formatDuration(
+                              alternative.etaSpeedLimitSeconds > 0.0
+                                  ? alternative.etaSpeedLimitSeconds
+                                  : alternative.durationSeconds);
+                  CarToast.makeText(carContext, toast, CarToast.LENGTH_LONG).show();
+                },
+                originLat,
+                originLon,
+                dest[0],
+                dest[1]));
+  }
+
   @Override
   public void onCreate(@NonNull LifecycleOwner owner) {
     carContext.getCarService(AppManager.class).setSurfaceCallback(surfaceCallback);
@@ -216,11 +263,17 @@ public final class RouteMapScreen extends Screen implements DefaultLifecycleObse
                     getScreenManager().pop();
                     openDestinationSearch();
                   }
+                  @Override
+                  public void onAlternativesRequested() {
+                    getScreenManager().pop();
+                    openRouteAlternatives();
+                  }
 
                   @Override
                   public void onDestinationCleared() {
                     AppPrefs.saveDestination(carContext, null, null);
                     AppPrefs.saveDestinationLabel(carContext, "");
+                    AppPrefs.savePreferredRouteAlternativeIndex(carContext, null);
                     requestRenderSoon();
                     CarToast.makeText(carContext, "Destination cleared", CarToast.LENGTH_SHORT)
                         .show();
@@ -253,6 +306,7 @@ public final class RouteMapScreen extends Screen implements DefaultLifecycleObse
                   public void onDestinationSelected(CarRoutingClient.AddressCandidate candidate) {
                     AppPrefs.saveDestination(carContext, candidate.lat, candidate.lon);
                     AppPrefs.saveDestinationLabel(carContext, candidate.displayName);
+                    AppPrefs.savePreferredRouteAlternativeIndex(carContext, null);
                     followVehicle = true;
                     requestRenderSoon();
                     CarToast.makeText(
@@ -267,6 +321,7 @@ public final class RouteMapScreen extends Screen implements DefaultLifecycleObse
                   public void onDestinationCleared() {
                     AppPrefs.saveDestination(carContext, null, null);
                     AppPrefs.saveDestinationLabel(carContext, "");
+                    AppPrefs.savePreferredRouteAlternativeIndex(carContext, null);
                     requestRenderSoon();
                     CarToast.makeText(carContext, "Destination cleared", CarToast.LENGTH_SHORT)
                         .show();
@@ -683,6 +738,7 @@ public final class RouteMapScreen extends Screen implements DefaultLifecycleObse
   private void applyResolvedDestination(double lat, double lon, String label) {
     AppPrefs.saveDestination(carContext, lat, lon);
     AppPrefs.saveDestinationLabel(carContext, label);
+    AppPrefs.savePreferredRouteAlternativeIndex(carContext, null);
     followVehicle = true;
     requestRenderSoon();
     fetchRouteOptionsPreview(lat, lon);

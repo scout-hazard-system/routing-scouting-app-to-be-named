@@ -30,6 +30,7 @@ import java.util.Comparator;
 import java.util.Deque;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
@@ -270,6 +271,7 @@ public final class BackendServer {
   private static final Map<String, TimingStats> REQUEST_STATS = new ConcurrentHashMap<>();
   private static final Map<String, TimingStats> HELPER_STATS = new ConcurrentHashMap<>();
   private static final Map<String, AddressCatalogEntry> ADDRESS_CATALOG = new ConcurrentHashMap<>();
+  private static final List<AddressCatalogEntry> CITY_CATALOG_ALIASES = buildCityCatalogAliases();
   private static final Map<String, TimedStringValue> OSRM_ROUTE_CACHE = new ConcurrentHashMap<>();
   private static final Map<String, TimedStringValue> OSRM_ALT_CACHE = new ConcurrentHashMap<>();
   private static final Map<String, TimedStringValue> SUGGEST_POI_SCENE_CACHE = new ConcurrentHashMap<>();
@@ -799,6 +801,22 @@ public final class BackendServer {
       this.lat = lat;
       this.lon = lon;
       this.updatedAtMs = updatedAtMs;
+    }
+  }
+  private static final class CityCatalogSeed {
+    private final String cityName;
+    private final String stateAbbrev;
+    private final String stateName;
+    private final double lat;
+    private final double lon;
+
+    private CityCatalogSeed(
+        String cityName, String stateAbbrev, String stateName, double lat, double lon) {
+      this.cityName = cityName;
+      this.stateAbbrev = stateAbbrev;
+      this.stateName = stateName;
+      this.lat = lat;
+      this.lon = lon;
     }
   }
   private static final class ErrorReportEntry {
@@ -2037,6 +2055,55 @@ public final class BackendServer {
     return score;
   }
 
+  private static List<AddressCatalogEntry> buildCityCatalogAliases() {
+    List<CityCatalogSeed> seeds =
+        List.of(
+            new CityCatalogSeed("San Francisco", "CA", "California", 37.7749, -122.4194),
+            new CityCatalogSeed("Los Angeles", "CA", "California", 34.0522, -118.2437),
+            new CityCatalogSeed("San Diego", "CA", "California", 32.7157, -117.1611),
+            new CityCatalogSeed("Sacramento", "CA", "California", 38.5816, -121.4944),
+            new CityCatalogSeed("Seattle", "WA", "Washington", 47.6062, -122.3321),
+            new CityCatalogSeed("Portland", "OR", "Oregon", 45.5152, -122.6784),
+            new CityCatalogSeed("Las Vegas", "NV", "Nevada", 36.1699, -115.1398),
+            new CityCatalogSeed("Phoenix", "AZ", "Arizona", 33.4484, -112.0740),
+            new CityCatalogSeed("Denver", "CO", "Colorado", 39.7392, -104.9903),
+            new CityCatalogSeed("Dallas", "TX", "Texas", 32.7767, -96.7970),
+            new CityCatalogSeed("Houston", "TX", "Texas", 29.7604, -95.3698),
+            new CityCatalogSeed("Austin", "TX", "Texas", 30.2672, -97.7431),
+            new CityCatalogSeed("Chicago", "IL", "Illinois", 41.8781, -87.6298),
+            new CityCatalogSeed("New York", "NY", "New York", 40.7128, -74.0060),
+            new CityCatalogSeed("Boston", "MA", "Massachusetts", 42.3601, -71.0589),
+            new CityCatalogSeed("Miami", "FL", "Florida", 25.7617, -80.1918),
+            new CityCatalogSeed("Orlando", "FL", "Florida", 28.5383, -81.3792),
+            new CityCatalogSeed("Atlanta", "GA", "Georgia", 33.7490, -84.3880),
+            new CityCatalogSeed("Washington", "DC", "District of Columbia", 38.9072, -77.0369));
+    Map<String, AddressCatalogEntry> aliases = new LinkedHashMap<>();
+    for (CityCatalogSeed seed : seeds) {
+      String city = seed.cityName.trim();
+      String abbrev = seed.stateAbbrev.trim().toUpperCase(Locale.ROOT);
+      String stateName = seed.stateName.trim();
+      String display = city + ", " + abbrev;
+      List<String> variants =
+          List.of(
+              city,
+              city + " " + abbrev,
+              city + ", " + abbrev,
+              city + " " + stateName,
+              city + ", " + stateName,
+              city + " " + abbrev + " usa");
+      for (String variant : variants) {
+        String key = normalizeCatalogQuery(variant);
+        if (key.isEmpty()) {
+          continue;
+        }
+        aliases.putIfAbsent(
+            key,
+            new AddressCatalogEntry(key, display, "city_catalog", seed.lat, seed.lon, 0L));
+      }
+    }
+    return new ArrayList<>(aliases.values());
+  }
+
   private static String suggestionEntryToJson(SuggestionEntry entry, double score, String shardTier) {
     return "{"
         + "\"display_name\":\"" + jsonEscape(entry.displayName) + "\","
@@ -2346,6 +2413,37 @@ public final class BackendServer {
     return score;
   }
 
+  private static double cityCatalogTextScore(String queryKey, String candidateKey) {
+    if (queryKey.isEmpty() || candidateKey.isEmpty()) {
+      return 0.0;
+    }
+    if (queryKey.equals(candidateKey)) {
+      return 1800.0;
+    }
+    double score = 0.0;
+    if (candidateKey.startsWith(queryKey)) {
+      score += 650.0;
+    } else if (candidateKey.contains(queryKey)) {
+      score += 220.0;
+    }
+    score += catalogTokenOverlapScore(queryKey, candidateKey);
+    List<String> queryTokens = splitWords(queryKey);
+    List<String> candidateTokens = splitWords(candidateKey);
+    for (String qt : queryTokens) {
+      for (String ct : candidateTokens) {
+        if (ct.equals(qt)) {
+          score += 45.0;
+          break;
+        }
+        if (ct.startsWith(qt)) {
+          score += 18.0;
+          break;
+        }
+      }
+    }
+    return score;
+  }
+
   private static List<SuggestionEntry> parseGeocodeSuggestionEntries(String geocodeBody, int limit) {
     List<SuggestionEntry> out = new ArrayList<>();
     if (geocodeBody == null || geocodeBody.isBlank() || !looksLikeJson(geocodeBody)) {
@@ -2421,6 +2519,22 @@ public final class BackendServer {
           suggestTextScore(queryKey, entry.queryKey)
               + shardScoreFor(entry.lat, entry.lon, biasLat, biasLon, hasBias)
               + nearbyDistanceScore(entry.lat, entry.lon, biasLat, biasLon, hasBias);
+      if (score > 0.0) {
+        scored.add(Map.entry(candidate, score));
+      }
+    }
+    for (AddressCatalogEntry cityEntry : CITY_CATALOG_ALIASES) {
+      SuggestionEntry candidate =
+          new SuggestionEntry(cityEntry.displayName, cityEntry.source, cityEntry.lat, cityEntry.lon, 0L);
+      double textScore = cityCatalogTextScore(queryKey, cityEntry.queryKey);
+      if (textScore < 60.0) {
+        continue;
+      }
+      double score =
+          textScore
+              + shardScoreFor(cityEntry.lat, cityEntry.lon, biasLat, biasLon, hasBias)
+              + nearbyDistanceScore(cityEntry.lat, cityEntry.lon, biasLat, biasLon, hasBias)
+              + 90.0;
       if (score > 0.0) {
         scored.add(Map.entry(candidate, score));
       }
@@ -2579,6 +2693,16 @@ public final class BackendServer {
         scored.add(Map.entry(entry, score));
       }
     }
+    for (AddressCatalogEntry cityEntry : CITY_CATALOG_ALIASES) {
+      double baseScore = catalogMatchScore(key, cityEntry, biasLat, biasLon, hasBias);
+      if (baseScore <= 0.0) {
+        continue;
+      }
+      double score = baseScore + 90.0;
+      if (score > 0.0) {
+        scored.add(Map.entry(cityEntry, score));
+      }
+    }
     if (scored.isEmpty()) {
       return "{"
           + "\"ts\":\"" + Instant.now().toString() + "\","
@@ -2596,8 +2720,18 @@ public final class BackendServer {
           return Long.compare(b.getKey().updatedAtMs, a.getKey().updatedAtMs);
         });
     List<AddressCatalogEntry> results = new ArrayList<>();
-    for (int i = 0; i < scored.size() && i < 5; i++) {
-      results.add(scored.get(i).getKey());
+    Set<String> dedupe = new HashSet<>();
+    for (int i = 0; i < scored.size() && results.size() < 5; i++) {
+      AddressCatalogEntry candidate = scored.get(i).getKey();
+      String dedupeKey =
+          normalizeCatalogQuery(candidate.displayName)
+              + "|"
+              + String.format(Locale.ROOT, "%.5f,%.5f", candidate.lat, candidate.lon);
+      if (dedupe.contains(dedupeKey)) {
+        continue;
+      }
+      dedupe.add(dedupeKey);
+      results.add(candidate);
     }
     AddressCatalogEntry best = results.get(0);
     String matchType = key.equals(best.queryKey) ? "exact" : "fuzzy";

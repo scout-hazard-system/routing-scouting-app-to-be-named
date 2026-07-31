@@ -33,6 +33,33 @@ final class CarRoutingClient {
     }
   }
 
+  static final class RouteAlternative {
+    final int index;
+    final double distanceMeters;
+    final double durationSeconds;
+    final double etaSpeedLimitSeconds;
+    final double maxspeedCoverage;
+    final boolean hasTollHint;
+    final boolean hasFerryHint;
+
+    RouteAlternative(
+        int index,
+        double distanceMeters,
+        double durationSeconds,
+        double etaSpeedLimitSeconds,
+        double maxspeedCoverage,
+        boolean hasTollHint,
+        boolean hasFerryHint) {
+      this.index = index;
+      this.distanceMeters = distanceMeters;
+      this.durationSeconds = durationSeconds;
+      this.etaSpeedLimitSeconds = etaSpeedLimitSeconds;
+      this.maxspeedCoverage = maxspeedCoverage;
+      this.hasTollHint = hasTollHint;
+      this.hasFerryHint = hasFerryHint;
+    }
+  }
+
   static final class RouteOptionsSummary {
     final int alternatives;
     final double shortestMeters;
@@ -81,8 +108,6 @@ final class CarRoutingClient {
       deduped.putIfAbsent(keyFor(catalog), catalog);
     }
 
-    // Only fall back to geocode when catalog has no matches, so Android Auto
-    // route search remains anchored to learned/persisted destinations.
     if (deduped.isEmpty()) {
       List<AddressCandidate> geocode = fetchGeocodeFallback(baseUrl, trimmed, biasLat, biasLon, 6);
       for (AddressCandidate candidate : geocode) {
@@ -125,6 +150,84 @@ final class CarRoutingClient {
 
   RouteOptionsSummary fetchRouteOptions(
       String baseUrl, double originLat, double originLon, double destLat, double destLon) {
+    JSONObject json = fetchRouteOptionsJson(baseUrl, originLat, originLon, destLat, destLon);
+    if (json == null) {
+      return null;
+    }
+    JSONArray alternatives = json.optJSONArray("alternatives");
+    if (alternatives == null || alternatives.length() == 0) {
+      return null;
+    }
+    double shortest = Double.POSITIVE_INFINITY;
+    double fastest = Double.POSITIVE_INFINITY;
+    boolean toll = false;
+    boolean ferry = false;
+    for (int i = 0; i < alternatives.length(); i++) {
+      JSONObject alt = alternatives.optJSONObject(i);
+      if (alt == null) {
+        continue;
+      }
+      double dist = alt.optDouble("distance_m", Double.NaN);
+      double dur = alt.optDouble("duration_s", Double.NaN);
+      if (Double.isFinite(dist) && dist < shortest) {
+        shortest = dist;
+      }
+      if (Double.isFinite(dur) && dur > 0.0 && dur < fastest) {
+        fastest = dur;
+      }
+      toll = toll || alt.optBoolean("has_toll_hint", false);
+      ferry = ferry || alt.optBoolean("has_ferry_hint", false);
+    }
+    JSONObject hazards = json.optJSONObject("waze_hazards");
+    String hazardStatus = hazards != null ? hazards.optString("status", "unknown") : "unknown";
+    JSONObject wazeRoute = json.optJSONObject("waze_route");
+    String wazeRouteMode = wazeRoute != null ? wazeRoute.optString("mode", "unknown") : "unknown";
+    String wazeAppUrl = wazeRoute != null ? wazeRoute.optString("app_url", "") : "";
+    if (!Double.isFinite(shortest)) {
+      shortest = 0.0;
+    }
+    if (!Double.isFinite(fastest)) {
+      fastest = 0.0;
+    }
+    return new RouteOptionsSummary(
+        alternatives.length(),
+        shortest,
+        fastest,
+        toll,
+        ferry,
+        hazardStatus,
+        wazeRouteMode,
+        wazeAppUrl);
+  }
+
+  List<RouteAlternative> fetchRouteAlternatives(
+      String baseUrl, double originLat, double originLon, double destLat, double destLon) {
+    JSONObject json = fetchRouteOptionsJson(baseUrl, originLat, originLon, destLat, destLon);
+    JSONArray alternatives = json != null ? json.optJSONArray("alternatives") : null;
+    List<RouteAlternative> out = new ArrayList<>();
+    if (alternatives == null) {
+      return out;
+    }
+    for (int i = 0; i < alternatives.length(); i++) {
+      JSONObject alt = alternatives.optJSONObject(i);
+      if (alt == null) {
+        continue;
+      }
+      out.add(
+          new RouteAlternative(
+              alt.optInt("index", i),
+              alt.optDouble("distance_m", 0.0),
+              alt.optDouble("duration_s", 0.0),
+              alt.optDouble("eta_speed_limit_s", 0.0),
+              alt.optDouble("maxspeed_coverage", 0.0),
+              alt.optBoolean("has_toll_hint", false),
+              alt.optBoolean("has_ferry_hint", false)));
+    }
+    return out;
+  }
+
+  private JSONObject fetchRouteOptionsJson(
+      String baseUrl, double originLat, double originLon, double destLat, double destLon) {
     String url =
         baseUrl
             + "/api/platform/route/options?origin_lat="
@@ -145,46 +248,7 @@ final class CarRoutingClient {
       if (alternatives == null || alternatives.length() == 0) {
         return null;
       }
-      double shortest = Double.POSITIVE_INFINITY;
-      double fastest = Double.POSITIVE_INFINITY;
-      boolean toll = false;
-      boolean ferry = false;
-      for (int i = 0; i < alternatives.length(); i++) {
-        JSONObject alt = alternatives.optJSONObject(i);
-        if (alt == null) {
-          continue;
-        }
-        double dist = alt.optDouble("distance_m", Double.NaN);
-        double dur = alt.optDouble("duration_s", Double.NaN);
-        if (Double.isFinite(dist) && dist < shortest) {
-          shortest = dist;
-        }
-        if (Double.isFinite(dur) && dur > 0.0 && dur < fastest) {
-          fastest = dur;
-        }
-        toll = toll || alt.optBoolean("has_toll_hint", false);
-        ferry = ferry || alt.optBoolean("has_ferry_hint", false);
-      }
-      JSONObject hazards = json.optJSONObject("waze_hazards");
-      String hazardStatus = hazards != null ? hazards.optString("status", "unknown") : "unknown";
-      JSONObject wazeRoute = json.optJSONObject("waze_route");
-      String wazeRouteMode = wazeRoute != null ? wazeRoute.optString("mode", "unknown") : "unknown";
-      String wazeAppUrl = wazeRoute != null ? wazeRoute.optString("app_url", "") : "";
-      if (!Double.isFinite(shortest)) {
-        shortest = 0.0;
-      }
-      if (!Double.isFinite(fastest)) {
-        fastest = 0.0;
-      }
-      return new RouteOptionsSummary(
-          alternatives.length(),
-          shortest,
-          fastest,
-          toll,
-          ferry,
-          hazardStatus,
-          wazeRouteMode,
-          wazeAppUrl);
+      return json;
     } catch (Exception ignored) {
       return null;
     }
@@ -307,7 +371,11 @@ final class CarRoutingClient {
   }
 
   private String keyFor(AddressCandidate candidate) {
-    return fmt(candidate.lat) + "|" + fmt(candidate.lon) + "|" + candidate.displayName.toLowerCase(Locale.ROOT);
+    return fmt(candidate.lat)
+        + "|"
+        + fmt(candidate.lon)
+        + "|"
+        + candidate.displayName.toLowerCase(Locale.ROOT);
   }
 
   private String biasParams(Double biasLat, Double biasLon) {

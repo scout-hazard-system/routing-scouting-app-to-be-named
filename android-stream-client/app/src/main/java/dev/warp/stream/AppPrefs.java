@@ -26,6 +26,7 @@ public final class AppPrefs {
   private static final String KEY_DEST_LAT = "dest_lat";
   private static final String KEY_DEST_LON = "dest_lon";
   private static final String KEY_DEST_LABEL = "dest_label";
+  private static final String KEY_PREFERRED_ROUTE_ALT_INDEX = "preferred_route_alt_index";
   private static final String KEY_ACTIVE_TRACKING_ENABLED = "active_tracking_enabled";
   private static final String KEY_TRACKING_CONSENT_RESOLVED = "tracking_consent_resolved";
   private static final String KEY_ANALYTICS_ENABLED = "analytics_enabled";
@@ -203,6 +204,25 @@ public final class AppPrefs {
 
   public static String destinationLabel(Context context) {
     return prefs(context).getString(KEY_DEST_LABEL, "");
+  }
+
+  public static void savePreferredRouteAlternativeIndex(Context context, Integer index) {
+    SharedPreferences.Editor editor = prefs(context).edit();
+    if (index == null || index < 0) {
+      editor.remove(KEY_PREFERRED_ROUTE_ALT_INDEX);
+    } else {
+      editor.putInt(KEY_PREFERRED_ROUTE_ALT_INDEX, index);
+    }
+    editor.apply();
+  }
+
+  public static Integer preferredRouteAlternativeIndex(Context context) {
+    SharedPreferences p = prefs(context);
+    if (!p.contains(KEY_PREFERRED_ROUTE_ALT_INDEX)) {
+      return null;
+    }
+    int value = p.getInt(KEY_PREFERRED_ROUTE_ALT_INDEX, -1);
+    return value >= 0 ? value : null;
   }
 
   public static boolean isActiveTrackingEnabled(Context context) {

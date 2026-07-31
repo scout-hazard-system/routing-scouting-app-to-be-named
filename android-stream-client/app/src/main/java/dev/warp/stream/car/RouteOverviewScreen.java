@@ -19,6 +19,7 @@ import java.util.concurrent.Executors;
 final class RouteOverviewScreen extends Screen {
   interface Controller {
     void onSearchRequested();
+    void onAlternativesRequested();
 
     void onDestinationCleared();
   }
@@ -75,9 +76,23 @@ final class RouteOverviewScreen extends Screen {
                       dest[1]))
               .build());
       pane.addRow(new Row.Builder().setTitle(summaryLine).build());
+      Integer preferredAlt = AppPrefs.preferredRouteAlternativeIndex(getCarContext());
+      if (preferredAlt != null) {
+        pane.addRow(
+            new Row.Builder()
+                .setTitle("Preferred route: " + (preferredAlt + 1))
+                .addText("Selected from Android Auto alternatives")
+                .build());
+      }
       if (!hazardLine.isBlank()) {
         pane.addRow(new Row.Builder().setTitle(hazardLine).build());
       }
+      pane.addRow(
+          new Row.Builder()
+              .setTitle("Route alternatives")
+              .addText("Compare and prefer route variants")
+              .setOnClickListener(controller::onAlternativesRequested)
+              .build());
       pane.addRow(
           new Row.Builder()
               .setTitle("Search destination")
