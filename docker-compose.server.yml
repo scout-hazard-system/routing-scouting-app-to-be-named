@@ -22,6 +22,7 @@ services:
       BROADCASTIFY_SELECTOR_OLLAMA_MODEL: scout-rank
       BROADCASTIFY_SELECTOR_OLLAMA_URL: http://host.docker.internal:11434/api/generate
       BACKEND_HELPER_TIMEOUT_SECONDS: 90
+      STACK_MANAGE_SCRIPT_PATH: /workspace/run_vehicle_stack.sh
     volumes:
       - ./:/workspace
       - ${DOCKER_PIPELINE_LOG_DIR:-/tmp}:/host-tmp:ro

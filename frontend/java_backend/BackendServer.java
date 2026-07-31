@@ -68,6 +68,10 @@ public final class BackendServer {
       Pattern.compile("\"distance\"\\s*:\\s*([0-9]+(?:\\.[0-9]+)?)");
   private static final Pattern OSRM_DURATION_PATTERN =
       Pattern.compile("\"duration\"\\s*:\\s*([0-9]+(?:\\.[0-9]+)?)");
+  private static final Pattern OSRM_TOLL_CLASS_PATTERN =
+      Pattern.compile("\\\"classes\\\"\\s*:\\s*\\[[^\\]]*\\\"toll\\\"[^\\]]*\\]");
+  private static final Pattern OSRM_FERRY_CLASS_PATTERN =
+      Pattern.compile("\\\"classes\\\"\\s*:\\s*\\[[^\\]]*\\\"ferry\\\"[^\\]]*\\]");
   private static final Pattern ALERT_COORD_PATTERN =
       Pattern.compile("\\b(-?\\d{1,2}\\.\\d+)\\s*[, ]\\s*(-?\\d{1,3}\\.\\d+)\\b");
   private static final String WEATHER_PROVIDER = System.getenv().getOrDefault("WEATHER_PROVIDER", "mock");
@@ -211,7 +215,9 @@ public final class BackendServer {
       System.getenv().getOrDefault("BACKEND_PULL_ALLOWLIST", "127.0.0.1,::1,localhost");
   private static final String SECURE_PULL_ALLOW_CIDRS_RAW =
       System.getenv()
-          .getOrDefault("BACKEND_PULL_ALLOW_CIDRS", "100.64.0.0/10,127.0.0.1/32,::1/128");
+          .getOrDefault(
+              "BACKEND_PULL_ALLOW_CIDRS",
+              "100.64.0.0/10,127.0.0.1/32,::1/128,172.16.0.0/12,192.168.0.0/16,10.0.0.0/8");
   private static final String SECURE_PULL_API_KEY =
       System.getenv().getOrDefault("BACKEND_PULL_API_KEY", "");
   private static final String SECURE_PULL_API_KEY_HEADER =
@@ -252,7 +258,7 @@ public final class BackendServer {
                   "ERROR_REPORT_STORE_PATH",
                   "/home/gibi/Desktop/config/error_report_store.tsv"));
   private static final Path LOG_PATH =
-      Path.of(System.getenv().getOrDefault("PIPELINE_LOG_PATH", "/tmp/pipeline_live_doordash.log"));
+      Path.of(System.getenv().getOrDefault("PIPELINE_LOG_PATH", "/tmp/pipeline_live_events.log"));
   private static final String HOST = System.getenv().getOrDefault("JAVA_BACKEND_HOST", DEFAULT_HOST);
   private static final int PORT = parsePort(System.getenv("JAVA_BACKEND_PORT"), DEFAULT_PORT);
   private static final Map<String, TimingStats> REQUEST_STATS = new ConcurrentHashMap<>();
@@ -913,7 +919,7 @@ public final class BackendServer {
   }
 
   private static SnapshotData buildSnapshotData() {
-    List<EventInfo> events = readEventLines(RECENT_EVENT_LIMIT);
+    Deque<EventInfo> events = new ArrayDeque<>(Math.max(RECENT_EVENT_LIMIT, 1));
     Map<String, Integer> eventTypeCounts = new HashMap<>();
     Map<String, Integer> metrics = new HashMap<>();
     metrics.put("captured", 0);
@@ -921,39 +927,59 @@ public final class BackendServer {
     metrics.put("skipped_clipped", 0);
     metrics.put("llm_alert", 0);
     metrics.put("soft_alert_fallback", 0);
+    metrics.put("chunk_total", 0);
 
-    for (EventInfo event : events) {
-      if (!event.eventType.isEmpty()) {
-        eventTypeCounts.merge(event.eventType, 1, Integer::sum);
-      }
-      switch (event.eventType) {
-        case "chunk_captured":
-          metrics.merge("captured", 1, Integer::sum);
-          break;
-        case "chunk_skipped_silence":
-          metrics.merge("skipped_silence", 1, Integer::sum);
-          break;
-        case "chunk_skipped_clipped":
-          metrics.merge("skipped_clipped", 1, Integer::sum);
-          break;
-        case "alert_triggered":
-          if ("soft_alert_fallback".equals(event.kind)) {
-            metrics.merge("soft_alert_fallback", 1, Integer::sum);
-          } else {
-            metrics.merge("llm_alert", 1, Integer::sum);
+    if (Files.exists(LOG_PATH)) {
+      try (BufferedReader reader = Files.newBufferedReader(LOG_PATH, StandardCharsets.UTF_8)) {
+        String line;
+        while ((line = reader.readLine()) != null) {
+          for (String raw : extractEventPayloads(line)) {
+            String eventType = extractStringField(raw, EVENT_TYPE_PATTERN);
+            String kind = extractStringField(raw, KIND_PATTERN);
+            EventInfo event = new EventInfo(raw, eventType, kind);
+            events.addLast(event);
+            while (events.size() > RECENT_EVENT_LIMIT) {
+              events.removeFirst();
+            }
+            if (!eventType.isEmpty()) {
+              eventTypeCounts.merge(eventType, 1, Integer::sum);
+            }
+            if (eventType.startsWith("chunk_")) {
+              metrics.merge("chunk_total", 1, Integer::sum);
+            }
+            switch (eventType) {
+              case "chunk_captured":
+                metrics.merge("captured", 1, Integer::sum);
+                break;
+              case "chunk_skipped_silence":
+                metrics.merge("skipped_silence", 1, Integer::sum);
+                break;
+              case "chunk_skipped_clipped":
+                metrics.merge("skipped_clipped", 1, Integer::sum);
+                break;
+              case "alert_triggered":
+                if ("soft_alert_fallback".equals(kind)) {
+                  metrics.merge("soft_alert_fallback", 1, Integer::sum);
+                } else {
+                  metrics.merge("llm_alert", 1, Integer::sum);
+                }
+                break;
+              case "run_summary":
+                applyRunSummaryMetrics(metrics, raw);
+                break;
+              default:
+                break;
+            }
           }
-          break;
-        case "run_summary":
-          applyRunSummaryMetrics(metrics, event.rawJson);
-          break;
-        default:
-          break;
+        }
+      } catch (IOException ignored) {
+        // return whatever we accumulated so far
       }
     }
 
-    int fromIndex = Math.max(0, events.size() - SNAPSHOT_EVENT_RETURN_LIMIT);
-    List<EventInfo> recentEvents = events.subList(fromIndex, events.size());
-    return new SnapshotData(recentEvents, eventTypeCounts, metrics);
+    List<EventInfo> recentEvents = new ArrayList<>(events);
+    int fromIndex = Math.max(0, recentEvents.size() - SNAPSHOT_EVENT_RETURN_LIMIT);
+    return new SnapshotData(recentEvents.subList(fromIndex, recentEvents.size()), eventTypeCounts, metrics);
   }
 
   private static void applyRunSummaryMetrics(Map<String, Integer> metrics, String rawJson) {
@@ -968,6 +994,16 @@ public final class BackendServer {
     metrics.put(
         "soft_alert_fallback",
         extractIntField(rawJson, "soft_alert_fallback", metrics.getOrDefault("soft_alert_fallback", 0)));
+    int chunkTotal = extractIntField(rawJson, "chunk_total", -1);
+    if (chunkTotal >= 0) {
+      metrics.put("chunk_total", chunkTotal);
+    } else {
+      int fallbackChunkTotal =
+          metrics.getOrDefault("captured", 0)
+              + metrics.getOrDefault("skipped_silence", 0)
+              + metrics.getOrDefault("skipped_clipped", 0);
+      metrics.put("chunk_total", Math.max(metrics.getOrDefault("chunk_total", 0), fallbackChunkTotal));
+    }
   }
 
   private static List<EventInfo> readEventLines(int maxEvents) {
@@ -1075,6 +1111,7 @@ public final class BackendServer {
         + "\"captured\":" + map.getOrDefault("captured", 0) + ","
         + "\"skipped_silence\":" + map.getOrDefault("skipped_silence", 0) + ","
         + "\"skipped_clipped\":" + map.getOrDefault("skipped_clipped", 0) + ","
+        + "\"chunk_total\":" + map.getOrDefault("chunk_total", 0) + ","
         + "\"llm_alert\":" + map.getOrDefault("llm_alert", 0) + ","
         + "\"soft_alert_fallback\":" + map.getOrDefault("soft_alert_fallback", 0)
         + "}";
@@ -2843,7 +2880,7 @@ public final class BackendServer {
             + trimDouble(destLon)
             + ","
             + trimDouble(destLat)
-            + "?overview=full&geometries=geojson&alternatives=true&steps=false";
+            + "?overview=full&geometries=geojson&alternatives=true&steps=true";
     String body = httpGetExternal(url);
     if (body == null || !body.contains("\"code\":\"Ok\"")) {
       return null;
@@ -2990,10 +3027,17 @@ public final class BackendServer {
               nodes,
               dist != null ? dist : approximateRouteMeters(nodes),
               duration != null ? duration : 0.0,
-              routeObject.contains("toll"),
-              routeObject.contains("ferry")));
+              hasRouteClassHint(routeObject, OSRM_TOLL_CLASS_PATTERN),
+              hasRouteClassHint(routeObject, OSRM_FERRY_CLASS_PATTERN)));
     }
     return alternatives;
+  }
+
+  private static boolean hasRouteClassHint(String routeObject, Pattern classPattern) {
+    if (routeObject == null || routeObject.isBlank()) {
+      return false;
+    }
+    return classPattern.matcher(routeObject).find();
   }
 
   private static Double parseOsrmDurationSeconds(String osrmBody) {
@@ -3115,13 +3159,6 @@ public final class BackendServer {
               new RouteAlternative(
                   fallback, approximateRouteMeters(fallback), 0.0, false, false));
     }
-    String hazards = fetchWazeHazardsJson(originLat, originLon, destLat, destLon);
-    Map<String, String> wazeQuery = new HashMap<>();
-    wazeQuery.put("start", query.getOrDefault("start", ""));
-    wazeQuery.put("end", query.getOrDefault("end", ""));
-    wazeQuery.put("lat", trimDouble(destLat));
-    wazeQuery.put("lon", trimDouble(destLon));
-    WazeRouteData wazeRoute = buildWazeRoute(wazeQuery);
     Map<String, String> clusterQuery = new HashMap<>();
     // Route options typically span larger geographies than local incident maps;
     // use a coarser default grid so multi-state previews stay readable.
@@ -3133,8 +3170,6 @@ public final class BackendServer {
         + "\"origin\":{\"lat\":" + trimDouble(originLat) + ",\"lon\":" + trimDouble(originLon) + "},"
         + "\"destination\":{\"lat\":" + trimDouble(destLat) + ",\"lon\":" + trimDouble(destLon) + "},"
         + "\"alternatives\":" + routeAlternativesToJson(alternatives) + ","
-        + "\"waze_route\":" + wazeRouteToJson(wazeRoute) + ","
-        + "\"waze_hazards\":" + hazards + ","
         + "\"alert_clusters\":" + alertClusters
         + "}";
   }
@@ -4552,7 +4587,7 @@ public final class BackendServer {
         lat = latest.lat;
         lon = latest.lon;
       }
-      double radiusM = parseDouble(query.getOrDefault("radius_m", ""), 700.0);
+      double radiusM = parseDouble(query.getOrDefault("radius_m", ""), 475000.0);
       int zoom = parseIntOrDefault(query.getOrDefault("zoom", ""), 0); // 0 = auto (resolution filter)
       String sceneJson = ProprietaryMapEngine.sceneJson(lat, lon, radiusM, zoom);
       writeJson(exchange, 200, appendAlertClustersToSceneJson(sceneJson, radiusM));
@@ -4578,7 +4613,7 @@ public final class BackendServer {
         lat = latest.lat;
         lon = latest.lon;
       }
-      double mpp = parseDouble(query.getOrDefault("mpp", ""), 1.2);
+      double mpp = parseDouble(query.getOrDefault("mpp", ""), 35.0);
       double heading = parseDouble(query.getOrDefault("heading", ""), 0.0);
       double tilt = parseDouble(query.getOrDefault("tilt", ""), 45.0);
       int w = parseIntOrDefault(query.getOrDefault("w", ""), 720);

@@ -19,7 +19,7 @@ javac BackendServer.java MapModel.java PlanetTileStore.java ProprietaryMapEngine
 
 Run:
 ```bash
-PIPELINE_LOG_PATH=/tmp/pipeline_live_doordash.log JAVA_BACKEND_PORT=8080 java BackendServer
+PIPELINE_LOG_PATH=/tmp/pipeline_live_events.log JAVA_BACKEND_PORT=8080 java BackendServer
 ```
 
 Executable JAR build:
