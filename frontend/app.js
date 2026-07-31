@@ -499,14 +499,14 @@ function setFollowMode(enabled) {
 }
 function mapRadiusForZoom(zoom) {
   const z = Number.isFinite(zoom) ? zoom : 9;
-  if (z >= 15) return 700;
-  if (z >= 14) return 1100;
-  if (z >= 13) return 1700;
-  if (z >= 12) return 2600;
-  if (z >= 11) return 4200;
-  if (z >= 10) return 6500;
-  if (z >= 9) return 9500;
-  return 14000;
+  if (z >= 15) return 35000;
+  if (z >= 14) return 55000;
+  if (z >= 13) return 85000;
+  if (z >= 12) return 130000;
+  if (z >= 11) return 210000;
+  if (z >= 10) return 325000;
+  if (z >= 9) return 475000;
+  return 700000;
 }
 function setBackendMapStatus(text) {
   if (!ui.backendMapStatus) return;
