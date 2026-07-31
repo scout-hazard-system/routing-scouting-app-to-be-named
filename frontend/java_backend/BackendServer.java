@@ -22,10 +22,12 @@ import java.net.UnknownHostException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.security.SecureRandom;
 import java.time.Instant;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Base64;
 import java.util.Comparator;
 import java.util.Deque;
 import java.util.HashMap;
@@ -36,12 +38,17 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import javax.crypto.Mac;
+import javax.crypto.spec.SecretKeySpec;
 import javax.imageio.ImageIO;
 
 public final class BackendServer {
@@ -50,6 +57,23 @@ public final class BackendServer {
   private static final int RECENT_EVENT_LIMIT = 120;
   private static final int SNAPSHOT_EVENT_RETURN_LIMIT = 30;
   private static final int MOBILE_EVENT_RETURN_LIMIT = 12;
+  private static final int ASSISTANT_STREAM_EVENT_RETURN_LIMIT =
+      parseIntOrDefault(System.getenv("ASSISTANT_STREAM_EVENT_RETURN_LIMIT"), 40);
+  private static final int ASSISTANT_CONTEXT_MAX_CHARS =
+      parseIntOrDefault(System.getenv("ASSISTANT_CONTEXT_MAX_CHARS"), 24000);
+  private static final int ASSISTANT_HIGH_LOAD_CONTEXT_MAX_CHARS =
+      parseIntOrDefault(System.getenv("ASSISTANT_HIGH_LOAD_CONTEXT_MAX_CHARS"), 14000);
+  private static final int ASSISTANT_TOOL_SECTION_MAX_CHARS =
+      parseIntOrDefault(System.getenv("ASSISTANT_TOOL_SECTION_MAX_CHARS"), 4200);
+  private static final boolean ASSISTANT_INCLUDE_ROUTE_CONTEXT =
+      "true".equalsIgnoreCase(
+          System.getenv().getOrDefault("ASSISTANT_INCLUDE_ROUTE_CONTEXT", "false"));
+  private static final int ASSISTANT_HIGH_QUERY_THRESHOLD =
+      parseIntOrDefault(System.getenv("ASSISTANT_HIGH_QUERY_THRESHOLD"), 12);
+  private static final long ASSISTANT_HIGH_QUERY_WINDOW_MS =
+      parseLongOrDefault(System.getenv("ASSISTANT_HIGH_QUERY_WINDOW_MS"), 60000L);
+  private static final long ASSISTANT_TOOL_FANOUT_TIMEOUT_MS =
+      parseLongOrDefault(System.getenv("ASSISTANT_TOOL_FANOUT_TIMEOUT_MS"), 4500L);
   private static final long STREAM_POLL_MILLIS = 350L;
   private static final long CLIENT_ROUTE_TTL_MS =
       parseLongOrDefault(System.getenv("CLIENT_ROUTE_TTL_MS"), 300000L);
@@ -136,7 +160,7 @@ public final class BackendServer {
   private static final double OSM_MAXSPEED_FALLBACK_MPH = 30.0;
   private static final double OSM_MAXSPEED_FALLBACK_MPS = OSM_MAXSPEED_FALLBACK_MPH * 0.44704;
   private static final long OSRM_CACHE_TTL_MS =
-      parseLongOrDefault(System.getenv("OSRM_CACHE_TTL_MS"), 15000L);
+      parseLongOrDefault(System.getenv("OSRM_CACHE_TTL_MS"), 5000L);
   private static final int OSRM_CACHE_MAX_ENTRIES =
       parseIntOrDefault(System.getenv("OSRM_CACHE_MAX_ENTRIES"), 512);
   private static final long LLM_STATUS_CACHE_TTL_MS =
@@ -176,6 +200,10 @@ public final class BackendServer {
       System.getenv().getOrDefault("BROADCASTIFY_SELECTOR_OLLAMA_WEIGHT", "0.2");
   private static final int HELPER_PROCESS_TIMEOUT_SECONDS =
       parseIntOrDefault(System.getenv("BACKEND_HELPER_TIMEOUT_SECONDS"), 90);
+  private static final String LLM_SET_CLIENT_SCRIPT_PATH =
+      System.getenv().getOrDefault("LLM_SET_CLIENT_SCRIPT_PATH", "/home/gibi/Desktop/llm_set_client.py");
+  private static final int LLM_CHAT_HELPER_TIMEOUT_SECONDS =
+      parseIntOrDefault(System.getenv("LLM_CHAT_HELPER_TIMEOUT_SECONDS"), 45);
   private static final String STACK_MANAGE_SCRIPT_PATH =
       System.getenv().getOrDefault("STACK_MANAGE_SCRIPT_PATH", "/home/gibi/Desktop/start_termius_stack.sh");
   private static final int STACK_MANAGE_TIMEOUT_SECONDS =
@@ -188,7 +216,7 @@ public final class BackendServer {
       System.getenv().getOrDefault("OLLAMA_TAGS_URL", "http://localhost:11434/api/tags");
   private static final String LLM_BASE_MODEL =
       System.getenv().getOrDefault("LLM_BASE_MODEL", "llama3.1");
-  private static final String[] SCOUT_MODELS = {"scout-core1.0.3", "scout-vet1.0.4", "scout-rank"};
+  private static final String[] SCOUT_MODELS = {"scout-core1.0.8", "scout-vet1.0.8", "scout-rank"};
   private static final Pattern MODEL_NAME_PATTERN = Pattern.compile("\"name\"\\s*:\\s*\"([^\"]+)\"");
   private static final int METRICS_MAX_ITEMS =
       parseIntOrDefault(System.getenv("BACKEND_METRICS_MAX_ITEMS"), 12);
@@ -233,11 +261,33 @@ public final class BackendServer {
       System.getenv().getOrDefault("BACKEND_CLIENT_PULL_TOKEN_HEADER", "X-Client-Pull-Token");
   private static final String ANALYTICS_OPT_OUT_HEADER =
       System.getenv().getOrDefault("BACKEND_ANALYTICS_OPT_OUT_HEADER", "X-Client-Analytics-Opt-Out");
+  private static final String SHARE_ETA_SIGNING_SECRET =
+      initShareEtaSigningSecret(
+          System.getenv().getOrDefault("SHARE_ETA_SIGNING_SECRET", ""));
+  private static final String SHARE_ETA_PUBLIC_BASE_URL =
+      System.getenv().getOrDefault("SHARE_ETA_PUBLIC_BASE_URL", "").trim();
+  private static final long SHARE_ETA_TOKEN_TTL_SECONDS =
+      clampLong(parseLongOrDefault(System.getenv("SHARE_ETA_TOKEN_TTL_SECONDS"), 1800L), 60L, 86400L);
+  private static final int SHARE_ETA_DEST_LABEL_MAX_CHARS =
+      parseIntOrDefault(System.getenv("SHARE_ETA_DEST_LABEL_MAX_CHARS"), 96);
+  private static final int SHARE_ETA_MAX_ALERT_ITEMS =
+      parseIntOrDefault(System.getenv("SHARE_ETA_MAX_ALERT_ITEMS"), 4);
+  private static final double SHARE_ETA_NEARBY_RADIUS_METERS =
+      parseDouble(System.getenv("SHARE_ETA_NEARBY_RADIUS_METERS"), 30000.0);
+  private static final Pattern SHARE_ROUTE_DISTANCE_PATTERN =
+      Pattern.compile("\\\"distance_m\\\"\\s*:\\s*([0-9]+(?:\\.[0-9]+)?)");
+  private static final Pattern SHARE_ROUTE_DURATION_PATTERN =
+      Pattern.compile("\\\"duration_s\\\"\\s*:\\s*([0-9]+(?:\\.[0-9]+)?)");
+  private static final Pattern SHARE_WEATHER_TEMP_PATTERN =
+      Pattern.compile("\\\"temp\\\"\\s*:\\s*(-?[0-9]+(?:\\.[0-9]+)?)");
+  private static final Pattern SHARE_WEATHER_CONDITION_PATTERN =
+      Pattern.compile("\\\"condition\\\"\\s*:\\s*\\\"([^\\\"]+)\\\"");
   private static final Set<String> SECURE_PULL_ALLOWED_SOURCES =
       parseLowercaseCsv(SECURE_PULL_ALLOWLIST_RAW);
   private static final List<CidrBlock> SECURE_PULL_ALLOWED_CIDRS =
       parseCidrCsv(SECURE_PULL_ALLOW_CIDRS_RAW);
-  private static final Set<String> GLOBAL_PUBLIC_ENDPOINTS = Set.of("/api/health");
+  private static final Set<String> GLOBAL_PUBLIC_ENDPOINTS =
+      Set.of("/api/health", "/api/public/share/eta");
   private static final Set<String> SECURE_PULL_ENDPOINTS =
       Set.of(
           "/api/pipeline/snapshot",
@@ -270,6 +320,52 @@ public final class BackendServer {
   private static final int PORT = parsePort(System.getenv("JAVA_BACKEND_PORT"), DEFAULT_PORT);
   private static final Map<String, TimingStats> REQUEST_STATS = new ConcurrentHashMap<>();
   private static final Map<String, TimingStats> HELPER_STATS = new ConcurrentHashMap<>();
+  private static final Set<String> ALLOWED_CATALOG_STATE_ABBREVS =
+      Set.of(
+          "CA",
+          "OR",
+          "WA",
+          "AZ",
+          "NM",
+          "NV",
+          "UT",
+          "CO",
+          "TX",
+          "ND",
+          "SD",
+          "NE",
+          "KS",
+          "MN",
+          "IA",
+          "MO",
+          "WI",
+          "IL",
+          "IN",
+          "MI",
+          "OH");
+  private static final Map<String, String> STATE_NAME_TO_ABBREV =
+      Map.ofEntries(
+          Map.entry("california", "CA"),
+          Map.entry("oregon", "OR"),
+          Map.entry("washington", "WA"),
+          Map.entry("arizona", "AZ"),
+          Map.entry("new mexico", "NM"),
+          Map.entry("nevada", "NV"),
+          Map.entry("utah", "UT"),
+          Map.entry("colorado", "CO"),
+          Map.entry("texas", "TX"),
+          Map.entry("north dakota", "ND"),
+          Map.entry("south dakota", "SD"),
+          Map.entry("nebraska", "NE"),
+          Map.entry("kansas", "KS"),
+          Map.entry("minnesota", "MN"),
+          Map.entry("iowa", "IA"),
+          Map.entry("missouri", "MO"),
+          Map.entry("wisconsin", "WI"),
+          Map.entry("illinois", "IL"),
+          Map.entry("indiana", "IN"),
+          Map.entry("michigan", "MI"),
+          Map.entry("ohio", "OH"));
   private static final Map<String, AddressCatalogEntry> ADDRESS_CATALOG = new ConcurrentHashMap<>();
   private static final List<AddressCatalogEntry> CITY_CATALOG_ALIASES = buildCityCatalogAliases();
   private static final Map<String, TimedStringValue> OSRM_ROUTE_CACHE = new ConcurrentHashMap<>();
@@ -287,6 +383,8 @@ public final class BackendServer {
   private static final AtomicLong ERROR_REPORT_SEQ = new AtomicLong(1L);
   private static volatile GpsPoint latestGpsPoint = null;
   private static final Object ERROR_REPORT_IO_LOCK = new Object();
+  private static final Object ASSISTANT_QUERY_LOCK = new Object();
+  private static final Deque<Long> ASSISTANT_QUERY_TIMESTAMPS_MS = new ArrayDeque<>();
 
   public static void main(String[] args) throws IOException {
     loadAddressCatalogFromDisk();
@@ -316,6 +414,9 @@ public final class BackendServer {
     registerContext(server, "/api/platform/broadcastify/select", new BroadcastifySelectHandler());
     registerContext(server, "/api/platform/broadcastify/catalog", new BroadcastifyCatalogHandler());
     registerContext(server, "/api/platform/providers/status", new ProviderStatusHandler());
+    registerContext(server, "/api/platform/share/eta/create", new ShareEtaCreateHandler());
+    registerContext(server, "/api/public/share/eta", new ShareEtaPublicHandler());
+    registerContext(server, "/api/platform/assistant/chat", new AssistantChatHandler());
     registerContext(server, "/api/platform/dev/stack/manage", new DevStackManageHandler());
     registerContext(server, "/api/platform/llm/status", new LlmStatusHandler());
     registerContext(server, "/api/mobile/bootstrap", new MobileBootstrapHandler());
@@ -337,6 +438,182 @@ public final class BackendServer {
         PORT,
         LOG_PATH);
     server.start();
+  }
+
+  private static String formatScaledEtaDuration(double durationSeconds) {
+    if (!Double.isFinite(durationSeconds) || durationSeconds <= 0) {
+      return "under 1 min";
+    }
+    long totalMinutes = Math.max(1L, Math.round(durationSeconds / 60.0));
+    long days = totalMinutes / (24L * 60L);
+    long hours = (totalMinutes % (24L * 60L)) / 60L;
+    long minutes = totalMinutes % 60L;
+    List<String> parts = new ArrayList<>();
+    if (days > 0) {
+      parts.add(days + (days == 1 ? " day" : " days"));
+    }
+    if (hours > 0) {
+      parts.add(hours + (hours == 1 ? " hr" : " hrs"));
+    }
+    if (minutes > 0 || parts.isEmpty()) {
+      parts.add(minutes + (minutes == 1 ? " min" : " mins"));
+    }
+    return String.join(" ", parts);
+  }
+
+  private static boolean registerAssistantQueryAndDetectHighLoad() {
+    long now = System.currentTimeMillis();
+    synchronized (ASSISTANT_QUERY_LOCK) {
+      ASSISTANT_QUERY_TIMESTAMPS_MS.addLast(now);
+      while (!ASSISTANT_QUERY_TIMESTAMPS_MS.isEmpty()) {
+        long oldest = ASSISTANT_QUERY_TIMESTAMPS_MS.peekFirst();
+        if ((now - oldest) <= ASSISTANT_HIGH_QUERY_WINDOW_MS) {
+          break;
+        }
+        ASSISTANT_QUERY_TIMESTAMPS_MS.removeFirst();
+      }
+      return ASSISTANT_QUERY_TIMESTAMPS_MS.size() >= ASSISTANT_HIGH_QUERY_THRESHOLD;
+    }
+  }
+
+  private static void appendContextSection(
+      StringBuilder context, String label, String rawValue, int maxChars) {
+    if (rawValue == null || rawValue.isBlank()) {
+      return;
+    }
+    String value = rawValue.trim();
+    if (maxChars > 0 && value.length() > maxChars) {
+      value = value.substring(0, maxChars);
+    }
+    context.append("\n").append(label).append(": ").append(value);
+  }
+
+  private static Map<String, String> buildAssistantToolQuery(Map<String, String> query, String body) {
+    Map<String, String> merged = new HashMap<>(query);
+    String[] scalarKeys = new String[] {"origin_lat", "origin_lon", "dest_lat", "dest_lon"};
+    for (String key : scalarKeys) {
+      String value = extractStringFieldByName(body, key, merged.getOrDefault(key, "")).trim();
+      if (!value.isBlank()) {
+        merged.put(key, value);
+      }
+    }
+    if (!merged.containsKey("lat")) {
+      merged.put("lat", merged.getOrDefault("origin_lat", ""));
+    }
+    if (!merged.containsKey("lon")) {
+      merged.put("lon", merged.getOrDefault("origin_lon", ""));
+    }
+    if (!merged.containsKey("end")) {
+      String destinationLabel =
+          extractStringFieldByName(body, "destination_label", merged.getOrDefault("destination_label", "")).trim();
+      if (!destinationLabel.isBlank()) {
+        merged.put("end", destinationLabel);
+      }
+    }
+    return merged;
+  }
+
+  private static String buildScoutToolDefinitionsText() {
+    return "get_weather(endpoint=/api/platform/weather/forecast; purpose=localized weather + driving impact); "
+        + "check_waze(endpoint=/api/platform/waze/route; purpose=deep-link route intent and coordinates); "
+        + "find_route(endpoint=/api/platform/route/local + /api/platform/route/options; purpose=route geometry/alternatives); "
+        + "cluster_alerts(endpoint=/api/platform/alerts/clusters; purpose=hazard cluster summaries); "
+        + "broadcastify_context(endpoint=/api/mobile/snapshot + /api/platform/broadcastify/select; purpose=live scanner transcript + channel context).";
+  }
+
+  private static String buildScoutToolObservations(Map<String, String> toolQuery, String body) {
+    CompletableFuture<String> weatherFuture =
+        CompletableFuture.supplyAsync(() -> buildWeatherJson(toolQuery));
+    CompletableFuture<String> wazeFuture =
+        CompletableFuture.supplyAsync(() -> wazeRouteToJson(buildWazeRoute(toolQuery)));
+    CompletableFuture<String> routeFuture =
+        CompletableFuture.supplyAsync(() -> buildStandaloneLocalRouteJson(toolQuery));
+    CompletableFuture<String> routeOptionsFuture =
+        CompletableFuture.supplyAsync(() -> buildRouteOptionsJson(toolQuery));
+    CompletableFuture<String> alertsFuture =
+        CompletableFuture.supplyAsync(() -> buildAlertClustersJson(toolQuery));
+    CompletableFuture<String> mobileSnapshotFuture =
+        CompletableFuture.supplyAsync(BackendServer::compactAssistantMobileSnapshotJson);
+    StringBuilder observations = new StringBuilder();
+    appendContextSection(
+        observations,
+        "weather",
+        awaitToolFuture(weatherFuture, "weather_unavailable"),
+        1800);
+    appendContextSection(
+        observations,
+        "waze",
+        awaitToolFuture(wazeFuture, "waze_unavailable"),
+        1800);
+    appendContextSection(
+        observations,
+        "route",
+        awaitToolFuture(routeFuture, "route_unavailable"),
+        2200);
+    appendContextSection(
+        observations,
+        "route_options",
+        awaitToolFuture(routeOptionsFuture, "route_options_unavailable"),
+        2200);
+    appendContextSection(
+        observations,
+        "alerts",
+        awaitToolFuture(alertsFuture, "alerts_unavailable"),
+        2200);
+    appendContextSection(
+        observations,
+        "mobile_snapshot",
+        awaitToolFuture(mobileSnapshotFuture, "mobile_snapshot_unavailable"),
+        2600);
+    appendContextSection(
+        observations,
+        "provided_alert_clusters_summary",
+        extractStringFieldByName(body, "alert_clusters_summary", toolQuery.getOrDefault("alert_clusters_summary", "")),
+        1200);
+    appendContextSection(
+        observations,
+        "provided_local_call_context",
+        extractStringFieldByName(body, "local_call_context", toolQuery.getOrDefault("local_call_context", "")),
+        1800);
+    return observations.toString();
+  }
+
+  private static String awaitToolFuture(CompletableFuture<String> future, String fallbackValue) {
+    if (future == null) {
+      return fallbackValue;
+    }
+    try {
+      String value = future.get(ASSISTANT_TOOL_FANOUT_TIMEOUT_MS, TimeUnit.MILLISECONDS);
+      if (value == null || value.isBlank()) {
+        return fallbackValue;
+      }
+      return value;
+    } catch (InterruptedException ex) {
+      Thread.currentThread().interrupt();
+      return fallbackValue;
+    } catch (ExecutionException | TimeoutException ex) {
+      return fallbackValue;
+    }
+  }
+
+  private static String compactAssistantMobileSnapshotJson() {
+    SnapshotData snapshot = buildSnapshotData();
+    List<EventInfo> events = snapshot.events;
+    int fromIndex = Math.max(0, events.size() - ASSISTANT_STREAM_EVENT_RETURN_LIMIT);
+    StringBuilder compactEvents = new StringBuilder("[");
+    for (int i = fromIndex; i < events.size(); i++) {
+      if (i > fromIndex) {
+        compactEvents.append(",");
+      }
+      compactEvents.append(compactMobileEventJson(events.get(i)));
+    }
+    compactEvents.append("]");
+    return "{"
+        + "\"ts\":\"" + Instant.now().toString() + "\","
+        + "\"metrics\":" + metricMapToJson(snapshot.metrics) + ","
+        + "\"event_type_counts\":" + eventTypeCountsToJson(snapshot.eventTypeCounts) + ","
+        + "\"events\":" + compactEvents
+        + "}";
   }
 
   private static boolean extractBooleanField(String json, String fieldName, boolean fallback) {
@@ -383,6 +660,91 @@ public final class BackendServer {
     return out;
   }
 
+  private static boolean isAllowedCatalogStateAbbrev(String stateAbbrev) {
+    if (stateAbbrev == null || stateAbbrev.isBlank()) {
+      return false;
+    }
+    return ALLOWED_CATALOG_STATE_ABBREVS.contains(stateAbbrev.trim().toUpperCase(Locale.ROOT));
+  }
+
+  private static boolean matchesAllowedRegionCoordinates(double lat, double lon) {
+    if (!Double.isFinite(lat) || !Double.isFinite(lon)) {
+      return false;
+    }
+    boolean westCoast = lat >= 31.0 && lat <= 49.5 && lon >= -125.5 && lon <= -116.0;
+    boolean southWest = lat >= 25.0 && lat <= 42.5 && lon >= -120.5 && lon <= -93.0;
+    boolean midWest = lat >= 36.0 && lat <= 49.5 && lon >= -104.5 && lon <= -80.0;
+    return westCoast || southWest || midWest;
+  }
+
+  private static String stateAbbrevFromCatalogText(String value) {
+    if (value == null || value.isBlank()) {
+      return "";
+    }
+    String normalized = normalizeCatalogQuery(value);
+    if (normalized.isBlank()) {
+      return "";
+    }
+    List<String> commaParts = new ArrayList<>();
+    for (String part : value.split(",")) {
+      String token = normalizeCatalogQuery(part);
+      if (!token.isBlank()) {
+        commaParts.add(token);
+      }
+    }
+    for (int i = commaParts.size() - 1; i >= 0; i--) {
+      String token = commaParts.get(i);
+      if (token.matches("[a-z]{2}")) {
+        return token.toUpperCase(Locale.ROOT);
+      }
+      String fromName = STATE_NAME_TO_ABBREV.get(token);
+      if (fromName != null) {
+        return fromName;
+      }
+    }
+    List<String> words = splitWords(normalized);
+    if (words.isEmpty()) {
+      return "";
+    }
+    String tail = words.get(words.size() - 1);
+    if (tail.matches("[a-z]{2}")) {
+      return tail.toUpperCase(Locale.ROOT);
+    }
+    for (int len = Math.min(2, words.size()); len >= 1; len--) {
+      String phrase = String.join(" ", words.subList(words.size() - len, words.size()));
+      String fromName = STATE_NAME_TO_ABBREV.get(phrase);
+      if (fromName != null) {
+        return fromName;
+      }
+    }
+    return "";
+  }
+
+  private static boolean isAllowedRegionalCatalogEntry(AddressCatalogEntry entry) {
+    if (entry == null) {
+      return false;
+    }
+    String stateAbbrev = stateAbbrevFromCatalogText(entry.displayName);
+    if (stateAbbrev.isBlank()) {
+      stateAbbrev = stateAbbrevFromCatalogText(entry.queryKey);
+    }
+    if (!stateAbbrev.isBlank()) {
+      return isAllowedCatalogStateAbbrev(stateAbbrev);
+    }
+    return matchesAllowedRegionCoordinates(entry.lat, entry.lon);
+  }
+
+  private static boolean isAllowedRegionalSuggestionEntry(SuggestionEntry entry) {
+    if (entry == null) {
+      return false;
+    }
+    String stateAbbrev = stateAbbrevFromCatalogText(entry.displayName);
+    if (!stateAbbrev.isBlank()) {
+      return isAllowedCatalogStateAbbrev(stateAbbrev);
+    }
+    return matchesAllowedRegionCoordinates(entry.lat, entry.lon);
+  }
+
   private static AddressCatalogEntry lookupNamedCommunityCityState(
       String rawQuery, String queryKey, double biasLat, double biasLon, boolean hasBias) {
     if (!isCityStateAbbrevQuery(queryKey)) {
@@ -391,6 +753,9 @@ public final class BackendServer {
     String cityPart = cityPartFromCityStateQuery(queryKey);
     String stateAbbrev = extractTrailingStateAbbrev(queryKey);
     if (cityPart.isBlank() || stateAbbrev.isBlank()) {
+      return null;
+    }
+    if (!isAllowedCatalogStateAbbrev(stateAbbrev)) {
       return null;
     }
     String baseUrl = NOMINATIM_SEARCH_URL + "?format=json&limit=5&q=" + urlEncode(rawQuery);
@@ -416,6 +781,9 @@ public final class BackendServer {
       return null;
     }
     SuggestionEntry best = geocodeEntries.get(0);
+    if (!isAllowedRegionalSuggestionEntry(best)) {
+      return null;
+    }
     return new AddressCatalogEntry(
         queryKey,
         toTitleCaseWords(cityPart) + ", " + stateAbbrev,
@@ -432,9 +800,24 @@ public final class BackendServer {
     }
     return normalized.matches(".*\\d+.*");
   }
+  private static boolean isValidCityCatalogQueryKey(String queryKey) {
+    String normalized = normalizeSuggestToken(queryKey);
+    if (normalized.isEmpty()) {
+      return false;
+    }
+    if (normalized.contains(" in ") || normalized.contains(" near ")) {
+      return false;
+    }
+    if (normalized.matches(".*\\d+.*")) {
+      return false;
+    }
+    return isCityStateAbbrevQuery(normalized);
+  }
 
   private static boolean isCityCatalogEntry(AddressCatalogEntry entry) {
-    return entry != null && "city_catalog".equals(entry.source);
+    return entry != null
+        && "city_catalog".equals(entry.source)
+        && isValidCityCatalogQueryKey(entry.queryKey);
   }
 
   private static String extractTrailingStateAbbrev(String queryKey) {
@@ -485,9 +868,15 @@ public final class BackendServer {
   private static List<AddressCatalogEntry> buildCombinedAddressCatalogEntries() {
     Map<String, AddressCatalogEntry> merged = new LinkedHashMap<>();
     for (AddressCatalogEntry entry : ADDRESS_CATALOG.values()) {
+      if (!isAllowedRegionalCatalogEntry(entry)) {
+        continue;
+      }
       merged.put(entry.queryKey, entry);
     }
     for (AddressCatalogEntry cityEntry : CITY_CATALOG_ALIASES) {
+      if (!isAllowedRegionalCatalogEntry(cityEntry)) {
+        continue;
+      }
       merged.putIfAbsent(cityEntry.queryKey, cityEntry);
     }
     return new ArrayList<>(merged.values());
@@ -1166,6 +1555,52 @@ public final class BackendServer {
       this.transcript = transcript;
     }
   }
+  private static final class ShareEtaTokenData {
+    private final long expiresAtEpochSeconds;
+    private final double originLat;
+    private final double originLon;
+    private final double destLat;
+    private final double destLon;
+    private final String destinationLabel;
+
+    private ShareEtaTokenData(
+        long expiresAtEpochSeconds,
+        double originLat,
+        double originLon,
+        double destLat,
+        double destLon,
+        String destinationLabel) {
+      this.expiresAtEpochSeconds = expiresAtEpochSeconds;
+      this.originLat = originLat;
+      this.originLon = originLon;
+      this.destLat = destLat;
+      this.destLon = destLon;
+      this.destinationLabel = destinationLabel;
+    }
+  }
+  private static final class ShareAlertSnippet {
+    private final String ts;
+    private final String alert;
+    private final String transcript;
+    private final double lat;
+    private final double lon;
+    private final double distanceMeters;
+
+    private ShareAlertSnippet(
+        String ts,
+        String alert,
+        String transcript,
+        double lat,
+        double lon,
+        double distanceMeters) {
+      this.ts = ts;
+      this.alert = alert;
+      this.transcript = transcript;
+      this.lat = lat;
+      this.lon = lon;
+      this.distanceMeters = distanceMeters;
+    }
+  }
 
   private static int parsePort(String maybePort, int fallback) {
     if (maybePort == null || maybePort.isBlank()) {
@@ -1443,6 +1878,7 @@ public final class BackendServer {
         + "\"client_send\":\"/api/mobile/client/send\","
         + "\"client_pull\":\"/api/mobile/client/pull\","
         + "\"clients\":\"/api/mobile/clients\","
+        + "\"assistant_chat\":\"/api/platform/assistant/chat\","
         + "\"stack_manage\":\"/api/platform/dev/stack/manage\","
         + "\"map_scene\":\"/api/map/scene\","
         + "\"map_render\":\"/api/map/render\","
@@ -1451,6 +1887,75 @@ public final class BackendServer {
         + "},"
         + "\"notes\":\"Compact endpoints are intended for low-bandwidth mobile companion clients.\""
         + "}";
+  }
+
+  private static String buildAssistantRouteContext(
+      String userQuery, String transcript, Map<String, String> query, String body) {
+    boolean highLoad = registerAssistantQueryAndDetectHighLoad();
+    Map<String, String> toolQuery = buildAssistantToolQuery(query, body);
+    int maxContextChars =
+        highLoad ? ASSISTANT_HIGH_LOAD_CONTEXT_MAX_CHARS : ASSISTANT_CONTEXT_MAX_CHARS;
+    StringBuilder context = new StringBuilder();
+    context.append("user_query: ").append(userQuery);
+    if (!transcript.isBlank()) {
+      context.append("\ntranscript: ").append(transcript);
+    }
+    String routeSummary = extractStringFieldByName(body, "route_summary", query.getOrDefault("route_summary", ""));
+    if (!routeSummary.isBlank()) {
+      context.append("\nroute_summary: ").append(routeSummary);
+    }
+    String destinationLabel =
+        extractStringFieldByName(body, "destination_label", query.getOrDefault("destination_label", ""));
+    if (!destinationLabel.isBlank()) {
+      context.append("\ndestination_label: ").append(destinationLabel);
+    }
+    String[] scalarKeys = new String[] {"origin_lat", "origin_lon", "dest_lat", "dest_lon", "eta_minutes"};
+    for (String key : scalarKeys) {
+      String value = extractStringFieldByName(body, key, query.getOrDefault(key, "")).trim();
+      if (!value.isBlank()) {
+        context.append("\n").append(key).append(": ").append(value);
+      }
+    }
+    appendContextSection(context, "tool_definitions", buildScoutToolDefinitionsText(), ASSISTANT_TOOL_SECTION_MAX_CHARS);
+    appendContextSection(
+        context,
+        "tool_observations",
+        buildScoutToolObservations(toolQuery, body),
+        ASSISTANT_TOOL_SECTION_MAX_CHARS);
+    appendContextSection(
+        context,
+        "broadcastify_stream_context",
+        extractStringFieldByName(body, "broadcastify_stream_context", query.getOrDefault("broadcastify_stream_context", "")),
+        ASSISTANT_TOOL_SECTION_MAX_CHARS);
+    appendContextSection(
+        context,
+        "hazard_api_stream_context",
+        extractStringFieldByName(body, "hazard_api_stream_context", query.getOrDefault("hazard_api_stream_context", "")),
+        ASSISTANT_TOOL_SECTION_MAX_CHARS);
+    context.append(
+        "\nresponse_style_rule: for alert location language, do not use generic 'nearby' by itself; prefer approximate distance plus relative location when supported by provided coordinates/route context.");
+    context.append(
+        "\nresponse_style_fallback: if spatial precision is missing, explicitly state approximate location unavailable and include missing_data entries instead of guessing.");
+    if (highLoad) {
+      context.append("\nguardrail_mode: strict_high_query_load");
+      context.append(
+          "\nguardrail_directive: use only explicit facts from tool_observations and provided context; if uncertain respond with low confidence and list missing_data.");
+    }
+    if (context.length() > maxContextChars) {
+      return context.substring(0, maxContextChars);
+    }
+    return context.toString();
+  }
+
+  private static String runScoutAssistantChat(String routeContext) {
+    List<String> cmd = new ArrayList<>();
+    cmd.add(SELECTOR_PYTHON_BIN);
+    cmd.add(LLM_SET_CLIENT_SCRIPT_PATH);
+    cmd.add("chat");
+    cmd.add(routeContext);
+    cmd.add("--timeout");
+    cmd.add(String.valueOf(LLM_CHAT_HELPER_TIMEOUT_SECONDS));
+    return runHelperCommand(cmd, "llm_chat", LLM_CHAT_HELPER_TIMEOUT_SECONDS);
   }
 
   private static String compactMobileEventJson(EventInfo event) {
@@ -1543,12 +2048,12 @@ public final class BackendServer {
     }
 
     String condition = query.getOrDefault("condition", "idle");
-    String engine = "direct_line_fallback";
+    String engine = "osrm_openstreetmap";
     List<RouteNode> routeNodes = null;
     Double externalMeters = null;
     String osrmBody = fetchOsrmRouteBody(originLat, originLon, destLat, destLon);
     if (osrmBody != null) {
-      List<RouteNode> osrmNodes = parseOsrmCoordinates(osrmBody);
+      List<RouteNode> osrmNodes = parsePrimaryRouteGeometryCoordinates(osrmBody);
       if (osrmNodes != null) {
         routeNodes = osrmNodes;
         externalMeters = parseOsrmDistanceMeters(osrmBody);
@@ -1556,10 +2061,7 @@ public final class BackendServer {
       }
     }
     if (routeNodes == null) {
-      // OSRM unreachable: return the straight origin->destination segment so the
-      // client still has real endpoint geometry to render.
-      routeNodes =
-          List.of(new RouteNode(originLat, originLon), new RouteNode(destLat, destLon));
+      return "{\"error\":\"route_unavailable_no_roadway\"}";
     }
     double meters = externalMeters != null ? externalMeters : approximateRouteMeters(routeNodes);
     return "{"
@@ -2068,6 +2570,9 @@ public final class BackendServer {
     boolean previousWhitespace = false;
     for (int i = 0; i < lower.length(); i++) {
       char ch = lower.charAt(i);
+      if (!(Character.isLetterOrDigit(ch) || Character.isWhitespace(ch))) {
+        ch = ' ';
+      }
       if (Character.isWhitespace(ch)) {
         if (!previousWhitespace) {
           sb.append(' ');
@@ -2149,19 +2654,29 @@ public final class BackendServer {
     if (entry == null) {
       return 0.0;
     }
+    String houseNumber = extractLeadingHouseNumber(queryKey);
+    String queryWithoutNumber = stripLeadingHouseNumber(queryKey);
+    String entryDisplayKey = normalizeCatalogQuery(entry.displayName);
+    if (!houseNumber.isBlank() && !addressHasHouseNumberPrefix(entryDisplayKey, houseNumber)) {
+      return 0.0;
+    }
     String entryKey = entry.queryKey;
     if (queryKey.equals(entryKey)) {
       return 2000.0 + catalogBiasScore(entry, biasLat, biasLon, hasBias);
     }
+    String compareQuery = queryWithoutNumber.isBlank() ? queryKey : queryWithoutNumber;
     double score = 0.0;
-    if (entryKey.startsWith(queryKey) || queryKey.startsWith(entryKey)) {
+    if (entryKey.startsWith(compareQuery) || compareQuery.startsWith(entryKey)) {
       score += 240.0;
     }
-    if (entryKey.contains(queryKey) || queryKey.contains(entryKey)) {
+    if (entryKey.contains(compareQuery) || compareQuery.contains(entryKey)) {
       score += 140.0;
     }
-    score += catalogTokenOverlapScore(queryKey, entryKey);
+    score += catalogTokenOverlapScore(compareQuery, entryKey);
     score += catalogBiasScore(entry, biasLat, biasLon, hasBias);
+    if (!houseNumber.isBlank()) {
+      score += 600.0;
+    }
     return score;
   }
 
@@ -2236,6 +2751,38 @@ public final class BackendServer {
     return out;
   }
 
+  private static String extractLeadingHouseNumber(String normalizedQuery) {
+    if (normalizedQuery == null || normalizedQuery.isBlank()) {
+      return "";
+    }
+    Matcher matcher = Pattern.compile("^\\s*(\\d{1,8})\\b").matcher(normalizedQuery);
+    if (!matcher.find()) {
+      return "";
+    }
+    return matcher.group(1);
+  }
+
+  private static String stripLeadingHouseNumber(String normalizedQuery) {
+    if (normalizedQuery == null || normalizedQuery.isBlank()) {
+      return "";
+    }
+    return normalizedQuery.replaceFirst("^\\s*\\d{1,8}\\b\\s*", "").trim();
+  }
+
+  private static boolean addressHasHouseNumberPrefix(String normalizedDisplayName, String houseNumber) {
+    if (houseNumber == null || houseNumber.isBlank()) {
+      return true;
+    }
+    if (normalizedDisplayName == null || normalizedDisplayName.isBlank()) {
+      return false;
+    }
+    Matcher matcher = Pattern.compile("^\\s*(\\d{1,8})\\b").matcher(normalizedDisplayName);
+    if (!matcher.find()) {
+      return false;
+    }
+    return houseNumber.equals(matcher.group(1));
+  }
+
   private static boolean queryLooksLikeZipOrAddress(String q, String key) {
     if (key.isEmpty()) {
       return false;
@@ -2264,6 +2811,146 @@ public final class BackendServer {
     }
     String label = String.format(Locale.ROOT, "Coordinates %.6f, %.6f", lat, lon);
     return new SuggestionEntry(label, "coordinate_query", lat, lon, System.currentTimeMillis());
+  }
+
+  private static String[] parsePoiSearchIntent(String normalizedQuery) {
+    if (normalizedQuery == null || normalizedQuery.isBlank()) {
+      return null;
+    }
+    String query = normalizedQuery.trim();
+    String[] separators = {" in ", " near ", " at "};
+    for (String separator : separators) {
+      int idx = query.indexOf(separator);
+      if (idx <= 0 || idx >= query.length() - separator.length()) {
+        continue;
+      }
+      String poiTerm = query.substring(0, idx).trim();
+      String cityHint = query.substring(idx + separator.length()).trim();
+      if (poiTerm.isBlank() || cityHint.isBlank()) {
+        continue;
+      }
+      if (cityHint.matches(".*\\d+.*")) {
+        continue;
+      }
+      return new String[] {poiTerm, cityHint};
+    }
+    String bestCityHint = "";
+    String bestPoiTerm = "";
+    int bestPrefixLength = -1;
+    for (AddressCatalogEntry entry : buildCombinedAddressCatalogEntries()) {
+      if (!isCityCatalogEntry(entry)) {
+        continue;
+      }
+      String cityKey = entry.queryKey;
+      if (cityKey.isBlank()) {
+        continue;
+      }
+      List<String> prefixCandidates = new ArrayList<>();
+      prefixCandidates.add(cityKey);
+      int commaIdx = entry.displayName.indexOf(',');
+      if (commaIdx > 0) {
+        String cityOnly = normalizeSuggestToken(entry.displayName.substring(0, commaIdx));
+        if (!cityOnly.isBlank()) {
+          prefixCandidates.add(cityOnly);
+        }
+      }
+      for (String prefixCandidate : prefixCandidates) {
+        if (prefixCandidate.isBlank() || query.equals(prefixCandidate)) {
+          continue;
+        }
+        String prefix = prefixCandidate + " ";
+        if (!query.startsWith(prefix)) {
+          continue;
+        }
+        String poiTerm = query.substring(prefix.length()).trim();
+        if (poiTerm.isBlank()) {
+          continue;
+        }
+        if (prefixCandidate.length() > bestPrefixLength) {
+          bestPrefixLength = prefixCandidate.length();
+          bestCityHint = cityKey;
+          bestPoiTerm = poiTerm;
+        }
+      }
+    }
+    if (!bestCityHint.isBlank() && !bestPoiTerm.isBlank()) {
+      return new String[] {bestPoiTerm, bestCityHint};
+    }
+    return null;
+  }
+
+  private static SuggestionEntry resolvePoiCityScopeCenter(
+      String cityHintRaw, String cityHintKey, double biasLat, double biasLon, boolean hasBias) {
+    if (cityHintKey == null || cityHintKey.isBlank()) {
+      return null;
+    }
+    AddressCatalogEntry bestCatalogCity = null;
+    double bestCatalogScore = Double.NEGATIVE_INFINITY;
+    for (AddressCatalogEntry entry : buildCombinedAddressCatalogEntries()) {
+      if (!isCityCatalogEntry(entry)) {
+        continue;
+      }
+      double score =
+          cityCatalogTextScore(cityHintKey, entry.queryKey)
+              + shardScoreFor(entry.lat, entry.lon, biasLat, biasLon, hasBias)
+              + nearbyDistanceScore(entry.lat, entry.lon, biasLat, biasLon, hasBias);
+      if (score > bestCatalogScore) {
+        bestCatalogScore = score;
+        bestCatalogCity = entry;
+      }
+    }
+    if (bestCatalogCity != null && bestCatalogScore > 160.0) {
+      return new SuggestionEntry(
+          bestCatalogCity.displayName,
+          "poi_city_scope_catalog",
+          bestCatalogCity.lat,
+          bestCatalogCity.lon,
+          bestCatalogCity.updatedAtMs);
+    }
+    if (isCityStateAbbrevQuery(cityHintKey) && !ADDRESS_CATALOG.containsKey(cityHintKey)) {
+      AddressCatalogEntry discovered =
+          lookupNamedCommunityCityState(cityHintRaw, cityHintKey, biasLat, biasLon, hasBias);
+      if (discovered != null) {
+        ADDRESS_CATALOG.putIfAbsent(cityHintKey, discovered);
+        persistAddressCatalogToDisk();
+        return new SuggestionEntry(
+            discovered.displayName,
+            "poi_city_scope_geocode",
+            discovered.lat,
+            discovered.lon,
+            discovered.updatedAtMs);
+      }
+    }
+    String baseUrl = NOMINATIM_SEARCH_URL + "?format=json&limit=5&q=" + urlEncode(cityHintRaw);
+    String geocodeBody = null;
+    boolean bounded = false;
+    if (hasBias) {
+      String viewbox =
+          trimDouble(biasLon - GEOCODE_BIAS_RADIUS_DEGREES)
+              + ","
+              + trimDouble(biasLat - GEOCODE_BIAS_RADIUS_DEGREES)
+              + ","
+              + trimDouble(biasLon + GEOCODE_BIAS_RADIUS_DEGREES)
+              + ","
+              + trimDouble(biasLat + GEOCODE_BIAS_RADIUS_DEGREES);
+      geocodeBody = httpGetExternal(baseUrl + "&viewbox=" + viewbox + "&bounded=1");
+      bounded = geocodeBody != null && looksLikeJson(geocodeBody) && !"[]".equals(geocodeBody.trim());
+    }
+    if (!bounded) {
+      geocodeBody = httpGetExternal(baseUrl);
+    }
+    List<SuggestionEntry> geocodeEntries = parseGeocodeSuggestionEntries(geocodeBody, 5);
+    for (SuggestionEntry geocodeEntry : geocodeEntries) {
+      if (!isAllowedRegionalSuggestionEntry(geocodeEntry)) {
+        continue;
+      }
+      if (isSpecificAddressDisplayName(geocodeEntry.displayName)) {
+        continue;
+      }
+      return new SuggestionEntry(
+          geocodeEntry.displayName, "poi_city_scope_geocode", geocodeEntry.lat, geocodeEntry.lon, 0L);
+    }
+    return null;
   }
 
   private static List<SuggestionEntry> collectCoordinateCatalogCandidates(
@@ -2574,6 +3261,8 @@ public final class BackendServer {
   private static String buildAddressCatalogSuggestJson(Map<String, String> query) {
     String q = query.getOrDefault("q", "").trim();
     String queryKey = normalizeSuggestToken(q);
+    String houseNumber = extractLeadingHouseNumber(queryKey);
+    String poiQueryKey = queryKey;
     if (queryKey.isEmpty()) {
       return "{\"error\":\"missing_query\"}";
     }
@@ -2599,6 +3288,26 @@ public final class BackendServer {
             && Double.isFinite(biasLon)
             && Math.abs(biasLat) <= 90.0
             && Math.abs(biasLon) <= 180.0;
+    double poiBiasLat = biasLat;
+    double poiBiasLon = biasLon;
+    boolean hasPoiBias = hasBias;
+    String[] poiIntent = parsePoiSearchIntent(queryKey);
+    boolean hasPoiIntent = poiIntent != null;
+    if (poiIntent != null) {
+      String poiTermKey = poiIntent[0];
+      String cityHintKey = poiIntent[1];
+      String cityHintRaw = toTitleCaseWords(cityHintKey);
+      SuggestionEntry scopedCityCenter =
+          resolvePoiCityScopeCenter(cityHintRaw, cityHintKey, biasLat, biasLon, hasBias);
+      if (scopedCityCenter != null) {
+        poiBiasLat = scopedCityCenter.lat;
+        poiBiasLon = scopedCityCenter.lon;
+        hasPoiBias = true;
+        if (!poiTermKey.isBlank()) {
+          poiQueryKey = poiTermKey;
+        }
+      }
+    }
     List<Map.Entry<SuggestionEntry, Double>> scored = new ArrayList<>();
 
     SuggestionEntry coordinateQuerySuggestion = parseCoordinateSuggestion(q);
@@ -2614,7 +3323,7 @@ public final class BackendServer {
       scored.add(Map.entry(coordinateQuerySuggestion, score));
     }
 
-    if (isCityStateAbbrevQuery(queryKey) && !ADDRESS_CATALOG.containsKey(queryKey)) {
+    if (!hasPoiIntent && isCityStateAbbrevQuery(queryKey) && !ADDRESS_CATALOG.containsKey(queryKey)) {
       AddressCatalogEntry discovered =
           lookupNamedCommunityCityState(q, queryKey, biasLat, biasLon, hasBias);
       if (discovered != null) {
@@ -2623,53 +3332,65 @@ public final class BackendServer {
       }
     }
 
-    for (AddressCatalogEntry entry : buildCombinedAddressCatalogEntries()) {
-      if (isCityCatalogEntry(entry)) {
-        if (!queryKey.equals(entry.queryKey)) {
+    if (!hasPoiIntent) {
+      for (AddressCatalogEntry entry : buildCombinedAddressCatalogEntries()) {
+        if (isCityCatalogEntry(entry)) {
+          if (!queryKey.equals(entry.queryKey)) {
+            continue;
+          }
+        } else if (!isSpecificAddressDisplayName(entry.displayName)) {
           continue;
         }
-      } else if (!isSpecificAddressDisplayName(entry.displayName)) {
-        continue;
-      }
-      SuggestionEntry candidate =
-          new SuggestionEntry(entry.displayName, entry.source, entry.lat, entry.lon, entry.updatedAtMs);
-      double score =
-          suggestTextScore(queryKey, entry.queryKey)
-              + shardScoreFor(entry.lat, entry.lon, biasLat, biasLon, hasBias)
-              + nearbyDistanceScore(entry.lat, entry.lon, biasLat, biasLon, hasBias);
-      if (score > 0.0) {
-        scored.add(Map.entry(candidate, score));
-      }
-    }
-
-    for (SuggestionEntry coordinateEntry :
-        collectCoordinateCatalogCandidates(queryKey, biasLat, biasLon, hasBias)) {
-      if (!isSpecificAddressDisplayName(coordinateEntry.displayName)) {
-        continue;
-      }
-      String candidateKey = normalizeSuggestToken(coordinateEntry.displayName);
-      String coordKey =
-          normalizeSuggestToken(
-              String.format(Locale.ROOT, "%.6f %.6f", coordinateEntry.lat, coordinateEntry.lon));
-      double score =
-          Math.max(suggestTextScore(queryKey, candidateKey), suggestTextScore(queryKey, coordKey))
-              + shardScoreFor(coordinateEntry.lat, coordinateEntry.lon, biasLat, biasLon, hasBias)
-              + nearbyDistanceScore(coordinateEntry.lat, coordinateEntry.lon, biasLat, biasLon, hasBias);
-      if (score > 0.0) {
-        scored.add(Map.entry(coordinateEntry, score));
+        SuggestionEntry candidate =
+            new SuggestionEntry(entry.displayName, entry.source, entry.lat, entry.lon, entry.updatedAtMs);
+        if (!houseNumber.isBlank()
+            && !addressHasHouseNumberPrefix(normalizeSuggestToken(candidate.displayName), houseNumber)) {
+          continue;
+        }
+        double score =
+            suggestTextScore(queryKey, entry.queryKey)
+                + shardScoreFor(entry.lat, entry.lon, biasLat, biasLon, hasBias)
+                + nearbyDistanceScore(entry.lat, entry.lon, biasLat, biasLon, hasBias);
+        if (score > 0.0) {
+          scored.add(Map.entry(candidate, score));
+        }
       }
     }
 
-    if (hasBias) {
-      for (SuggestionEntry poi : collectPoiCatalogCandidates(biasLat, biasLon, queryKey)) {
-        if (!isSpecificAddressDisplayName(poi.displayName)) {
+    if (!hasPoiIntent) {
+      for (SuggestionEntry coordinateEntry :
+          collectCoordinateCatalogCandidates(queryKey, biasLat, biasLon, hasBias)) {
+        if (!houseNumber.isBlank()) {
+          continue;
+        }
+        if (!isSpecificAddressDisplayName(coordinateEntry.displayName)) {
+          continue;
+        }
+        String candidateKey = normalizeSuggestToken(coordinateEntry.displayName);
+        String coordKey =
+            normalizeSuggestToken(
+                String.format(Locale.ROOT, "%.6f %.6f", coordinateEntry.lat, coordinateEntry.lon));
+        double score =
+            Math.max(suggestTextScore(queryKey, candidateKey), suggestTextScore(queryKey, coordKey))
+                + shardScoreFor(coordinateEntry.lat, coordinateEntry.lon, biasLat, biasLon, hasBias)
+                + nearbyDistanceScore(coordinateEntry.lat, coordinateEntry.lon, biasLat, biasLon, hasBias);
+        if (score > 0.0) {
+          scored.add(Map.entry(coordinateEntry, score));
+        }
+      }
+    }
+
+    if (hasPoiBias) {
+      for (SuggestionEntry poi : collectPoiCatalogCandidates(poiBiasLat, poiBiasLon, poiQueryKey)) {
+        if (!houseNumber.isBlank()
+            && !addressHasHouseNumberPrefix(normalizeSuggestToken(poi.displayName), houseNumber)) {
           continue;
         }
         String candidateKey = normalizeSuggestToken(poi.displayName);
         double score =
-            suggestTextScore(queryKey, candidateKey)
-                + shardScoreFor(poi.lat, poi.lon, biasLat, biasLon, hasBias)
-                + nearbyDistanceScore(poi.lat, poi.lon, biasLat, biasLon, hasBias);
+            suggestTextScore(poiQueryKey, candidateKey)
+                + shardScoreFor(poi.lat, poi.lon, poiBiasLat, poiBiasLon, hasPoiBias)
+                + nearbyDistanceScore(poi.lat, poi.lon, poiBiasLat, poiBiasLon, hasPoiBias);
         if ("poi_catalog_near".equals(poi.source)) {
           score += 130.0;
         } else if ("poi_catalog_mid".equals(poi.source)) {
@@ -2735,12 +3456,22 @@ public final class BackendServer {
         List<SuggestionEntry> geocodeEntries =
             parseGeocodeSuggestionEntries(geocodeBody, limit - uniqueRanked.size());
         for (SuggestionEntry geocodeEntry : geocodeEntries) {
+          if (!isAllowedRegionalSuggestionEntry(geocodeEntry)) {
+            continue;
+          }
+          if (!houseNumber.isBlank()
+              && !addressHasHouseNumberPrefix(
+                  normalizeSuggestToken(geocodeEntry.displayName), houseNumber)) {
+            continue;
+          }
           if (!isSpecificAddressDisplayName(geocodeEntry.displayName)
               && !isCityStateAbbrevQuery(queryKey)) {
             continue;
           }
           SuggestionEntry candidateEntry = geocodeEntry;
-          if (isCityStateAbbrevQuery(queryKey) && !isSpecificAddressDisplayName(geocodeEntry.displayName)) {
+          if (!hasPoiIntent
+              && isCityStateAbbrevQuery(queryKey)
+              && !isSpecificAddressDisplayName(geocodeEntry.displayName)) {
             String cityPart = cityPartFromCityStateQuery(queryKey);
             String stateAbbrev = extractTrailingStateAbbrev(queryKey);
             if (!cityPart.isBlank() && !stateAbbrev.isBlank()) {
@@ -2854,6 +3585,26 @@ public final class BackendServer {
           }
           return Long.compare(b.getKey().updatedAtMs, a.getKey().updatedAtMs);
         });
+    if (scored.get(0).getValue() < 200.0) {
+      return "{"
+          + "\"ts\":\"" + Instant.now().toString() + "\","
+          + "\"status\":\"miss\","
+          + "\"bias_applied\":" + hasBias + ","
+          + "\"results\":[]"
+          + "}";
+    }
+    if (scored.size() > 1) {
+      double top = scored.get(0).getValue();
+      double second = scored.get(1).getValue();
+      if (Math.abs(top - second) < 50.0) {
+        return "{"
+            + "\"ts\":\"" + Instant.now().toString() + "\","
+            + "\"status\":\"ambiguous\","
+            + "\"bias_applied\":" + hasBias + ","
+            + "\"results\":[]"
+            + "}";
+      }
+    }
     List<AddressCatalogEntry> results = new ArrayList<>();
     Set<String> dedupe = new HashSet<>();
     for (int i = 0; i < scored.size() && results.size() < 5; i++) {
@@ -2915,6 +3666,9 @@ public final class BackendServer {
     }
     AddressCatalogEntry entry =
         new AddressCatalogEntry(key, display.trim(), source.trim(), lat, lon, System.currentTimeMillis());
+    if (!isAllowedRegionalCatalogEntry(entry)) {
+      return "{\"error\":\"catalog_entry_out_of_allowed_regions\"}";
+    }
     ADDRESS_CATALOG.put(key, entry);
     persistAddressCatalogToDisk();
     return "{"
@@ -3275,6 +4029,7 @@ public final class BackendServer {
         }
         List<String> lines = Files.readAllLines(ADDRESS_CATALOG_STORE_PATH, StandardCharsets.UTF_8);
         int loaded = 0;
+        int skippedOutOfRegion = 0;
         for (String line : lines) {
           if (line == null || line.isBlank() || line.startsWith("#")) {
             continue;
@@ -3298,15 +4053,21 @@ public final class BackendServer {
           if (source.isBlank()) {
             source = "persisted";
           }
-          ADDRESS_CATALOG.put(
-              queryKey, new AddressCatalogEntry(queryKey, displayName, source, lat, lon, updatedAtMs));
+          AddressCatalogEntry loadedEntry =
+              new AddressCatalogEntry(queryKey, displayName, source, lat, lon, updatedAtMs);
+          if (!isAllowedRegionalCatalogEntry(loadedEntry)) {
+            skippedOutOfRegion++;
+            continue;
+          }
+          ADDRESS_CATALOG.put(queryKey, loadedEntry);
           loaded++;
         }
         System.out.printf(
             Locale.ROOT,
-            "[java-backend] address catalog loaded: %d entries from %s%n",
+            "[java-backend] address catalog loaded: %d entries from %s (skipped_out_of_region=%d)%n",
             loaded,
-            ADDRESS_CATALOG_STORE_PATH);
+            ADDRESS_CATALOG_STORE_PATH,
+            skippedOutOfRegion);
       } catch (Exception ex) {
         System.err.printf(
             Locale.ROOT,
@@ -3360,7 +4121,7 @@ public final class BackendServer {
     if (cached != null) {
       return cached;
     }
-    String url =
+    String baseUrl =
         OSRM_ROUTE_BASE_URL
             + "/"
             + trimDouble(originLon)
@@ -3369,9 +4130,23 @@ public final class BackendServer {
             + ";"
             + trimDouble(destLon)
             + ","
-            + trimDouble(destLat)
-            + "?overview=full&geometries=geojson&alternatives=true&steps=true&annotations=distance,duration,maxspeed";
-    String body = httpGetExternal(url);
+            + trimDouble(destLat);
+    String body =
+        httpGetExternal(
+            baseUrl
+                + "?overview=full&geometries=geojson&alternatives=true&steps=true&annotations=distance,duration,maxspeed");
+    if (body == null || !body.contains("\"code\":\"Ok\"")) {
+      body =
+          httpGetExternal(
+              baseUrl
+                  + "?overview=full&geometries=geojson&alternatives=true&steps=true&annotations=distance,duration");
+    }
+    if (body == null || !body.contains("\"code\":\"Ok\"")) {
+      body =
+          httpGetExternal(
+              baseUrl
+                  + "?overview=full&geometries=geojson&alternatives=true&steps=false");
+    }
     if (body == null || !body.contains("\"code\":\"Ok\"")) {
       return null;
     }
@@ -3380,11 +4155,35 @@ public final class BackendServer {
     return body;
   }
 
+  private static String fetchOsrmRouteViaWaypointBody(
+      double originLat, double originLon, double waypointLat, double waypointLon, double destLat, double destLon) {
+    String url =
+        OSRM_ROUTE_BASE_URL
+            + "/"
+            + trimDouble(originLon)
+            + ","
+            + trimDouble(originLat)
+            + ";"
+            + trimDouble(waypointLon)
+            + ","
+            + trimDouble(waypointLat)
+            + ";"
+            + trimDouble(destLon)
+            + ","
+            + trimDouble(destLat)
+            + "?overview=full&geometries=geojson&alternatives=false&steps=false";
+    String body = httpGetExternal(url);
+    if (body == null || !body.contains("\"code\":\"Ok\"")) {
+      return null;
+    }
+    return body;
+  }
+
   private static String osrmCacheKey(
       double originLat, double originLon, double destLat, double destLon) {
     return String.format(
         Locale.ROOT,
-        "%.5f,%.5f->%.5f,%.5f",
+        "%.6f,%.6f->%.6f,%.6f",
         originLat,
         originLon,
         destLat,
@@ -3470,6 +4269,161 @@ public final class BackendServer {
     return null;
   }
 
+  private static String extractTopLevelObjectField(String jsonObject, String fieldName) {
+    String needle = "\"" + fieldName + "\"";
+    int depth = 0;
+    boolean inString = false;
+    for (int i = 0; i < jsonObject.length(); i++) {
+      char ch = jsonObject.charAt(i);
+      if (ch == '"' && (i == 0 || jsonObject.charAt(i - 1) != '\\')) {
+        inString = !inString;
+      }
+      if (inString) {
+        continue;
+      }
+      if (ch == '{') {
+        depth++;
+      } else if (ch == '}') {
+        depth--;
+      }
+      if (depth == 1 && jsonObject.startsWith(needle, i)) {
+        int colon = jsonObject.indexOf(':', i + needle.length());
+        if (colon < 0) {
+          return null;
+        }
+        int objectStart = jsonObject.indexOf('{', colon + 1);
+        if (objectStart < 0) {
+          return null;
+        }
+        int objDepth = 0;
+        boolean objInString = false;
+        for (int j = objectStart; j < jsonObject.length(); j++) {
+          char cj = jsonObject.charAt(j);
+          if (cj == '"' && (j == 0 || jsonObject.charAt(j - 1) != '\\')) {
+            objInString = !objInString;
+          }
+          if (objInString) {
+            continue;
+          }
+          if (cj == '{') {
+            objDepth++;
+          } else if (cj == '}') {
+            objDepth--;
+            if (objDepth == 0) {
+              return jsonObject.substring(objectStart, j + 1);
+            }
+          }
+        }
+        return null;
+      }
+    }
+    return null;
+  }
+
+  private static Double parseTopLevelDoubleField(String jsonObject, String fieldName) {
+    String needle = "\"" + fieldName + "\"";
+    int depth = 0;
+    boolean inString = false;
+    for (int i = 0; i < jsonObject.length(); i++) {
+      char ch = jsonObject.charAt(i);
+      if (ch == '"' && (i == 0 || jsonObject.charAt(i - 1) != '\\')) {
+        inString = !inString;
+      }
+      if (inString) {
+        continue;
+      }
+      if (ch == '{') {
+        depth++;
+      } else if (ch == '}') {
+        depth--;
+      }
+      if (depth == 1 && jsonObject.startsWith(needle, i)) {
+        int colon = jsonObject.indexOf(':', i + needle.length());
+        if (colon < 0) {
+          return null;
+        }
+        int start = colon + 1;
+        while (start < jsonObject.length() && Character.isWhitespace(jsonObject.charAt(start))) {
+          start++;
+        }
+        int end = start;
+        while (end < jsonObject.length()) {
+          char c = jsonObject.charAt(end);
+          if ((c >= '0' && c <= '9') || c == '-' || c == '+'
+              || c == '.' || c == 'e' || c == 'E') {
+            end++;
+          } else {
+            break;
+          }
+        }
+        if (end <= start) {
+          return null;
+        }
+        try {
+          return Double.parseDouble(jsonObject.substring(start, end));
+        } catch (NumberFormatException ex) {
+          return null;
+        }
+      }
+    }
+    return null;
+  }
+
+  private static List<RouteNode> parseOsrmRouteGeometryCoordinates(String routeObject) {
+    int geometryObjectStart = routeObject.lastIndexOf("\"geometry\":{");
+    if (geometryObjectStart < 0) {
+      return parseOsrmCoordinates(routeObject);
+    }
+    int coordinatesStart = routeObject.indexOf("\"coordinates\":[[", geometryObjectStart);
+    if (coordinatesStart < 0) {
+      return parseOsrmCoordinates(routeObject);
+    }
+    int start = coordinatesStart + "\"coordinates\":[[".length();
+    int end = routeObject.indexOf("]]", start);
+    if (end < 0) {
+      return parseOsrmCoordinates(routeObject);
+    }
+    String coords = routeObject.substring(start, end);
+    String[] pairs = coords.split("\\],\\[");
+    List<RouteNode> nodes = new ArrayList<>();
+    for (String pair : pairs) {
+      String[] parts = pair.split(",");
+      if (parts.length < 2) {
+        continue;
+      }
+      try {
+        double lon = Double.parseDouble(parts[0].trim());
+        double lat = Double.parseDouble(parts[1].trim());
+        nodes.add(new RouteNode(lat, lon));
+      } catch (NumberFormatException ignored) {
+        // ignore malformed coordinate entry
+      }
+    }
+    return nodes.size() >= 2 ? nodes : parseOsrmCoordinates(routeObject);
+  }
+
+  private static List<RouteNode> parsePrimaryRouteGeometryCoordinates(String osrmBody) {
+    String routesArray = extractJsonArrayContent(osrmBody, "routes");
+    List<String> routes = splitTopLevelObjects(routesArray);
+    if (routes.isEmpty()) {
+      return null;
+    }
+    return parseOsrmRouteGeometryCoordinates(routes.get(0));
+  }
+
+  private static Double parseLastDoubleField(String raw, Pattern pattern) {
+    Matcher matcher = pattern.matcher(raw);
+    Double value = null;
+    while (matcher.find()) {
+      try {
+        value = Double.parseDouble(matcher.group(1));
+      } catch (NumberFormatException ignored) {
+        // continue scanning
+      }
+    }
+    return value;
+  }
+
   private static List<String> splitTopLevelObjects(String arrayBody) {
     List<String> out = new ArrayList<>();
     if (arrayBody == null || arrayBody.isBlank()) {
@@ -3506,12 +4460,12 @@ public final class BackendServer {
     String routesArray = extractJsonArrayContent(osrmBody, "routes");
     List<RouteAlternative> alternatives = new ArrayList<>();
     for (String routeObject : splitTopLevelObjects(routesArray)) {
-      List<RouteNode> nodes = parseOsrmCoordinates(routeObject);
+      List<RouteNode> nodes = parseOsrmRouteGeometryCoordinates(routeObject);
       if (nodes == null || nodes.size() < 2) {
         continue;
       }
-      Double dist = parseOsrmDistanceMeters(routeObject);
-      Double duration = parseOsrmDurationSeconds(routeObject);
+      Double dist = parseLastDoubleField(routeObject, OSRM_DISTANCE_PATTERN);
+      Double duration = parseLastDoubleField(routeObject, OSRM_DURATION_PATTERN);
       double distanceMeters = dist != null ? dist : approximateRouteMeters(nodes);
       double durationSeconds = duration != null ? duration : 0.0;
       SpeedLimitEtaEstimate etaEstimate =
@@ -3649,20 +4603,21 @@ public final class BackendServer {
     if (osrmBody != null) {
       alternatives = parseOsrmAlternatives(osrmBody);
     }
-    if (alternatives.isEmpty()) {
-      List<RouteNode> fallback =
-          List.of(new RouteNode(originLat, originLon), new RouteNode(destLat, destLon));
+    if (alternatives.size() < 2) {
       alternatives =
-          List.of(
-              new RouteAlternative(
-                  fallback,
-                  approximateRouteMeters(fallback),
-                  0.0,
-                  approximateRouteMeters(fallback) / OSM_MAXSPEED_FALLBACK_MPS,
-                  0.0,
-                  false,
-                  false));
+          augmentRouteAlternativesWithWaypointVariants(
+              alternatives, originLat, originLon, destLat, destLon);
     }
+    if (alternatives.isEmpty()) {
+      return "{\"error\":\"route_unavailable_no_roadway\"}";
+    }
+    String hazards = fetchWazeHazardsJson(originLat, originLon, destLat, destLon);
+    Map<String, String> wazeRouteQuery = new HashMap<>();
+    wazeRouteQuery.put("start", trimDouble(originLat) + "," + trimDouble(originLon));
+    wazeRouteQuery.put("end", trimDouble(destLat) + "," + trimDouble(destLon));
+    wazeRouteQuery.put("lat", trimDouble(destLat));
+    wazeRouteQuery.put("lon", trimDouble(destLon));
+    String wazeRoute = wazeRouteToJson(buildWazeRoute(wazeRouteQuery));
     Map<String, String> clusterQuery = new HashMap<>();
     // Route options typically span larger geographies than local incident maps;
     // use a coarser default grid so multi-state previews stay readable.
@@ -3674,8 +4629,78 @@ public final class BackendServer {
         + "\"origin\":{\"lat\":" + trimDouble(originLat) + ",\"lon\":" + trimDouble(originLon) + "},"
         + "\"destination\":{\"lat\":" + trimDouble(destLat) + ",\"lon\":" + trimDouble(destLon) + "},"
         + "\"alternatives\":" + routeAlternativesToJson(alternatives) + ","
+        + "\"waze_hazards\":" + hazards + ","
+        + "\"waze_route\":" + wazeRoute + ","
         + "\"alert_clusters\":" + alertClusters
         + "}";
+  }
+
+  private static List<RouteAlternative> augmentRouteAlternativesWithWaypointVariants(
+      List<RouteAlternative> existing,
+      double originLat,
+      double originLon,
+      double destLat,
+      double destLon) {
+    List<RouteAlternative> out = new ArrayList<>(existing);
+    double dLat = destLat - originLat;
+    double dLon = destLon - originLon;
+    double len = Math.hypot(dLat, dLon);
+    if (!Double.isFinite(len) || len < 0.01) {
+      return out;
+    }
+    double midLat = (originLat + destLat) / 2.0;
+    double midLon = (originLon + destLon) / 2.0;
+    double offset = Math.max(0.02, Math.min(0.10, len * 0.22));
+    double perpLat = -dLon / len * offset;
+    double perpLon = dLat / len * offset;
+    double[] signs = new double[] {1.0, -1.0};
+    for (double sign : signs) {
+      double waypointLat = midLat + sign * perpLat;
+      double waypointLon = midLon + sign * perpLon;
+      if (Math.abs(waypointLat) > 90.0 || Math.abs(waypointLon) > 180.0) {
+        continue;
+      }
+      String body =
+          fetchOsrmRouteViaWaypointBody(
+              originLat, originLon, waypointLat, waypointLon, destLat, destLon);
+      if (body == null) {
+        continue;
+      }
+      List<RouteAlternative> parsed = parseOsrmAlternatives(body);
+      if (parsed.isEmpty()) {
+        continue;
+      }
+      RouteAlternative candidate = parsed.get(0);
+      if (isDistinctRouteAlternative(out, candidate)) {
+        out.add(candidate);
+      }
+      if (out.size() >= 3) {
+        break;
+      }
+    }
+    return out;
+  }
+
+  private static boolean isDistinctRouteAlternative(
+      List<RouteAlternative> existing, RouteAlternative candidate) {
+    if (candidate == null || candidate.nodes == null || candidate.nodes.size() < 2) {
+      return false;
+    }
+    for (RouteAlternative alt : existing) {
+      if (alt == null || alt.nodes == null || alt.nodes.isEmpty()) {
+        continue;
+      }
+      double distanceDelta = Math.abs(alt.distanceMeters - candidate.distanceMeters);
+      if (distanceDelta < 2500.0) {
+        RouteNode altMid = alt.nodes.get(alt.nodes.size() / 2);
+        RouteNode candMid = candidate.nodes.get(candidate.nodes.size() / 2);
+        double midDelta = haversineMeters(altMid.lat, altMid.lon, candMid.lat, candMid.lon);
+        if (midDelta < 1200.0) {
+          return false;
+        }
+      }
+    }
+    return true;
   }
 
   private static String buildAlertClustersJson(Map<String, String> query) {
@@ -3950,6 +4975,10 @@ public final class BackendServer {
   }
 
   private static String runHelperCommand(List<String> cmd, String label) {
+    return runHelperCommand(cmd, label, HELPER_PROCESS_TIMEOUT_SECONDS);
+  }
+
+  private static String runHelperCommand(List<String> cmd, String label, int timeoutSeconds) {
     Path outputPath = null;
     long started = System.nanoTime();
     boolean success = false;
@@ -3959,14 +4988,14 @@ public final class BackendServer {
       pb.redirectErrorStream(true);
       pb.redirectOutput(outputPath.toFile());
       Process process = pb.start();
-      boolean finished = process.waitFor(HELPER_PROCESS_TIMEOUT_SECONDS, TimeUnit.SECONDS);
+      boolean finished = process.waitFor(timeoutSeconds, TimeUnit.SECONDS);
       if (!finished) {
         process.destroyForcibly();
         Files.deleteIfExists(outputPath);
         success = false;
         return "{"
             + "\"error\":\"" + jsonEscape(label) + "_timeout\","
-            + "\"timeout_seconds\":" + HELPER_PROCESS_TIMEOUT_SECONDS
+            + "\"timeout_seconds\":" + timeoutSeconds
             + "}";
       }
       String output = Files.readString(outputPath, StandardCharsets.UTF_8).trim();
@@ -4129,9 +5158,25 @@ public final class BackendServer {
     Headers headers = exchange.getResponseHeaders();
     headers.set("Content-Type", "application/json; charset=utf-8");
     headers.set("Cache-Control", "no-store");
+    headers.set("X-Content-Type-Options", "nosniff");
+    headers.set("X-Frame-Options", "DENY");
+    headers.set("Referrer-Policy", "no-referrer");
     if (!CORS_ALLOW_ORIGIN.isBlank()) {
       headers.set("Access-Control-Allow-Origin", CORS_ALLOW_ORIGIN);
     }
+    exchange.sendResponseHeaders(statusCode, payload.length);
+    try (OutputStream os = exchange.getResponseBody()) {
+      os.write(payload);
+    }
+  }
+
+  private static void writeHtml(HttpExchange exchange, int statusCode, String body) throws IOException {
+    byte[] payload = body.getBytes(StandardCharsets.UTF_8);
+    Headers headers = exchange.getResponseHeaders();
+    headers.set("Content-Type", "text/html; charset=utf-8");
+    headers.set("Cache-Control", "no-store");
+    headers.set("X-Content-Type-Options", "nosniff");
+    headers.set("Referrer-Policy", "no-referrer");
     exchange.sendResponseHeaders(statusCode, payload.length);
     try (OutputStream os = exchange.getResponseBody()) {
       os.write(payload);
@@ -4143,6 +5188,9 @@ public final class BackendServer {
     Headers headers = exchange.getResponseHeaders();
     headers.set("Content-Type", contentType);
     headers.set("Cache-Control", "no-store");
+    headers.set("X-Content-Type-Options", "nosniff");
+    headers.set("X-Frame-Options", "DENY");
+    headers.set("Referrer-Policy", "no-referrer");
     if (!CORS_ALLOW_ORIGIN.isBlank()) {
       headers.set("Access-Control-Allow-Origin", CORS_ALLOW_ORIGIN);
     }
@@ -4157,6 +5205,9 @@ public final class BackendServer {
     headers.set("Content-Type", "text/event-stream; charset=utf-8");
     headers.set("Cache-Control", "no-cache, no-store, must-revalidate");
     headers.set("Connection", "keep-alive");
+    headers.set("X-Content-Type-Options", "nosniff");
+    headers.set("X-Frame-Options", "DENY");
+    headers.set("Referrer-Policy", "no-referrer");
     if (!CORS_ALLOW_ORIGIN.isBlank()) {
       headers.set("Access-Control-Allow-Origin", CORS_ALLOW_ORIGIN);
     }
@@ -4271,6 +5322,45 @@ public final class BackendServer {
     }
   }
 
+  private static final class ShareEtaCreateHandler implements HttpHandler {
+    @Override
+    public void handle(HttpExchange exchange) throws IOException {
+      String method = exchange.getRequestMethod();
+      if (!"POST".equals(method) && !"GET".equals(method)) {
+        writeJson(exchange, 405, "{\"error\":\"method_not_allowed\"}");
+        return;
+      }
+      Map<String, String> query = parseQuery(exchange.getRequestURI().getRawQuery());
+      String body = "POST".equals(method) ? readRequestBody(exchange) : "";
+      String payload = buildShareEtaCreateJson(query, body, exchange);
+      writeJson(exchange, shareEtaCreateResponseStatus(payload), payload);
+    }
+  }
+
+  private static final class ShareEtaPublicHandler implements HttpHandler {
+    @Override
+    public void handle(HttpExchange exchange) throws IOException {
+      if (!isGet(exchange)) {
+        writeJson(exchange, 405, "{\"error\":\"method_not_allowed\"}");
+        return;
+      }
+      Map<String, String> query = parseQuery(exchange.getRequestURI().getRawQuery());
+      String token = query.getOrDefault("token", "").trim();
+      ShareEtaTokenData tokenData = decodeShareEtaToken(token);
+      if (tokenData == null) {
+        writeJson(exchange, 403, "{\"error\":\"invalid_or_expired_share_token\"}");
+        return;
+      }
+      String format = query.getOrDefault("format", "html").trim().toLowerCase(Locale.ROOT);
+      String payload = buildShareEtaSnapshotJson(tokenData);
+      if ("json".equals(format)) {
+        writeJson(exchange, 200, payload);
+        return;
+      }
+      writeHtml(exchange, 200, buildShareEtaHtml(payload));
+    }
+  }
+
   private static final class AddressCatalogResolveHandler implements HttpHandler {
     @Override
     public void handle(HttpExchange exchange) throws IOException {
@@ -4370,6 +5460,19 @@ public final class BackendServer {
       String payload = buildAlertClustersJson(query);
       writeJson(exchange, 200, payload);
     }
+  }
+
+  private static boolean looksRecursiveAssistantQuery(String userQuery, String transcript) {
+    String text = ((userQuery == null ? "" : userQuery) + " " + (transcript == null ? "" : transcript))
+        .toLowerCase(Locale.ROOT);
+    if (text.isBlank()) {
+      return false;
+    }
+    return text.contains("ask scout to ask scout")
+        || text.contains("ask yourself")
+        || text.contains("query yourself")
+        || text.contains("/api/platform/assistant/chat")
+        || text.contains("assistant chat endpoint");
   }
 
   private static final class GeocodeHandler implements HttpHandler {
@@ -4474,11 +5577,15 @@ public final class BackendServer {
       }
       models.append("\"").append(SCOUT_MODELS[i]).append("\":").append(present);
     }
-    if (SCOUT_MODELS.length >= 3) {
-      models.append(",\"scout-alert\":").append(installed.contains(SCOUT_MODELS[0]));
-      models.append(",\"scout-intel\":").append(installed.contains(SCOUT_MODELS[1]));
-      models.append(",\"scout-rank\":").append(installed.contains(SCOUT_MODELS[2]));
-    }
+    boolean corePresent = installed.contains("scout-core1.0.8");
+    boolean vetPresent = installed.contains("scout-vet1.0.8");
+    boolean rankPresent = installed.contains("scout-rank");
+    models.append(",\"scout-alert\":").append(vetPresent);
+    models.append(",\"scout-intel\":").append(vetPresent);
+    models.append(",\"scout-vet\":").append(vetPresent);
+    models.append(",\"scout-nav\":").append(corePresent);
+    models.append(",\"scout-chat\":").append(corePresent);
+    models.append(",\"scout-rank\":").append(rankPresent);
     models.append("}");
     String payload = "{"
         + "\"ts\":\"" + Instant.now().toString() + "\","
@@ -4627,6 +5734,23 @@ public final class BackendServer {
       return 502;
     }
     return 200;
+  }
+
+  private static int shareEtaCreateResponseStatus(String payload) {
+    if (payload == null || payload.isBlank()) {
+      return 502;
+    }
+    String trimmed = payload.trim();
+    if (!trimmed.startsWith("{\"error\"") && !trimmed.startsWith("{ \"error\"")) {
+      return 200;
+    }
+    if (trimmed.contains("\"missing_share_route_coordinates\"")) {
+      return 400;
+    }
+    if (trimmed.contains("\"share_public_https_required\"")) {
+      return 400;
+    }
+    return 502;
   }
 
   private static void pruneStaleClientRoutes() {
@@ -4845,6 +5969,60 @@ public final class BackendServer {
         return;
       }
       writeJson(exchange, 200, providerStatusJson());
+    }
+  }
+
+  private static final class AssistantChatHandler implements HttpHandler {
+    @Override
+    public void handle(HttpExchange exchange) throws IOException {
+      String method = exchange.getRequestMethod();
+      if (!"POST".equals(method) && !"GET".equals(method)) {
+        writeJson(exchange, 405, "{\"error\":\"method_not_allowed\"}");
+        return;
+      }
+      Map<String, String> query = parseQuery(exchange.getRequestURI().getRawQuery());
+      String body = "POST".equals(method) ? readRequestBody(exchange) : "";
+      String userQuery = extractStringFieldByName(body, "query", query.getOrDefault("query", "")).trim();
+      String transcript = extractStringFieldByName(body, "transcript", query.getOrDefault("transcript", "")).trim();
+      if (userQuery.isBlank() && transcript.isBlank()) {
+        writeJson(exchange, 400, "{\"error\":\"missing_query\"}");
+        return;
+      }
+      if (userQuery.isBlank()) {
+        userQuery = transcript;
+      }
+      if (looksRecursiveAssistantQuery(userQuery, transcript)) {
+        String safePayload =
+            "{"
+                + "\"ts\":\"" + Instant.now().toString() + "\","
+                + "\"status\":\"ok\","
+                + "\"query\":\"" + jsonEscape(userQuery) + "\","
+                + "\"route_context\":\"recursive_intent_blocked\","
+                + "\"llm_result\":{\"response\":\"Recursive self-query blocked. Ask for weather, route, hazards, or broadcastify context directly.\",\"confidence\":\"high\",\"missing_data\":[],\"evidence\":[\"recursion_guard\"]}"
+                + "}";
+        writeJson(exchange, 200, safePayload);
+        return;
+      }
+      String routeContext = buildAssistantRouteContext(userQuery, transcript, query, body);
+      String llmPayload = runScoutAssistantChat(routeContext);
+      int llmStatus = helperResponseStatus(llmPayload);
+      if (llmStatus != 200) {
+        writeJson(exchange, llmStatus, llmPayload);
+        return;
+      }
+      String payload =
+          "{"
+              + "\"ts\":\"" + Instant.now().toString() + "\","
+              + "\"status\":\"ok\","
+              + "\"query\":\"" + jsonEscape(userQuery) + "\","
+              + "\"route_context\":"
+              + (ASSISTANT_INCLUDE_ROUTE_CONTEXT
+                  ? ("\"" + jsonEscape(routeContext) + "\"")
+                  : "\"suppressed\"")
+              + ","
+              + "\"llm_result\":" + llmPayload
+              + "}";
+      writeJson(exchange, 200, payload);
     }
   }
 
@@ -5522,6 +6700,460 @@ public final class BackendServer {
     }
     sb.append("]");
     return sb.toString();
+  }
+
+  private static long clampLong(long value, long min, long max) {
+    if (value < min) {
+      return min;
+    }
+    if (value > max) {
+      return max;
+    }
+    return value;
+  }
+
+  private static String initShareEtaSigningSecret(String configured) {
+    if (configured != null && !configured.isBlank()) {
+      return configured.trim();
+    }
+    byte[] random = new byte[32];
+    new SecureRandom().nextBytes(random);
+    return Base64.getUrlEncoder().withoutPadding().encodeToString(random);
+  }
+
+  private static String hmacSha256Base64Url(String value) {
+    try {
+      Mac mac = Mac.getInstance("HmacSHA256");
+      mac.init(new SecretKeySpec(SHARE_ETA_SIGNING_SECRET.getBytes(StandardCharsets.UTF_8), "HmacSHA256"));
+      byte[] digest = mac.doFinal(value.getBytes(StandardCharsets.UTF_8));
+      return Base64.getUrlEncoder().withoutPadding().encodeToString(digest);
+    } catch (Exception ex) {
+      return "";
+    }
+  }
+
+  private static boolean constantTimeEquals(String a, String b) {
+    if (a == null || b == null) {
+      return false;
+    }
+    int max = Math.max(a.length(), b.length());
+    int diff = a.length() ^ b.length();
+    for (int i = 0; i < max; i++) {
+      char ca = i < a.length() ? a.charAt(i) : 0;
+      char cb = i < b.length() ? b.charAt(i) : 0;
+      diff |= ca ^ cb;
+    }
+    return diff == 0;
+  }
+
+  private static String sanitizeShareDestinationLabel(String rawLabel) {
+    if (rawLabel == null || rawLabel.isBlank()) {
+      return "Destination";
+    }
+    String compact = rawLabel.trim().replaceAll("\\s+", " ");
+    if (compact.length() > SHARE_ETA_DEST_LABEL_MAX_CHARS) {
+      return compact.substring(0, SHARE_ETA_DEST_LABEL_MAX_CHARS);
+    }
+    return compact;
+  }
+
+  private static String encodeShareEtaToken(ShareEtaTokenData data) {
+    String payload =
+        "v1|"
+            + data.expiresAtEpochSeconds
+            + "|"
+            + trimDouble(data.originLat)
+            + "|"
+            + trimDouble(data.originLon)
+            + "|"
+            + trimDouble(data.destLat)
+            + "|"
+            + trimDouble(data.destLon)
+            + "|"
+            + urlEncode(data.destinationLabel);
+    String payloadB64 =
+        Base64.getUrlEncoder()
+            .withoutPadding()
+            .encodeToString(payload.getBytes(StandardCharsets.UTF_8));
+    String signature = hmacSha256Base64Url(payloadB64);
+    return payloadB64 + "." + signature;
+  }
+
+  private static ShareEtaTokenData decodeShareEtaToken(String token) {
+    if (token == null || token.isBlank()) {
+      return null;
+    }
+    String[] tokenParts = token.split("\\.", 2);
+    if (tokenParts.length != 2) {
+      return null;
+    }
+    String payloadB64 = tokenParts[0].trim();
+    String signature = tokenParts[1].trim();
+    String expectedSignature = hmacSha256Base64Url(payloadB64);
+    if (!constantTimeEquals(expectedSignature, signature)) {
+      return null;
+    }
+    byte[] payloadBytes;
+    try {
+      payloadBytes = Base64.getUrlDecoder().decode(payloadB64);
+    } catch (IllegalArgumentException ex) {
+      return null;
+    }
+    String payload = new String(payloadBytes, StandardCharsets.UTF_8);
+    String[] fields = payload.split("\\|", 7);
+    if (fields.length != 7 || !"v1".equals(fields[0])) {
+      return null;
+    }
+    long expiresAt = parseLongOrDefault(fields[1], 0L);
+    if (expiresAt <= Instant.now().getEpochSecond()) {
+      return null;
+    }
+    double originLat = parseDouble(fields[2], Double.NaN);
+    double originLon = parseDouble(fields[3], Double.NaN);
+    double destLat = parseDouble(fields[4], Double.NaN);
+    double destLon = parseDouble(fields[5], Double.NaN);
+    if (!Double.isFinite(originLat)
+        || !Double.isFinite(originLon)
+        || !Double.isFinite(destLat)
+        || !Double.isFinite(destLon)
+        || Math.abs(originLat) > 90.0
+        || Math.abs(destLat) > 90.0
+        || Math.abs(originLon) > 180.0
+        || Math.abs(destLon) > 180.0) {
+      return null;
+    }
+    String destinationLabel;
+    try {
+      destinationLabel = URLDecoder.decode(fields[6], StandardCharsets.UTF_8);
+    } catch (Exception ex) {
+      destinationLabel = "Destination";
+    }
+    destinationLabel = sanitizeShareDestinationLabel(destinationLabel);
+    return new ShareEtaTokenData(expiresAt, originLat, originLon, destLat, destLon, destinationLabel);
+  }
+
+  private static String resolvedSharePublicBaseUrl(HttpExchange exchange) {
+    if (!SHARE_ETA_PUBLIC_BASE_URL.isBlank()) {
+      String normalized = SHARE_ETA_PUBLIC_BASE_URL;
+      if (normalized.endsWith("/")) {
+        normalized = normalized.substring(0, normalized.length() - 1);
+      }
+      return normalized;
+    }
+    String forwardedProto = exchange.getRequestHeaders().getFirst("X-Forwarded-Proto");
+    String scheme = "https".equalsIgnoreCase(forwardedProto) ? "https" : "http";
+    String host = exchange.getRequestHeaders().getFirst("X-Forwarded-Host");
+    if (host == null || host.isBlank()) {
+      host = exchange.getRequestHeaders().getFirst("Host");
+    }
+    if (host == null || host.isBlank()) {
+      host = HOST + ":" + PORT;
+    }
+    return scheme + "://" + host;
+  }
+
+  private static String buildShareEtaCreateJson(
+      Map<String, String> query, String body, HttpExchange exchange) {
+    String originLatRaw =
+        extractStringFieldByName(body, "origin_lat", query.getOrDefault("origin_lat", "")).trim();
+    String originLonRaw =
+        extractStringFieldByName(body, "origin_lon", query.getOrDefault("origin_lon", "")).trim();
+    String destLatRaw =
+        extractStringFieldByName(body, "dest_lat", query.getOrDefault("dest_lat", "")).trim();
+    String destLonRaw =
+        extractStringFieldByName(body, "dest_lon", query.getOrDefault("dest_lon", "")).trim();
+    double originLat = parseDouble(originLatRaw, Double.NaN);
+    double originLon = parseDouble(originLonRaw, Double.NaN);
+    double destLat = parseDouble(destLatRaw, Double.NaN);
+    double destLon = parseDouble(destLonRaw, Double.NaN);
+    if (!Double.isFinite(originLat)
+        || !Double.isFinite(originLon)
+        || !Double.isFinite(destLat)
+        || !Double.isFinite(destLon)) {
+      return "{\"error\":\"missing_share_route_coordinates\"}";
+    }
+    String destinationLabel =
+        sanitizeShareDestinationLabel(
+            extractStringFieldByName(
+                body, "destination_label", query.getOrDefault("destination_label", "Destination")));
+    long nowEpochSeconds = Instant.now().getEpochSecond();
+    ShareEtaTokenData tokenData =
+        new ShareEtaTokenData(
+            nowEpochSeconds + SHARE_ETA_TOKEN_TTL_SECONDS,
+            originLat,
+            originLon,
+            destLat,
+            destLon,
+            destinationLabel);
+    String token = encodeShareEtaToken(tokenData);
+    String sharePath = "/api/public/share/eta?token=" + urlEncode(token);
+    String shareUrl = resolvedSharePublicBaseUrl(exchange) + sharePath;
+    boolean publicTransportReady = shareUrl.startsWith("https://");
+    return "{"
+        + "\"ts\":\""
+        + Instant.now().toString()
+        + "\","
+        + "\"status\":\"ok\","
+        + "\"share_url\":\""
+        + jsonEscape(shareUrl)
+        + "\","
+        + "\"expires_at\":\""
+        + Instant.ofEpochSecond(tokenData.expiresAtEpochSeconds).toString()
+        + "\","
+        + "\"security\":{"
+        + "\"token\":\"hmac_sha256_signed\","
+        + "\"expires\":true,"
+        + "\"public_transport_recommended\":\"https\","
+        + "\"public_transport_ready\":"
+        + publicTransportReady
+        + "}"
+        + "}";
+  }
+
+  private static String buildShareRouteSummary(String routeOptionsJson, String destinationLabel) {
+    Matcher distanceMatcher = SHARE_ROUTE_DISTANCE_PATTERN.matcher(routeOptionsJson);
+    Matcher durationMatcher = SHARE_ROUTE_DURATION_PATTERN.matcher(routeOptionsJson);
+    if (!distanceMatcher.find() || !durationMatcher.find()) {
+      return "Route summary unavailable for " + destinationLabel + ".";
+    }
+    double distanceMeters = parseDouble(distanceMatcher.group(1), 0.0);
+    double durationSeconds = parseDouble(durationMatcher.group(1), 0.0);
+    double distanceMiles = distanceMeters / 1609.344;
+    String scaledDuration = formatScaledEtaDuration(durationSeconds);
+    return String.format(
+        Locale.ROOT,
+        "Route to %s: %.1f mi, %s estimated travel time.",
+        destinationLabel,
+        distanceMiles,
+        scaledDuration);
+  }
+
+  private static String normalizeWeatherConditionLabel(String raw) {
+    if (raw == null || raw.isBlank()) {
+      return "unknown";
+    }
+    String[] parts = raw.trim().split("_");
+    StringBuilder out = new StringBuilder();
+    for (int i = 0; i < parts.length; i++) {
+      String part = parts[i];
+      if (part.isBlank()) {
+        continue;
+      }
+      if (out.length() > 0) {
+        out.append(" ");
+      }
+      out.append(part.substring(0, 1).toUpperCase(Locale.ROOT));
+      out.append(part.substring(1).toLowerCase(Locale.ROOT));
+    }
+    return out.length() == 0 ? "unknown" : out.toString();
+  }
+
+  private static String buildShareWeatherSummary(String weatherJson) {
+    Matcher tempMatcher = SHARE_WEATHER_TEMP_PATTERN.matcher(weatherJson);
+    Matcher conditionMatcher = SHARE_WEATHER_CONDITION_PATTERN.matcher(weatherJson);
+    if (!tempMatcher.find() || !conditionMatcher.find()) {
+      return "Current weather unavailable.";
+    }
+    String temp = tempMatcher.group(1);
+    String condition = normalizeWeatherConditionLabel(conditionMatcher.group(1));
+    return "Current weather: " + temp + "°F, " + condition + ".";
+  }
+
+  private static List<ShareAlertSnippet> collectNearbyShareAlerts(
+      double originLat, double originLon, double destLat, double destLon) {
+    List<ShareAlertSnippet> snippets = new ArrayList<>();
+    double radiusMeters = Math.max(1000.0, SHARE_ETA_NEARBY_RADIUS_METERS);
+    for (EventInfo event : readEventLines(RECENT_EVENT_LIMIT * 4)) {
+      if (!"alert_triggered".equals(event.eventType)) {
+        continue;
+      }
+      Matcher matcher = ALERT_COORD_PATTERN.matcher(event.rawJson);
+      if (!matcher.find()) {
+        continue;
+      }
+      double lat = parseDouble(matcher.group(1), Double.NaN);
+      double lon = parseDouble(matcher.group(2), Double.NaN);
+      if (!Double.isFinite(lat) || !Double.isFinite(lon)) {
+        continue;
+      }
+      double distanceFromOrigin = haversineMeters(originLat, originLon, lat, lon);
+      double distanceFromDestination = haversineMeters(destLat, destLon, lat, lon);
+      double nearestDistance = Math.min(distanceFromOrigin, distanceFromDestination);
+      if (nearestDistance > radiusMeters) {
+        continue;
+      }
+      snippets.add(
+          new ShareAlertSnippet(
+              extractStringField(event.rawJson, TS_PATTERN),
+              extractStringField(event.rawJson, ALERT_PATTERN),
+              extractStringField(event.rawJson, TRANSCRIPT_PATTERN),
+              lat,
+              lon,
+              nearestDistance));
+    }
+    snippets.sort(
+        (a, b) -> {
+          int byDistance = Double.compare(a.distanceMeters, b.distanceMeters);
+          if (byDistance != 0) {
+            return byDistance;
+          }
+          return String.valueOf(b.ts).compareTo(String.valueOf(a.ts));
+        });
+    if (snippets.size() <= SHARE_ETA_MAX_ALERT_ITEMS) {
+      return snippets;
+    }
+    return new ArrayList<>(snippets.subList(0, SHARE_ETA_MAX_ALERT_ITEMS));
+  }
+
+  private static String summarizeNearbyAlerts(List<ShareAlertSnippet> alerts) {
+    if (alerts.isEmpty()) {
+      return "No recent nearby alerts were found.";
+    }
+    List<String> parts = new ArrayList<>();
+    for (ShareAlertSnippet alert : alerts) {
+      String headline = alert.alert == null || alert.alert.isBlank() ? alert.transcript : alert.alert;
+      if (headline == null || headline.isBlank()) {
+        headline = "Scanner alert";
+      }
+      if (headline.length() > 110) {
+        headline = headline.substring(0, 107) + "…";
+      }
+      parts.add(
+          String.format(
+              Locale.ROOT,
+              "%s (%.1f mi)",
+              headline,
+              alert.distanceMeters / 1609.344));
+    }
+    return String.join("; ", parts);
+  }
+
+  private static String shareNearbyAlertsToJson(List<ShareAlertSnippet> alerts) {
+    if (alerts.isEmpty()) {
+      return "[]";
+    }
+    StringBuilder sb = new StringBuilder("[");
+    for (int i = 0; i < alerts.size(); i++) {
+      if (i > 0) {
+        sb.append(",");
+      }
+      ShareAlertSnippet alert = alerts.get(i);
+      sb.append("{")
+          .append("\"ts\":\"")
+          .append(jsonEscape(alert.ts == null ? "" : alert.ts))
+          .append("\",")
+          .append("\"distance_mi\":")
+          .append(trimDouble(alert.distanceMeters / 1609.344))
+          .append(",")
+          .append("\"lat\":")
+          .append(trimDouble(alert.lat))
+          .append(",")
+          .append("\"lon\":")
+          .append(trimDouble(alert.lon))
+          .append(",")
+          .append("\"alert\":\"")
+          .append(jsonEscape(alert.alert == null ? "" : alert.alert))
+          .append("\",")
+          .append("\"transcript\":\"")
+          .append(jsonEscape(alert.transcript == null ? "" : alert.transcript))
+          .append("\"")
+          .append("}");
+    }
+    sb.append("]");
+    return sb.toString();
+  }
+
+  private static String buildShareEtaSnapshotJson(ShareEtaTokenData tokenData) {
+    Map<String, String> routeQuery = new HashMap<>();
+    routeQuery.put("origin_lat", trimDouble(tokenData.originLat));
+    routeQuery.put("origin_lon", trimDouble(tokenData.originLon));
+    routeQuery.put("dest_lat", trimDouble(tokenData.destLat));
+    routeQuery.put("dest_lon", trimDouble(tokenData.destLon));
+    String routeOptionsJson = buildRouteOptionsJson(routeQuery);
+    Map<String, String> weatherQuery = new HashMap<>();
+    weatherQuery.put("lat", trimDouble(tokenData.originLat));
+    weatherQuery.put("lon", trimDouble(tokenData.originLon));
+    String weatherJson = buildWeatherJson(weatherQuery);
+    List<ShareAlertSnippet> nearbyAlerts =
+        collectNearbyShareAlerts(
+            tokenData.originLat,
+            tokenData.originLon,
+            tokenData.destLat,
+            tokenData.destLon);
+    String nearbyAlertSummary = summarizeNearbyAlerts(nearbyAlerts);
+    return "{"
+        + "\"ts\":\""
+        + Instant.now().toString()
+        + "\","
+        + "\"status\":\"ok\","
+        + "\"expires_at\":\""
+        + Instant.ofEpochSecond(tokenData.expiresAtEpochSeconds).toString()
+        + "\","
+        + "\"destination_label\":\""
+        + jsonEscape(tokenData.destinationLabel)
+        + "\","
+        + "\"route_summary\":\""
+        + jsonEscape(buildShareRouteSummary(routeOptionsJson, tokenData.destinationLabel))
+        + "\","
+        + "\"weather_summary\":\""
+        + jsonEscape(buildShareWeatherSummary(weatherJson))
+        + "\","
+        + "\"nearby_alert_summary\":\""
+        + jsonEscape(nearbyAlertSummary)
+        + "\","
+        + "\"nearby_alert_count\":"
+        + nearbyAlerts.size()
+        + ","
+        + "\"nearby_alerts\":"
+        + shareNearbyAlertsToJson(nearbyAlerts)
+        + ","
+        + "\"route_data\":"
+        + routeOptionsJson
+        + ","
+        + "\"weather_data\":"
+        + weatherJson
+        + "}";
+  }
+
+  private static String escapeHtml(String raw) {
+    if (raw == null || raw.isBlank()) {
+      return "";
+    }
+    return raw.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;");
+  }
+
+  private static String buildShareEtaHtml(String shareJson) {
+    String destinationLabel = extractStringFieldByName(shareJson, "destination_label", "Destination");
+    String routeSummary = extractStringFieldByName(shareJson, "route_summary", "Route summary unavailable.");
+    String weatherSummary =
+        extractStringFieldByName(shareJson, "weather_summary", "Current weather unavailable.");
+    String alertSummary =
+        extractStringFieldByName(shareJson, "nearby_alert_summary", "No nearby alert summary.");
+    String expiresAt = extractStringFieldByName(shareJson, "expires_at", "");
+    return "<!doctype html><html><head><meta charset=\"utf-8\">"
+        + "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">"
+        + "<title>Scout ETA Share</title>"
+        + "<style>body{font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:#101217;color:#f2f4f8;padding:20px;line-height:1.45}"
+        + ".card{max-width:760px;margin:0 auto;background:#1a1f2b;border-radius:12px;padding:18px}"
+        + "h1{margin:0 0 8px;font-size:22px}h2{margin:18px 0 6px;font-size:16px;color:#9ec7ff}p{margin:6px 0}"
+        + ".muted{color:#9aa4b2;font-size:13px}</style></head><body><div class=\"card\">"
+        + "<h1>Scout ETA Share</h1>"
+        + "<p class=\"muted\">Destination: "
+        + escapeHtml(destinationLabel)
+        + "</p>"
+        + "<h2>Route</h2><p>"
+        + escapeHtml(routeSummary)
+        + "</p>"
+        + "<h2>Current Weather</h2><p>"
+        + escapeHtml(weatherSummary)
+        + "</p>"
+        + "<h2>Nearby Alerts</h2><p>"
+        + escapeHtml(alertSummary)
+        + "</p>"
+        + "<p class=\"muted\">Link expires: "
+        + escapeHtml(expiresAt)
+        + "</p>"
+        + "</div></body></html>";
   }
 
   private static long parseLongOrDefault(String raw, long fallback) {
