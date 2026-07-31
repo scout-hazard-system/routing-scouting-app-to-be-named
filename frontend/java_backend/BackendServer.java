@@ -383,12 +383,103 @@ public final class BackendServer {
     return out;
   }
 
+  private static AddressCatalogEntry lookupNamedCommunityCityState(
+      String rawQuery, String queryKey, double biasLat, double biasLon, boolean hasBias) {
+    if (!isCityStateAbbrevQuery(queryKey)) {
+      return null;
+    }
+    String cityPart = cityPartFromCityStateQuery(queryKey);
+    String stateAbbrev = extractTrailingStateAbbrev(queryKey);
+    if (cityPart.isBlank() || stateAbbrev.isBlank()) {
+      return null;
+    }
+    String baseUrl = NOMINATIM_SEARCH_URL + "?format=json&limit=5&q=" + urlEncode(rawQuery);
+    String geocodeBody = null;
+    boolean bounded = false;
+    if (hasBias) {
+      String viewbox =
+          trimDouble(biasLon - GEOCODE_BIAS_RADIUS_DEGREES)
+              + ","
+              + trimDouble(biasLat - GEOCODE_BIAS_RADIUS_DEGREES)
+              + ","
+              + trimDouble(biasLon + GEOCODE_BIAS_RADIUS_DEGREES)
+              + ","
+              + trimDouble(biasLat + GEOCODE_BIAS_RADIUS_DEGREES);
+      geocodeBody = httpGetExternal(baseUrl + "&viewbox=" + viewbox + "&bounded=1");
+      bounded = geocodeBody != null && looksLikeJson(geocodeBody) && !"[]".equals(geocodeBody.trim());
+    }
+    if (!bounded) {
+      geocodeBody = httpGetExternal(baseUrl);
+    }
+    List<SuggestionEntry> geocodeEntries = parseGeocodeSuggestionEntries(geocodeBody, 5);
+    if (geocodeEntries.isEmpty()) {
+      return null;
+    }
+    SuggestionEntry best = geocodeEntries.get(0);
+    return new AddressCatalogEntry(
+        queryKey,
+        toTitleCaseWords(cityPart) + ", " + stateAbbrev,
+        "city_catalog",
+        best.lat,
+        best.lon,
+        System.currentTimeMillis());
+  }
+
   private static boolean isSpecificAddressDisplayName(String displayName) {
     String normalized = normalizeSuggestToken(displayName);
     if (normalized.isEmpty()) {
       return false;
     }
     return normalized.matches(".*\\d+.*");
+  }
+
+  private static boolean isCityCatalogEntry(AddressCatalogEntry entry) {
+    return entry != null && "city_catalog".equals(entry.source);
+  }
+
+  private static String extractTrailingStateAbbrev(String queryKey) {
+    if (queryKey == null || queryKey.isBlank()) {
+      return "";
+    }
+    List<String> tokens = splitWords(queryKey);
+    if (tokens.size() < 2) {
+      return "";
+    }
+    String tail = tokens.get(tokens.size() - 1);
+    if (!tail.matches("[a-z]{2}")) {
+      return "";
+    }
+    return tail.toUpperCase(Locale.ROOT);
+  }
+
+  private static boolean isCityStateAbbrevQuery(String queryKey) {
+    return !extractTrailingStateAbbrev(queryKey).isBlank();
+  }
+
+  private static String cityPartFromCityStateQuery(String queryKey) {
+    List<String> tokens = splitWords(queryKey);
+    if (tokens.size() < 2) {
+      return "";
+    }
+    return String.join(" ", tokens.subList(0, tokens.size() - 1)).trim();
+  }
+
+  private static String toTitleCaseWords(String value) {
+    if (value == null || value.isBlank()) {
+      return "";
+    }
+    List<String> tokens = splitWords(value);
+    List<String> titled = new ArrayList<>();
+    for (String token : tokens) {
+      if (token.length() == 1) {
+        titled.add(token.toUpperCase(Locale.ROOT));
+      } else {
+        titled.add(
+            token.substring(0, 1).toUpperCase(Locale.ROOT)
+                + token.substring(1).toLowerCase(Locale.ROOT));
+      }
+    }
+    return String.join(" ", titled);
   }
 
   private static List<AddressCatalogEntry> buildCombinedAddressCatalogEntries() {
@@ -2100,16 +2191,8 @@ public final class BackendServer {
     for (CityCatalogSeed seed : seeds) {
       String city = seed.cityName.trim();
       String abbrev = seed.stateAbbrev.trim().toUpperCase(Locale.ROOT);
-      String stateName = seed.stateName.trim();
       String display = city + ", " + abbrev;
-      List<String> variants =
-          List.of(
-              city,
-              city + " " + abbrev,
-              city + ", " + abbrev,
-              city + " " + stateName,
-              city + ", " + stateName,
-              city + " " + abbrev + " usa");
+      List<String> variants = List.of(city + " " + abbrev, city + ", " + abbrev);
       for (String variant : variants) {
         String key = normalizeCatalogQuery(variant);
         if (key.isEmpty()) {
@@ -2531,12 +2614,25 @@ public final class BackendServer {
       scored.add(Map.entry(coordinateQuerySuggestion, score));
     }
 
+    if (isCityStateAbbrevQuery(queryKey) && !ADDRESS_CATALOG.containsKey(queryKey)) {
+      AddressCatalogEntry discovered =
+          lookupNamedCommunityCityState(q, queryKey, biasLat, biasLon, hasBias);
+      if (discovered != null) {
+        ADDRESS_CATALOG.putIfAbsent(queryKey, discovered);
+        persistAddressCatalogToDisk();
+      }
+    }
+
     for (AddressCatalogEntry entry : buildCombinedAddressCatalogEntries()) {
-      if (!isSpecificAddressDisplayName(entry.displayName)) {
+      if (isCityCatalogEntry(entry)) {
+        if (!queryKey.equals(entry.queryKey)) {
+          continue;
+        }
+      } else if (!isSpecificAddressDisplayName(entry.displayName)) {
         continue;
       }
       SuggestionEntry candidate =
-          new SuggestionEntry(entry.displayName, "address_catalog", entry.lat, entry.lon, entry.updatedAtMs);
+          new SuggestionEntry(entry.displayName, entry.source, entry.lat, entry.lon, entry.updatedAtMs);
       double score =
           suggestTextScore(queryKey, entry.queryKey)
               + shardScoreFor(entry.lat, entry.lon, biasLat, biasLon, hasBias)
@@ -2639,23 +2735,38 @@ public final class BackendServer {
         List<SuggestionEntry> geocodeEntries =
             parseGeocodeSuggestionEntries(geocodeBody, limit - uniqueRanked.size());
         for (SuggestionEntry geocodeEntry : geocodeEntries) {
-          if (!isSpecificAddressDisplayName(geocodeEntry.displayName)) {
+          if (!isSpecificAddressDisplayName(geocodeEntry.displayName)
+              && !isCityStateAbbrevQuery(queryKey)) {
             continue;
           }
+          SuggestionEntry candidateEntry = geocodeEntry;
+          if (isCityStateAbbrevQuery(queryKey) && !isSpecificAddressDisplayName(geocodeEntry.displayName)) {
+            String cityPart = cityPartFromCityStateQuery(queryKey);
+            String stateAbbrev = extractTrailingStateAbbrev(queryKey);
+            if (!cityPart.isBlank() && !stateAbbrev.isBlank()) {
+              candidateEntry =
+                  new SuggestionEntry(
+                      toTitleCaseWords(cityPart) + ", " + stateAbbrev,
+                      "city_catalog",
+                      geocodeEntry.lat,
+                      geocodeEntry.lon,
+                      0L);
+            }
+          }
           String dedupeKey =
-              normalizeSuggestToken(geocodeEntry.displayName)
+              normalizeSuggestToken(candidateEntry.displayName)
                   + "|"
-                  + String.format(Locale.ROOT, "%.5f,%.5f", geocodeEntry.lat, geocodeEntry.lon);
+                  + String.format(Locale.ROOT, "%.5f,%.5f", candidateEntry.lat, candidateEntry.lon);
           if (dedupe.contains(dedupeKey)) {
             continue;
           }
           dedupe.add(dedupeKey);
           double score =
-              suggestTextScore(queryKey, normalizeSuggestToken(geocodeEntry.displayName))
-                  + shardScoreFor(geocodeEntry.lat, geocodeEntry.lon, biasLat, biasLon, hasBias)
-                  + nearbyDistanceScore(geocodeEntry.lat, geocodeEntry.lon, biasLat, biasLon, hasBias)
+              suggestTextScore(queryKey, normalizeSuggestToken(candidateEntry.displayName))
+                  + shardScoreFor(candidateEntry.lat, candidateEntry.lon, biasLat, biasLon, hasBias)
+                  + nearbyDistanceScore(candidateEntry.lat, candidateEntry.lon, biasLat, biasLon, hasBias)
                   - 60.0;
-          uniqueRanked.add(Map.entry(geocodeEntry, score));
+          uniqueRanked.add(Map.entry(candidateEntry, score));
           usedFallback = true;
           if (uniqueRanked.size() >= limit) {
             break;
@@ -2703,12 +2814,28 @@ public final class BackendServer {
             && Math.abs(biasLon) <= 180.0;
     List<Map.Entry<AddressCatalogEntry, Double>> scored = new ArrayList<>();
     for (AddressCatalogEntry entry : buildCombinedAddressCatalogEntries()) {
-      if (!isSpecificAddressDisplayName(entry.displayName)) {
+      if (isCityCatalogEntry(entry)) {
+        if (!key.equals(entry.queryKey)) {
+          continue;
+        }
+      } else if (!isSpecificAddressDisplayName(entry.displayName)) {
         continue;
       }
       double score = catalogMatchScore(key, entry, biasLat, biasLon, hasBias);
       if (score > 0.0) {
         scored.add(Map.entry(entry, score));
+      }
+    }
+    if (scored.isEmpty() && isCityStateAbbrevQuery(key) && !ADDRESS_CATALOG.containsKey(key)) {
+      AddressCatalogEntry discovered =
+          lookupNamedCommunityCityState(q, key, biasLat, biasLon, hasBias);
+      if (discovered != null) {
+        ADDRESS_CATALOG.putIfAbsent(key, discovered);
+        persistAddressCatalogToDisk();
+        double score = catalogMatchScore(key, discovered, biasLat, biasLon, hasBias);
+        if (score > 0.0) {
+          scored.add(Map.entry(discovered, score));
+        }
       }
     }
     if (scored.isEmpty()) {
