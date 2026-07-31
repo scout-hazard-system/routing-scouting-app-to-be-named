@@ -1,0 +1,3 @@
+{"meta":{"state":"WA","z":15,"x":5384,"y":11479,"zhs":{"key":"z/15/5384/11479|h3/9/nv8s/pfmz|s2/12/f2/20v/294","z_key":"z/15/5384/11479","h_key":"h3/9/nv8s/pfmz","s_key":"s2/12/f2/20v/294"},"source":"planet","roads":2,"buildings":0,"areas":0,"pois":0}}
+{"type":"road","class":"residential","name":"North Fork Teanaway Road","oneway":false,"pts":"47.345500,-120.849781;47.345786,-120.849368;47.346044,-120.849089;47.346383,-120.848762"}
+{"type":"road","class":"residential","name":"North Fork Teanaway Road","oneway":false,"pts":"47.338854,-120.849781;47.338932,-120.849770;47.339473,-120.849762;47.339637,-120.849781"}

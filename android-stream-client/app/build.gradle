@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace "dev.warp.scannerstream"
+    namespace "dev.warp.stream"
     compileSdk 34
 
     defaultConfig {
-        applicationId "dev.warp.scannerstream"
+        applicationId "dev.warp.stream"
         minSdk 26
         targetSdk 34
         versionCode 1
@@ -52,10 +52,10 @@ android {
 }
 
 dependencies {
+    implementation project(":frontend-ui")
     implementation "androidx.appcompat:appcompat:1.7.0"
     implementation "com.google.android.material:material:1.12.0"
     implementation "androidx.core:core-ktx:1.13.1"
     implementation "com.squareup.okhttp3:okhttp:4.12.0"
-    implementation "org.osmdroid:osmdroid-android:6.1.20"
     implementation "androidx.car.app:app:1.4.0"
 }

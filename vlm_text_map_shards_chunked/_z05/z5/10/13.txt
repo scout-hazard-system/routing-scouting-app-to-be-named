@@ -1,0 +1,3 @@
+{"meta":{"state":"_z05","z":5,"x":10,"y":13,"zhs":{"key":"z/5/10/13|h3/9/nk8d/p8xs|s2/12/f4/11v/22o","z_key":"z/5/10/13","h_key":"h3/9/nk8d/p8xs","s_key":"s2/12/f4/11v/22o"},"source":"planet","roads":0,"buildings":0,"areas":1,"pois":1}}
+{"type":"area","kind":"water","pts":"32.249974,-67.851563;32.249974,-55.898438;21.616579,-55.898438;21.616579,-67.851563"}
+{"type":"poi","name":"Bermuda","kind":"place_country","lat":32.303385,"lon":-64.756165}

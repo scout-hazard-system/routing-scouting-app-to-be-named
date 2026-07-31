@@ -1,0 +1,75 @@
+{
+  "channels": [
+    {
+      "id": "bf-6901-washington-county-police-fire-and-ems",
+      "name": "Washington County Police, Fire and EMS",
+      "description": "Broadcastify Top 50 national bootstrap feed 6901 for Washington, WI.",
+      "city": "Washington",
+      "county": "Washington",
+      "state": "WI",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "law",
+        "fire",
+        "ems",
+        "national-bootstrap",
+        "washington"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 97,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/6901"
+    },
+    {
+      "id": "bf-16904-outagamie-county-public-safety-police-fire",
+      "name": "Outagamie County Public Safety Police, Fire, &amp; Sheriff for the Cities of Appleton, Omro, Oshkosh, Grand Chute, Neenah, Menasha, Fox Crossing, UW Oshkosh, Kaukauna, Outagamie and Winnebago Counties.",
+      "description": "Broadcastify Top 50 national bootstrap feed 16904 for Outagamie, WI.",
+      "city": "Outagamie",
+      "county": "Outagamie",
+      "state": "WI",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "law",
+        "fire",
+        "national-bootstrap",
+        "outagamie"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 79,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/16904"
+    },
+    {
+      "id": "bf-38965-rock-county-public-safety",
+      "name": "Rock County Public Safety",
+      "description": "Broadcastify Top 50 national bootstrap feed 38965 for Rock, WI.",
+      "city": "Rock",
+      "county": "Rock",
+      "state": "WI",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "rock"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 70,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38965"
+    }
+  ]
+}

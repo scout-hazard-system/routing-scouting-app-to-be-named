@@ -1,0 +1,54 @@
+{
+  "channels": [
+    {
+      "id": "bf-25680-anne-arundel-county-fire-and-emsdispatch-a",
+      "name": "Anne Arundel County Fire and EMSDispatch and Response for Anne Arundel County Fire Department and City of Annapolis Fire Department.",
+      "description": "Broadcastify Top 50 national bootstrap feed 25680 for Anne Arundel, MD.",
+      "city": "Anne Arundel",
+      "county": "Anne Arundel",
+      "state": "MD",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "fire",
+        "ems",
+        "national-bootstrap",
+        "anne arundel"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 75,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/25680"
+    },
+    {
+      "id": "bf-19917-carroll-county-fire-and-ems-digital-feed-i",
+      "name": "Carroll County Fire and EMS - Digital Feed is using a Uniden SDS200. TG&#039;s provided are A1(MAIN), A2(FTAC), A3 &amp; B3(EMS 1&amp;2), A7(FG10) w/subs, A11(FG20)w/subs, B7(FG30)w/subs.",
+      "description": "Broadcastify Top 50 national bootstrap feed 19917 for Carroll, MD.",
+      "city": "Carroll",
+      "county": "Carroll",
+      "state": "MD",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "fire",
+        "ems",
+        "national-bootstrap",
+        "carroll"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 68,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/19917"
+    }
+  ]
+}

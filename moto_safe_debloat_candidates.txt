@@ -1,0 +1,132 @@
+Moto G 2025 Safe Debloat Candidate Review
+Generated: 2026-07-24T22:16:58.329346Z
+
+Scope: review-only. No packages disabled automatically.
+Total packages (user 0): 538
+Third-party packages: 32
+Currently disabled packages: 133
+
+Low-risk candidate packages (manual review before disable):
+- com.android.internal.systemui.navbar.gestural
+- com.android.internal.systemui.navbar.hidegestural
+- com.android.internal.systemui.navbar.threebutton
+- com.android.internal.systemui.navbar.transparent
+- com.android.systemui
+- com.android.systemui.accessibility.accessibilitymenu
+- com.android.systemui.accessibility.accessibilitymenu.auto_generated_rro_product__
+- com.android.systemui.auto_generated_rro_product__
+- com.android.systemui.plugin.globalactions.wallet
+- com.android.wifi.resources.overlay.WifiVzwPreOverlay
+- com.att.csoiam.mobilekey
+- com.att.dh
+- com.att.iqi
+- com.att.mobile.android.vvm
+- com.att.personalcloud
+- com.aura.jet.att
+- com.aura.news.hashtag.news
+- com.aura.oobe.dish
+- com.aura.oobe.motorola
+- com.aura.oobe.solutions
+- com.cricketwireless.minus
+- com.cricketwireless.thescoop
+- com.digitalturbine.android.apps.news.uscellular
+- com.dreamgames.royalkingdom
+- com.einnovation.temu
+- com.facebook.appmanager
+- com.facebook.services
+- com.facebook.system
+- com.fitbit.FitbitMobile
+- com.ironsrc.aura.tmo
+- com.meta.attribution
+- com.metropcs.metrozone
+- com.motorola.android.contacts.overlay.vzw
+- com.motorola.android.launcher.overlay.att
+- com.motorola.android.launcher.overlay.att.apptray
+- com.motorola.android.launcher.overlay.boost.apptray
+- com.motorola.android.launcher.overlay.cricket.apptray
+- com.motorola.android.launcher.overlay.metropcs.rcs.apptray
+- com.motorola.android.launcher.overlay.tmo.rcs.apptray
+- com.motorola.android.launcher.overlay.vzw
+- com.motorola.android.overlay.attpre
+- com.motorola.android.overlay.cricket
+- com.motorola.android.overlay.cricket.iqi
+- com.motorola.android.overlay.kansas.vzwpre
+- com.motorola.android.overlay.vzwpre
+- com.motorola.android.providers.settings.overlay.vzwpre
+- com.motorola.android.server.telecom.overlay.gms.boost
+- com.motorola.android.server.telecom.overlay.tmo
+- com.motorola.android.settings.overlay.att
+- com.motorola.android.settings.overlay.vzw
+- com.motorola.android.systemui.overlay.att
+- com.motorola.android.systemui.overlay.sprint
+- com.motorola.android.systemui.overlay.tmo
+- com.motorola.android.systemui.overlay.usc
+- com.motorola.android.systemui.overlay.vzw
+- com.motorola.contacts.preloadcontacts.overlay.vzw
+- com.motorola.default.ringtones.overlay.metro.usku
+- com.motorola.default.ringtones.overlay.tmo.usku
+- com.motorola.extensions.tracfone
+- com.motorola.launcherconfig.overlay.att
+- com.motorola.launcherconfig.overlay.attpre
+- com.motorola.launcherconfig.overlay.boost
+- com.motorola.launcherconfig.overlay.cricket
+- com.motorola.launcherconfig.overlay.tmo
+- com.motorola.launcherconfig.overlay.tracfone
+- com.motorola.launcherconfig.overlay.vzw
+- com.motorola.launcherconfig.overlay.vzwpre
+- com.motorola.nfwlocationattribution
+- com.motorola.omadm.att
+- com.motorola.omadm.vzw
+- com.motorola.setup.overlay.att
+- com.motorola.setup.overlay.boost
+- com.motorola.setup.overlay.tmo
+- com.motorola.setup.overlay.tracfone
+- com.motorola.setup.overlay.vzw
+- com.motorola.spectrum.setup.extensions
+- com.motorola.systemui.overlay.dcm
+- com.motorola.systemui.overlay.jp
+- com.motorola.systemui.overlay.moto.sysbar
+- com.motorola.thermalservice.overlay.tmo
+- com.motorola.tmo.settingsext
+- com.motorola.tmo.setupext
+- com.motorola.tracfone.rsu
+- com.motorola.tracfone.setup
+- com.motorola.vzw.cloudsetup
+- com.motorola.vzw.pco.extensions.pcoreceiver
+- com.motorola.vzw.provider
+- com.motorola.vzw.settings.extensions
+- com.motorola.vzw.voicemail.extensions
+- com.oem.euiccpartnerapp.overlay.att
+- com.oem.euiccpartnerapp.overlay.tmo
+- com.oem.euiccpartnerapp.overlay.vzw
+- com.securityandprivacy.android.verizon.vms
+- com.spectrum.cm.headless
+- com.swishme.tracfone
+- com.tmobile.echolocate
+- com.tmobile.echolocate.system
+- com.tmobile.m1
+- com.tmobile.pr.adapt
+- com.tmobile.rsuadapter.aidl
+- com.tmobile.rsuapp
+- com.tmobile.rsusrv
+- com.tracfone.generic.mysites
+- com.tracfone.preload.accountservices
+- com.verizon.mips.services
+- com.vzw.ecid
+- com.vzw.hss.myverizon
+- com.xfinitymobile.cometcarrierservice
+- net.peakgames.mobile.spades.android
+
+Single-package disable command (reversible):
+adb shell pm disable-user --user 0 <package_name>
+
+Re-enable command:
+adb shell pm enable <package_name>
+
+Batch pattern (careful):
+for p in <pkg1> <pkg2>; do adb shell pm disable-user --user 0 "$p"; done
+
+Recommended process:
+1) Disable one package at a time
+2) Reboot and test calls/SMS/data/scanner app
+3) Keep notes and re-enable immediately if anything breaks

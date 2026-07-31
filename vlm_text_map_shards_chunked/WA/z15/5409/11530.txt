@@ -1,0 +1,3 @@
+{"meta":{"state":"WA","z":15,"x":5409,"y":11530,"zhs":{"key":"z/15/5409/11530|h3/9/nvan/pfig|s2/12/f2/20y/29e","z_key":"z/15/5409/11530","h_key":"h3/9/nvan/pfig","s_key":"s2/12/f2/20y/29e"},"source":"planet","roads":2,"buildings":0,"areas":0,"pois":0}}
+{"type":"road","class":"tertiary","name":"Umptanum Road","oneway":false,"pts":"46.965377,-120.570062;46.957644,-120.570045"}
+{"type":"road","class":"service","name":"","oneway":false,"pts":"46.962151,-120.570056;46.962162,-120.569429;46.962144,-120.568964"}

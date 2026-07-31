@@ -149,12 +149,220 @@ h2 {
 .nav-row.tri {
   grid-template-columns: repeat(3, 1fr);
 }
+<<<<<<< HEAD
+=======
+.route-card {
+  display: grid;
+  gap: 12px;
+}
+.route-card > h2 {
+  margin-bottom: 2px;
+}
+.route-section {
+  border: 1px solid #2a3b58;
+  border-radius: 10px;
+  background: rgba(12, 18, 32, 0.7);
+  padding: 10px;
+}
+.route-section > h3 {
+  margin: 0 0 8px;
+  font-size: 0.9rem;
+  color: #d5e3ff;
+}
+.route-helper {
+  margin-top: 2px;
+}
+.multi-stop-panel {
+  border: 1px solid #314868;
+  border-radius: 10px;
+  background: rgba(8, 14, 24, 0.72);
+  padding: 8px;
+  margin-top: 8px;
+}
+.multi-stop-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 7px;
+}
+.multi-stop-list {
+  display: grid;
+  gap: 8px;
+}
+.multi-stop-row {
+  display: grid;
+  grid-template-columns: minmax(180px, 1fr) auto auto auto;
+  gap: 6px;
+  align-items: center;
+}
+.multi-stop-row input,
+.multi-stop-row select {
+  min-height: 38px;
+}
+.multi-stop-row .stop-remove-btn {
+  min-height: 38px;
+  padding: 8px 10px;
+}
+.route-status-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  border-radius: 10px;
+  border: 1px solid #314564;
+  background: rgba(9, 15, 26, 0.92);
+  padding: 8px 10px;
+  text-align: center;
+}
+.route-checkbox-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.route-checkbox-label input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+}
+>>>>>>> feature/integrate-waze-and-service-hardening
 .route-grid {
   display: grid;
   gap: 8px;
   grid-template-columns: 1fr 1fr;
   margin-bottom: 8px;
 }
+<<<<<<< HEAD
+=======
+.dest-suggest-menu {
+  grid-column: 2 / 3;
+  border: 1px solid #3a4f72;
+  border-radius: 10px;
+  background: rgba(10, 16, 29, 0.97);
+  box-shadow: 0 10px 24px rgba(4, 10, 21, 0.45);
+  display: grid;
+  gap: 0;
+  max-height: 230px;
+  overflow-y: auto;
+  z-index: 40;
+}
+.dest-suggest-item {
+  text-align: left;
+  border: 0;
+  border-bottom: 1px solid rgba(68, 88, 122, 0.45);
+  border-radius: 0;
+  background: transparent;
+  color: #dbe7ff;
+  padding: 9px 10px;
+  font-size: 0.84rem;
+}
+.dest-suggest-item:last-child {
+  border-bottom: 0;
+}
+.dest-suggest-item:hover,
+.dest-suggest-item.active {
+  background: rgba(47, 100, 196, 0.28);
+  border-color: rgba(93, 136, 215, 0.5);
+}
+.route-visual-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+}
+#routeSketchCanvas {
+  width: 100%;
+  margin-top: 8px;
+  border: 1px solid #334766;
+  border-radius: 10px;
+  background: linear-gradient(180deg, rgba(9, 14, 24, 0.96), rgba(15, 24, 40, 0.96));
+}
+.route-alt-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 10px;
+}
+.route-eta-summary {
+  margin-top: 8px;
+  display: grid;
+  gap: 7px;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+.eta-chip {
+  border: 1px solid #3b5170;
+  border-radius: 10px;
+  background: rgba(10, 17, 29, 0.92);
+  padding: 8px 9px;
+  display: grid;
+  gap: 3px;
+}
+.eta-chip span {
+  color: #9fb5d8;
+  font-size: 0.74rem;
+}
+.eta-chip strong {
+  color: #e4eeff;
+  font-size: 0.86rem;
+  line-height: 1.2;
+}
+.route-alt-chip {
+  border-radius: 999px;
+  border: 1px solid #3f577c;
+  background: rgba(13, 21, 36, 0.9);
+  color: #d7e6ff;
+  font-size: 0.76rem;
+  padding: 6px 10px;
+}
+.route-alt-chip.active {
+  border-color: #59a1ff;
+  background: linear-gradient(180deg, #2558bf, #1c438e);
+}
+.cluster-submenu-shell {
+  margin-top: 10px;
+  display: grid;
+  gap: 8px;
+}
+.cluster-list {
+  display: grid;
+  gap: 7px;
+}
+.cluster-item-btn {
+  text-align: left;
+  border-radius: 10px;
+  border: 1px solid #3b506f;
+  background: rgba(10, 17, 29, 0.94);
+  color: #d7e5fd;
+  padding: 8px 10px;
+  font-size: 0.82rem;
+}
+.cluster-item-btn .cluster-meta {
+  display: block;
+  margin-top: 3px;
+  color: #9fb5d8;
+  font-size: 0.75rem;
+}
+.cluster-item-btn.active {
+  border-color: #7fb1ff;
+  box-shadow: 0 0 0 2px rgba(77, 140, 255, 0.18);
+}
+.cluster-detail-panel {
+  border: 1px solid #3a4f6d;
+  border-radius: 10px;
+  background: rgba(10, 16, 28, 0.88);
+  padding: 10px;
+}
+.cluster-detail-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+.cluster-detail-head h4 {
+  margin: 0;
+  font-size: 0.9rem;
+}
+>>>>>>> feature/integrate-waze-and-service-hardening
 .map-card #integratedMap {
   width: 100%;
   min-height: 380px;
@@ -162,9 +370,41 @@ h2 {
   border-radius: 10px;
   overflow: hidden;
 }
+<<<<<<< HEAD
 .map-shell {
   position: relative;
 }
+=======
+.map-card.isometric-mode #integratedMap {
+  background: #0d1425;
+  position: relative;
+}
+#integratedMapIsometricImage {
+  display: block;
+  width: 100%;
+  min-height: 380px;
+  height: 100%;
+  object-fit: cover;
+  background: #0d1425;
+}
+.map-shell {
+  position: relative;
+}
+.map-loading-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 520;
+  display: grid;
+  place-items: center;
+  background: rgba(7, 12, 22, 0.82);
+  color: #e2ecff;
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  border-radius: 10px;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.45);
+}
+>>>>>>> feature/integrate-waze-and-service-hardening
 .map-quick-menu {
   position: absolute;
   top: 12px;
@@ -230,6 +470,35 @@ h2 {
   border: 1px solid #2f3d59;
   box-shadow: 0 6px 16px rgba(3, 8, 18, 0.45);
 }
+<<<<<<< HEAD
+=======
+.backend-map-panel {
+  margin-top: 10px;
+  border: 1px solid #2b3853;
+  border-radius: 10px;
+  background: rgba(10, 16, 29, 0.8);
+  padding: 10px;
+}
+.map-card.isometric-mode .backend-map-panel {
+  display: none;
+}
+.backend-map-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+#backendMapPreview {
+  width: 100%;
+  min-height: 180px;
+  max-height: 320px;
+  object-fit: cover;
+  border: 1px solid #31405d;
+  border-radius: 8px;
+  background: #0d1425;
+}
+>>>>>>> feature/integrate-waze-and-service-hardening
 .widget-slots {
   display: grid;
   gap: 8px;
@@ -351,9 +620,19 @@ button:focus-visible {
   .top-grid,
   .mid-grid,
   .route-grid,
+<<<<<<< HEAD
   .nav-row.tri {
     grid-template-columns: 1fr;
   }
+=======
+  .nav-row.tri,
+  .multi-stop-row {
+    grid-template-columns: 1fr;
+  }
+  .dest-suggest-menu {
+    grid-column: 1 / -1;
+  }
+>>>>>>> feature/integrate-waze-and-service-hardening
   .map-quick-menu {
     top: 10px;
     right: 10px;

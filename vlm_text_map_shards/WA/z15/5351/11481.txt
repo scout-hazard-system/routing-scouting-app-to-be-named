@@ -1,0 +1,4 @@
+{"meta":{"state":"WA","z":15,"x":5351,"y":11481,"zhs":{"key":"z/15/5351/11481|h3/9/nvbh/pfmt|s2/12/f2/210/292","z_key":"z/15/5351/11481","h_key":"h3/9/nvbh/pfmt","s_key":"s2/12/f2/210/292"},"source":"planet","roads":0,"buildings":0,"areas":1,"pois":2}}
+{"type":"area","kind":"park","pts":"47.331494,-121.212330;47.331494,-121.201000;47.323814,-121.201000;47.323814,-121.212330"}
+{"type":"poi","name":"French Tongue","kind":"peak","lat":47.330612,"lon":-121.202242}
+{"type":"poi","name":"Kachess Ridge","kind":"peak","lat":47.328498,"lon":-121.206493}

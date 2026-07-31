@@ -1,0 +1,54 @@
+{
+  "channels": [
+    {
+      "id": "bf-20766-portland-area-fire-rescue",
+      "name": "Portland Area Fire and Rescue",
+      "description": "Broadcastify feed 20766 for Portland metro fire and rescue dispatch.",
+      "city": "Portland",
+      "county": "Multnomah County",
+      "state": "OR",
+      "service_types": [
+        "fire",
+        "dispatch",
+        "ems"
+      ],
+      "tags": [
+        "portland",
+        "multnomah",
+        "fire",
+        "ems",
+        "metro"
+      ],
+      "lat": 45.5152,
+      "lon": -122.6784,
+      "listeners": 180,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/20766"
+    },
+    {
+      "id": "bf-20613-multnomah-sheriff-gresham",
+      "name": "Multnomah County Sheriff and Gresham Police",
+      "description": "Broadcastify feed 20613 covering Multnomah County Sheriff and Gresham PD dispatch traffic.",
+      "city": "Gresham",
+      "county": "Multnomah County",
+      "state": "OR",
+      "service_types": [
+        "law",
+        "dispatch"
+      ],
+      "tags": [
+        "sheriff",
+        "police",
+        "dispatch",
+        "multnomah",
+        "gresham",
+        "i-84"
+      ],
+      "lat": 45.5001,
+      "lon": -122.4302,
+      "listeners": 150,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/20613"
+    }
+  ]
+}

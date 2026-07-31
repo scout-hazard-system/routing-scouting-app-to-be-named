@@ -1,0 +1,78 @@
+{
+  "channels": [
+    {
+      "id": "bf-37583-coconino-south-sheriff-dps-usfs",
+      "name": "Coconino South Sheriff, DPS and Forest Service",
+      "description": "Broadcastify feed 37583 for Coconino County south area including sheriff and Arizona DPS traffic near Flagstaff corridor.",
+      "city": "Flagstaff",
+      "county": "Coconino County",
+      "state": "AZ",
+      "service_types": [
+        "law",
+        "dispatch",
+        "highway"
+      ],
+      "tags": [
+        "sheriff",
+        "dps",
+        "forest service",
+        "i-17",
+        "i-40",
+        "flagstaff"
+      ],
+      "lat": 35.1983,
+      "lon": -111.6513,
+      "listeners": 115,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37583"
+    },
+    {
+      "id": "bf-12145-phoenix-police",
+      "name": "Phoenix Police",
+      "description": "Broadcastify feed 12145 for Phoenix Police dispatch channels.",
+      "city": "Phoenix",
+      "county": "Maricopa County",
+      "state": "AZ",
+      "service_types": [
+        "law",
+        "dispatch"
+      ],
+      "tags": [
+        "phoenix",
+        "police",
+        "dispatch",
+        "metro"
+      ],
+      "lat": 33.4484,
+      "lon": -112.074,
+      "listeners": 210,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/12145"
+    },
+    {
+      "id": "bf-20741-azdps-metro-phoenix-west",
+      "name": "Arizona DPS - Highway Patrol Metro Phoenix West",
+      "description": "Broadcastify feed 20741 for Arizona DPS Highway Patrol in west metro Phoenix.",
+      "city": "Phoenix",
+      "county": "Maricopa County",
+      "state": "AZ",
+      "service_types": [
+        "law",
+        "dispatch",
+        "highway"
+      ],
+      "tags": [
+        "azdps",
+        "highway patrol",
+        "state trooper",
+        "i-10",
+        "loop 101"
+      ],
+      "lat": 33.4484,
+      "lon": -112.074,
+      "listeners": 170,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/20741"
+    }
+  ]
+}

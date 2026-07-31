@@ -1,0 +1,2 @@
+{"meta":{"state":"WA","z":15,"x":5425,"y":11520,"zhs":{"key":"z/15/5425/11520|h3/9/nv8o/pfjc|s2/12/f2/20u/29e","z_key":"z/15/5425/11520","h_key":"h3/9/nv8o/pfjc","s_key":"s2/12/f2/20u/29e"},"source":"planet","roads":1,"buildings":0,"areas":0,"pois":0}}
+{"type":"road","class":"residential","name":"Gilbert Road","oneway":false,"pts":"47.040299,-120.390965;47.037491,-120.390954;47.032578,-120.390962"}

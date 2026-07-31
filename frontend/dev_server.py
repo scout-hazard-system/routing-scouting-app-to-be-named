@@ -8,12 +8,21 @@ from datetime import datetime, UTC
 from http import HTTPStatus
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
+<<<<<<< HEAD
+=======
+from urllib import error as urlerror
+from urllib import request as urlrequest
+>>>>>>> feature/integrate-waze-and-service-hardening
 from urllib.parse import parse_qs, urlparse
 
 ROOT = Path(getattr(sys, "_MEIPASS", Path(__file__).resolve().parent))
 LOG_PATH = Path(os.environ.get("PIPELINE_LOG_PATH", "/tmp/pipeline_live_doordash.log"))
 HOST = os.environ.get("FRONTEND_DEV_HOST", "127.0.0.1")
 PORT = int(os.environ.get("FRONTEND_DEV_PORT", "8787"))
+<<<<<<< HEAD
+=======
+BACKEND_BASE_URL = os.environ.get("BACKEND_BASE_URL", "http://127.0.0.1:18080").rstrip("/")
+>>>>>>> feature/integrate-waze-and-service-hardening
 RECENT_EVENT_LIMIT = 120
 STREAM_POLL_SECONDS = 0.35
 
@@ -185,6 +194,48 @@ class FrontendHandler(SimpleHTTPRequestHandler):
         except (BrokenPipeError, ConnectionResetError):
             return
 
+<<<<<<< HEAD
+=======
+    def _proxy_backend_get(self):
+        upstream_url = f"{BACKEND_BASE_URL}{self.path}"
+        try:
+            req = urlrequest.Request(
+                upstream_url,
+                method="GET",
+                headers={"User-Agent": "scanner-frontend-lite/0.1"},
+            )
+            with urlrequest.urlopen(req, timeout=20) as upstream:
+                body = upstream.read()
+                content_type = upstream.headers.get("Content-Type", "application/octet-stream")
+                self.send_response(upstream.status)
+                self.send_header("Content-Type", content_type)
+                self.send_header("Content-Length", str(len(body)))
+                self.send_header("Cache-Control", "no-store")
+                self.end_headers()
+                self.wfile.write(body)
+                return
+        except urlerror.HTTPError as exc:
+            body = exc.read()
+            content_type = exc.headers.get("Content-Type", "application/json; charset=utf-8")
+            self.send_response(exc.code)
+            self.send_header("Content-Type", content_type)
+            self.send_header("Content-Length", str(len(body)))
+            self.send_header("Cache-Control", "no-store")
+            self.end_headers()
+            self.wfile.write(body)
+            return
+        except Exception as exc:
+            self._send_json(
+                {
+                    "error": "backend_proxy_unavailable",
+                    "message": str(exc),
+                    "upstream": upstream_url,
+                },
+                status=HTTPStatus.BAD_GATEWAY,
+            )
+            return
+
+>>>>>>> feature/integrate-waze-and-service-hardening
     def do_GET(self):
         parsed = urlparse(self.path)
         path = parsed.path
@@ -214,6 +265,12 @@ class FrontendHandler(SimpleHTTPRequestHandler):
                 }
             )
             return
+<<<<<<< HEAD
+=======
+        if path.startswith("/api/"):
+            self._proxy_backend_get()
+            return
+>>>>>>> feature/integrate-waze-and-service-hardening
 
         return super().do_GET()
 

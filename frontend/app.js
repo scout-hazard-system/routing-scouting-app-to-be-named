@@ -26,12 +26,30 @@ const state = {
   gpsWatchId: null,
   map: {
     instance: null,
+<<<<<<< HEAD
+=======
+    isometricOnly: true,
+    isometricImg: null,
+    loadingOverlay: null,
+    centerLat: null,
+    centerLon: null,
+    centerZoom: 6,
+>>>>>>> feature/integrate-waze-and-service-hardening
     currentMarker: null,
     alertMarker: null,
     trackLine: null,
     triangulationMarker: null,
     followMode: true,
     hasAutoCentered: false,
+<<<<<<< HEAD
+=======
+    lastBackendRenderAt: 0,
+    lastBackendStatusAt: 0,
+    lastBackendCenterKey: "",
+    loadingToken: 0,
+    chunkReadyToken: 0,
+    imageReadyToken: 0,
+>>>>>>> feature/integrate-waze-and-service-hardening
   },
   gpsIngest: {
     inFlight: false,
@@ -56,9 +74,31 @@ const state = {
     selectedRegion: "",
     selectedChannelId: "",
   },
+<<<<<<< HEAD
 };
 const BROWSER_NOTIFY_COOLDOWN_MS = 6000;
 const JURISDICTION_COOLDOWN_MS = 4 * 60 * 1000;
+=======
+  routeUi: {
+    options: null,
+    activeAltIndex: 0,
+    selectedClusterIndex: -1,
+    stopRows: [],
+  },
+  routeSearch: {
+    suggestions: [],
+    activeIndex: -1,
+    debounceTimer: null,
+    requestSeq: 0,
+    appliedLabel: "",
+    menuEl: null,
+  },
+};
+const BROWSER_NOTIFY_COOLDOWN_MS = 6000;
+const JURISDICTION_COOLDOWN_MS = 4 * 60 * 1000;
+const BACKEND_MAP_RENDER_MIN_INTERVAL_MS = 3200;
+const DEST_SUGGEST_DEBOUNCE_MS = 220;
+>>>>>>> feature/integrate-waze-and-service-hardening
 
 const API_BASE = (window.SCANNER_API_BASE_URL || "").replace(/\/+$/, "");
 const ui = {
@@ -80,6 +120,11 @@ const ui = {
   lonInput: document.getElementById("lonInput"),
   startInput: document.getElementById("startInput"),
   endInput: document.getElementById("endInput"),
+<<<<<<< HEAD
+=======
+  addStopBtn: document.getElementById("addStopBtn"),
+  multiStopList: document.getElementById("multiStopList"),
+>>>>>>> feature/integrate-waze-and-service-hardening
   integratedMap: document.getElementById("integratedMap"),
   openWazeBtn: document.getElementById("openWazeBtn"),
   planRouteBtn: document.getElementById("planRouteBtn"),
@@ -111,15 +156,315 @@ const ui = {
   mapAccuracyHud: document.getElementById("mapAccuracyHud"),
   mapUsersHud: document.getElementById("mapUsersHud"),
   mapTriangulationHud: document.getElementById("mapTriangulationHud"),
+<<<<<<< HEAD
+=======
+  backendMapStatus: document.getElementById("backendMapStatus"),
+  backendMapPreview: document.getElementById("backendMapPreview"),
+  refreshBackendMapBtn: document.getElementById("refreshBackendMapBtn"),
+>>>>>>> feature/integrate-waze-and-service-hardening
   recenterMapBtn: document.getElementById("recenterMapBtn"),
   toggleFollowBtn: document.getElementById("toggleFollowBtn"),
   quickRouteBtn: document.getElementById("quickRouteBtn"),
   quickAlertsBtn: document.getElementById("quickAlertsBtn"),
+<<<<<<< HEAD
+=======
+  routeSketchCanvas: document.getElementById("routeSketchCanvas"),
+  routeAltList: document.getElementById("routeAltList"),
+  routeEtaSummary: document.getElementById("routeEtaSummary"),
+  routeVisualStatus: document.getElementById("routeVisualStatus"),
+  clusterList: document.getElementById("clusterList"),
+  clusterDetailPanel: document.getElementById("clusterDetailPanel"),
+  clusterDetailTitle: document.getElementById("clusterDetailTitle"),
+  clusterDetailItems: document.getElementById("clusterDetailItems"),
+  closeClusterDetailBtn: document.getElementById("closeClusterDetailBtn"),
+>>>>>>> feature/integrate-waze-and-service-hardening
 };
 
 function apiUrl(path) {
   return API_BASE ? `${API_BASE}${path}` : path;
 }
+<<<<<<< HEAD
+=======
+function setRouteVisualStatus(text) {
+  if (!ui.routeVisualStatus) return;
+  ui.routeVisualStatus.textContent = text;
+}
+function clearRouteDrawing() {
+  const canvas = ui.routeSketchCanvas;
+  if (!canvas) return;
+  const ctx = canvas.getContext("2d");
+  if (!ctx) return;
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.fillStyle = "#9fb5d8";
+  ctx.font = "14px Inter, system-ui, sans-serif";
+  ctx.fillText("No route drawn yet.", 16, 28);
+}
+function getRouteExtents(points) {
+  let minLat = Infinity;
+  let maxLat = -Infinity;
+  let minLon = Infinity;
+  let maxLon = -Infinity;
+  points.forEach((p) => {
+    if (!Number.isFinite(p.lat) || !Number.isFinite(p.lon)) return;
+    minLat = Math.min(minLat, p.lat);
+    maxLat = Math.max(maxLat, p.lat);
+    minLon = Math.min(minLon, p.lon);
+    maxLon = Math.max(maxLon, p.lon);
+  });
+  if (!Number.isFinite(minLat) || !Number.isFinite(maxLat) || !Number.isFinite(minLon) || !Number.isFinite(maxLon)) {
+    return null;
+  }
+  if (Math.abs(maxLat - minLat) < 1e-6) {
+    minLat -= 0.005;
+    maxLat += 0.005;
+  }
+  if (Math.abs(maxLon - minLon) < 1e-6) {
+    minLon -= 0.005;
+    maxLon += 0.005;
+  }
+  return { minLat, maxLat, minLon, maxLon };
+}
+function projectRoutePoint(p, extents, width, height, pad) {
+  const x = pad + ((p.lon - extents.minLon) / (extents.maxLon - extents.minLon)) * (width - pad * 2);
+  const y = height - pad - ((p.lat - extents.minLat) / (extents.maxLat - extents.minLat)) * (height - pad * 2);
+  return { x, y };
+}
+function drawRouteSketch(alternative, clusters) {
+  const canvas = ui.routeSketchCanvas;
+  if (!canvas) return;
+  const ctx = canvas.getContext("2d");
+  if (!ctx) return;
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  const nodes = Array.isArray(alternative?.route_points)
+    ? alternative.route_points.filter((n) => Number.isFinite(n.lat) && Number.isFinite(n.lon))
+    : [];
+  if (nodes.length < 2) {
+    clearRouteDrawing();
+    return;
+  }
+  const allPoints = [...nodes];
+  (Array.isArray(clusters) ? clusters : []).forEach((c) => {
+    if (Number.isFinite(c?.lat) && Number.isFinite(c?.lon)) allPoints.push({ lat: c.lat, lon: c.lon });
+  });
+  const extents = getRouteExtents(allPoints);
+  if (!extents) {
+    clearRouteDrawing();
+    return;
+  }
+  const pad = 16;
+  ctx.strokeStyle = "rgba(75, 97, 128, 0.65)";
+  ctx.lineWidth = 1;
+  ctx.strokeRect(0.5, 0.5, canvas.width - 1, canvas.height - 1);
+  ctx.beginPath();
+  nodes.forEach((node, idx) => {
+    const p = projectRoutePoint(node, extents, canvas.width, canvas.height, pad);
+    if (idx === 0) ctx.moveTo(p.x, p.y);
+    else ctx.lineTo(p.x, p.y);
+  });
+  ctx.lineWidth = 4;
+  ctx.strokeStyle = "#6fc2ff";
+  ctx.shadowColor = "rgba(62, 145, 240, 0.35)";
+  ctx.shadowBlur = 8;
+  ctx.stroke();
+  ctx.shadowBlur = 0;
+  const startP = projectRoutePoint(nodes[0], extents, canvas.width, canvas.height, pad);
+  const endP = projectRoutePoint(nodes[nodes.length - 1], extents, canvas.width, canvas.height, pad);
+  ctx.fillStyle = "#57e1a4";
+  ctx.beginPath();
+  ctx.arc(startP.x, startP.y, 5, 0, Math.PI * 2);
+  ctx.fill();
+  ctx.fillStyle = "#ff8fa0";
+  ctx.beginPath();
+  ctx.arc(endP.x, endP.y, 5, 0, Math.PI * 2);
+  ctx.fill();
+  (Array.isArray(clusters) ? clusters : []).forEach((cluster) => {
+    if (!Number.isFinite(cluster?.lat) || !Number.isFinite(cluster?.lon)) return;
+    const p = projectRoutePoint(cluster, extents, canvas.width, canvas.height, pad);
+    const count = Math.max(1, Number(cluster?.count || 1));
+    ctx.fillStyle = "rgba(255, 187, 87, 0.9)";
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, Math.min(12, 3 + count), 0, Math.PI * 2);
+    ctx.fill();
+  });
+}
+function closeClusterDetailPanel() {
+  if (ui.clusterDetailPanel) ui.clusterDetailPanel.classList.add("hidden");
+  if (ui.clusterDetailItems) ui.clusterDetailItems.innerHTML = "";
+  state.routeUi.selectedClusterIndex = -1;
+}
+function renderClusterDetail(cluster, clusterIndex) {
+  if (!ui.clusterDetailPanel || !ui.clusterDetailItems || !ui.clusterDetailTitle) return;
+  ui.clusterDetailPanel.classList.remove("hidden");
+  const count = Math.max(0, Number(cluster?.count || 0));
+  ui.clusterDetailTitle.textContent = `Cluster ${clusterIndex + 1} • ${count} alert${count === 1 ? "" : "s"}`;
+  const alerts = Array.isArray(cluster?.alerts) ? cluster.alerts : [];
+  ui.clusterDetailItems.innerHTML = "";
+  if (!alerts.length) {
+    const li = document.createElement("li");
+    li.textContent = "No alert specifics available for this cluster.";
+    ui.clusterDetailItems.appendChild(li);
+    return;
+  }
+  alerts.forEach((item) => {
+    const li = document.createElement("li");
+    const ts = String(item?.ts || "").trim();
+    const headline = String(item?.alert || "").trim();
+    const transcript = String(item?.transcript || "").trim();
+    li.textContent = `${ts || "unknown time"} • ${headline || transcript || "alert detail unavailable"}`;
+    ui.clusterDetailItems.appendChild(li);
+  });
+}
+function renderClusterList() {
+  if (!ui.clusterList) return;
+  const clusters = Array.isArray(state.routeUi.options?.alert_clusters?.clusters)
+    ? [...state.routeUi.options.alert_clusters.clusters]
+    : [];
+  clusters.sort((a, b) => Number(b?.count || 0) - Number(a?.count || 0));
+  ui.clusterList.innerHTML = "";
+  if (!clusters.length) {
+    const fallback = document.createElement("div");
+    fallback.className = "sub tiny";
+    fallback.textContent = "No alert clusters available for this route.";
+    ui.clusterList.appendChild(fallback);
+    closeClusterDetailPanel();
+    return;
+  }
+  clusters.slice(0, 10).forEach((cluster, idx) => {
+    const count = Math.max(0, Number(cluster?.count || 0));
+    const lat = Number(cluster?.lat || 0).toFixed(3);
+    const lon = Number(cluster?.lon || 0).toFixed(3);
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "cluster-item-btn";
+    if (state.routeUi.selectedClusterIndex === idx) {
+      btn.classList.add("active");
+    }
+    btn.innerHTML = `Cluster ${idx + 1} · ${count} alert${count === 1 ? "" : "s"}<span class="cluster-meta">center: ${lat}, ${lon}</span>`;
+    btn.addEventListener("click", () => {
+      state.routeUi.selectedClusterIndex = idx;
+      renderClusterList();
+      renderClusterDetail(cluster, idx);
+    });
+    ui.clusterList.appendChild(btn);
+  });
+}
+function formatDurationLabel(seconds) {
+  const total = Math.max(0, Math.round(Number(seconds) || 0));
+  const days = Math.floor(total / 86400);
+  const hours = Math.floor((total % 86400) / 3600);
+  const minutes = Math.floor((total % 3600) / 60);
+  if (days > 0) {
+    return `${days}d ${hours}h ${minutes}m`;
+  }
+  if (hours > 0) {
+    return `${hours}h ${minutes}m`;
+  }
+  return `${minutes}m`;
+}
+function formatCoverageLabel(value) {
+  const num = Number(value);
+  if (!Number.isFinite(num) || num <= 0) return "fallback";
+  const pct = Math.max(0, Math.min(100, Math.round(num * 100)));
+  return `${pct}%`;
+}
+function renderActiveRouteEta(alternative) {
+  if (!ui.routeEtaSummary) return;
+  if (!alternative || typeof alternative !== "object") {
+    ui.routeEtaSummary.innerHTML = "";
+    return;
+  }
+  const distanceM = Number(alternative.distance_m || 0);
+  const durationS = Number(alternative.duration_s || 0);
+  const etaSpeedS = Number(alternative.eta_speed_limit_s ?? durationS);
+  const stopDwellS = Number(alternative.stop_dwell_s || 0);
+  const etaWithStopsS = Number(alternative.eta_with_stops_s ?? (etaSpeedS + stopDwellS));
+  const coverage = formatCoverageLabel(alternative.maxspeed_coverage);
+  const toll = alternative.has_toll_hint ? "yes" : "no";
+  const ferry = alternative.has_ferry_hint ? "yes" : "no";
+  ui.routeEtaSummary.innerHTML = `
+    <div class="eta-chip"><span>Distance</span><strong>${(distanceM / 1000).toFixed(1)} km</strong></div>
+    <div class="eta-chip"><span>ETA (speed/fallback)</span><strong>${formatDurationLabel(etaSpeedS)}</strong></div>
+    <div class="eta-chip"><span>Stop dwell</span><strong>${formatDurationLabel(stopDwellS)}</strong></div>
+    <div class="eta-chip"><span>Total ETA</span><strong>${formatDurationLabel(etaWithStopsS)}</strong></div>
+    <div class="eta-chip"><span>Maxspeed coverage</span><strong>${coverage}</strong></div>
+    <div class="eta-chip"><span>Toll / Ferry hints</span><strong>${toll} / ${ferry}</strong></div>
+  `;
+}
+function renderRouteAlternatives() {
+  if (!ui.routeAltList) return;
+  const alternatives = Array.isArray(state.routeUi.options?.alternatives) ? state.routeUi.options.alternatives : [];
+  ui.routeAltList.innerHTML = "";
+  if (!alternatives.length) return;
+  alternatives.forEach((alt, idx) => {
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = `route-alt-chip${idx === state.routeUi.activeAltIndex ? " active" : ""}`;
+    const meters = Number(alt?.distance_m || 0);
+    const etaSeconds = Number(alt?.eta_with_stops_s ?? alt?.eta_speed_limit_s ?? alt?.duration_s ?? 0);
+    btn.textContent = `Route ${idx + 1} · ${(meters / 1000).toFixed(1)} km · ETA ${formatDurationLabel(etaSeconds)}`;
+    btn.addEventListener("click", () => {
+      state.routeUi.activeAltIndex = idx;
+      renderRouteVisuals();
+    });
+    ui.routeAltList.appendChild(btn);
+  });
+}
+function renderRouteVisuals() {
+  const alternatives = Array.isArray(state.routeUi.options?.alternatives) ? state.routeUi.options.alternatives : [];
+  if (!alternatives.length) {
+    clearRouteDrawing();
+    setRouteVisualStatus("No route geometry returned");
+    if (ui.routeAltList) ui.routeAltList.innerHTML = "";
+    if (ui.routeEtaSummary) ui.routeEtaSummary.innerHTML = "";
+    if (ui.clusterList) ui.clusterList.innerHTML = "";
+    closeClusterDetailPanel();
+    return;
+  }
+  const altIndex = Math.min(Math.max(0, state.routeUi.activeAltIndex), alternatives.length - 1);
+  state.routeUi.activeAltIndex = altIndex;
+  const activeAlternative = alternatives[altIndex];
+  const clusters = Array.isArray(state.routeUi.options?.alert_clusters?.clusters)
+    ? state.routeUi.options.alert_clusters.clusters
+    : [];
+  drawRouteSketch(activeAlternative, clusters);
+  renderRouteAlternatives();
+  renderActiveRouteEta(activeAlternative);
+  renderClusterList();
+  const count = alternatives.length;
+  const clusterCount = clusters.length;
+  setRouteVisualStatus(`Showing route ${altIndex + 1}/${count} • ${clusterCount} cluster${clusterCount === 1 ? "" : "s"}`);
+}
+async function fetchRouteOptionsFromBackend({ originLat, originLon, destLat, destLon, start, end }) {
+  const params = new URLSearchParams();
+  if (Number.isFinite(originLat)) params.set("origin_lat", String(originLat));
+  if (Number.isFinite(originLon)) params.set("origin_lon", String(originLon));
+  if (Number.isFinite(destLat)) params.set("dest_lat", String(destLat));
+  if (Number.isFinite(destLon)) params.set("dest_lon", String(destLon));
+  if (start) params.set("start", start);
+  if (end) params.set("end", end);
+  const r = await fetch(apiUrl(`/api/platform/route/options?${params.toString()}`));
+  if (!r.ok) throw new Error("route options unavailable");
+  return r.json();
+}
+async function loadRouteVisuals(payload) {
+  setRouteVisualStatus("Loading route drawing…");
+  try {
+    const options = await fetchRouteOptionsFromBackend(payload);
+    state.routeUi.options = options?.status === "ok" ? options : null;
+    state.routeUi.activeAltIndex = 0;
+    state.routeUi.selectedClusterIndex = -1;
+    renderRouteVisuals();
+  } catch {
+    state.routeUi.options = null;
+    clearRouteDrawing();
+    if (ui.routeAltList) ui.routeAltList.innerHTML = "";
+    if (ui.routeEtaSummary) ui.routeEtaSummary.innerHTML = "";
+    if (ui.clusterList) ui.clusterList.innerHTML = "";
+    closeClusterDetailPanel();
+    setRouteVisualStatus("Route drawing unavailable");
+  }
+}
+>>>>>>> feature/integrate-waze-and-service-hardening
 
 function setConn(text, cls) {
   ui.connStatus.className = `pill ${cls}`;
@@ -220,6 +565,70 @@ function parseLatLonInput(text) {
   if (!m) return null;
   return { lat: Number(m[1]), lon: Number(m[2]) };
 }
+<<<<<<< HEAD
+=======
+function buildStopDayOptions(selected = 0) {
+  const opts = [];
+  for (let d = 0; d <= 14; d += 1) {
+    const label = `${d} day${d === 1 ? "" : "s"}`;
+    opts.push(`<option value="${d}"${d === selected ? " selected" : ""}>${label}</option>`);
+  }
+  return opts.join("");
+}
+function buildStopHourOptions(selected = 0) {
+  const opts = [];
+  for (let h = 0; h <= 23; h += 1) {
+    const label = `${h} hr`;
+    opts.push(`<option value="${h}"${h === selected ? " selected" : ""}>${label}</option>`);
+  }
+  return opts.join("");
+}
+function removeStopRow(rowId) {
+  const idx = state.routeUi.stopRows.findIndex((row) => row.id === rowId);
+  if (idx < 0) return;
+  const [row] = state.routeUi.stopRows.splice(idx, 1);
+  if (row?.el?.parentNode) {
+    row.el.parentNode.removeChild(row.el);
+  }
+}
+function addStopRow(seed = {}) {
+  if (!ui.multiStopList) return;
+  const rowId = `stop-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 7)}`;
+  const row = document.createElement("div");
+  row.className = "multi-stop-row";
+  row.dataset.stopId = rowId;
+  row.innerHTML = `
+    <input type="text" class="stop-input" placeholder="Stop address or lat,lon" value="${String(seed.label || "").replace(/"/g, "&quot;")}" />
+    <select class="stop-days">${buildStopDayOptions(Number(seed.days || 0))}</select>
+    <select class="stop-hours">${buildStopHourOptions(Number(seed.hours || 0))}</select>
+    <button type="button" class="stop-remove-btn">Remove</button>
+  `;
+  const removeBtn = row.querySelector(".stop-remove-btn");
+  removeBtn?.addEventListener("click", () => removeStopRow(rowId));
+  ui.multiStopList.appendChild(row);
+  state.routeUi.stopRows.push({
+    id: rowId,
+    el: row,
+    inputEl: row.querySelector(".stop-input"),
+    daysEl: row.querySelector(".stop-days"),
+    hoursEl: row.querySelector(".stop-hours"),
+  });
+}
+function collectStopRows() {
+  return state.routeUi.stopRows
+    .map((row) => ({
+      label: row.inputEl?.value?.trim() || "",
+      days: Number(row.daysEl?.value || 0),
+      hours: Number(row.hoursEl?.value || 0),
+    }))
+    .filter((row) => row.label);
+}
+function stopDwellSeconds(stop) {
+  const days = Number(stop?.days || 0);
+  const hours = Number(stop?.hours || 0);
+  return Math.max(0, days) * 86400 + Math.max(0, hours) * 3600;
+}
+>>>>>>> feature/integrate-waze-and-service-hardening
 
 function openWazeUrl(url) {
   window.open(url, "_blank", "noopener,noreferrer");
@@ -238,6 +647,7 @@ function setFollowMode(enabled) {
   state.map.followMode = !!enabled;
   updateFollowButtonUi();
 }
+<<<<<<< HEAD
 function initIntegratedMap() {
   if (!ui.integratedMap || !window.L || state.map.instance) return;
   const map = window.L.map(ui.integratedMap, { zoomControl: true }).setView([34.0522, -118.2437], 10);
@@ -257,6 +667,153 @@ function initIntegratedMap() {
 
 function updateMapTrack(points) {
   if (!state.map.instance || !window.L) return;
+=======
+function mapRadiusForZoom(zoom) {
+  const z = Number.isFinite(zoom) ? zoom : 9;
+  if (z >= 15) return 35000;
+  if (z >= 14) return 55000;
+  if (z >= 13) return 85000;
+  if (z >= 12) return 130000;
+  if (z >= 11) return 210000;
+  if (z >= 10) return 500000;
+  if (z >= 9) return 900000;
+  if (z >= 7) return 1400000;
+  return 1800000;
+}
+function setBackendMapStatus(text) {
+  if (!ui.backendMapStatus) return;
+  ui.backendMapStatus.textContent = text;
+}
+function ensureMapLoadingOverlay() {
+  if (!ui.integratedMap) return null;
+  if (state.map.loadingOverlay) return state.map.loadingOverlay;
+  const overlay = document.createElement("div");
+  overlay.id = "integratedMapLoading";
+  overlay.className = "map-loading-overlay";
+  overlay.textContent = "Loading map chunks…";
+  ui.integratedMap.appendChild(overlay);
+  state.map.loadingOverlay = overlay;
+  return overlay;
+}
+function setMapLoading(loading, text = "Loading map chunks…") {
+  const overlay = ensureMapLoadingOverlay();
+  if (!overlay) return;
+  overlay.textContent = text;
+  overlay.classList.toggle("hidden", !loading);
+}
+function maybeResolveMapLoading(token) {
+  if (token !== state.map.loadingToken) return;
+  const chunksReady = state.map.chunkReadyToken === token;
+  const imageReady = state.map.imageReadyToken === token;
+  if (chunksReady && imageReady) {
+    setMapLoading(false);
+  }
+}
+function ensureIsometricSurface() {
+  if (!ui.integratedMap) return null;
+  if (state.map.isometricImg) return state.map.isometricImg;
+  const img = document.createElement("img");
+  img.id = "integratedMapIsometricImage";
+  img.alt = "Backend isometric map render";
+  img.decoding = "async";
+  img.loading = "eager";
+  ui.integratedMap.replaceChildren(img);
+  ensureMapLoadingOverlay();
+  state.map.isometricImg = img;
+  return img;
+}
+async function refreshBackendMapStatus() {
+  const now = Date.now();
+  if (now - state.map.lastBackendStatusAt < 12000) return;
+  state.map.lastBackendStatusAt = now;
+  try {
+    const r = await fetch(apiUrl("/api/map/status"));
+    if (!r.ok) return;
+    const data = await r.json();
+    const ladder = Array.isArray(data.zoom_ladder) ? data.zoom_ladder.join("/") : "n/a";
+    const ready = data?.planet?.ready ? "ready" : "warming";
+    setBackendMapStatus(`backend-map: ${data.status || "ok"} • planet:${ready} • ladder:${ladder}`);
+  } catch {
+    // keep last status line
+  }
+}
+function refreshBackendMapPreview(lat, lon, opts = {}) {
+  if (!ui.backendMapPreview) return;
+  if (!Number.isFinite(lat) || !Number.isFinite(lon)) return;
+  state.map.centerLat = lat;
+  state.map.centerLon = lon;
+  const zoom = Number.isFinite(opts.zoom) ? opts.zoom : state.map.instance?.getZoom?.() ?? 9;
+  state.map.centerZoom = zoom;
+  const radiusM = Number.isFinite(opts.radiusM) ? opts.radiusM : mapRadiusForZoom(zoom);
+  const now = Date.now();
+  if (!opts.force && now - state.map.lastBackendRenderAt < BACKEND_MAP_RENDER_MIN_INTERVAL_MS) {
+    return;
+  }
+  const centerKey = `${lat.toFixed(5)},${lon.toFixed(5)}@${Math.round(radiusM)}`;
+  if (!opts.force && centerKey === state.map.lastBackendCenterKey && now - state.map.lastBackendRenderAt < BACKEND_MAP_RENDER_MIN_INTERVAL_MS) {
+    return;
+  }
+  state.map.lastBackendCenterKey = centerKey;
+  state.map.lastBackendRenderAt = now;
+  const token = ++state.map.loadingToken;
+  state.map.chunkReadyToken = 0;
+  state.map.imageReadyToken = 0;
+  setMapLoading(true, "Loading map chunks…");
+  const sceneUrl = apiUrl(
+    `/api/map/scene?lat=${encodeURIComponent(lat)}&lon=${encodeURIComponent(lon)}&radius_m=${Math.round(radiusM)}&zoom=${Math.round(zoom)}`
+  );
+  fetch(sceneUrl)
+    .then((response) => (response.ok ? response.json() : null))
+    .then((scene) => {
+      if (!scene || token !== state.map.loadingToken) {
+        return;
+      }
+      const loadedCells = Array.isArray(scene.cells) ? scene.cells.length : 0;
+      if (loadedCells > 0) {
+        state.map.chunkReadyToken = token;
+        maybeResolveMapLoading(token);
+      } else {
+        setMapLoading(true, "Waiting for map chunks…");
+      }
+    })
+    .catch(() => {
+      if (token === state.map.loadingToken) {
+        setMapLoading(true, "Loading map chunks…");
+      }
+    });
+  const src =
+    apiUrl(
+      `/api/map/render?lat=${encodeURIComponent(lat)}&lon=${encodeURIComponent(lon)}&radius_m=${Math.round(radiusM)}&w=880&h=390`
+    ) + `&ts=${now}`;
+  const isometricImg = ensureIsometricSurface();
+  if (isometricImg) {
+    isometricImg.onload = () => {
+      if (token !== state.map.loadingToken) return;
+      state.map.imageReadyToken = token;
+      maybeResolveMapLoading(token);
+    };
+    isometricImg.onerror = () => {
+      if (token !== state.map.loadingToken) return;
+      setMapLoading(true, "Map render retrying…");
+    };
+    isometricImg.src = src;
+  }
+  ui.backendMapPreview.src = src;
+  setBackendMapStatus(`backend-map: render @ ${lat.toFixed(4)}, ${lon.toFixed(4)} r=${Math.round(radiusM)}m`);
+  refreshBackendMapStatus();
+}
+function initIntegratedMap() {
+  if (!ui.integratedMap) return;
+  document.querySelector(".map-card")?.classList.add("isometric-mode");
+  ensureIsometricSurface();
+  ensureMapLoadingOverlay();
+  updateFollowButtonUi();
+  refreshBackendMapPreview(34.0522, -118.2437, { force: true, zoom: 5, radiusM: 1800000 });
+}
+
+function updateMapTrack(points) {
+  if (state.map.isometricOnly || !state.map.instance || !window.L) return;
+>>>>>>> feature/integrate-waze-and-service-hardening
   if (!Array.isArray(points) || !points.length) return;
   const latLngs = points
     .filter((p) => Number.isFinite(p.lat) && Number.isFinite(p.lon))
@@ -318,7 +875,11 @@ async function fetchGpsTrackSnapshot() {
     updateMapTrack(data.points);
     const latest = data.points[data.points.length - 1];
     if (!state.currentGps && Number.isFinite(latest?.lat) && Number.isFinite(latest?.lon)) {
+<<<<<<< HEAD
       updateIntegratedMap(latest.lat, latest.lon, 12, "gps");
+=======
+      updateIntegratedMap(latest.lat, latest.lon, 6, "gps");
+>>>>>>> feature/integrate-waze-and-service-hardening
     }
     setMapHud({ users: Number(data?.active_users || 0) });
   } catch {
@@ -340,7 +901,11 @@ async function refreshTriangulationView() {
     }
     const tLat = Number(data.estimated_lat);
     const tLon = Number(data.estimated_lon);
+<<<<<<< HEAD
     if (Number.isFinite(tLat) && Number.isFinite(tLon) && state.map.instance && window.L) {
+=======
+    if (!state.map.isometricOnly && Number.isFinite(tLat) && Number.isFinite(tLon) && state.map.instance && window.L) {
+>>>>>>> feature/integrate-waze-and-service-hardening
       const latLng = [tLat, tLon];
       if (!state.map.triangulationMarker) {
         state.map.triangulationMarker = window.L.circleMarker(latLng, {
@@ -370,12 +935,17 @@ async function refreshTriangulationView() {
 function updateIntegratedMap(lat, lon, zoom = 11, markerKind = "gps", opts = {}) {
   const { forceCenter = false } = opts;
   initIntegratedMap();
+<<<<<<< HEAD
   if (!state.map.instance || !window.L || !Number.isFinite(lat) || !Number.isFinite(lon)) return;
   const latLng = [lat, lon];
+=======
+  if (!Number.isFinite(lat) || !Number.isFinite(lon)) return;
+>>>>>>> feature/integrate-waze-and-service-hardening
   const shouldCenter =
     forceCenter ||
     markerKind === "alert" ||
     (markerKind === "gps" && (state.map.followMode || !state.map.hasAutoCentered));
+<<<<<<< HEAD
   if (shouldCenter) {
     state.map.instance.setView(latLng, zoom);
     state.map.hasAutoCentered = true;
@@ -409,6 +979,11 @@ function updateIntegratedMap(lat, lon, zoom = 11, markerKind = "gps", opts = {})
     state.map.currentMarker.setLatLng(latLng);
   }
   state.map.currentMarker.bindPopup("Live GPS position");
+=======
+  if (!shouldCenter) return;
+  state.map.hasAutoCentered = true;
+  refreshBackendMapPreview(lat, lon, { zoom, force: forceCenter || markerKind === "alert" });
+>>>>>>> feature/integrate-waze-and-service-hardening
 }
 function setSelectorStatus(text) {
   ui.selectorStatus.textContent = text;
@@ -1086,6 +1661,156 @@ function readBiasCoordinates() {
   }
   return null;
 }
+<<<<<<< HEAD
+=======
+function hideDestinationSuggestions() {
+  if (!state.routeSearch.menuEl) return;
+  state.routeSearch.menuEl.classList.add("hidden");
+  state.routeSearch.menuEl.innerHTML = "";
+  state.routeSearch.activeIndex = -1;
+}
+
+function renderDestinationSuggestions() {
+  const menu = state.routeSearch.menuEl;
+  if (!menu) return;
+  const items = state.routeSearch.suggestions;
+  if (!Array.isArray(items) || !items.length) {
+    hideDestinationSuggestions();
+    return;
+  }
+  menu.innerHTML = "";
+  items.forEach((item, idx) => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "dest-suggest-item";
+    if (idx === state.routeSearch.activeIndex) {
+      button.classList.add("active");
+    }
+    button.textContent = item.display_name;
+    button.addEventListener("mousedown", (event) => {
+      event.preventDefault();
+      applyDestinationSuggestion(item);
+    });
+    menu.appendChild(button);
+  });
+  menu.classList.remove("hidden");
+}
+
+function applyDestinationSuggestion(item) {
+  if (!item) return;
+  ui.endInput.value = item.display_name || ui.endInput.value;
+  state.routeSearch.appliedLabel = ui.endInput.value.trim();
+  if (Number.isFinite(item.lat) && Number.isFinite(item.lon)) {
+    ui.latInput.value = Number(item.lat).toFixed(6);
+    ui.lonInput.value = Number(item.lon).toFixed(6);
+  }
+  hideDestinationSuggestions();
+}
+
+async function fetchDestinationSuggestions(query) {
+  const seq = ++state.routeSearch.requestSeq;
+  const bias = readBiasCoordinates();
+  const url =
+    apiUrl(`/api/platform/address-catalog/suggest?q=${encodeURIComponent(query)}&limit=8`)
+    + buildBiasQueryString(bias);
+  try {
+    const response = await fetch(url);
+    if (!response.ok || seq !== state.routeSearch.requestSeq) {
+      return;
+    }
+    const payload = await response.json();
+    if (seq !== state.routeSearch.requestSeq) {
+      return;
+    }
+    const results = Array.isArray(payload?.results) ? payload.results : [];
+    state.routeSearch.suggestions = results
+      .map((r) => ({
+        display_name: String(r?.display_name || "").trim(),
+        lat: asFiniteNumber(r?.lat),
+        lon: asFiniteNumber(r?.lon),
+      }))
+      .filter((r) => r.display_name);
+    state.routeSearch.activeIndex = state.routeSearch.suggestions.length ? 0 : -1;
+    renderDestinationSuggestions();
+  } catch {
+    if (seq === state.routeSearch.requestSeq) {
+      hideDestinationSuggestions();
+    }
+  }
+}
+
+function scheduleDestinationSuggest() {
+  if (!ui.endInput) return;
+  const query = ui.endInput.value.trim();
+  if (!query || parseLatLonInput(query)) {
+    hideDestinationSuggestions();
+    return;
+  }
+  if (state.routeSearch.debounceTimer) {
+    clearTimeout(state.routeSearch.debounceTimer);
+  }
+  state.routeSearch.debounceTimer = setTimeout(() => {
+    fetchDestinationSuggestions(query);
+  }, DEST_SUGGEST_DEBOUNCE_MS);
+}
+
+function initDestinationSearchUi() {
+  if (!ui.endInput || state.routeSearch.menuEl) return;
+  const menu = document.createElement("div");
+  menu.className = "dest-suggest-menu hidden";
+  ui.endInput.insertAdjacentElement("afterend", menu);
+  state.routeSearch.menuEl = menu;
+
+  ui.endInput.addEventListener("input", () => {
+    if (state.routeSearch.appliedLabel && ui.endInput.value.trim() !== state.routeSearch.appliedLabel) {
+      state.routeSearch.appliedLabel = "";
+    }
+    scheduleDestinationSuggest();
+  });
+  ui.endInput.addEventListener("focus", () => {
+    scheduleDestinationSuggest();
+  });
+  ui.endInput.addEventListener("blur", () => {
+    setTimeout(() => {
+      hideDestinationSuggestions();
+    }, 120);
+  });
+  ui.endInput.addEventListener("keydown", (event) => {
+    const items = state.routeSearch.suggestions;
+    if (!items.length) {
+      return;
+    }
+    if (event.key === "ArrowDown") {
+      event.preventDefault();
+      state.routeSearch.activeIndex = (state.routeSearch.activeIndex + 1) % items.length;
+      renderDestinationSuggestions();
+      return;
+    }
+    if (event.key === "ArrowUp") {
+      event.preventDefault();
+      state.routeSearch.activeIndex =
+        (state.routeSearch.activeIndex - 1 + items.length) % items.length;
+      renderDestinationSuggestions();
+      return;
+    }
+    if (event.key === "Enter" && !event.shiftKey) {
+      if (state.routeSearch.activeIndex >= 0 && state.routeSearch.activeIndex < items.length) {
+        event.preventDefault();
+        applyDestinationSuggestion(items[state.routeSearch.activeIndex]);
+      }
+      return;
+    }
+    if (event.key === "Escape") {
+      hideDestinationSuggestions();
+    }
+  });
+  document.addEventListener("click", (event) => {
+    if (!menu.contains(event.target) && event.target !== ui.endInput) {
+      hideDestinationSuggestions();
+    }
+  });
+}
+>>>>>>> feature/integrate-waze-and-service-hardening
 
 function buildBiasQueryString(bias) {
   if (!bias || !Number.isFinite(bias.lat) || !Number.isFinite(bias.lon)) return "";
@@ -1168,10 +1893,104 @@ async function resolveAddressWithFunnel(query, bias) {
   upsertAddressCatalog(query, fromGeocode, bias);
   return { candidate: fromGeocode, fromCatalog: false };
 }
+<<<<<<< HEAD
+=======
+async function resolveWaypoint(raw, bias, labelPrefix = "Stop") {
+  const parsed = parseLatLonInput(raw);
+  if (parsed) {
+    return { lat: parsed.lat, lon: parsed.lon, label: raw };
+  }
+  const resolved = await resolveAddressWithFunnel(raw, bias);
+  if (!resolved?.candidate) {
+    throw new Error(`${labelPrefix} unresolved`);
+  }
+  addListItem(
+    ui.jurisdictionNotices,
+    `${labelPrefix}: ${resolved.fromCatalog ? "catalog" : "osm-fallback"} → ${resolved.candidate.displayName || raw}`
+  );
+  return {
+    lat: resolved.candidate.lat,
+    lon: resolved.candidate.lon,
+    label: resolved.candidate.displayName || raw,
+  };
+}
+
+async function buildMultiStopRouteOptions(origin, destination, stops) {
+  let current = origin;
+  let totalDistanceM = 0;
+  let totalDurationS = 0;
+  let totalEtaSpeedS = 0;
+  let totalStopDwellS = 0;
+  const mergedRoutePoints = [];
+  const mergedClusters = [];
+
+  const waypoints = [...stops, destination];
+  for (let i = 0; i < waypoints.length; i += 1) {
+    const next = waypoints[i];
+    const leg = await fetchRouteOptionsFromBackend({
+      originLat: current.lat,
+      originLon: current.lon,
+      destLat: next.lat,
+      destLon: next.lon,
+      start: current.label || "",
+      end: next.label || "",
+    });
+    const alt = Array.isArray(leg?.alternatives) && leg.alternatives.length ? leg.alternatives[0] : null;
+    if (!alt) {
+      throw new Error("missing_route_leg");
+    }
+    const legPoints = Array.isArray(alt.route_points) ? alt.route_points : [];
+    if (legPoints.length) {
+      if (!mergedRoutePoints.length) {
+        mergedRoutePoints.push(...legPoints);
+      } else {
+        mergedRoutePoints.push(...legPoints.slice(1));
+      }
+    }
+    totalDistanceM += Number(alt.distance_m || 0);
+    totalDurationS += Number(alt.duration_s || 0);
+    totalEtaSpeedS += Number(alt.eta_speed_limit_s ?? alt.duration_s ?? 0);
+    const legClusters = Array.isArray(leg?.alert_clusters?.clusters) ? leg.alert_clusters.clusters : [];
+    mergedClusters.push(...legClusters);
+    if (i < stops.length) {
+      totalStopDwellS += stopDwellSeconds(stops[i]);
+    }
+    current = next;
+  }
+
+  const aggregateAlternative = {
+    index: 0,
+    distance_m: totalDistanceM,
+    duration_s: totalDurationS,
+    eta_speed_limit_s: totalEtaSpeedS,
+    stop_dwell_s: totalStopDwellS,
+    eta_with_stops_s: totalEtaSpeedS + totalStopDwellS,
+    has_toll_hint: false,
+    has_ferry_hint: false,
+    route_points: mergedRoutePoints,
+  };
+
+  return {
+    ts: new Date().toISOString(),
+    status: "ok",
+    origin: { lat: origin.lat, lon: origin.lon },
+    destination: { lat: destination.lat, lon: destination.lon },
+    alternatives: [aggregateAlternative],
+    alert_clusters: {
+      ts: new Date().toISOString(),
+      status: "ok",
+      grid_deg: 1.0,
+      clusters: mergedClusters,
+    },
+    stop_count: stops.length,
+  };
+}
+>>>>>>> feature/integrate-waze-and-service-hardening
 
 async function planRoute() {
   const endRaw = ui.endInput.value.trim();
   const startRaw = ui.startInput.value.trim();
+<<<<<<< HEAD
   let parsedEnd = parseLatLonInput(endRaw);
   const parsedStart = parseLatLonInput(startRaw);
   const bias = readBiasCoordinates() || parsedStart || null;
@@ -1221,6 +2040,72 @@ async function planRoute() {
   }
   const weatherEnd = resolvedEndLabel || endRaw;
   fetchRouteWeatherFor(startRaw, weatherEnd);
+=======
+  if (!endRaw) {
+    setRun("destination missing", "bad");
+    setRouteVisualStatus("Enter a destination");
+    return;
+  }
+  const parsedStart = parseLatLonInput(startRaw);
+  const bias = readBiasCoordinates() || parsedStart || null;
+  try {
+    setRun("resolving route", "warn");
+    const originLat = parsedStart?.lat ?? state.currentGps?.lat ?? asFiniteNumber(ui.latInput.value);
+    const originLon = parsedStart?.lon ?? state.currentGps?.lon ?? asFiniteNumber(ui.lonInput.value);
+    if (!Number.isFinite(originLat) || !Number.isFinite(originLon)) {
+      setRun("origin unresolved", "bad");
+      setRouteVisualStatus("Route origin needs valid coordinates");
+      return;
+    }
+    const origin = { lat: originLat, lon: originLon, label: startRaw || "Current position" };
+    const destination = await resolveWaypoint(endRaw, bias, "Destination");
+    const stopInputs = collectStopRows();
+    const resolvedStops = [];
+    for (let i = 0; i < stopInputs.length; i += 1) {
+      const stop = stopInputs[i];
+      const resolved = await resolveWaypoint(stop.label, bias, `Stop ${i + 1}`);
+      resolved.days = stop.days;
+      resolved.hours = stop.hours;
+      resolvedStops.push(resolved);
+    }
+
+    const options = await buildMultiStopRouteOptions(origin, destination, resolvedStops);
+    state.routeUi.options = options;
+    state.routeUi.activeAltIndex = 0;
+    state.routeUi.selectedClusterIndex = -1;
+    renderRouteVisuals();
+
+    ui.latInput.value = destination.lat;
+    ui.lonInput.value = destination.lon;
+    const finalAlt = options.alternatives[0] || {};
+    const etaLabel = formatDurationLabel(finalAlt.eta_with_stops_s ?? finalAlt.eta_speed_limit_s ?? finalAlt.duration_s);
+    setRouteVisualStatus(
+      `Stops: ${resolvedStops.length} • ETA: ${etaLabel} (speed limits + 30 mph fallback + stop dwell)`
+    );
+    setRun("route ready", "ok");
+    fetchRouteWeatherFor(startRaw, destination.label || endRaw);
+
+    fetchWazeRouteFromBackend({
+      start: startRaw,
+      end: destination.label || endRaw,
+      lat: destination.lat,
+      lon: destination.lon,
+    })
+      .then((route) => {
+        if (Number.isFinite(route?.lat) && Number.isFinite(route?.lon)) {
+          updateIntegratedMap(route.lat, route.lon, 12, "gps", { forceCenter: true });
+        }
+        if (route?.app_url) openWazeUrl(route.app_url);
+      })
+      .catch(() => {
+        updateIntegratedMap(destination.lat, destination.lon, 12, "gps", { forceCenter: true });
+        openWazeFromCoords(destination.lat, destination.lon);
+      });
+  } catch {
+    setRun("route destination unresolved", "bad");
+    setRouteVisualStatus("Route drawing unavailable");
+  }
+>>>>>>> feature/integrate-waze-and-service-hardening
 }
 
 ui.enableNotifyBtn.addEventListener("click", async () => {
@@ -1239,6 +2124,12 @@ ui.openWazeBtn.addEventListener("click", () => {
   if (!Number.isFinite(lat) || !Number.isFinite(lon)) return;
   openWazeFromCoords(lat, lon);
 });
+<<<<<<< HEAD
+=======
+if (ui.addStopBtn) {
+  ui.addStopBtn.addEventListener("click", () => addStopRow());
+}
+>>>>>>> feature/integrate-waze-and-service-hardening
 
 ui.planRouteBtn.addEventListener("click", planRoute);
 
@@ -1291,6 +2182,24 @@ if (ui.quickAlertsBtn) {
     ui.alerts?.scrollIntoView({ behavior: "smooth", block: "start" });
   });
 }
+<<<<<<< HEAD
+=======
+if (ui.refreshBackendMapBtn) {
+  ui.refreshBackendMapBtn.addEventListener("click", () => {
+    const lat = Number(ui.latInput.value);
+    const lon = Number(ui.lonInput.value);
+    if (Number.isFinite(lat) && Number.isFinite(lon)) {
+      refreshBackendMapPreview(lat, lon, { force: true });
+      return;
+    }
+    const centerLat = state.map.centerLat;
+    const centerLon = state.map.centerLon;
+    if (Number.isFinite(centerLat) && Number.isFinite(centerLon)) {
+      refreshBackendMapPreview(centerLat, centerLon, { force: true, zoom: state.map.centerZoom || 12 });
+    }
+  });
+}
+>>>>>>> feature/integrate-waze-and-service-hardening
 ui.refreshSelectorBtn.addEventListener("click", () => {
   if (!isAutoSelectorMode()) {
     applyManualSelectionToStatus();
@@ -1328,6 +2237,15 @@ ui.channelSelect.addEventListener("change", () => {
     applyManualSelectionToStatus();
   }
 });
+<<<<<<< HEAD
+=======
+if (ui.closeClusterDetailBtn) {
+  ui.closeClusterDetailBtn.addEventListener("click", () => {
+    closeClusterDetailPanel();
+    renderClusterList();
+  });
+}
+>>>>>>> feature/integrate-waze-and-service-hardening
 
 ui.closeAlertModalBtn.addEventListener("click", hideAlertModal);
 ui.toggleQuietModeBtn.addEventListener("click", () => {
@@ -1350,9 +2268,21 @@ ui.clearNotifyListsBtn.addEventListener("click", () => {
 
 renderMetrics();
 renderNotificationWorkflow();
+<<<<<<< HEAD
 setRun("waiting", "mute");
 setGpsStatus("gps: pending", "mute");
 initIntegratedMap();
+=======
+clearRouteDrawing();
+setRouteVisualStatus("Route visualization idle");
+setRun("waiting", "mute");
+setGpsStatus("gps: pending", "mute");
+initIntegratedMap();
+if (ui.multiStopList) {
+  ui.multiStopList.innerHTML = "";
+}
+initDestinationSearchUi();
+>>>>>>> feature/integrate-waze-and-service-hardening
 updateFollowButtonUi();
 setSelectorModeUi();
 loadCatalogRegions();

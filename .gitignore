@@ -1,0 +1,18 @@
+# Python caches
+__pycache__/
+*.py[cod]
+
+# Local virtual environments / toolchains
+cop_pipeline/
+.android-toolchain/
+
+# Frontend/backend build outputs
+frontend/dist/
+frontend/java_backend/dist/
+frontend/java_backend/*.class
+
+# Local temp artifacts
+frontend/__pycache__/
+frontend/java_backend/tests/__pycache__/
+buffer_chunk.wav
+pipeline_stress_fallback_report.csv

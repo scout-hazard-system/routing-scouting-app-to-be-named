@@ -1,0 +1,29 @@
+{
+  "channels": [
+    {
+      "id": "bf-33371-clear-creek-county-law-enforcement-fire-em",
+      "name": "Clear Creek County Law Enforcement, Fire, EMS and Mountain Rescue - Digital[FR/Technical Rescue] Mt. Evans (Idaho Springs, CO) - C3 Units and Alpine Rescue Team responding to a the victim of a lightening strike per Jeffco Dispatch. Now confirmed two victims, one no pulse. Flight For Life on standby.",
+      "description": "Broadcastify Top 50 national bootstrap feed 33371 for Clear Creek, CO.",
+      "city": "Clear Creek",
+      "county": "Clear Creek",
+      "state": "CO",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "fire",
+        "ems",
+        "national-bootstrap",
+        "clear creek"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 224,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/33371"
+    }
+  ]
+}

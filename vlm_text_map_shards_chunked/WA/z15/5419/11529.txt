@@ -1,0 +1,3 @@
+{"meta":{"state":"WA","z":15,"x":5419,"y":11529,"zhs":{"key":"z/15/5419/11529|h3/9/nv9t/pfij|s2/12/f2/20w/29f","z_key":"z/15/5419/11529","h_key":"h3/9/nv9t/pfij","s_key":"s2/12/f2/20w/29f"},"source":"planet","roads":2,"buildings":0,"areas":0,"pois":0}}
+{"type":"road","class":"motorway","name":"I 90","oneway":true,"pts":"46.970251,-120.465260;46.970286,-120.462929;46.970324,-120.453930"}
+{"type":"road","class":"motorway","name":"I 90","oneway":true,"pts":"46.970697,-120.453930;46.970675,-120.454853;46.970527,-120.465260"}

@@ -1,0 +1,10 @@
+{"meta":{"state":"WA","z":15,"x":5416,"y":11529,"zhs":{"key":"z/15/5416/11529|h3/9/nva1/pfij|s2/12/f2/20w/29f","z_key":"z/15/5416/11529","h_key":"h3/9/nva1/pfij","s_key":"s2/12/f2/20w/29f"},"source":"planet","roads":7,"buildings":2,"areas":0,"pois":0}}
+{"type":"road","class":"motorway","name":"I 90","oneway":true,"pts":"46.970463,-120.498219;46.970564,-120.492294;46.970650,-120.486889"}
+{"type":"road","class":"motorway","name":"I 90","oneway":true,"pts":"46.970923,-120.486889;46.970725,-120.498219"}
+{"type":"road","class":"residential","name":"Number 6 Road","oneway":false,"pts":"46.970893,-120.498109;46.972394,-120.498074;46.972874,-120.498068"}
+{"type":"road","class":"residential","name":"Number 6 Road","oneway":false,"pts":"46.965142,-120.498127;46.970242,-120.498111"}
+{"type":"road","class":"residential","name":"Number 6 Road","oneway":false,"pts":"46.970242,-120.498111;46.970893,-120.498109"}
+{"type":"road","class":"service","name":"","oneway":false,"pts":"46.967040,-120.498122;46.967007,-120.498219"}
+{"type":"road","class":"service","name":"","oneway":false,"pts":"46.972394,-120.498219;46.972394,-120.498074"}
+{"type":"building","height_m":6.0,"pts":"46.969952,-120.497449;46.969998,-120.497451;46.969993,-120.497631;46.970060,-120.497634;46.970068,-120.497371;46.969954,-120.497366"}
+{"type":"building","height_m":6.0,"pts":"46.972874,-120.497459;46.972808,-120.497459;46.972806,-120.497797;46.972874,-120.497797"}

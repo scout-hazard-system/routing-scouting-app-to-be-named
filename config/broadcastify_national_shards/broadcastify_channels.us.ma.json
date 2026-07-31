@@ -1,0 +1,30 @@
+{
+  "channels": [
+    {
+      "id": "bf-856-fall-river-police-and-fire-frpd-ch1-ch2-ch",
+      "name": "Fall River Police and Fire FRPD Ch1, Ch2, Ch3, FRFD Ch1, Ch2, FR EMS, Tiverton PD &amp; FD, Westport PD &amp; FD, Bristol County Wide, Marine Ch. 16",
+      "description": "Broadcastify Top 50 national bootstrap feed 856 for Bristol, MA.",
+      "city": "Bristol",
+      "county": "Bristol",
+      "state": "MA",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "law",
+        "fire",
+        "ems",
+        "national-bootstrap",
+        "bristol"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 70,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/856"
+    }
+  ]
+}

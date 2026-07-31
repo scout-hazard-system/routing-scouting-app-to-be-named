@@ -1,0 +1,228 @@
+{
+  "channels": [
+    {
+      "id": "bf-21738-pittsburgh-police-fire-and-ems",
+      "name": "Pittsburgh Police, Fire and EMS",
+      "description": "Broadcastify Top 50 national bootstrap feed 21738 for Allegheny, PA.",
+      "city": "Allegheny",
+      "county": "Allegheny",
+      "state": "PA",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "law",
+        "fire",
+        "ems",
+        "national-bootstrap",
+        "allegheny"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 117,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/21738"
+    },
+    {
+      "id": "bf-3737-westmoreland-county-public-safetymonitorin",
+      "name": "Westmoreland County Public SafetyMonitoring the county-wide 800Mhz P25 Digital TRS only. Includes selected talkgroups for Law Enforcement, Fire, EMS, and EOC/EMA TAC channels. See our Feed Notes/Info Page for a complete agency and channel coverage list.",
+      "description": "Broadcastify Top 50 national bootstrap feed 3737 for Westmoreland, PA.",
+      "city": "Westmoreland",
+      "county": "Westmoreland",
+      "state": "PA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "fire",
+        "ems",
+        "national-bootstrap",
+        "westmoreland"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 114,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/3737"
+    },
+    {
+      "id": "bf-22346-somerset-county-fire-and-ems-digital-broad",
+      "name": "Somerset County Fire and EMS - Digital Broadcasting Somerset County Fire &amp; Ems. \r\nDispatch will be coming from the county&#039;s VHF system, while all other traffic will be on the P25 Inter-County Digital System.",
+      "description": "Broadcastify Top 50 national bootstrap feed 22346 for Somerset, PA.",
+      "city": "Somerset",
+      "county": "Somerset",
+      "state": "PA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "fire",
+        "ems",
+        "national-bootstrap",
+        "somerset"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 83,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/22346"
+    },
+    {
+      "id": "bf-20884-schuylkill-county-fire",
+      "name": "Schuylkill County Fire",
+      "description": "Broadcastify Top 50 national bootstrap feed 20884 for Schuylkill, PA.",
+      "city": "Schuylkill",
+      "county": "Schuylkill",
+      "state": "PA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "fire",
+        "national-bootstrap",
+        "schuylkill"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 80,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/20884"
+    },
+    {
+      "id": "bf-38096-fayette-county-icorrs-public-safety-dispat",
+      "name": "Fayette County ICORRS Public Safety DispatchThis feed provides all of the dispatch talk groups for Fayette County, PA.\r\n\r\nFire Dispatch\r\nFire Command\r\nEMS Dispatch\r\nSheriff\r\nWest Police\r\nUniontown Police\r\nNorth Police\r\nLaw Announce\r\nSW Regional Police\r\nTeam 900\r\nCoroner\r\nCounty",
+      "description": "Broadcastify Top 50 national bootstrap feed 38096 for Fayette, PA.",
+      "city": "Fayette",
+      "county": "Fayette",
+      "state": "PA",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "law",
+        "fire",
+        "ems",
+        "national-bootstrap",
+        "fayette"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 72,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38096"
+    },
+    {
+      "id": "bf-12522-adams-county-fire-and-ems-digitalsimple-fe",
+      "name": "Adams County Fire and EMS - DigitalSimple Feed for Fire and EMS Personnel to Monitor.\r\n\r\nNot to be relied on for dispatch.",
+      "description": "Broadcastify Top 50 national bootstrap feed 12522 for Adams, PA.",
+      "city": "Adams",
+      "county": "Adams",
+      "state": "PA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "fire",
+        "ems",
+        "national-bootstrap",
+        "adams"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 71,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/12522"
+    },
+    {
+      "id": "bf-2504-blair-county-ems-fire-police-hazmat-and-he",
+      "name": "Blair County EMS, Fire, Police, Hazmat and Helos",
+      "description": "Broadcastify Top 50 national bootstrap feed 2504 for Blair, PA.",
+      "city": "Blair",
+      "county": "Blair",
+      "state": "PA",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "law",
+        "fire",
+        "ems",
+        "national-bootstrap",
+        "blair"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 70,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/2504"
+    },
+    {
+      "id": "bf-22101-franklin-county-fire-and-ems-alerts-this-f",
+      "name": "Franklin County Fire and EMS Alerts This feed handles EMS dispatches and Fire dispatches along with Ops 2 for Franklin &amp; Ops 12 - 16 for adding Adams + Cumberland County cross patches along county border.",
+      "description": "Broadcastify Top 50 national bootstrap feed 22101 for Franklin, PA.",
+      "city": "Franklin",
+      "county": "Franklin",
+      "state": "PA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "fire",
+        "ems",
+        "national-bootstrap",
+        "franklin"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 70,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/22101"
+    },
+    {
+      "id": "bf-23432-york-county-fireyork-county-pa-digital-p25",
+      "name": "York County FireYork County PA Digital P25 Fire Communications",
+      "description": "Broadcastify Top 50 national bootstrap feed 23432 for York, PA.",
+      "city": "York",
+      "county": "York",
+      "state": "PA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "fire",
+        "national-bootstrap",
+        "york"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 65,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/23432"
+    }
+  ]
+}

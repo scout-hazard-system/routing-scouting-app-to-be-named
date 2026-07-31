@@ -1,0 +1,4 @@
+{"meta":{"state":"WA","z":15,"x":5429,"y":11536,"zhs":{"key":"z/15/5429/11536|h3/9/nv9k/pfhx|s2/12/f2/20v/29h","z_key":"z/15/5429/11536","h_key":"h3/9/nv9k/pfhx","s_key":"s2/12/f2/20v/29h"},"source":"planet","roads":3,"buildings":0,"areas":0,"pois":0}}
+{"type":"road","class":"path","name":"","oneway":false,"pts":"46.919446,-120.347704;46.919446,-120.352945;46.919433,-120.355396"}
+{"type":"road","class":"residential","name":"Larsen Road","oneway":false,"pts":"46.912634,-120.347677;46.920373,-120.347712"}
+{"type":"road","class":"residential","name":"Pumping Plant Road","oneway":false,"pts":"46.919446,-120.347704;46.919449,-120.344067"}

@@ -1,0 +1,6 @@
+{"meta":{"state":"WA","z":15,"x":5422,"y":11530,"zhs":{"key":"z/15/5422/11530|h3/9/nv9n/pfig|s2/12/f2/20v/29f","z_key":"z/15/5422/11530","h_key":"h3/9/nv9n/pfig","s_key":"s2/12/f2/20v/29f"},"source":"planet","roads":5,"buildings":0,"areas":0,"pois":0}}
+{"type":"road","class":"tertiary","name":"Tjossem Road","oneway":false,"pts":"46.963742,-120.432032;46.963610,-120.423726;46.963595,-120.420971"}
+{"type":"road","class":"tertiary","name":"Tjossem Road","oneway":false,"pts":"46.963747,-120.432301;46.963744,-120.432156"}
+{"type":"road","class":"tertiary","name":"Tjossem Road","oneway":false,"pts":"46.963744,-120.432156;46.963742,-120.432032"}
+{"type":"road","class":"service","name":"","oneway":false,"pts":"46.963616,-120.424123;46.962259,-120.424128;46.961900,-120.423999;46.961732,-120.423693;46.961675,-120.423318;46.961847,-120.422950;46.962232,-120.422763;46.963605,-120.422763"}
+{"type":"road","class":"service","name":"","oneway":false,"pts":"46.963595,-120.421070;46.963497,-120.420971"}

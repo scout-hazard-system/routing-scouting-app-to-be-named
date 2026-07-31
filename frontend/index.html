@@ -43,6 +43,7 @@
           <span id="mapUsersHud">users: --</span>
           <span id="mapTriangulationHud">triangulation: idle</span>
         </div>
+<<<<<<< HEAD
       </article>
       <article class="card route-card">
         <h2>Route Planner</h2>
@@ -66,6 +67,52 @@
           <h3>Channel Selection</h3>
           <div class="nav-row">
             <label>
+=======
+        <div class="backend-map-panel">
+          <div class="backend-map-head">
+            <span id="backendMapStatus" class="sub tiny">backend-map: idle</span>
+            <button id="refreshBackendMapBtn" class="tiny-btn" type="button">Refresh backend map</button>
+          </div>
+          <img id="backendMapPreview" alt="Backend proprietary map render preview" />
+        </div>
+      </article>
+      <article class="card route-card">
+        <h2>Route Planner</h2>
+        <div class="route-section">
+          <h3>Destination Input</h3>
+          <div class="route-grid">
+            <input id="startInput" type="text" placeholder="Start (address or lat,lon)" />
+            <input id="endInput" type="text" placeholder="Destination (address or lat,lon)" />
+            <input id="latInput" type="number" step="any" placeholder="Latitude (optional)" />
+            <input id="lonInput" type="number" step="any" placeholder="Longitude (optional)" />
+          </div>
+          <p class="sub tiny route-helper">Destination text takes priority over typed coordinates.</p>
+          <div class="multi-stop-panel">
+            <div class="multi-stop-head">
+              <span class="sub tiny">Multi-stop planner</span>
+              <button id="addStopBtn" class="tiny-btn" type="button">Add Stop</button>
+            </div>
+            <div id="multiStopList" class="multi-stop-list"></div>
+          </div>
+        </div>
+        <div class="route-section">
+          <h3>Route Actions</h3>
+          <div class="nav-row tri">
+            <button id="planRouteBtn" class="primary">Plan Route in Waze</button>
+            <button id="openWazeBtn">Open Waze Route</button>
+            <button id="useAlertCoordsBtn">Use Last Alert Coords</button>
+          </div>
+          <div class="nav-row tri">
+            <button id="useCurrentGpsBtn">Use Current GPS</button>
+            <button id="refreshSelectorBtn">Refresh Broadcastify Selector</button>
+            <span id="selectorStatus" class="sub tiny route-status-pill">selector: idle</span>
+          </div>
+        </div>
+        <div class="route-section card widget-slot">
+          <h3>Channel Selection</h3>
+          <div class="nav-row">
+            <label class="route-checkbox-label">
+>>>>>>> feature/integrate-waze-and-service-hardening
               <input id="autoSelectorCheckbox" type="checkbox" checked />
               Use automatic search
             </label>
@@ -80,7 +127,29 @@
             </select>
           </div>
         </div>
+<<<<<<< HEAD
         <p class="sub tiny">Planner supports destination text + lat/lon. If both are provided, destination text takes priority.</p>
+=======
+        <div class="route-section route-visual-section">
+          <div class="route-visual-head">
+            <h3>Route Drawing & Alert Clusters</h3>
+            <span id="routeVisualStatus" class="sub tiny">Route visualization idle</span>
+          </div>
+          <canvas id="routeSketchCanvas" width="860" height="260" aria-label="Route drawing preview"></canvas>
+          <div id="routeAltList" class="route-alt-list"></div>
+          <div id="routeEtaSummary" class="route-eta-summary" aria-live="polite"></div>
+          <div class="cluster-submenu-shell">
+            <div id="clusterList" class="cluster-list"></div>
+            <section id="clusterDetailPanel" class="cluster-detail-panel hidden" aria-live="polite">
+              <div class="cluster-detail-head">
+                <h4 id="clusterDetailTitle">Cluster alerts</h4>
+                <button id="closeClusterDetailBtn" class="tiny-btn" type="button">Close</button>
+              </div>
+              <ul id="clusterDetailItems" class="list compact"></ul>
+            </section>
+          </div>
+        </div>
+>>>>>>> feature/integrate-waze-and-service-hardening
       </article>
     </section>
     <section class="grid mid-grid">
@@ -162,6 +231,20 @@
       </p>
       <pre id="eventPreview" class="event-preview"></pre>
     </section>
+<<<<<<< HEAD
+=======
+    <section class="card">
+      <h2>OpenStreetMap / ODbL Attribution</h2>
+      <p class="sub tiny">
+        Map data © OpenStreetMap contributors (ODbL 1.0).
+        Dataset:
+        <a href="https://planet.openstreetmap.org" target="_blank" rel="noopener noreferrer">planet.openstreetmap.org</a>
+        · License:
+        <a href="https://opendatacommons.org/licenses/odbl/1-0/" target="_blank" rel="noopener noreferrer">ODbL 1.0</a>
+        · This app reads upstream OSM data in read-only mode and does not modify upstream OSM records.
+      </p>
+    </section>
+>>>>>>> feature/integrate-waze-and-service-hardening
   </main>
   <div id="alertModal" class="modal hidden" aria-hidden="true">
     <div class="modal-card">

@@ -1,0 +1,75 @@
+{
+  "channels": [
+    {
+      "id": "bf-32602-indianapolis-metropolitan-police-indy-lawr",
+      "name": "Indianapolis Metropolitan Police Indy, Lawrence, Speedway, Beech Grove.",
+      "description": "Broadcastify Top 50 national bootstrap feed 32602 for Marion, IN.",
+      "city": "Marion",
+      "county": "Marion",
+      "state": "IN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "law",
+        "national-bootstrap",
+        "marion"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 347,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32602"
+    },
+    {
+      "id": "bf-25304-terre-haute-public-safety-and-vigo-county-",
+      "name": "Terre Haute Public Safety and Vigo County Fire Vigo County Public safety system. Covering both Towers. THPD,THFD,VCSD,ISU,ISP,WTHPD,VCFD",
+      "description": "Broadcastify Top 50 national bootstrap feed 25304 for Vigo, IN.",
+      "city": "Vigo",
+      "county": "Vigo",
+      "state": "IN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "fire",
+        "national-bootstrap",
+        "vigo"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 81,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/25304"
+    },
+    {
+      "id": "bf-38966-south-bend-mishawaka-amp-st-joseph-county-",
+      "name": "South Bend, Mishawaka &amp; St. Joseph County Police, Fire &amp; EMS South Bend PD\r\nMishawaka PD\r\nSt Joseph Co. PD\r\nSt. Joseph Co Fire/EMS\r\nSB/Mishawaka Fire/EMS",
+      "description": "Broadcastify Top 50 national bootstrap feed 38966 for St. Joseph, IN.",
+      "city": "St. Joseph",
+      "county": "St. Joseph",
+      "state": "IN",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "law",
+        "fire",
+        "ems",
+        "national-bootstrap",
+        "st. joseph"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 78,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38966"
+    }
+  ]
+}

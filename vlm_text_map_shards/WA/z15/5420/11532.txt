@@ -1,0 +1,8 @@
+{"meta":{"state":"WA","z":15,"x":5420,"y":11532,"zhs":{"key":"z/15/5420/11532|h3/9/nv9y/pfia|s2/12/f2/20w/29g","z_key":"z/15/5420/11532","h_key":"h3/9/nv9y/pfia","s_key":"s2/12/f2/20w/29g"},"source":"planet","roads":4,"buildings":0,"areas":2,"pois":1}}
+{"type":"road","class":"residential","name":"South Ferguson Road","oneway":false,"pts":"46.946335,-120.450210;46.946807,-120.450207;46.950379,-120.450298"}
+{"type":"road","class":"residential","name":"South Ferguson Road","oneway":false,"pts":"46.942645,-120.450204;46.944183,-120.450196;46.946234,-120.450207"}
+{"type":"road","class":"residential","name":"South Ferguson Road","oneway":false,"pts":"46.946234,-120.450207;46.946335,-120.450210"}
+{"type":"road","class":"service","name":"","oneway":false,"pts":"46.946807,-120.450207;46.946809,-120.449354"}
+{"type":"area","kind":"park","pts":"46.948607,-120.442944;46.948733,-120.446345;46.949242,-120.446090;46.949781,-120.445508;46.950379,-120.444513;46.950379,-120.442944"}
+{"type":"area","kind":"park","pts":"46.950379,-120.445323;46.949175,-120.446532;46.949133,-120.446701;46.947228,-120.448268;46.947203,-120.449166;46.947287,-120.449335;46.947369,-120.450027;46.950379,-120.450081"}
+{"type":"poi","name":"Eslinger Farms Inc. Field 4","kind":"farmland","lat":46.949956,"lon":-120.447911}

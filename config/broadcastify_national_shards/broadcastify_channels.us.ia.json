@@ -1,0 +1,26 @@
+{
+  "channels": [
+    {
+      "id": "bf-5725-des-moines-police-dispatch-1des-moines-pol",
+      "name": "Des Moines Police Dispatch 1Des Moines Police Department primary dispatch channel.",
+      "description": "Broadcastify Top 50 national bootstrap feed 5725 for Polk, IA.",
+      "city": "Polk",
+      "county": "Polk",
+      "state": "IA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "law",
+        "national-bootstrap",
+        "polk"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 93,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/5725"
+    }
+  ]
+}

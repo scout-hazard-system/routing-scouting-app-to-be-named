@@ -1,0 +1,5 @@
+{"meta":{"state":"WA","z":15,"x":5421,"y":11534,"zhs":{"key":"z/15/5421/11534|h3/9/nva1/pfi3|s2/12/f2/20w/29g","z_key":"z/15/5421/11534","h_key":"h3/9/nva1/pfi3","s_key":"s2/12/f2/20w/29g"},"source":"planet","roads":4,"buildings":0,"areas":0,"pois":0}}
+{"type":"road","class":"tertiary","name":"Denmark Road","oneway":false,"pts":"46.934048,-120.434428;46.935378,-120.434476"}
+{"type":"road","class":"tertiary","name":"Denmark Road","oneway":false,"pts":"46.927641,-120.434280;46.928790,-120.434310;46.932400,-120.434428;46.933940,-120.434428"}
+{"type":"road","class":"tertiary","name":"Denmark Road","oneway":false,"pts":"46.933940,-120.434428;46.934048,-120.434428"}
+{"type":"road","class":"service","name":"","oneway":false,"pts":"46.932314,-120.433352;46.932360,-120.433443;46.932378,-120.433585;46.932400,-120.433934;46.932400,-120.434428"}

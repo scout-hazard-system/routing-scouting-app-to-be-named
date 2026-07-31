@@ -7,6 +7,10 @@ import re
 import sys
 import signal
 import json
+<<<<<<< HEAD
+=======
+import tempfile
+>>>>>>> feature/integrate-waze-and-service-hardening
 from datetime import datetime, UTC
 import scipy.io.wavfile as wav
 import requests
@@ -15,9 +19,15 @@ from faster_whisper import WhisperModel
 from channel_selector import SelectorContext, haversine_km, load_channels, select_channels
 from optional_audio_routes import ensure_optional_route_enabled
 try:
+<<<<<<< HEAD
     import scanner_llm_set
 except Exception:
     scanner_llm_set = None
+=======
+    import llm_set_client
+except Exception:
+    llm_set_client = None
+>>>>>>> feature/integrate-waze-and-service-hardening
 
 
 FS = 16000          # Audio frequency standard for Whisper
@@ -27,6 +37,12 @@ SHOULD_EXIT = False
 sd = None
 HTTP_SESSION = requests.Session()
 ALERT_PREFIX_RE = re.compile(r"^\s*ALERT\s*:", flags=re.IGNORECASE)
+<<<<<<< HEAD
+=======
+PIPER_BIN = os.environ.get("PIPER_BIN", "/home/gibi/Desktop/cop_pipeline/bin/piper")
+PIPER_MODEL_PATH = os.environ.get("PIPER_MODEL_PATH", "").strip()
+PIPER_MODEL_CONFIG_PATH = os.environ.get("PIPER_MODEL_CONFIG_PATH", "").strip()
+>>>>>>> feature/integrate-waze-and-service-hardening
 
 
 def require_sounddevice():
@@ -51,9 +67,15 @@ def emit_event_json(event_type, enabled=True, **payload):
     }
     print(f"[EVENT_JSON] {json.dumps(event, ensure_ascii=False)}")
 
+<<<<<<< HEAD
 # Legacy inline alert prompt: only used when scanner_llm_set cannot be imported.
 # Kept in sync with the finalized scout-alert SYSTEM block
 # (llm_set/Modelfile.scout-alert / scanner_llm_set.ALERT_FALLBACK_SYSTEM).
+=======
+# Legacy inline alert prompt: only used when llm_set_client cannot be imported.
+# Kept in sync with the alert TASK contract in scout-core1.0.3
+# (llm_set/Modelfile.scout-core1.0.3 / llm_set_client.ALERT_FALLBACK_SYSTEM).
+>>>>>>> feature/integrate-waze-and-service-hardening
 SYSTEM_PROMPT = """
 You are an in-car speed trap and radar alert assistant for a driver on a cross country trip.
 The user gives you one police scanner transcript. Decide if it describes ACTIVE or PLANNED roadway traffic enforcement.
@@ -77,8 +99,13 @@ Output contract:
 - If IGNORE: reply with the single word IGNORE.
 - Never add explanations, quotes, or extra lines.
 """
+<<<<<<< HEAD
 if scanner_llm_set is not None:
     SYSTEM_PROMPT = scanner_llm_set.ALERT_FALLBACK_SYSTEM
+=======
+if llm_set_client is not None:
+    SYSTEM_PROMPT = llm_set_client.ALERT_FALLBACK_SYSTEM
+>>>>>>> feature/integrate-waze-and-service-hardening
 
 CALL_TYPE_KEYWORDS = {
     "traffic_stop": ["traffic stop", "stopped", "vehicle stop", "10-38", "10 38"],
@@ -402,6 +429,32 @@ def resolve_capture_samplerate(device_index, requested_rate):
         return fallback_rate
 
 def speak_alert(message):
+<<<<<<< HEAD
+=======
+    if PIPER_MODEL_PATH and os.path.isfile(PIPER_MODEL_PATH) and shutil.which(PIPER_BIN):
+        wav_path = None
+        try:
+            with tempfile.NamedTemporaryFile(suffix=".wav", delete=False) as tmp_wav:
+                wav_path = tmp_wav.name
+            piper_cmd = [PIPER_BIN, "--model", PIPER_MODEL_PATH, "--output_file", wav_path]
+            if PIPER_MODEL_CONFIG_PATH and os.path.isfile(PIPER_MODEL_CONFIG_PATH):
+                piper_cmd.extend(["--config", PIPER_MODEL_CONFIG_PATH])
+            subprocess.run(piper_cmd, input=message, text=True, check=False)
+            if shutil.which("paplay"):
+                subprocess.run(["paplay", wav_path], check=False)
+                return
+            if shutil.which("aplay"):
+                subprocess.run(["aplay", wav_path], check=False)
+                return
+        except Exception:
+            pass
+        finally:
+            if wav_path and os.path.exists(wav_path):
+                try:
+                    os.remove(wav_path)
+                except Exception:
+                    pass
+>>>>>>> feature/integrate-waze-and-service-hardening
     try:
         subprocess.run(["spd-say", message], check=False)
     except Exception:
@@ -733,9 +786,15 @@ def resolve_broadcast_streams(args):
     )
     channels = load_channels(args.channels_file, ctx=ctx)
     rerank_model = args.selector_ollama_model
+<<<<<<< HEAD
     if scanner_llm_set is not None:
         # Prefer the scout-rank model when built; fall back to base llama3.1.
         rerank_model, rank_fallback = scanner_llm_set.resolve_model(rerank_model)
+=======
+    if llm_set_client is not None:
+        # Prefer the scout-rank model when built; fall back to base llama3.1.
+        rerank_model, rank_fallback = llm_set_client.resolve_model(rerank_model)
+>>>>>>> feature/integrate-waze-and-service-hardening
         if rank_fallback:
             print(f"Selector rerank model '{args.selector_ollama_model}' not installed; using '{rerank_model}'.")
     ranked, rerank_error = select_channels(
@@ -884,11 +943,23 @@ parser.add_argument("--log-file", type=str, default="/tmp/pipeline_runtime.log",
 parser.add_argument("--alert-debug", action=argparse.BooleanOptionalAction, default=True, help="Emit detailed [ALERT_DEBUG] lines for cue matching and Ollama decisions")
 parser.add_argument("--ollama-timeout", type=float, default=8.0, help="Ollama request timeout in seconds")
 parser.add_argument("--ollama-retries", type=int, default=1, help="Retry attempts after first Ollama failure")
+<<<<<<< HEAD
 parser.add_argument("--llm-set", action=argparse.BooleanOptionalAction, default=True, help="Use the proprietary scout LLM set (scout-alert/scout-intel); falls back to base llama3.1 prompts when models are not built")
 parser.add_argument("--llm-alert-model", type=str, default="scout-alert", help="Scout model for the alert decision")
 parser.add_argument("--llm-intel-model", type=str, default="scout-intel", help="Scout model for structured intel extraction")
 parser.add_argument("--llm-intel", action=argparse.BooleanOptionalAction, default=True, help="Run structured intel extraction on alert-worthy transcripts")
 parser.add_argument("--llm-intel-timeout", type=float, default=10.0, help="Intel extraction request timeout in seconds")
+=======
+parser.add_argument("--llm-set", action=argparse.BooleanOptionalAction, default=True, help="Use the proprietary scout LLM set (scout-core1.0.3/scout-rank/scout-vet1.0.4); falls back to base llama3.1 prompts when models are not built")
+parser.add_argument("--llm-alert-model", type=str, default="scout-core1.0.3", help="Scout model for the alert decision (default unified core model)")
+parser.add_argument("--llm-intel-model", type=str, default="scout-core1.0.3", help="Scout model for structured intel extraction (default unified core model)")
+parser.add_argument("--llm-intel", action=argparse.BooleanOptionalAction, default=True, help="Run structured intel extraction on alert-worthy transcripts")
+parser.add_argument("--llm-intel-timeout", type=float, default=10.0, help="Intel extraction request timeout in seconds")
+parser.add_argument("--llm-alert-vet", action=argparse.BooleanOptionalAction, default=True, help="Run second-stage lightweight vet model before emitting alert_triggered events")
+parser.add_argument("--llm-alert-vet-model", type=str, default="scout-vet1.0.4", help="Scout vet model for alert gating")
+parser.add_argument("--llm-alert-vet-timeout", type=float, default=6.0, help="Vet model request timeout in seconds")
+parser.add_argument("--llm-alert-vet-retries", type=int, default=0, help="Retry attempts after first vet model failure")
+>>>>>>> feature/integrate-waze-and-service-hardening
 parser.add_argument("--rms-threshold", type=float, default=0.01, help="Skip chunk when RMS is below this value")
 parser.add_argument("--clip-threshold", type=float, default=0.15, help="Skip chunk when clipped sample ratio exceeds this value")
 parser.add_argument("--soft-alert-fallback", action=argparse.BooleanOptionalAction, default=True, help="Emit SOFT_ALERT when dispatch cues meet threshold but LLM does not emit ALERT")
@@ -1020,9 +1091,15 @@ else:
     print(f"Input selection strategy: {input_selection_reason}")
 print(f"Capture sample rate: {capture_fs}")
 llm_set_info = None
+<<<<<<< HEAD
 use_llm_set = bool(args.llm_set and scanner_llm_set is not None)
 if use_llm_set:
     llm_set_info = scanner_llm_set.llm_set_status(force_refresh=True)
+=======
+use_llm_set = bool(args.llm_set and llm_set_client is not None)
+if use_llm_set:
+    llm_set_info = llm_set_client.llm_set_status(force_refresh=True)
+>>>>>>> feature/integrate-waze-and-service-hardening
     print(
         "LLM set (scout): "
         f"ollama_up={llm_set_info['ollama_up']} "
@@ -1030,7 +1107,11 @@ if use_llm_set:
         f"models={llm_set_info['models']}"
     )
 elif args.llm_set:
+<<<<<<< HEAD
     print("LLM set requested but scanner_llm_set module unavailable; using legacy inline prompt.")
+=======
+    print("LLM set requested but llm_set_client module unavailable; using legacy inline prompt.")
+>>>>>>> feature/integrate-waze-and-service-hardening
 emit_event_json(
     "pipeline_ready",
     enabled=args.integration_json,
@@ -1056,6 +1137,10 @@ run_stats = {
     "skipped_clipped": 0,
     "llm_alert": 0,
     "soft_alert_fallback": 0,
+<<<<<<< HEAD
+=======
+    "vetted_blocked": 0,
+>>>>>>> feature/integrate-waze-and-service-hardening
 }
 run_started_at = time.time()
 loop_counter = 0
@@ -1328,7 +1413,11 @@ try:
                 
                 # 4. Offload text to the proprietary scout LLM set (Ollama-backed)
                 if use_llm_set:
+<<<<<<< HEAD
                     llm_result = scanner_llm_set.query_alert(
+=======
+                    llm_result = llm_set_client.query_alert(
+>>>>>>> feature/integrate-waze-and-service-hardening
                         raw_text,
                         timeout_seconds=args.ollama_timeout,
                         retries=args.ollama_retries,
@@ -1344,6 +1433,63 @@ try:
                     and strong_enforcement
                     and (has_location or classification["call_types"] != ["unclassified"] or classification["codes"])
                 )
+<<<<<<< HEAD
+=======
+                fallback_soft_alert = (
+                    args.soft_alert_fallback
+                    and rule_expected_alert
+                    and not hard_rule_alert
+                    and (not llm_alert)
+                    and (strong_enforcement or has_location)
+                )
+                candidate_alert = llm_alert or hard_rule_alert or fallback_soft_alert
+                proposed_alert_message = ai_response
+                if not llm_alert and hard_rule_alert:
+                    proposed_alert_message = (
+                        f"ALERT: probable enforcement activity (rule score={dispatch_score}, "
+                        f"strong_enforcement={strong_enforcement}, location={has_location})."
+                    )
+                elif not llm_alert and fallback_soft_alert:
+                    proposed_alert_message = (
+                        f"SOFT_ALERT: dispatch-style cues met threshold (cue_count={cue_count}, score={dispatch_score}) "
+                        f"but LLM returned IGNORE."
+                    )
+                vet_result = {
+                    "decision": "VET_PASS",
+                    "model": None,
+                    "status_code": None,
+                    "error": None,
+                    "attempts": 0,
+                    "used_fallback": False,
+                }
+                alert_vetted = True
+                if (
+                    candidate_alert
+                    and args.llm_alert_vet
+                    and use_llm_set
+                    and llm_set_client is not None
+                ):
+                    vet_result = llm_set_client.query_alert_vet(
+                        raw_text,
+                        proposed_alert_text=proposed_alert_message,
+                        timeout_seconds=args.llm_alert_vet_timeout,
+                        retries=args.llm_alert_vet_retries,
+                        model=args.llm_alert_vet_model,
+                    )
+                    alert_vetted = vet_result.get("decision") == "VET_PASS"
+                nav_voice_guidance = None
+                if candidate_alert and alert_vetted and use_llm_set and llm_set_client is not None:
+                    try:
+                        nav_result = llm_set_client.query_nav(
+                            raw_text,
+                            timeout_seconds=args.ollama_timeout,
+                            retries=args.ollama_retries,
+                            model=args.llm_alert_model,
+                        )
+                        nav_voice_guidance = normalize_llm_response_text(nav_result.get("response", ""))
+                    except Exception:
+                        nav_voice_guidance = None
+>>>>>>> feature/integrate-waze-and-service-hardening
                 if llm_alert:
                     decision_reason = "llm_alert"
                 elif hard_rule_alert:
@@ -1354,6 +1500,7 @@ try:
                     decision_reason = "llm_ignore_despite_rule_expected_alert"
                 else:
                     decision_reason = "insufficient_dispatch_cues_or_llm_ignore"
+<<<<<<< HEAD
                 fallback_soft_alert = (
                     args.soft_alert_fallback
                     and rule_expected_alert
@@ -1365,6 +1512,14 @@ try:
                 llm_intel = None
                 if (llm_alert or hard_rule_alert or fallback_soft_alert) and use_llm_set and args.llm_intel:
                     intel_result = scanner_llm_set.query_intel(
+=======
+                if candidate_alert and not alert_vetted:
+                    decision_reason = "vetted_out_by_sub_model"
+                # 4b. Structured intel extraction (scout-core1.0.3 TASK: INTEL) on alert-worthy transcripts
+                llm_intel = None
+                if candidate_alert and alert_vetted and use_llm_set and args.llm_intel:
+                    intel_result = llm_set_client.query_intel(
+>>>>>>> feature/integrate-waze-and-service-hardening
                         raw_text,
                         timeout_seconds=args.llm_intel_timeout,
                         model=args.llm_intel_model,
@@ -1408,6 +1563,16 @@ try:
                     llm_attempts=llm_result["attempts"],
                     llm_error=llm_result["error"],
                     llm_response=ai_response,
+<<<<<<< HEAD
+=======
+                    alert_vetted=alert_vetted,
+                    alert_vet_decision=vet_result.get("decision"),
+                    alert_vet_model=vet_result.get("model"),
+                    alert_vet_status=vet_result.get("status_code"),
+                    alert_vet_attempts=vet_result.get("attempts"),
+                    alert_vet_error=vet_result.get("error"),
+                    alert_vet_used_fallback=vet_result.get("used_fallback"),
+>>>>>>> feature/integrate-waze-and-service-hardening
                     classification=classification,
                     location_mentions=location_mentions,
                     poi_mentions=poi_mentions,
@@ -1432,13 +1597,24 @@ try:
                         f"llm_status={llm_result['status_code']} "
                         f"llm_attempts={llm_result['attempts']} "
                         f"llm_error={log_safe(str(llm_result['error'])) if llm_result['error'] else 'none'} "
+<<<<<<< HEAD
+=======
+                        f"alert_vetted={alert_vetted} "
+                        f"alert_vet_decision={vet_result.get('decision')} "
+                        f"alert_vet_model={vet_result.get('model')} "
+                        f"alert_vet_error={log_safe(str(vet_result.get('error'))) if vet_result.get('error') else 'none'} "
+>>>>>>> feature/integrate-waze-and-service-hardening
                         f"fallback_soft_alert={fallback_soft_alert} "
                         f"llm_raw_excerpt=\"{llm_raw_excerpt}\" "
                         f"llm_response=\"{log_safe(ai_response)}\" "
                         f"transcript=\"{log_safe(raw_text)}\""
                     )
                 
+<<<<<<< HEAD
                 if llm_alert:
+=======
+                if llm_alert and alert_vetted:
+>>>>>>> feature/integrate-waze-and-service-hardening
                     run_stats["llm_alert"] += 1
                     print(f"🚨 {ai_response}")
                     print(
@@ -1455,7 +1631,11 @@ try:
                     )
                     # 5. Linux Native Voice Notification Engine
                     clean_message = ALERT_PREFIX_RE.sub("", ai_response, count=1).strip()
+<<<<<<< HEAD
                     speak_alert(clean_message)
+=======
+                    speak_alert(nav_voice_guidance or clean_message)
+>>>>>>> feature/integrate-waze-and-service-hardening
                     emit_event_json(
                         "alert_triggered",
                         enabled=args.integration_json,
@@ -1466,17 +1646,31 @@ try:
                         location_mentions=location_mentions,
                         poi_mentions=poi_mentions,
                         llm_intel=llm_intel,
+<<<<<<< HEAD
+=======
+                        alert_vetted=alert_vetted,
+                        alert_vet_decision=vet_result.get("decision"),
+                        alert_vet_model=vet_result.get("model"),
+                        alert_vet_reason=decision_reason,
+                        nav_voice_guidance=nav_voice_guidance,
+>>>>>>> feature/integrate-waze-and-service-hardening
                         rms=rms,
                         clip_ratio=clip_ratio,
                         audio_levels=audio_levels,
                         audio_level_window_ms=AUDIO_LEVEL_WINDOW_MS,
                     )
+<<<<<<< HEAD
                 elif hard_rule_alert:
                     run_stats["llm_alert"] += 1
                     hard_alert_message = (
                         f"ALERT: probable enforcement activity (rule score={dispatch_score}, "
                         f"strong_enforcement={strong_enforcement}, location={has_location})."
                     )
+=======
+                elif hard_rule_alert and alert_vetted:
+                    run_stats["llm_alert"] += 1
+                    hard_alert_message = proposed_alert_message
+>>>>>>> feature/integrate-waze-and-service-hardening
                     print(f"🚨 {hard_alert_message}")
                     print(
                         "[ALERT_LOG] "
@@ -1490,7 +1684,11 @@ try:
                         f"pois={poi_mentions} "
                         f"transcript=\"{raw_text}\""
                     )
+<<<<<<< HEAD
                     speak_alert("Potential traffic enforcement ahead. Slow down and use caution.")
+=======
+                    speak_alert(nav_voice_guidance or "Potential traffic enforcement ahead. Slow down and use caution.")
+>>>>>>> feature/integrate-waze-and-service-hardening
                     emit_event_json(
                         "alert_triggered",
                         enabled=args.integration_json,
@@ -1501,6 +1699,13 @@ try:
                         location_mentions=location_mentions,
                         poi_mentions=poi_mentions,
                         llm_intel=llm_intel,
+<<<<<<< HEAD
+=======
+                        alert_vetted=alert_vetted,
+                        alert_vet_decision=vet_result.get("decision"),
+                        alert_vet_model=vet_result.get("model"),
+                        alert_vet_reason=decision_reason,
+>>>>>>> feature/integrate-waze-and-service-hardening
                         cue_count=cue_count,
                         dispatch_score=dispatch_score,
                         rms=rms,
@@ -1508,11 +1713,16 @@ try:
                         audio_levels=audio_levels,
                         audio_level_window_ms=AUDIO_LEVEL_WINDOW_MS,
                     )
+<<<<<<< HEAD
                 elif fallback_soft_alert:
                     soft_alert_message = (
                         f"SOFT_ALERT: dispatch-style cues met threshold (cue_count={cue_count}, score={dispatch_score}) "
                         f"but LLM returned IGNORE."
                     )
+=======
+                elif fallback_soft_alert and alert_vetted:
+                    soft_alert_message = proposed_alert_message
+>>>>>>> feature/integrate-waze-and-service-hardening
                     run_stats["soft_alert_fallback"] += 1
                     print(f"⚠️ {soft_alert_message}")
                     print(
@@ -1539,7 +1749,11 @@ try:
                         f"pois={poi_mentions} "
                         f"transcript=\"{raw_text}\""
                     )
+<<<<<<< HEAD
                     speak_alert("Possible traffic enforcement activity detected. Use caution.")
+=======
+                    speak_alert(nav_voice_guidance or "Possible traffic enforcement activity detected. Use caution.")
+>>>>>>> feature/integrate-waze-and-service-hardening
                     emit_event_json(
                         "alert_triggered",
                         enabled=args.integration_json,
@@ -1550,12 +1764,48 @@ try:
                         location_mentions=location_mentions,
                         poi_mentions=poi_mentions,
                         llm_intel=llm_intel,
+<<<<<<< HEAD
+=======
+                        alert_vetted=alert_vetted,
+                        alert_vet_decision=vet_result.get("decision"),
+                        alert_vet_model=vet_result.get("model"),
+                        alert_vet_reason=decision_reason,
+>>>>>>> feature/integrate-waze-and-service-hardening
                         cue_count=cue_count,
                         rms=rms,
                         clip_ratio=clip_ratio,
                         audio_levels=audio_levels,
                         audio_level_window_ms=AUDIO_LEVEL_WINDOW_MS,
                     )
+<<<<<<< HEAD
+=======
+                elif candidate_alert and not alert_vetted:
+                    run_stats["vetted_blocked"] += 1
+                    print(
+                        "[VET_BLOCKED] "
+                        f"decision={vet_result.get('decision')} "
+                        f"model={vet_result.get('model')} "
+                        f"reason={decision_reason} "
+                        f"transcript=\"{log_safe(raw_text)}\""
+                    )
+                    emit_event_json(
+                        "alert_vetoed",
+                        enabled=args.integration_json,
+                        transcript=raw_text,
+                        proposed_alert=proposed_alert_message,
+                        decision_reason=decision_reason,
+                        alert_vetted=alert_vetted,
+                        alert_vet_decision=vet_result.get("decision"),
+                        alert_vet_model=vet_result.get("model"),
+                        alert_vet_status=vet_result.get("status_code"),
+                        alert_vet_error=vet_result.get("error"),
+                        classification=classification,
+                        location_mentions=location_mentions,
+                        poi_mentions=poi_mentions,
+                        rms=rms,
+                        clip_ratio=clip_ratio,
+                    )
+>>>>>>> feature/integrate-waze-and-service-hardening
         except Exception as e:
             if SHOULD_EXIT:
                 break
@@ -1573,7 +1823,12 @@ finally:
         f"skipped_silence={run_stats['skipped_silence']} "
         f"skipped_clipped={run_stats['skipped_clipped']} "
         f"llm_alert={run_stats['llm_alert']} "
+<<<<<<< HEAD
         f"soft_alert_fallback={run_stats['soft_alert_fallback']}"
+=======
+        f"soft_alert_fallback={run_stats['soft_alert_fallback']} "
+        f"vetted_blocked={run_stats['vetted_blocked']}"
+>>>>>>> feature/integrate-waze-and-service-hardening
     )
     emit_event_json(
         "run_summary",

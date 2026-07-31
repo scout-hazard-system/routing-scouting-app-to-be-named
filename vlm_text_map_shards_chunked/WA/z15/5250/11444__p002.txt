@@ -1,0 +1,251 @@
+{"meta":{"state":"WA","z":15,"x":5250,"y":11444,"zhs":{"key":"z/15/5250/11444|h3/9/nvge/pfq2|s2/12/f2/21c/28o","z_key":"z/15/5250/11444","h_key":"h3/9/nvge/pfq2","s_key":"s2/12/f2/21c/28o"},"source":"planet","roads":884,"buildings":598,"areas":19,"pois":160}}
+{"type":"building","height_m":32.0,"pts":"47.602047,-122.319396;47.602045,-122.319256;47.602575,-122.319256;47.602575,-122.319181;47.602588,-122.319181;47.602588,-122.318950;47.602389,-122.318950;47.602389,-122.318980;47.602336,-122.318980;47.602336,-122.318918;47.602367,-122.318918;47.602369,-122.318720;47.602297,-122.318720;47.602297,-122.318655;47.602036,-122.318653;47.602036,-122.318457;47.601810,-122.318449;47.601808,-122.319396"}
+{"type":"building","height_m":6.0,"pts":"47.599799,-122.310837;47.599799,-122.310861;47.599855,-122.310861;47.599857,-122.310874;47.599887,-122.310874;47.599887,-122.310737;47.599859,-122.310737;47.599859,-122.310837"}
+{"type":"building","height_m":6.0,"pts":"47.598694,-122.311762;47.598694,-122.311751;47.598663,-122.311751;47.598663,-122.311762;47.598640,-122.311765;47.598640,-122.311867;47.598739,-122.311867;47.598739,-122.311762"}
+{"type":"building","height_m":6.0,"pts":"47.598640,-122.311985;47.598726,-122.311985;47.598726,-122.311920;47.598640,-122.311920"}
+{"type":"building","height_m":6.0,"pts":"47.598640,-122.312041;47.598726,-122.312041;47.598726,-122.311985;47.598640,-122.311985"}
+{"type":"building","height_m":8.0,"pts":"47.605642,-122.314602;47.605642,-122.314672;47.605725,-122.314672;47.605725,-122.314602"}
+{"type":"building","height_m":8.0,"pts":"47.605642,-122.314533;47.605642,-122.314602;47.605725,-122.314602;47.605725,-122.314533"}
+{"type":"building","height_m":6.0,"pts":"47.605751,-122.314981;47.605751,-122.315042;47.605753,-122.315042;47.605753,-122.315080;47.605827,-122.315080;47.605827,-122.315007;47.605812,-122.315007;47.605812,-122.314981"}
+{"type":"building","height_m":6.0,"pts":"47.605657,-122.315088;47.605727,-122.315088;47.605727,-122.314973;47.605657,-122.314973"}
+{"type":"building","height_m":6.0,"pts":"47.605642,-122.315281;47.605642,-122.315335;47.605711,-122.315335;47.605711,-122.315281"}
+{"type":"building","height_m":6.0,"pts":"47.605642,-122.315227;47.605642,-122.315281;47.605711,-122.315281;47.605711,-122.315227"}
+{"type":"building","height_m":6.0,"pts":"47.605642,-122.315174;47.605642,-122.315227;47.605711,-122.315227;47.605711,-122.315174"}
+{"type":"building","height_m":6.0,"pts":"47.605642,-122.315123;47.605642,-122.315174;47.605711,-122.315174;47.605711,-122.315120"}
+{"type":"building","height_m":6.0,"pts":"47.605740,-122.315262;47.605740,-122.315335;47.605801,-122.315335;47.605801,-122.315262"}
+{"type":"building","height_m":6.0,"pts":"47.605740,-122.315190;47.605740,-122.315262;47.605801,-122.315262;47.605801,-122.315190"}
+{"type":"building","height_m":6.0,"pts":"47.605740,-122.315117;47.605740,-122.315190;47.605801,-122.315190;47.605801,-122.315117"}
+{"type":"building","height_m":6.0,"pts":"47.605968,-122.314388;47.605970,-122.314313;47.605892,-122.314313;47.605892,-122.314388"}
+{"type":"building","height_m":6.0,"pts":"47.605968,-122.314460;47.605968,-122.314388;47.605892,-122.314388;47.605892,-122.314460"}
+{"type":"building","height_m":6.0,"pts":"47.605964,-122.311397;47.606026,-122.311395;47.606024,-122.311263;47.605964,-122.311263"}
+{"type":"building","height_m":6.0,"pts":"47.605886,-122.311397;47.605935,-122.311397;47.605933,-122.311314;47.605886,-122.311314"}
+{"type":"building","height_m":6.0,"pts":"47.605818,-122.311357;47.605872,-122.311357;47.605870,-122.311260;47.605818,-122.311260"}
+{"type":"building","height_m":6.0,"pts":"47.605243,-122.310743;47.605243,-122.310619;47.605154,-122.310619;47.605154,-122.310764;47.605197,-122.310764;47.605197,-122.310743"}
+{"type":"building","height_m":6.0,"pts":"47.604512,-122.311226;47.604512,-122.311349;47.604564,-122.311349;47.604564,-122.311226"}
+{"type":"building","height_m":6.0,"pts":"47.604456,-122.311373;47.604512,-122.311373;47.604512,-122.311201;47.604456,-122.311201"}
+{"type":"building","height_m":6.0,"pts":"47.604474,-122.311049;47.604474,-122.311153;47.604490,-122.311153;47.604490,-122.311175;47.604563,-122.311175;47.604563,-122.311153;47.604573,-122.311153;47.604573,-122.311049"}
+{"type":"building","height_m":6.0,"pts":"47.604577,-122.310898;47.604481,-122.310898;47.604481,-122.311000;47.604488,-122.311000;47.604488,-122.311022;47.604521,-122.311022;47.604521,-122.311000;47.604577,-122.311000"}
+{"type":"building","height_m":6.0,"pts":"47.604577,-122.310823;47.604494,-122.310823;47.604494,-122.310898;47.604577,-122.310898"}
+{"type":"building","height_m":6.0,"pts":"47.604669,-122.310957;47.604669,-122.310826;47.604613,-122.310826;47.604613,-122.310957"}
+{"type":"building","height_m":6.0,"pts":"47.604622,-122.311156;47.604693,-122.311156;47.604693,-122.311054;47.604622,-122.311054"}
+{"type":"building","height_m":6.0,"pts":"47.604590,-122.311352;47.604631,-122.311352;47.604631,-122.311226;47.604590,-122.311226"}
+{"type":"building","height_m":6.0,"pts":"47.604640,-122.311370;47.604696,-122.311370;47.604696,-122.311199;47.604640,-122.311199"}
+{"type":"building","height_m":6.0,"pts":"47.603812,-122.313664;47.603758,-122.313661;47.603758,-122.313798;47.603812,-122.313798"}
+{"type":"building","height_m":6.0,"pts":"47.603671,-122.313087;47.603671,-122.313015;47.603610,-122.313015;47.603610,-122.313087"}
+{"type":"building","height_m":6.0,"pts":"47.603671,-122.313157;47.603671,-122.313087;47.603610,-122.313087;47.603610,-122.313159"}
+{"type":"building","height_m":6.0,"pts":"47.603396,-122.312427;47.603396,-122.312371;47.603297,-122.312374;47.603297,-122.312427"}
+{"type":"building","height_m":6.0,"pts":"47.603398,-122.312483;47.603396,-122.312427;47.603297,-122.312427;47.603297,-122.312483"}
+{"type":"building","height_m":6.0,"pts":"47.600515,-122.311437;47.600515,-122.311325;47.600464,-122.311325;47.600464,-122.311437"}
+{"type":"building","height_m":6.0,"pts":"47.600553,-122.311325;47.600515,-122.311325;47.600515,-122.311437;47.600553,-122.311437"}
+{"type":"building","height_m":6.0,"pts":"47.600593,-122.311325;47.600553,-122.311325;47.600553,-122.311437;47.600593,-122.311437"}
+{"type":"building","height_m":6.0,"pts":"47.600631,-122.311325;47.600593,-122.311325;47.600593,-122.311437;47.600631,-122.311437"}
+{"type":"building","height_m":6.0,"pts":"47.600671,-122.311325;47.600631,-122.311325;47.600631,-122.311437;47.600671,-122.311437"}
+{"type":"building","height_m":6.0,"pts":"47.600709,-122.311325;47.600671,-122.311325;47.600671,-122.311437;47.600709,-122.311437"}
+{"type":"building","height_m":6.0,"pts":"47.600748,-122.311325;47.600709,-122.311325;47.600709,-122.311437;47.600748,-122.311437"}
+{"type":"building","height_m":6.0,"pts":"47.600562,-122.311212;47.600562,-122.311142;47.600513,-122.311142;47.600513,-122.311212"}
+{"type":"building","height_m":6.0,"pts":"47.600613,-122.311212;47.600613,-122.311142;47.600562,-122.311142;47.600562,-122.311212"}
+{"type":"building","height_m":6.0,"pts":"47.600562,-122.311276;47.600613,-122.311276;47.600613,-122.311212;47.600562,-122.311212"}
+{"type":"building","height_m":6.0,"pts":"47.600513,-122.311276;47.600562,-122.311276;47.600562,-122.311212;47.600513,-122.311212"}
+{"type":"building","height_m":6.0,"pts":"47.600683,-122.311212;47.600683,-122.311142;47.600633,-122.311142;47.600633,-122.311212"}
+{"type":"building","height_m":6.0,"pts":"47.600734,-122.311212;47.600734,-122.311142;47.600683,-122.311142;47.600683,-122.311212"}
+{"type":"building","height_m":6.0,"pts":"47.600683,-122.311276;47.600734,-122.311276;47.600734,-122.311212;47.600683,-122.311212"}
+{"type":"building","height_m":6.0,"pts":"47.600633,-122.311276;47.600683,-122.311276;47.600683,-122.311212;47.600633,-122.311212"}
+{"type":"building","height_m":6.0,"pts":"47.600681,-122.311030;47.600681,-122.310963;47.600633,-122.310963;47.600633,-122.311030"}
+{"type":"building","height_m":6.0,"pts":"47.600732,-122.311030;47.600732,-122.310963;47.600681,-122.310963;47.600681,-122.311030"}
+{"type":"building","height_m":6.0,"pts":"47.600681,-122.311097;47.600732,-122.311097;47.600732,-122.311030;47.600681,-122.311030"}
+{"type":"building","height_m":6.0,"pts":"47.600633,-122.311097;47.600681,-122.311097;47.600681,-122.311030;47.600633,-122.311030"}
+{"type":"building","height_m":6.0,"pts":"47.600562,-122.311030;47.600562,-122.310960;47.600511,-122.310960;47.600511,-122.311030"}
+{"type":"building","height_m":6.0,"pts":"47.600611,-122.311030;47.600611,-122.310960;47.600562,-122.310960;47.600562,-122.311030"}
+{"type":"building","height_m":6.0,"pts":"47.600562,-122.311094;47.600611,-122.311094;47.600611,-122.311030;47.600562,-122.311030"}
+{"type":"building","height_m":6.0,"pts":"47.600511,-122.311094;47.600562,-122.311094;47.600562,-122.311030;47.600511,-122.311030"}
+{"type":"building","height_m":6.0,"pts":"47.600394,-122.310638;47.600394,-122.310619;47.600318,-122.310619;47.600318,-122.310641"}
+{"type":"building","height_m":6.0,"pts":"47.600394,-122.310697;47.600394,-122.310638;47.600318,-122.310641;47.600318,-122.310697"}
+{"type":"building","height_m":6.0,"pts":"47.600394,-122.310753;47.600394,-122.310697;47.600318,-122.310697;47.600318,-122.310753"}
+{"type":"building","height_m":6.0,"pts":"47.601550,-122.313479;47.601597,-122.313479;47.601595,-122.313393;47.601548,-122.313395"}
+{"type":"building","height_m":6.0,"pts":"47.601501,-122.313481;47.601550,-122.313479;47.601548,-122.313395;47.601501,-122.313398"}
+{"type":"building","height_m":6.0,"pts":"47.601454,-122.313484;47.601501,-122.313481;47.601501,-122.313398;47.601452,-122.313398"}
+{"type":"building","height_m":6.0,"pts":"47.601405,-122.313484;47.601454,-122.313484;47.601452,-122.313398;47.601403,-122.313401"}
+{"type":"building","height_m":6.0,"pts":"47.603092,-122.317427;47.603089,-122.316960;47.602928,-122.316960;47.602928,-122.317118;47.602953,-122.317118;47.602953,-122.317140;47.603020,-122.317137;47.603020,-122.317118;47.603049,-122.317118;47.603049,-122.317183;47.602928,-122.317185;47.602930,-122.317429"}
+{"type":"building","height_m":23.0,"pts":"47.600868,-122.321949;47.600752,-122.321807;47.600752,-122.321606;47.600235,-122.321606;47.600235,-122.321651;47.600215,-122.321651;47.600215,-122.321791;47.600309,-122.321791;47.600434,-122.321949"}
+{"type":"building","height_m":23.0,"pts":"47.599978,-122.321303;47.599983,-122.320981;47.599887,-122.320501;47.599871,-122.320506;47.599851,-122.320401;47.599824,-122.320412;47.599822,-122.320109;47.599924,-122.320109;47.599877,-122.320313;47.599907,-122.320324;47.599918,-122.320281;47.599994,-122.320316;47.600063,-122.319951;47.599708,-122.319924;47.599707,-122.320576;47.599793,-122.321034;47.599793,-122.321289"}
+{"type":"building","height_m":6.0,"pts":"47.603005,-122.320946;47.602801,-122.320946;47.602801,-122.321101;47.602823,-122.321101;47.602825,-122.321839;47.602803,-122.321839;47.602803,-122.321906;47.602852,-122.321906;47.602863,-122.321882;47.602906,-122.321922;47.602893,-122.321949;47.603074,-122.321949;47.603371,-122.321252;47.603237,-122.321128;47.603228,-122.321150"}
+{"type":"building","height_m":23.0,"pts":"47.598994,-122.320715;47.599066,-122.320715;47.599056,-122.319787;47.598640,-122.319787;47.598640,-122.319999;47.598645,-122.319999;47.598645,-122.320015;47.598876,-122.320015;47.598876,-122.320002;47.598896,-122.320002;47.598896,-122.320307;47.598952,-122.320307;47.598952,-122.320329;47.598940,-122.320369;47.598640,-122.320163;47.598640,-122.320431;47.598969,-122.320648;47.598971,-122.320667;47.598994,-122.320667"}
+{"type":"area","kind":"park","pts":"47.602998,-122.319345;47.602738,-122.319044;47.602738,-122.319353"}
+{"type":"area","kind":"park","pts":"47.600651,-122.314804;47.600542,-122.314801;47.600430,-122.314838;47.600325,-122.314916;47.600244,-122.315015;47.600170,-122.315163;47.600132,-122.315294;47.600110,-122.315447;47.600114,-122.315608;47.600649,-122.315603"}
+{"type":"area","kind":"civic","pts":"47.601604,-122.314479;47.601584,-122.314366;47.601535,-122.314297;47.600830,-122.314289;47.600094,-122.314297;47.600088,-122.315842;47.600719,-122.316649;47.601609,-122.316641;47.601615,-122.316375"}
+{"type":"area","kind":"park","pts":"47.600812,-122.313173;47.600812,-122.311644;47.600077,-122.311644;47.600077,-122.313173"}
+{"type":"area","kind":"park","pts":"47.605165,-122.321168;47.605270,-122.320900;47.604886,-122.320906"}
+{"type":"area","kind":"park","pts":"47.600946,-122.312744;47.601213,-122.312741;47.601211,-122.312561;47.601083,-122.312561;47.600944,-122.312513"}
+{"type":"area","kind":"park","pts":"47.600748,-122.314849;47.600732,-122.314906;47.600723,-122.314965;47.600727,-122.315134;47.600736,-122.315158;47.600745,-122.315166;47.600846,-122.315168;47.600855,-122.315158;47.600862,-122.315144;47.600864,-122.315128;47.600862,-122.314975;47.600846,-122.314973;47.600842,-122.314962;47.600842,-122.314887;47.600786,-122.314836;47.600774,-122.314833;47.600759,-122.314838"}
+{"type":"area","kind":"park","pts":"47.601611,-122.321949;47.601604,-122.320581;47.601456,-122.320541;47.601271,-122.320597;47.601083,-122.320573;47.601074,-122.320004;47.600871,-122.319948;47.600888,-122.321547;47.600897,-122.321606;47.600909,-122.321662;47.600927,-122.321716;47.600949,-122.321764;47.600976,-122.321810;47.601087,-122.321949"}
+{"type":"area","kind":"park","pts":"47.602432,-122.320565;47.602617,-122.320565;47.602615,-122.319573;47.602430,-122.319573"}
+{"type":"area","kind":"park","pts":"47.602349,-122.317979;47.602329,-122.317982;47.602320,-122.317990;47.602311,-122.318009;47.602306,-122.318030;47.602304,-122.318054;47.602316,-122.318119;47.602316,-122.318159;47.602320,-122.318181;47.602333,-122.318207;47.602372,-122.318226;47.602392,-122.318223;47.602400,-122.318215;47.602410,-122.318191;47.602410,-122.318046;47.602409,-122.318030;47.602394,-122.318006"}
+{"type":"area","kind":"park","pts":"47.601087,-122.321099;47.601081,-122.320686;47.600938,-122.320691;47.600944,-122.321104"}
+{"type":"area","kind":"park","pts":"47.601047,-122.320471;47.601043,-122.320192;47.600935,-122.320195;47.600938,-122.320474"}
+{"type":"area","kind":"park","pts":"47.601139,-122.320916;47.601144,-122.320957;47.601159,-122.321016;47.601173,-122.321061;47.601193,-122.321101;47.601219,-122.321144;47.601246,-122.321182;47.601289,-122.321227;47.601324,-122.321249;47.601352,-122.321257;47.601405,-122.321249;47.601430,-122.321241;47.601454,-122.321214;47.601421,-122.321064;47.601381,-122.321075;47.601342,-122.321075;47.601309,-122.321061;47.601277,-122.321037;47.601246,-122.321005;47.601224,-122.320957;47.601208,-122.320898"}
+{"type":"area","kind":"park","pts":"47.601824,-122.319522;47.601861,-122.319522;47.601893,-122.319503;47.601978,-122.319508;47.602043,-122.319503;47.602112,-122.319479;47.602163,-122.319444;47.602230,-122.319406;47.602336,-122.319369;47.602459,-122.319363;47.602591,-122.319374;47.602590,-122.319358;47.602519,-122.319307;47.602445,-122.319304;47.602311,-122.319315;47.602215,-122.319350;47.602139,-122.319398;47.602061,-122.319438;47.601994,-122.319449;47.601824,-122.319444"}
+{"type":"area","kind":"park","pts":"47.605116,-122.315045;47.605297,-122.315045;47.605297,-122.315447;47.605499,-122.315453;47.605498,-122.314332;47.605111,-122.314337"}
+{"type":"area","kind":"lot","pts":"47.603436,-122.316622;47.603436,-122.315930;47.603074,-122.315927;47.603074,-122.316083;47.603147,-122.316083;47.603141,-122.316619"}
+{"type":"area","kind":"lot","pts":"47.603436,-122.315930;47.603427,-122.314860;47.602758,-122.314860;47.602756,-122.315697;47.603074,-122.315691;47.603074,-122.315927"}
+{"type":"area","kind":"park","pts":"47.598640,-122.316094;47.599072,-122.316091;47.599072,-122.315890;47.598640,-122.315893"}
+{"type":"area","kind":"civic","pts":"47.606205,-122.316072;47.606214,-122.320071;47.606279,-122.320074;47.606279,-122.312848;47.606192,-122.312848"}
+{"type":"poi","name":"Yesler Terrace","kind":"place_suburb","lat":47.601266,"lon":-122.319160}
+{"type":"poi","name":"Chinatown-International District","kind":"place_suburb","lat":47.598356,"lon":-122.322459}
+{"type":"poi","name":"Little Saigon","kind":"place_neighbourhood","lat":47.599204,"lon":-122.317239}
+{"type":"poi","name":"Dong Hing Market","kind":"supermarket","lat":47.599005,"lon":-122.319404}
+{"type":"poi","name":"Hau Hau Market","kind":"supermarket","lat":47.598605,"lon":-122.316815}
+{"type":"poi","name":"Bailey Gatzert Elementary School","kind":"school","lat":47.601182,"lon":-122.315469}
+{"type":"poi","name":"Wisteria Park","kind":"park","lat":47.600271,"lon":-122.312408}
+{"type":"poi","name":"Yesler Terrace Community Center","kind":"community_centre","lat":47.601345,"lon":-122.320299}
+{"type":"poi","name":"Seattle Koyasan Church","kind":"place_of_worship","lat":47.601063,"lon":-122.311875}
+{"type":"poi","name":"Japanese Congregational Church","kind":"place_of_worship","lat":47.599690,"lon":-122.310568}
+{"type":"poi","name":"Phở Bắc Súp Shop","kind":"restaurant","lat":47.599479,"lon":-122.315383}
+{"type":"poi","name":"Tru-Line Seattle","kind":"car_repair","lat":47.599772,"lon":-122.314991}
+{"type":"poi","name":"Seattle Buddhist Church","kind":"place_of_worship","lat":47.599770,"lon":-122.313114}
+{"type":"poi","name":"St. Peter Episcopal Church","kind":"place_of_worship","lat":47.598531,"lon":-122.310534}
+{"type":"poi","name":"Washington Hall","kind":"community_centre","lat":47.602808,"lon":-122.314586}
+{"type":"poi","name":"God's Pentecostal Temple","kind":"place_of_worship","lat":47.602908,"lon":-122.310944}
+{"type":"poi","name":"Goodwill Baptist Church","kind":"place_of_worship","lat":47.602528,"lon":-122.312451}
+{"type":"poi","name":"Japanese Baptist Church","kind":"place_of_worship","lat":47.603123,"lon":-122.320391}
+{"type":"poi","name":"Victorian Apartments","kind":"heritage","lat":47.598591,"lon":-122.315603}
+{"type":"poi","name":"Yesler Terrace Park","kind":"park","lat":47.601244,"lon":-122.321388}
+{"type":"poi","name":"Mory","kind":"furniture","lat":47.599766,"lon":-122.314771}
+{"type":"poi","name":"Saint Peter's Episcopal Church","kind":"place_of_worship","lat":47.598587,"lon":-122.310762}
+{"type":"poi","name":"Upper Plaza","kind":"pedestrian","lat":47.601396,"lon":-122.320801}
+{"type":"poi","name":"RAVE Soccer Spot","kind":"pitch","lat":47.601012,"lon":-122.320895}
+{"type":"poi","name":"Thanh Sơn Tofu","kind":"deli","lat":47.598678,"lon":-122.315217}
+{"type":"poi","name":"Hilltop House","kind":"social_facility","lat":47.604465,"lon":-122.321820}
+{"type":"poi","name":"Modera International District","kind":"construction","lat":47.599649,"lon":-122.318789}
+{"type":"poi","name":"Kebero Court","kind":"residential","lat":47.602217,"lon":-122.317826}
+{"type":"poi","name":"Sweetgrass Flats","kind":"social_facility","lat":47.602986,"lon":-122.317306}
+{"type":"poi","name":"Antioch Baptist Church","kind":"place_of_worship","lat":47.599824,"lon":-122.312194}
+{"type":"poi","name":"Interagency Alder Academy","kind":"school","lat":47.604796,"lon":-122.315595}
+{"type":"poi","name":"Seattle Body Massage","kind":"massage","lat":47.599359,"lon":-122.316316}
+{"type":"poi","name":"Loving Hut","kind":"restaurant","lat":47.599390,"lon":-122.315919}
+{"type":"poi","name":"Bò Né House & More","kind":"restaurant","lat":47.599540,"lon":-122.315919}
+{"type":"poi","name":"Arcaro Boxing","kind":"sports_centre","lat":47.606340,"lon":-122.316298}
+{"type":"poi","name":"Peloton Cafe & Bike Shop","kind":"bicycle","lat":47.606317,"lon":-122.315750}
+{"type":"poi","name":"Peloton Cafe","kind":"cafe","lat":47.606313,"lon":-122.315654}
+{"type":"poi","name":"Zobel","kind":"restaurant","lat":47.606069,"lon":-122.315917}
+{"type":"poi","name":"Tamarind Tree","kind":"restaurant","lat":47.599844,"lon":-122.317824}
+{"type":"poi","name":"Vietnam House","kind":"restaurant","lat":47.599765,"lon":-122.317816}
+{"type":"poi","name":"Chong Wah","kind":"herbalist","lat":47.599669,"lon":-122.317802}
+{"type":"poi","name":"Than Vi","kind":"restaurant","lat":47.599484,"lon":-122.317601}
+{"type":"poi","name":"Sichuanese Cuisine","kind":"restaurant","lat":47.599479,"lon":-122.317510}
+{"type":"poi","name":"La Eterna Primavera","kind":"restaurant","lat":47.599906,"lon":-122.317413}
+{"type":"poi","name":"Diamond Spa","kind":"massage","lat":47.599699,"lon":-122.317416}
+{"type":"poi","name":"HardWok Café","kind":"restaurant","lat":47.599014,"lon":-122.316796}
+{"type":"poi","name":"Quynh Huong","kind":"massage","lat":47.599054,"lon":-122.315769}
+{"type":"poi","name":"Saigon Deli","kind":"deli","lat":47.599054,"lon":-122.315359}
+{"type":"poi","name":"ChuMinh Tofu & Vegan Deli","kind":"restaurant","lat":47.598810,"lon":-122.317459}
+{"type":"poi","name":"Pacific Condominium","kind":"residential","lat":47.599540,"lon":-122.319886}
+{"type":"poi","name":"Broadway & Terrace St","kind":"tram_stop","lat":47.604998,"lon":-122.320849}
+{"type":"poi","name":"12th & Jackson","kind":"tram_stop","lat":47.599179,"lon":-122.315726}
+{"type":"poi","name":"12th & Jackson","kind":"tram_stop","lat":47.599235,"lon":-122.315903}
+{"type":"poi","name":"14th & Washington","kind":"tram_stop","lat":47.600671,"lon":-122.314216}
+{"type":"poi","name":"14th & Washington","kind":"tram_stop","lat":47.600672,"lon":-122.314133}
+{"type":"poi","name":"Seven Stars Pepper Szechuan Restaurant","kind":"restaurant","lat":47.598922,"lon":-122.316791}
+{"type":"poi","name":"Saigon Vietnam Deli","kind":"deli","lat":47.599761,"lon":-122.316743}
+{"type":"poi","name":"Juvenile Court","kind":"courthouse","lat":47.604790,"lon":-122.315997}
+{"type":"poi","name":"Jucivana","kind":"cafe","lat":47.601582,"lon":-122.317218}
+{"type":"poi","name":"I Love Wasabi","kind":"restaurant","lat":47.598902,"lon":-122.316628}
+{"type":"poi","name":"GarageHop","kind":"parking","lat":47.605347,"lon":-122.319567}
+{"type":"poi","name":"Bar Bayonne","kind":"bar","lat":47.606067,"lon":-122.314838}
+{"type":"poi","name":"Café Calaveras","kind":"cafe","lat":47.601937,"lon":-122.321158}
+{"type":"poi","name":"Ginza Massage Spa","kind":"massage","lat":47.599358,"lon":-122.316477}
+{"type":"poi","name":"L'Oursin","kind":"restaurant","lat":47.606067,"lon":-122.314683}
+{"type":"poi","name":"Thai Lucene","kind":"restaurant","lat":47.606096,"lon":-122.320527}
+{"type":"poi","name":"Phnom Penh Noodle House","kind":"restaurant","lat":47.599019,"lon":-122.320653}
+{"type":"poi","name":"Phin vietnamese coffee & etc","kind":"cafe","lat":47.598779,"lon":-122.319852}
+{"type":"poi","name":"Center For Bike Repair","kind":"bicycle","lat":47.599045,"lon":-122.318749}
+{"type":"poi","name":"Song Phang Kong","kind":"restaurant","lat":47.599043,"lon":-122.318851}
+{"type":"poi","name":"Thanh Tâm","kind":"restaurant","lat":47.599904,"lon":-122.316751}
+{"type":"poi","name":"Jules","kind":"restaurant","lat":47.600190,"lon":-122.317438}
+{"type":"poi","name":"The Art Inn","kind":"hotel","lat":47.606045,"lon":-122.315673}
+{"type":"poi","name":"Drip Drip Coffeehouse","kind":"cafe","lat":47.606026,"lon":-122.313076}
+{"type":"poi","name":"Either/Or","kind":"second_hand","lat":47.606051,"lon":-122.313146}
+{"type":"poi","name":"Viet Express","kind":"restaurant","lat":47.600318,"lon":-122.316778}
+{"type":"poi","name":"WT Seafood","kind":"seafood","lat":47.600334,"lon":-122.316788}
+{"type":"poi","name":"Dang Dang","kind":"restaurant","lat":47.599714,"lon":-122.316247}
+{"type":"poi","name":"Quynh's Pharmacy","kind":"pharmacy","lat":47.599714,"lon":-122.316067}
+{"type":"poi","name":"Spring Roll House Deli","kind":"deli","lat":47.599716,"lon":-122.315978}
+{"type":"poi","name":"Mì La Cay","kind":"restaurant","lat":47.600379,"lon":-122.316834}
+{"type":"poi","name":"Egg Squared","kind":"cafe","lat":47.601837,"lon":-122.315767}
+{"type":"poi","name":"Sushi Ave","kind":"restaurant","lat":47.599352,"lon":-122.320198}
+{"type":"poi","name":"Creative Justice Cafe","kind":"cafe","lat":47.602834,"lon":-122.314447}
+{"type":"poi","name":"Pipsqueak Gallery and Events Space","kind":"events_venue","lat":47.603434,"lon":-122.311523}
+{"type":"poi","name":"Squire Park P-Patch","kind":"allotments","lat":47.602919,"lon":-122.313940}
+{"type":"poi","name":"Boren Place","kind":"park","lat":47.605026,"lon":-122.320970}
+{"type":"poi","name":"Gran Oriente Filipino","kind":"social_centre","lat":47.601059,"lon":-122.313138}
+{"type":"poi","name":"Food Market","kind":"convenience","lat":47.605948,"lon":-122.317271}
+{"type":"poi","name":"Chevron","kind":"fuel","lat":47.605868,"lon":-122.317070}
+{"type":"poi","name":"S Jackson St & 12th Ave S","kind":"platform","lat":47.599198,"lon":-122.315812}
+{"type":"poi","name":"14th Ave S & S Washington St","kind":"platform","lat":47.600622,"lon":-122.314165}
+{"type":"poi","name":"East Yesler Way & Broadway","kind":"platform","lat":47.601729,"lon":-122.320211}
+{"type":"poi","name":"Broadway & E Terrace St","kind":"platform","lat":47.605040,"lon":-122.320879}
+{"type":"poi","name":"Broadway & East Terrace Street","kind":"platform","lat":47.605460,"lon":-122.320718}
+{"type":"poi","name":"East Yesler Way & Broadway","kind":"platform","lat":47.601656,"lon":-122.319978}
+{"type":"poi","name":"14th Ave S & S Washington St","kind":"platform","lat":47.600622,"lon":-122.314192}
+{"type":"poi","name":"S Jackson St & 12th Ave S","kind":"platform","lat":47.599215,"lon":-122.315812}
+{"type":"poi","name":"Chevron","kind":"car_wash","lat":47.605948,"lon":-122.317373}
+{"type":"poi","name":"Yesler Terrace Pocket Park","kind":"park","lat":47.602524,"lon":-122.320069}
+{"type":"poi","name":"Ngoc Viêt Jewelry","kind":"jewelry","lat":47.599479,"lon":-122.315547}
+{"type":"poi","name":"Phở Bắc Red Boat","kind":"restaurant","lat":47.599410,"lon":-122.314844}
+{"type":"poi","name":"labyrinth","kind":"religious","lat":47.598531,"lon":-122.310826}
+{"type":"poi","name":"Horiuchi Park P-Patch","kind":"allotments","lat":47.603038,"lon":-122.318915}
+{"type":"poi","name":"Hoa Mai Park","kind":"park","lat":47.598596,"lon":-122.315992}
+{"type":"poi","name":"Connect Services","kind":"mobile_phone","lat":47.599359,"lon":-122.316563}
+{"type":"poi","name":"Island Detail","kind":"car","lat":47.599632,"lon":-122.313865}
+{"type":"poi","name":"Seatown Autoworks","kind":"car_repair","lat":47.604921,"lon":-122.317086}
+{"type":"poi","name":"Lyn Hair Salon","kind":"hairdresser","lat":47.599482,"lon":-122.317757}
+{"type":"poi","name":"May Flower","kind":"beauty","lat":47.599837,"lon":-122.317413}
+{"type":"poi","name":"Dai Loi","kind":"convenience","lat":47.599768,"lon":-122.317416}
+{"type":"poi","name":"HKG Product","kind":"beauty","lat":47.599631,"lon":-122.317416}
+{"type":"poi","name":"Khang Hoa Duong","kind":"convenience","lat":47.599030,"lon":-122.317024}
+{"type":"poi","name":"Classy Beauty School","kind":"beauty","lat":47.599052,"lon":-122.315847}
+{"type":"poi","name":"Milan Hair","kind":"hairdresser","lat":47.599056,"lon":-122.315702}
+{"type":"poi","name":"NW Auto Empire","kind":"car","lat":47.598645,"lon":-122.313894}
+{"type":"poi","name":"Whirl Piece: Current Events","kind":"artwork","lat":47.601517,"lon":-122.320549}
+{"type":"poi","name":"Atlas Chiropractic","kind":"doctors","lat":47.606031,"lon":-122.313999}
+{"type":"poi","name":"LaMi Nail Supply","kind":"beauty","lat":47.599056,"lon":-122.315509}
+{"type":"poi","name":"Creative Tours & Travel","kind":"travel_agency","lat":47.599470,"lon":-122.313927}
+{"type":"poi","name":"Rof Medical Center","kind":"clinic","lat":47.599477,"lon":-122.313615}
+{"type":"poi","name":"BoyBoy Salon","kind":"hairdresser","lat":47.599477,"lon":-122.313841}
+{"type":"poi","name":"Shinran Shonin Statue","kind":"artwork","lat":47.600177,"lon":-122.313074}
+{"type":"poi","name":"Crowned By Nya","kind":"hairdresser","lat":47.606051,"lon":-122.313240}
+{"type":"poi","name":"UW Family Medicine Clinic at Harborview","kind":"clinic","lat":47.605564,"lon":-122.320949}
+{"type":"poi","name":"Family Dental Care","kind":"dentist","lat":47.599687,"lon":-122.316067}
+{"type":"poi","name":"Yellow Bee Market & Café","kind":"convenience","lat":47.601942,"lon":-122.319854}
+{"type":"poi","name":"Operation Nightwatch","kind":"social_facility","lat":47.599862,"lon":-122.313913}
+{"type":"poi","name":"Texture","kind":"hairdresser","lat":47.599104,"lon":-122.312776}
+{"type":"poi","name":"Capitol International Market Wine & Beer","kind":"convenience","lat":47.604006,"lon":-122.317161}
+{"type":"poi","name":"Capitol International Market","kind":"convenience","lat":47.602810,"lon":-122.316974}
+{"type":"poi","name":"Hinoki P-Patch","kind":"allotments","lat":47.601032,"lon":-122.318851}
+{"type":"poi","name":"Yesler & Broadway","kind":"bus_stop","lat":47.601669,"lon":-122.319978}
+{"type":"poi","name":"Broadway & Terrace St","kind":"bus_stop","lat":47.605485,"lon":-122.320755}
+{"type":"poi","name":"Yesler & Broadway","kind":"bus_stop","lat":47.601707,"lon":-122.320219}
+{"type":"poi","name":"South Jackson Street & 8th Avenue South","kind":"bus_stop","lat":47.599115,"lon":-122.321954}
+{"type":"poi","name":"South Jackson Street & 8th Avenue South","kind":"bus_stop","lat":47.599301,"lon":-122.322107}
+{"type":"poi","name":"East Jefferson Street & 12th Avenue","kind":"bus_stop","lat":47.606129,"lon":-122.316394}
+{"type":"poi","name":"East Jefferson Street & 12th Avenue","kind":"bus_stop","lat":47.606297,"lon":-122.317180}
+{"type":"poi","name":"Boren Avenue & East Yesler Way","kind":"bus_stop","lat":47.601917,"lon":-122.318218}
+{"type":"poi","name":"Boren Avenue & East Yesler Way","kind":"bus_stop","lat":47.601964,"lon":-122.317961}
+{"type":"poi","name":"Boren Ave & Jefferson St","kind":"bus_stop","lat":47.606130,"lon":-122.322102}
+{"type":"poi","name":"Broadway & Terrace Street","kind":"bus_stop","lat":47.605385,"lon":-122.320879}
+{"type":"poi","name":"East Jefferson Street & 14th Avenue","kind":"bus_stop","lat":47.606112,"lon":-122.313749}
+{"type":"poi","name":"East Jefferson Street & 15th Avenue","kind":"bus_stop","lat":47.606270,"lon":-122.313192}
+{"type":"poi","name":"East Jefferson Street & Broadway","kind":"bus_stop","lat":47.606141,"lon":-122.320350}
+{"type":"poi","name":"East Yesler Way & 12th Avenue South","kind":"bus_stop","lat":47.601620,"lon":-122.316255}
+{"type":"poi","name":"East Yesler Way & 14th Avenue South","kind":"bus_stop","lat":47.601622,"lon":-122.313699}
+{"type":"poi","name":"East Yesler Way & 14th Avenue South","kind":"bus_stop","lat":47.601763,"lon":-122.314610}
+{"type":"poi","name":"East Yesler Way & 16th Avenue South","kind":"bus_stop","lat":47.601618,"lon":-122.311167}
+{"type":"poi","name":"East Yesler Way & 17th Avenue","kind":"bus_stop","lat":47.601759,"lon":-122.310799}
+{"type":"poi","name":"Jefferson Street & Broadway","kind":"bus_stop","lat":47.606114,"lon":-122.321252}
+{"type":"poi","name":"South Jackson Street & 12th Avenue South","kind":"bus_stop","lat":47.599298,"lon":-122.317853}
+{"type":"poi","name":"South Jackson Street & Boren Avenue South","kind":"bus_stop","lat":47.599305,"lon":-122.315123}
+{"type":"poi","name":"South Jackson Street & Rainier Avenue South","kind":"bus_stop","lat":47.599141,"lon":-122.313390}
+{"type":"poi","name":"12th Avenue South & South Jackson Street","kind":"bus_stop","lat":47.598688,"lon":-122.317354}
+{"type":"poi","name":"12th Avenue South & South Jackson Street","kind":"bus_stop","lat":47.599437,"lon":-122.317108}
+{"type":"poi","name":"South Jackson Street & 12th Avenue South","kind":"bus_stop","lat":47.599106,"lon":-122.317660}
+{"type":"poi","name":"12th Ave & E Terrace St","kind":"bus_stop","lat":47.605042,"lon":-122.316689}
+{"type":"poi","name":"12th Ave & E Alder St","kind":"bus_stop","lat":47.604581,"lon":-122.316880}

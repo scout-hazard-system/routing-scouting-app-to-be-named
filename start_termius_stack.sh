@@ -5,14 +5,24 @@ ROOT_DIR="/home/gibi/Desktop"
 STACK_SCRIPT="$ROOT_DIR/run_vehicle_stack.sh"
 STREAM_CLIENT="$ROOT_DIR/frontend/stream_client.py"
 DEFAULT_CONFIG="$ROOT_DIR/config/vehicle_stack.env"
+<<<<<<< HEAD
+=======
+FIXED_BACKEND_PORT="18080"
+FIXED_FRONTEND_PORT="8787"
+>>>>>>> feature/integrate-waze-and-service-hardening
 
 if [[ -f "${VEHICLE_STACK_CONFIG_FILE:-$DEFAULT_CONFIG}" ]]; then
   # shellcheck disable=SC1090
   source "${VEHICLE_STACK_CONFIG_FILE:-$DEFAULT_CONFIG}"
 fi
 
+<<<<<<< HEAD
 BACKEND_PORT="${BACKEND_PORT:-18080}"
 FRONTEND_PORT="${FRONTEND_PORT:-8787}"
+=======
+BACKEND_PORT="$FIXED_BACKEND_PORT"
+FRONTEND_PORT="$FIXED_FRONTEND_PORT"
+>>>>>>> feature/integrate-waze-and-service-hardening
 PIPELINE_LOG="${PIPELINE_LOG:-/tmp/pipeline_live_doordash.log}"
 BACKEND_LOG_FILE="/tmp/vehicle_stack/logs/backend.log"
 FRONTEND_LOG_FILE="/tmp/vehicle_stack/logs/frontend.log"
@@ -52,7 +62,11 @@ require_stack_script() {
 
 run_stack() {
   require_stack_script
+<<<<<<< HEAD
   "$STACK_SCRIPT" "$1"
+=======
+  BACKEND_PORT="$FIXED_BACKEND_PORT" FRONTEND_PORT="$FIXED_FRONTEND_PORT" "$STACK_SCRIPT" "$1"
+>>>>>>> feature/integrate-waze-and-service-hardening
 }
 
 print_health() {
@@ -68,6 +82,12 @@ print_health() {
   echo "- llm:      ${backend_url}/api/platform/llm/status"
   curl -fsS "${backend_url}/api/platform/llm/status" || echo "llm status unavailable"
   echo
+<<<<<<< HEAD
+=======
+  echo "- map:      ${backend_url}/api/map/status"
+  curl -fsS "${backend_url}/api/map/status" || echo "map status unavailable"
+  echo
+>>>>>>> feature/integrate-waze-and-service-hardening
   echo "- frontend: ${frontend_url}/index.html"
   curl -fsS -o /dev/null "${frontend_url}/index.html" \
     && echo "frontend reachable" \

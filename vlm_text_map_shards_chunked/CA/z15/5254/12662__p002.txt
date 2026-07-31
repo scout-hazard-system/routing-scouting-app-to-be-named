@@ -1,0 +1,175 @@
+{"meta":{"state":"CA","z":15,"x":5254,"y":12662,"zhs":{"key":"z/15/5254/12662|h3/9/nxvq/pchj|s2/12/f4/u0/10h","z_key":"z/15/5254/12662","h_key":"h3/9/nxvq/pchj","s_key":"s2/12/f4/u0/10h"},"source":"planet","roads":564,"buildings":699,"areas":73,"pois":650}}
+{"type":"poi","name":"Beauty Nail","kind":"beauty","lat":37.805493,"lon":-122.267106}
+{"type":"poi","name":"From the Evolution to the Revolution Mural","kind":"artwork","lat":37.797079,"lon":-122.273439}
+{"type":"poi","name":"Mitzvah, the Jewish Cultural Experience Mural","kind":"artwork","lat":37.804041,"lon":-122.269614}
+{"type":"poi","name":"Lady Day Mural","kind":"artwork","lat":37.802454,"lon":-122.268055}
+{"type":"poi","name":"Girl Mobb Super Wall Mural","kind":"artwork","lat":37.804183,"lon":-122.267251}
+{"type":"poi","name":"Arrival Mural","kind":"artwork","lat":37.802926,"lon":-122.268141}
+{"type":"poi","name":"Alice Street Mural Project","kind":"artwork","lat":37.803138,"lon":-122.266728}
+{"type":"poi","name":"Mural Lane","kind":"artwork","lat":37.804467,"lon":-122.268310}
+{"type":"poi","name":"Long Pat Market","kind":"greengrocer","lat":37.799351,"lon":-122.272602}
+{"type":"poi","name":"First Optical","kind":"doctors","lat":37.799381,"lon":-122.272950}
+{"type":"poi","name":"New Sang Chong Market","kind":"greengrocer","lat":37.799326,"lon":-122.271915}
+{"type":"poi","name":"Hair to be you Beauty Salon","kind":"hairdresser","lat":37.799499,"lon":-122.271593}
+{"type":"poi","name":"Wah Hang Market(2)","kind":"greengrocer","lat":37.799385,"lon":-122.272071}
+{"type":"poi","name":"Napoleon Super Bakery","kind":"bakery","lat":37.799917,"lon":-122.272258}
+{"type":"poi","name":"Kim Lien Jewelry","kind":"jewelry","lat":37.800241,"lon":-122.272055}
+{"type":"poi","name":"Tao Yuen Pastry","kind":"bakery","lat":37.800120,"lon":-122.272140}
+{"type":"poi","name":"Kim Van Jewelers","kind":"jewelry","lat":37.799752,"lon":-122.272264}
+{"type":"poi","name":"Sun Sing Pastry","kind":"bakery","lat":37.799669,"lon":-122.272055}
+{"type":"poi","name":"Phuong Jewelry","kind":"jewelry","lat":37.799860,"lon":-122.272296}
+{"type":"poi","name":"D & K Market","kind":"greengrocer","lat":37.799643,"lon":-122.271987}
+{"type":"poi","name":"Ruby King Bakery","kind":"bakery","lat":37.799425,"lon":-122.272570}
+{"type":"poi","name":"Jing Long Jewelry & Watch","kind":"jewelry","lat":37.800220,"lon":-122.272071}
+{"type":"poi","name":"King of Grocery","kind":"greengrocer","lat":37.799485,"lon":-122.272320}
+{"type":"poi","name":"Park Grocery & Liquors","kind":"convenience","lat":37.800228,"lon":-122.272014}
+{"type":"poi","name":"Kim Hung Jewelry","kind":"jewelry","lat":37.800188,"lon":-122.272092}
+{"type":"poi","name":"Yet Sun Market","kind":"greengrocer","lat":37.799518,"lon":-122.272390}
+{"type":"poi","name":"Pinnacle Wholesale Delivery","kind":"greengrocer","lat":37.798849,"lon":-122.271462}
+{"type":"poi","name":"Quick Cut Salon","kind":"hairdresser","lat":37.799544,"lon":-122.273948}
+{"type":"poi","name":"Ming's Salon","kind":"hairdresser","lat":37.799930,"lon":-122.273498}
+{"type":"poi","name":"Ce Ce Beauty Spa","kind":"beauty","lat":37.799525,"lon":-122.273868}
+{"type":"poi","name":"Asian and American Fruits Market","kind":"greengrocer","lat":37.799014,"lon":-122.271719}
+{"type":"poi","name":"Perfect Hair Cut","kind":"hairdresser","lat":37.799262,"lon":-122.273235}
+{"type":"poi","name":"Good Luck Market","kind":"greengrocer","lat":37.798914,"lon":-122.271778}
+{"type":"poi","name":"AA Beauty Salon","kind":"hairdresser","lat":37.799508,"lon":-122.273830}
+{"type":"poi","name":"Fashion Line","kind":"beauty","lat":37.799535,"lon":-122.273903}
+{"type":"poi","name":"SOHO Hair Salon","kind":"hairdresser","lat":37.798361,"lon":-122.271663}
+{"type":"poi","name":"U & Me Wedding","kind":"clothes","lat":37.798334,"lon":-122.271596}
+{"type":"poi","name":"Hair Image","kind":"hairdresser","lat":37.799097,"lon":-122.270582}
+{"type":"poi","name":"David's Hair Design","kind":"hairdresser","lat":37.799313,"lon":-122.270070}
+{"type":"poi","name":"18k 24k","kind":"jewelry","lat":37.800192,"lon":-122.271175}
+{"type":"poi","name":"Wonder Food Bakery","kind":"bakery","lat":37.799896,"lon":-122.270437}
+{"type":"poi","name":"Asian Health Services","kind":"clinic","lat":37.799158,"lon":-122.270174}
+{"type":"poi","name":"Kim Hoa Jewelery","kind":"jewelry","lat":37.800169,"lon":-122.271872}
+{"type":"poi","name":"East Bay Vision Center","kind":"doctors","lat":37.800368,"lon":-122.271631}
+{"type":"poi","name":"Lucky Holidays and Consulting","kind":"travel_agency","lat":37.800421,"lon":-122.271773}
+{"type":"poi","name":"Vee Cosmetics","kind":"beauty","lat":37.800400,"lon":-122.270874}
+{"type":"poi","name":"The Hairliners","kind":"hairdresser","lat":37.800508,"lon":-122.270939}
+{"type":"poi","name":"CK Jewelry & Gift","kind":"jewelry","lat":37.800478,"lon":-122.271084}
+{"type":"poi","name":"CT Dental Group","kind":"dentist","lat":37.801000,"lon":-122.270005}
+{"type":"poi","name":"Oakland Dental Group","kind":"dentist","lat":37.800351,"lon":-122.271239}
+{"type":"poi","name":"21 Hair Salon","kind":"hairdresser","lat":37.801038,"lon":-122.270094}
+{"type":"poi","name":"T-Mobile","kind":"mobile_phone","lat":37.800455,"lon":-122.271875}
+{"type":"poi","name":"One's Fashion","kind":"clothes","lat":37.800758,"lon":-122.270266}
+{"type":"poi","name":"Fun House","kind":"gift","lat":37.800832,"lon":-122.270236}
+{"type":"poi","name":"From the Heart Florist","kind":"florist","lat":37.800877,"lon":-122.270190}
+{"type":"poi","name":"Oakland Book Store","kind":"books","lat":37.800320,"lon":-122.271129}
+{"type":"poi","name":"Healthy Food Center","kind":"convenience","lat":37.800451,"lon":-122.271017}
+{"type":"poi","name":"Kim Thanh Jewelry","kind":"jewelry","lat":37.800383,"lon":-122.270276}
+{"type":"poi","name":"Lucky Day","kind":"convenience","lat":37.800542,"lon":-122.269936}
+{"type":"poi","name":"Elite Hair Salon","kind":"hairdresser","lat":37.800351,"lon":-122.270177}
+{"type":"poi","name":"Hua Hua Salon","kind":"hairdresser","lat":37.800417,"lon":-122.269608}
+{"type":"poi","name":"Gift Ichiban","kind":"gift","lat":37.800148,"lon":-122.269673}
+{"type":"poi","name":"Sun Yuen Hang","kind":"greengrocer","lat":37.799497,"lon":-122.268045}
+{"type":"poi","name":"New World Fashion","kind":"clothes","lat":37.800112,"lon":-122.269579}
+{"type":"poi","name":"Tom's Bakery","kind":"bakery","lat":37.799262,"lon":-122.269582}
+{"type":"poi","name":"Salon Avant","kind":"hairdresser","lat":37.800794,"lon":-122.269150}
+{"type":"poi","name":"Moonstar Florist","kind":"florist","lat":37.800805,"lon":-122.268431}
+{"type":"poi","name":"Oakland Florist","kind":"florist","lat":37.801500,"lon":-122.270169}
+{"type":"poi","name":"Fay Fay Salon","kind":"hairdresser","lat":37.801625,"lon":-122.270072}
+{"type":"poi","name":"Salon Hair House","kind":"hairdresser","lat":37.802185,"lon":-122.270459}
+{"type":"poi","name":"Wah Hanb Market","kind":"greengrocer","lat":37.800421,"lon":-122.272575}
+{"type":"poi","name":"Eye Care","kind":"doctors","lat":37.800358,"lon":-122.272414}
+{"type":"poi","name":"Sandy's Skin Care","kind":"beauty","lat":37.800678,"lon":-122.272433}
+{"type":"poi","name":"Khai Toan Jewelry","kind":"jewelry","lat":37.800567,"lon":-122.272953}
+{"type":"poi","name":"Cricket Wireless","kind":"mobile_phone","lat":37.800735,"lon":-122.272119}
+{"type":"poi","name":"House of Fortune","kind":"gift","lat":37.801970,"lon":-122.270941}
+{"type":"poi","name":"Joean's Salon","kind":"hairdresser","lat":37.800531,"lon":-122.272843}
+{"type":"poi","name":"Kim Tin Jewelry","kind":"jewelry","lat":37.800459,"lon":-122.272669}
+{"type":"poi","name":"KiKi Boutique","kind":"clothes","lat":37.800801,"lon":-122.272065}
+{"type":"poi","name":"Delicieuse Princesse Bakery","kind":"bakery","lat":37.802252,"lon":-122.268514}
+{"type":"poi","name":"Your Memory Column","kind":"artwork","lat":37.804865,"lon":-122.274243}
+{"type":"poi","name":"Real Cutie Pies","kind":"bakery","lat":37.805522,"lon":-122.267168}
+{"type":"poi","name":"Bergeron's Books","kind":"books","lat":37.804499,"lon":-122.268903}
+{"type":"poi","name":"First Impressions Hair Designs","kind":"hairdresser","lat":37.804520,"lon":-122.268967}
+{"type":"poi","name":"Honey Kutz","kind":"hairdresser","lat":37.804175,"lon":-122.267996}
+{"type":"poi","name":"Begeron's Mural ","kind":"artwork","lat":37.804528,"lon":-122.268895}
+{"type":"poi","name":"IAFF Mural ","kind":"artwork","lat":37.804495,"lon":-122.268782}
+{"type":"poi","name":"First Amendment (1AM Gallery)","kind":"art","lat":37.804910,"lon":-122.268004}
+{"type":"poi","name":"Irot","kind":"artwork","lat":37.804965,"lon":-122.267377}
+{"type":"poi","name":"Zio Ziegler","kind":"artwork","lat":37.805219,"lon":-122.267208}
+{"type":"poi","name":"(untitled)","kind":"artwork","lat":37.804637,"lon":-122.274474}
+{"type":"poi","name":"Bay Area Map","kind":"artwork","lat":37.804897,"lon":-122.274825}
+{"type":"poi","name":"Lee's Barber Shop","kind":"hairdresser","lat":37.803609,"lon":-122.268485}
+{"type":"poi","name":"Visit Oakland Selfie Wall","kind":"artwork","lat":37.801941,"lon":-122.272899}
+{"type":"poi","name":"Street Story Mural","kind":"artwork","lat":37.804323,"lon":-122.269287}
+{"type":"poi","name":"Portrait of Derrick Hayes Mural","kind":"artwork","lat":37.804552,"lon":-122.269914}
+{"type":"poi","name":"Poppy Mural","kind":"artwork","lat":37.804028,"lon":-122.267637}
+{"type":"poi","name":"Oakland Dreams","kind":"artwork","lat":37.796854,"lon":-122.273731}
+{"type":"poi","name":"Sanctuary","kind":"artwork","lat":37.796912,"lon":-122.273441}
+{"type":"poi","name":"Moods Beauty Bar","kind":"beauty","lat":37.804077,"lon":-122.270088}
+{"type":"poi","name":"CityHealth Urgent Care","kind":"clinic","lat":37.805088,"lon":-122.273540}
+{"type":"poi","name":"Hong Fook Community-Based Adult Services Center","kind":"social_facility","lat":37.802568,"lon":-122.267106}
+{"type":"poi","name":"Oakland Dental Care","kind":"dentist","lat":37.802996,"lon":-122.268173}
+{"type":"poi","name":"LifeLong Trust Health Center","kind":"clinic","lat":37.803861,"lon":-122.269560}
+{"type":"poi","name":"Chinatown Smog & Repair Station","kind":"car_repair","lat":37.799003,"lon":-122.269681}
+{"type":"poi","name":"I-880 Broadway Underpass Guardrail Sculpture","kind":"artwork","lat":37.798401,"lon":-122.274723}
+{"type":"poi","name":"76","kind":"convenience","lat":37.799035,"lon":-122.269742}
+{"type":"poi","name":"Zero Hunger","kind":"artwork","lat":37.801831,"lon":-122.272972}
+{"type":"poi","name":"Cupcakin' Bake Shop","kind":"bakery","lat":37.801767,"lon":-122.274847}
+{"type":"poi","name":"JH&F: Jessica Hische & Friends","kind":"stationery","lat":37.804162,"lon":-122.267393}
+{"type":"poi","name":"Seoul Travel Service","kind":"travel_agency","lat":37.803104,"lon":-122.268493}
+{"type":"poi","name":"The Bookmark Bookstore","kind":"books","lat":37.801538,"lon":-122.273240}
+{"type":"poi","name":"Black Bear Apparel","kind":"clothes","lat":37.801241,"lon":-122.273406}
+{"type":"poi","name":"Posh Polish","kind":"beauty","lat":37.801023,"lon":-122.274970}
+{"type":"poi","name":"Stop & Go Market","kind":"gift","lat":37.803649,"lon":-122.268474}
+{"type":"poi","name":"Magic 2 U","kind":"hairdresser","lat":37.803719,"lon":-122.268782}
+{"type":"poi","name":"Mini Market","kind":"convenience","lat":37.802507,"lon":-122.269147}
+{"type":"poi","name":"E14 Gallery","kind":"gift","lat":37.800951,"lon":-122.273870}
+{"type":"poi","name":"H-Way Gift Shop","kind":"gift","lat":37.800426,"lon":-122.274986}
+{"type":"poi","name":"Ever Green","kind":"artwork","lat":37.803187,"lon":-122.270142}
+{"type":"poi","name":"John B. Williams","kind":"artwork","lat":37.803696,"lon":-122.271835}
+{"type":"poi","name":"Dung Pham Family & Cosmetic Dentistry","kind":"dentist","lat":37.801710,"lon":-122.268557}
+{"type":"poi","name":"Ismael Mini Market","kind":"convenience","lat":37.802049,"lon":-122.269375}
+{"type":"poi","name":"Samuel Merritt University Bookstore","kind":"books","lat":37.803094,"lon":-122.273532}
+{"type":"poi","name":"Total Health Dental Care","kind":"dentist","lat":37.804448,"lon":-122.268702}
+{"type":"poi","name":"Franklin Mini Mart","kind":"convenience","lat":37.804605,"lon":-122.269305}
+{"type":"poi","name":"Skaia POPOS","kind":"park","lat":37.805630,"lon":-122.266787}
+{"type":"poi","name":"Broadway & 13th Street","kind":"bus_stop","lat":37.803704,"lon":-122.271765}
+{"type":"poi","name":"Broadway & 12th Street","kind":"bus_stop","lat":37.802805,"lon":-122.272014}
+{"type":"poi","name":"11th Street & Jefferson Street","kind":"bus_stop","lat":37.803657,"lon":-122.276263}
+{"type":"poi","name":"11th Street & Harrison Street","kind":"bus_stop","lat":37.800551,"lon":-122.268364}
+{"type":"poi","name":"Broadway & 7th Street","kind":"bus_stop","lat":37.799690,"lon":-122.273940}
+{"type":"poi","name":"Broadway & 14th Street","kind":"bus_stop","lat":37.804117,"lon":-122.271218}
+{"type":"poi","name":"Broadway & 9th Street","kind":"bus_stop","lat":37.801131,"lon":-122.273063}
+{"type":"poi","name":"Broadway & 12th Street","kind":"bus_stop","lat":37.803121,"lon":-122.272114}
+{"type":"poi","name":"14th Street & Broadway","kind":"bus_stop","lat":37.804374,"lon":-122.271660}
+{"type":"poi","name":"Broadway & 12th Street","kind":"bus_stop","lat":37.802653,"lon":-122.272398}
+{"type":"poi","name":"11th Street & Broadway","kind":"bus_stop","lat":37.802267,"lon":-122.272747}
+{"type":"poi","name":"14th Street & Clay Street","kind":"bus_stop","lat":37.805520,"lon":-122.273908}
+{"type":"poi","name":"14th Street & Clay Street","kind":"bus_stop","lat":37.805090,"lon":-122.273353}
+{"type":"poi","name":"14th Street & Franklin Street","kind":"bus_stop","lat":37.803833,"lon":-122.270193}
+{"type":"poi","name":"14th Street & Franklin Street","kind":"bus_stop","lat":37.803871,"lon":-122.269740}
+{"type":"poi","name":"12th Street & Harrison Street","kind":"bus_stop","lat":37.801746,"lon":-122.268758}
+{"type":"poi","name":"14th Street & Broadway","kind":"bus_stop","lat":37.804747,"lon":-122.272012}
+{"type":"poi","name":"7th Street & Jefferson Street","kind":"bus_stop","lat":37.800894,"lon":-122.277998}
+{"type":"poi","name":"Broadway & 9th Street","kind":"bus_stop","lat":37.801197,"lon":-122.273313}
+{"type":"poi","name":"Martin Luther King Junior Way & 11th Street","kind":"bus_stop","lat":37.803960,"lon":-122.277255}
+{"type":"poi","name":"10th Street & Washington Street","kind":"bus_stop","lat":37.802254,"lon":-122.274455}
+{"type":"poi","name":"2nd Street & Washington Street","kind":"bus_stop","lat":37.796568,"lon":-122.277851}
+{"type":"poi","name":"Broadway & 3rd Street","kind":"bus_stop","lat":37.796905,"lon":-122.275979}
+{"type":"poi","name":"Broadway & 3rd Street","kind":"bus_stop","lat":37.796581,"lon":-122.275885}
+{"type":"poi","name":"7th Street & Jackson Street","kind":"bus_stop","lat":37.796960,"lon":-122.267996}
+{"type":"poi","name":"12th Street & Broadway","kind":"bus_stop","lat":37.803172,"lon":-122.272398}
+{"type":"poi","name":"8th Street & Jackson Street","kind":"bus_stop","lat":37.797874,"lon":-122.267626}
+{"type":"poi","name":"8th Street & Jefferson Street","kind":"bus_stop","lat":37.801837,"lon":-122.277601}
+{"type":"poi","name":"8th Street & Broadway","kind":"bus_stop","lat":37.800169,"lon":-122.273479}
+{"type":"poi","name":"8th Street & Harrison Street","kind":"bus_stop","lat":37.799059,"lon":-122.270547}
+{"type":"poi","name":"11th Street & Clay Street","kind":"bus_stop","lat":37.803270,"lon":-122.275316}
+{"type":"poi","name":"Broadway & 7th Street","kind":"bus_stop","lat":37.799241,"lon":-122.274525}
+{"type":"poi","name":"12th Street & Martin Luther King Junior Way","kind":"bus_stop","lat":37.805024,"lon":-122.277102}
+{"type":"poi","name":"5th Street & Washington Street","kind":"bus_stop","lat":37.798624,"lon":-122.276499}
+{"type":"poi","name":"12th Street & Clay Street","kind":"bus_stop","lat":37.804172,"lon":-122.274887}
+{"type":"poi","name":"Harrison Street & 8th Street","kind":"bus_stop","lat":37.799050,"lon":-122.269906}
+{"type":"poi","name":"7th Street & Franklin Street","kind":"bus_stop","lat":37.799014,"lon":-122.273176}
+{"type":"poi","name":"7th Street & Harrison Street","kind":"bus_stop","lat":37.798098,"lon":-122.270842}
+{"type":"poi","name":"11th Street & Broadway","kind":"bus_stop","lat":37.802045,"lon":-122.272143}
+{"type":"poi","name":"7th Street & Alice Street","kind":"bus_stop","lat":37.797605,"lon":-122.269595}
+{"type":"poi","name":"11th Street & Clay Street","kind":"bus_stop","lat":37.802962,"lon":-122.274463}
+{"type":"poi","name":"11th Street & Franklin Street","kind":"bus_stop","lat":37.801545,"lon":-122.270869}
+{"type":"poi","name":"Harrison Southbound","kind":"bus_stop","lat":37.800459,"lon":-122.268069}
+{"type":"poi","name":"Broadway & 15th Street","kind":"bus_stop","lat":37.805166,"lon":-122.270539}
+{"type":"poi","name":"Broadway & 11th Street","kind":"bus_stop","lat":37.802079,"lon":-122.272457}
+{"type":"poi","name":"12th Street & Franklin Street","kind":"bus_stop","lat":37.802676,"lon":-122.271135}
+{"type":"poi","name":"Broadway & 14th Street","kind":"bus_stop","lat":37.804791,"lon":-122.271014}
