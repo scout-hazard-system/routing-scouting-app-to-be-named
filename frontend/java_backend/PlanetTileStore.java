@@ -151,11 +151,8 @@ final class PlanetTileStore {
     sb.append("\"url\":\"").append(escape(PLANET_PMTILES_URL)).append("\",");
     sb.append("\"mode\":\"").append(isLocalFile() ? "local_file" : "http_range").append("\",");
     sb.append("\"ready\":").append(h != null).append(",");
-<<<<<<< HEAD
-=======
     sb.append("\"upstream_source_read_only\":true,");
     sb.append("\"upstream_mutation\":false,");
->>>>>>> feature/integrate-waze-and-service-hardening
     if (h != null) {
       sb.append("\"min_zoom\":").append(h.minZoom).append(",");
       sb.append("\"max_zoom\":").append(h.maxZoom).append(",");

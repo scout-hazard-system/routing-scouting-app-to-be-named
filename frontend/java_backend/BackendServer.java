@@ -383,6 +383,25 @@ public final class BackendServer {
     return out;
   }
 
+  private static boolean isSpecificAddressDisplayName(String displayName) {
+    String normalized = normalizeSuggestToken(displayName);
+    if (normalized.isEmpty()) {
+      return false;
+    }
+    return normalized.matches(".*\\d+.*");
+  }
+
+  private static List<AddressCatalogEntry> buildCombinedAddressCatalogEntries() {
+    Map<String, AddressCatalogEntry> merged = new LinkedHashMap<>();
+    for (AddressCatalogEntry entry : ADDRESS_CATALOG.values()) {
+      merged.put(entry.queryKey, entry);
+    }
+    for (AddressCatalogEntry cityEntry : CITY_CATALOG_ALIASES) {
+      merged.putIfAbsent(cityEntry.queryKey, cityEntry);
+    }
+    return new ArrayList<>(merged.values());
+  }
+
   private static List<String> splitTopLevelValues(String csvLike) {
     List<String> out = new ArrayList<>();
     if (csvLike == null || csvLike.isBlank()) {
@@ -2512,7 +2531,10 @@ public final class BackendServer {
       scored.add(Map.entry(coordinateQuerySuggestion, score));
     }
 
-    for (AddressCatalogEntry entry : ADDRESS_CATALOG.values()) {
+    for (AddressCatalogEntry entry : buildCombinedAddressCatalogEntries()) {
+      if (!isSpecificAddressDisplayName(entry.displayName)) {
+        continue;
+      }
       SuggestionEntry candidate =
           new SuggestionEntry(entry.displayName, "address_catalog", entry.lat, entry.lon, entry.updatedAtMs);
       double score =
@@ -2523,25 +2545,12 @@ public final class BackendServer {
         scored.add(Map.entry(candidate, score));
       }
     }
-    for (AddressCatalogEntry cityEntry : CITY_CATALOG_ALIASES) {
-      SuggestionEntry candidate =
-          new SuggestionEntry(cityEntry.displayName, cityEntry.source, cityEntry.lat, cityEntry.lon, 0L);
-      double textScore = cityCatalogTextScore(queryKey, cityEntry.queryKey);
-      if (textScore < 60.0) {
-        continue;
-      }
-      double score =
-          textScore
-              + shardScoreFor(cityEntry.lat, cityEntry.lon, biasLat, biasLon, hasBias)
-              + nearbyDistanceScore(cityEntry.lat, cityEntry.lon, biasLat, biasLon, hasBias)
-              + 90.0;
-      if (score > 0.0) {
-        scored.add(Map.entry(candidate, score));
-      }
-    }
 
     for (SuggestionEntry coordinateEntry :
         collectCoordinateCatalogCandidates(queryKey, biasLat, biasLon, hasBias)) {
+      if (!isSpecificAddressDisplayName(coordinateEntry.displayName)) {
+        continue;
+      }
       String candidateKey = normalizeSuggestToken(coordinateEntry.displayName);
       String coordKey =
           normalizeSuggestToken(
@@ -2557,6 +2566,9 @@ public final class BackendServer {
 
     if (hasBias) {
       for (SuggestionEntry poi : collectPoiCatalogCandidates(biasLat, biasLon, queryKey)) {
+        if (!isSpecificAddressDisplayName(poi.displayName)) {
+          continue;
+        }
         String candidateKey = normalizeSuggestToken(poi.displayName);
         double score =
             suggestTextScore(queryKey, candidateKey)
@@ -2627,6 +2639,9 @@ public final class BackendServer {
         List<SuggestionEntry> geocodeEntries =
             parseGeocodeSuggestionEntries(geocodeBody, limit - uniqueRanked.size());
         for (SuggestionEntry geocodeEntry : geocodeEntries) {
+          if (!isSpecificAddressDisplayName(geocodeEntry.displayName)) {
+            continue;
+          }
           String dedupeKey =
               normalizeSuggestToken(geocodeEntry.displayName)
                   + "|"
@@ -2687,20 +2702,13 @@ public final class BackendServer {
             && Math.abs(biasLat) <= 90.0
             && Math.abs(biasLon) <= 180.0;
     List<Map.Entry<AddressCatalogEntry, Double>> scored = new ArrayList<>();
-    for (AddressCatalogEntry entry : ADDRESS_CATALOG.values()) {
+    for (AddressCatalogEntry entry : buildCombinedAddressCatalogEntries()) {
+      if (!isSpecificAddressDisplayName(entry.displayName)) {
+        continue;
+      }
       double score = catalogMatchScore(key, entry, biasLat, biasLon, hasBias);
       if (score > 0.0) {
         scored.add(Map.entry(entry, score));
-      }
-    }
-    for (AddressCatalogEntry cityEntry : CITY_CATALOG_ALIASES) {
-      double baseScore = catalogMatchScore(key, cityEntry, biasLat, biasLon, hasBias);
-      if (baseScore <= 0.0) {
-        continue;
-      }
-      double score = baseScore + 90.0;
-      if (score > 0.0) {
-        scored.add(Map.entry(cityEntry, score));
       }
     }
     if (scored.isEmpty()) {
@@ -4339,6 +4347,11 @@ public final class BackendServer {
       }
       models.append("\"").append(SCOUT_MODELS[i]).append("\":").append(present);
     }
+    if (SCOUT_MODELS.length >= 3) {
+      models.append(",\"scout-alert\":").append(installed.contains(SCOUT_MODELS[0]));
+      models.append(",\"scout-intel\":").append(installed.contains(SCOUT_MODELS[1]));
+      models.append(",\"scout-rank\":").append(installed.contains(SCOUT_MODELS[2]));
+    }
     models.append("}");
     String payload = "{"
         + "\"ts\":\"" + Instant.now().toString() + "\","
@@ -4956,7 +4969,7 @@ public final class BackendServer {
         lat = latest.lat;
         lon = latest.lon;
       }
-      double radiusM = parseDouble(query.getOrDefault("radius_m", ""), 475000.0);
+      double radiusM = parseDouble(query.getOrDefault("radius_m", ""), 700.0);
       int zoom = parseIntOrDefault(query.getOrDefault("zoom", ""), 0); // 0 = auto (resolution filter)
       String sceneJson = ProprietaryMapEngine.sceneJson(lat, lon, radiusM, zoom);
       writeJson(exchange, 200, appendAlertClustersToSceneJson(sceneJson, radiusM));
@@ -5031,6 +5044,17 @@ public final class BackendServer {
         return;
       }
       Map<String, String> query = parseQuery(exchange.getRequestURI().getRawQuery());
+      if (parseFlexibleBoolean(query.getOrDefault("status", ""), false)) {
+        writeJson(
+            exchange,
+            200,
+            "{"
+                + "\"status\":\"ok\","
+                + "\"ts\":\"" + Instant.now().toString() + "\","
+                + "\"prefetch\":" + ProprietaryMapEngine.prefetchStatusJson()
+                + "}");
+        return;
+      }
       String state = query.getOrDefault("state", "").trim();
       int maxTiles =
           parseIntOrDefault(
@@ -5039,7 +5063,10 @@ public final class BackendServer {
         writeJson(exchange, 400, "{\"error\":\"missing_state\"}");
         return;
       }
-      writeJson(exchange, 200, ProprietaryMapEngine.startShardPrefetch(state, maxTiles));
+      String payload = ProprietaryMapEngine.startShardPrefetch(state, maxTiles);
+      int statusCode =
+          payload.contains("\"status\":\"error\"") && payload.contains("\"unknown_state\"") ? 400 : 200;
+      writeJson(exchange, statusCode, payload);
     }
   }
 
