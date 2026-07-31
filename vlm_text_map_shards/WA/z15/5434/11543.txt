@@ -1,0 +1,3 @@
+{"meta":{"state":"WA","z":15,"x":5434,"y":11543,"zhs":{"key":"z/15/5434/11543|h3/9/nv9o/pfha|s2/12/f2/20v/29i","z_key":"z/15/5434/11543","h_key":"h3/9/nv9o/pfha","s_key":"s2/12/f2/20v/29i"},"source":"planet","roads":2,"buildings":0,"areas":0,"pois":0}}
+{"type":"road","class":"residential","name":"Buffalo Lane","oneway":false,"pts":"46.867820,-120.297554;46.864451,-120.297538"}
+{"type":"road","class":"residential","name":"Upper Badger Pocket Road","oneway":false,"pts":"46.867820,-120.291954;46.867793,-120.289135"}

@@ -1,0 +1,3 @@
+{"meta":{"state":"WA","z":15,"x":5357,"y":11528,"zhs":{"key":"z/15/5357/11528|h3/9/nvej/pfin|s2/12/f2/216/29a","z_key":"z/15/5357/11528","h_key":"h3/9/nvej/pfin","s_key":"s2/12/f2/216/29a"},"source":"planet","roads":1,"buildings":0,"areas":1,"pois":0}}
+{"type":"road","class":"service","name":"National Forest Development Road 428","oneway":false,"pts":"46.980265,-121.146412;46.980309,-121.146286;46.980369,-121.146136"}
+{"type":"area","kind":"park","pts":"46.980369,-121.146412;46.980369,-121.135082;46.972639,-121.135082;46.972639,-121.146412"}

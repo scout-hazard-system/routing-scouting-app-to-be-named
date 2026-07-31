@@ -1,0 +1,2070 @@
+{
+  "channels": [
+    {
+      "id": "bf-32602-indianapolis-metropolitan-police",
+      "name": "Indianapolis Metropolitan Police",
+      "description": "Broadcastify public safety feed 32602 for Minnesota.",
+      "city": "",
+      "county": "Various",
+      "state": "MN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "minnesota",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32602"
+    },
+    {
+      "id": "bf-40664-itasca-county-public-safety",
+      "name": "Itasca County Public Safety",
+      "description": "Broadcastify public safety feed 40664 for Minnesota.",
+      "city": "",
+      "county": "Various",
+      "state": "MN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "minnesota"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40664"
+    },
+    {
+      "id": "bf-41055-st-paul-police-and-ramsey-county-sheriff",
+      "name": "St Paul Police and Ramsey County Sheriff",
+      "description": "Broadcastify public safety feed 41055 for Minnesota.",
+      "city": "",
+      "county": "Various",
+      "state": "MN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "minnesota",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41055"
+    },
+    {
+      "id": "bf-13736-blue-earth-and-faribault-counties-sheriff-",
+      "name": "Blue Earth and Faribault Counties Sheriff, Police and EMS",
+      "description": "Broadcastify public safety feed 13736 for Minnesota.",
+      "city": "",
+      "county": "Various",
+      "state": "MN",
+      "service_types": [
+        "dispatch",
+        "law",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "minnesota",
+        "law",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/13736"
+    },
+    {
+      "id": "bf-43758-austin-combined-law-fire-ems",
+      "name": "Austin Combined (Law / Fire / EMS)",
+      "description": "Broadcastify public safety feed 43758 for Minnesota.",
+      "city": "",
+      "county": "Various",
+      "state": "MN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "minnesota",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43758"
+    },
+    {
+      "id": "bf-12876-north-st-louis-county-sheriff-fire-and-roa",
+      "name": "North St. Louis County Sheriff, Fire and Roads",
+      "description": "Broadcastify public safety feed 12876 for Minnesota.",
+      "city": "",
+      "county": "Various",
+      "state": "MN",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "minnesota",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/12876"
+    },
+    {
+      "id": "bf-37339-douglas-county-public-safety",
+      "name": "Douglas County Public Safety",
+      "description": "Broadcastify public safety feed 37339 for Minnesota.",
+      "city": "",
+      "county": "Various",
+      "state": "MN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "minnesota"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37339"
+    },
+    {
+      "id": "bf-39484-benton-and-stearns-county-public-safety",
+      "name": "Benton and Stearns County Public Safety",
+      "description": "Broadcastify public safety feed 39484 for Minnesota.",
+      "city": "",
+      "county": "Various",
+      "state": "MN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "minnesota"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39484"
+    },
+    {
+      "id": "bf-33273-clearwater-county-public-safety",
+      "name": "Clearwater County Public Safety",
+      "description": "Broadcastify public safety feed 33273 for Minnesota.",
+      "city": "",
+      "county": "Various",
+      "state": "MN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "minnesota"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/33273"
+    },
+    {
+      "id": "bf-34073-crow-wing-county-public-safety",
+      "name": "Crow Wing County Public Safety",
+      "description": "Broadcastify public safety feed 34073 for Minnesota.",
+      "city": "",
+      "county": "Various",
+      "state": "MN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "minnesota"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/34073"
+    },
+    {
+      "id": "bf-1651-washington-county-maplewood-and-north-sain",
+      "name": "Washington County, Maplewood and North Saint Paul Public Safety",
+      "description": "Broadcastify public safety feed 1651 for Minnesota.",
+      "city": "",
+      "county": "Various",
+      "state": "MN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "minnesota"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/1651"
+    },
+    {
+      "id": "bf-32888-becker-hubbard-and-cass-counties-public-sa",
+      "name": "Becker, Hubbard, and Cass Counties Public Safety",
+      "description": "Broadcastify public safety feed 32888 for Minnesota.",
+      "city": "",
+      "county": "Various",
+      "state": "MN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "minnesota"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32888"
+    },
+    {
+      "id": "bf-13008-redwood-county-public-safety",
+      "name": "Redwood County Public Safety",
+      "description": "Broadcastify public safety feed 13008 for Minnesota.",
+      "city": "",
+      "county": "Various",
+      "state": "MN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "minnesota"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/13008"
+    },
+    {
+      "id": "bf-10449-willmar-police-fire-and-ems",
+      "name": "Willmar Police, Fire and EMS",
+      "description": "Broadcastify public safety feed 10449 for Minnesota.",
+      "city": "",
+      "county": "Various",
+      "state": "MN",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "minnesota",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/10449"
+    },
+    {
+      "id": "bf-35249-saint-paul-fire",
+      "name": "Saint Paul Fire",
+      "description": "Broadcastify public safety feed 35249 for Minnesota.",
+      "city": "",
+      "county": "Various",
+      "state": "MN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "minnesota",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/35249"
+    },
+    {
+      "id": "bf-42487-wadena-otter-tail-hubbard-and-todd-county-",
+      "name": "Wadena,Otter Tail, Hubbard, and Todd County Public Safety",
+      "description": "Broadcastify public safety feed 42487 for Minnesota.",
+      "city": "",
+      "county": "Various",
+      "state": "MN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "minnesota"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42487"
+    },
+    {
+      "id": "bf-24399-rock-county-sheriff-fire-ems-and-pw",
+      "name": "Rock County Sheriff, Fire, EMS and PW",
+      "description": "Broadcastify public safety feed 24399 for Minnesota.",
+      "city": "",
+      "county": "Various",
+      "state": "MN",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "minnesota",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/24399"
+    },
+    {
+      "id": "bf-43823-carlton-county-public-safety",
+      "name": "Carlton County Public Safety",
+      "description": "Broadcastify public safety feed 43823 for Minnesota.",
+      "city": "",
+      "county": "Various",
+      "state": "MN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "minnesota"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43823"
+    },
+    {
+      "id": "bf-47241-st-louis-county-sheriff-duluth-police",
+      "name": "St. Louis County Sheriff / Duluth Police",
+      "description": "Broadcastify public safety feed 47241 for Minnesota.",
+      "city": "",
+      "county": "Various",
+      "state": "MN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "minnesota",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47241"
+    },
+    {
+      "id": "bf-11692-dodge-county-sheriff-fire-and-ems",
+      "name": "Dodge County Sheriff, Fire, and EMS",
+      "description": "Broadcastify public safety feed 11692 for Minnesota.",
+      "city": "",
+      "county": "Various",
+      "state": "MN",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "minnesota",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/11692"
+    },
+    {
+      "id": "bf-3053-mcleod-county-public-safety",
+      "name": "McLeod County Public Safety",
+      "description": "Broadcastify public safety feed 3053 for Minnesota.",
+      "city": "",
+      "county": "Various",
+      "state": "MN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "minnesota"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/3053"
+    },
+    {
+      "id": "bf-25696-olmsted-county-police-fire-and-ems",
+      "name": "Olmsted County Police, Fire and EMS",
+      "description": "Broadcastify public safety feed 25696 for Minnesota.",
+      "city": "",
+      "county": "Various",
+      "state": "MN",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "minnesota",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/25696"
+    },
+    {
+      "id": "bf-35437-roseau-lake-of-the-woods-county-ems-and-fi",
+      "name": "Roseau/Lake of the Woods County EMS and Fire",
+      "description": "Broadcastify public safety feed 35437 for Minnesota.",
+      "city": "",
+      "county": "Various",
+      "state": "MN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "minnesota",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/35437"
+    },
+    {
+      "id": "bf-43068-winona-city-county-public-safety",
+      "name": "Winona City/County Public Safety",
+      "description": "Broadcastify public safety feed 43068 for Minnesota.",
+      "city": "",
+      "county": "Various",
+      "state": "MN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "minnesota"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43068"
+    },
+    {
+      "id": "bf-36735-ramsey-county-sheriff",
+      "name": "Ramsey County Sheriff",
+      "description": "Broadcastify public safety feed 36735 for Minnesota.",
+      "city": "",
+      "county": "Various",
+      "state": "MN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "minnesota",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/36735"
+    },
+    {
+      "id": "bf-38482-freeborn-county-public-safety",
+      "name": "Freeborn County Public Safety",
+      "description": "Broadcastify public safety feed 38482 for Minnesota.",
+      "city": "",
+      "county": "Various",
+      "state": "MN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "minnesota"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38482"
+    },
+    {
+      "id": "bf-43695-austin-law-enforcement",
+      "name": "Austin Law Enforcement",
+      "description": "Broadcastify public safety feed 43695 for Minnesota.",
+      "city": "",
+      "county": "Various",
+      "state": "MN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "minnesota",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43695"
+    },
+    {
+      "id": "bf-31131-pine-county-fire-and-ems",
+      "name": "Pine County Fire and EMS",
+      "description": "Broadcastify public safety feed 31131 for Minnesota.",
+      "city": "",
+      "county": "Various",
+      "state": "MN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "minnesota",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/31131"
+    },
+    {
+      "id": "bf-43027-minnesota-south-central-public-safety",
+      "name": "Minnesota South Central Public Safety",
+      "description": "Broadcastify public safety feed 43027 for Minnesota.",
+      "city": "",
+      "county": "Various",
+      "state": "MN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "minnesota"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43027"
+    },
+    {
+      "id": "bf-31115-stearns-meeker-and-kandiyohi-counties-publ",
+      "name": "Stearns, Meeker and Kandiyohi Counties Public Safety",
+      "description": "Broadcastify public safety feed 31115 for Minnesota.",
+      "city": "",
+      "county": "Various",
+      "state": "MN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "minnesota"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/31115"
+    },
+    {
+      "id": "bf-41332-martin-county-watonwan-public-safety",
+      "name": "Martin County, Watonwan Public Safety",
+      "description": "Broadcastify public safety feed 41332 for Minnesota.",
+      "city": "",
+      "county": "Various",
+      "state": "MN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "minnesota"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41332"
+    },
+    {
+      "id": "bf-38923-carver-and-scott-county-public-safety",
+      "name": "Carver and Scott County Public Safety",
+      "description": "Broadcastify public safety feed 38923 for Minnesota.",
+      "city": "",
+      "county": "Various",
+      "state": "MN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "minnesota"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38923"
+    },
+    {
+      "id": "bf-23262-goodhue-county-sheriff-red-wing-and-all-co",
+      "name": "Goodhue County Sheriff, Red Wing and all county Police and Fire",
+      "description": "Broadcastify public safety feed 23262 for Minnesota.",
+      "city": "",
+      "county": "Various",
+      "state": "MN",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "minnesota",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/23262"
+    },
+    {
+      "id": "bf-35188-bloomington-richfield-and-edina-public-saf",
+      "name": "Bloomington, Richfield, and Edina Public Safety",
+      "description": "Broadcastify public safety feed 35188 for Minnesota.",
+      "city": "",
+      "county": "Various",
+      "state": "MN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "minnesota"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/35188"
+    },
+    {
+      "id": "bf-34123-cottonwood-county-public-safety",
+      "name": "Cottonwood County Public Safety",
+      "description": "Broadcastify public safety feed 34123 for Minnesota.",
+      "city": "",
+      "county": "Various",
+      "state": "MN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "minnesota"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/34123"
+    },
+    {
+      "id": "bf-27380-steele-county-fire-dispatch",
+      "name": "Steele County Fire Dispatch",
+      "description": "Broadcastify public safety feed 27380 for Minnesota.",
+      "city": "",
+      "county": "Various",
+      "state": "MN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "minnesota",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/27380"
+    },
+    {
+      "id": "bf-38042-wright-county-public-safety",
+      "name": "Wright County Public Safety",
+      "description": "Broadcastify public safety feed 38042 for Minnesota.",
+      "city": "",
+      "county": "Various",
+      "state": "MN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "minnesota"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38042"
+    },
+    {
+      "id": "bf-41335-carver-county-fire",
+      "name": "Carver County Fire",
+      "description": "Broadcastify public safety feed 41335 for Minnesota.",
+      "city": "",
+      "county": "Various",
+      "state": "MN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "minnesota",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41335"
+    },
+    {
+      "id": "bf-40118-cass-morrison-and-todd-counties-public-saf",
+      "name": "Cass, Morrison, and Todd Counties Public Safety",
+      "description": "Broadcastify public safety feed 40118 for Minnesota.",
+      "city": "",
+      "county": "Various",
+      "state": "MN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "minnesota"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40118"
+    },
+    {
+      "id": "bf-30437-stevens-county-public-safety",
+      "name": "Stevens County Public Safety",
+      "description": "Broadcastify public safety feed 30437 for Minnesota.",
+      "city": "",
+      "county": "Various",
+      "state": "MN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "minnesota"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/30437"
+    },
+    {
+      "id": "bf-46626-faribault-county-public-safety",
+      "name": "Faribault County Public Safety",
+      "description": "Broadcastify public safety feed 46626 for Minnesota.",
+      "city": "",
+      "county": "Various",
+      "state": "MN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "minnesota"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46626"
+    },
+    {
+      "id": "bf-15230-scott-county-emergency-services",
+      "name": "Scott County Emergency Services",
+      "description": "Broadcastify public safety feed 15230 for Minnesota.",
+      "city": "",
+      "county": "Various",
+      "state": "MN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "minnesota"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/15230"
+    },
+    {
+      "id": "bf-41193-red-wing-fire",
+      "name": "Red Wing Fire",
+      "description": "Broadcastify public safety feed 41193 for Minnesota.",
+      "city": "",
+      "county": "Various",
+      "state": "MN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "minnesota",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41193"
+    },
+    {
+      "id": "bf-46845-sherburne-county-public-safety",
+      "name": "Sherburne County Public Safety",
+      "description": "Broadcastify public safety feed 46845 for Minnesota.",
+      "city": "",
+      "county": "Various",
+      "state": "MN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "minnesota"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46845"
+    },
+    {
+      "id": "bf-14518-morristown-fire",
+      "name": "Morristown Fire",
+      "description": "Broadcastify public safety feed 14518 for Minnesota.",
+      "city": "",
+      "county": "Various",
+      "state": "MN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "minnesota",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/14518"
+    },
+    {
+      "id": "bf-36445-hubbard-county-law-enforcement",
+      "name": "Hubbard County Law Enforcement",
+      "description": "Broadcastify public safety feed 36445 for Minnesota.",
+      "city": "",
+      "county": "Various",
+      "state": "MN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "minnesota",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/36445"
+    },
+    {
+      "id": "bf-36408-pipestone-county-sheriff-ems-and-public-wo",
+      "name": "Pipestone County Sheriff, EMS and Public Works",
+      "description": "Broadcastify public safety feed 36408 for Minnesota.",
+      "city": "",
+      "county": "Various",
+      "state": "MN",
+      "service_types": [
+        "dispatch",
+        "law",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "minnesota",
+        "law",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/36408"
+    },
+    {
+      "id": "bf-16557-washington-county-public-safety",
+      "name": "Washington County Public Safety",
+      "description": "Broadcastify public safety feed 16557 for Minnesota.",
+      "city": "",
+      "county": "Various",
+      "state": "MN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "minnesota"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/16557"
+    },
+    {
+      "id": "bf-43694-austin-fire-ems",
+      "name": "Austin Fire & EMS",
+      "description": "Broadcastify public safety feed 43694 for Minnesota.",
+      "city": "",
+      "county": "Various",
+      "state": "MN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "minnesota",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43694"
+    },
+    {
+      "id": "bf-42766-lyle-fd",
+      "name": "Lyle FD",
+      "description": "Broadcastify public safety feed 42766 for Minnesota.",
+      "city": "",
+      "county": "Various",
+      "state": "MN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "minnesota"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42766"
+    },
+    {
+      "id": "bf-46645-minneapolis-fire-and-hennepin-dispatch",
+      "name": "Minneapolis Fire and Hennepin Dispatch",
+      "description": "Broadcastify public safety feed 46645 for Minnesota.",
+      "city": "",
+      "county": "Various",
+      "state": "MN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "minnesota",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46645"
+    },
+    {
+      "id": "bf-46531-little-falls-and-morrison-county-public-sa",
+      "name": "Little Falls and Morrison County Public Safety",
+      "description": "Broadcastify public safety feed 46531 for Minnesota.",
+      "city": "",
+      "county": "Various",
+      "state": "MN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "minnesota"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46531"
+    },
+    {
+      "id": "bf-45639-mille-lacs-public-safety",
+      "name": "Mille Lacs Public Safety",
+      "description": "Broadcastify public safety feed 45639 for Minnesota.",
+      "city": "",
+      "county": "Various",
+      "state": "MN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "minnesota"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45639"
+    },
+    {
+      "id": "bf-43028-minnesota-state-patrol-dispatch-mankato-an",
+      "name": "Minnesota State Patrol Dispatch - Mankato and Marshall",
+      "description": "Broadcastify public safety feed 43028 for Minnesota.",
+      "city": "",
+      "county": "Various",
+      "state": "MN",
+      "service_types": [
+        "dispatch",
+        "law",
+        "highway"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "minnesota",
+        "law",
+        "highway"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43028"
+    },
+    {
+      "id": "bf-47280-lake-and-st-louis-counties-wildfire-operat",
+      "name": "Lake and St. Louis Counties - Wildfire Operations",
+      "description": "Broadcastify public safety feed 47280 for Minnesota.",
+      "city": "",
+      "county": "Various",
+      "state": "MN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "minnesota",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47280"
+    },
+    {
+      "id": "bf-16438-hokah-fire",
+      "name": "Hokah Fire",
+      "description": "Broadcastify public safety feed 16438 for Minnesota.",
+      "city": "",
+      "county": "Various",
+      "state": "MN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "minnesota",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/16438"
+    },
+    {
+      "id": "bf-30836-waseca-county-sheriff-digital",
+      "name": "Waseca County Sheriff - Digital",
+      "description": "Broadcastify public safety feed 30836 for Minnesota.",
+      "city": "",
+      "county": "Various",
+      "state": "MN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "minnesota",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/30836"
+    },
+    {
+      "id": "bf-43911-hancock-fire",
+      "name": "Hancock Fire",
+      "description": "Broadcastify public safety feed 43911 for Minnesota.",
+      "city": "",
+      "county": "Various",
+      "state": "MN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "minnesota",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43911"
+    },
+    {
+      "id": "bf-37874-morris-fire",
+      "name": "Morris Fire",
+      "description": "Broadcastify public safety feed 37874 for Minnesota.",
+      "city": "",
+      "county": "Various",
+      "state": "MN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "minnesota",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37874"
+    },
+    {
+      "id": "bf-34078-blooming-praire-fire",
+      "name": "Blooming Praire Fire",
+      "description": "Broadcastify public safety feed 34078 for Minnesota.",
+      "city": "",
+      "county": "Various",
+      "state": "MN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "minnesota",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/34078"
+    },
+    {
+      "id": "bf-23333-ellendale-fire",
+      "name": "Ellendale Fire",
+      "description": "Broadcastify public safety feed 23333 for Minnesota.",
+      "city": "",
+      "county": "Various",
+      "state": "MN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "minnesota",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/23333"
+    },
+    {
+      "id": "bf-42758-winona-county-fire-main",
+      "name": "Winona County Fire Main",
+      "description": "Broadcastify public safety feed 42758 for Minnesota.",
+      "city": "",
+      "county": "Various",
+      "state": "MN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "minnesota",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42758"
+    },
+    {
+      "id": "bf-43428-roseau-lake-of-the-woods-county-roads-and-",
+      "name": "Roseau/Lake of the Woods County Roads and Parks",
+      "description": "Broadcastify public safety feed 43428 for Minnesota.",
+      "city": "",
+      "county": "Various",
+      "state": "MN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "minnesota"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43428"
+    },
+    {
+      "id": "bf-20427-pipestone-county-fire",
+      "name": "Pipestone County Fire",
+      "description": "Broadcastify public safety feed 20427 for Minnesota.",
+      "city": "",
+      "county": "Various",
+      "state": "MN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "minnesota",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/20427"
+    },
+    {
+      "id": "bf-24723-yellow-medicine-county-public-works",
+      "name": "Yellow Medicine County Public Works",
+      "description": "Broadcastify public safety feed 24723 for Minnesota.",
+      "city": "",
+      "county": "Various",
+      "state": "MN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "minnesota"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/24723"
+    },
+    {
+      "id": "bf-36592-lakes-area-emergency-servicesv",
+      "name": "Lakes Area Emergency Servicesv",
+      "description": "Broadcastify public safety feed 36592 for Minnesota.",
+      "city": "",
+      "county": "Various",
+      "state": "MN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "minnesota"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/36592"
+    },
+    {
+      "id": "bf-39605-anoka-county-fire",
+      "name": "Anoka County Fire",
+      "description": "Broadcastify public safety feed 39605 for Minnesota.",
+      "city": "",
+      "county": "Various",
+      "state": "MN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "minnesota",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39605"
+    },
+    {
+      "id": "bf-39614-anoka-county-ems-dispatch",
+      "name": "Anoka County EMS Dispatch",
+      "description": "Broadcastify public safety feed 39614 for Minnesota.",
+      "city": "",
+      "county": "Various",
+      "state": "MN",
+      "service_types": [
+        "dispatch",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "minnesota",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39614"
+    },
+    {
+      "id": "bf-31848-solway-fire",
+      "name": "Solway Fire",
+      "description": "Broadcastify public safety feed 31848 for Minnesota.",
+      "city": "",
+      "county": "Various",
+      "state": "MN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "minnesota",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/31848"
+    },
+    {
+      "id": "bf-37676-bemidji-fire-dispatch",
+      "name": "Bemidji Fire Dispatch",
+      "description": "Broadcastify public safety feed 37676 for Minnesota.",
+      "city": "",
+      "county": "Various",
+      "state": "MN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "minnesota",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37676"
+    },
+    {
+      "id": "bf-46049-beltrami-fire-and-ems-dispatch",
+      "name": "Beltrami Fire and EMS Dispatch",
+      "description": "Broadcastify public safety feed 46049 for Minnesota.",
+      "city": "",
+      "county": "Various",
+      "state": "MN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "minnesota",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46049"
+    },
+    {
+      "id": "bf-43018-mayo-clinic-air-operations",
+      "name": "Mayo Clinic Air Operations",
+      "description": "Broadcastify public safety feed 43018 for Minnesota.",
+      "city": "",
+      "county": "Various",
+      "state": "MN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "minnesota"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43018"
+    },
+    {
+      "id": "bf-43020-mankato-mayo-clinic-ambulance-dispatch",
+      "name": "Mankato Mayo Clinic Ambulance Dispatch",
+      "description": "Broadcastify public safety feed 43020 for Minnesota.",
+      "city": "",
+      "county": "Various",
+      "state": "MN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "minnesota"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43020"
+    },
+    {
+      "id": "bf-20090-comfrey-fire-rescue",
+      "name": "Comfrey Fire Rescue",
+      "description": "Broadcastify public safety feed 20090 for Minnesota.",
+      "city": "",
+      "county": "Various",
+      "state": "MN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "minnesota",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/20090"
+    },
+    {
+      "id": "bf-37398-minnesota-state-patrol-district-2700-pine-",
+      "name": "Minnesota State Patrol - District 2700 (Pine, Carlton, Lake, Cook, and southern St. Louis Counties)",
+      "description": "Broadcastify public safety feed 37398 for Minnesota.",
+      "city": "",
+      "county": "Various",
+      "state": "MN",
+      "service_types": [
+        "dispatch",
+        "law",
+        "highway"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "minnesota",
+        "law",
+        "highway"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37398"
+    },
+    {
+      "id": "bf-45182-cass-county-public-safety",
+      "name": "Cass County Public Safety",
+      "description": "Broadcastify public safety feed 45182 for Minnesota.",
+      "city": "",
+      "county": "Various",
+      "state": "MN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "minnesota"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45182"
+    },
+    {
+      "id": "bf-15676-moorhead-fire",
+      "name": "Moorhead Fire",
+      "description": "Broadcastify public safety feed 15676 for Minnesota.",
+      "city": "",
+      "county": "Various",
+      "state": "MN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "minnesota",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/15676"
+    },
+    {
+      "id": "bf-38989-freeborn-county-fire",
+      "name": "Freeborn County Fire",
+      "description": "Broadcastify public safety feed 38989 for Minnesota.",
+      "city": "",
+      "county": "Various",
+      "state": "MN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "minnesota",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38989"
+    },
+    {
+      "id": "bf-17505-grant-county-fire",
+      "name": "Grant County Fire",
+      "description": "Broadcastify public safety feed 17505 for Minnesota.",
+      "city": "",
+      "county": "Various",
+      "state": "MN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "minnesota",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/17505"
+    },
+    {
+      "id": "bf-19629-pipestone-ambulance",
+      "name": "Pipestone Ambulance",
+      "description": "Broadcastify public safety feed 19629 for Minnesota.",
+      "city": "",
+      "county": "Various",
+      "state": "MN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "minnesota"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/19629"
+    },
+    {
+      "id": "bf-38704-isanti-county-sheriff-and-fire",
+      "name": "Isanti County Sheriff and Fire",
+      "description": "Broadcastify public safety feed 38704 for Minnesota.",
+      "city": "",
+      "county": "Various",
+      "state": "MN",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "minnesota",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38704"
+    },
+    {
+      "id": "bf-40625-nashwauk-fire",
+      "name": "Nashwauk Fire",
+      "description": "Broadcastify public safety feed 40625 for Minnesota.",
+      "city": "",
+      "county": "Various",
+      "state": "MN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "minnesota",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40625"
+    },
+    {
+      "id": "bf-23007-koochiching-county-fire",
+      "name": "Koochiching County Fire",
+      "description": "Broadcastify public safety feed 23007 for Minnesota.",
+      "city": "",
+      "county": "Various",
+      "state": "MN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "minnesota",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/23007"
+    },
+    {
+      "id": "bf-32921-anoka-county-police-and-fire",
+      "name": "Anoka County Police and Fire",
+      "description": "Broadcastify public safety feed 32921 for Minnesota.",
+      "city": "",
+      "county": "Various",
+      "state": "MN",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "minnesota",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32921"
+    },
+    {
+      "id": "bf-42733-le-sueur-county-public-safety",
+      "name": "Le Sueur County Public Safety",
+      "description": "Broadcastify public safety feed 42733 for Minnesota.",
+      "city": "",
+      "county": "Various",
+      "state": "MN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "minnesota"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42733"
+    },
+    {
+      "id": "bf-36556-alvarado-fire",
+      "name": "Alvarado Fire",
+      "description": "Broadcastify public safety feed 36556 for Minnesota.",
+      "city": "",
+      "county": "Various",
+      "state": "MN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "minnesota",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/36556"
+    },
+    {
+      "id": "bf-40407-grygla-fire-rescue",
+      "name": "Grygla Fire Rescue",
+      "description": "Broadcastify public safety feed 40407 for Minnesota.",
+      "city": "",
+      "county": "Various",
+      "state": "MN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "minnesota",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40407"
+    },
+    {
+      "id": "bf-45350-warren-fire",
+      "name": "Warren Fire",
+      "description": "Broadcastify public safety feed 45350 for Minnesota.",
+      "city": "",
+      "county": "Various",
+      "state": "MN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "minnesota",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45350"
+    },
+    {
+      "id": "bf-1524-meeker-county-sheriff-police-fire-and-ems",
+      "name": "Meeker County Sheriff, Police, Fire, and EMS",
+      "description": "Broadcastify public safety feed 1524 for Minnesota.",
+      "city": "",
+      "county": "Various",
+      "state": "MN",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "minnesota",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/1524"
+    },
+    {
+      "id": "bf-43036-mille-lacs-county-fire",
+      "name": "Mille Lacs County Fire",
+      "description": "Broadcastify public safety feed 43036 for Minnesota.",
+      "city": "",
+      "county": "Various",
+      "state": "MN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "minnesota",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43036"
+    },
+    {
+      "id": "bf-42732-nicollet-county-public-safety",
+      "name": "Nicollet County Public Safety",
+      "description": "Broadcastify public safety feed 42732 for Minnesota.",
+      "city": "",
+      "county": "Various",
+      "state": "MN",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "minnesota"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42732"
+    },
+    {
+      "id": "bf-26680-fergus-falls-fire",
+      "name": "Fergus Falls Fire",
+      "description": "Broadcastify public safety feed 26680 for Minnesota.",
+      "city": "",
+      "county": "Various",
+      "state": "MN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "minnesota",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/26680"
+    }
+  ]
+}

@@ -1,0 +1,1623 @@
+{
+  "channels": [
+    {
+      "id": "bf-32602-indianapolis-metropolitan-police",
+      "name": "Indianapolis Metropolitan Police",
+      "description": "Broadcastify public safety feed 32602 for Washington.",
+      "city": "",
+      "county": "Various",
+      "state": "WA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "washington",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32602"
+    },
+    {
+      "id": "bf-17102-spokane-county-sheriff-and-fire-spokane-ci",
+      "name": "Spokane County Sheriff and Fire, Spokane City Police / Fire - Digital",
+      "description": "Broadcastify public safety feed 17102 for Washington.",
+      "city": "",
+      "county": "Various",
+      "state": "WA",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "washington",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/17102"
+    },
+    {
+      "id": "bf-30541-cowlitz-county-public-safety-columbia-coun",
+      "name": "Cowlitz County Public Safety, Columbia County Law Dispatch",
+      "description": "Broadcastify public safety feed 30541 for Washington.",
+      "city": "",
+      "county": "Various",
+      "state": "WA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "washington"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/30541"
+    },
+    {
+      "id": "bf-4126-thurston-county-fire-ems-and-law-enforceme",
+      "name": "Thurston County Fire, EMS and Law Enforcement",
+      "description": "Broadcastify public safety feed 4126 for Washington.",
+      "city": "",
+      "county": "Various",
+      "state": "WA",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "washington",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/4126"
+    },
+    {
+      "id": "bf-3727-kitsap-county-sheriff-fire-and-ems-bremert",
+      "name": "Kitsap County Sheriff, Fire and EMS, Bremerton City Police",
+      "description": "Broadcastify public safety feed 3727 for Washington.",
+      "city": "",
+      "county": "Various",
+      "state": "WA",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "washington",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/3727"
+    },
+    {
+      "id": "bf-24268-tri-cities-police-and-fire",
+      "name": "Tri-Cities Police and Fire",
+      "description": "Broadcastify public safety feed 24268 for Washington.",
+      "city": "",
+      "county": "Various",
+      "state": "WA",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "washington",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/24268"
+    },
+    {
+      "id": "bf-28878-grant-county-fire-ems-and-washington-state",
+      "name": "Grant County Fire/EMS and Washington State Patrol",
+      "description": "Broadcastify public safety feed 28878 for Washington.",
+      "city": "",
+      "county": "Various",
+      "state": "WA",
+      "service_types": [
+        "dispatch",
+        "law",
+        "highway",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "washington",
+        "law",
+        "highway",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/28878"
+    },
+    {
+      "id": "bf-11194-yakima-city-county-police-fire-and-ems-was",
+      "name": "Yakima City / County Police, Fire and EMS, Washington State Patrol",
+      "description": "Broadcastify public safety feed 11194 for Washington.",
+      "city": "",
+      "county": "Various",
+      "state": "WA",
+      "service_types": [
+        "dispatch",
+        "law",
+        "highway",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "washington",
+        "law",
+        "highway",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/11194"
+    },
+    {
+      "id": "bf-2317-kittitas-county-public-safety",
+      "name": "Kittitas County Public Safety",
+      "description": "Broadcastify public safety feed 2317 for Washington.",
+      "city": "",
+      "county": "Various",
+      "state": "WA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "washington"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/2317"
+    },
+    {
+      "id": "bf-24557-chelan-and-douglas-counties-sheriff-fire-a",
+      "name": "Chelan and Douglas Counties Sheriff, Fire and EMS, Washington State Patrol",
+      "description": "Broadcastify public safety feed 24557 for Washington.",
+      "city": "",
+      "county": "Various",
+      "state": "WA",
+      "service_types": [
+        "dispatch",
+        "law",
+        "highway",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "washington",
+        "law",
+        "highway",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/24557"
+    },
+    {
+      "id": "bf-45481-stevens-county-public-safety",
+      "name": "Stevens County Public Safety",
+      "description": "Broadcastify public safety feed 45481 for Washington.",
+      "city": "",
+      "county": "Various",
+      "state": "WA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "washington"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45481"
+    },
+    {
+      "id": "bf-15521-tacoma-police-dispatch-south",
+      "name": "Tacoma Police Dispatch - South",
+      "description": "Broadcastify public safety feed 15521 for Washington.",
+      "city": "",
+      "county": "Various",
+      "state": "WA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "washington",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/15521"
+    },
+    {
+      "id": "bf-29924-pierce-county-sheriff-dispatch-east",
+      "name": "Pierce County Sheriff Dispatch - East",
+      "description": "Broadcastify public safety feed 29924 for Washington.",
+      "city": "",
+      "county": "Various",
+      "state": "WA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "washington",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/29924"
+    },
+    {
+      "id": "bf-4958-skagit-police-fire",
+      "name": "Skagit County Police and Fire",
+      "description": "Broadcastify feed 4958 covering Skagit County police and fire dispatch for Anacortes corridor.",
+      "city": "Mount Vernon",
+      "county": "Skagit County",
+      "state": "WA",
+      "service_types": [
+        "law",
+        "dispatch",
+        "fire"
+      ],
+      "tags": [
+        "police",
+        "sheriff",
+        "fire",
+        "dispatch",
+        "anacortes",
+        "i-5"
+      ],
+      "lat": 48.4212,
+      "lon": -122.3341,
+      "listeners": 110,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/4958"
+    },
+    {
+      "id": "bf-8015-walla-walla-valley-law-fire-and-ems",
+      "name": "Walla Walla Valley Law, Fire and EMS",
+      "description": "Broadcastify public safety feed 8015 for Washington.",
+      "city": "",
+      "county": "Various",
+      "state": "WA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "washington",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/8015"
+    },
+    {
+      "id": "bf-28076-auburn-police",
+      "name": "Auburn Police",
+      "description": "Broadcastify public safety feed 28076 for Washington.",
+      "city": "",
+      "county": "Various",
+      "state": "WA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "washington",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/28076"
+    },
+    {
+      "id": "bf-40168-seattle-downtown-law-enforcement",
+      "name": "Seattle Downtown Law Enforcement",
+      "description": "Broadcastify public safety feed 40168 for Washington.",
+      "city": "",
+      "county": "Various",
+      "state": "WA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "washington",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40168"
+    },
+    {
+      "id": "bf-10637-nez-perce-and-asotin-counties-sheriff-fire",
+      "name": "Nez Perce and Asotin Counties Sheriff, Fire and EMS",
+      "description": "Broadcastify public safety feed 10637 for Washington.",
+      "city": "",
+      "county": "Various",
+      "state": "WA",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "washington",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/10637"
+    },
+    {
+      "id": "bf-19037-island-county-public-safety",
+      "name": "Island County Public Safety",
+      "description": "Broadcastify public safety feed 19037 for Washington.",
+      "city": "",
+      "county": "Various",
+      "state": "WA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "washington"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/19037"
+    },
+    {
+      "id": "bf-15520-tacoma-police-dispatch-north",
+      "name": "Tacoma Police Dispatch - North",
+      "description": "Broadcastify public safety feed 15520 for Washington.",
+      "city": "",
+      "county": "Various",
+      "state": "WA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "washington",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/15520"
+    },
+    {
+      "id": "bf-40616-klickitat-county-law-enforcement-fire-and-",
+      "name": "Klickitat County Law Enforcement, Fire, and EMS",
+      "description": "Broadcastify public safety feed 40616 for Washington.",
+      "city": "",
+      "county": "Various",
+      "state": "WA",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "washington",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40616"
+    },
+    {
+      "id": "bf-30742-snohomish-county-fire-primary-response",
+      "name": "Snohomish County Fire Primary Response",
+      "description": "Broadcastify public safety feed 30742 for Washington.",
+      "city": "",
+      "county": "Various",
+      "state": "WA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "washington",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/30742"
+    },
+    {
+      "id": "bf-20365-seattle-fire",
+      "name": "Seattle Fire",
+      "description": "Broadcastify public safety feed 20365 for Washington.",
+      "city": "",
+      "county": "Various",
+      "state": "WA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "washington",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/20365"
+    },
+    {
+      "id": "bf-43847-columbia-county-sheriff-and-fire",
+      "name": "Columbia County Sheriff and Fire",
+      "description": "Broadcastify public safety feed 43847 for Washington.",
+      "city": "",
+      "county": "Various",
+      "state": "WA",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "washington",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43847"
+    },
+    {
+      "id": "bf-2236-clark-county-public-safety-cresa-digital",
+      "name": "Clark County Public Safety - CRESA Digital",
+      "description": "Broadcastify public safety feed 2236 for Washington.",
+      "city": "",
+      "county": "Various",
+      "state": "WA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "washington"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/2236"
+    },
+    {
+      "id": "bf-38963-whatcom-county-sheriff-bellingham-and-west",
+      "name": "Whatcom County Sheriff, Bellingham and Western Washington University Police",
+      "description": "Broadcastify public safety feed 38963 for Washington.",
+      "city": "",
+      "county": "Various",
+      "state": "WA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "washington",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38963"
+    },
+    {
+      "id": "bf-47355-pierce-county-fire-dispatch-c-1",
+      "name": "Pierce County Fire Dispatch (C-1)",
+      "description": "Broadcastify public safety feed 47355 for Washington.",
+      "city": "",
+      "county": "Various",
+      "state": "WA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "washington",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47355"
+    },
+    {
+      "id": "bf-6377-tacoma-fire-a1-a8",
+      "name": "Tacoma Fire A1-A8",
+      "description": "Broadcastify public safety feed 6377 for Washington.",
+      "city": "",
+      "county": "Various",
+      "state": "WA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "washington",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/6377"
+    },
+    {
+      "id": "bf-45933-seattle-fire-seattle-police-east-south-pre",
+      "name": "Seattle Fire / Seattle Police East / South Precincts",
+      "description": "Broadcastify public safety feed 45933 for Washington.",
+      "city": "",
+      "county": "Various",
+      "state": "WA",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "washington",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45933"
+    },
+    {
+      "id": "bf-46181-pend-oreille-county-public-safety",
+      "name": "Pend Oreille County Public Safety",
+      "description": "Broadcastify public safety feed 46181 for Washington.",
+      "city": "",
+      "county": "Various",
+      "state": "WA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "washington"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46181"
+    },
+    {
+      "id": "bf-45791-king-county-sheriff-dispatch-southwest",
+      "name": "King County Sheriff Dispatch Southwest",
+      "description": "Broadcastify public safety feed 45791 for Washington.",
+      "city": "",
+      "county": "Various",
+      "state": "WA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "washington",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45791"
+    },
+    {
+      "id": "bf-38841-wa-state-patrol-skagit-island",
+      "name": "Washington State Patrol - Skagit and Island Dispatch",
+      "description": "Broadcastify feed 38841 for Washington State Patrol dispatch in Skagit/Island county region.",
+      "city": "Burlington",
+      "county": "Skagit County",
+      "state": "WA",
+      "service_types": [
+        "law",
+        "dispatch",
+        "highway"
+      ],
+      "tags": [
+        "state patrol",
+        "trooper",
+        "highway",
+        "i-5"
+      ],
+      "lat": 48.4718,
+      "lon": -122.3254,
+      "listeners": 95,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38841"
+    },
+    {
+      "id": "bf-6436-jefferson-county-sheriff-fire-and-ems",
+      "name": "Jefferson County Sheriff, Fire and EMS",
+      "description": "Broadcastify public safety feed 6436 for Washington.",
+      "city": "",
+      "county": "Various",
+      "state": "WA",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "washington",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/6436"
+    },
+    {
+      "id": "bf-37149-washington-state-patrol-district-7-snohomi",
+      "name": "Washington State Patrol District 7 - Snohomish County",
+      "description": "Broadcastify public safety feed 37149 for Washington.",
+      "city": "",
+      "county": "Various",
+      "state": "WA",
+      "service_types": [
+        "dispatch",
+        "law",
+        "highway"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "washington",
+        "law",
+        "highway"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37149"
+    },
+    {
+      "id": "bf-17038-spokane-city-and-county-fire-ems-dispatch",
+      "name": "Spokane City and County Fire / EMS Dispatch",
+      "description": "Broadcastify public safety feed 17038 for Washington.",
+      "city": "",
+      "county": "Various",
+      "state": "WA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "washington",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/17038"
+    },
+    {
+      "id": "bf-43975-east-adams-fire",
+      "name": "East Adams Fire",
+      "description": "Broadcastify public safety feed 43975 for Washington.",
+      "city": "",
+      "county": "Various",
+      "state": "WA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "washington",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43975"
+    },
+    {
+      "id": "bf-43048-skamania-county-fire-and-rescue",
+      "name": "Skamania County Fire and Rescue",
+      "description": "Broadcastify public safety feed 43048 for Washington.",
+      "city": "",
+      "county": "Various",
+      "state": "WA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "washington",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43048"
+    },
+    {
+      "id": "bf-40769-federal-way-police-department",
+      "name": "Federal Way Police Department",
+      "description": "Broadcastify public safety feed 40769 for Washington.",
+      "city": "",
+      "county": "Various",
+      "state": "WA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "washington",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40769"
+    },
+    {
+      "id": "bf-28845-centralia-and-chehalis-fire-dispatch",
+      "name": "Centralia and Chehalis Fire Dispatch",
+      "description": "Broadcastify public safety feed 28845 for Washington.",
+      "city": "",
+      "county": "Various",
+      "state": "WA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "washington",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/28845"
+    },
+    {
+      "id": "bf-44855-snohomish-county-fire-event-secondary-resp",
+      "name": "Snohomish County Fire Event/Secondary Response",
+      "description": "Broadcastify public safety feed 44855 for Washington.",
+      "city": "",
+      "county": "Various",
+      "state": "WA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "washington",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44855"
+    },
+    {
+      "id": "bf-21893-washington-state-patrol-dispatch-dist-1-ea",
+      "name": "Washington State Patrol Dispatch - Dist 1 East / West",
+      "description": "Broadcastify public safety feed 21893 for Washington.",
+      "city": "",
+      "county": "Various",
+      "state": "WA",
+      "service_types": [
+        "dispatch",
+        "law",
+        "highway"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "washington",
+        "law",
+        "highway"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/21893"
+    },
+    {
+      "id": "bf-42975-klickitat-county-fire",
+      "name": "Klickitat County Fire",
+      "description": "Broadcastify public safety feed 42975 for Washington.",
+      "city": "",
+      "county": "Various",
+      "state": "WA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "washington",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42975"
+    },
+    {
+      "id": "bf-46987-department-natural-resources-ne-dispatch",
+      "name": "Department Natural Resources NE Dispatch",
+      "description": "Broadcastify public safety feed 46987 for Washington.",
+      "city": "",
+      "county": "Various",
+      "state": "WA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "washington"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46987"
+    },
+    {
+      "id": "bf-28623-tucna-fire-and-ambulance",
+      "name": "Tucna Fire and Ambulance",
+      "description": "Broadcastify public safety feed 28623 for Washington.",
+      "city": "",
+      "county": "Various",
+      "state": "WA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "washington",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/28623"
+    },
+    {
+      "id": "bf-25342-washington-state-patrol-district-8-dispatc",
+      "name": "Washington State Patrol District 8 Dispatch",
+      "description": "Broadcastify public safety feed 25342 for Washington.",
+      "city": "",
+      "county": "Various",
+      "state": "WA",
+      "service_types": [
+        "dispatch",
+        "law",
+        "highway"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "washington",
+        "law",
+        "highway"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/25342"
+    },
+    {
+      "id": "bf-46258-grays-harbor-sheriff-east",
+      "name": "Grays Harbor Sheriff East",
+      "description": "Broadcastify public safety feed 46258 for Washington.",
+      "city": "",
+      "county": "Various",
+      "state": "WA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "washington",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46258"
+    },
+    {
+      "id": "bf-45251-clark-county-fire-districts",
+      "name": "Clark County Fire Districts",
+      "description": "Broadcastify public safety feed 45251 for Washington.",
+      "city": "",
+      "county": "Various",
+      "state": "WA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "washington",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45251"
+    },
+    {
+      "id": "bf-21700-columbia-county-public-safety",
+      "name": "Columbia County Public Safety",
+      "description": "Broadcastify public safety feed 21700 for Washington.",
+      "city": "",
+      "county": "Various",
+      "state": "WA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "washington"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/21700"
+    },
+    {
+      "id": "bf-34002-noaa-weather-radio-wwf56",
+      "name": "NOAA Weather Radio WWF56",
+      "description": "Broadcastify public safety feed 34002 for Washington.",
+      "city": "",
+      "county": "Various",
+      "state": "WA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "washington"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/34002"
+    },
+    {
+      "id": "bf-47023-okanogan-county-public-safety",
+      "name": "Okanogan County Public Safety",
+      "description": "Broadcastify public safety feed 47023 for Washington.",
+      "city": "",
+      "county": "Various",
+      "state": "WA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "washington"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47023"
+    },
+    {
+      "id": "bf-40808-whitman-county-east-fire-ems-d4-d12-d14",
+      "name": "Whitman County East Fire & EMS - D4, D12 & D14",
+      "description": "Broadcastify public safety feed 40808 for Washington.",
+      "city": "",
+      "county": "Various",
+      "state": "WA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "washington",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40808"
+    },
+    {
+      "id": "bf-46875-whatcom-county-v-fire-2-v-fire-3-v-fire-5",
+      "name": "Whatcom County V-Fire 2 / V-Fire 3 / V-Fire 5",
+      "description": "Broadcastify public safety feed 46875 for Washington.",
+      "city": "",
+      "county": "Various",
+      "state": "WA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "washington",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46875"
+    },
+    {
+      "id": "bf-46809-whatcom-county-fire-dispatch",
+      "name": "Whatcom County Fire Dispatch",
+      "description": "Broadcastify public safety feed 46809 for Washington.",
+      "city": "",
+      "county": "Various",
+      "state": "WA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "washington",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46809"
+    },
+    {
+      "id": "bf-42249-north-whatcom-fire-rescue",
+      "name": "North Whatcom Fire Rescue",
+      "description": "Broadcastify public safety feed 42249 for Washington.",
+      "city": "",
+      "county": "Various",
+      "state": "WA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "washington",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42249"
+    },
+    {
+      "id": "bf-45335-walla-walla-fire-ems",
+      "name": "Walla Walla Fire/EMS",
+      "description": "Broadcastify public safety feed 45335 for Washington.",
+      "city": "",
+      "county": "Various",
+      "state": "WA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "washington",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45335"
+    },
+    {
+      "id": "bf-36805-washington-state-patrol-district-1-olympia",
+      "name": "Washington State Patrol District 1 - Olympia Area",
+      "description": "Broadcastify public safety feed 36805 for Washington.",
+      "city": "",
+      "county": "Various",
+      "state": "WA",
+      "service_types": [
+        "dispatch",
+        "law",
+        "highway"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "washington",
+        "law",
+        "highway"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/36805"
+    },
+    {
+      "id": "bf-36752-neah-bay-fire",
+      "name": "Neah Bay Fire",
+      "description": "Broadcastify public safety feed 36752 for Washington.",
+      "city": "",
+      "county": "Various",
+      "state": "WA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "washington",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/36752"
+    },
+    {
+      "id": "bf-47379-vhf-national-interoperability-vtac-spokane",
+      "name": "VHF National Interoperability (VTAC Spokane)",
+      "description": "Broadcastify public safety feed 47379 for Washington.",
+      "city": "",
+      "county": "Various",
+      "state": "WA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "washington"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47379"
+    },
+    {
+      "id": "bf-47302-spokane-regional-mutual-aid",
+      "name": "Spokane Regional Mutual Aid",
+      "description": "Broadcastify public safety feed 47302 for Washington.",
+      "city": "",
+      "county": "Various",
+      "state": "WA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "washington"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47302"
+    },
+    {
+      "id": "bf-45199-chelan-county-public-safety",
+      "name": "Chelan County Public Safety",
+      "description": "Broadcastify public safety feed 45199 for Washington.",
+      "city": "",
+      "county": "Various",
+      "state": "WA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "washington"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45199"
+    },
+    {
+      "id": "bf-26701-garfield-county-fire-district-1",
+      "name": "Garfield County Fire District 1",
+      "description": "Broadcastify public safety feed 26701 for Washington.",
+      "city": "",
+      "county": "Various",
+      "state": "WA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "washington",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/26701"
+    },
+    {
+      "id": "bf-43916-camano-island-fire-and-rescue",
+      "name": "Camano Island Fire and Rescue",
+      "description": "Broadcastify public safety feed 43916 for Washington.",
+      "city": "",
+      "county": "Various",
+      "state": "WA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "washington",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43916"
+    },
+    {
+      "id": "bf-44663-norcom-ncpol-2-kirkland-pd-and-normandy-pa",
+      "name": "NORCOM NCPOL-2 (Kirkland PD and Normandy Park PD)",
+      "description": "Broadcastify public safety feed 44663 for Washington.",
+      "city": "",
+      "county": "Various",
+      "state": "WA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "washington"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44663"
+    },
+    {
+      "id": "bf-45716-norcom-ncpol-1-bellevue-pd-clyde-hill-pd-a",
+      "name": "NORCOM NCPOL-1 (Bellevue PD, Clyde Hill PD, and Medina PD)",
+      "description": "Broadcastify public safety feed 45716 for Washington.",
+      "city": "",
+      "county": "Various",
+      "state": "WA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "washington"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45716"
+    },
+    {
+      "id": "bf-45752-norcom-ncpol-3-bothell-pd-lake-forest-park",
+      "name": "NORCOM NCPOL-3 (Bothell PD, Lake Forest Park PD, and Mercer Island PD)",
+      "description": "Broadcastify public safety feed 45752 for Washington.",
+      "city": "",
+      "county": "Various",
+      "state": "WA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "washington"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45752"
+    },
+    {
+      "id": "bf-45462-san-juan-county-sheriff-dispatch",
+      "name": "San Juan County Sheriff Dispatch",
+      "description": "Broadcastify public safety feed 45462 for Washington.",
+      "city": "",
+      "county": "Various",
+      "state": "WA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "washington",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45462"
+    },
+    {
+      "id": "bf-19311-shaw-island-fire",
+      "name": "Shaw Island Fire",
+      "description": "Broadcastify public safety feed 19311 for Washington.",
+      "city": "",
+      "county": "Various",
+      "state": "WA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "washington",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/19311"
+    },
+    {
+      "id": "bf-46539-wsp-district-2-dispatch",
+      "name": "WSP District 2 Dispatch",
+      "description": "Broadcastify public safety feed 46539 for Washington.",
+      "city": "",
+      "county": "Various",
+      "state": "WA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "washington"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46539"
+    },
+    {
+      "id": "bf-31415-salkum-fire-and-ems",
+      "name": "Salkum Fire and EMS",
+      "description": "Broadcastify public safety feed 31415 for Washington.",
+      "city": "",
+      "county": "Various",
+      "state": "WA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "washington",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/31415"
+    },
+    {
+      "id": "bf-30640-lincoln-county-fire-and-ems",
+      "name": "Lincoln County Fire and EMS",
+      "description": "Broadcastify public safety feed 30640 for Washington.",
+      "city": "",
+      "county": "Various",
+      "state": "WA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "washington",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/30640"
+    }
+  ]
+}

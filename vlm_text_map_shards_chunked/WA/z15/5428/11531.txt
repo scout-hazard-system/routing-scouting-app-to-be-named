@@ -1,0 +1,4 @@
+{"meta":{"state":"WA","z":15,"x":5428,"y":11531,"zhs":{"key":"z/15/5428/11531|h3/9/nv99/pfid|s2/12/f2/20v/29g","z_key":"z/15/5428/11531","h_key":"h3/9/nv99/pfid","s_key":"s2/12/f2/20v/29g"},"source":"planet","roads":3,"buildings":0,"areas":0,"pois":0}}
+{"type":"road","class":"residential","name":"Carroll Road","oneway":false,"pts":"46.956507,-120.366383;46.956482,-120.355053"}
+{"type":"road","class":"service","name":"","oneway":false,"pts":"46.956507,-120.366369;46.956359,-120.366356;46.956092,-120.366348;46.955607,-120.366318;46.955447,-120.366334"}
+{"type":"road","class":"service","name":"","oneway":false,"pts":"46.956507,-120.366149;46.955381,-120.366082"}

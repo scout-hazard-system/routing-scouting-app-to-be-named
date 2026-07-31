@@ -1,0 +1,5 @@
+{"meta":{"state":"WA","z":15,"x":5429,"y":11538,"zhs":{"key":"z/15/5429/11538|h3/9/nv9p/pfhq|s2/12/f2/20v/29h","z_key":"z/15/5429/11538","h_key":"h3/9/nv9p/pfhq","s_key":"s2/12/f2/20v/29h"},"source":"planet","roads":4,"buildings":0,"areas":0,"pois":0}}
+{"type":"road","class":"tertiary","name":"Upper Badger Pocket Road","oneway":false,"pts":"46.900851,-120.354272;46.900534,-120.353629;46.900061,-120.352867;46.899726,-120.352398;46.899238,-120.351805;46.898837,-120.351400;46.897622,-120.350254"}
+{"type":"road","class":"tertiary","name":"Upper Badger Pocket Road","oneway":false,"pts":"46.900851,-120.354272;46.901436,-120.355396"}
+{"type":"road","class":"residential","name":"WPA Road","oneway":false,"pts":"46.897622,-120.350871;46.899233,-120.352167;46.899515,-120.352352;46.899726,-120.352398"}
+{"type":"road","class":"residential","name":"Rolling Hills Drive","oneway":false,"pts":"46.897801,-120.355396;46.897622,-120.355112"}

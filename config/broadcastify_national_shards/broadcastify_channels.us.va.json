@@ -1,0 +1,30 @@
+{
+  "channels": [
+    {
+      "id": "bf-13160-accomack-county-public-safetyincludes-acco",
+      "name": "Accomack County Public SafetyIncludes Accomack County Sheriff, Police, Fire, and EMS",
+      "description": "Broadcastify Top 50 national bootstrap feed 13160 for Accomack, VA.",
+      "city": "Accomack",
+      "county": "Accomack",
+      "state": "VA",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "law",
+        "fire",
+        "ems",
+        "national-bootstrap",
+        "accomack"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 69,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/13160"
+    }
+  ]
+}

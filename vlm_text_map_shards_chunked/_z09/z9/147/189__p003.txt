@@ -1,0 +1,18 @@
+{"meta":{"state":"_z09","z":9,"x":147,"y":189,"zhs":{"key":"z/9/147/189|h3/9/nn4n/pdyy|s2/12/f4/tm/1tk","z_key":"z/9/147/189","h_key":"h3/9/nn4n/pdyy","s_key":"s2/12/f4/tm/1tk"},"source":"planet","roads":371,"buildings":0,"areas":754,"pois":15}}
+{"type":"area","kind":"water","pts":"42.229280,-76.199455;42.228263,-76.200485;42.228644,-76.203575;42.230043,-76.203575;42.230551,-76.202717;42.230551,-76.200829"}
+{"type":"area","kind":"water","pts":"42.310069,-75.935268;42.310450,-75.933723;42.309942,-75.932522;42.308165,-75.930290;42.306134,-75.925827;42.304864,-75.925827;42.306007,-75.934238"}
+{"type":"poi","name":"Ithaca","kind":"place_city","lat":42.439547,"lon":-76.496773}
+{"type":"poi","name":"Binghamton","kind":"place_city","lat":42.098732,"lon":-75.912437}
+{"type":"poi","name":"Elmira","kind":"place_city","lat":42.089815,"lon":-76.807652}
+{"type":"poi","name":"Vestal","kind":"place_town","lat":42.085102,"lon":-76.053886}
+{"type":"poi","name":"Cortland","kind":"place_city","lat":42.601241,"lon":-76.180401}
+{"type":"poi","name":"Johnson City","kind":"place_town","lat":42.115670,"lon":-75.958786}
+{"type":"poi","name":"Endwell","kind":"place_town","lat":42.112869,"lon":-76.021099}
+{"type":"poi","name":"Sayre","kind":"place_town","lat":41.979018,"lon":-76.515484}
+{"type":"poi","name":"Conklin","kind":"place_town","lat":42.034249,"lon":-75.803776}
+{"type":"poi","name":"Lansing","kind":"place_town","lat":42.485137,"lon":-76.485615}
+{"type":"poi","name":"Homer","kind":"place_town","lat":42.636863,"lon":-76.178856}
+{"type":"poi","name":"Owego","kind":"place_town","lat":42.103444,"lon":-76.262283}
+{"type":"poi","name":"Danby State Forest","kind":"nature_reserve","lat":42.301309,"lon":-76.478405}
+{"type":"poi","name":"Shindagin Hollow State Forest","kind":"nature_reserve","lat":42.329870,"lon":-76.332493}
+{"type":"poi","name":"James Kennedy State Forest","kind":"nature_reserve","lat":42.482859,"lon":-76.125298}

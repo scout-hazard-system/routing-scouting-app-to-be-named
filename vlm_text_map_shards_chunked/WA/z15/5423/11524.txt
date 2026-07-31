@@ -1,0 +1,4 @@
+{"meta":{"state":"WA","z":15,"x":5423,"y":11524,"zhs":{"key":"z/15/5423/11524|h3/9/nv94/pfiz|s2/12/f2/20u/29e","z_key":"z/15/5423/11524","h_key":"h3/9/nv94/pfiz","s_key":"s2/12/f2/20u/29e"},"source":"planet","roads":3,"buildings":0,"areas":0,"pois":0}}
+{"type":"road","class":"tertiary","name":"Number 81 Road","oneway":false,"pts":"47.010343,-120.412323;47.005607,-120.412227;47.002617,-120.412173"}
+{"type":"road","class":"residential","name":"McCoy Drive","oneway":false,"pts":"47.003125,-120.412184;47.003085,-120.415950"}
+{"type":"road","class":"service","name":"","oneway":false,"pts":"47.007850,-120.412273;47.007883,-120.416883;47.007903,-120.418020;47.007875,-120.418238;47.007826,-120.418468;47.007768,-120.418557"}

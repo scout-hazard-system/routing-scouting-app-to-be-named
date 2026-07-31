@@ -1,0 +1,3 @@
+{"meta":{"state":"WA","z":15,"x":5410,"y":11517,"zhs":{"key":"z/15/5410/11517|h3/9/nv9m/pfjm|s2/12/f2/20w/29c","z_key":"z/15/5410/11517","h_key":"h3/9/nv9m/pfjm","s_key":"s2/12/f2/20w/29c"},"source":"planet","roads":2,"buildings":0,"areas":0,"pois":0}}
+{"type":"road","class":"residential","name":"Kerr Road","oneway":false,"pts":"47.055099,-120.561092;47.055037,-120.561092"}
+{"type":"road","class":"service","name":"","oneway":false,"pts":"47.055099,-120.561092;47.055205,-120.561081;47.055361,-120.561012;47.055454,-120.560915;47.055660,-120.560408;47.055774,-120.560105"}

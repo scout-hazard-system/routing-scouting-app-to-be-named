@@ -1,0 +1,28 @@
+{
+  "channels": [
+    {
+      "id": "bf-4142-springfield-police-and-fire-greene-county-",
+      "name": "Springfield Police and Fire, Greene County Sheriff and Fire Springfield Police dispatch Zone 1 and 2. \r\nSpringfield Fire dispatch. \r\nGreene County Sheriff dispatch (PAT 1). \r\nGreene County Fire dispatch.\r\nFire Ops and rural departments moved to Springfield/Greene Fire Operations feed.",
+      "description": "Broadcastify Top 50 national bootstrap feed 4142 for Greene, MO.",
+      "city": "Greene",
+      "county": "Greene",
+      "state": "MO",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "law",
+        "fire",
+        "national-bootstrap",
+        "greene"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 65,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/4142"
+    }
+  ]
+}

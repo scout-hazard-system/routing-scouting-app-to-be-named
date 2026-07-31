@@ -1,0 +1,256 @@
+{
+  "channels": [
+    {
+      "id": "bf-10277-clinton-county-fire-ems-and-highway-dot",
+      "name": "Clinton County Fire, EMS and Highway DOT",
+      "description": "Broadcastify Top 50 national bootstrap feed 10277 for Clinton, NY.",
+      "city": "Clinton",
+      "county": "Clinton",
+      "state": "NY",
+      "service_types": [
+        "dispatch",
+        "law",
+        "highway",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "law",
+        "highway",
+        "fire",
+        "ems",
+        "national-bootstrap",
+        "clinton"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 116,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/10277"
+    },
+    {
+      "id": "bf-41336-chemung-county-police-and-fire",
+      "name": "Chemung County Police and Fire",
+      "description": "Broadcastify Top 50 national bootstrap feed 41336 for Chemung, NY.",
+      "city": "Chemung",
+      "county": "Chemung",
+      "state": "NY",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "law",
+        "fire",
+        "national-bootstrap",
+        "chemung"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 102,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41336"
+    },
+    {
+      "id": "bf-3178-essex-county-police-fire-and-ems-southeast",
+      "name": "Essex County Police, Fire, and EMS - Southeast This feed is located in southeast Essex County and will only receive traffic in that general area of the County.  The Adirondack Mountains block transmissions from the northwest.  It would be nice if someone would start a feed in the Lake Placid area.",
+      "description": "Broadcastify Top 50 national bootstrap feed 3178 for Essex, NY.",
+      "city": "Essex",
+      "county": "Essex",
+      "state": "NY",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "law",
+        "fire",
+        "ems",
+        "national-bootstrap",
+        "essex"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 91,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/3178"
+    },
+    {
+      "id": "bf-41475-oswego-county-public-safety-oswego-county-",
+      "name": "Oswego County Public Safety Oswego County Sheriff, Oswego City Police, Fulton City Police, SUNY Oswego Police, NYS Parks Police, Oswego County Fire, EMS Dispatch, and Fireground 7-12 &amp; 14. Includes Oswego County Highway (winter months only).",
+      "description": "Broadcastify Top 50 national bootstrap feed 41475 for Oswego, NY.",
+      "city": "Oswego",
+      "county": "Oswego",
+      "state": "NY",
+      "service_types": [
+        "dispatch",
+        "law",
+        "highway",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "law",
+        "highway",
+        "fire",
+        "ems",
+        "national-bootstrap",
+        "oswego"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 87,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41475"
+    },
+    {
+      "id": "bf-9189-cortland-county-public-safety",
+      "name": "Cortland County Public Safety",
+      "description": "Broadcastify Top 50 national bootstrap feed 9189 for Cortland, NY.",
+      "city": "Cortland",
+      "county": "Cortland",
+      "state": "NY",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "cortland"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 81,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/9189"
+    },
+    {
+      "id": "bf-26933-buffalo-police-fire-and-ems",
+      "name": "Buffalo Police, Fire and EMS",
+      "description": "Broadcastify Top 50 national bootstrap feed 26933 for Erie, NY.",
+      "city": "Erie",
+      "county": "Erie",
+      "state": "NY",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "law",
+        "fire",
+        "ems",
+        "national-bootstrap",
+        "erie"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 76,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/26933"
+    },
+    {
+      "id": "bf-694-delaware-county-911-sheriff-fire-and-ems-s",
+      "name": "Delaware County 911 - Sheriff, Fire and EMS(((Stereo Feed))) Left=Law, Right=Fire/EMS",
+      "description": "Broadcastify Top 50 national bootstrap feed 694 for Delaware, NY.",
+      "city": "Delaware",
+      "county": "Delaware",
+      "state": "NY",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "law",
+        "fire",
+        "ems",
+        "national-bootstrap",
+        "delaware"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 75,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/694"
+    },
+    {
+      "id": "bf-41473-onondaga-county-public-safety-onondaga-cou",
+      "name": "Onondaga County Public Safety Onondaga County Law, Fire and EMS Dispatch as well as Syracuse Police and Fire Dispatch. Includes Onondaga County DOT (winter months only).",
+      "description": "Broadcastify Top 50 national bootstrap feed 41473 for Onondaga, NY.",
+      "city": "Onondaga",
+      "county": "Onondaga",
+      "state": "NY",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "law",
+        "fire",
+        "ems",
+        "national-bootstrap",
+        "onondaga"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 74,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41473"
+    },
+    {
+      "id": "bf-4130-oneida-herkimer-and-madison-counties-publi",
+      "name": "Oneida, Herkimer, and Madison Counties Public Safety",
+      "description": "Broadcastify Top 50 national bootstrap feed 4130 for Various, NY.",
+      "city": "",
+      "county": "Various",
+      "state": "NY",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "various"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 74,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/4130"
+    },
+    {
+      "id": "bf-6007-jefferson-county-police-fire-and-ems-scann",
+      "name": "Jefferson County Police, Fire and EMS Scanning Jefferson County Fire/EMS, Sheriff, NYSP Troop D, Guilfoyle EMS, City Fire &amp; Police.\r\n\r\nPlease see Additional Details for frequency and channel info.",
+      "description": "Broadcastify Top 50 national bootstrap feed 6007 for Jefferson, NY.",
+      "city": "Jefferson",
+      "county": "Jefferson",
+      "state": "NY",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "law",
+        "fire",
+        "ems",
+        "national-bootstrap",
+        "jefferson"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 65,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/6007"
+    }
+  ]
+}

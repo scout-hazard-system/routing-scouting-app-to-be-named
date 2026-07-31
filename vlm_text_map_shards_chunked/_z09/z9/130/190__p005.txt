@@ -1,0 +1,17 @@
+{"meta":{"state":"_z09","z":9,"x":130,"y":190,"zhs":{"key":"z/9/130/190|h3/9/npq4/pdsq|s2/12/f4/uh/1m0","z_key":"z/9/130/190","h_key":"h3/9/npq4/pdsq","s_key":"s2/12/f4/uh/1m0"},"source":"planet","roads":1468,"buildings":0,"areas":2227,"pois":79}}
+{"type":"poi","name":"Brookfield","kind":"place_town","lat":41.822886,"lon":-87.848053}
+{"type":"poi","name":"Bridgeview","kind":"place_town","lat":41.750056,"lon":-87.804279}
+{"type":"poi","name":"Bensenville","kind":"place_town","lat":41.953873,"lon":-87.943153}
+{"type":"poi","name":"Palos Hills","kind":"place_town","lat":41.696629,"lon":-87.816982}
+{"type":"poi","name":"North Aurora","kind":"place_town","lat":41.806125,"lon":-88.327332}
+{"type":"poi","name":"Franklin Park","kind":"place_town","lat":41.935360,"lon":-87.865562}
+{"type":"poi","name":"Country Club Hills","kind":"place_town","lat":41.568068,"lon":-87.720337}
+{"type":"poi","name":"Minooka","kind":"place_town","lat":41.455336,"lon":-88.261757}
+{"type":"poi","name":"Channahon","kind":"place_town","lat":41.429471,"lon":-88.228626}
+{"type":"poi","name":"Plano","kind":"place_town","lat":41.662910,"lon":-88.536758}
+{"type":"poi","name":"Lyons","kind":"place_town","lat":41.811116,"lon":-87.823334}
+{"type":"poi","name":"Winfield","kind":"place_town","lat":41.861635,"lon":-88.160820}
+{"type":"poi","name":"Barrington","kind":"place_town","lat":42.153860,"lon":-88.136272}
+{"type":"poi","name":"Palos Heights","kind":"place_town","lat":41.668167,"lon":-87.796211}
+{"type":"poi","name":"Sandwich","kind":"place_town","lat":41.645851,"lon":-88.621731}
+{"type":"poi","name":"Sag Valley Forest Preserve","kind":"nature_reserve","lat":41.674194,"lon":-87.879810}

@@ -1,0 +1,5 @@
+{"meta":{"state":"WA","z":15,"x":5426,"y":11537,"zhs":{"key":"z/15/5426/11537|h3/9/nv9v/pfhu|s2/12/f2/20w/29h","z_key":"z/15/5426/11537","h_key":"h3/9/nv9v/pfhu","s_key":"s2/12/f2/20w/29h"},"source":"planet","roads":4,"buildings":0,"areas":0,"pois":0}}
+{"type":"road","class":"tertiary","name":"Fourth Parallel Road","oneway":false,"pts":"46.912024,-120.377026;46.912060,-120.378056;46.912014,-120.381518;46.911908,-120.384211;46.911897,-120.388355"}
+{"type":"road","class":"residential","name":"Lawrence Road","oneway":false,"pts":"46.905128,-120.384133;46.911908,-120.384211"}
+{"type":"road","class":"path","name":"","oneway":false,"pts":"46.905128,-120.385807;46.905147,-120.385703;46.905136,-120.385499;46.905128,-120.385475"}
+{"type":"road","class":"path","name":"","oneway":false,"pts":"46.905128,-120.386083;46.905147,-120.386574;46.905143,-120.388355"}

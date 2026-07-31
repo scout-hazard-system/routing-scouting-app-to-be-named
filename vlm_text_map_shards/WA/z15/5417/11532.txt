@@ -1,0 +1,4 @@
+{"meta":{"state":"WA","z":15,"x":5417,"y":11532,"zhs":{"key":"z/15/5417/11532|h3/9/nva7/pfia|s2/12/f2/20x/29f","z_key":"z/15/5417/11532","h_key":"h3/9/nva7/pfia","s_key":"s2/12/f2/20x/29f"},"source":"planet","roads":2,"buildings":0,"areas":0,"pois":1}}
+{"type":"road","class":"residential","name":"Moe Road","oneway":false,"pts":"46.942645,-120.476651;46.950379,-120.476863"}
+{"type":"road","class":"service","name":"","oneway":false,"pts":"46.942645,-120.479309;46.942806,-120.479161;46.949977,-120.479387;46.950379,-120.479357"}
+{"type":"poi","name":"Hillcrest Farms Airport","kind":"aerodrome","lat":46.948814,"lon":-120.478856}

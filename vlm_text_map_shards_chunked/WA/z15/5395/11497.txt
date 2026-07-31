@@ -1,0 +1,2 @@
+{"meta":{"state":"WA","z":15,"x":5395,"y":11497,"zhs":{"key":"z/15/5395/11497|h3/9/nv9a/pfle|s2/12/f2/20v/298","z_key":"z/15/5395/11497","h_key":"h3/9/nv9a/pfle","s_key":"s2/12/f2/20v/298"},"source":"planet","roads":1,"buildings":0,"areas":0,"pois":0}}
+{"type":"road","class":"residential","name":"Michelleto Road","oneway":false,"pts":"47.204526,-120.719761;47.206047,-120.719748"}

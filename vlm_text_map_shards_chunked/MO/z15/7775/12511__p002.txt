@@ -1,0 +1,165 @@
+{"meta":{"state":"MO","z":15,"x":7775,"y":12511,"zhs":{"key":"z/15/7775/12511|h3/9/nrgc/pcwz|s2/12/f4/w4/1hz","z_key":"z/15/7775/12511","h_key":"h3/9/nrgc/pcwz","s_key":"s2/12/f4/w4/1hz"},"source":"planet","roads":882,"buildings":175,"areas":518,"pois":136}}
+{"type":"area","kind":"park","pts":"39.101552,-94.577836;39.101546,-94.577686;39.101517,-94.577686;39.101521,-94.577839"}
+{"type":"area","kind":"park","pts":"39.101136,-94.578182;39.101167,-94.578179;39.101165,-94.578139;39.101134,-94.578142"}
+{"type":"area","kind":"park","pts":"39.101129,-94.578094;39.101161,-94.578091;39.101161,-94.578053;39.101129,-94.578056"}
+{"type":"area","kind":"park","pts":"39.101140,-94.578351;39.101171,-94.578348;39.101169,-94.578311;39.101138,-94.578314"}
+{"type":"area","kind":"park","pts":"39.101075,-94.578354;39.101100,-94.578354;39.101100,-94.578314;39.101075,-94.578316"}
+{"type":"area","kind":"park","pts":"39.101073,-94.578271;39.101098,-94.578271;39.101090,-94.578056;39.101065,-94.578056"}
+{"type":"area","kind":"park","pts":"39.101063,-94.578013;39.101090,-94.578010;39.101088,-94.577973;39.101063,-94.577976"}
+{"type":"area","kind":"park","pts":"39.101202,-94.578263;39.101233,-94.578260;39.101233,-94.578222;39.101202,-94.578222"}
+{"type":"area","kind":"park","pts":"39.101204,-94.578348;39.101300,-94.578343;39.101300,-94.578303;39.101202,-94.578308"}
+{"type":"area","kind":"park","pts":"39.101267,-94.578260;39.101298,-94.578257;39.101296,-94.578220;39.101265,-94.578222"}
+{"type":"area","kind":"park","pts":"39.101333,-94.578340;39.101365,-94.578338;39.101362,-94.578300;39.101331,-94.578303"}
+{"type":"area","kind":"park","pts":"39.101331,-94.578257;39.101362,-94.578255;39.101360,-94.578217;39.101329,-94.578217"}
+{"type":"area","kind":"park","pts":"39.101400,-94.578252;39.101431,-94.578249;39.101429,-94.578212;39.101398,-94.578214"}
+{"type":"area","kind":"park","pts":"39.101462,-94.578163;39.101494,-94.578161;39.101492,-94.578123;39.101460,-94.578126"}
+{"type":"area","kind":"park","pts":"39.101460,-94.578080;39.101492,-94.578077;39.101489,-94.578040;39.101458,-94.578043"}
+{"type":"area","kind":"park","pts":"39.096379,-94.579888;39.096388,-94.579909;39.096404,-94.579821;39.096421,-94.579781;39.096440,-94.579746;39.096492,-94.579660;39.096481,-94.579142;39.096508,-94.579140;39.096500,-94.578879;39.096438,-94.578882;39.096408,-94.578869;39.096327,-94.578871;39.096296,-94.578877;39.096269,-94.578898;39.096252,-94.578882;39.096240,-94.578901;39.096234,-94.578922;39.096308,-94.579754;39.096315,-94.579786"}
+{"type":"area","kind":"park","pts":"39.096852,-94.579193;39.096850,-94.579142;39.096525,-94.579161;39.096498,-94.579204;39.096506,-94.579625;39.096556,-94.579644;39.096571,-94.579577;39.096594,-94.579504;39.096619,-94.579448;39.096650,-94.579394;39.096683,-94.579349;39.096723,-94.579298;39.096777,-94.579244"}
+{"type":"area","kind":"park","pts":"39.098290,-94.576130;39.098286,-94.575999;39.098103,-94.576007;39.098103,-94.576052;39.098065,-94.576052;39.098065,-94.576044;39.098038,-94.576047;39.098036,-94.576010;39.097872,-94.576015;39.097868,-94.575875;39.097664,-94.575886;39.097672,-94.576195;39.097880,-94.576184;39.097878,-94.576149"}
+{"type":"area","kind":"park","pts":"39.097655,-94.575618;39.097859,-94.575607;39.097855,-94.575473;39.098271,-94.575452;39.098267,-94.575326;39.097853,-94.575344;39.097853,-94.575299;39.097647,-94.575309"}
+{"type":"area","kind":"park","pts":"39.099606,-94.580736;39.099614,-94.580749;39.099637,-94.580749;39.099647,-94.580738;39.099706,-94.580736;39.099722,-94.580754;39.099776,-94.580752;39.099776,-94.580706;39.099766,-94.580706;39.099762,-94.580588;39.099770,-94.580575;39.099770,-94.580542;39.099762,-94.580532;39.099760,-94.580516;39.099768,-94.580505;39.099768,-94.580473;39.099758,-94.580467;39.099758,-94.580400;39.099764,-94.580392;39.099760,-94.580344;39.099753,-94.580347;39.099745,-94.580360;39.099753,-94.580679;39.099726,-94.580711;39.099606,-94.580717"}
+{"type":"area","kind":"park","pts":"39.099572,-94.580717;39.099512,-94.580722;39.099514,-94.580762;39.099574,-94.580760"}
+{"type":"area","kind":"park","pts":"39.102253,-94.578338;39.102270,-94.578370;39.102297,-94.578373;39.103340,-94.578316;39.103365,-94.578303;39.103373,-94.578289;39.103373,-94.578271;39.103342,-94.577324;39.103334,-94.577294;39.103323,-94.577286;39.102297,-94.577332;39.102274,-94.577343;39.102253,-94.577359;39.102245,-94.577372;39.102230,-94.577402;39.102226,-94.577418;39.102224,-94.577436"}
+{"type":"area","kind":"park","pts":"39.102153,-94.578284;39.102122,-94.577391;39.102116,-94.577361;39.102108,-94.577356;39.102099,-94.577348;39.102076,-94.577345;39.101023,-94.577396;39.101013,-94.577402;39.101009,-94.577407;39.101004,-94.577423;39.101036,-94.578351;39.101040,-94.578375;39.101048,-94.578389;39.101061,-94.578394;39.102124,-94.578346;39.102139,-94.578343;39.102145,-94.578332;39.102153,-94.578311"}
+{"type":"area","kind":"park","pts":"39.101679,-94.577469;39.101600,-94.577471;39.101600,-94.577509;39.101396,-94.577520;39.101396,-94.577485;39.101044,-94.577501;39.101046,-94.577546;39.101061,-94.577546;39.101061,-94.577589;39.101046,-94.577592;39.101048,-94.577656;39.101685,-94.577624"}
+{"type":"area","kind":"park","pts":"39.101716,-94.577469;39.101723,-94.577624;39.102091,-94.577605;39.102087,-94.577450"}
+{"type":"area","kind":"water","pts":"39.101462,-94.577930;39.101452,-94.577868;39.101425,-94.577812;39.101408,-94.577790;39.101365,-94.577756;39.101340,-94.577748;39.101285,-94.577745;39.101258,-94.577753;39.101236,-94.577766;39.101211,-94.577785;39.101175,-94.577833;39.101154,-94.577898;39.101150,-94.577930;39.101152,-94.577965;39.101156,-94.578000;39.101167,-94.578032;39.101198,-94.578088;39.101242,-94.578128;39.101292,-94.578145;39.101315,-94.578145;39.101342,-94.578142;39.101385,-94.578118;39.101425,-94.578077;39.101440,-94.578051;39.101458,-94.577992"}
+{"type":"area","kind":"water","pts":"39.101475,-94.581524;39.101440,-94.581529;39.101442,-94.581572;39.101477,-94.581570"}
+{"type":"area","kind":"water","pts":"39.099972,-94.580325;39.100039,-94.580323;39.100037,-94.580272;39.099970,-94.580274"}
+{"type":"poi","name":"Kansas City","kind":"place_city","lat":39.100105,"lon":-94.578142}
+{"type":"poi","name":"Kansas City Power & Light District","kind":"place_neighbourhood","lat":39.098746,"lon":-94.581111}
+{"type":"poi","name":"Kansas City City Hall","kind":"townhall","lat":39.100601,"lon":-94.577917}
+{"type":"poi","name":"Jackson County Courthouse","kind":"courthouse","lat":39.099210,"lon":-94.577989}
+{"type":"poi","name":"Jackson County Jail","kind":"prison","lat":39.097968,"lon":-94.576677}
+{"type":"poi","name":"Civic Center Post Office","kind":"post_office","lat":39.099316,"lon":-94.576208}
+{"type":"poi","name":"The UPS Store","kind":"post_office","lat":39.103090,"lon":-94.579381}
+{"type":"poi","name":"Town Pavillion Parking Garage","kind":"parking","lat":39.099123,"lon":-94.581556}
+{"type":"poi","name":"T-Mobile Center","kind":"stadium","lat":39.097295,"lon":-94.579950}
+{"type":"poi","name":"National Collegiate Basketball Hall of Fame","kind":"museum","lat":39.098330,"lon":-94.580400}
+{"type":"poi","name":"714 East 11th Street Lot","kind":"parking","lat":39.101258,"lon":-94.574440}
+{"type":"poi","name":"Parking Deck","kind":"parking","lat":39.101473,"lon":-94.575318}
+{"type":"poi","name":"Charles Evans Whittaker U.S. Courthouse","kind":"courthouse","lat":39.103864,"lon":-94.577471}
+{"type":"poi","name":"Kansas City Municipal Court","kind":"courthouse","lat":39.100682,"lon":-94.576932}
+{"type":"poi","name":"Courthouse Parking","kind":"parking","lat":39.103252,"lon":-94.578630}
+{"type":"poi","name":"Grand Avenue Temple","kind":"place_of_worship","lat":39.103277,"lon":-94.580280}
+{"type":"poi","name":"Paseo West Business Park","kind":"industrial","lat":39.100214,"lon":-94.571525}
+{"type":"poi","name":"Commerce Bank","kind":"bank","lat":39.100035,"lon":-94.573687}
+{"type":"poi","name":"Kemp Park","kind":"park","lat":39.102528,"lon":-94.571560}
+{"type":"poi","name":"Kansas City Police Department HQ Annex","kind":"police","lat":39.102915,"lon":-94.573496}
+{"type":"poi","name":"Community Justice Center","kind":"courthouse","lat":39.098115,"lon":-94.577107}
+{"type":"poi","name":"Board of Education Garage","kind":"parking","lat":39.098711,"lon":-94.579199}
+{"type":"poi","name":"Saint Mary's Episcopal Church","kind":"place_of_worship","lat":39.098155,"lon":-94.574827}
+{"type":"poi","name":"Jackson County Parking Lot B","kind":"parking","lat":39.097680,"lon":-94.578053}
+{"type":"poi","name":"11th & Cherry Garage","kind":"parking","lat":39.101577,"lon":-94.576463}
+{"type":"poi","name":"Holiday Inn Express Kansas City Downtown","kind":"hotel","lat":39.098336,"lon":-94.577801}
+{"type":"poi","name":"Pickwick Garage","kind":"parking","lat":39.103084,"lon":-94.578869}
+{"type":"poi","name":"Ten Oak","kind":"parking","lat":39.102734,"lon":-94.578743}
+{"type":"poi","name":"Old Saint Patrick Oratory","kind":"place_of_worship","lat":39.104147,"lon":-94.576369}
+{"type":"poi","name":"Hampton Inn Kansas City/Downtown Financial District","kind":"hotel","lat":39.104243,"lon":-94.581521}
+{"type":"poi","name":"Wallstreet Tower Parking Garage","kind":"parking","lat":39.100365,"lon":-94.581272}
+{"type":"poi","name":"8th & Charlotte Lot","kind":"parking","lat":39.103629,"lon":-94.574430}
+{"type":"poi","name":"East Village Garage","kind":"parking","lat":39.102765,"lon":-94.575747}
+{"type":"poi","name":"Kansas City Police Department","kind":"police","lat":39.100024,"lon":-94.576994}
+{"type":"poi","name":"928 Garage","kind":"parking","lat":39.102634,"lon":-94.581159}
+{"type":"poi","name":"Missouri Court of Appeals","kind":"courthouse","lat":39.098132,"lon":-94.578984}
+{"type":"poi","name":"Loading Dock","kind":"industrial","lat":39.096692,"lon":-94.580615}
+{"type":"poi","name":"Kansas City Live!","kind":"theatre","lat":39.097826,"lon":-94.581637}
+{"type":"poi","name":"East Village Transit Center","kind":"bus_station","lat":39.099015,"lon":-94.573515}
+{"type":"poi","name":"Jackson County Parking Lot C","kind":"parking","lat":39.097301,"lon":-94.577812}
+{"type":"poi","name":"909 Walnut Garage","kind":"parking","lat":39.102736,"lon":-94.581610}
+{"type":"poi","name":"Ilus Davis Park","kind":"park","lat":39.102811,"lon":-94.577828}
+{"type":"poi","name":"Jimmy John's","kind":"fast_food","lat":39.100927,"lon":-94.580644}
+{"type":"poi","name":"KC Hooley House","kind":"pub","lat":39.097387,"lon":-94.581390}
+{"type":"poi","name":"Shark Bar","kind":"bar","lat":39.097878,"lon":-94.581339}
+{"type":"poi","name":"Howl at the Moon","kind":"bar","lat":39.098205,"lon":-94.581347}
+{"type":"poi","name":"No Other Pub","kind":"bar","lat":39.097495,"lon":-94.581390}
+{"type":"poi","name":"Johnny's Tavern","kind":"bar","lat":39.098259,"lon":-94.581347}
+{"type":"poi","name":"Pizza Bar","kind":"bar","lat":39.098090,"lon":-94.581344}
+{"type":"poi","name":"McFadden's","kind":"bar","lat":39.097789,"lon":-94.581342}
+{"type":"poi","name":"Ambassador Hotel Kansas City, Autograph Collection","kind":"hotel","lat":39.100617,"lon":-94.580644}
+{"type":"poi","name":"Subway","kind":"fast_food","lat":39.100830,"lon":-94.578751}
+{"type":"poi","name":"Prohibition Hall","kind":"bar","lat":39.100359,"lon":-94.579926}
+{"type":"poi","name":"Slabotsky's Fine Mens Wear and Tailoring","kind":"tailor","lat":39.100340,"lon":-94.581122}
+{"type":"poi","name":"Zoo Bar","kind":"bar","lat":39.099441,"lon":-94.579955}
+{"type":"poi","name":"The Missing Ink","kind":"tattoo","lat":39.103860,"lon":-94.580910}
+{"type":"poi","name":"Arvest Bank","kind":"bank","lat":39.098727,"lon":-94.581293}
+{"type":"poi","name":"KC Daiquiri Shop","kind":"restaurant","lat":39.100463,"lon":-94.581114}
+{"type":"poi","name":"Curry In A Hurry","kind":"fast_food","lat":39.100751,"lon":-94.580644}
+{"type":"poi","name":"Lonnie's Reno Club","kind":"restaurant","lat":39.100657,"lon":-94.580642}
+{"type":"poi","name":"UMB Bank","kind":"bank","lat":39.101533,"lon":-94.581154}
+{"type":"poi","name":"AC Hotel Kansas City Downtown","kind":"hotel","lat":39.103319,"lon":-94.581095}
+{"type":"poi","name":"From the Earth Dispensary","kind":"cannabis","lat":39.099023,"lon":-94.580046}
+{"type":"poi","name":"Metro KC Fitness","kind":"fitness_centre","lat":39.099960,"lon":-94.578783}
+{"type":"poi","name":"Simmons Bank","kind":"bank","lat":39.099733,"lon":-94.581285}
+{"type":"poi","name":"Powerlife","kind":"fitness_centre","lat":39.096494,"lon":-94.581425}
+{"type":"poi","name":"Revocup Coffee Roasters","kind":"cafe","lat":39.103304,"lon":-94.579362}
+{"type":"poi","name":"Ilus W. Davis Fountain","kind":"fountain","lat":39.101718,"lon":-94.577831}
+{"type":"poi","name":"U.S. Army Corps of Engineers - Kansas City District","kind":"military","lat":39.098650,"lon":-94.575639}
+{"type":"poi","name":"Waterbird Coffee Company","kind":"cafe","lat":39.099735,"lon":-94.579899}
+{"type":"poi","name":"12th and Charlotte Transit Hub","kind":"bicycle_rental","lat":39.099073,"lon":-94.573799}
+{"type":"poi","name":"Aiden by Best Western Kansas City Downtown","kind":"hotel","lat":39.098321,"lon":-94.578273}
+{"type":"poi","name":"Conoco","kind":"fuel","lat":39.102347,"lon":-94.576919}
+{"type":"poi","name":"Favtrip Downtown","kind":"convenience","lat":39.102599,"lon":-94.576871}
+{"type":"poi","name":"UMB Waterpad Fountain","kind":"fountain","lat":39.101458,"lon":-94.581548}
+{"type":"poi","name":"Government District","kind":"shelter","lat":39.098527,"lon":-94.577227}
+{"type":"poi","name":"Grand at 11th","kind":"shelter","lat":39.101313,"lon":-94.580728}
+{"type":"poi","name":"Grand at 11th","kind":"shelter","lat":39.101458,"lon":-94.580719}
+{"type":"poi","name":"11th at Grand","kind":"shelter","lat":39.101106,"lon":-94.580320}
+{"type":"poi","name":"11th at Grand","kind":"shelter","lat":39.101115,"lon":-94.580577}
+{"type":"poi","name":"Grand at 9th","kind":"shelter","lat":39.103710,"lon":-94.580569}
+{"type":"poi","name":"Grand at 11th","kind":"shelter","lat":39.101225,"lon":-94.580977}
+{"type":"poi","name":"12th at Grand","kind":"shelter","lat":39.099795,"lon":-94.580497}
+{"type":"poi","name":"Grand at 12th","kind":"shelter","lat":39.099556,"lon":-94.580819}
+{"type":"poi","name":"11th at Oak","kind":"shelter","lat":39.101042,"lon":-94.578102}
+{"type":"poi","name":"City Employees' Memorial","kind":"memorial","lat":39.101502,"lon":-94.577482}
+{"type":"poi","name":"B&B Beauty Supply","kind":"hairdresser","lat":39.100930,"lon":-94.580521}
+{"type":"poi","name":"Abraham Lincoln","kind":"memorial","lat":39.100001,"lon":-94.577951}
+{"type":"poi","name":"Andrew Jackson","kind":"memorial","lat":39.099574,"lon":-94.577968}
+{"type":"poi","name":"Nail Fantasy","kind":"beauty","lat":39.100259,"lon":-94.581122}
+{"type":"poi","name":"Town News","kind":"convenience","lat":39.100925,"lon":-94.580424}
+{"type":"poi","name":"Union Prison Collapse","kind":"memorial","lat":39.096236,"lon":-94.580875}
+{"type":"poi","name":"Rally House","kind":"clothes","lat":39.097031,"lon":-94.581315}
+{"type":"poi","name":"Goodden Jewelers","kind":"jewelry","lat":39.102168,"lon":-94.581028}
+{"type":"poi","name":"Saint Mary's Church","kind":"memorial","lat":39.098265,"lon":-94.574947}
+{"type":"poi","name":"Break Time","kind":"convenience","lat":39.100159,"lon":-94.578751}
+{"type":"poi","name":"SK Cuts","kind":"hairdresser","lat":39.099701,"lon":-94.580033}
+{"type":"poi","name":"Ilus W. Davis Memorial","kind":"artwork","lat":39.101150,"lon":-94.578249}
+{"type":"poi","name":"The Native Sons and Daughters of Greater Kansas City Monument","kind":"memorial","lat":39.101864,"lon":-94.578182}
+{"type":"poi","name":"Bill Of Rights Monument","kind":"memorial","lat":39.103265,"lon":-94.577455}
+{"type":"poi","name":"UMB Greenspace","kind":"park","lat":39.101604,"lon":-94.581433}
+{"type":"poi","name":"12th at Grand","kind":"bus_stop","lat":39.099781,"lon":-94.580132}
+{"type":"poi","name":"12th at Troost","kind":"bus_stop","lat":39.099427,"lon":-94.570138}
+{"type":"poi","name":"City Hall","kind":"bus_stop","lat":39.100126,"lon":-94.578386}
+{"type":"poi","name":"Financial District","kind":"bus_stop","lat":39.101111,"lon":-94.580550}
+{"type":"poi","name":"Oak at 11th","kind":"bus_stop","lat":39.101129,"lon":-94.578574}
+{"type":"poi","name":"Government District","kind":"bus_stop","lat":39.098513,"lon":-94.577297}
+{"type":"poi","name":"9th at Locust","kind":"bus_stop","lat":39.103425,"lon":-94.577074}
+{"type":"poi","name":"Federal Courthouse","kind":"bus_stop","lat":39.103232,"lon":-94.578314}
+{"type":"poi","name":"Federal Courthouse","kind":"bus_stop","lat":39.103556,"lon":-94.578469}
+{"type":"poi","name":"9th at McGee","kind":"bus_stop","lat":39.103498,"lon":-94.579408}
+{"type":"poi","name":"Grand at 9th","kind":"bus_stop","lat":39.103708,"lon":-94.580559}
+{"type":"poi","name":"Grand at 9th","kind":"bus_stop","lat":39.103250,"lon":-94.580870}
+{"type":"poi","name":"11th at Oak","kind":"bus_stop","lat":39.101042,"lon":-94.578330}
+{"type":"poi","name":"Government District","kind":"bus_stop","lat":39.099664,"lon":-94.577554}
+{"type":"poi","name":"13th at Holmes","kind":"bus_stop","lat":39.098455,"lon":-94.574744}
+{"type":"poi","name":"13th at Cherry","kind":"bus_stop","lat":39.098492,"lon":-94.576162}
+{"type":"poi","name":"13th at Grand","kind":"bus_stop","lat":39.098592,"lon":-94.580746}
+{"type":"poi","name":"11th at Troost","kind":"bus_stop","lat":39.100796,"lon":-94.570393}
+{"type":"poi","name":"11th at Holmes","kind":"bus_stop","lat":39.100913,"lon":-94.574585}
+{"type":"poi","name":"11th at Cherry","kind":"bus_stop","lat":39.100963,"lon":-94.575972}
+{"type":"poi","name":"9th at Harrison","kind":"bus_stop","lat":39.103269,"lon":-94.571651}
+{"type":"poi","name":"Grand at 12th","kind":"bus_stop","lat":39.099731,"lon":-94.580819}
+{"type":"poi","name":"Grand at 11th","kind":"bus_stop","lat":39.101177,"lon":-94.580966}
+{"type":"poi","name":"Grand at 11th","kind":"bus_stop","lat":39.101356,"lon":-94.580690}
+{"type":"poi","name":"Grand at 12th","kind":"bus_stop","lat":39.099283,"lon":-94.581092}
+{"type":"poi","name":"Oak at 13th","kind":"bus_stop","lat":39.098286,"lon":-94.578756}
+{"type":"poi","name":"10th at Grand","kind":"bus_stop","lat":39.102220,"lon":-94.580516}
+{"type":"poi","name":"10th at Oak","kind":"bus_stop","lat":39.102160,"lon":-94.578702}
+{"type":"poi","name":"12th at Charlotte","kind":"bus_stop","lat":39.099543,"lon":-94.574253}
+{"type":"poi","name":"10th at Charlotte","kind":"bus_stop","lat":39.101995,"lon":-94.573960}
+{"type":"poi","name":"Charlotte at 10th","kind":"bus_stop","lat":39.102258,"lon":-94.573909}
+{"type":"poi","name":"Holmes at 13th","kind":"bus_stop","lat":39.098278,"lon":-94.575060}
+{"type":"poi","name":"8th at Grand","kind":"bus_stop","lat":39.104324,"lon":-94.579051}
+{"type":"poi","name":"12th at Charlotte","kind":"bus_stop","lat":39.099656,"lon":-94.573207}
+{"type":"poi","name":"Bay L","kind":"bus_stop","lat":39.098973,"lon":-94.573566}

@@ -1,0 +1,2 @@
+{"meta":{"state":"WA","z":15,"x":5408,"y":11507,"zhs":{"key":"z/15/5408/11507|h3/9/nv91/pfki|s2/12/f2/20v/29a","z_key":"z/15/5408/11507","h_key":"h3/9/nv91/pfki","s_key":"s2/12/f2/20v/29a"},"source":"planet","roads":1,"buildings":0,"areas":0,"pois":0}}
+{"type":"road","class":"residential","name":"Pheasant Lane","oneway":false,"pts":"47.137541,-120.581713;47.132374,-120.581708;47.130369,-120.581684;47.130201,-120.581659;47.130007,-120.581649;47.129834,-120.581684"}

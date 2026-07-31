@@ -1,0 +1,1830 @@
+{
+  "channels": [
+    {
+      "id": "bf-32602-indianapolis-metropolitan-police",
+      "name": "Indianapolis Metropolitan Police",
+      "description": "Broadcastify public safety feed 32602 for Florida.",
+      "city": "",
+      "county": "Various",
+      "state": "FL",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "florida",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32602"
+    },
+    {
+      "id": "bf-29594-charlotte-county-sheriff-and-punta-gorda-p",
+      "name": "Charlotte County Sheriff and Punta Gorda Police",
+      "description": "Broadcastify public safety feed 29594 for Florida.",
+      "city": "",
+      "county": "Various",
+      "state": "FL",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "florida",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/29594"
+    },
+    {
+      "id": "bf-30021-sarasota-county-sheriff-venice-and-north-p",
+      "name": "Sarasota County Sheriff, Venice and North Port Police",
+      "description": "Broadcastify public safety feed 30021 for Florida.",
+      "city": "",
+      "county": "Various",
+      "state": "FL",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "florida",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/30021"
+    },
+    {
+      "id": "bf-41064-orange-county-and-orlando-fire-and-ems",
+      "name": "Orange County and Orlando Fire and EMS",
+      "description": "Broadcastify public safety feed 41064 for Florida.",
+      "city": "",
+      "county": "Various",
+      "state": "FL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "florida",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41064"
+    },
+    {
+      "id": "bf-33263-charlotte-county-fire-punta-gorda-city-fir",
+      "name": "Charlotte County Fire, Punta Gorda City Fire, and Punta Gorda Airport Fire",
+      "description": "Broadcastify public safety feed 33263 for Florida.",
+      "city": "",
+      "county": "Various",
+      "state": "FL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "florida",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/33263"
+    },
+    {
+      "id": "bf-26411-manatee-county-fire-and-ems",
+      "name": "Manatee County Fire and EMS",
+      "description": "Broadcastify public safety feed 26411 for Florida.",
+      "city": "",
+      "county": "Various",
+      "state": "FL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "florida",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/26411"
+    },
+    {
+      "id": "bf-44509-bay-county-law-enforcement",
+      "name": "Bay County Law Enforcement",
+      "description": "Broadcastify public safety feed 44509 for Florida.",
+      "city": "",
+      "county": "Various",
+      "state": "FL",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "florida",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44509"
+    },
+    {
+      "id": "bf-42102-osceola-county-public-safety",
+      "name": "Osceola County Public Safety",
+      "description": "Broadcastify public safety feed 42102 for Florida.",
+      "city": "",
+      "county": "Various",
+      "state": "FL",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "florida"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42102"
+    },
+    {
+      "id": "bf-18152-sarasota-county-fire",
+      "name": "Sarasota County Fire",
+      "description": "Broadcastify public safety feed 18152 for Florida.",
+      "city": "",
+      "county": "Various",
+      "state": "FL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "florida",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/18152"
+    },
+    {
+      "id": "bf-34759-pinellas-county-fire-and-ems",
+      "name": "Pinellas County Fire and EMS",
+      "description": "Broadcastify public safety feed 34759 for Florida.",
+      "city": "",
+      "county": "Various",
+      "state": "FL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "florida",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/34759"
+    },
+    {
+      "id": "bf-26722-pinellas-county-sheriff-and-ems-clearwater",
+      "name": "Pinellas County Sheriff and EMS, Clearwater / St. Petersburg Police",
+      "description": "Broadcastify public safety feed 26722 for Florida.",
+      "city": "",
+      "county": "Various",
+      "state": "FL",
+      "service_types": [
+        "dispatch",
+        "law",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "florida",
+        "law",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/26722"
+    },
+    {
+      "id": "bf-41252-jacksonville-fire-rescue",
+      "name": "Jacksonville Fire Rescue",
+      "description": "Broadcastify public safety feed 41252 for Florida.",
+      "city": "",
+      "county": "Various",
+      "state": "FL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "florida",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41252"
+    },
+    {
+      "id": "bf-1709-volusia-county-fire-and-ems",
+      "name": "Volusia County Fire and EMS",
+      "description": "Broadcastify public safety feed 1709 for Florida.",
+      "city": "",
+      "county": "Various",
+      "state": "FL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "florida",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/1709"
+    },
+    {
+      "id": "bf-33015-polk-county-fire-rescue-fire-and-ems",
+      "name": "Polk County Fire Rescue, Fire and EMS",
+      "description": "Broadcastify public safety feed 33015 for Florida.",
+      "city": "",
+      "county": "Various",
+      "state": "FL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "florida",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/33015"
+    },
+    {
+      "id": "bf-43449-citrus-county-fire",
+      "name": "Citrus County Fire",
+      "description": "Broadcastify public safety feed 43449 for Florida.",
+      "city": "",
+      "county": "Various",
+      "state": "FL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "florida",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43449"
+    },
+    {
+      "id": "bf-42146-indian-river-county-sheriff",
+      "name": "Indian River County Sheriff",
+      "description": "Broadcastify public safety feed 42146 for Florida.",
+      "city": "",
+      "county": "Various",
+      "state": "FL",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "florida",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42146"
+    },
+    {
+      "id": "bf-45673-hillsborough-county-sheriff-s-office",
+      "name": "Hillsborough County Sheriff's Office",
+      "description": "Broadcastify public safety feed 45673 for Florida.",
+      "city": "",
+      "county": "Various",
+      "state": "FL",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "florida",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45673"
+    },
+    {
+      "id": "bf-46672-saint-johns-county-fire-rescue",
+      "name": "Saint Johns County Fire / Rescue",
+      "description": "Broadcastify public safety feed 46672 for Florida.",
+      "city": "",
+      "county": "Various",
+      "state": "FL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "florida",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46672"
+    },
+    {
+      "id": "bf-41812-pensacola-fire-department",
+      "name": "Pensacola Fire Department",
+      "description": "Broadcastify public safety feed 41812 for Florida.",
+      "city": "",
+      "county": "Various",
+      "state": "FL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "florida",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41812"
+    },
+    {
+      "id": "bf-42174-key-west-public-safety",
+      "name": "Key West Public Safety",
+      "description": "Broadcastify public safety feed 42174 for Florida.",
+      "city": "",
+      "county": "Various",
+      "state": "FL",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "florida"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42174"
+    },
+    {
+      "id": "bf-39282-gainesville-police-and-alachua-fire",
+      "name": "Gainesville Police and Alachua Fire",
+      "description": "Broadcastify public safety feed 39282 for Florida.",
+      "city": "",
+      "county": "Various",
+      "state": "FL",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "florida",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39282"
+    },
+    {
+      "id": "bf-44503-bay-county-fire-ems",
+      "name": "Bay County Fire/EMS",
+      "description": "Broadcastify public safety feed 44503 for Florida.",
+      "city": "",
+      "county": "Various",
+      "state": "FL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "florida",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44503"
+    },
+    {
+      "id": "bf-40010-seminole-county-fire",
+      "name": "Seminole County Fire",
+      "description": "Broadcastify public safety feed 40010 for Florida.",
+      "city": "",
+      "county": "Various",
+      "state": "FL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "florida",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40010"
+    },
+    {
+      "id": "bf-29482-miami-dade-county-municipal-police-departm",
+      "name": "Miami-Dade County Municipal Police Departments Dispatch",
+      "description": "Broadcastify public safety feed 29482 for Florida.",
+      "city": "",
+      "county": "Various",
+      "state": "FL",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "florida",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/29482"
+    },
+    {
+      "id": "bf-45531-manatee-county-sheriff",
+      "name": "Manatee County Sheriff",
+      "description": "Broadcastify public safety feed 45531 for Florida.",
+      "city": "",
+      "county": "Various",
+      "state": "FL",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "florida",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45531"
+    },
+    {
+      "id": "bf-47468-volusia-county-fire-ems",
+      "name": "Volusia County Fire/EMS",
+      "description": "Broadcastify public safety feed 47468 for Florida.",
+      "city": "",
+      "county": "Various",
+      "state": "FL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "florida",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47468"
+    },
+    {
+      "id": "bf-33485-broward-county-sheriff-dispatch-north",
+      "name": "Broward County Sheriff Dispatch - North",
+      "description": "Broadcastify public safety feed 33485 for Florida.",
+      "city": "",
+      "county": "Various",
+      "state": "FL",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "florida",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/33485"
+    },
+    {
+      "id": "bf-44075-seminole-county-fire-and-ems",
+      "name": "Seminole County Fire and EMS",
+      "description": "Broadcastify public safety feed 44075 for Florida.",
+      "city": "",
+      "county": "Various",
+      "state": "FL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "florida",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44075"
+    },
+    {
+      "id": "bf-25389-clearwater-police-east",
+      "name": "Clearwater Police - East",
+      "description": "Broadcastify public safety feed 25389 for Florida.",
+      "city": "",
+      "county": "Various",
+      "state": "FL",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "florida",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/25389"
+    },
+    {
+      "id": "bf-26234-lake-city-fire",
+      "name": "Lake City Fire",
+      "description": "Broadcastify public safety feed 26234 for Florida.",
+      "city": "",
+      "county": "Various",
+      "state": "FL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "florida",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/26234"
+    },
+    {
+      "id": "bf-41882-city-of-orlando-fire-tac-1-and-tac-3",
+      "name": "City of Orlando Fire - Tac 1 and Tac 3",
+      "description": "Broadcastify public safety feed 41882 for Florida.",
+      "city": "",
+      "county": "Various",
+      "state": "FL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "florida",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41882"
+    },
+    {
+      "id": "bf-38308-broward-county-fire-rescue",
+      "name": "Broward County Fire/Rescue",
+      "description": "Broadcastify public safety feed 38308 for Florida.",
+      "city": "",
+      "county": "Various",
+      "state": "FL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "florida",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38308"
+    },
+    {
+      "id": "bf-27156-desoto-and-hardee-counties-fire-rescue",
+      "name": "DeSoto and Hardee Counties Fire Rescue",
+      "description": "Broadcastify public safety feed 27156 for Florida.",
+      "city": "",
+      "county": "Various",
+      "state": "FL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "florida",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/27156"
+    },
+    {
+      "id": "bf-47126-miami-dade-fire-rescue-dispatch",
+      "name": "Miami-Dade Fire Rescue Dispatch",
+      "description": "Broadcastify public safety feed 47126 for Florida.",
+      "city": "",
+      "county": "Various",
+      "state": "FL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "florida",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47126"
+    },
+    {
+      "id": "bf-34551-miami-dade-fire-rescue-tactical-channels",
+      "name": "Miami-Dade Fire Rescue Tactical Channels",
+      "description": "Broadcastify public safety feed 34551 for Florida.",
+      "city": "",
+      "county": "Various",
+      "state": "FL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "florida",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/34551"
+    },
+    {
+      "id": "bf-34119-miami-dade-police-and-fire-hammocks-dispat",
+      "name": "Miami-Dade Police and Fire - Hammocks Dispatch and Central Dispatch",
+      "description": "Broadcastify public safety feed 34119 for Florida.",
+      "city": "",
+      "county": "Various",
+      "state": "FL",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "florida",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/34119"
+    },
+    {
+      "id": "bf-30503-collier-county-fire-and-ems-dispatch",
+      "name": "Collier County Fire and EMS Dispatch",
+      "description": "Broadcastify public safety feed 30503 for Florida.",
+      "city": "",
+      "county": "Various",
+      "state": "FL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "florida",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/30503"
+    },
+    {
+      "id": "bf-45683-sarasota-south-county-fire-departments",
+      "name": "Sarasota South County Fire Departments",
+      "description": "Broadcastify public safety feed 45683 for Florida.",
+      "city": "",
+      "county": "Various",
+      "state": "FL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "florida",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45683"
+    },
+    {
+      "id": "bf-42510-union-county-fr",
+      "name": "Union County FR",
+      "description": "Broadcastify public safety feed 42510 for Florida.",
+      "city": "",
+      "county": "Various",
+      "state": "FL",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "florida"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42510"
+    },
+    {
+      "id": "bf-44160-broward-county-fire-rescue-dispatch",
+      "name": "Broward County Fire/Rescue Dispatch",
+      "description": "Broadcastify public safety feed 44160 for Florida.",
+      "city": "",
+      "county": "Various",
+      "state": "FL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "florida",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44160"
+    },
+    {
+      "id": "bf-45029-miami-dade-county-fire-rescue-north-east",
+      "name": "Miami-Dade County Fire Rescue North & East",
+      "description": "Broadcastify public safety feed 45029 for Florida.",
+      "city": "",
+      "county": "Various",
+      "state": "FL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "florida",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45029"
+    },
+    {
+      "id": "bf-32977-coral-springs-and-parkland-public-safety",
+      "name": "Coral Springs and Parkland Public Safety",
+      "description": "Broadcastify public safety feed 32977 for Florida.",
+      "city": "",
+      "county": "Various",
+      "state": "FL",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "florida"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32977"
+    },
+    {
+      "id": "bf-2206-liberty-and-calhoun-counties-fire-and-ems",
+      "name": "Liberty and Calhoun Counties Fire and EMS",
+      "description": "Broadcastify public safety feed 2206 for Florida.",
+      "city": "",
+      "county": "Various",
+      "state": "FL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "florida",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/2206"
+    },
+    {
+      "id": "bf-35218-jackson-county-fire",
+      "name": "Jackson County Fire",
+      "description": "Broadcastify public safety feed 35218 for Florida.",
+      "city": "",
+      "county": "Various",
+      "state": "FL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "florida",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/35218"
+    },
+    {
+      "id": "bf-46898-boca-raton-fire-rescue",
+      "name": "Boca Raton Fire Rescue",
+      "description": "Broadcastify public safety feed 46898 for Florida.",
+      "city": "",
+      "county": "Various",
+      "state": "FL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "florida",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46898"
+    },
+    {
+      "id": "bf-31741-baker-county-fire-rescue",
+      "name": "Baker County Fire Rescue",
+      "description": "Broadcastify public safety feed 31741 for Florida.",
+      "city": "",
+      "county": "Various",
+      "state": "FL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "florida",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/31741"
+    },
+    {
+      "id": "bf-35455-broward-county-police-and-sheriff",
+      "name": "Broward County Police and Sheriff",
+      "description": "Broadcastify public safety feed 35455 for Florida.",
+      "city": "",
+      "county": "Various",
+      "state": "FL",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "florida",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/35455"
+    },
+    {
+      "id": "bf-38309-pompano-beach-fire-rescue-bso-east-west",
+      "name": "Pompano Beach Fire/Rescue/BSO (East & West)",
+      "description": "Broadcastify public safety feed 38309 for Florida.",
+      "city": "",
+      "county": "Various",
+      "state": "FL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "florida",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38309"
+    },
+    {
+      "id": "bf-47125-miami-dade-fire-rescue-fireground",
+      "name": "Miami-Dade Fire Rescue Fireground",
+      "description": "Broadcastify public safety feed 47125 for Florida.",
+      "city": "",
+      "county": "Various",
+      "state": "FL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "florida",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47125"
+    },
+    {
+      "id": "bf-42886-plantation-fire-department",
+      "name": "Plantation Fire Department",
+      "description": "Broadcastify public safety feed 42886 for Florida.",
+      "city": "",
+      "county": "Various",
+      "state": "FL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "florida",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42886"
+    },
+    {
+      "id": "bf-36653-wetumpka-fire",
+      "name": "Wetumpka Fire",
+      "description": "Broadcastify public safety feed 36653 for Florida.",
+      "city": "",
+      "county": "Various",
+      "state": "FL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "florida",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/36653"
+    },
+    {
+      "id": "bf-45585-city-of-miami-police-dispatch-south",
+      "name": "City of Miami Police Dispatch - South",
+      "description": "Broadcastify public safety feed 45585 for Florida.",
+      "city": "",
+      "county": "Various",
+      "state": "FL",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "florida",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45585"
+    },
+    {
+      "id": "bf-30508-miami-fire-rescue",
+      "name": "Miami Fire Rescue",
+      "description": "Broadcastify public safety feed 30508 for Florida.",
+      "city": "",
+      "county": "Various",
+      "state": "FL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "florida",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/30508"
+    },
+    {
+      "id": "bf-24547-franklin-county-fire-dispatch",
+      "name": "Franklin County Fire Dispatch",
+      "description": "Broadcastify public safety feed 24547 for Florida.",
+      "city": "",
+      "county": "Various",
+      "state": "FL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "florida",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/24547"
+    },
+    {
+      "id": "bf-47217-city-of-miami-police-dispatch-east",
+      "name": "City of Miami Police Dispatch - East",
+      "description": "Broadcastify public safety feed 47217 for Florida.",
+      "city": "",
+      "county": "Various",
+      "state": "FL",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "florida",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47217"
+    },
+    {
+      "id": "bf-45635-city-of-miami-police-dispatch-north",
+      "name": "City of Miami Police Dispatch - North",
+      "description": "Broadcastify public safety feed 45635 for Florida.",
+      "city": "",
+      "county": "Various",
+      "state": "FL",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "florida",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45635"
+    },
+    {
+      "id": "bf-34830-largo-police-department",
+      "name": "Largo Police Department",
+      "description": "Broadcastify public safety feed 34830 for Florida.",
+      "city": "",
+      "county": "Various",
+      "state": "FL",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "florida",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/34830"
+    },
+    {
+      "id": "bf-45596-city-of-miami-police-dispatch-central",
+      "name": "City of Miami Police Dispatch - Central",
+      "description": "Broadcastify public safety feed 45596 for Florida.",
+      "city": "",
+      "county": "Various",
+      "state": "FL",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "florida",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45596"
+    },
+    {
+      "id": "bf-25566-munson-fire",
+      "name": "Munson Fire",
+      "description": "Broadcastify public safety feed 25566 for Florida.",
+      "city": "",
+      "county": "Various",
+      "state": "FL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "florida",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/25566"
+    },
+    {
+      "id": "bf-38225-carrabelle-volunteer-fire",
+      "name": "Carrabelle Volunteer Fire",
+      "description": "Broadcastify public safety feed 38225 for Florida.",
+      "city": "",
+      "county": "Various",
+      "state": "FL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "florida",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38225"
+    },
+    {
+      "id": "bf-40215-marco-island-police-dispatch",
+      "name": "Marco Island Police Dispatch",
+      "description": "Broadcastify public safety feed 40215 for Florida.",
+      "city": "",
+      "county": "Various",
+      "state": "FL",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "florida",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40215"
+    },
+    {
+      "id": "bf-42569-fort-lauderdale-fire-rescue-tac-d",
+      "name": "Fort Lauderdale Fire Rescue TAC D",
+      "description": "Broadcastify public safety feed 42569 for Florida.",
+      "city": "",
+      "county": "Various",
+      "state": "FL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "florida",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42569"
+    },
+    {
+      "id": "bf-27888-indian-harbor-beach-fire",
+      "name": "Indian Harbor Beach Fire",
+      "description": "Broadcastify public safety feed 27888 for Florida.",
+      "city": "",
+      "county": "Various",
+      "state": "FL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "florida",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/27888"
+    },
+    {
+      "id": "bf-24276-indian-harbor-beach-operations",
+      "name": "Indian Harbor Beach Operations",
+      "description": "Broadcastify public safety feed 24276 for Florida.",
+      "city": "",
+      "county": "Various",
+      "state": "FL",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "florida"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/24276"
+    },
+    {
+      "id": "bf-31520-highland-view-fire",
+      "name": "Highland View Fire",
+      "description": "Broadcastify public safety feed 31520 for Florida.",
+      "city": "",
+      "county": "Various",
+      "state": "FL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "florida",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/31520"
+    },
+    {
+      "id": "bf-21618-concord-fire",
+      "name": "Concord Fire",
+      "description": "Broadcastify public safety feed 21618 for Florida.",
+      "city": "",
+      "county": "Various",
+      "state": "FL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "florida",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/21618"
+    },
+    {
+      "id": "bf-29097-mt-pleasant-fire",
+      "name": "Mt Pleasant Fire",
+      "description": "Broadcastify public safety feed 29097 for Florida.",
+      "city": "",
+      "county": "Various",
+      "state": "FL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "florida",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/29097"
+    },
+    {
+      "id": "bf-31168-orange-county-fire",
+      "name": "Orange County Fire",
+      "description": "Broadcastify public safety feed 31168 for Florida.",
+      "city": "",
+      "county": "Various",
+      "state": "FL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "florida",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/31168"
+    },
+    {
+      "id": "bf-30169-midway-fire",
+      "name": "Midway Fire",
+      "description": "Broadcastify public safety feed 30169 for Florida.",
+      "city": "",
+      "county": "Various",
+      "state": "FL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "florida",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/30169"
+    },
+    {
+      "id": "bf-30276-greensboro-fire",
+      "name": "Greensboro Fire",
+      "description": "Broadcastify public safety feed 30276 for Florida.",
+      "city": "",
+      "county": "Various",
+      "state": "FL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "florida",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/30276"
+    },
+    {
+      "id": "bf-30277-sycamore-fire",
+      "name": "Sycamore Fire",
+      "description": "Broadcastify public safety feed 30277 for Florida.",
+      "city": "",
+      "county": "Various",
+      "state": "FL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "florida",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/30277"
+    },
+    {
+      "id": "bf-47349-liberty-county-emergency-management-dispat",
+      "name": "Liberty County Emergency Management Dispatch",
+      "description": "Broadcastify public safety feed 47349 for Florida.",
+      "city": "",
+      "county": "Various",
+      "state": "FL",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "florida"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47349"
+    },
+    {
+      "id": "bf-17250-levy-county-public-safety",
+      "name": "Levy County Public Safety",
+      "description": "Broadcastify public safety feed 17250 for Florida.",
+      "city": "",
+      "county": "Various",
+      "state": "FL",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "florida"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/17250"
+    },
+    {
+      "id": "bf-46592-miccosukee-volunteer-fire-rescue",
+      "name": "Miccosukee Volunteer Fire Rescue",
+      "description": "Broadcastify public safety feed 46592 for Florida.",
+      "city": "",
+      "county": "Various",
+      "state": "FL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "florida",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46592"
+    },
+    {
+      "id": "bf-37748-gretna-fire",
+      "name": "Gretna Fire",
+      "description": "Broadcastify public safety feed 37748 for Florida.",
+      "city": "",
+      "county": "Various",
+      "state": "FL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "florida",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37748"
+    },
+    {
+      "id": "bf-46568-greenshade-dogtown",
+      "name": "Greenshade Dogtown",
+      "description": "Broadcastify public safety feed 46568 for Florida.",
+      "city": "",
+      "county": "Various",
+      "state": "FL",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "florida"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46568"
+    },
+    {
+      "id": "bf-39536-hillsborough-county-public-safety",
+      "name": "Hillsborough County Public Safety",
+      "description": "Broadcastify public safety feed 39536 for Florida.",
+      "city": "",
+      "county": "Various",
+      "state": "FL",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "florida"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39536"
+    },
+    {
+      "id": "bf-30472-hamilton-county-dispatch",
+      "name": "Hamilton County Dispatch",
+      "description": "Broadcastify public safety feed 30472 for Florida.",
+      "city": "",
+      "county": "Various",
+      "state": "FL",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "florida"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/30472"
+    },
+    {
+      "id": "bf-41843-wewahitchka-fire",
+      "name": "Wewahitchka Fire",
+      "description": "Broadcastify public safety feed 41843 for Florida.",
+      "city": "",
+      "county": "Various",
+      "state": "FL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "florida",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41843"
+    },
+    {
+      "id": "bf-32259-howard-creek-fire",
+      "name": "Howard Creek Fire",
+      "description": "Broadcastify public safety feed 32259 for Florida.",
+      "city": "",
+      "county": "Various",
+      "state": "FL",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "florida",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32259"
+    }
+  ]
+}

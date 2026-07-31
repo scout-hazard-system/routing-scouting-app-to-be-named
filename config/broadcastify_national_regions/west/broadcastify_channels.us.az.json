@@ -1,0 +1,1415 @@
+{
+  "channels": [
+    {
+      "id": "bf-32602-indianapolis-metropolitan-police",
+      "name": "Indianapolis Metropolitan Police",
+      "description": "Broadcastify public safety feed 32602 for Arizona.",
+      "city": "",
+      "county": "Various",
+      "state": "AZ",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arizona",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32602"
+    },
+    {
+      "id": "bf-38773-tucson-police-fire-citywide",
+      "name": "Tucson Police/Fire Citywide",
+      "description": "Broadcastify public safety feed 38773 for Arizona.",
+      "city": "",
+      "county": "Various",
+      "state": "AZ",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arizona",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38773"
+    },
+    {
+      "id": "bf-12145-phoenix-police",
+      "name": "Phoenix Police",
+      "description": "Broadcastify feed 12145 for Phoenix Police dispatch channels.",
+      "city": "Phoenix",
+      "county": "Maricopa County",
+      "state": "AZ",
+      "service_types": [
+        "law",
+        "dispatch"
+      ],
+      "tags": [
+        "phoenix",
+        "police",
+        "dispatch",
+        "metro"
+      ],
+      "lat": 33.4484,
+      "lon": -112.074,
+      "listeners": 210,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/12145"
+    },
+    {
+      "id": "bf-15199-yavapai-county-public-safety",
+      "name": "Yavapai County Public Safety",
+      "description": "Broadcastify public safety feed 15199 for Arizona.",
+      "city": "",
+      "county": "Various",
+      "state": "AZ",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arizona"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/15199"
+    },
+    {
+      "id": "bf-20019-mohave-county-sheriff-and-fire-kingman-fir",
+      "name": "Mohave County Sheriff and Fire, Kingman Fire",
+      "description": "Broadcastify public safety feed 20019 for Arizona.",
+      "city": "",
+      "county": "Various",
+      "state": "AZ",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arizona",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/20019"
+    },
+    {
+      "id": "bf-22709-bullhead-city-mohave-valley-police-sheriff",
+      "name": "Bullhead City / Mohave Valley Police, Sheriff, Fire and EMS",
+      "description": "Broadcastify public safety feed 22709 for Arizona.",
+      "city": "",
+      "county": "Various",
+      "state": "AZ",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arizona",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/22709"
+    },
+    {
+      "id": "bf-37047-graham-and-greenlee-county-public-safety",
+      "name": "Graham and Greenlee County Public Safety",
+      "description": "Broadcastify public safety feed 37047 for Arizona.",
+      "city": "",
+      "county": "Various",
+      "state": "AZ",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arizona"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37047"
+    },
+    {
+      "id": "bf-43570-mesa-fire-gilbert-fire-queen-creek-fire",
+      "name": "Mesa Fire, Gilbert Fire, Queen Creek Fire",
+      "description": "Broadcastify public safety feed 43570 for Arizona.",
+      "city": "",
+      "county": "Various",
+      "state": "AZ",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arizona",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43570"
+    },
+    {
+      "id": "bf-10232-maricopa-county-sheriff-west",
+      "name": "Maricopa County Sheriff - West",
+      "description": "Broadcastify public safety feed 10232 for Arizona.",
+      "city": "",
+      "county": "Various",
+      "state": "AZ",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arizona",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/10232"
+    },
+    {
+      "id": "bf-1-phoenix-metro-area-fire",
+      "name": "Phoenix Metro Area Fire",
+      "description": "Broadcastify public safety feed 1 for Arizona.",
+      "city": "",
+      "county": "Various",
+      "state": "AZ",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arizona",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/1"
+    },
+    {
+      "id": "bf-30258-oro-valley-police-and-pima-county-sheriff",
+      "name": "Oro Valley Police and Pima County Sheriff",
+      "description": "Broadcastify public safety feed 30258 for Arizona.",
+      "city": "",
+      "county": "Various",
+      "state": "AZ",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arizona",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/30258"
+    },
+    {
+      "id": "bf-14875-chandler-police-and-fire-phoenix-fire",
+      "name": "Chandler Police and Fire, Phoenix Fire",
+      "description": "Broadcastify public safety feed 14875 for Arizona.",
+      "city": "",
+      "county": "Various",
+      "state": "AZ",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arizona",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/14875"
+    },
+    {
+      "id": "bf-46656-coolidge-police-fire-eloy-police-fire-flor",
+      "name": "Coolidge Police/Fire, Eloy Police/Fire, Florence Police/Fire, Casa Grande Fire, AZ DPS D6, LifeNet",
+      "description": "Broadcastify public safety feed 46656 for Arizona.",
+      "city": "",
+      "county": "Various",
+      "state": "AZ",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arizona",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46656"
+    },
+    {
+      "id": "bf-46992-northern-mohave-county-public-safety",
+      "name": "Northern Mohave County Public Safety",
+      "description": "Broadcastify public safety feed 46992 for Arizona.",
+      "city": "",
+      "county": "Various",
+      "state": "AZ",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arizona"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46992"
+    },
+    {
+      "id": "bf-37583-coconino-south-sheriff-dps-usfs",
+      "name": "Coconino South Sheriff, DPS and Forest Service",
+      "description": "Broadcastify feed 37583 for Coconino County south area including sheriff and Arizona DPS traffic near Flagstaff corridor.",
+      "city": "Flagstaff",
+      "county": "Coconino County",
+      "state": "AZ",
+      "service_types": [
+        "law",
+        "dispatch",
+        "highway"
+      ],
+      "tags": [
+        "sheriff",
+        "dps",
+        "forest service",
+        "i-17",
+        "i-40",
+        "flagstaff"
+      ],
+      "lat": 35.1983,
+      "lon": -111.6513,
+      "listeners": 115,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37583"
+    },
+    {
+      "id": "bf-46516-overgaard-surrounding-area-public-safety",
+      "name": "Overgaard & Surrounding Area Public Safety",
+      "description": "Broadcastify public safety feed 46516 for Arizona.",
+      "city": "",
+      "county": "Various",
+      "state": "AZ",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arizona"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46516"
+    },
+    {
+      "id": "bf-22670-st-johns-fire",
+      "name": "St Johns Fire",
+      "description": "Broadcastify public safety feed 22670 for Arizona.",
+      "city": "",
+      "county": "Various",
+      "state": "AZ",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arizona",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/22670"
+    },
+    {
+      "id": "bf-36987-surprise-and-el-mirage-police-dispatch",
+      "name": "Surprise and El Mirage Police Dispatch",
+      "description": "Broadcastify public safety feed 36987 for Arizona.",
+      "city": "",
+      "county": "Various",
+      "state": "AZ",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arizona",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/36987"
+    },
+    {
+      "id": "bf-26983-phoenix-police-dispatch-a-cactus-park",
+      "name": "Phoenix Police Dispatch A -  Cactus Park",
+      "description": "Broadcastify public safety feed 26983 for Arizona.",
+      "city": "",
+      "county": "Various",
+      "state": "AZ",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arizona",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/26983"
+    },
+    {
+      "id": "bf-41735-tempe-police-department-mill-avenue-downto",
+      "name": "Tempe Police Department - Mill Avenue Downtown District",
+      "description": "Broadcastify public safety feed 41735 for Arizona.",
+      "city": "",
+      "county": "Various",
+      "state": "AZ",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arizona",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41735"
+    },
+    {
+      "id": "bf-47502-mohave-county-public-safety",
+      "name": "Mohave County Public Safety",
+      "description": "Broadcastify public safety feed 47502 for Arizona.",
+      "city": "",
+      "county": "Various",
+      "state": "AZ",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arizona"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47502"
+    },
+    {
+      "id": "bf-24559-hildale-and-colorado-city-police-fire-ems",
+      "name": "Hildale and Colorado City Police, Fire / EMS",
+      "description": "Broadcastify public safety feed 24559 for Arizona.",
+      "city": "",
+      "county": "Various",
+      "state": "AZ",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arizona",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/24559"
+    },
+    {
+      "id": "bf-28250-desert-hills-fire",
+      "name": "Desert Hills Fire",
+      "description": "Broadcastify public safety feed 28250 for Arizona.",
+      "city": "",
+      "county": "Various",
+      "state": "AZ",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arizona",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/28250"
+    },
+    {
+      "id": "bf-46311-blythe-fire-dept-la-paz-county",
+      "name": "Blythe Fire Dept-La Paz County",
+      "description": "Broadcastify public safety feed 46311 for Arizona.",
+      "city": "",
+      "county": "Various",
+      "state": "AZ",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arizona",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46311"
+    },
+    {
+      "id": "bf-45471-prescott-valley-police-dewey-police-dispat",
+      "name": "Prescott Valley Police & Dewey Police Dispatch",
+      "description": "Broadcastify public safety feed 45471 for Arizona.",
+      "city": "",
+      "county": "Various",
+      "state": "AZ",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arizona",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45471"
+    },
+    {
+      "id": "bf-42835-round-valley-fire-wmas",
+      "name": "Round Valley Fire WMAS",
+      "description": "Broadcastify public safety feed 42835 for Arizona.",
+      "city": "",
+      "county": "Various",
+      "state": "AZ",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arizona",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42835"
+    },
+    {
+      "id": "bf-42323-mescal-j6-fire",
+      "name": "Mescal J6 Fire",
+      "description": "Broadcastify public safety feed 42323 for Arizona.",
+      "city": "",
+      "county": "Various",
+      "state": "AZ",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arizona",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42323"
+    },
+    {
+      "id": "bf-38363-queen-valley-fire-district-channel-1",
+      "name": "Queen Valley Fire District - Channel 1",
+      "description": "Broadcastify public safety feed 38363 for Arizona.",
+      "city": "",
+      "county": "Various",
+      "state": "AZ",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arizona",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38363"
+    },
+    {
+      "id": "bf-28825-sedona-fire-and-ems-dispatch",
+      "name": "Sedona Fire and EMS Dispatch",
+      "description": "Broadcastify public safety feed 28825 for Arizona.",
+      "city": "",
+      "county": "Various",
+      "state": "AZ",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arizona",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/28825"
+    },
+    {
+      "id": "bf-40513-arizona-department-of-forestry-and-fire-ma",
+      "name": "Arizona Department of Forestry and Fire Management",
+      "description": "Broadcastify public safety feed 40513 for Arizona.",
+      "city": "",
+      "county": "Various",
+      "state": "AZ",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arizona",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40513"
+    },
+    {
+      "id": "bf-41734-tempe-police-department-south-patrol-distr",
+      "name": "Tempe Police Department - South Patrol District",
+      "description": "Broadcastify public safety feed 41734 for Arizona.",
+      "city": "",
+      "county": "Various",
+      "state": "AZ",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arizona",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41734"
+    },
+    {
+      "id": "bf-44572-ash-fork-fire-dispatch",
+      "name": "Ash Fork Fire Dispatch",
+      "description": "Broadcastify public safety feed 44572 for Arizona.",
+      "city": "",
+      "county": "Various",
+      "state": "AZ",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arizona",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44572"
+    },
+    {
+      "id": "bf-43328-prescott-area-fire-departments",
+      "name": "Prescott Area Fire Departments",
+      "description": "Broadcastify public safety feed 43328 for Arizona.",
+      "city": "",
+      "county": "Various",
+      "state": "AZ",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arizona",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43328"
+    },
+    {
+      "id": "bf-16873-holbrook-volunteer-fire-dispatch",
+      "name": "Holbrook Volunteer Fire Dispatch",
+      "description": "Broadcastify public safety feed 16873 for Arizona.",
+      "city": "",
+      "county": "Various",
+      "state": "AZ",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arizona",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/16873"
+    },
+    {
+      "id": "bf-18921-joseph-city-fire",
+      "name": "Joseph City Fire",
+      "description": "Broadcastify public safety feed 18921 for Arizona.",
+      "city": "",
+      "county": "Various",
+      "state": "AZ",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arizona",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/18921"
+    },
+    {
+      "id": "bf-41992-verde-valley-public-safety",
+      "name": "Verde Valley Public Safety",
+      "description": "Broadcastify public safety feed 41992 for Arizona.",
+      "city": "",
+      "county": "Various",
+      "state": "AZ",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arizona"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41992"
+    },
+    {
+      "id": "bf-47036-arizona-department-of-public-safety-distri",
+      "name": "Arizona Department of Public Safety - District 6",
+      "description": "Broadcastify public safety feed 47036 for Arizona.",
+      "city": "",
+      "county": "Various",
+      "state": "AZ",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arizona"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47036"
+    },
+    {
+      "id": "bf-38497-mammoth-fire",
+      "name": "Mammoth Fire",
+      "description": "Broadcastify public safety feed 38497 for Arizona.",
+      "city": "",
+      "county": "Various",
+      "state": "AZ",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arizona",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38497"
+    },
+    {
+      "id": "bf-47038-arizona-department-of-public-safety-distri",
+      "name": "Arizona Department of Public Safety - District 8",
+      "description": "Broadcastify public safety feed 47038 for Arizona.",
+      "city": "",
+      "county": "Various",
+      "state": "AZ",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arizona"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47038"
+    },
+    {
+      "id": "bf-21975-tucson-regional-fire-dispatch",
+      "name": "Tucson Regional Fire Dispatch",
+      "description": "Broadcastify public safety feed 21975 for Arizona.",
+      "city": "",
+      "county": "Various",
+      "state": "AZ",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arizona",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/21975"
+    },
+    {
+      "id": "bf-45739-pima-county-public-safety-south-green-vall",
+      "name": "Pima County Public Safety South, Green Valley",
+      "description": "Broadcastify public safety feed 45739 for Arizona.",
+      "city": "",
+      "county": "Various",
+      "state": "AZ",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arizona"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45739"
+    },
+    {
+      "id": "bf-40088-tucson-regional-dispatch-fire-medical",
+      "name": "Tucson Regional Dispatch & Fire/Medical",
+      "description": "Broadcastify public safety feed 40088 for Arizona.",
+      "city": "",
+      "county": "Various",
+      "state": "AZ",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arizona",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40088"
+    },
+    {
+      "id": "bf-15338-morenci-fire-association",
+      "name": "Morenci Fire Association",
+      "description": "Broadcastify public safety feed 15338 for Arizona.",
+      "city": "",
+      "county": "Various",
+      "state": "AZ",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arizona",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/15338"
+    },
+    {
+      "id": "bf-29894-greer-fire-district",
+      "name": "Greer Fire District",
+      "description": "Broadcastify public safety feed 29894 for Arizona.",
+      "city": "",
+      "county": "Various",
+      "state": "AZ",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arizona",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/29894"
+    },
+    {
+      "id": "bf-37195-ganado-fire",
+      "name": "Ganado Fire",
+      "description": "Broadcastify public safety feed 37195 for Arizona.",
+      "city": "",
+      "county": "Various",
+      "state": "AZ",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arizona",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37195"
+    },
+    {
+      "id": "bf-47039-arizona-department-of-public-safety-distri",
+      "name": "Arizona Department of Public Safety - District 9",
+      "description": "Broadcastify public safety feed 47039 for Arizona.",
+      "city": "",
+      "county": "Various",
+      "state": "AZ",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arizona"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47039"
+    },
+    {
+      "id": "bf-16013-page-fire-dispatch",
+      "name": "Page Fire Dispatch",
+      "description": "Broadcastify public safety feed 16013 for Arizona.",
+      "city": "",
+      "county": "Various",
+      "state": "AZ",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arizona",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/16013"
+    },
+    {
+      "id": "bf-22992-pine-strawberry-fire",
+      "name": "Pine Strawberry Fire",
+      "description": "Broadcastify public safety feed 22992 for Arizona.",
+      "city": "",
+      "county": "Various",
+      "state": "AZ",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arizona",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/22992"
+    },
+    {
+      "id": "bf-29971-christopher-kohles-fire",
+      "name": "Christopher Kohles Fire",
+      "description": "Broadcastify public safety feed 29971 for Arizona.",
+      "city": "",
+      "county": "Various",
+      "state": "AZ",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arizona",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/29971"
+    },
+    {
+      "id": "bf-45169-payson-fire-department",
+      "name": "Payson Fire Department",
+      "description": "Broadcastify public safety feed 45169 for Arizona.",
+      "city": "",
+      "county": "Various",
+      "state": "AZ",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arizona",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45169"
+    },
+    {
+      "id": "bf-47210-tonto-basin-fire-district",
+      "name": "Tonto Basin Fire District",
+      "description": "Broadcastify public safety feed 47210 for Arizona.",
+      "city": "",
+      "county": "Various",
+      "state": "AZ",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arizona",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47210"
+    },
+    {
+      "id": "bf-27805-safford-fire",
+      "name": "Safford Fire",
+      "description": "Broadcastify public safety feed 27805 for Arizona.",
+      "city": "",
+      "county": "Various",
+      "state": "AZ",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arizona",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/27805"
+    },
+    {
+      "id": "bf-46904-arizona-department-of-public-safety-metro-",
+      "name": "Arizona Department of Public Safety - METRO CENTRAL",
+      "description": "Broadcastify public safety feed 46904 for Arizona.",
+      "city": "",
+      "county": "Various",
+      "state": "AZ",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arizona"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46904"
+    },
+    {
+      "id": "bf-38907-clifton-fire",
+      "name": "Clifton Fire",
+      "description": "Broadcastify public safety feed 38907 for Arizona.",
+      "city": "",
+      "county": "Various",
+      "state": "AZ",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arizona",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38907"
+    },
+    {
+      "id": "bf-23071-mcmullen-valley-fire",
+      "name": "McMullen Valley Fire",
+      "description": "Broadcastify public safety feed 23071 for Arizona.",
+      "city": "",
+      "county": "Various",
+      "state": "AZ",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arizona",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/23071"
+    },
+    {
+      "id": "bf-26463-buckskin-fire",
+      "name": "Buckskin Fire",
+      "description": "Broadcastify public safety feed 26463 for Arizona.",
+      "city": "",
+      "county": "Various",
+      "state": "AZ",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arizona",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/26463"
+    },
+    {
+      "id": "bf-40406-bouse-fire",
+      "name": "Bouse Fire",
+      "description": "Broadcastify public safety feed 40406 for Arizona.",
+      "city": "",
+      "county": "Various",
+      "state": "AZ",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arizona",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40406"
+    },
+    {
+      "id": "bf-47035-arizona-department-of-public-safety-distri",
+      "name": "Arizona Department of Public Safety - District 4",
+      "description": "Broadcastify public safety feed 47035 for Arizona.",
+      "city": "",
+      "county": "Various",
+      "state": "AZ",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arizona"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47035"
+    },
+    {
+      "id": "bf-20741-azdps-metro-phoenix-west",
+      "name": "Arizona DPS - Highway Patrol Metro Phoenix West",
+      "description": "Broadcastify feed 20741 for Arizona DPS Highway Patrol in west metro Phoenix.",
+      "city": "Phoenix",
+      "county": "Maricopa County",
+      "state": "AZ",
+      "service_types": [
+        "law",
+        "dispatch",
+        "highway"
+      ],
+      "tags": [
+        "azdps",
+        "highway patrol",
+        "state trooper",
+        "i-10",
+        "loop 101"
+      ],
+      "lat": 33.4484,
+      "lon": -112.074,
+      "listeners": 170,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/20741"
+    },
+    {
+      "id": "bf-41733-tempe-police-department-north-patrol-distr",
+      "name": "Tempe Police Department - North Patrol District",
+      "description": "Broadcastify public safety feed 41733 for Arizona.",
+      "city": "",
+      "county": "Various",
+      "state": "AZ",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arizona",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41733"
+    },
+    {
+      "id": "bf-44711-sun-city-west-sheriffs-posse",
+      "name": "Sun City West Sheriffs Posse",
+      "description": "Broadcastify public safety feed 44711 for Arizona.",
+      "city": "",
+      "county": "Various",
+      "state": "AZ",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arizona",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44711"
+    },
+    {
+      "id": "bf-46787-maricopa-county-area-wildland-fire-air-tra",
+      "name": "Maricopa County Area Wildland Fire Air Traffic",
+      "description": "Broadcastify public safety feed 46787 for Arizona.",
+      "city": "",
+      "county": "Various",
+      "state": "AZ",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "arizona",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46787"
+    }
+  ]
+}

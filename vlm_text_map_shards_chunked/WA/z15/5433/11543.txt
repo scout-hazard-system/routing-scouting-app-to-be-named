@@ -1,0 +1,8 @@
+{"meta":{"state":"WA","z":15,"x":5433,"y":11543,"zhs":{"key":"z/15/5433/11543|h3/9/nv9r/pfha|s2/12/f2/20v/29i","z_key":"z/15/5433/11543","h_key":"h3/9/nv9r/pfha","s_key":"s2/12/f2/20v/29i"},"source":"planet","roads":6,"buildings":0,"areas":1,"pois":0}}
+{"type":"road","class":"path","name":"","oneway":false,"pts":"46.860129,-120.311451;46.860074,-120.311325"}
+{"type":"road","class":"residential","name":"Silica Road","oneway":false,"pts":"46.860074,-120.307988;46.862218,-120.307953;46.864301,-120.307937;46.864567,-120.307988;46.865343,-120.308243;46.867341,-120.308957;46.867710,-120.309117"}
+{"type":"road","class":"residential","name":"Upper Badger Pocket Road","oneway":false,"pts":"46.867681,-120.311451;46.867710,-120.309117;46.867717,-120.309013"}
+{"type":"road","class":"residential","name":"Upper Badger Pocket Road","oneway":false,"pts":"46.867717,-120.308892;46.867738,-120.308637;46.867820,-120.308259"}
+{"type":"road","class":"residential","name":"Upper Badger Pocket Road","oneway":false,"pts":"46.867820,-120.306918;46.867750,-120.306486;46.867743,-120.306009;46.867820,-120.300540"}
+{"type":"road","class":"residential","name":"Upper Badger Pocket Road","oneway":false,"pts":"46.867717,-120.309013;46.867717,-120.308892"}
+{"type":"area","kind":"water","pts":"46.867235,-120.311623;46.867231,-120.311553;46.867167,-120.311483;46.867057,-120.311462;46.866922,-120.311456;46.866826,-120.311424;46.866720,-120.311306;46.866654,-120.311226;46.866624,-120.311269;46.866793,-120.311623"}

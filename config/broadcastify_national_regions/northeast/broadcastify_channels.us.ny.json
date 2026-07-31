@@ -1,0 +1,2378 @@
+{
+  "channels": [
+    {
+      "id": "bf-32602-indianapolis-metropolitan-police",
+      "name": "Indianapolis Metropolitan Police",
+      "description": "Broadcastify public safety feed 32602 for New York.",
+      "city": "",
+      "county": "Various",
+      "state": "NY",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new york",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32602"
+    },
+    {
+      "id": "bf-10277-clinton-county-fire-ems-and-highway-dot",
+      "name": "Clinton County Fire, EMS and Highway DOT",
+      "description": "Broadcastify public safety feed 10277 for New York.",
+      "city": "",
+      "county": "Various",
+      "state": "NY",
+      "service_types": [
+        "dispatch",
+        "highway",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new york",
+        "highway",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/10277"
+    },
+    {
+      "id": "bf-41336-chemung-county-police-and-fire",
+      "name": "Chemung County Police and Fire",
+      "description": "Broadcastify public safety feed 41336 for New York.",
+      "city": "",
+      "county": "Various",
+      "state": "NY",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new york",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41336"
+    },
+    {
+      "id": "bf-3178-essex-county-police-fire-and-ems-southeast",
+      "name": "Essex County Police, Fire, and EMS - Southeast",
+      "description": "Broadcastify public safety feed 3178 for New York.",
+      "city": "",
+      "county": "Various",
+      "state": "NY",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new york",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/3178"
+    },
+    {
+      "id": "bf-41475-oswego-county-public-safety",
+      "name": "Oswego County Public Safety",
+      "description": "Broadcastify public safety feed 41475 for New York.",
+      "city": "",
+      "county": "Various",
+      "state": "NY",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new york"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41475"
+    },
+    {
+      "id": "bf-9189-cortland-county-public-safety",
+      "name": "Cortland County Public Safety",
+      "description": "Broadcastify public safety feed 9189 for New York.",
+      "city": "",
+      "county": "Various",
+      "state": "NY",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new york"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/9189"
+    },
+    {
+      "id": "bf-26933-buffalo-police-fire-and-ems",
+      "name": "Buffalo Police, Fire and EMS",
+      "description": "Broadcastify public safety feed 26933 for New York.",
+      "city": "",
+      "county": "Various",
+      "state": "NY",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new york",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/26933"
+    },
+    {
+      "id": "bf-694-delaware-county-911-sheriff-fire-and-ems",
+      "name": "Delaware County 911 - Sheriff, Fire and EMS",
+      "description": "Broadcastify public safety feed 694 for New York.",
+      "city": "",
+      "county": "Various",
+      "state": "NY",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new york",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/694"
+    },
+    {
+      "id": "bf-41473-onondaga-county-public-safety",
+      "name": "Onondaga County Public Safety",
+      "description": "Broadcastify public safety feed 41473 for New York.",
+      "city": "",
+      "county": "Various",
+      "state": "NY",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new york"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41473"
+    },
+    {
+      "id": "bf-4130-oneida-herkimer-and-madison-counties-publi",
+      "name": "Oneida, Herkimer, and Madison Counties Public Safety",
+      "description": "Broadcastify public safety feed 4130 for New York.",
+      "city": "",
+      "county": "Various",
+      "state": "NY",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new york"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/4130"
+    },
+    {
+      "id": "bf-6007-jefferson-county-police-fire-and-ems",
+      "name": "Jefferson County Police, Fire and EMS",
+      "description": "Broadcastify public safety feed 6007 for New York.",
+      "city": "",
+      "county": "Various",
+      "state": "NY",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new york",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/6007"
+    },
+    {
+      "id": "bf-10171-st-lawrence-county-police-fire-and-ems",
+      "name": "St. Lawrence County Police, Fire, and EMS",
+      "description": "Broadcastify public safety feed 10171 for New York.",
+      "city": "",
+      "county": "Various",
+      "state": "NY",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new york",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/10171"
+    },
+    {
+      "id": "bf-28383-rensselaer-county-fire-and-ems-digital",
+      "name": "Rensselaer County Fire and EMS - Digital",
+      "description": "Broadcastify public safety feed 28383 for New York.",
+      "city": "",
+      "county": "Various",
+      "state": "NY",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new york",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/28383"
+    },
+    {
+      "id": "bf-3751-schoharie-county-public-safety",
+      "name": "Schoharie County Public Safety",
+      "description": "Broadcastify public safety feed 3751 for New York.",
+      "city": "",
+      "county": "Various",
+      "state": "NY",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new york"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/3751"
+    },
+    {
+      "id": "bf-1874-washington-warren-and-saratoga-counties-fi",
+      "name": "Washington, Warren and Saratoga Counties Fire and EMS",
+      "description": "Broadcastify public safety feed 1874 for New York.",
+      "city": "",
+      "county": "Various",
+      "state": "NY",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new york",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/1874"
+    },
+    {
+      "id": "bf-4043-livingston-county-sheriff-police-fire-and-",
+      "name": "Livingston County Sheriff, Police, Fire and EMS",
+      "description": "Broadcastify public safety feed 4043 for New York.",
+      "city": "",
+      "county": "Various",
+      "state": "NY",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new york",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/4043"
+    },
+    {
+      "id": "bf-10114-olean-police-and-fire-cattaraugus-county-s",
+      "name": "Olean Police and Fire, Cattaraugus County Sheriff / Fire, NYSP-TROOP-A",
+      "description": "Broadcastify public safety feed 10114 for New York.",
+      "city": "",
+      "county": "Various",
+      "state": "NY",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new york",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/10114"
+    },
+    {
+      "id": "bf-7254-chautauqua-county-sheriff-and-fire-north-f",
+      "name": "Chautauqua County Sheriff and Fire - North, Fredonia Area Police / Fire",
+      "description": "Broadcastify public safety feed 7254 for New York.",
+      "city": "",
+      "county": "Various",
+      "state": "NY",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new york",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/7254"
+    },
+    {
+      "id": "bf-30055-cayuga-county-fire-and-ems",
+      "name": "Cayuga  County Fire and EMS",
+      "description": "Broadcastify public safety feed 30055 for New York.",
+      "city": "",
+      "county": "Various",
+      "state": "NY",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new york",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/30055"
+    },
+    {
+      "id": "bf-12174-monroe-and-ontario-counties-fire-digital",
+      "name": "Monroe and Ontario Counties Fire - Digital",
+      "description": "Broadcastify public safety feed 12174 for New York.",
+      "city": "",
+      "county": "Various",
+      "state": "NY",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new york",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/12174"
+    },
+    {
+      "id": "bf-40676-norwich-city-police-chenango-county-public",
+      "name": "Norwich City Police / Chenango County Public Safety",
+      "description": "Broadcastify public safety feed 40676 for New York.",
+      "city": "",
+      "county": "Various",
+      "state": "NY",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new york",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40676"
+    },
+    {
+      "id": "bf-9821-fulton-county-public-safety",
+      "name": "Fulton County Public Safety",
+      "description": "Broadcastify public safety feed 9821 for New York.",
+      "city": "",
+      "county": "Various",
+      "state": "NY",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new york"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/9821"
+    },
+    {
+      "id": "bf-28706-franklin-county-fire-ems-and-police",
+      "name": "Franklin County Fire, EMS, and Police",
+      "description": "Broadcastify public safety feed 28706 for New York.",
+      "city": "",
+      "county": "Various",
+      "state": "NY",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new york",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/28706"
+    },
+    {
+      "id": "bf-44702-clinton-co-ems-fire-police-sheriff",
+      "name": "Clinton Co. EMS, Fire, Police, Sheriff",
+      "description": "Broadcastify public safety feed 44702 for New York.",
+      "city": "",
+      "county": "Various",
+      "state": "NY",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new york",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44702"
+    },
+    {
+      "id": "bf-39447-broome-county-public-safety-p25",
+      "name": "Broome County Public Safety (P25)",
+      "description": "Broadcastify public safety feed 39447 for New York.",
+      "city": "",
+      "county": "Various",
+      "state": "NY",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new york"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39447"
+    },
+    {
+      "id": "bf-40604-genesee-county-public-safety",
+      "name": "Genesee County Public Safety",
+      "description": "Broadcastify public safety feed 40604 for New York.",
+      "city": "",
+      "county": "Various",
+      "state": "NY",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new york"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40604"
+    },
+    {
+      "id": "bf-10598-lewis-county-sheriff-fire-and-ems-lowville",
+      "name": "Lewis County Sheriff, Fire, and EMS, Lowville Police - Analog",
+      "description": "Broadcastify public safety feed 10598 for New York.",
+      "city": "",
+      "county": "Various",
+      "state": "NY",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new york",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/10598"
+    },
+    {
+      "id": "bf-25371-herkimer-county-law-fire-and-ems-dispatch",
+      "name": "Herkimer County Law, Fire and EMS Dispatch",
+      "description": "Broadcastify public safety feed 25371 for New York.",
+      "city": "",
+      "county": "Various",
+      "state": "NY",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new york",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/25371"
+    },
+    {
+      "id": "bf-33751-orange-county-fire",
+      "name": "Orange County Fire",
+      "description": "Broadcastify public safety feed 33751 for New York.",
+      "city": "",
+      "county": "Various",
+      "state": "NY",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new york",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/33751"
+    },
+    {
+      "id": "bf-41110-onondaga-county-and-syracuse-city-fire",
+      "name": "Onondaga County and Syracuse City Fire",
+      "description": "Broadcastify public safety feed 41110 for New York.",
+      "city": "",
+      "county": "Various",
+      "state": "NY",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new york",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41110"
+    },
+    {
+      "id": "bf-3626-albany-city-and-colonie-police-fire-and-em",
+      "name": "Albany City and Colonie, Police, Fire and EMS",
+      "description": "Broadcastify public safety feed 3626 for New York.",
+      "city": "",
+      "county": "Various",
+      "state": "NY",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new york",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/3626"
+    },
+    {
+      "id": "bf-36720-steuben-county-fire-dispatch",
+      "name": "Steuben County Fire Dispatch",
+      "description": "Broadcastify public safety feed 36720 for New York.",
+      "city": "",
+      "county": "Various",
+      "state": "NY",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new york",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/36720"
+    },
+    {
+      "id": "bf-37257-niagara-county-public-safety",
+      "name": "Niagara County Public Safety",
+      "description": "Broadcastify public safety feed 37257 for New York.",
+      "city": "",
+      "county": "Various",
+      "state": "NY",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new york"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37257"
+    },
+    {
+      "id": "bf-4092-tri-county-public-safety",
+      "name": "Tri-County Public Safety",
+      "description": "Broadcastify public safety feed 4092 for New York.",
+      "city": "",
+      "county": "Various",
+      "state": "NY",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new york"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/4092"
+    },
+    {
+      "id": "bf-3818-buffalo-fire",
+      "name": "Buffalo Fire",
+      "description": "Broadcastify public safety feed 3818 for New York.",
+      "city": "",
+      "county": "Various",
+      "state": "NY",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new york",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/3818"
+    },
+    {
+      "id": "bf-8978-wyoming-county-fire-and-ems",
+      "name": "Wyoming County Fire and EMS",
+      "description": "Broadcastify public safety feed 8978 for New York.",
+      "city": "",
+      "county": "Various",
+      "state": "NY",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new york",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/8978"
+    },
+    {
+      "id": "bf-31719-syracuse-police-fire-and-ems",
+      "name": "Syracuse Police, Fire and EMS",
+      "description": "Broadcastify public safety feed 31719 for New York.",
+      "city": "",
+      "county": "Various",
+      "state": "NY",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new york",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/31719"
+    },
+    {
+      "id": "bf-43015-ontario-county-public-safety",
+      "name": "Ontario County Public Safety",
+      "description": "Broadcastify public safety feed 43015 for New York.",
+      "city": "",
+      "county": "Various",
+      "state": "NY",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new york"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43015"
+    },
+    {
+      "id": "bf-28701-troy-fire",
+      "name": "Troy Fire",
+      "description": "Broadcastify public safety feed 28701 for New York.",
+      "city": "",
+      "county": "Various",
+      "state": "NY",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new york",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/28701"
+    },
+    {
+      "id": "bf-1189-nypd-bronx-manhattan-transit",
+      "name": "NYPD Bronx/Manhattan Transit",
+      "description": "Broadcastify public safety feed 1189 for New York.",
+      "city": "",
+      "county": "Various",
+      "state": "NY",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new york"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/1189"
+    },
+    {
+      "id": "bf-46825-allegany-county-public-safety",
+      "name": "Allegany County Public Safety",
+      "description": "Broadcastify public safety feed 46825 for New York.",
+      "city": "",
+      "county": "Various",
+      "state": "NY",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new york"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46825"
+    },
+    {
+      "id": "bf-9779-greene-county-fire",
+      "name": "Greene County Fire",
+      "description": "Broadcastify public safety feed 9779 for New York.",
+      "city": "",
+      "county": "Various",
+      "state": "NY",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new york",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/9779"
+    },
+    {
+      "id": "bf-13618-seneca-county-fire-and-ems",
+      "name": "Seneca County Fire and EMS",
+      "description": "Broadcastify public safety feed 13618 for New York.",
+      "city": "",
+      "county": "Various",
+      "state": "NY",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new york",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/13618"
+    },
+    {
+      "id": "bf-34717-tompkins-county-fire-ems",
+      "name": "Tompkins County Fire/EMS",
+      "description": "Broadcastify public safety feed 34717 for New York.",
+      "city": "",
+      "county": "Various",
+      "state": "NY",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new york",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/34717"
+    },
+    {
+      "id": "bf-29514-schenectady-county-fire-ems",
+      "name": "Schenectady County Fire/EMS",
+      "description": "Broadcastify public safety feed 29514 for New York.",
+      "city": "",
+      "county": "Various",
+      "state": "NY",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new york",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/29514"
+    },
+    {
+      "id": "bf-40479-cheektowaga-police-fire-dispatch",
+      "name": "Cheektowaga Police & Fire Dispatch",
+      "description": "Broadcastify public safety feed 40479 for New York.",
+      "city": "",
+      "county": "Various",
+      "state": "NY",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new york",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40479"
+    },
+    {
+      "id": "bf-32727-sullivan-county-fire-ems-paging",
+      "name": "Sullivan County Fire/EMS Paging",
+      "description": "Broadcastify public safety feed 32727 for New York.",
+      "city": "",
+      "county": "Various",
+      "state": "NY",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new york",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32727"
+    },
+    {
+      "id": "bf-30896-wayne-county-fire-and-ems-dispatch",
+      "name": "Wayne County Fire and EMS Dispatch",
+      "description": "Broadcastify public safety feed 30896 for New York.",
+      "city": "",
+      "county": "Various",
+      "state": "NY",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new york",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/30896"
+    },
+    {
+      "id": "bf-31174-saratoga-county-fire-and-ems",
+      "name": "Saratoga County Fire and EMS",
+      "description": "Broadcastify public safety feed 31174 for New York.",
+      "city": "",
+      "county": "Various",
+      "state": "NY",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new york",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/31174"
+    },
+    {
+      "id": "bf-40857-amherst-police-dispatch",
+      "name": "Amherst Police Dispatch",
+      "description": "Broadcastify public safety feed 40857 for New York.",
+      "city": "",
+      "county": "Various",
+      "state": "NY",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new york",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40857"
+    },
+    {
+      "id": "bf-13189-columbia-county-sheriff-and-fire-hudson-po",
+      "name": "Columbia County Sheriff and Fire, Hudson Police",
+      "description": "Broadcastify public safety feed 13189 for New York.",
+      "city": "",
+      "county": "Various",
+      "state": "NY",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new york",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/13189"
+    },
+    {
+      "id": "bf-30065-suffolk-county-police-fire-and-ems-dispatc",
+      "name": "Suffolk County Police, Fire and EMS Dispatch",
+      "description": "Broadcastify public safety feed 30065 for New York.",
+      "city": "",
+      "county": "Various",
+      "state": "NY",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new york",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/30065"
+    },
+    {
+      "id": "bf-43160-oneida-county-public-safety",
+      "name": "Oneida County Public Safety",
+      "description": "Broadcastify public safety feed 43160 for New York.",
+      "city": "",
+      "county": "Various",
+      "state": "NY",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new york"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43160"
+    },
+    {
+      "id": "bf-24582-yates-county-sheriff-fire-and-ems",
+      "name": "Yates County Sheriff, Fire and EMS",
+      "description": "Broadcastify public safety feed 24582 for New York.",
+      "city": "",
+      "county": "Various",
+      "state": "NY",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new york",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/24582"
+    },
+    {
+      "id": "bf-46554-fdny-manhattan-dispatch",
+      "name": "FDNY - Manhattan Dispatch",
+      "description": "Broadcastify public safety feed 46554 for New York.",
+      "city": "",
+      "county": "Various",
+      "state": "NY",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new york"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46554"
+    },
+    {
+      "id": "bf-1635-nassau-county-fire-east",
+      "name": "Nassau County Fire - East",
+      "description": "Broadcastify public safety feed 1635 for New York.",
+      "city": "",
+      "county": "Various",
+      "state": "NY",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new york",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/1635"
+    },
+    {
+      "id": "bf-45314-genesee-and-orleans-county-fire-dispatch",
+      "name": "Genesee and Orleans County Fire Dispatch",
+      "description": "Broadcastify public safety feed 45314 for New York.",
+      "city": "",
+      "county": "Various",
+      "state": "NY",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new york",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45314"
+    },
+    {
+      "id": "bf-12305-southern-dutchess-county-fire-departments-",
+      "name": "Southern Dutchess County Fire Departments and DC911",
+      "description": "Broadcastify public safety feed 12305 for New York.",
+      "city": "",
+      "county": "Various",
+      "state": "NY",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new york",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/12305"
+    },
+    {
+      "id": "bf-39649-salamanca-area-police-and-fire",
+      "name": "Salamanca Area Police and Fire",
+      "description": "Broadcastify public safety feed 39649 for New York.",
+      "city": "",
+      "county": "Various",
+      "state": "NY",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new york",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39649"
+    },
+    {
+      "id": "bf-47117-city-of-jamestown-police-and-fire",
+      "name": "City of Jamestown Police and Fire",
+      "description": "Broadcastify public safety feed 47117 for New York.",
+      "city": "",
+      "county": "Various",
+      "state": "NY",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new york",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47117"
+    },
+    {
+      "id": "bf-3316-washington-saratoga-and-warren-counties-sh",
+      "name": "Washington, Saratoga and Warren Counties Sheriff",
+      "description": "Broadcastify public safety feed 3316 for New York.",
+      "city": "",
+      "county": "Various",
+      "state": "NY",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new york",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/3316"
+    },
+    {
+      "id": "bf-33766-rockland-county-fire-scan",
+      "name": "Rockland County Fire - Scan",
+      "description": "Broadcastify public safety feed 33766 for New York.",
+      "city": "",
+      "county": "Various",
+      "state": "NY",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new york",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/33766"
+    },
+    {
+      "id": "bf-1440-albany-city-fire",
+      "name": "Albany City Fire",
+      "description": "Broadcastify public safety feed 1440 for New York.",
+      "city": "",
+      "county": "Various",
+      "state": "NY",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new york",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/1440"
+    },
+    {
+      "id": "bf-19515-catt-co-fire-and-ems-and-greater-olean-are",
+      "name": "Catt. Co. Fire and EMS and Greater Olean Area",
+      "description": "Broadcastify public safety feed 19515 for New York.",
+      "city": "",
+      "county": "Various",
+      "state": "NY",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new york",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/19515"
+    },
+    {
+      "id": "bf-37798-southern-tier-region-fire",
+      "name": "Southern Tier Region Fire",
+      "description": "Broadcastify public safety feed 37798 for New York.",
+      "city": "",
+      "county": "Various",
+      "state": "NY",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new york",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37798"
+    },
+    {
+      "id": "bf-42341-east-hampton-new-york-town-and-village-pol",
+      "name": "East Hampton, New York Town and Village Police, Fire and EMS Services",
+      "description": "Broadcastify public safety feed 42341 for New York.",
+      "city": "",
+      "county": "Various",
+      "state": "NY",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new york",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42341"
+    },
+    {
+      "id": "bf-13883-madison-county-fire-and-ems",
+      "name": "Madison County Fire and EMS",
+      "description": "Broadcastify public safety feed 13883 for New York.",
+      "city": "",
+      "county": "Various",
+      "state": "NY",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new york",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/13883"
+    },
+    {
+      "id": "bf-27626-wayne-county-law-enforcement",
+      "name": "Wayne County Law Enforcement",
+      "description": "Broadcastify public safety feed 27626 for New York.",
+      "city": "",
+      "county": "Various",
+      "state": "NY",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new york",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/27626"
+    },
+    {
+      "id": "bf-37779-onondaga-county-sheriff-and-fire",
+      "name": "Onondaga County Sheriff and Fire",
+      "description": "Broadcastify public safety feed 37779 for New York.",
+      "city": "",
+      "county": "Various",
+      "state": "NY",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new york",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37779"
+    },
+    {
+      "id": "bf-38914-new-york-state-dec-forest-ranger",
+      "name": "New York State DEC - Forest Ranger",
+      "description": "Broadcastify public safety feed 38914 for New York.",
+      "city": "",
+      "county": "Various",
+      "state": "NY",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new york"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38914"
+    },
+    {
+      "id": "bf-1775-amherst-fire-control",
+      "name": "Amherst Fire Control",
+      "description": "Broadcastify public safety feed 1775 for New York.",
+      "city": "",
+      "county": "Various",
+      "state": "NY",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new york",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/1775"
+    },
+    {
+      "id": "bf-5986-greene-county-ems",
+      "name": "Greene County EMS",
+      "description": "Broadcastify public safety feed 5986 for New York.",
+      "city": "",
+      "county": "Various",
+      "state": "NY",
+      "service_types": [
+        "dispatch",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new york",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/5986"
+    },
+    {
+      "id": "bf-8606-herkimer-north-dispatch",
+      "name": "Herkimer North Dispatch",
+      "description": "Broadcastify public safety feed 8606 for New York.",
+      "city": "",
+      "county": "Various",
+      "state": "NY",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new york"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/8606"
+    },
+    {
+      "id": "bf-44631-lancaster-depew-fire",
+      "name": "Lancaster / Depew Fire",
+      "description": "Broadcastify public safety feed 44631 for New York.",
+      "city": "",
+      "county": "Various",
+      "state": "NY",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new york",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44631"
+    },
+    {
+      "id": "bf-8192-sayville-fire-dispatch",
+      "name": "Sayville Fire Dispatch",
+      "description": "Broadcastify public safety feed 8192 for New York.",
+      "city": "",
+      "county": "Various",
+      "state": "NY",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new york",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/8192"
+    },
+    {
+      "id": "bf-9741-tioga-county-sheriff-and-fire",
+      "name": "Tioga County Sheriff and Fire",
+      "description": "Broadcastify public safety feed 9741 for New York.",
+      "city": "",
+      "county": "Various",
+      "state": "NY",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new york",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/9741"
+    },
+    {
+      "id": "bf-13501-wayne-county-fire",
+      "name": "Wayne County Fire",
+      "description": "Broadcastify public safety feed 13501 for New York.",
+      "city": "",
+      "county": "Various",
+      "state": "NY",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new york",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/13501"
+    },
+    {
+      "id": "bf-46579-westchester-county-fire-ems-pd",
+      "name": "Westchester County Fire/EMS/PD",
+      "description": "Broadcastify public safety feed 46579 for New York.",
+      "city": "",
+      "county": "Various",
+      "state": "NY",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new york",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46579"
+    },
+    {
+      "id": "bf-37206-albany-county-volunteer-fire-departments",
+      "name": "Albany County Volunteer Fire Departments",
+      "description": "Broadcastify public safety feed 37206 for New York.",
+      "city": "",
+      "county": "Various",
+      "state": "NY",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new york",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37206"
+    },
+    {
+      "id": "bf-24859-schuyler-county-sheriff-fire-and-ems",
+      "name": "Schuyler County  Sheriff, Fire and EMS",
+      "description": "Broadcastify public safety feed 24859 for New York.",
+      "city": "",
+      "county": "Various",
+      "state": "NY",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new york",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/24859"
+    },
+    {
+      "id": "bf-47149-chautauqua-county-fire-and-ems",
+      "name": "Chautauqua County Fire and EMS",
+      "description": "Broadcastify public safety feed 47149 for New York.",
+      "city": "",
+      "county": "Various",
+      "state": "NY",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new york",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47149"
+    },
+    {
+      "id": "bf-41347-suffolk-county-fire-and-ems-3rd-division",
+      "name": "Suffolk County Fire and EMS - 3rd Division",
+      "description": "Broadcastify public safety feed 41347 for New York.",
+      "city": "",
+      "county": "Various",
+      "state": "NY",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new york",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41347"
+    },
+    {
+      "id": "bf-35406-ulster-county-fire-and-esopus-fire",
+      "name": "Ulster County Fire and Esopus Fire",
+      "description": "Broadcastify public safety feed 35406 for New York.",
+      "city": "",
+      "county": "Various",
+      "state": "NY",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new york",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/35406"
+    },
+    {
+      "id": "bf-36327-bethlehem-public-safety",
+      "name": "Bethlehem Public Safety",
+      "description": "Broadcastify public safety feed 36327 for New York.",
+      "city": "",
+      "county": "Various",
+      "state": "NY",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new york"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/36327"
+    },
+    {
+      "id": "bf-31794-washington-county-fire-and-ems-alerting",
+      "name": "Washington County Fire and EMS Alerting",
+      "description": "Broadcastify public safety feed 31794 for New York.",
+      "city": "",
+      "county": "Various",
+      "state": "NY",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new york",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/31794"
+    },
+    {
+      "id": "bf-20381-montgomery-county-public-safety",
+      "name": "Montgomery County Public Safety",
+      "description": "Broadcastify public safety feed 20381 for New York.",
+      "city": "",
+      "county": "Various",
+      "state": "NY",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new york"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/20381"
+    },
+    {
+      "id": "bf-35300-amsterdam-police-department",
+      "name": "Amsterdam Police Department",
+      "description": "Broadcastify public safety feed 35300 for New York.",
+      "city": "",
+      "county": "Various",
+      "state": "NY",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new york",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/35300"
+    },
+    {
+      "id": "bf-34648-greenport-fire-and-southold-police",
+      "name": "Greenport Fire and Southold Police",
+      "description": "Broadcastify public safety feed 34648 for New York.",
+      "city": "",
+      "county": "Various",
+      "state": "NY",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new york",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/34648"
+    },
+    {
+      "id": "bf-42578-syracuse-fire-ems",
+      "name": "Syracuse Fire & EMS",
+      "description": "Broadcastify public safety feed 42578 for New York.",
+      "city": "",
+      "county": "Various",
+      "state": "NY",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new york",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42578"
+    },
+    {
+      "id": "bf-44562-rl-hatzalah-repeater",
+      "name": "RL Hatzalah Repeater",
+      "description": "Broadcastify public safety feed 44562 for New York.",
+      "city": "",
+      "county": "Various",
+      "state": "NY",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new york"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44562"
+    },
+    {
+      "id": "bf-43193-ulster-county-public-safety-new-paltz-area",
+      "name": "Ulster County Public Safety - New Paltz Area",
+      "description": "Broadcastify public safety feed 43193 for New York.",
+      "city": "",
+      "county": "Various",
+      "state": "NY",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new york"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43193"
+    },
+    {
+      "id": "bf-47156-suffolk-county-police-7th-precinct-command",
+      "name": "Suffolk County Police 7th Precinct, Command, and FRES Ops",
+      "description": "Broadcastify public safety feed 47156 for New York.",
+      "city": "",
+      "county": "Various",
+      "state": "NY",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new york",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47156"
+    },
+    {
+      "id": "bf-13383-niagara-county-fire-dispatch-analog",
+      "name": "Niagara County Fire Dispatch - Analog",
+      "description": "Broadcastify public safety feed 13383 for New York.",
+      "city": "",
+      "county": "Various",
+      "state": "NY",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new york",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/13383"
+    },
+    {
+      "id": "bf-35224-east-aurora-fire-control",
+      "name": "East Aurora Fire Control",
+      "description": "Broadcastify public safety feed 35224 for New York.",
+      "city": "",
+      "county": "Various",
+      "state": "NY",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new york",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/35224"
+    },
+    {
+      "id": "bf-7392-hatzolah-ems-dispatch",
+      "name": "Hatzolah EMS Dispatch",
+      "description": "Broadcastify public safety feed 7392 for New York.",
+      "city": "",
+      "county": "Various",
+      "state": "NY",
+      "service_types": [
+        "dispatch",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new york",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/7392"
+    },
+    {
+      "id": "bf-31048-rensselaer-city-fire-and-ems",
+      "name": "Rensselaer City Fire and EMS",
+      "description": "Broadcastify public safety feed 31048 for New York.",
+      "city": "",
+      "county": "Various",
+      "state": "NY",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new york",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/31048"
+    },
+    {
+      "id": "bf-41622-amherst-and-tonawanda-police-and-fire-depa",
+      "name": "Amherst and Tonawanda Police and Fire Departments",
+      "description": "Broadcastify public safety feed 41622 for New York.",
+      "city": "",
+      "county": "Various",
+      "state": "NY",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new york",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41622"
+    },
+    {
+      "id": "bf-26041-wyoming-county-sheriff-dispatch",
+      "name": "Wyoming County Sheriff Dispatch",
+      "description": "Broadcastify public safety feed 26041 for New York.",
+      "city": "",
+      "county": "Various",
+      "state": "NY",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new york",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/26041"
+    },
+    {
+      "id": "bf-36970-ontario-county-fire-and-ems-with-tones",
+      "name": "Ontario County Fire and EMS (With Tones)",
+      "description": "Broadcastify public safety feed 36970 for New York.",
+      "city": "",
+      "county": "Various",
+      "state": "NY",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new york",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/36970"
+    },
+    {
+      "id": "bf-37210-mastic-beach-area-fire-and-ems-departments",
+      "name": "Mastic Beach Area Fire and EMS Departments",
+      "description": "Broadcastify public safety feed 37210 for New York.",
+      "city": "",
+      "county": "Various",
+      "state": "NY",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new york",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37210"
+    },
+    {
+      "id": "bf-45172-onondaga-county-sheriff-and-syracuse-polic",
+      "name": "Onondaga County Sheriff and Syracuse Police",
+      "description": "Broadcastify public safety feed 45172 for New York.",
+      "city": "",
+      "county": "Various",
+      "state": "NY",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "new york",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45172"
+    }
+  ]
+}

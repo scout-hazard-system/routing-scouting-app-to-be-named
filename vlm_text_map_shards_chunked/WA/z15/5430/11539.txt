@@ -1,0 +1,4 @@
+{"meta":{"state":"WA","z":15,"x":5430,"y":11539,"zhs":{"key":"z/15/5430/11539|h3/9/nv9p/pfhn|s2/12/f2/20v/29h","z_key":"z/15/5430/11539","h_key":"h3/9/nv9p/pfhn","s_key":"s2/12/f2/20v/29h"},"source":"planet","roads":3,"buildings":0,"areas":0,"pois":0}}
+{"type":"road","class":"tertiary","name":"Upper Badger Pocket Road","oneway":false,"pts":"46.893745,-120.344410;46.893280,-120.343485;46.892427,-120.342143;46.891786,-120.341317;46.891003,-120.340440;46.890114,-120.339673"}
+{"type":"road","class":"residential","name":"Morrison Road","oneway":false,"pts":"46.897184,-120.333080;46.897215,-120.339939;46.897164,-120.342565;46.897143,-120.344410"}
+{"type":"road","class":"residential","name":"Camion Road","oneway":false,"pts":"46.897215,-120.339939;46.897856,-120.339947"}

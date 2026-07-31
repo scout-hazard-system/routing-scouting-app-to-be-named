@@ -1,0 +1,1557 @@
+{
+  "channels": [
+    {
+      "id": "bf-32602-indianapolis-metropolitan-police",
+      "name": "Indianapolis Metropolitan Police",
+      "description": "Broadcastify public safety feed 32602 for Colorado.",
+      "city": "",
+      "county": "Various",
+      "state": "CO",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "colorado",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32602"
+    },
+    {
+      "id": "bf-33371-clear-creek-county-law-enforcement-fire-em",
+      "name": "Clear Creek County Law Enforcement, Fire, EMS and Mountain Rescue - Digital",
+      "description": "Broadcastify public safety feed 33371 for Colorado.",
+      "city": "",
+      "county": "Various",
+      "state": "CO",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "colorado",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/33371"
+    },
+    {
+      "id": "bf-33418-gunnison-county-public-safety",
+      "name": "Gunnison County Public Safety",
+      "description": "Broadcastify public safety feed 33418 for Colorado.",
+      "city": "",
+      "county": "Various",
+      "state": "CO",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "colorado"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/33418"
+    },
+    {
+      "id": "bf-40688-mesa-county-and-grand-junction-police-fire",
+      "name": "Mesa County and Grand Junction Police, Fire and EMS",
+      "description": "Broadcastify public safety feed 40688 for Colorado.",
+      "city": "",
+      "county": "Various",
+      "state": "CO",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "colorado",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40688"
+    },
+    {
+      "id": "bf-29860-san-luis-valley-public-safety",
+      "name": "San Luis Valley Public Safety",
+      "description": "Broadcastify public safety feed 29860 for Colorado.",
+      "city": "",
+      "county": "Various",
+      "state": "CO",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "colorado"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/29860"
+    },
+    {
+      "id": "bf-19648-montezuma-county-public-safety",
+      "name": "Montezuma County Public Safety",
+      "description": "Broadcastify public safety feed 19648 for Colorado.",
+      "city": "",
+      "county": "Various",
+      "state": "CO",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "colorado"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/19648"
+    },
+    {
+      "id": "bf-591-boulder-county-sheriff-and-fire",
+      "name": "Boulder County Sheriff and Fire",
+      "description": "Broadcastify public safety feed 591 for Colorado.",
+      "city": "",
+      "county": "Various",
+      "state": "CO",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "colorado",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/591"
+    },
+    {
+      "id": "bf-61-weld-county-sheriff",
+      "name": "Weld County Sheriff",
+      "description": "Broadcastify public safety feed 61 for Colorado.",
+      "city": "",
+      "county": "Various",
+      "state": "CO",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "colorado",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/61"
+    },
+    {
+      "id": "bf-24763-delta-and-northern-gunnison-counties-publi",
+      "name": "Delta and Northern Gunnison Counties Public Safety",
+      "description": "Broadcastify public safety feed 24763 for Colorado.",
+      "city": "",
+      "county": "Various",
+      "state": "CO",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "colorado"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/24763"
+    },
+    {
+      "id": "bf-8401-morgan-county-sheriff-police-fire-and-ems",
+      "name": "Morgan County Sheriff, Police, Fire and EMS",
+      "description": "Broadcastify public safety feed 8401 for Colorado.",
+      "city": "",
+      "county": "Various",
+      "state": "CO",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "colorado",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/8401"
+    },
+    {
+      "id": "bf-46604-south-metro-fire-rescue",
+      "name": "South Metro Fire Rescue",
+      "description": "Broadcastify public safety feed 46604 for Colorado.",
+      "city": "",
+      "county": "Various",
+      "state": "CO",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "colorado",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46604"
+    },
+    {
+      "id": "bf-11324-logan-county-sheriff-fire-and-ems-sheriff-",
+      "name": "Logan County Sheriff, Fire, and EMS, Sheriff, Sterling Police, State Patrol",
+      "description": "Broadcastify public safety feed 11324 for Colorado.",
+      "city": "",
+      "county": "Various",
+      "state": "CO",
+      "service_types": [
+        "dispatch",
+        "law",
+        "highway",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "colorado",
+        "law",
+        "highway",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/11324"
+    },
+    {
+      "id": "bf-28370-adams-county-fire-and-ems",
+      "name": "Adams County Fire and EMS",
+      "description": "Broadcastify public safety feed 28370 for Colorado.",
+      "city": "",
+      "county": "Various",
+      "state": "CO",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "colorado",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/28370"
+    },
+    {
+      "id": "bf-28331-grand-county-public-safety",
+      "name": "Grand County Public Safety",
+      "description": "Broadcastify public safety feed 28331 for Colorado.",
+      "city": "",
+      "county": "Various",
+      "state": "CO",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "colorado"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/28331"
+    },
+    {
+      "id": "bf-22646-poudre-fire-authority-and-ems",
+      "name": "Poudre Fire Authority and EMS",
+      "description": "Broadcastify public safety feed 22646 for Colorado.",
+      "city": "",
+      "county": "Various",
+      "state": "CO",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "colorado",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/22646"
+    },
+    {
+      "id": "bf-28821-aurora-fire",
+      "name": "Aurora Fire",
+      "description": "Broadcastify public safety feed 28821 for Colorado.",
+      "city": "",
+      "county": "Various",
+      "state": "CO",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "colorado",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/28821"
+    },
+    {
+      "id": "bf-32274-estes-park-fire-and-ems-and-rocky-mountain",
+      "name": "Estes Park Fire and EMS and Rocky Mountain National Park",
+      "description": "Broadcastify public safety feed 32274 for Colorado.",
+      "city": "",
+      "county": "Various",
+      "state": "CO",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "colorado",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32274"
+    },
+    {
+      "id": "bf-44018-chaffee-county-public-safety",
+      "name": "Chaffee County Public Safety",
+      "description": "Broadcastify public safety feed 44018 for Colorado.",
+      "city": "",
+      "county": "Various",
+      "state": "CO",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "colorado"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44018"
+    },
+    {
+      "id": "bf-60-colorado-state-patrol-el-paso-teller-and-p",
+      "name": "Colorado State Patrol - El Paso, Teller, and Pueblo Counties",
+      "description": "Broadcastify public safety feed 60 for Colorado.",
+      "city": "",
+      "county": "Various",
+      "state": "CO",
+      "service_types": [
+        "dispatch",
+        "law",
+        "highway"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "colorado",
+        "law",
+        "highway"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/60"
+    },
+    {
+      "id": "bf-34892-summit-and-eagle-county-public-safety",
+      "name": "Summit and Eagle County Public Safety",
+      "description": "Broadcastify public safety feed 34892 for Colorado.",
+      "city": "",
+      "county": "Various",
+      "state": "CO",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "colorado"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/34892"
+    },
+    {
+      "id": "bf-16476-crowley-county-sheriff-fire-and-ems",
+      "name": "Crowley County Sheriff, Fire and EMS",
+      "description": "Broadcastify public safety feed 16476 for Colorado.",
+      "city": "",
+      "county": "Various",
+      "state": "CO",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "colorado",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/16476"
+    },
+    {
+      "id": "bf-34-colorado-springs-fire-and-ems",
+      "name": "Colorado Springs Fire and EMS",
+      "description": "Broadcastify public safety feed 34 for Colorado.",
+      "city": "",
+      "county": "Various",
+      "state": "CO",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "colorado",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/34"
+    },
+    {
+      "id": "bf-45175-larimer-county-emergency-services-fire-ems",
+      "name": "Larimer County Emergency Services - Fire/EMS/SAR",
+      "description": "Broadcastify public safety feed 45175 for Colorado.",
+      "city": "",
+      "county": "Various",
+      "state": "CO",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "colorado",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45175"
+    },
+    {
+      "id": "bf-43166-rio-grande-public-safety",
+      "name": "Rio Grande Public Safety",
+      "description": "Broadcastify public safety feed 43166 for Colorado.",
+      "city": "",
+      "county": "Various",
+      "state": "CO",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "colorado"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43166"
+    },
+    {
+      "id": "bf-222-west-metro-fire-rescue",
+      "name": "West Metro Fire Rescue",
+      "description": "Broadcastify public safety feed 222 for Colorado.",
+      "city": "",
+      "county": "Various",
+      "state": "CO",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "colorado",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/222"
+    },
+    {
+      "id": "bf-42230-vail-avon-eagle-edwards-gypsum-minturn-ecs",
+      "name": "Vail, Avon, Eagle, Edwards, Gypsum, Minturn, ECSO - Police, Fire and EMS",
+      "description": "Broadcastify public safety feed 42230 for Colorado.",
+      "city": "",
+      "county": "Various",
+      "state": "CO",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "colorado",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42230"
+    },
+    {
+      "id": "bf-46844-loveland-fire-rescue-authority",
+      "name": "Loveland Fire Rescue Authority",
+      "description": "Broadcastify public safety feed 46844 for Colorado.",
+      "city": "",
+      "county": "Various",
+      "state": "CO",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "colorado",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46844"
+    },
+    {
+      "id": "bf-44285-douglas-and-elbert-county-fire-districts",
+      "name": "Douglas and Elbert County Fire Districts",
+      "description": "Broadcastify public safety feed 44285 for Colorado.",
+      "city": "",
+      "county": "Various",
+      "state": "CO",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "colorado",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44285"
+    },
+    {
+      "id": "bf-42224-montezuma-county-fire-and-ems",
+      "name": "Montezuma County Fire and EMS",
+      "description": "Broadcastify public safety feed 42224 for Colorado.",
+      "city": "",
+      "county": "Various",
+      "state": "CO",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "colorado",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42224"
+    },
+    {
+      "id": "bf-386-dolores-montezuma-and-san-juan-counties-sh",
+      "name": "Dolores, Montezuma, and San Juan Counties Sheriff and Fire",
+      "description": "Broadcastify public safety feed 386 for Colorado.",
+      "city": "",
+      "county": "Various",
+      "state": "CO",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "colorado",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/386"
+    },
+    {
+      "id": "bf-47459-baca-county-public-safety",
+      "name": "Baca County Public Safety",
+      "description": "Broadcastify public safety feed 47459 for Colorado.",
+      "city": "",
+      "county": "Various",
+      "state": "CO",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "colorado"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47459"
+    },
+    {
+      "id": "bf-16273-arvada-fire-and-ems",
+      "name": "Arvada Fire and EMS",
+      "description": "Broadcastify public safety feed 16273 for Colorado.",
+      "city": "",
+      "county": "Various",
+      "state": "CO",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "colorado",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/16273"
+    },
+    {
+      "id": "bf-32029-boulder-city-fire",
+      "name": "Boulder City Fire",
+      "description": "Broadcastify public safety feed 32029 for Colorado.",
+      "city": "",
+      "county": "Various",
+      "state": "CO",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "colorado",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32029"
+    },
+    {
+      "id": "bf-46683-colorado-state-patrol-troop-3c-larimer-and",
+      "name": "Colorado State Patrol Troop 3C (Larimer) and Troop 3A (Weld) Dispatch",
+      "description": "Broadcastify public safety feed 46683 for Colorado.",
+      "city": "",
+      "county": "Various",
+      "state": "CO",
+      "service_types": [
+        "dispatch",
+        "law",
+        "highway"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "colorado",
+        "law",
+        "highway"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46683"
+    },
+    {
+      "id": "bf-46211-jeffcom-jeffco-mtn-fire-depts-foothills-ev",
+      "name": "Jeffcom, Jeffco Mtn Fire Depts, Foothills, Evergreen, Elk Creek, Indian Hills, Inter Canyon",
+      "description": "Broadcastify public safety feed 46211 for Colorado.",
+      "city": "",
+      "county": "Various",
+      "state": "CO",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "colorado",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46211"
+    },
+    {
+      "id": "bf-4269-mountain-area-sheriff-and-fire-departments",
+      "name": "Mountain Area Sheriff and Fire Departments",
+      "description": "Broadcastify public safety feed 4269 for Colorado.",
+      "city": "",
+      "county": "Various",
+      "state": "CO",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "colorado",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/4269"
+    },
+    {
+      "id": "bf-12336-phillips-county-law-enforcement-fire-and-e",
+      "name": "Phillips County Law Enforcement, Fire, and EMS",
+      "description": "Broadcastify public safety feed 12336 for Colorado.",
+      "city": "",
+      "county": "Various",
+      "state": "CO",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "colorado",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/12336"
+    },
+    {
+      "id": "bf-28371-weld-county-fire-and-ems",
+      "name": "Weld County Fire and EMS",
+      "description": "Broadcastify public safety feed 28371 for Colorado.",
+      "city": "",
+      "county": "Various",
+      "state": "CO",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "colorado",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/28371"
+    },
+    {
+      "id": "bf-41932-el-paso-county-sheriff-s-office-epso-1",
+      "name": "El Paso County Sheriff's Office EPSO-1",
+      "description": "Broadcastify public safety feed 41932 for Colorado.",
+      "city": "",
+      "county": "Various",
+      "state": "CO",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "colorado",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41932"
+    },
+    {
+      "id": "bf-32168-el-paso-county-fire-dispatch",
+      "name": "El Paso County Fire Dispatch",
+      "description": "Broadcastify public safety feed 32168 for Colorado.",
+      "city": "",
+      "county": "Various",
+      "state": "CO",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "colorado",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32168"
+    },
+    {
+      "id": "bf-12004-el-paso-county-fire-and-ems",
+      "name": "El Paso County Fire and EMS",
+      "description": "Broadcastify public safety feed 12004 for Colorado.",
+      "city": "",
+      "county": "Various",
+      "state": "CO",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "colorado",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/12004"
+    },
+    {
+      "id": "bf-41933-el-paso-county-sheriff-s-office-epso-3",
+      "name": "El Paso County Sheriff's Office EPSO-3",
+      "description": "Broadcastify public safety feed 41933 for Colorado.",
+      "city": "",
+      "county": "Various",
+      "state": "CO",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "colorado",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41933"
+    },
+    {
+      "id": "bf-37-four-corners-area-fire-and-ems",
+      "name": "Four Corners Area Fire and EMS",
+      "description": "Broadcastify public safety feed 37 for Colorado.",
+      "city": "",
+      "county": "Various",
+      "state": "CO",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "colorado",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37"
+    },
+    {
+      "id": "bf-43282-sable-bennett-strasburg-byers-and-deer-tra",
+      "name": "Sable, Bennett, Strasburg, Byers and Deer Trail Fire Agencies",
+      "description": "Broadcastify public safety feed 43282 for Colorado.",
+      "city": "",
+      "county": "Various",
+      "state": "CO",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "colorado",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43282"
+    },
+    {
+      "id": "bf-32412-estes-valley-fire",
+      "name": "Estes Valley Fire",
+      "description": "Broadcastify public safety feed 32412 for Colorado.",
+      "city": "",
+      "county": "Various",
+      "state": "CO",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "colorado",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32412"
+    },
+    {
+      "id": "bf-42333-colorado-state-patrol-eagle-county-4c",
+      "name": "Colorado State Patrol - Eagle County (4c)",
+      "description": "Broadcastify public safety feed 42333 for Colorado.",
+      "city": "",
+      "county": "Various",
+      "state": "CO",
+      "service_types": [
+        "dispatch",
+        "law",
+        "highway"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "colorado",
+        "law",
+        "highway"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42333"
+    },
+    {
+      "id": "bf-44278-elbert-county-fire-agencies",
+      "name": "Elbert County Fire Agencies",
+      "description": "Broadcastify public safety feed 44278 for Colorado.",
+      "city": "",
+      "county": "Various",
+      "state": "CO",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "colorado",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44278"
+    },
+    {
+      "id": "bf-5930-douglas-county-fire-department-800mhz",
+      "name": "Douglas County Fire Department 800Mhz",
+      "description": "Broadcastify public safety feed 5930 for Colorado.",
+      "city": "",
+      "county": "Various",
+      "state": "CO",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "colorado",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/5930"
+    },
+    {
+      "id": "bf-36161-colorado-springs-fire-dispatch",
+      "name": "Colorado Springs Fire Dispatch",
+      "description": "Broadcastify public safety feed 36161 for Colorado.",
+      "city": "",
+      "county": "Various",
+      "state": "CO",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "colorado",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/36161"
+    },
+    {
+      "id": "bf-41053-del-norte-ambulance",
+      "name": "Del Norte Ambulance",
+      "description": "Broadcastify public safety feed 41053 for Colorado.",
+      "city": "",
+      "county": "Various",
+      "state": "CO",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "colorado"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41053"
+    },
+    {
+      "id": "bf-45527-front-range-cdot-safety-patrol-and-traffic",
+      "name": "Front Range - CDOT Safety Patrol and Traffic Management Teams",
+      "description": "Broadcastify public safety feed 45527 for Colorado.",
+      "city": "",
+      "county": "Various",
+      "state": "CO",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "colorado"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45527"
+    },
+    {
+      "id": "bf-42196-crystal-park-fire-department",
+      "name": "Crystal Park Fire Department",
+      "description": "Broadcastify public safety feed 42196 for Colorado.",
+      "city": "",
+      "county": "Various",
+      "state": "CO",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "colorado",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42196"
+    },
+    {
+      "id": "bf-18579-monte-vista-ambulance",
+      "name": "Monte Vista Ambulance",
+      "description": "Broadcastify public safety feed 18579 for Colorado.",
+      "city": "",
+      "county": "Various",
+      "state": "CO",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "colorado"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/18579"
+    },
+    {
+      "id": "bf-17360-monte-vista-fire-protection-district",
+      "name": "Monte Vista Fire Protection District",
+      "description": "Broadcastify public safety feed 17360 for Colorado.",
+      "city": "",
+      "county": "Various",
+      "state": "CO",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "colorado",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/17360"
+    },
+    {
+      "id": "bf-34234-centennial-airport-emergency-operations",
+      "name": "Centennial Airport Emergency Operations",
+      "description": "Broadcastify public safety feed 34234 for Colorado.",
+      "city": "",
+      "county": "Various",
+      "state": "CO",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "colorado"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/34234"
+    },
+    {
+      "id": "bf-35031-park-county-law-enforcement",
+      "name": "Park County Law Enforcement",
+      "description": "Broadcastify public safety feed 35031 for Colorado.",
+      "city": "",
+      "county": "Various",
+      "state": "CO",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "colorado",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/35031"
+    },
+    {
+      "id": "bf-22222-north-central-colorado-counties-search-and",
+      "name": "North Central Colorado Counties Search and Rescue",
+      "description": "Broadcastify public safety feed 22222 for Colorado.",
+      "city": "",
+      "county": "Various",
+      "state": "CO",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "colorado"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/22222"
+    },
+    {
+      "id": "bf-4213-rocky-mountain-rescue-group",
+      "name": "Rocky Mountain Rescue Group",
+      "description": "Broadcastify public safety feed 4213 for Colorado.",
+      "city": "",
+      "county": "Various",
+      "state": "CO",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "colorado"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/4213"
+    },
+    {
+      "id": "bf-42873-boulder-county-fire-tac",
+      "name": "Boulder County Fire Tac",
+      "description": "Broadcastify public safety feed 42873 for Colorado.",
+      "city": "",
+      "county": "Various",
+      "state": "CO",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "colorado",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42873"
+    },
+    {
+      "id": "bf-21977-conejos-county-fire-dispatch-south",
+      "name": "Conejos County Fire Dispatch - South",
+      "description": "Broadcastify public safety feed 21977 for Colorado.",
+      "city": "",
+      "county": "Various",
+      "state": "CO",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "colorado",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/21977"
+    },
+    {
+      "id": "bf-27895-conejos-county-ems",
+      "name": "Conejos County EMS",
+      "description": "Broadcastify public safety feed 27895 for Colorado.",
+      "city": "",
+      "county": "Various",
+      "state": "CO",
+      "service_types": [
+        "dispatch",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "colorado",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/27895"
+    },
+    {
+      "id": "bf-26643-costilla-county-ambulance-district",
+      "name": "Costilla County Ambulance District",
+      "description": "Broadcastify public safety feed 26643 for Colorado.",
+      "city": "",
+      "county": "Various",
+      "state": "CO",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "colorado"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/26643"
+    },
+    {
+      "id": "bf-45629-west-douglas-fire-protection-district-seda",
+      "name": "West Douglas Fire Protection District (Sedalia)",
+      "description": "Broadcastify public safety feed 45629 for Colorado.",
+      "city": "",
+      "county": "Various",
+      "state": "CO",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "colorado",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45629"
+    },
+    {
+      "id": "bf-35195-farmington-area-noaa-weather-radio-wxj37",
+      "name": "Farmington Area NOAA Weather Radio WXJ37",
+      "description": "Broadcastify public safety feed 35195 for Colorado.",
+      "city": "",
+      "county": "Various",
+      "state": "CO",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "colorado"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/35195"
+    },
+    {
+      "id": "bf-43465-stratton-fire",
+      "name": "Stratton Fire",
+      "description": "Broadcastify public safety feed 43465 for Colorado.",
+      "city": "",
+      "county": "Various",
+      "state": "CO",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "colorado",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43465"
+    },
+    {
+      "id": "bf-46118-golden-fire-department-fire-ems",
+      "name": "Golden Fire Department \u2013 Fire / EMS",
+      "description": "Broadcastify public safety feed 46118 for Colorado.",
+      "city": "",
+      "county": "Various",
+      "state": "CO",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "colorado",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46118"
+    },
+    {
+      "id": "bf-32201-manitou-springs-fire-1",
+      "name": "Manitou Springs Fire 1",
+      "description": "Broadcastify public safety feed 32201 for Colorado.",
+      "city": "",
+      "county": "Various",
+      "state": "CO",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "colorado",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32201"
+    }
+  ]
+}

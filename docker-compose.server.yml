@@ -1,0 +1,57 @@
+services:
+  backend:
+    build:
+      context: ./frontend/java_backend
+      dockerfile: Dockerfile
+    container_name: scanner-backend
+    working_dir: /workspace/frontend/java_backend
+    command: bash -lc "./build_executable.sh && java -jar dist/backend-lite.jar"
+    environment:
+      PIPELINE_LOG_PATH: /host-tmp/${DOCKER_PIPELINE_LOG_FILE:-pipeline_live_doordash.log}
+      JAVA_BACKEND_HOST: 0.0.0.0
+      JAVA_BACKEND_PORT: 18080
+      SELECTOR_PYTHON_BIN: /usr/bin/python3
+      SELECTOR_SCRIPT_PATH: /workspace/channel_selector.py
+      BROADCASTIFY_CATALOG_SCRIPT_PATH: /workspace/broadcastify_catalog_service.py
+      BROADCASTIFY_CHANNELS_FILE: /workspace/config/broadcastify_channels.national.manifest.json
+      BROADCASTIFY_SELECTOR_CITY: Anacortes
+      BROADCASTIFY_SELECTOR_COUNTY: Skagit County
+      BROADCASTIFY_SELECTOR_STATE: WA
+      BROADCASTIFY_SELECTOR_DESIRED_TYPES: law,dispatch
+      BROADCASTIFY_SELECTOR_USE_OLLAMA_RERANK: "true"
+      BROADCASTIFY_SELECTOR_OLLAMA_MODEL: scout-rank
+      BROADCASTIFY_SELECTOR_OLLAMA_URL: http://host.docker.internal:11434/api/generate
+      BACKEND_HELPER_TIMEOUT_SECONDS: 90
+    volumes:
+      - ./:/workspace
+      - ${DOCKER_PIPELINE_LOG_DIR:-/tmp}:/host-tmp:ro
+    ports:
+      - "18080:18080"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    init: true
+    stop_grace_period: 45s
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: scanner-frontend
+    working_dir: /workspace/frontend
+    command: python3 dev_server.py
+    environment:
+      FRONTEND_DEV_HOST: 0.0.0.0
+      FRONTEND_DEV_PORT: 8787
+      PIPELINE_LOG_PATH: /host-tmp/${DOCKER_PIPELINE_LOG_FILE:-pipeline_live_doordash.log}
+      BACKEND_BASE_URL: http://backend:18080
+    volumes:
+      - ./:/workspace
+      - ${DOCKER_PIPELINE_LOG_DIR:-/tmp}:/host-tmp:ro
+    ports:
+      - "8787:8787"
+    depends_on:
+      - backend
+    init: true
+    stop_grace_period: 30s
+    restart: unless-stopped

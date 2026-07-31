@@ -1,0 +1,220 @@
+{
+  "channels": [
+    {
+      "id": "bf-47028-south-san-francisco-police",
+      "name": "South San Francisco City Police",
+      "description": "Broadcastify feed 47028 for South San Francisco police operations near Daly City/SFO corridor.",
+      "city": "South San Francisco",
+      "county": "San Mateo County",
+      "state": "CA",
+      "service_types": [
+        "law",
+        "dispatch"
+      ],
+      "tags": [
+        "police",
+        "dispatch",
+        "san mateo",
+        "daly city",
+        "us-101",
+        "i-280"
+      ],
+      "lat": 37.6547,
+      "lon": -122.4077,
+      "listeners": 90,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47028"
+    },
+    {
+      "id": "bf-45051-san-mateo-county-ems",
+      "name": "San Mateo County EMS Dispatch",
+      "description": "Broadcastify feed 45051 for San Mateo County EMS dispatch traffic.",
+      "city": "Redwood City",
+      "county": "San Mateo County",
+      "state": "CA",
+      "service_types": [
+        "ems",
+        "dispatch",
+        "fire"
+      ],
+      "tags": [
+        "ems",
+        "dispatch",
+        "san mateo",
+        "peninsula"
+      ],
+      "lat": 37.4852,
+      "lon": -122.2364,
+      "listeners": 75,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45051"
+    },
+    {
+      "id": "bf-10239-chp-la-orange-centers",
+      "name": "CHP Los Angeles and Orange County Centers",
+      "description": "Broadcastify feed 10239 for California Highway Patrol LA/Orange dispatch channels.",
+      "city": "Los Angeles",
+      "county": "Los Angeles County",
+      "state": "CA",
+      "service_types": [
+        "law",
+        "dispatch",
+        "highway"
+      ],
+      "tags": [
+        "chp",
+        "highway",
+        "interstate",
+        "i-5",
+        "i-10",
+        "i-405"
+      ],
+      "lat": 34.0522,
+      "lon": -118.2437,
+      "listeners": 260,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/10239"
+    },
+    {
+      "id": "bf-20296-lapd-south-bureau",
+      "name": "LAPD South Bureau",
+      "description": "Broadcastify feed 20296 for LAPD South Bureau dispatch channels.",
+      "city": "Los Angeles",
+      "county": "Los Angeles County",
+      "state": "CA",
+      "service_types": [
+        "law",
+        "dispatch"
+      ],
+      "tags": [
+        "lapd",
+        "south bureau",
+        "police",
+        "dispatch"
+      ],
+      "lat": 33.9739,
+      "lon": -118.2487,
+      "listeners": 140,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/20296"
+    },
+    {
+      "id": "bf-33623-lapd-west-divisions",
+      "name": "LAPD West Divisions",
+      "description": "Broadcastify feed 33623 for LAPD west-side divisions.",
+      "city": "Los Angeles",
+      "county": "Los Angeles County",
+      "state": "CA",
+      "service_types": [
+        "law",
+        "dispatch"
+      ],
+      "tags": [
+        "lapd",
+        "west",
+        "police",
+        "dispatch"
+      ],
+      "lat": 34.0522,
+      "lon": -118.2437,
+      "listeners": 130,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/33623"
+    },
+    {
+      "id": "bf-26569-lapd-valley-bureau",
+      "name": "LAPD Valley Bureau",
+      "description": "Broadcastify feed 26569 for LAPD Valley Bureau dispatch channels.",
+      "city": "Los Angeles",
+      "county": "Los Angeles County",
+      "state": "CA",
+      "service_types": [
+        "law",
+        "dispatch"
+      ],
+      "tags": [
+        "lapd",
+        "valley",
+        "police",
+        "dispatch"
+      ],
+      "lat": 34.1899,
+      "lon": -118.4514,
+      "listeners": 120,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/26569"
+    },
+    {
+      "id": "bf-25187-lasd-chp-downey-fire",
+      "name": "LASD, CHP and Downey Fire",
+      "description": "Broadcastify feed 25187 for mixed Los Angeles County Sheriff, CHP, and Downey Fire dispatch traffic.",
+      "city": "Downey",
+      "county": "Los Angeles County",
+      "state": "CA",
+      "service_types": [
+        "law",
+        "dispatch",
+        "fire",
+        "highway"
+      ],
+      "tags": [
+        "lasd",
+        "chp",
+        "downey",
+        "sheriff",
+        "highway",
+        "dispatch"
+      ],
+      "lat": 33.9401,
+      "lon": -118.1332,
+      "listeners": 135,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/25187"
+    },
+    {
+      "id": "bf-1929-butte-county-fire-calfire-chico-firebutte-",
+      "name": "Butte County Fire / CalFire, Chico FireButte County Public Safety since 2009 - the original streamer\r\n\r\nCurrently streaming Butte/CalFire Dispatch (aka LocalNet) and CalFire Butte Command.  Chico Fire has been removed from the summer lineup and will be streamed during non-fire season months.",
+      "description": "Broadcastify Top 50 national bootstrap feed 1929 for Butte, CA.",
+      "city": "Butte",
+      "county": "Butte",
+      "state": "CA",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "fire",
+        "national-bootstrap",
+        "butte"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 205,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/1929"
+    },
+    {
+      "id": "bf-5688-sacramento-county-sheriff-and-city-polices",
+      "name": "Sacramento County Sheriff and City PoliceSacramento County Sheriff&#039;s Dept and Sacramento Police Department.  This feed includes all main dispatch channels for both agencies. (ALL P25 NOW)",
+      "description": "Broadcastify Top 50 national bootstrap feed 5688 for Sacramento, CA.",
+      "city": "Sacramento",
+      "county": "Sacramento",
+      "state": "CA",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "law",
+        "national-bootstrap",
+        "sacramento"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 86,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/5688"
+    }
+  ]
+}

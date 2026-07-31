@@ -1,0 +1,121 @@
+{
+  "channels": [
+    {
+      "id": "bf-11446-cleveland-police-and-metro-housing-authori",
+      "name": "Cleveland Police and Metro Housing Authority Also includes traffic control and special operations channels.",
+      "description": "Broadcastify Top 50 national bootstrap feed 11446 for Cuyahoga, OH.",
+      "city": "Cuyahoga",
+      "county": "Cuyahoga",
+      "state": "OH",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "law",
+        "national-bootstrap",
+        "cuyahoga"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 164,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/11446"
+    },
+    {
+      "id": "bf-13928-marion-county-public-safety-public-safety-",
+      "name": "Marion County Public Safety Public safety Marion, Ohio. LEO, EMS &amp; Fire",
+      "description": "Broadcastify Top 50 national bootstrap feed 13928 for Marion, OH.",
+      "city": "Marion",
+      "county": "Marion",
+      "state": "OH",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "fire",
+        "ems",
+        "national-bootstrap",
+        "marion"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 115,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/13928"
+    },
+    {
+      "id": "bf-32252-toledo-police-central-dispatch",
+      "name": "Toledo Police Central Dispatch",
+      "description": "Broadcastify Top 50 national bootstrap feed 32252 for Lucas, OH.",
+      "city": "Lucas",
+      "county": "Lucas",
+      "state": "OH",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "law",
+        "national-bootstrap",
+        "lucas"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 80,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32252"
+    },
+    {
+      "id": "bf-11208-columbus-police-dispatch-citywide-columbus",
+      "name": "Columbus Police Dispatch - Citywide Columbus Police Division on the Ohio MARCS-IP System scanning all six zones (Dispatch Channels).",
+      "description": "Broadcastify Top 50 national bootstrap feed 11208 for Various, OH.",
+      "city": "",
+      "county": "Various",
+      "state": "OH",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "law",
+        "national-bootstrap",
+        "various"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 72,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/11208"
+    },
+    {
+      "id": "bf-188-allen-county-public-safety-osp-post-2-alle",
+      "name": "Allen County Public Safety OSP Post 2, Allen County Sheriff, Lima Police Department and all Police, Fire and public EMS agencies in Allen County, Ohio.",
+      "description": "Broadcastify Top 50 national bootstrap feed 188 for Allen, OH.",
+      "city": "Allen",
+      "county": "Allen",
+      "state": "OH",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "law",
+        "fire",
+        "ems",
+        "national-bootstrap",
+        "allen"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 64,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/188"
+    }
+  ]
+}

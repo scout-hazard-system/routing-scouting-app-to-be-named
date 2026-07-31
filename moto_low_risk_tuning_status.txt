@@ -1,0 +1,24 @@
+Moto G 2025 Low-Risk Tuning Status
+Date: 2026-07-24
+
+Applied (ADB, reversible, no flashing/root):
+- window_animation_scale = 0.5
+- transition_animation_scale = 0.5
+- animator_duration_scale = 0.5
+- cached_apps_freezer = enabled
+
+Why:
+- Improves UI responsiveness by reducing animation overhead.
+- Helps background memory pressure by allowing cached app freezing.
+
+Rollback commands:
+adb shell settings put global window_animation_scale 1.0
+adb shell settings put global transition_animation_scale 1.0
+adb shell settings put global animator_duration_scale 1.0
+adb shell settings put global cached_apps_freezer null
+
+Current verification:
+- window_animation_scale: 0.5
+- transition_animation_scale: 0.5
+- animator_duration_scale: 0.5
+- cached_apps_freezer: enabled

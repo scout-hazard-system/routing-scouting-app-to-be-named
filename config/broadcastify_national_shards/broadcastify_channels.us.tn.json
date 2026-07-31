@@ -1,0 +1,28 @@
+{
+  "channels": [
+    {
+      "id": "bf-9119-bradley-county-sheriff-cleveland-police-fi",
+      "name": "Bradley County Sheriff, Cleveland Police, Fire Rescue and MAC",
+      "description": "Broadcastify Top 50 national bootstrap feed 9119 for Bradley, TN.",
+      "city": "Bradley",
+      "county": "Bradley",
+      "state": "TN",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "law",
+        "fire",
+        "national-bootstrap",
+        "bradley"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 64,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/9119"
+    }
+  ]
+}

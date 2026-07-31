@@ -1,0 +1,160 @@
+{"meta":{"state":"CA","z":15,"x":5621,"y":13083,"zhs":{"key":"z/15/5621/13083|h3/9/nxnc/pb90|s2/12/f4/x6/131","z_key":"z/15/5621/13083","h_key":"h3/9/nxnc/pb90","s_key":"s2/12/f4/x6/131"},"source":"planet","roads":953,"buildings":334,"areas":48,"pois":284}}
+{"type":"poi","name":"Sepulveda House Museum","kind":"museum","lat":34.057564,"lon":-118.238018}
+{"type":"poi","name":"Amboy Quality Meats & Delicious Burgers","kind":"restaurant","lat":34.061361,"lon":-118.239710}
+{"type":"poi","name":"Grand Park","kind":"information","lat":34.055504,"lon":-118.244975}
+{"type":"poi","name":"Katsu Sando","kind":"fast_food","lat":34.061353,"lon":-118.238653}
+{"type":"poi","name":"Golden Tree","kind":"restaurant","lat":34.059677,"lon":-118.239506}
+{"type":"poi","name":"Mr. Churro","kind":"fast_food","lat":34.057466,"lon":-118.237476}
+{"type":"poi","name":"East Garden Restaurant","kind":"restaurant","lat":34.061728,"lon":-118.239707}
+{"type":"poi","name":"Long's Family Pastry","kind":"pastry","lat":34.060315,"lon":-118.237827}
+{"type":"poi","name":"ABC Seafood","kind":"restaurant","lat":34.060170,"lon":-118.238406}
+{"type":"poi","name":"My Dung Sandwich","kind":"fast_food","lat":34.060179,"lon":-118.239147}
+{"type":"poi","name":"Eastern International Bank","kind":"bank","lat":34.059904,"lon":-118.238516}
+{"type":"poi","name":"Ord Massage","kind":"massage","lat":34.060161,"lon":-118.239096}
+{"type":"poi","name":"Minon Cake","kind":"cafe","lat":34.060135,"lon":-118.239050}
+{"type":"poi","name":"Mama Lu's Dumpling House","kind":"restaurant","lat":34.059966,"lon":-118.237725}
+{"type":"poi","name":"Phoenix Inn Chinese Cuisine","kind":"restaurant","lat":34.060284,"lon":-118.238720}
+{"type":"poi","name":"New High Herbs and Tea","kind":"herbalist","lat":34.060526,"lon":-118.238546}
+{"type":"poi","name":"EOS Fitness","kind":"fitness_centre","lat":34.061439,"lon":-118.243994}
+{"type":"poi","name":"JJ's Body Massage","kind":"massage","lat":34.060117,"lon":-118.239603}
+{"type":"poi","name":"Chase","kind":"bank","lat":34.059044,"lon":-118.240217}
+{"type":"poi","name":"Quickly","kind":"cafe","lat":34.061777,"lon":-118.239605}
+{"type":"poi","name":"Suehiro Mini","kind":"restaurant","lat":34.059742,"lon":-118.239080}
+{"type":"poi","name":"Lien Hoa Chinese Deli & Seafood Market","kind":"restaurant","lat":34.060941,"lon":-118.239206}
+{"type":"poi","name":"Scoops","kind":"ice_cream","lat":34.061326,"lon":-118.239504}
+{"type":"poi","name":"Qin West Noodle","kind":"restaurant","lat":34.061301,"lon":-118.239364}
+{"type":"poi","name":"Ten Ren's Tea Time","kind":"cafe","lat":34.061610,"lon":-118.239887}
+{"type":"poi","name":"Mayflower Seafood Restaurant","kind":"restaurant","lat":34.059557,"lon":-118.238195}
+{"type":"poi","name":"Placita Cafe","kind":"cafe","lat":34.058637,"lon":-118.237760}
+{"type":"poi","name":"Buffalo Wild Wings","kind":"restaurant","lat":34.058144,"lon":-118.240287}
+{"type":"poi","name":"Kim Chuy Restaurant","kind":"restaurant","lat":34.061241,"lon":-118.239166}
+{"type":"poi","name":"Galero Grill","kind":"cafe","lat":34.057251,"lon":-118.244618}
+{"type":"poi","name":"Hing Fat Co.","kind":"yes","lat":34.060828,"lon":-118.238921}
+{"type":"poi","name":"J Enterprises","kind":"yes","lat":34.061013,"lon":-118.238814}
+{"type":"poi","name":"Tian Xiang, Inc","kind":"yes","lat":34.060968,"lon":-118.238844}
+{"type":"poi","name":"First Bank","kind":"bank","lat":34.061108,"lon":-118.239377}
+{"type":"poi","name":"Hoi Yeung Seafood Co.","kind":"seafood","lat":34.060768,"lon":-118.238948}
+{"type":"poi","name":"Liberty Aquarium","kind":"pet","lat":34.060297,"lon":-118.239514}
+{"type":"poi","name":"Child Development Center","kind":"school","lat":34.059777,"lon":-118.241770}
+{"type":"poi","name":"Valyou Furniture","kind":"furniture","lat":34.059239,"lon":-118.237905}
+{"type":"poi","name":"Burger King","kind":"fast_food","lat":34.060555,"lon":-118.244326}
+{"type":"poi","name":"Los Angeles County Sheriff's Department","kind":"police","lat":34.055913,"lon":-118.242577}
+{"type":"poi","name":"everywhere","kind":"brewery","lat":34.056084,"lon":-118.235864}
+{"type":"poi","name":"Ramón C. Cortines School of Visual and Performing Arts","kind":"school","lat":34.058966,"lon":-118.243065}
+{"type":"poi","name":"Yaanga park","kind":"park","lat":34.056008,"lon":-118.238044}
+{"type":"poi","name":"Amtrak Thruway Bus Station","kind":"bus_station","lat":34.056448,"lon":-118.235923}
+{"type":"poi","name":"La Iglesia de Nuestra Señora la Reina de los Ángeles","kind":"place_of_worship","lat":34.057073,"lon":-118.239632}
+{"type":"poi","name":"Kiosco","kind":"stage","lat":34.056546,"lon":-118.238761}
+{"type":"poi","name":"Avis","kind":"car_rental","lat":34.055488,"lon":-118.235826}
+{"type":"poi","name":"Ben & Jerry's","kind":"ice_cream","lat":34.055795,"lon":-118.235840}
+{"type":"poi","name":"Hertz","kind":"car_rental","lat":34.055477,"lon":-118.235762}
+{"type":"poi","name":"Starbucks","kind":"cafe","lat":34.056157,"lon":-118.235520}
+{"type":"poi","name":"Subway","kind":"fast_food","lat":34.056304,"lon":-118.235630}
+{"type":"poi","name":"T&Y","kind":"bakery","lat":34.055686,"lon":-118.235864}
+{"type":"poi","name":"Traxx","kind":"restaurant","lat":34.056186,"lon":-118.236322}
+{"type":"poi","name":"Traxx","kind":"bar","lat":34.056024,"lon":-118.236682}
+{"type":"poi","name":"Wetzel's Pretzels","kind":"fast_food","lat":34.055979,"lon":-118.235507}
+{"type":"poi","name":"Placita de Dolores","kind":"park","lat":34.056782,"lon":-118.237768}
+{"type":"poi","name":"Campo Santo","kind":"cemetery","lat":34.056884,"lon":-118.239616}
+{"type":"poi","name":"Plaza Fire House","kind":"museum","lat":34.055973,"lon":-118.238871}
+{"type":"poi","name":"Hellman/Quon Building","kind":"building","lat":34.056046,"lon":-118.239066}
+{"type":"poi","name":"Flag Garden","kind":"garden","lat":34.055195,"lon":-118.244745}
+{"type":"poi","name":"Chinatown Gateway","kind":"monument","lat":34.058937,"lon":-118.240040}
+{"type":"poi","name":"Budget","kind":"car_rental","lat":34.055491,"lon":-118.235864}
+{"type":"poi","name":"Los Angeles Times Globe Lobby","kind":"artwork","lat":34.052926,"lon":-118.244884}
+{"type":"poi","name":"George Washington statue","kind":"artwork","lat":34.056157,"lon":-118.245775}
+{"type":"poi","name":"Sakura Grove","kind":"memorial","lat":34.054884,"lon":-118.244753}
+{"type":"poi","name":"Vietnam Veterans Memorial","kind":"artwork","lat":34.055011,"lon":-118.244511}
+{"type":"poi","name":"Our Lady Queen of Angels Catholic Church","kind":"social_facility","lat":34.057157,"lon":-118.239758}
+{"type":"poi","name":"Amy's Bakery","kind":"bakery","lat":34.058473,"lon":-118.238946}
+{"type":"poi","name":"Family's Market","kind":"convenience","lat":34.058510,"lon":-118.239015}
+{"type":"poi","name":"Michael H. Jewelry","kind":"jewelry","lat":34.060904,"lon":-118.238873}
+{"type":"poi","name":"Wishing Bells/To Protect & To Serve","kind":"artwork","lat":34.052546,"lon":-118.241319}
+{"type":"poi","name":"Molecule Man","kind":"artwork","lat":34.052733,"lon":-118.239635}
+{"type":"poi","name":"Antonio Aguilar","kind":"artwork","lat":34.056722,"lon":-118.237741}
+{"type":"poi","name":"Los Pobladores","kind":"memorial","lat":34.056415,"lon":-118.238879}
+{"type":"poi","name":"Wall of Honor","kind":"memorial","lat":34.056257,"lon":-118.238114}
+{"type":"poi","name":"Carlos III","kind":"artwork","lat":34.056422,"lon":-118.238557}
+{"type":"poi","name":"Felipe de Neve","kind":"artwork","lat":34.056664,"lon":-118.238980}
+{"type":"poi","name":"Los Angeles Plaza","kind":"memorial","lat":34.056695,"lon":-118.238640}
+{"type":"poi","name":"Embodied","kind":"artwork","lat":34.055395,"lon":-118.242956}
+{"type":"poi","name":"Fort Moore Memorial","kind":"artwork","lat":34.058879,"lon":-118.241341}
+{"type":"poi","name":"Bracero Monument","kind":"artwork","lat":34.058266,"lon":-118.240048}
+{"type":"poi","name":"Perfect Jewelry","kind":"jewelry","lat":34.060197,"lon":-118.239211}
+{"type":"poi","name":"Choice Dental","kind":"dentist","lat":34.061015,"lon":-118.238331}
+{"type":"poi","name":"VS Hair Salon","kind":"hairdresser","lat":34.060677,"lon":-118.238479}
+{"type":"poi","name":"KBC Bakery & Deli","kind":"bakery","lat":34.060206,"lon":-118.239546}
+{"type":"poi","name":"Cathedral Gift Shop","kind":"gift","lat":34.057182,"lon":-118.244712}
+{"type":"poi","name":"AltaMed","kind":"clinic","lat":34.061053,"lon":-118.243639}
+{"type":"poi","name":"The Great Wall Co.","kind":"gift","lat":34.060859,"lon":-118.238905}
+{"type":"poi","name":"Peking Poultry","kind":"butcher","lat":34.060895,"lon":-118.239455}
+{"type":"poi","name":"Wynn Optical Express","kind":"optician","lat":34.060935,"lon":-118.238862}
+{"type":"poi","name":"Won Won Mini Market","kind":"convenience","lat":34.060399,"lon":-118.239125}
+{"type":"poi","name":"Hui Zhen Hair Salon","kind":"hairdresser","lat":34.060319,"lon":-118.239605}
+{"type":"poi","name":"Foothill Transit 498","kind":"bus_stop","lat":34.054433,"lon":-118.237307}
+{"type":"poi","name":"Cesar E Chavez & Grand","kind":"bus_stop","lat":34.060713,"lon":-118.244213}
+{"type":"poi","name":"Cesar E Chavez & Broadway","kind":"bus_stop","lat":34.059037,"lon":-118.240877}
+{"type":"poi","name":"Foothill Transit 481","kind":"bus_stop","lat":34.054271,"lon":-118.236727}
+{"type":"poi","name":"Arcadia Street & Los Angeles Street","kind":"bus_stop","lat":34.055224,"lon":-118.238967}
+{"type":"poi","name":"Spring & Cesar E Chavez","kind":"bus_stop","lat":34.057351,"lon":-118.240528}
+{"type":"poi","name":"1st & Broadway","kind":"bus_stop","lat":34.053564,"lon":-118.245219}
+{"type":"poi","name":"Cesar E Chavez & Alameda","kind":"bus_stop","lat":34.057777,"lon":-118.236381}
+{"type":"poi","name":"Spring Street & Temple Street","kind":"bus_stop","lat":34.054646,"lon":-118.242736}
+{"type":"poi","name":"Spring & Cesar E Chavez","kind":"bus_stop","lat":34.057428,"lon":-118.240131}
+{"type":"poi","name":"Spring & Temple","kind":"bus_stop","lat":34.055108,"lon":-118.242601}
+{"type":"poi","name":"Cesar E Chavez & Alameda","kind":"bus_stop","lat":34.058028,"lon":-118.236486}
+{"type":"poi","name":"Spring Street & Temple Street","kind":"bus_stop","lat":34.054233,"lon":-118.243436}
+{"type":"poi","name":"Cesar E Chavez & Spring","kind":"bus_stop","lat":34.058086,"lon":-118.239013}
+{"type":"poi","name":"Spring Street & 1st Street","kind":"bus_stop","lat":34.053859,"lon":-118.243454}
+{"type":"poi","name":"Alameda & Main","kind":"bus_stop","lat":34.059242,"lon":-118.236990}
+{"type":"poi","name":"Vignes & Main","kind":"bus_stop","lat":34.060939,"lon":-118.234845}
+{"type":"poi","name":"Foothill Transit 498","kind":"bus_stop","lat":34.054544,"lon":-118.237422}
+{"type":"poi","name":"Aliso Street & Los Angeles Street","kind":"bus_stop","lat":34.054899,"lon":-118.239809}
+{"type":"poi","name":"Main & 1st","kind":"bus_stop","lat":34.052579,"lon":-118.242937}
+{"type":"poi","name":"Main & Cesar E Chavez","kind":"bus_stop","lat":34.058030,"lon":-118.237942}
+{"type":"poi","name":"Main & Temple","kind":"bus_stop","lat":34.054259,"lon":-118.241357}
+{"type":"poi","name":"Cesar E Chavez & Grand","kind":"bus_stop","lat":34.060944,"lon":-118.244079}
+{"type":"poi","name":"Cesar E Chavez & Grand","kind":"bus_stop","lat":34.060339,"lon":-118.243757}
+{"type":"poi","name":"Temple & Grand","kind":"bus_stop","lat":34.057970,"lon":-118.246096}
+{"type":"poi","name":"Temple & Grand","kind":"bus_stop","lat":34.057126,"lon":-118.245461}
+{"type":"poi","name":"Hill & Temple","kind":"bus_stop","lat":34.056262,"lon":-118.244943}
+{"type":"poi","name":"Temple & Hill","kind":"bus_stop","lat":34.056419,"lon":-118.244272}
+{"type":"poi","name":"Temple & Hill","kind":"bus_stop","lat":34.056257,"lon":-118.244364}
+{"type":"poi","name":"Broadway & 1st","kind":"bus_stop","lat":34.053355,"lon":-118.245678}
+{"type":"poi","name":"1st & Broadway","kind":"bus_stop","lat":34.053408,"lon":-118.245364}
+{"type":"poi","name":"Broadway & 1st","kind":"bus_stop","lat":34.053959,"lon":-118.245101}
+{"type":"poi","name":"Broadway & Arcadia","kind":"bus_stop","lat":34.056982,"lon":-118.242269}
+{"type":"poi","name":"Hill & 1st","kind":"bus_stop","lat":34.054728,"lon":-118.246110}
+{"type":"poi","name":"Los Angeles & Temple","kind":"bus_stop","lat":34.053764,"lon":-118.240469}
+{"type":"poi","name":"Alameda & Los Angeles","kind":"bus_stop","lat":34.056748,"lon":-118.237256}
+{"type":"poi","name":"Alameda & Los Angeles","kind":"bus_stop","lat":34.056595,"lon":-118.237548}
+{"type":"poi","name":"Cesar E Chavez & Spring","kind":"bus_stop","lat":34.058224,"lon":-118.239871}
+{"type":"poi","name":"Los Angeles, Ca - Union Station (LAX)","kind":"bus_stop","lat":34.056439,"lon":-118.235880}
+{"type":"poi","name":"1st & Spring","kind":"bus_stop","lat":34.052935,"lon":-118.244683}
+{"type":"poi","name":"1st & Main","kind":"bus_stop","lat":34.052611,"lon":-118.243766}
+{"type":"poi","name":"Temple & Los Angeles","kind":"bus_stop","lat":34.052942,"lon":-118.240445}
+{"type":"poi","name":"Temple & Los Angeles","kind":"bus_stop","lat":34.053333,"lon":-118.240643}
+{"type":"poi","name":"Temple & Los Angeles","kind":"bus_stop","lat":34.053517,"lon":-118.241148}
+{"type":"poi","name":"Temple & Main","kind":"bus_stop","lat":34.054033,"lon":-118.241459}
+{"type":"poi","name":"Temple & Spring","kind":"bus_stop","lat":34.054822,"lon":-118.242414}
+{"type":"poi","name":"Temple & Spring","kind":"bus_stop","lat":34.054991,"lon":-118.242913}
+{"type":"poi","name":"Alameda & Cesar E Chavez","kind":"bus_stop","lat":34.057619,"lon":-118.237328}
+{"type":"poi","name":"Los Angeles & Temple","kind":"bus_stop","lat":34.054262,"lon":-118.240228}
+{"type":"poi","name":"Main & Alameda","kind":"bus_stop","lat":34.058782,"lon":-118.237256}
+{"type":"poi","name":"Spring & Temple","kind":"bus_stop","lat":34.055537,"lon":-118.242213}
+{"type":"poi","name":"Spring Street & 1st Street","kind":"bus_stop","lat":34.053877,"lon":-118.243763}
+{"type":"poi","name":"Spring Street & 1st Street","kind":"bus_stop","lat":34.053553,"lon":-118.244063}
+{"type":"poi","name":"Spring Street & 1st Street","kind":"bus_stop","lat":34.052753,"lon":-118.244777}
+{"type":"poi","name":"Broadway & Temple","kind":"bus_stop","lat":34.055913,"lon":-118.243548}
+{"type":"poi","name":"Broadway & Temple","kind":"bus_stop","lat":34.055986,"lon":-118.243208}
+{"type":"poi","name":"Broadway & Cesar E Chavez","kind":"bus_stop","lat":34.058219,"lon":-118.240391}
+{"type":"poi","name":"Hill & Temple","kind":"bus_stop","lat":34.056804,"lon":-118.243897}
+{"type":"poi","name":"Hill & Ord","kind":"bus_stop","lat":34.060921,"lon":-118.240544}
+{"type":"poi","name":"Hill & Ord","kind":"bus_stop","lat":34.061026,"lon":-118.240271}
+{"type":"poi","name":"Vignes & Main","kind":"bus_stop","lat":34.061297,"lon":-118.235051}
+{"type":"poi","name":"Ord & Spring","kind":"bus_stop","lat":34.059981,"lon":-118.238111}
+{"type":"poi","name":"Ord & New High","kind":"bus_stop","lat":34.060106,"lon":-118.238828}
+{"type":"poi","name":"Ord & Broadway","kind":"bus_stop","lat":34.060348,"lon":-118.239155}
+{"type":"poi","name":"Broadway & Ord","kind":"bus_stop","lat":34.060195,"lon":-118.239305}
+{"type":"poi","name":"Broadway & Ord","kind":"bus_stop","lat":34.060506,"lon":-118.239351}
+{"type":"poi","name":"Broadway & Alpine","kind":"bus_stop","lat":34.061999,"lon":-118.238396}

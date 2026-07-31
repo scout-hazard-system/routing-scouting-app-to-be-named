@@ -1,0 +1,822 @@
+{
+  "channels": [
+    {
+      "id": "bf-32602-indianapolis-metropolitan-police",
+      "name": "Indianapolis Metropolitan Police",
+      "description": "Broadcastify public safety feed 32602 for South Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "SD",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south dakota",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32602"
+    },
+    {
+      "id": "bf-29935-mitchell-regional-public-safety",
+      "name": "Mitchell Regional Public Safety",
+      "description": "Broadcastify public safety feed 29935 for South Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "SD",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south dakota"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/29935"
+    },
+    {
+      "id": "bf-46935-pennington-county-public-safety",
+      "name": "Pennington County Public Safety",
+      "description": "Broadcastify public safety feed 46935 for South Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "SD",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south dakota"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46935"
+    },
+    {
+      "id": "bf-28666-vermillion-public-safety",
+      "name": "Vermillion Public Safety",
+      "description": "Broadcastify public safety feed 28666 for South Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "SD",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south dakota"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/28666"
+    },
+    {
+      "id": "bf-37308-codington-county-public-safety",
+      "name": "Codington County Public Safety",
+      "description": "Broadcastify public safety feed 37308 for South Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "SD",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south dakota"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37308"
+    },
+    {
+      "id": "bf-35062-charles-mix-county-public-safety",
+      "name": "Charles Mix County Public Safety",
+      "description": "Broadcastify public safety feed 35062 for South Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "SD",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south dakota"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/35062"
+    },
+    {
+      "id": "bf-46978-oglala-lakota-public-safety",
+      "name": "Oglala Lakota Public Safety",
+      "description": "Broadcastify public safety feed 46978 for South Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "SD",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south dakota"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46978"
+    },
+    {
+      "id": "bf-43363-spearfish-pd-fire-lawrence-co-sheriff",
+      "name": "Spearfish PD, Fire, Lawrence Co Sheriff",
+      "description": "Broadcastify public safety feed 43363 for South Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "SD",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south dakota",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43363"
+    },
+    {
+      "id": "bf-9574-brown-county-sheriff-aberdeen-fire-rescue-",
+      "name": "Brown County Sheriff, Aberdeen Fire/Rescue, State Highway Patrol",
+      "description": "Broadcastify public safety feed 9574 for South Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "SD",
+      "service_types": [
+        "dispatch",
+        "law",
+        "highway",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south dakota",
+        "law",
+        "highway",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/9574"
+    },
+    {
+      "id": "bf-46420-brookings-public-safety",
+      "name": "Brookings Public Safety",
+      "description": "Broadcastify public safety feed 46420 for South Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "SD",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south dakota"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46420"
+    },
+    {
+      "id": "bf-43586-custer-county-public-safety",
+      "name": "Custer County Public Safety",
+      "description": "Broadcastify public safety feed 43586 for South Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "SD",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south dakota"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43586"
+    },
+    {
+      "id": "bf-36988-beadle-county-public-safety",
+      "name": "Beadle County Public Safety",
+      "description": "Broadcastify public safety feed 36988 for South Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "SD",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south dakota"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/36988"
+    },
+    {
+      "id": "bf-47196-fall-river-county-public-safety",
+      "name": "Fall River County Public Safety",
+      "description": "Broadcastify public safety feed 47196 for South Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "SD",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south dakota"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47196"
+    },
+    {
+      "id": "bf-14672-hand-county-public-safety",
+      "name": "Hand County Public Safety",
+      "description": "Broadcastify public safety feed 14672 for South Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "SD",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south dakota"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/14672"
+    },
+    {
+      "id": "bf-27247-spink-county-emergency-management-east",
+      "name": "Spink County Emergency Management East",
+      "description": "Broadcastify public safety feed 27247 for South Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "SD",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south dakota"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/27247"
+    },
+    {
+      "id": "bf-27246-conde-fire",
+      "name": "Conde Fire",
+      "description": "Broadcastify public safety feed 27246 for South Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "SD",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south dakota",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/27246"
+    },
+    {
+      "id": "bf-42282-corona-fire",
+      "name": "Corona Fire",
+      "description": "Broadcastify public safety feed 42282 for South Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "SD",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south dakota",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42282"
+    },
+    {
+      "id": "bf-31684-redfield-fire",
+      "name": "Redfield Fire",
+      "description": "Broadcastify public safety feed 31684 for South Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "SD",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south dakota",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/31684"
+    },
+    {
+      "id": "bf-35484-summit-repeater",
+      "name": "Summit Repeater",
+      "description": "Broadcastify public safety feed 35484 for South Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "SD",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south dakota"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/35484"
+    },
+    {
+      "id": "bf-35483-roberts-county-rosholt-repeater",
+      "name": "Roberts County Rosholt Repeater",
+      "description": "Broadcastify public safety feed 35483 for South Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "SD",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south dakota"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/35483"
+    },
+    {
+      "id": "bf-33295-sisseton-fire",
+      "name": "Sisseton Fire",
+      "description": "Broadcastify public safety feed 33295 for South Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "SD",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south dakota",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/33295"
+    },
+    {
+      "id": "bf-24536-north-marshall-fire",
+      "name": "North Marshall Fire",
+      "description": "Broadcastify public safety feed 24536 for South Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "SD",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south dakota",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/24536"
+    },
+    {
+      "id": "bf-25331-spencer-fire",
+      "name": "Spencer Fire",
+      "description": "Broadcastify public safety feed 25331 for South Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "SD",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south dakota",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/25331"
+    },
+    {
+      "id": "bf-33028-spink-county-ambulance",
+      "name": "Spink County Ambulance",
+      "description": "Broadcastify public safety feed 33028 for South Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "SD",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south dakota"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/33028"
+    },
+    {
+      "id": "bf-42099-lincoln-county-public-safety",
+      "name": "Lincoln County Public Safety",
+      "description": "Broadcastify public safety feed 42099 for South Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "SD",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south dakota"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42099"
+    },
+    {
+      "id": "bf-22166-emery-volunteer-fire",
+      "name": "Emery Volunteer Fire",
+      "description": "Broadcastify public safety feed 22166 for South Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "SD",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south dakota",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/22166"
+    },
+    {
+      "id": "bf-37515-delmont-vfd",
+      "name": "Delmont VFD",
+      "description": "Broadcastify public safety feed 37515 for South Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "SD",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south dakota"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/37515"
+    },
+    {
+      "id": "bf-36955-armour-fire",
+      "name": "Armour Fire",
+      "description": "Broadcastify public safety feed 36955 for South Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "SD",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south dakota",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/36955"
+    },
+    {
+      "id": "bf-36861-corsica-fire",
+      "name": "Corsica Fire",
+      "description": "Broadcastify public safety feed 36861 for South Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "SD",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south dakota",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/36861"
+    },
+    {
+      "id": "bf-19210-mitchell-fire",
+      "name": "Mitchell Fire",
+      "description": "Broadcastify public safety feed 19210 for South Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "SD",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south dakota",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/19210"
+    },
+    {
+      "id": "bf-15378-ethan-fire",
+      "name": "Ethan Fire",
+      "description": "Broadcastify public safety feed 15378 for South Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "SD",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south dakota",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/15378"
+    },
+    {
+      "id": "bf-42628-platte-ambulance",
+      "name": "Platte Ambulance",
+      "description": "Broadcastify public safety feed 42628 for South Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "SD",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south dakota"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42628"
+    },
+    {
+      "id": "bf-39315-wagner-ambulance",
+      "name": "Wagner Ambulance",
+      "description": "Broadcastify public safety feed 39315 for South Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "SD",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south dakota"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39315"
+    },
+    {
+      "id": "bf-39313-charles-mix-county-fire",
+      "name": "Charles Mix County Fire",
+      "description": "Broadcastify public safety feed 39313 for South Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "SD",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south dakota",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39313"
+    },
+    {
+      "id": "bf-14692-aberdeen-fire-and-ems-dispatch",
+      "name": "Aberdeen Fire and EMS Dispatch",
+      "description": "Broadcastify public safety feed 14692 for South Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "SD",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south dakota",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/14692"
+    },
+    {
+      "id": "bf-46937-noaa-weather-radio-brookings-kxi71",
+      "name": "NOAA Weather Radio Brookings (KXI71)",
+      "description": "Broadcastify public safety feed 46937 for South Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "SD",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south dakota"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46937"
+    },
+    {
+      "id": "bf-30513-tyndall-fire-and-ems",
+      "name": "Tyndall Fire and EMS",
+      "description": "Broadcastify public safety feed 30513 for South Dakota.",
+      "city": "",
+      "county": "Various",
+      "state": "SD",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "south dakota",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/30513"
+    }
+  ]
+}

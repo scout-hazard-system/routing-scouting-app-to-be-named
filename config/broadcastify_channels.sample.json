@@ -1,0 +1,49 @@
+{
+  "channels": [
+    {
+      "id": "metro-police-dispatch",
+      "name": "Metro Police Dispatch",
+      "description": "Primary law enforcement dispatch for city and adjacent highways",
+      "city": "Sample City",
+      "county": "Sample County",
+      "state": "Sample State",
+      "service_types": ["law", "dispatch"],
+      "tags": ["police", "traffic", "highway"],
+      "lat": 40.001,
+      "lon": -75.001,
+      "listeners": 124,
+      "online": true,
+      "stream_url": "https://example.invalid/metro-police-dispatch"
+    },
+    {
+      "id": "county-sheriff-main",
+      "name": "County Sheriff Main",
+      "description": "County sheriff main operations and dispatch",
+      "city": "Sample City",
+      "county": "Sample County",
+      "state": "Sample State",
+      "service_types": ["law", "dispatch"],
+      "tags": ["sheriff", "county"],
+      "lat": 40.021,
+      "lon": -75.043,
+      "listeners": 88,
+      "online": true,
+      "stream_url": "https://example.invalid/county-sheriff-main"
+    },
+    {
+      "id": "city-fire-ops",
+      "name": "City Fire Operations",
+      "description": "Municipal fire dispatch and operations",
+      "city": "Sample City",
+      "county": "Sample County",
+      "state": "Sample State",
+      "service_types": ["fire", "dispatch"],
+      "tags": ["fire", "ems"],
+      "lat": 39.99,
+      "lon": -75.012,
+      "listeners": 61,
+      "online": true,
+      "stream_url": "https://example.invalid/city-fire-ops"
+    }
+  ]
+}

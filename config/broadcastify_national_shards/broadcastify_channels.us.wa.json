@@ -1,0 +1,54 @@
+{
+  "channels": [
+    {
+      "id": "bf-4958-skagit-police-fire",
+      "name": "Skagit County Police and Fire",
+      "description": "Broadcastify feed 4958 covering Skagit County police and fire dispatch for Anacortes corridor.",
+      "city": "Mount Vernon",
+      "county": "Skagit County",
+      "state": "WA",
+      "service_types": [
+        "law",
+        "dispatch",
+        "fire"
+      ],
+      "tags": [
+        "police",
+        "sheriff",
+        "fire",
+        "dispatch",
+        "anacortes",
+        "i-5"
+      ],
+      "lat": 48.4212,
+      "lon": -122.3341,
+      "listeners": 110,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/4958"
+    },
+    {
+      "id": "bf-38841-wa-state-patrol-skagit-island",
+      "name": "Washington State Patrol - Skagit and Island Dispatch",
+      "description": "Broadcastify feed 38841 for Washington State Patrol dispatch in Skagit/Island county region.",
+      "city": "Burlington",
+      "county": "Skagit County",
+      "state": "WA",
+      "service_types": [
+        "law",
+        "dispatch",
+        "highway"
+      ],
+      "tags": [
+        "state patrol",
+        "trooper",
+        "highway",
+        "i-5"
+      ],
+      "lat": 48.4718,
+      "lon": -122.3254,
+      "listeners": 95,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38841"
+    }
+  ]
+}

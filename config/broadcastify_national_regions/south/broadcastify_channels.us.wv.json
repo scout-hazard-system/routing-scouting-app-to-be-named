@@ -1,0 +1,1769 @@
+{
+  "channels": [
+    {
+      "id": "bf-32602-indianapolis-metropolitan-police",
+      "name": "Indianapolis Metropolitan Police",
+      "description": "Broadcastify public safety feed 32602 for West Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "WV",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "west virginia",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/32602"
+    },
+    {
+      "id": "bf-45401-mercer-county-public-safety-and-wv-state-p",
+      "name": "Mercer County Public Safety and WV State Police",
+      "description": "Broadcastify public safety feed 45401 for West Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "WV",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "west virginia",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45401"
+    },
+    {
+      "id": "bf-24821-boone-county-public-safety",
+      "name": "Boone County Public Safety",
+      "description": "Broadcastify public safety feed 24821 for West Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "WV",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "west virginia"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/24821"
+    },
+    {
+      "id": "bf-24713-kanawha-county-public-safety",
+      "name": "Kanawha County Public Safety",
+      "description": "Broadcastify public safety feed 24713 for West Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "WV",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "west virginia"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/24713"
+    },
+    {
+      "id": "bf-10948-fairmont-police-and-fire-and-marion-county",
+      "name": "Fairmont Police and Fire and Marion County Sheriff and EMS",
+      "description": "Broadcastify public safety feed 10948 for West Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "WV",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "west virginia",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/10948"
+    },
+    {
+      "id": "bf-5444-mineral-county-public-safety-and-amateur-r",
+      "name": "Mineral County Public Safety and Amateur Repeaters",
+      "description": "Broadcastify public safety feed 5444 for West Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "WV",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "west virginia"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/5444"
+    },
+    {
+      "id": "bf-19225-greenbrier-and-monroe-counties-public-safe",
+      "name": "Greenbrier and Monroe Counties Public Safety",
+      "description": "Broadcastify public safety feed 19225 for West Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "WV",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "west virginia"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/19225"
+    },
+    {
+      "id": "bf-11832-mingo-and-pike-counties-sheriff-fire-and-e",
+      "name": "Mingo and Pike Counties Sheriff, Fire, and EMS, Williamson Police and Fire",
+      "description": "Broadcastify public safety feed 11832 for West Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "WV",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "west virginia",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/11832"
+    },
+    {
+      "id": "bf-18474-parkersburg-and-vienna-public-safety-west-",
+      "name": "Parkersburg and Vienna Public Safety, West Virginia State Police",
+      "description": "Broadcastify public safety feed 18474 for West Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "WV",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "west virginia",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/18474"
+    },
+    {
+      "id": "bf-4563-raleigh-county-police-bradley-fire-and-wv-",
+      "name": "Raleigh County Police, Bradley Fire and WV State Police",
+      "description": "Broadcastify public safety feed 4563 for West Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "WV",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "west virginia",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/4563"
+    },
+    {
+      "id": "bf-10141-barbour-county-police-fire-and-ems",
+      "name": "Barbour County Police, Fire and EMS",
+      "description": "Broadcastify public safety feed 10141 for West Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "WV",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "west virginia",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/10141"
+    },
+    {
+      "id": "bf-41955-preston-county-fire-and-ems",
+      "name": "Preston County Fire and EMS",
+      "description": "Broadcastify public safety feed 41955 for West Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "WV",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "west virginia",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41955"
+    },
+    {
+      "id": "bf-26304-harrison-county-law-enforcement",
+      "name": "Harrison County Law Enforcement",
+      "description": "Broadcastify public safety feed 26304 for West Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "WV",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "west virginia",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/26304"
+    },
+    {
+      "id": "bf-15426-brooke-county-sheriff-wellsburg-and-follan",
+      "name": "Brooke County Sheriff, Wellsburg and Follansbee Police Dispatch",
+      "description": "Broadcastify public safety feed 15426 for West Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "WV",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "west virginia",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/15426"
+    },
+    {
+      "id": "bf-40113-berkeley-county-fire-ems",
+      "name": "Berkeley County Fire & EMS",
+      "description": "Broadcastify public safety feed 40113 for West Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "WV",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "west virginia",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40113"
+    },
+    {
+      "id": "bf-30096-lewis-county-sheriff-fire-and-ems",
+      "name": "Lewis County Sheriff, Fire and EMS",
+      "description": "Broadcastify public safety feed 30096 for West Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "WV",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "west virginia",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/30096"
+    },
+    {
+      "id": "bf-29444-cabell-county-public-safety",
+      "name": "Cabell County Public Safety",
+      "description": "Broadcastify public safety feed 29444 for West Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "WV",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "west virginia"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/29444"
+    },
+    {
+      "id": "bf-1467-harrison-county-fire-and-ems",
+      "name": "Harrison County Fire and EMS",
+      "description": "Broadcastify public safety feed 1467 for West Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "WV",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "west virginia",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/1467"
+    },
+    {
+      "id": "bf-2855-wheeling-police-and-fire",
+      "name": "Wheeling Police and Fire",
+      "description": "Broadcastify public safety feed 2855 for West Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "WV",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "west virginia",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/2855"
+    },
+    {
+      "id": "bf-17355-upshur-county-police-fire-and-ems",
+      "name": "Upshur County Police, Fire and EMS",
+      "description": "Broadcastify public safety feed 17355 for West Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "WV",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "west virginia",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/17355"
+    },
+    {
+      "id": "bf-46264-lincoln-county-public-safety",
+      "name": "Lincoln County Public Safety",
+      "description": "Broadcastify public safety feed 46264 for West Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "WV",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "west virginia"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46264"
+    },
+    {
+      "id": "bf-34850-weirton-police-and-fire",
+      "name": "Weirton Police and Fire",
+      "description": "Broadcastify public safety feed 34850 for West Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "WV",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "west virginia",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/34850"
+    },
+    {
+      "id": "bf-41012-wood-county-sheriff-dispatch-parkersburg-p",
+      "name": "Wood County Sheriff Dispatch, Parkersburg PD/Fire,  Belpre PD/Fire",
+      "description": "Broadcastify public safety feed 41012 for West Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "WV",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "west virginia",
+        "law",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41012"
+    },
+    {
+      "id": "bf-42053-logan-county-public-safety",
+      "name": "Logan County Public Safety",
+      "description": "Broadcastify public safety feed 42053 for West Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "WV",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "west virginia"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/42053"
+    },
+    {
+      "id": "bf-39914-monongalia-county-law-enforcement",
+      "name": "Monongalia County Law Enforcement",
+      "description": "Broadcastify public safety feed 39914 for West Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "WV",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "west virginia",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39914"
+    },
+    {
+      "id": "bf-13553-morgan-county-fire-ems-and-mutual-aid",
+      "name": "Morgan County Fire, EMS and Mutual Aid",
+      "description": "Broadcastify public safety feed 13553 for West Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "WV",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "west virginia",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/13553"
+    },
+    {
+      "id": "bf-2996-jefferson-county-police-dispatch",
+      "name": "Jefferson County Police Dispatch",
+      "description": "Broadcastify public safety feed 2996 for West Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "WV",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "west virginia",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/2996"
+    },
+    {
+      "id": "bf-1790-ritchie-and-doddridge-counties-police-fire",
+      "name": "Ritchie and Doddridge Counties Police, Fire, and EMS",
+      "description": "Broadcastify public safety feed 1790 for West Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "WV",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "west virginia",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/1790"
+    },
+    {
+      "id": "bf-41949-huntington-police",
+      "name": "Huntington Police",
+      "description": "Broadcastify public safety feed 41949 for West Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "WV",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "west virginia",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41949"
+    },
+    {
+      "id": "bf-1009-jefferson-county-fire-rescue-and-ems",
+      "name": "Jefferson County Fire, Rescue and EMS",
+      "description": "Broadcastify public safety feed 1009 for West Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "WV",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "west virginia",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/1009"
+    },
+    {
+      "id": "bf-45469-hampshire-county-public-safety",
+      "name": "Hampshire County Public Safety",
+      "description": "Broadcastify public safety feed 45469 for West Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "WV",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "west virginia"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45469"
+    },
+    {
+      "id": "bf-40500-marion-county-police-fire-and-ems",
+      "name": "Marion County Police, Fire, and EMS",
+      "description": "Broadcastify public safety feed 40500 for West Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "WV",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "west virginia",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40500"
+    },
+    {
+      "id": "bf-45847-northern-panhandle-wv-public-safety",
+      "name": "Northern Panhandle WV Public Safety",
+      "description": "Broadcastify public safety feed 45847 for West Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "WV",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "west virginia"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45847"
+    },
+    {
+      "id": "bf-45960-hardy-county-public-safety",
+      "name": "Hardy County Public Safety",
+      "description": "Broadcastify public safety feed 45960 for West Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "WV",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "west virginia"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45960"
+    },
+    {
+      "id": "bf-28255-flemington-police-fire-and-ems",
+      "name": "Flemington Police, Fire and EMS",
+      "description": "Broadcastify public safety feed 28255 for West Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "WV",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "west virginia",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/28255"
+    },
+    {
+      "id": "bf-46491-wayne-county-law-dispatch",
+      "name": "Wayne County Law Dispatch",
+      "description": "Broadcastify public safety feed 46491 for West Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "WV",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "west virginia"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46491"
+    },
+    {
+      "id": "bf-46946-raleigh-county-area-public-safety",
+      "name": "Raleigh County Area Public Safety",
+      "description": "Broadcastify public safety feed 46946 for West Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "WV",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "west virginia"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46946"
+    },
+    {
+      "id": "bf-43945-northern-hancock-county-public-safety",
+      "name": "Northern Hancock County Public Safety",
+      "description": "Broadcastify public safety feed 43945 for West Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "WV",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "west virginia"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43945"
+    },
+    {
+      "id": "bf-24766-glen-dale-fire-and-ems-marshall-county-fir",
+      "name": "Glen Dale Fire and EMS, Marshall County Fire Dispatch",
+      "description": "Broadcastify public safety feed 24766 for West Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "WV",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "west virginia",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/24766"
+    },
+    {
+      "id": "bf-40211-taylor-county-public-safety",
+      "name": "Taylor County Public Safety",
+      "description": "Broadcastify public safety feed 40211 for West Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "WV",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "west virginia"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40211"
+    },
+    {
+      "id": "bf-28660-mercer-county-public-safety-dispatch",
+      "name": "Mercer County Public Safety Dispatch",
+      "description": "Broadcastify public safety feed 28660 for West Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "WV",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "west virginia"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/28660"
+    },
+    {
+      "id": "bf-33395-mason-and-gallia-fire-ems-and-sheriff",
+      "name": "Mason and Gallia Fire, EMS and Sheriff",
+      "description": "Broadcastify public safety feed 33395 for West Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "WV",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "west virginia",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/33395"
+    },
+    {
+      "id": "bf-46634-summers-monroe-county-public-safety",
+      "name": "Summers-Monroe County Public Safety",
+      "description": "Broadcastify public safety feed 46634 for West Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "WV",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "west virginia"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46634"
+    },
+    {
+      "id": "bf-47410-berkeley-county-public-safety",
+      "name": "Berkeley County Public Safety",
+      "description": "Broadcastify public safety feed 47410 for West Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "WV",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "west virginia"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47410"
+    },
+    {
+      "id": "bf-39401-monongalia-county-fire-and-ems",
+      "name": "Monongalia County Fire and EMS",
+      "description": "Broadcastify public safety feed 39401 for West Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "WV",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "west virginia",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39401"
+    },
+    {
+      "id": "bf-44715-pendleton-county-public-safety",
+      "name": "Pendleton County Public Safety",
+      "description": "Broadcastify public safety feed 44715 for West Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "WV",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "west virginia"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44715"
+    },
+    {
+      "id": "bf-3331-jackson-mason-and-meigs-counties-fire-and-",
+      "name": "Jackson, Mason, and Meigs Counties Fire and EMS",
+      "description": "Broadcastify public safety feed 3331 for West Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "WV",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "west virginia",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/3331"
+    },
+    {
+      "id": "bf-43266-huntington-fire-department",
+      "name": "Huntington Fire Department",
+      "description": "Broadcastify public safety feed 43266 for West Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "WV",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "west virginia",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/43266"
+    },
+    {
+      "id": "bf-24868-putnam-county-fire-and-ems",
+      "name": "Putnam County Fire and EMS",
+      "description": "Broadcastify public safety feed 24868 for West Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "WV",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "west virginia",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/24868"
+    },
+    {
+      "id": "bf-38323-tucker-county-public-safety",
+      "name": "Tucker County Public Safety",
+      "description": "Broadcastify public safety feed 38323 for West Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "WV",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "west virginia"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38323"
+    },
+    {
+      "id": "bf-36746-hancock-county-volunteer-fire-depts-and-we",
+      "name": "Hancock County Volunteer Fire Depts and Weirton Fire",
+      "description": "Broadcastify public safety feed 36746 for West Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "WV",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "west virginia",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/36746"
+    },
+    {
+      "id": "bf-29873-martinsburg-fire-berkeley-fire-tac-1-4",
+      "name": "Martinsburg Fire, Berkeley Fire, Tac 1-4",
+      "description": "Broadcastify public safety feed 29873 for West Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "WV",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "west virginia",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/29873"
+    },
+    {
+      "id": "bf-19815-follansbee-fire",
+      "name": "Follansbee Fire",
+      "description": "Broadcastify public safety feed 19815 for West Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "WV",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "west virginia",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/19815"
+    },
+    {
+      "id": "bf-39048-marion-county-fire-ems",
+      "name": "Marion County Fire & EMS",
+      "description": "Broadcastify public safety feed 39048 for West Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "WV",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "west virginia",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39048"
+    },
+    {
+      "id": "bf-45588-putnam-county-dispatch",
+      "name": "Putnam County Dispatch",
+      "description": "Broadcastify public safety feed 45588 for West Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "WV",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "west virginia"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45588"
+    },
+    {
+      "id": "bf-31708-charleston-fire-and-ems-dispatch",
+      "name": "Charleston Fire and EMS Dispatch",
+      "description": "Broadcastify public safety feed 31708 for West Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "WV",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "west virginia",
+        "fire",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/31708"
+    },
+    {
+      "id": "bf-39423-mingo-county-fire",
+      "name": "Mingo County Fire",
+      "description": "Broadcastify public safety feed 39423 for West Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "WV",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "west virginia",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/39423"
+    },
+    {
+      "id": "bf-30138-nuttall-fire",
+      "name": "Nuttall Fire",
+      "description": "Broadcastify public safety feed 30138 for West Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "WV",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "west virginia",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/30138"
+    },
+    {
+      "id": "bf-45160-bethany-fire-stream",
+      "name": "Bethany Fire Stream",
+      "description": "Broadcastify public safety feed 45160 for West Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "WV",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "west virginia",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45160"
+    },
+    {
+      "id": "bf-34366-pine-grove-fire",
+      "name": "Pine Grove Fire",
+      "description": "Broadcastify public safety feed 34366 for West Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "WV",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "west virginia",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/34366"
+    },
+    {
+      "id": "bf-27202-jacksonburg-fire",
+      "name": "Jacksonburg Fire",
+      "description": "Broadcastify public safety feed 27202 for West Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "WV",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "west virginia",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/27202"
+    },
+    {
+      "id": "bf-15400-paden-city-volunteer-fire",
+      "name": "Paden City Volunteer Fire",
+      "description": "Broadcastify public safety feed 15400 for West Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "WV",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "west virginia",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/15400"
+    },
+    {
+      "id": "bf-45294-webster-county-public-safety",
+      "name": "Webster County Public Safety",
+      "description": "Broadcastify public safety feed 45294 for West Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "WV",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "west virginia"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45294"
+    },
+    {
+      "id": "bf-41424-cabell-county-vfds",
+      "name": "Cabell County VFDs",
+      "description": "Broadcastify public safety feed 41424 for West Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "WV",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "west virginia"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41424"
+    },
+    {
+      "id": "bf-33816-buckhannon-city-fire",
+      "name": "Buckhannon City Fire",
+      "description": "Broadcastify public safety feed 33816 for West Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "WV",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "west virginia",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/33816"
+    },
+    {
+      "id": "bf-16207-meadow-bridge-volunteer-fire",
+      "name": "Meadow Bridge Volunteer Fire",
+      "description": "Broadcastify public safety feed 16207 for West Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "WV",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "west virginia",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/16207"
+    },
+    {
+      "id": "bf-45526-tyler-county-ems",
+      "name": "Tyler County EMS",
+      "description": "Broadcastify public safety feed 45526 for West Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "WV",
+      "service_types": [
+        "dispatch",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "west virginia",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45526"
+    },
+    {
+      "id": "bf-38097-tyler-county-sheriff",
+      "name": "Tyler County Sheriff",
+      "description": "Broadcastify public safety feed 38097 for West Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "WV",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "west virginia",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/38097"
+    },
+    {
+      "id": "bf-33250-middlebourne-ems",
+      "name": "Middlebourne EMS",
+      "description": "Broadcastify public safety feed 33250 for West Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "WV",
+      "service_types": [
+        "dispatch",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "west virginia",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/33250"
+    },
+    {
+      "id": "bf-44456-taylor-county-ems",
+      "name": "Taylor County EMS",
+      "description": "Broadcastify public safety feed 44456 for West Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "WV",
+      "service_types": [
+        "dispatch",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "west virginia",
+        "ems"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44456"
+    },
+    {
+      "id": "bf-44457-harrison-taylor-911",
+      "name": "Harrison Taylor 911",
+      "description": "Broadcastify public safety feed 44457 for West Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "WV",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "west virginia"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44457"
+    },
+    {
+      "id": "bf-41280-tygart-valley-fire",
+      "name": "Tygart Valley Fire",
+      "description": "Broadcastify public safety feed 41280 for West Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "WV",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "west virginia",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41280"
+    },
+    {
+      "id": "bf-25929-kanawha-county-fire-north",
+      "name": "Kanawha County Fire - North",
+      "description": "Broadcastify public safety feed 25929 for West Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "WV",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "west virginia",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/25929"
+    },
+    {
+      "id": "bf-46036-raleigh-county-public-safety",
+      "name": "Raleigh County Public Safety",
+      "description": "Broadcastify public safety feed 46036 for West Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "WV",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "west virginia"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/46036"
+    },
+    {
+      "id": "bf-47381-putnam-county-sheriff-dispatch",
+      "name": "Putnam County Sheriff Dispatch",
+      "description": "Broadcastify public safety feed 47381 for West Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "WV",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "west virginia",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/47381"
+    },
+    {
+      "id": "bf-40501-marion-county-law-enforcement",
+      "name": "Marion County Law Enforcement",
+      "description": "Broadcastify public safety feed 40501 for West Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "WV",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "west virginia",
+        "law"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40501"
+    },
+    {
+      "id": "bf-16567-williamson-fire-dispatch",
+      "name": "Williamson Fire Dispatch",
+      "description": "Broadcastify public safety feed 16567 for West Virginia.",
+      "city": "",
+      "county": "Various",
+      "state": "WV",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "west virginia",
+        "fire"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 0,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/16567"
+    }
+  ]
+}
