@@ -68,6 +68,10 @@ public final class BackendServer {
       Pattern.compile("\"distance\"\\s*:\\s*([0-9]+(?:\\.[0-9]+)?)");
   private static final Pattern OSRM_DURATION_PATTERN =
       Pattern.compile("\"duration\"\\s*:\\s*([0-9]+(?:\\.[0-9]+)?)");
+  private static final Pattern OSM_MAXSPEED_SPEED_PATTERN =
+      Pattern.compile("\\\"speed\\\"\\s*:\\s*([0-9]+(?:\\.[0-9]+)?)");
+  private static final Pattern OSM_MAXSPEED_UNIT_PATTERN =
+      Pattern.compile("\\\"unit\\\"\\s*:\\s*\\\"([^\\\"]+)\\\"");
   private static final Pattern OSRM_TOLL_CLASS_PATTERN =
       Pattern.compile("\\\"classes\\\"\\s*:\\s*\\[[^\\]]*\\\"toll\\\"[^\\]]*\\]");
   private static final Pattern OSRM_FERRY_CLASS_PATTERN =
@@ -128,6 +132,8 @@ public final class BackendServer {
   private static final double MAP_RENDER_MIN_MPP = 0.1;
   private static final double MAP_RENDER_MAX_MPP = 60000.0;
   private static final String MAP_MODE = "zhs_only";
+  private static final double OSM_MAXSPEED_FALLBACK_MPH = 30.0;
+  private static final double OSM_MAXSPEED_FALLBACK_MPS = OSM_MAXSPEED_FALLBACK_MPH * 0.44704;
   private static final long OSRM_CACHE_TTL_MS =
       parseLongOrDefault(System.getenv("OSRM_CACHE_TTL_MS"), 15000L);
   private static final int OSRM_CACHE_MAX_ENTRIES =
@@ -373,6 +379,121 @@ public final class BackendServer {
       }
     }
     return out;
+  }
+
+  private static List<String> splitTopLevelValues(String csvLike) {
+    List<String> out = new ArrayList<>();
+    if (csvLike == null || csvLike.isBlank()) {
+      return out;
+    }
+    int braceDepth = 0;
+    int bracketDepth = 0;
+    boolean inString = false;
+    int tokenStart = 0;
+    for (int i = 0; i < csvLike.length(); i++) {
+      char ch = csvLike.charAt(i);
+      if (ch == '\"' && (i == 0 || csvLike.charAt(i - 1) != '\\')) {
+        inString = !inString;
+      }
+      if (inString) {
+        continue;
+      }
+      if (ch == '{') {
+        braceDepth++;
+      } else if (ch == '}') {
+        braceDepth = Math.max(0, braceDepth - 1);
+      } else if (ch == '[') {
+        bracketDepth++;
+      } else if (ch == ']') {
+        bracketDepth = Math.max(0, bracketDepth - 1);
+      } else if (ch == ',' && braceDepth == 0 && bracketDepth == 0) {
+        String token = csvLike.substring(tokenStart, i).trim();
+        if (!token.isEmpty()) {
+          out.add(token);
+        }
+        tokenStart = i + 1;
+      }
+    }
+    String tail = csvLike.substring(tokenStart).trim();
+    if (!tail.isEmpty()) {
+      out.add(tail);
+    }
+    return out;
+  }
+
+  private static double parseMaxspeedTokenMps(String token) {
+    if (token == null) {
+      return Double.NaN;
+    }
+    String trimmed = token.trim();
+    if (trimmed.isEmpty() || "null".equals(trimmed)) {
+      return Double.NaN;
+    }
+    if (trimmed.startsWith("{")) {
+      Matcher speedMatcher = OSM_MAXSPEED_SPEED_PATTERN.matcher(trimmed);
+      if (!speedMatcher.find()) {
+        return Double.NaN;
+      }
+      double speed;
+      try {
+        speed = Double.parseDouble(speedMatcher.group(1));
+      } catch (NumberFormatException ignored) {
+        return Double.NaN;
+      }
+      Matcher unitMatcher = OSM_MAXSPEED_UNIT_PATTERN.matcher(trimmed);
+      String unit = unitMatcher.find() ? unitMatcher.group(1).toLowerCase(Locale.ROOT) : "km/h";
+      return unit.contains("mph") ? speed * 0.44704 : speed / 3.6;
+    }
+    if (trimmed.startsWith("\"") && trimmed.endsWith("\"") && trimmed.length() >= 2) {
+      String unquoted = trimmed.substring(1, trimmed.length() - 1).toLowerCase(Locale.ROOT);
+      Matcher numericMatcher = Pattern.compile("([0-9]+(?:\\.[0-9]+)?)").matcher(unquoted);
+      if (!numericMatcher.find()) {
+        return Double.NaN;
+      }
+      double speed;
+      try {
+        speed = Double.parseDouble(numericMatcher.group(1));
+      } catch (NumberFormatException ignored) {
+        return Double.NaN;
+      }
+      return unquoted.contains("mph") ? speed * 0.44704 : speed / 3.6;
+    }
+    try {
+      return Double.parseDouble(trimmed) / 3.6;
+    } catch (NumberFormatException ignored) {
+      return Double.NaN;
+    }
+  }
+
+  private static SpeedLimitEtaEstimate estimateEtaFromMaxspeed(
+      String routeObject, double distanceMeters, double durationSeconds) {
+    if (!Double.isFinite(distanceMeters) || distanceMeters <= 0) {
+      return new SpeedLimitEtaEstimate(Math.max(0.0, durationSeconds), 0.0, "duration_fallback");
+    }
+    String maxspeedArray = extractJsonArrayContent(routeObject, "maxspeed");
+    List<String> tokens = splitTopLevelValues(maxspeedArray);
+    if (tokens.isEmpty()) {
+      return new SpeedLimitEtaEstimate(distanceMeters / OSM_MAXSPEED_FALLBACK_MPS, 0.0, "fallback_30mph");
+    }
+    int knownCount = 0;
+    double speedMpsSum = 0.0;
+    for (String token : tokens) {
+      double speedMps = parseMaxspeedTokenMps(token);
+      if (Double.isFinite(speedMps) && speedMps > 0.5) {
+        speedMpsSum += speedMps;
+        knownCount++;
+      } else {
+        speedMpsSum += OSM_MAXSPEED_FALLBACK_MPS;
+      }
+    }
+    double avgSpeedMps = speedMpsSum / Math.max(1, tokens.size());
+    double etaSeconds = distanceMeters / Math.max(0.5, avgSpeedMps);
+    if (!Double.isFinite(etaSeconds) || etaSeconds <= 0) {
+      etaSeconds = Math.max(0.0, durationSeconds);
+    }
+    double coverage = knownCount / (double) Math.max(1, tokens.size());
+    String source = knownCount > 0 ? "osm_maxspeed_blended" : "fallback_30mph";
+    return new SpeedLimitEtaEstimate(etaSeconds, coverage, source);
   }
 
 
@@ -717,16 +838,37 @@ public final class BackendServer {
     private final List<RouteNode> nodes;
     private final double distanceMeters;
     private final double durationSeconds;
+    private final double etaSpeedLimitSeconds;
+    private final double speedLimitCoverage;
     private final boolean hasTollHint;
     private final boolean hasFerryHint;
 
     private RouteAlternative(
-        List<RouteNode> nodes, double distanceMeters, double durationSeconds, boolean hasTollHint, boolean hasFerryHint) {
+        List<RouteNode> nodes,
+        double distanceMeters,
+        double durationSeconds,
+        double etaSpeedLimitSeconds,
+        double speedLimitCoverage,
+        boolean hasTollHint,
+        boolean hasFerryHint) {
       this.nodes = nodes;
       this.distanceMeters = distanceMeters;
       this.durationSeconds = durationSeconds;
+      this.etaSpeedLimitSeconds = etaSpeedLimitSeconds;
+      this.speedLimitCoverage = speedLimitCoverage;
       this.hasTollHint = hasTollHint;
       this.hasFerryHint = hasFerryHint;
+    }
+  }
+  private static final class SpeedLimitEtaEstimate {
+    private final double etaSeconds;
+    private final double coverage;
+    private final String source;
+
+    private SpeedLimitEtaEstimate(double etaSeconds, double coverage, String source) {
+      this.etaSeconds = etaSeconds;
+      this.coverage = coverage;
+      this.source = source;
     }
   }
   private static final class GpsPoint {
@@ -1911,6 +2053,20 @@ public final class BackendServer {
     return normalizeCatalogQuery(value == null ? "" : value);
   }
 
+  private static List<String> splitWords(String value) {
+    List<String> out = new ArrayList<>();
+    if (value == null || value.isBlank()) {
+      return out;
+    }
+    for (String part : value.split(" ")) {
+      String token = part == null ? "" : part.trim();
+      if (!token.isEmpty()) {
+        out.add(token);
+      }
+    }
+    return out;
+  }
+
   private static boolean queryLooksLikeZipOrAddress(String q, String key) {
     if (key.isEmpty()) {
       return false;
@@ -1976,47 +2132,70 @@ public final class BackendServer {
     return filtered.isEmpty() ? out : filtered;
   }
 
-  private static String suggestPoiCacheKey(double lat, double lon) {
-    int z = 14;
-    int x = MapModel.lonToTileX(lon, z);
-    int y = MapModel.latToTileY(lat, z);
-    return "z" + z + "/" + x + "/" + y;
+  private static String suggestPoiCacheKey(double lat, double lon, double radiusM, int zoom) {
+    int x = MapModel.lonToTileX(lon, zoom);
+    int y = MapModel.latToTileY(lat, zoom);
+    return "z" + zoom + "/" + x + "/" + y + "/r" + Math.round(radiusM);
   }
 
-  private static List<SuggestionEntry> collectPoiCatalogCandidates(double centerLat, double centerLon) {
-    String cacheKey = suggestPoiCacheKey(centerLat, centerLon);
-    String sceneJson = getCachedString(SUGGEST_POI_SCENE_CACHE, cacheKey);
-    if (sceneJson == null) {
-      sceneJson = ProprietaryMapEngine.sceneJson(centerLat, centerLon, 3200.0, 14);
-      if (sceneJson != null && !sceneJson.isBlank()) {
-        putCachedString(
-            SUGGEST_POI_SCENE_CACHE,
-            cacheKey,
-            sceneJson,
-            SUGGEST_POI_CACHE_TTL_MS,
-            SUGGEST_POI_CACHE_MAX_ENTRIES);
-      }
-    }
+  private static List<SuggestionEntry> collectPoiCatalogCandidates(
+      double centerLat, double centerLon, String queryKey) {
     List<SuggestionEntry> out = new ArrayList<>();
-    if (sceneJson == null || sceneJson.isBlank()) {
-      return out;
-    }
-    Matcher matcher = SCENE_POI_OBJECT_PATTERN.matcher(sceneJson);
-    while (matcher.find()) {
-      String name = unescapeJsonString(matcher.group(1)).trim();
-      if (name.isBlank()) {
+    Set<String> dedupe = new HashSet<>();
+    double[][] sweeps = {
+        {2200.0, 14.0},
+        {8000.0, 13.0},
+        {26000.0, 12.0}
+    };
+    for (double[] sweep : sweeps) {
+      double radiusM = sweep[0];
+      int zoom = (int) sweep[1];
+      String cacheKey = suggestPoiCacheKey(centerLat, centerLon, radiusM, zoom);
+      String sceneJson = getCachedString(SUGGEST_POI_SCENE_CACHE, cacheKey);
+      if (sceneJson == null) {
+        sceneJson = ProprietaryMapEngine.sceneJson(centerLat, centerLon, radiusM, zoom);
+        if (sceneJson != null && !sceneJson.isBlank()) {
+          putCachedString(
+              SUGGEST_POI_SCENE_CACHE,
+              cacheKey,
+              sceneJson,
+              SUGGEST_POI_CACHE_TTL_MS,
+              SUGGEST_POI_CACHE_MAX_ENTRIES);
+        }
+      }
+      if (sceneJson == null || sceneJson.isBlank()) {
         continue;
       }
-      String kind = unescapeJsonString(matcher.group(2)).trim();
-      double lat = parseDouble(matcher.group(3), Double.NaN);
-      double lon = parseDouble(matcher.group(4), Double.NaN);
-      if (!Double.isFinite(lat) || !Double.isFinite(lon)) {
-        continue;
-      }
-      String label = kind.isBlank() ? name : (name + " (" + kind + ")");
-      out.add(new SuggestionEntry(label, "poi_catalog", lat, lon, 0L));
-      if (out.size() >= 220) {
-        break;
+      Matcher matcher = SCENE_POI_OBJECT_PATTERN.matcher(sceneJson);
+      while (matcher.find()) {
+        String name = unescapeJsonString(matcher.group(1)).trim();
+        if (name.isBlank()) {
+          continue;
+        }
+        String kind = unescapeJsonString(matcher.group(2)).trim();
+        double lat = parseDouble(matcher.group(3), Double.NaN);
+        double lon = parseDouble(matcher.group(4), Double.NaN);
+        if (!Double.isFinite(lat) || !Double.isFinite(lon)) {
+          continue;
+        }
+        String label = kind.isBlank() ? name : (name + " (" + kind + ")");
+        String labelKey = normalizeSuggestToken(label);
+        if (!queryKey.isEmpty()
+            && !labelKey.contains(queryKey)
+            && !queryKey.contains(labelKey)
+            && catalogTokenOverlapScore(queryKey, labelKey) <= 0.0) {
+          continue;
+        }
+        String sourceTier = zoom >= 14 ? "poi_catalog_near" : (zoom >= 13 ? "poi_catalog_mid" : "poi_catalog_far");
+        String dedupeKey = labelKey + "|" + String.format(Locale.ROOT, "%.5f,%.5f", lat, lon);
+        if (dedupe.contains(dedupeKey)) {
+          continue;
+        }
+        dedupe.add(dedupeKey);
+        out.add(new SuggestionEntry(label, sourceTier, lat, lon, 0L));
+        if (out.size() >= 420) {
+          return out;
+        }
       }
     }
     return out;
@@ -2110,8 +2289,25 @@ public final class BackendServer {
         return 420.0;
       default:
         double meters = haversineMeters(candidateLat, candidateLon, biasLat, biasLon);
-        return Math.max(0.0, 180.0 / (1.0 + (meters / 1000.0)));
+        return Math.max(0.0, 260.0 / (1.0 + (meters / 700.0)));
     }
+  }
+  private static double nearbyDistanceScore(
+      double candidateLat, double candidateLon, double biasLat, double biasLon, boolean hasBias) {
+    if (!hasBias) {
+      return 0.0;
+    }
+    double meters = haversineMeters(candidateLat, candidateLon, biasLat, biasLon);
+    if (meters <= 1500.0) {
+      return 320.0;
+    }
+    if (meters <= 7000.0) {
+      return 180.0;
+    }
+    if (meters <= 20000.0) {
+      return 80.0;
+    }
+    return Math.max(-120.0, -meters / 1400.0);
   }
 
   private static double suggestTextScore(String queryKey, String candidateKey) {
@@ -2130,6 +2326,20 @@ public final class BackendServer {
     if (queryKey.length() >= 3 && ZIP_PREFIX_PATTERN.matcher(queryKey.replace(" ", "")).matches()) {
       if (candidateKey.replace(" ", "").startsWith(queryKey.replace(" ", ""))) {
         score += 340.0;
+      }
+    }
+    List<String> queryTokens = splitWords(queryKey);
+    List<String> candidateTokens = splitWords(candidateKey);
+    for (String qt : queryTokens) {
+      for (String ct : candidateTokens) {
+        if (ct.startsWith(qt)) {
+          score += 55.0;
+          break;
+        }
+        if (ct.contains(qt)) {
+          score += 24.0;
+          break;
+        }
       }
     }
     score += catalogTokenOverlapScore(queryKey, candidateKey);
@@ -2209,7 +2419,8 @@ public final class BackendServer {
           new SuggestionEntry(entry.displayName, "address_catalog", entry.lat, entry.lon, entry.updatedAtMs);
       double score =
           suggestTextScore(queryKey, entry.queryKey)
-              + shardScoreFor(entry.lat, entry.lon, biasLat, biasLon, hasBias);
+              + shardScoreFor(entry.lat, entry.lon, biasLat, biasLon, hasBias)
+              + nearbyDistanceScore(entry.lat, entry.lon, biasLat, biasLon, hasBias);
       if (score > 0.0) {
         scored.add(Map.entry(candidate, score));
       }
@@ -2223,18 +2434,27 @@ public final class BackendServer {
               String.format(Locale.ROOT, "%.6f %.6f", coordinateEntry.lat, coordinateEntry.lon));
       double score =
           Math.max(suggestTextScore(queryKey, candidateKey), suggestTextScore(queryKey, coordKey))
-              + shardScoreFor(coordinateEntry.lat, coordinateEntry.lon, biasLat, biasLon, hasBias);
+              + shardScoreFor(coordinateEntry.lat, coordinateEntry.lon, biasLat, biasLon, hasBias)
+              + nearbyDistanceScore(coordinateEntry.lat, coordinateEntry.lon, biasLat, biasLon, hasBias);
       if (score > 0.0) {
         scored.add(Map.entry(coordinateEntry, score));
       }
     }
 
     if (hasBias) {
-      for (SuggestionEntry poi : collectPoiCatalogCandidates(biasLat, biasLon)) {
+      for (SuggestionEntry poi : collectPoiCatalogCandidates(biasLat, biasLon, queryKey)) {
         String candidateKey = normalizeSuggestToken(poi.displayName);
         double score =
             suggestTextScore(queryKey, candidateKey)
-                + shardScoreFor(poi.lat, poi.lon, biasLat, biasLon, hasBias);
+                + shardScoreFor(poi.lat, poi.lon, biasLat, biasLon, hasBias)
+                + nearbyDistanceScore(poi.lat, poi.lon, biasLat, biasLon, hasBias);
+        if ("poi_catalog_near".equals(poi.source)) {
+          score += 130.0;
+        } else if ("poi_catalog_mid".equals(poi.source)) {
+          score += 50.0;
+        } else if ("poi_catalog_far".equals(poi.source)) {
+          score -= 25.0;
+        }
         if (score > 0.0) {
           scored.add(Map.entry(poi, score));
         }
@@ -2304,6 +2524,7 @@ public final class BackendServer {
           double score =
               suggestTextScore(queryKey, normalizeSuggestToken(geocodeEntry.displayName))
                   + shardScoreFor(geocodeEntry.lat, geocodeEntry.lon, biasLat, biasLon, hasBias)
+                  + nearbyDistanceScore(geocodeEntry.lat, geocodeEntry.lon, biasLat, biasLon, hasBias)
                   - 60.0;
           uniqueRanked.add(Map.entry(geocodeEntry, score));
           usedFallback = true;
@@ -2880,7 +3101,7 @@ public final class BackendServer {
             + trimDouble(destLon)
             + ","
             + trimDouble(destLat)
-            + "?overview=full&geometries=geojson&alternatives=true&steps=true";
+            + "?overview=full&geometries=geojson&alternatives=true&steps=true&annotations=distance,duration,maxspeed";
     String body = httpGetExternal(url);
     if (body == null || !body.contains("\"code\":\"Ok\"")) {
       return null;
@@ -3022,11 +3243,17 @@ public final class BackendServer {
       }
       Double dist = parseOsrmDistanceMeters(routeObject);
       Double duration = parseOsrmDurationSeconds(routeObject);
+      double distanceMeters = dist != null ? dist : approximateRouteMeters(nodes);
+      double durationSeconds = duration != null ? duration : 0.0;
+      SpeedLimitEtaEstimate etaEstimate =
+          estimateEtaFromMaxspeed(routeObject, distanceMeters, durationSeconds);
       alternatives.add(
           new RouteAlternative(
               nodes,
-              dist != null ? dist : approximateRouteMeters(nodes),
-              duration != null ? duration : 0.0,
+              distanceMeters,
+              durationSeconds,
+              etaEstimate.etaSeconds,
+              etaEstimate.coverage,
               hasRouteClassHint(routeObject, OSRM_TOLL_CLASS_PATTERN),
               hasRouteClassHint(routeObject, OSRM_FERRY_CLASS_PATTERN)));
     }
@@ -3063,6 +3290,8 @@ public final class BackendServer {
           .append("\"index\":").append(i).append(",")
           .append("\"distance_m\":").append(trimDouble(alt.distanceMeters)).append(",")
           .append("\"duration_s\":").append(trimDouble(alt.durationSeconds)).append(",")
+          .append("\"eta_speed_limit_s\":").append(trimDouble(alt.etaSpeedLimitSeconds)).append(",")
+          .append("\"maxspeed_coverage\":").append(trimDouble(alt.speedLimitCoverage)).append(",")
           .append("\"has_toll_hint\":").append(alt.hasTollHint).append(",")
           .append("\"has_ferry_hint\":").append(alt.hasFerryHint).append(",")
           .append("\"route_points\":").append(routeNodesToJson(alt.nodes))
@@ -3157,7 +3386,13 @@ public final class BackendServer {
       alternatives =
           List.of(
               new RouteAlternative(
-                  fallback, approximateRouteMeters(fallback), 0.0, false, false));
+                  fallback,
+                  approximateRouteMeters(fallback),
+                  0.0,
+                  approximateRouteMeters(fallback) / OSM_MAXSPEED_FALLBACK_MPS,
+                  0.0,
+                  false,
+                  false));
     }
     Map<String, String> clusterQuery = new HashMap<>();
     // Route options typically span larger geographies than local incident maps;

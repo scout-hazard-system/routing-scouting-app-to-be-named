@@ -170,6 +170,38 @@ h2 {
 .route-helper {
   margin-top: 2px;
 }
+.multi-stop-panel {
+  border: 1px solid #314868;
+  border-radius: 10px;
+  background: rgba(8, 14, 24, 0.72);
+  padding: 8px;
+  margin-top: 8px;
+}
+.multi-stop-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 7px;
+}
+.multi-stop-list {
+  display: grid;
+  gap: 8px;
+}
+.multi-stop-row {
+  display: grid;
+  grid-template-columns: minmax(180px, 1fr) auto auto auto;
+  gap: 6px;
+  align-items: center;
+}
+.multi-stop-row input,
+.multi-stop-row select {
+  min-height: 38px;
+}
+.multi-stop-row .stop-remove-btn {
+  min-height: 38px;
+  padding: 8px 10px;
+}
 .route-status-pill {
   display: inline-flex;
   align-items: center;
@@ -323,6 +355,20 @@ h2 {
 }
 .map-shell {
   position: relative;
+}
+.map-loading-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 520;
+  display: grid;
+  place-items: center;
+  background: rgba(7, 12, 22, 0.82);
+  color: #e2ecff;
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  border-radius: 10px;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.45);
 }
 .map-quick-menu {
   position: absolute;
@@ -536,7 +582,8 @@ button:focus-visible {
   .top-grid,
   .mid-grid,
   .route-grid,
-  .nav-row.tri {
+  .nav-row.tri,
+  .multi-stop-row {
     grid-template-columns: 1fr;
   }
   .dest-suggest-menu {

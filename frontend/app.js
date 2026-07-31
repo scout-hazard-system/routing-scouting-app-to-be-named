@@ -28,9 +28,10 @@ const state = {
     instance: null,
     isometricOnly: true,
     isometricImg: null,
+    loadingOverlay: null,
     centerLat: null,
     centerLon: null,
-    centerZoom: 9,
+    centerZoom: 6,
     currentMarker: null,
     alertMarker: null,
     trackLine: null,
@@ -40,6 +41,9 @@ const state = {
     lastBackendRenderAt: 0,
     lastBackendStatusAt: 0,
     lastBackendCenterKey: "",
+    loadingToken: 0,
+    chunkReadyToken: 0,
+    imageReadyToken: 0,
   },
   gpsIngest: {
     inFlight: false,
@@ -68,6 +72,7 @@ const state = {
     options: null,
     activeAltIndex: 0,
     selectedClusterIndex: -1,
+    stopRows: [],
   },
   routeSearch: {
     suggestions: [],
@@ -103,6 +108,8 @@ const ui = {
   lonInput: document.getElementById("lonInput"),
   startInput: document.getElementById("startInput"),
   endInput: document.getElementById("endInput"),
+  addStopBtn: document.getElementById("addStopBtn"),
+  multiStopList: document.getElementById("multiStopList"),
   integratedMap: document.getElementById("integratedMap"),
   openWazeBtn: document.getElementById("openWazeBtn"),
   planRouteBtn: document.getElementById("planRouteBtn"),
@@ -317,6 +324,19 @@ function renderClusterList() {
     ui.clusterList.appendChild(btn);
   });
 }
+function formatDurationLabel(seconds) {
+  const total = Math.max(0, Math.round(Number(seconds) || 0));
+  const days = Math.floor(total / 86400);
+  const hours = Math.floor((total % 86400) / 3600);
+  const minutes = Math.floor((total % 3600) / 60);
+  if (days > 0) {
+    return `${days}d ${hours}h ${minutes}m`;
+  }
+  if (hours > 0) {
+    return `${hours}h ${minutes}m`;
+  }
+  return `${minutes}m`;
+}
 function renderRouteAlternatives() {
   if (!ui.routeAltList) return;
   const alternatives = Array.isArray(state.routeUi.options?.alternatives) ? state.routeUi.options.alternatives : [];
@@ -327,8 +347,8 @@ function renderRouteAlternatives() {
     btn.type = "button";
     btn.className = `route-alt-chip${idx === state.routeUi.activeAltIndex ? " active" : ""}`;
     const meters = Number(alt?.distance_m || 0);
-    const minutes = Number(alt?.duration_s || 0) / 60;
-    btn.textContent = `Route ${idx + 1} · ${(meters / 1000).toFixed(1)} km · ${minutes.toFixed(0)} min`;
+    const etaSeconds = Number(alt?.eta_with_stops_s ?? alt?.eta_speed_limit_s ?? alt?.duration_s ?? 0);
+    btn.textContent = `Route ${idx + 1} · ${(meters / 1000).toFixed(1)} km · ETA ${formatDurationLabel(etaSeconds)}`;
     btn.addEventListener("click", () => {
       state.routeUi.activeAltIndex = idx;
       renderRouteVisuals();
@@ -488,6 +508,67 @@ function parseLatLonInput(text) {
   if (!m) return null;
   return { lat: Number(m[1]), lon: Number(m[2]) };
 }
+function buildStopDayOptions(selected = 0) {
+  const opts = [];
+  for (let d = 0; d <= 14; d += 1) {
+    const label = `${d} day${d === 1 ? "" : "s"}`;
+    opts.push(`<option value="${d}"${d === selected ? " selected" : ""}>${label}</option>`);
+  }
+  return opts.join("");
+}
+function buildStopHourOptions(selected = 0) {
+  const opts = [];
+  for (let h = 0; h <= 23; h += 1) {
+    const label = `${h} hr`;
+    opts.push(`<option value="${h}"${h === selected ? " selected" : ""}>${label}</option>`);
+  }
+  return opts.join("");
+}
+function removeStopRow(rowId) {
+  const idx = state.routeUi.stopRows.findIndex((row) => row.id === rowId);
+  if (idx < 0) return;
+  const [row] = state.routeUi.stopRows.splice(idx, 1);
+  if (row?.el?.parentNode) {
+    row.el.parentNode.removeChild(row.el);
+  }
+}
+function addStopRow(seed = {}) {
+  if (!ui.multiStopList) return;
+  const rowId = `stop-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 7)}`;
+  const row = document.createElement("div");
+  row.className = "multi-stop-row";
+  row.dataset.stopId = rowId;
+  row.innerHTML = `
+    <input type="text" class="stop-input" placeholder="Stop address or lat,lon" value="${String(seed.label || "").replace(/"/g, "&quot;")}" />
+    <select class="stop-days">${buildStopDayOptions(Number(seed.days || 0))}</select>
+    <select class="stop-hours">${buildStopHourOptions(Number(seed.hours || 0))}</select>
+    <button type="button" class="stop-remove-btn">Remove</button>
+  `;
+  const removeBtn = row.querySelector(".stop-remove-btn");
+  removeBtn?.addEventListener("click", () => removeStopRow(rowId));
+  ui.multiStopList.appendChild(row);
+  state.routeUi.stopRows.push({
+    id: rowId,
+    el: row,
+    inputEl: row.querySelector(".stop-input"),
+    daysEl: row.querySelector(".stop-days"),
+    hoursEl: row.querySelector(".stop-hours"),
+  });
+}
+function collectStopRows() {
+  return state.routeUi.stopRows
+    .map((row) => ({
+      label: row.inputEl?.value?.trim() || "",
+      days: Number(row.daysEl?.value || 0),
+      hours: Number(row.hoursEl?.value || 0),
+    }))
+    .filter((row) => row.label);
+}
+function stopDwellSeconds(stop) {
+  const days = Number(stop?.days || 0);
+  const hours = Number(stop?.hours || 0);
+  return Math.max(0, days) * 86400 + Math.max(0, hours) * 3600;
+}
 
 function openWazeUrl(url) {
   window.open(url, "_blank", "noopener,noreferrer");
@@ -513,13 +594,39 @@ function mapRadiusForZoom(zoom) {
   if (z >= 13) return 85000;
   if (z >= 12) return 130000;
   if (z >= 11) return 210000;
-  if (z >= 10) return 325000;
-  if (z >= 9) return 475000;
-  return 700000;
+  if (z >= 10) return 500000;
+  if (z >= 9) return 900000;
+  if (z >= 7) return 1400000;
+  return 1800000;
 }
 function setBackendMapStatus(text) {
   if (!ui.backendMapStatus) return;
   ui.backendMapStatus.textContent = text;
+}
+function ensureMapLoadingOverlay() {
+  if (!ui.integratedMap) return null;
+  if (state.map.loadingOverlay) return state.map.loadingOverlay;
+  const overlay = document.createElement("div");
+  overlay.id = "integratedMapLoading";
+  overlay.className = "map-loading-overlay";
+  overlay.textContent = "Loading map chunks…";
+  ui.integratedMap.appendChild(overlay);
+  state.map.loadingOverlay = overlay;
+  return overlay;
+}
+function setMapLoading(loading, text = "Loading map chunks…") {
+  const overlay = ensureMapLoadingOverlay();
+  if (!overlay) return;
+  overlay.textContent = text;
+  overlay.classList.toggle("hidden", !loading);
+}
+function maybeResolveMapLoading(token) {
+  if (token !== state.map.loadingToken) return;
+  const chunksReady = state.map.chunkReadyToken === token;
+  const imageReady = state.map.imageReadyToken === token;
+  if (chunksReady && imageReady) {
+    setMapLoading(false);
+  }
 }
 function ensureIsometricSurface() {
   if (!ui.integratedMap) return null;
@@ -530,6 +637,7 @@ function ensureIsometricSurface() {
   img.decoding = "async";
   img.loading = "eager";
   ui.integratedMap.replaceChildren(img);
+  ensureMapLoadingOverlay();
   state.map.isometricImg = img;
   return img;
 }
@@ -566,12 +674,47 @@ function refreshBackendMapPreview(lat, lon, opts = {}) {
   }
   state.map.lastBackendCenterKey = centerKey;
   state.map.lastBackendRenderAt = now;
+  const token = ++state.map.loadingToken;
+  state.map.chunkReadyToken = 0;
+  state.map.imageReadyToken = 0;
+  setMapLoading(true, "Loading map chunks…");
+  const sceneUrl = apiUrl(
+    `/api/map/scene?lat=${encodeURIComponent(lat)}&lon=${encodeURIComponent(lon)}&radius_m=${Math.round(radiusM)}&zoom=${Math.round(zoom)}`
+  );
+  fetch(sceneUrl)
+    .then((response) => (response.ok ? response.json() : null))
+    .then((scene) => {
+      if (!scene || token !== state.map.loadingToken) {
+        return;
+      }
+      const loadedCells = Array.isArray(scene.cells) ? scene.cells.length : 0;
+      if (loadedCells > 0) {
+        state.map.chunkReadyToken = token;
+        maybeResolveMapLoading(token);
+      } else {
+        setMapLoading(true, "Waiting for map chunks…");
+      }
+    })
+    .catch(() => {
+      if (token === state.map.loadingToken) {
+        setMapLoading(true, "Loading map chunks…");
+      }
+    });
   const src =
     apiUrl(
       `/api/map/render?lat=${encodeURIComponent(lat)}&lon=${encodeURIComponent(lon)}&radius_m=${Math.round(radiusM)}&w=880&h=390`
     ) + `&ts=${now}`;
   const isometricImg = ensureIsometricSurface();
   if (isometricImg) {
+    isometricImg.onload = () => {
+      if (token !== state.map.loadingToken) return;
+      state.map.imageReadyToken = token;
+      maybeResolveMapLoading(token);
+    };
+    isometricImg.onerror = () => {
+      if (token !== state.map.loadingToken) return;
+      setMapLoading(true, "Map render retrying…");
+    };
     isometricImg.src = src;
   }
   ui.backendMapPreview.src = src;
@@ -582,8 +725,9 @@ function initIntegratedMap() {
   if (!ui.integratedMap) return;
   document.querySelector(".map-card")?.classList.add("isometric-mode");
   ensureIsometricSurface();
+  ensureMapLoadingOverlay();
   updateFollowButtonUi();
-  refreshBackendMapPreview(34.0522, -118.2437, { force: true, zoom: 8 });
+  refreshBackendMapPreview(34.0522, -118.2437, { force: true, zoom: 5, radiusM: 1800000 });
 }
 
 function updateMapTrack(points) {
@@ -649,7 +793,7 @@ async function fetchGpsTrackSnapshot() {
     updateMapTrack(data.points);
     const latest = data.points[data.points.length - 1];
     if (!state.currentGps && Number.isFinite(latest?.lat) && Number.isFinite(latest?.lon)) {
-      updateIntegratedMap(latest.lat, latest.lon, 9, "gps");
+      updateIntegratedMap(latest.lat, latest.lon, 6, "gps");
     }
     setMapHud({ users: Number(data?.active_users || 0) });
   } catch {
@@ -1615,81 +1759,163 @@ async function resolveAddressWithFunnel(query, bias) {
   upsertAddressCatalog(query, fromGeocode, bias);
   return { candidate: fromGeocode, fromCatalog: false };
 }
+async function resolveWaypoint(raw, bias, labelPrefix = "Stop") {
+  const parsed = parseLatLonInput(raw);
+  if (parsed) {
+    return { lat: parsed.lat, lon: parsed.lon, label: raw };
+  }
+  const resolved = await resolveAddressWithFunnel(raw, bias);
+  if (!resolved?.candidate) {
+    throw new Error(`${labelPrefix} unresolved`);
+  }
+  addListItem(
+    ui.jurisdictionNotices,
+    `${labelPrefix}: ${resolved.fromCatalog ? "catalog" : "osm-fallback"} → ${resolved.candidate.displayName || raw}`
+  );
+  return {
+    lat: resolved.candidate.lat,
+    lon: resolved.candidate.lon,
+    label: resolved.candidate.displayName || raw,
+  };
+}
+
+async function buildMultiStopRouteOptions(origin, destination, stops) {
+  let current = origin;
+  let totalDistanceM = 0;
+  let totalDurationS = 0;
+  let totalEtaSpeedS = 0;
+  let totalStopDwellS = 0;
+  const mergedRoutePoints = [];
+  const mergedClusters = [];
+
+  const waypoints = [...stops, destination];
+  for (let i = 0; i < waypoints.length; i += 1) {
+    const next = waypoints[i];
+    const leg = await fetchRouteOptionsFromBackend({
+      originLat: current.lat,
+      originLon: current.lon,
+      destLat: next.lat,
+      destLon: next.lon,
+      start: current.label || "",
+      end: next.label || "",
+    });
+    const alt = Array.isArray(leg?.alternatives) && leg.alternatives.length ? leg.alternatives[0] : null;
+    if (!alt) {
+      throw new Error("missing_route_leg");
+    }
+    const legPoints = Array.isArray(alt.route_points) ? alt.route_points : [];
+    if (legPoints.length) {
+      if (!mergedRoutePoints.length) {
+        mergedRoutePoints.push(...legPoints);
+      } else {
+        mergedRoutePoints.push(...legPoints.slice(1));
+      }
+    }
+    totalDistanceM += Number(alt.distance_m || 0);
+    totalDurationS += Number(alt.duration_s || 0);
+    totalEtaSpeedS += Number(alt.eta_speed_limit_s ?? alt.duration_s ?? 0);
+    const legClusters = Array.isArray(leg?.alert_clusters?.clusters) ? leg.alert_clusters.clusters : [];
+    mergedClusters.push(...legClusters);
+    if (i < stops.length) {
+      totalStopDwellS += stopDwellSeconds(stops[i]);
+    }
+    current = next;
+  }
+
+  const aggregateAlternative = {
+    index: 0,
+    distance_m: totalDistanceM,
+    duration_s: totalDurationS,
+    eta_speed_limit_s: totalEtaSpeedS,
+    stop_dwell_s: totalStopDwellS,
+    eta_with_stops_s: totalEtaSpeedS + totalStopDwellS,
+    has_toll_hint: false,
+    has_ferry_hint: false,
+    route_points: mergedRoutePoints,
+  };
+
+  return {
+    ts: new Date().toISOString(),
+    status: "ok",
+    origin: { lat: origin.lat, lon: origin.lon },
+    destination: { lat: destination.lat, lon: destination.lon },
+    alternatives: [aggregateAlternative],
+    alert_clusters: {
+      ts: new Date().toISOString(),
+      status: "ok",
+      grid_deg: 1.0,
+      clusters: mergedClusters,
+    },
+    stop_count: stops.length,
+  };
+}
 
 async function planRoute() {
   const endRaw = ui.endInput.value.trim();
   const startRaw = ui.startInput.value.trim();
-  let parsedEnd = parseLatLonInput(endRaw);
-  if (!parsedEnd && endRaw && state.routeSearch.appliedLabel === endRaw) {
-    const suggestedLat = asFiniteNumber(ui.latInput.value);
-    const suggestedLon = asFiniteNumber(ui.lonInput.value);
-    if (suggestedLat != null && suggestedLon != null) {
-      parsedEnd = { lat: suggestedLat, lon: suggestedLon };
-    }
+  if (!endRaw) {
+    setRun("destination missing", "bad");
+    setRouteVisualStatus("Enter a destination");
+    return;
   }
   const parsedStart = parseLatLonInput(startRaw);
   const bias = readBiasCoordinates() || parsedStart || null;
-  let resolvedEndLabel = endRaw;
-  if (!parsedEnd && endRaw) {
-    setRun("resolving destination", "warn");
-    const resolved = await resolveAddressWithFunnel(endRaw, bias);
-    if (resolved?.candidate) {
-      parsedEnd = { lat: resolved.candidate.lat, lon: resolved.candidate.lon };
-      resolvedEndLabel = resolved.candidate.displayName || endRaw;
-      addListItem(
-        ui.jurisdictionNotices,
-        `Address funnel: ${resolved.fromCatalog ? "catalog" : "osm-fallback"} → ${resolvedEndLabel}`
-      );
-      setRun("route destination resolved", "ok");
-    } else {
-      setRun("route destination unresolved", "bad");
+  try {
+    setRun("resolving route", "warn");
+    const originLat = parsedStart?.lat ?? state.currentGps?.lat ?? asFiniteNumber(ui.latInput.value);
+    const originLon = parsedStart?.lon ?? state.currentGps?.lon ?? asFiniteNumber(ui.lonInput.value);
+    if (!Number.isFinite(originLat) || !Number.isFinite(originLon)) {
+      setRun("origin unresolved", "bad");
+      setRouteVisualStatus("Route origin needs valid coordinates");
+      return;
     }
-  }
-  const lat = parsedEnd?.lat ?? parsedStart?.lat;
-  const lon = parsedEnd?.lon ?? parsedStart?.lon;
+    const origin = { lat: originLat, lon: originLon, label: startRaw || "Current position" };
+    const destination = await resolveWaypoint(endRaw, bias, "Destination");
+    const stopInputs = collectStopRows();
+    const resolvedStops = [];
+    for (let i = 0; i < stopInputs.length; i += 1) {
+      const stop = stopInputs[i];
+      const resolved = await resolveWaypoint(stop.label, bias, `Stop ${i + 1}`);
+      resolved.days = stop.days;
+      resolved.hours = stop.hours;
+      resolvedStops.push(resolved);
+    }
 
-  fetchWazeRouteFromBackend({ start: startRaw, end: endRaw, lat, lon })
-    .then((route) => {
-      if (Number.isFinite(route?.lat) && Number.isFinite(route?.lon)) {
-        updateIntegratedMap(route.lat, route.lon, 12, "gps", { forceCenter: true });
-      }
-      if (route?.app_url) openWazeUrl(route.app_url);
-    })
-    .catch(() => {
-      if (parsedEnd) {
-        updateIntegratedMap(parsedEnd.lat, parsedEnd.lon, 12, "gps", { forceCenter: true });
-        openWazeFromCoords(parsedEnd.lat, parsedEnd.lon);
-      } else if (endRaw) {
-        const url = `https://waze.com/ul?q=${encodeURIComponent(endRaw)}&navigate=yes`;
-        openWazeUrl(url);
-      }
-    });
+    const options = await buildMultiStopRouteOptions(origin, destination, resolvedStops);
+    state.routeUi.options = options;
+    state.routeUi.activeAltIndex = 0;
+    state.routeUi.selectedClusterIndex = -1;
+    renderRouteVisuals();
 
-  if (parsedStart) {
-    ui.latInput.value = parsedStart.lat;
-    ui.lonInput.value = parsedStart.lon;
-  }
-  if (parsedEnd) {
-    ui.latInput.value = parsedEnd.lat;
-    ui.lonInput.value = parsedEnd.lon;
-  }
-  const weatherEnd = resolvedEndLabel || endRaw;
-  fetchRouteWeatherFor(startRaw, weatherEnd);
-  const originLat = parsedStart?.lat ?? state.currentGps?.lat ?? asFiniteNumber(ui.latInput.value);
-  const originLon = parsedStart?.lon ?? state.currentGps?.lon ?? asFiniteNumber(ui.lonInput.value);
-  const destLat = parsedEnd?.lat ?? asFiniteNumber(ui.latInput.value);
-  const destLon = parsedEnd?.lon ?? asFiniteNumber(ui.lonInput.value);
-  if (Number.isFinite(originLat) && Number.isFinite(originLon) && Number.isFinite(destLat) && Number.isFinite(destLon)) {
-    loadRouteVisuals({
-      originLat,
-      originLon,
-      destLat,
-      destLon,
+    ui.latInput.value = destination.lat;
+    ui.lonInput.value = destination.lon;
+    const finalAlt = options.alternatives[0] || {};
+    const etaLabel = formatDurationLabel(finalAlt.eta_with_stops_s ?? finalAlt.eta_speed_limit_s ?? finalAlt.duration_s);
+    setRouteVisualStatus(
+      `Stops: ${resolvedStops.length} • ETA: ${etaLabel} (speed limits + 30 mph fallback + stop dwell)`
+    );
+    setRun("route ready", "ok");
+    fetchRouteWeatherFor(startRaw, destination.label || endRaw);
+
+    fetchWazeRouteFromBackend({
       start: startRaw,
-      end: resolvedEndLabel || endRaw,
-    });
-  } else {
-    setRouteVisualStatus("Route drawing needs valid start and destination coordinates");
+      end: destination.label || endRaw,
+      lat: destination.lat,
+      lon: destination.lon,
+    })
+      .then((route) => {
+        if (Number.isFinite(route?.lat) && Number.isFinite(route?.lon)) {
+          updateIntegratedMap(route.lat, route.lon, 12, "gps", { forceCenter: true });
+        }
+        if (route?.app_url) openWazeUrl(route.app_url);
+      })
+      .catch(() => {
+        updateIntegratedMap(destination.lat, destination.lon, 12, "gps", { forceCenter: true });
+        openWazeFromCoords(destination.lat, destination.lon);
+      });
+  } catch {
+    setRun("route destination unresolved", "bad");
+    setRouteVisualStatus("Route drawing unavailable");
   }
 }
 
@@ -1709,6 +1935,9 @@ ui.openWazeBtn.addEventListener("click", () => {
   if (!Number.isFinite(lat) || !Number.isFinite(lon)) return;
   openWazeFromCoords(lat, lon);
 });
+if (ui.addStopBtn) {
+  ui.addStopBtn.addEventListener("click", () => addStopRow());
+}
 
 ui.planRouteBtn.addEventListener("click", planRoute);
 
@@ -1846,6 +2075,9 @@ setRouteVisualStatus("Route visualization idle");
 setRun("waiting", "mute");
 setGpsStatus("gps: pending", "mute");
 initIntegratedMap();
+if (ui.multiStopList) {
+  ui.multiStopList.innerHTML = "";
+}
 initDestinationSearchUi();
 updateFollowButtonUi();
 setSelectorModeUi();

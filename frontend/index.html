@@ -62,6 +62,13 @@
             <input id="lonInput" type="number" step="any" placeholder="Longitude (optional)" />
           </div>
           <p class="sub tiny route-helper">Destination text takes priority over typed coordinates.</p>
+          <div class="multi-stop-panel">
+            <div class="multi-stop-head">
+              <span class="sub tiny">Multi-stop planner</span>
+              <button id="addStopBtn" class="tiny-btn" type="button">Add Stop</button>
+            </div>
+            <div id="multiStopList" class="multi-stop-list"></div>
+          </div>
         </div>
         <div class="route-section">
           <h3>Route Actions</h3>
