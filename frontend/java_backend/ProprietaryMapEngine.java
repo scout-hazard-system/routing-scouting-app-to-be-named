@@ -692,26 +692,9 @@ final class ProprietaryMapEngine {
     return best;
   }
 
-  /** Per-zoom feature class filter (roads thin out as the map zooms out). */
+  /** Per-zoom road filter. Keep classes visible at all zooms; geometry decimation still simplifies output. */
   private static boolean includeRoadAtZoom(String clazz, int z) {
-    if (z >= 14) {
-      return true;
-    }
-    switch (clazz) {
-      case "motorway":
-        return true;
-      case "primary":
-        return z >= 6;
-      case "secondary":
-      case "rail":
-        return z >= 9;
-      case "tertiary":
-        return z >= 10;
-      case "residential":
-        return z >= 11;
-      default: // service, path
-        return z >= 13;
-    }
+    return true;
   }
 
   private static boolean includeBuildingsAtZoom(int z) {
@@ -719,10 +702,7 @@ final class ProprietaryMapEngine {
   }
 
   private static boolean includeAreaAtZoom(String kind, int z) {
-    if (z >= 13) {
-      return true;
-    }
-    return "water".equals(kind) || (z >= 9 && "park".equals(kind));
+    return true;
   }
 
   /** Smallest feature bbox span (degrees) worth emitting at this zoom (~sub-pixel cull). */
@@ -855,10 +835,9 @@ final class ProprietaryMapEngine {
     boolean first = true;
     for (MapModel.CellData c : cells) {
       for (MapModel.Area a : c.areas) {
-        // Parks/landuse need a much larger footprint than water to survive zoom-out.
-        double spanNeeded = "water".equals(a.kind) ? (zoom <= 12 ? minSpan * 3 : minSpan) : minSpan * 10;
+        double spanNeeded = minSpan;
         if (!includeAreaAtZoom(a.kind, zoom)
-            || !anyPointInBox(a.pts, minLat, minLon, maxLat, maxLon)
+            || !intersectsView(a.pts, minLat, minLon, maxLat, maxLon)
             || !spansEnough(a.pts, spanNeeded)) {
           continue;
         }
@@ -881,8 +860,7 @@ final class ProprietaryMapEngine {
     for (MapModel.CellData c : cells) {
       for (MapModel.Road r : c.roads) {
         if (!includeRoadAtZoom(r.clazz, zoom)
-            || !anyPointInBox(r.pts, minLat, minLon, maxLat, maxLon)
-            || !spansEnough(r.pts, minSpan)) {
+            || !intersectsView(r.pts, minLat, minLon, maxLat, maxLon)) {
           continue;
         }
         double[] pts = decimate(r.pts, minSpacing);
@@ -907,7 +885,7 @@ final class ProprietaryMapEngine {
         break;
       }
       for (MapModel.Building b : c.buildings) {
-        if (!anyPointInBox(b.pts, minLat, minLon, maxLat, maxLon)
+        if (!intersectsView(b.pts, minLat, minLon, maxLat, maxLon)
             || !spansEnough(b.pts, minSpan)) {
           continue;
         }
@@ -993,6 +971,29 @@ final class ProprietaryMapEngine {
       }
     }
     return false;
+  }
+
+  private static boolean bboxIntersectsBox(double[] pts, double minLat, double minLon, double maxLat, double maxLon) {
+    if (pts == null || pts.length < 2) {
+      return false;
+    }
+    double featureMinLat = Double.MAX_VALUE;
+    double featureMaxLat = -Double.MAX_VALUE;
+    double featureMinLon = Double.MAX_VALUE;
+    double featureMaxLon = -Double.MAX_VALUE;
+    for (int i = 0; i + 1 < pts.length; i += 2) {
+      featureMinLat = Math.min(featureMinLat, pts[i]);
+      featureMaxLat = Math.max(featureMaxLat, pts[i]);
+      featureMinLon = Math.min(featureMinLon, pts[i + 1]);
+      featureMaxLon = Math.max(featureMaxLon, pts[i + 1]);
+    }
+    return featureMaxLat >= minLat && featureMinLat <= maxLat
+        && featureMaxLon >= minLon && featureMinLon <= maxLon;
+  }
+
+  private static boolean intersectsView(double[] pts, double minLat, double minLon, double maxLat, double maxLon) {
+    return anyPointInBox(pts, minLat, minLon, maxLat, maxLon)
+        || bboxIntersectsBox(pts, minLat, minLon, maxLat, maxLon);
   }
 
   // ---- Server-side verification renderer (Java2D) ----
