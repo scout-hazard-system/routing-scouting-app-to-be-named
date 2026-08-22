@@ -3,8 +3,8 @@ set -euo pipefail
 
 SESSION="vehicle-keepalive"
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-ROOT="${ROOT:-$SCRIPT_DIR}"
-STACK="$ROOT/start_termius_stack.sh"
+ROOT="${ROOT:-$(cd "$SCRIPT_DIR/../.." && pwd)}"
+STACK="$SCRIPT_DIR/start_termius_stack.sh"
 ADB_TARGET="${ADB_SERIAL:-}"
 
 if [[ -z "$ADB_TARGET" ]]; then

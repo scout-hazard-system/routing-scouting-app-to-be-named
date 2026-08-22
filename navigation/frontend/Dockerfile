@@ -1,6 +1,6 @@
 FROM python:3.12-slim
 
-WORKDIR /workspace/frontend
+WORKDIR /workspace/navigation/frontend
 RUN useradd --create-home --uid 10001 appuser \
   && chown -R appuser:appuser /workspace
 

@@ -168,11 +168,11 @@ public final class BackendServer {
   private static final String SELECTOR_PYTHON_BIN =
       System.getenv().getOrDefault("SELECTOR_PYTHON_BIN", "/home/gibi/Desktop/cop_pipeline/bin/python3");
   private static final String SELECTOR_SCRIPT_PATH =
-      System.getenv().getOrDefault("SELECTOR_SCRIPT_PATH", "/home/gibi/Desktop/channel_selector.py");
+      System.getenv().getOrDefault("SELECTOR_SCRIPT_PATH", "/home/gibi/Desktop/navigation/pipeline/channel_selector.py");
   private static final String BROADCASTIFY_CATALOG_SCRIPT_PATH =
-      System.getenv().getOrDefault("BROADCASTIFY_CATALOG_SCRIPT_PATH", "/home/gibi/Desktop/broadcastify_catalog_service.py");
+      System.getenv().getOrDefault("BROADCASTIFY_CATALOG_SCRIPT_PATH", "/home/gibi/Desktop/navigation/pipeline/broadcastify_catalog_service.py");
   private static final String BROADCASTIFY_CHANNELS_FILE =
-      System.getenv().getOrDefault("BROADCASTIFY_CHANNELS_FILE", "/home/gibi/Desktop/config/broadcastify_channels.sample.json");
+      System.getenv().getOrDefault("BROADCASTIFY_CHANNELS_FILE", "/home/gibi/Desktop/stack/config/broadcastify_channels.sample.json");
   private static final String BROADCASTIFY_SELECTOR_CITY =
       System.getenv().getOrDefault("BROADCASTIFY_SELECTOR_CITY", "Sample City");
   private static final String BROADCASTIFY_SELECTOR_COUNTY =
@@ -205,7 +205,7 @@ public final class BackendServer {
   private static final int LLM_CHAT_HELPER_TIMEOUT_SECONDS =
       parseIntOrDefault(System.getenv("LLM_CHAT_HELPER_TIMEOUT_SECONDS"), 45);
   private static final String STACK_MANAGE_SCRIPT_PATH =
-      System.getenv().getOrDefault("STACK_MANAGE_SCRIPT_PATH", "/home/gibi/Desktop/start_termius_stack.sh");
+      System.getenv().getOrDefault("STACK_MANAGE_SCRIPT_PATH", "/home/gibi/Desktop/stack/commands/start_termius_stack.sh");
   private static final int STACK_MANAGE_TIMEOUT_SECONDS =
       parseIntOrDefault(System.getenv("STACK_MANAGE_TIMEOUT_SECONDS"), 45);
   private static final int STACK_MANAGE_OUTPUT_MAX_CHARS =
@@ -307,13 +307,13 @@ public final class BackendServer {
           System.getenv()
               .getOrDefault(
                   "ADDRESS_CATALOG_STORE_PATH",
-                  "/home/gibi/Desktop/config/address_catalog_store.tsv"));
+                  "/home/gibi/Desktop/stack/config/address_catalog_store.tsv"));
   private static final Path ERROR_REPORT_STORE_PATH =
       Path.of(
           System.getenv()
               .getOrDefault(
                   "ERROR_REPORT_STORE_PATH",
-                  "/home/gibi/Desktop/config/error_report_store.tsv"));
+                  "/home/gibi/Desktop/stack/config/error_report_store.tsv"));
   private static final Path LOG_PATH =
       Path.of(System.getenv().getOrDefault("PIPELINE_LOG_PATH", "/tmp/pipeline_live_events.log"));
   private static final String HOST = System.getenv().getOrDefault("JAVA_BACKEND_HOST", DEFAULT_HOST);

@@ -2,8 +2,9 @@
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-ROOT_DIR="${ROOT_DIR:-$(cd "$SCRIPT_DIR/.." && pwd)}"
-UNIT_SRC="$ROOT_DIR/deployment/systemd/vehicle-stack.service"
+# stack/deployment -> repo root is ../..
+ROOT_DIR="${ROOT_DIR:-$(cd "$SCRIPT_DIR/../.." && pwd)}"
+UNIT_SRC="$SCRIPT_DIR/systemd/vehicle-stack.service"
 UNIT_DST_DIR="$HOME/.config/systemd/user"
 UNIT_DST="$UNIT_DST_DIR/vehicle-stack.service"
 

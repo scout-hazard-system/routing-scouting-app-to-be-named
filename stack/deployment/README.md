@@ -10,13 +10,13 @@ This runbook covers:
 - health verification and log maintenance.
 
 ## Runtime components
-- Scanner pipeline: `pipeline.py`
-- Java backend: `frontend/java_backend/BackendServer.java` (or `dist/backend-lite.jar`)
-- Frontend: executable build or `frontend/dev_server.py`
-- Orchestrator: `run_vehicle_stack.sh`
+- Scanner pipeline: `navigation/pipeline/pipeline.py`
+- Java backend: `navigation/backend/BackendServer.java` (or `dist/backend-lite.jar`)
+- Frontend: executable build or `navigation/frontend/dev_server.py`
+- Orchestrator: `stack/commands/run_vehicle_stack.sh`
 
 ## Primary config file
-- `config/vehicle_stack.env`
+- `stack/config/vehicle_stack.env`
 
 Key variables to confirm before start:
 - `PIPELINE_LOG`
@@ -30,15 +30,15 @@ Key variables to confirm before start:
 ## Standard runtime workflow
 From repo root:
 ```bash
-./run_vehicle_stack.sh start
-./run_vehicle_stack.sh status
-./run_vehicle_stack.sh stop
+./stack/commands/run_vehicle_stack.sh start
+./stack/commands/run_vehicle_stack.sh status
+./stack/commands/run_vehicle_stack.sh stop
 ```
 
 ## Systemd user-service workflow
 Install:
 ```bash
-./deployment/install_user_service.sh
+./stack/deployment/install_user_service.sh
 ```
 
 Operate:
@@ -50,7 +50,7 @@ journalctl --user -u vehicle-stack.service -f
 
 Remove:
 ```bash
-./deployment/uninstall_user_service.sh
+./stack/deployment/uninstall_user_service.sh
 ```
 
 ## Health verification checklist
@@ -71,12 +71,12 @@ Pipeline-facing:
 ## Logging and maintenance
 Manual maintenance:
 ```bash
-./deployment/maintain_logs.sh
+./stack/deployment/maintain_logs.sh
 ```
 
 Suggested recurring execution:
 ```bash
-*/15 * * * * /home/gibi/Desktop/deployment/maintain_logs.sh >> /tmp/vehicle_stack/logs/maintenance.log 2>&1
+*/15 * * * * /home/gibi/Desktop/stack/deployment/maintain_logs.sh >> /tmp/vehicle_stack/logs/maintenance.log 2>&1
 ```
 
 ## Security operations notes

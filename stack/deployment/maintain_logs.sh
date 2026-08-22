@@ -2,8 +2,8 @@
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-ROOT_DIR="${ROOT_DIR:-$(cd "$SCRIPT_DIR/.." && pwd)}"
-CONFIG_FILE="${VEHICLE_STACK_CONFIG_FILE:-$ROOT_DIR/config/vehicle_stack.env}"
+ROOT_DIR="${ROOT_DIR:-$(cd "$SCRIPT_DIR/../.." && pwd)}"
+CONFIG_FILE="${VEHICLE_STACK_CONFIG_FILE:-$ROOT_DIR/stack/config/vehicle_stack.env}"
 if [[ -f "$CONFIG_FILE" ]]; then
   # shellcheck disable=SC1090
   source "$CONFIG_FILE"

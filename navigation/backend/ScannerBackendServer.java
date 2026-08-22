@@ -91,11 +91,11 @@ public final class ScannerBackendServer {
   private static final String SELECTOR_PYTHON_BIN =
       System.getenv().getOrDefault("SELECTOR_PYTHON_BIN", "/home/gibi/Desktop/cop_pipeline/bin/python3");
   private static final String SELECTOR_SCRIPT_PATH =
-      System.getenv().getOrDefault("SELECTOR_SCRIPT_PATH", "/home/gibi/Desktop/channel_selector.py");
+      System.getenv().getOrDefault("SELECTOR_SCRIPT_PATH", "/home/gibi/Desktop/navigation/pipeline/channel_selector.py");
   private static final String BROADCASTIFY_CATALOG_SCRIPT_PATH =
-      System.getenv().getOrDefault("BROADCASTIFY_CATALOG_SCRIPT_PATH", "/home/gibi/Desktop/broadcastify_catalog_service.py");
+      System.getenv().getOrDefault("BROADCASTIFY_CATALOG_SCRIPT_PATH", "/home/gibi/Desktop/navigation/pipeline/broadcastify_catalog_service.py");
   private static final String BROADCASTIFY_CHANNELS_FILE =
-      System.getenv().getOrDefault("BROADCASTIFY_CHANNELS_FILE", "/home/gibi/Desktop/config/broadcastify_channels.sample.json");
+      System.getenv().getOrDefault("BROADCASTIFY_CHANNELS_FILE", "/home/gibi/Desktop/stack/config/broadcastify_channels.sample.json");
   private static final String BROADCASTIFY_SELECTOR_CITY =
       System.getenv().getOrDefault("BROADCASTIFY_SELECTOR_CITY", "Sample City");
   private static final String BROADCASTIFY_SELECTOR_COUNTY =
@@ -138,7 +138,7 @@ public final class ScannerBackendServer {
           System.getenv()
               .getOrDefault(
                   "ADDRESS_CATALOG_STORE_PATH",
-                  "/home/gibi/Desktop/config/address_catalog_store.tsv"));
+                  "/home/gibi/Desktop/stack/config/address_catalog_store.tsv"));
   private static final Path LOG_PATH =
       Path.of(System.getenv().getOrDefault("PIPELINE_LOG_PATH", "/tmp/pipeline_live_doordash.log"));
   private static final String HOST = System.getenv().getOrDefault("JAVA_BACKEND_HOST", DEFAULT_HOST);

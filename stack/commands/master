@@ -1,0 +1,98 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+ROOT_DIR="${ROOT_DIR:-$(cd "$SCRIPT_DIR/../.." && pwd)}"
+STACK_SCRIPT="$SCRIPT_DIR/start_termius_stack.sh"
+
+usage() {
+  cat <<EOF
+Usage: $(basename "$0") {start|stop|restart|status|health|stream|logs [pipeline|backend|frontend|all]|check|urls|prepare-move|up|down}
+
+Server stack commands:
+  start      Start pipeline + backend + frontend
+  stop       Stop all stack services
+  restart    Restart all stack services
+  status     Show service status
+  health     Check backend/frontend health endpoints
+  stream     Open terminal event stream client
+  logs       Tail logs (default: all)
+  check      Run status + health in one command
+  urls       Print Termius port-forward URLs
+  prepare-move  Gracefully stop stack and sync disks before power move
+
+Aliases:
+  up         start
+  down       stop
+EOF
+}
+
+require_stack_script() {
+  if [[ ! -x "$STACK_SCRIPT" ]]; then
+    echo "Missing executable stack launcher: $STACK_SCRIPT" >&2
+    exit 1
+  fi
+}
+
+run_stack() {
+  require_stack_script
+  "$STACK_SCRIPT" "$@"
+}
+print_urls() {
+  cat <<EOF
+Termius local forwards (device -> host):
+  8787 -> 127.0.0.1:8787
+  18080 -> 127.0.0.1:18080
+
+After forwarding:
+  Dashboard:      http://127.0.0.1:8787/index.html
+  Backend health: http://127.0.0.1:18080/api/health
+  Map status:     http://127.0.0.1:18080/api/map/status
+EOF
+}
+
+check_all() {
+  run_stack status
+  echo
+  run_stack health
+}
+
+prepare_move() {
+  echo "Stopping stack gracefully..."
+  run_stack stop
+  echo "Flushing filesystem buffers..."
+  sync
+  echo "Stack is prepared for shutdown/power move."
+}
+
+CMD="${1:-start}"
+case "$CMD" in
+  start|stop|restart|status|health|stream)
+    run_stack "$CMD"
+    ;;
+  up)
+    run_stack start
+    ;;
+  down)
+    run_stack stop
+    ;;
+  logs)
+    run_stack logs "${2:-all}"
+    ;;
+  check)
+    check_all
+    ;;
+  urls)
+    print_urls
+    ;;
+  prepare-move)
+    prepare_move
+    ;;
+  help|-h|--help)
+    usage
+    ;;
+  *)
+    usage
+    exit 1
+    ;;
+esac

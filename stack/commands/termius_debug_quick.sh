@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-STACK_SCRIPT="$ROOT_DIR/start_termius_stack.sh"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+ROOT_DIR="${ROOT_DIR:-$(cd "$SCRIPT_DIR/../.." && pwd)}"
+STACK_SCRIPT="$SCRIPT_DIR/start_termius_stack.sh"
 
 BACKEND_LOG="/tmp/vehicle_stack/logs/backend.log"
 FRONTEND_LOG="/tmp/vehicle_stack/logs/frontend.log"

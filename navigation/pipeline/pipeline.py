@@ -1,3 +1,12 @@
+import sys
+from pathlib import Path as _Path
+_REPO_ROOT = _Path(__file__).resolve().parents[2]
+_CLIENT = _REPO_ROOT / "llm" / "client"
+_PIPELINE_DIR = _Path(__file__).resolve().parent
+for _p in (str(_CLIENT), str(_PIPELINE_DIR), str(_REPO_ROOT)):
+    if _p not in sys.path:
+        sys.path.insert(0, _p)
+
 import argparse
 import os
 import subprocess
@@ -61,7 +70,7 @@ def emit_event_json(event_type, enabled=True, **payload):
 
 # Legacy inline alert prompt: only used when llm_set_client cannot be imported.
 # Kept in sync with the alert TASK contract in scout-vet1.0.8
-# (llm_set/Modelfile.scout-vet1.0.8 / llm_set_client.ALERT_FALLBACK_SYSTEM).
+# (llm/vet/Modelfile.scout-vet* / llm_set_client.ALERT_FALLBACK_SYSTEM).
 SYSTEM_PROMPT = """
 You are an in-car speed trap and radar alert assistant for a driver on a cross country trip.
 The user gives you one police scanner transcript. Decide if it describes ACTIVE or PLANNED roadway traffic enforcement.

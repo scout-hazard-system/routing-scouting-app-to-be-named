@@ -4,7 +4,7 @@ RUN apt-get update \
   && apt-get install -y --no-install-recommends python3 python3-requests ca-certificates \
   && rm -rf /var/lib/apt/lists/*
 
-WORKDIR /workspace/frontend/java_backend
+WORKDIR /workspace/navigation/backend
 RUN useradd --create-home --uid 10001 appuser \
   && chown -R appuser:appuser /workspace
 

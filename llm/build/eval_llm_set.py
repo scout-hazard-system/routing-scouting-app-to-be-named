@@ -9,11 +9,11 @@ task-routed scout-core model (or overrides) via llm_set_client and reports:
 - latency stats per model
 
 Usage:
-  python3 llm_set/eval_llm_set.py                 # full eval
-  python3 llm_set/eval_llm_set.py --alert-only
-  python3 llm_set/eval_llm_set.py --intel-only
-  python3 llm_set/eval_llm_set.py --alert-model llama3.1   # compare baselines
-  python3 llm_set/eval_llm_set.py --json /tmp/report.json  # machine-readable report
+  python3 llm/build/eval_llm_set.py                 # full eval
+  python3 llm/build/eval_llm_set.py --alert-only
+  python3 llm/build/eval_llm_set.py --intel-only
+  python3 llm/build/eval_llm_set.py --alert-model llama3.1   # compare baselines
+  python3 llm/build/eval_llm_set.py --json /tmp/report.json  # machine-readable report
 
 Exit code 0 when alert accuracy >= --threshold (default 0.9), else 1.
 """
@@ -25,7 +25,13 @@ import statistics
 import sys
 import time
 
-sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+_HERE = os.path.dirname(os.path.abspath(__file__))
+_LLM_ROOT = os.path.dirname(_HERE)
+_CLIENT_DIR = os.path.join(_LLM_ROOT, "client")
+_REPO_ROOT = os.path.dirname(_LLM_ROOT)
+for _p in (_CLIENT_DIR, _REPO_ROOT):
+    if _p not in sys.path:
+        sys.path.insert(0, _p)
 
 import llm_set_client  # noqa: E402
 

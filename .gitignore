@@ -6,16 +6,15 @@ __pycache__/
 cop_pipeline/
 .android-toolchain/
 
-# Frontend/backend build outputs
-frontend/dist/
-frontend/java_backend/dist/
-frontend/java_backend/*.class
-android-stream-client/**/build/
-android-stream-client/app/build/
+# Frontend/backend/android build outputs
+navigation/frontend/dist/
+navigation/backend/dist/
+navigation/backend/*.class
+navigation/android/**/build/
+navigation/android/app/build/
+navigation/android/.gradle/
 
 # Local temp artifacts
-frontend/__pycache__/
-frontend/java_backend/tests/__pycache__/
 buffer_chunk.wav
 buffer_chunk.wav.ts
 **/buffer_chunk.wav
@@ -35,3 +34,4 @@ CLUSTERTEST.png
 moto_*.txt
 mobile_status.txt
 TERMIUS_DEBUG_LOG_GUIDE.txt
+docs/guides/TERMIUS_DEBUG_LOG_GUIDE.txt

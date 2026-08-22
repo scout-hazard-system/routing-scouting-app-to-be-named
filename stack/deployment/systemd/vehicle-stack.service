@@ -7,10 +7,10 @@ Wants=network-online.target
 Type=oneshot
 RemainAfterExit=yes
 WorkingDirectory=/home/gibi/Desktop
-Environment=VEHICLE_STACK_CONFIG_FILE=/home/gibi/Desktop/config/vehicle_stack.env
-ExecStart=/home/gibi/Desktop/run_vehicle_stack.sh start
-ExecStop=/home/gibi/Desktop/run_vehicle_stack.sh stop
-ExecReload=/home/gibi/Desktop/run_vehicle_stack.sh restart
+Environment=VEHICLE_STACK_CONFIG_FILE=/home/gibi/Desktop/stack/config/vehicle_stack.env
+ExecStart=/home/gibi/Desktop/stack/commands/run_vehicle_stack.sh start
+ExecStop=/home/gibi/Desktop/stack/commands/run_vehicle_stack.sh stop
+ExecReload=/home/gibi/Desktop/stack/commands/run_vehicle_stack.sh restart
 Restart=on-failure
 RestartSec=10
 StartLimitIntervalSec=120
