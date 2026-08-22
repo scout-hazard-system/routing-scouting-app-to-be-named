@@ -35,3 +35,10 @@ moto_*.txt
 mobile_status.txt
 TERMIUS_DEBUG_LOG_GUIDE.txt
 docs/guides/TERMIUS_DEBUG_LOG_GUIDE.txt
+
+# Nested Scout CrewAI project (own git remote: scout_crew)
+scout_crew/
+
+# Local stack backup snapshots
+stack/config/*.bak_*
+stack/config/*.bak

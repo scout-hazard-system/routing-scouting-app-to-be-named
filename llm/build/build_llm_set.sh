@@ -13,6 +13,7 @@ MODELS=(
   "scout-core1.0.5:core"
   "scout-rank:rank"
   "scout-vet1.0.6:vet"
+  "scout-dev:dev"
 )
 
 find_modelfile() {

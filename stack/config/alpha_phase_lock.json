@@ -1,0 +1,24 @@
+{
+  "phase_class": "alpha_development",
+  "deployment_phase": 1,
+  "phase": "alpha_arizona_jurisdiction",
+  "phase_lock": {
+    "enabled": true,
+    "persona": "alpha_development_manager",
+    "hold_until": "explicit_prompt_notifies_second_deployment_phase",
+    "release_triggers": [
+      "second deployment phase",
+      "deployment phase 2",
+      "phase 2 deployment",
+      "begin deployment phase 2",
+      "exit alpha development",
+      "promote from alpha",
+      "DEPLOYMENT_PHASE=2",
+      "phase_class=beta",
+      "phase_class=production"
+    ],
+    "note": "Manager remains in alpha-development mindset/persona and Arizona jurisdiction scope until an operator prompt explicitly notifies the second deployment phase."
+  },
+  "manager_status": "AZ_JURISDICTION_ACTIVE",
+  "hold_until": "explicit prompt notifies second deployment phase"
+}
