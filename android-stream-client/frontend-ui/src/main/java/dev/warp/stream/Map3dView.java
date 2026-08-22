@@ -77,15 +77,17 @@ public class Map3dView extends View {
   private static final double REFETCH_EDGE_FRACTION = 0.55;
   private static final double REFETCH_ZOOM_OUT_FACTOR = 1.45;
   private static final double REFETCH_ZOOM_IN_FACTOR = 0.18;
+  private static final double REFETCH_MIN_RADIUS_M = 120000.0;
   private static final float ZOOM_SETTLE_EPSILON = 0.0015f;
   private static final float ZOOM_SMOOTH_FACTOR = 0.28f;
   private static final float ZOOM_VELOCITY_BLEND = 0.34f;
-  private static final float MIN_MPP = 0.2f;
+  private static final float MIN_MPP = 1.0f;
   // Global scale: at ~60000 m/dp a phone screen spans a continent and beyond.
   private static final float MAX_MPP = 60000f;
-  private static final float BUILDING_SKIP_MPP = 6f;
-  private static final float LABEL_SKIP_MPP = 3.5f;
+  private static final float BUILDING_SKIP_MPP = 9f;
+  private static final float LABEL_SKIP_MPP = 5f;
   private static final float PLACE_LABEL_MIN_MPP = 6f;
+  private static final float DEFAULT_COUNTRY_MPP = 14000f;
   private static final double MAX_FETCH_RADIUS_M = 7500000.0;
   private static final long NO_SCENE_LOG_INTERVAL_MS = 2500L;
   private static final long NO_SCENE_RETRY_DRAW_MS = 350L;
@@ -151,8 +153,8 @@ public class Map3dView extends View {
   private float camY;
   private float headingDeg;
   private float tiltDeg = 52f;
-  private float mpp = 1.0f; // meters per dp
-  private float targetMpp = 1.0f;
+  private float mpp = DEFAULT_COUNTRY_MPP; // meters per dp
+  private float targetMpp = DEFAULT_COUNTRY_MPP;
   private float zoomVelocity = 0f;
   private boolean followDevice = true;
   private long lastTouchMs;
@@ -1179,10 +1181,10 @@ public class Map3dView extends View {
     // Zoomed out beyond the scene: fetch a wider, lower-resolution layer.
     boolean zoomedOut = viewRadiusM > s.radiusM * REFETCH_ZOOM_OUT_FACTOR && s.radiusM < MAX_FETCH_RADIUS_M * 0.9;
     // Zoomed back in on a coarse scene: fetch a finer layer.
-    boolean zoomedIn = viewRadiusM < s.radiusM * REFETCH_ZOOM_IN_FACTOR && s.zoom < 15;
+    boolean zoomedIn = viewRadiusM < s.radiusM * REFETCH_ZOOM_IN_FACTOR && s.zoom < 13;
     if (panned || zoomedOut || zoomedIn) {
       lastRefetchMs = now;
-      double radius = Math.max(500.0, Math.min(MAX_FETCH_RADIUS_M, viewRadiusM * 1.5));
+      double radius = Math.max(REFETCH_MIN_RADIUS_M, Math.min(MAX_FETCH_RADIUS_M, viewRadiusM * 1.5));
       String reason;
       if (panned) {
         reason = "panned";

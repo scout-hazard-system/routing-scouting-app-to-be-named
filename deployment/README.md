@@ -1,26 +1,3 @@
-<<<<<<< HEAD
-# Deployment Runbook (Phase 1)
-This runbook executes the current production plan for local-first vehicle operation.
-## Components
-- Pipeline process (`pipeline.py`)
-- Java backend (`frontend/java_backend/ScannerBackendServer.java`, executable JAR)
-- Frontend executable (`frontend/build_executable.sh` -> `frontend/dist/scanner-frontend-lite/scanner-frontend-lite`)
-- Frontend dev server fallback (`frontend/dev_server.py`)
-- Unified launcher (`run_vehicle_stack.sh`)
-## Configuration
-Edit `config/vehicle_stack.env` before deployment:
-- `PIPELINE_LOG`
-- `ENABLE_PIPELINE_AUTOSTART`
-- `BACKEND_PORT`
-- `FRONTEND_PORT`
-- `FRONTEND_EXECUTABLE_PATH`
-- `FRONTEND_BUILD_ON_START`
-- `JAVA_BACKEND_HOST`
-- `MAX_LOG_SIZE_MB`
-- `MAX_LOG_BACKUPS`
-## Manual runtime workflow
-From the project root:
-=======
 # Deployment Runbook
 Operational guide for the current local-first baseline.
 
@@ -52,20 +29,11 @@ Key variables to confirm before start:
 
 ## Standard runtime workflow
 From repo root:
->>>>>>> feature/integrate-waze-and-service-hardening
 ```bash
 ./run_vehicle_stack.sh start
 ./run_vehicle_stack.sh status
 ./run_vehicle_stack.sh stop
 ```
-<<<<<<< HEAD
-## Systemd supervised workflow (Linux user service)
-Install and enable:
-```bash
-./deployment/install_user_service.sh
-```
-Start/inspect:
-=======
 
 ## Systemd user-service workflow
 Install:
@@ -74,64 +42,11 @@ Install:
 ```
 
 Operate:
->>>>>>> feature/integrate-waze-and-service-hardening
 ```bash
 systemctl --user start vehicle-stack.service
 systemctl --user status vehicle-stack.service
 journalctl --user -u vehicle-stack.service -f
 ```
-<<<<<<< HEAD
-Disable/remove:
-```bash
-./deployment/uninstall_user_service.sh
-```
-## Health and verification
-- Backend health: `http://127.0.0.1:<BACKEND_PORT>/api/health`
-- Frontend UI: `http://127.0.0.1:<FRONTEND_PORT>`
-- Mobile bootstrap: `http://127.0.0.1:<BACKEND_PORT>/api/mobile/bootstrap`
-- Provider status: `http://127.0.0.1:<BACKEND_PORT>/api/platform/providers/status`
-## Log maintenance
-Run on-demand:
-```bash
-./deployment/maintain_logs.sh
-```
-Suggested cron cadence (every 15 min):
-```bash
-*/15 * * * * /home/gibi/Desktop/deployment/maintain_logs.sh >> /tmp/vehicle_stack/logs/maintenance.log 2>&1
-```
-## Latest validation cycle result
-Validation run timestamp (UTC from health endpoint): `2026-07-26T07:59:34.614601816Z`
-### Executed sequence
-1. `./run_vehicle_stack.sh stop || true`
-2. `./run_vehicle_stack.sh start`
-3. `./run_vehicle_stack.sh status`
-4. `GET /api/health`
-5. `GET /api/platform/providers/status`
-6. `GET /api/mobile/bootstrap`
-7. `GET /api/mobile/snapshot`
-8. `./deployment/maintain_logs.sh`
-9. `./run_vehicle_stack.sh stop`
-10. `./run_vehicle_stack.sh status`
-### Result summary
-- Start succeeded: backend, frontend, and pipeline reported running PIDs.
-- Health check passed:
-  - `status=ok`
-  - `bind_host=0.0.0.0`
-  - `bind_port=18080`
-- Provider status endpoint passed:
-  - weather provider reported `mock` and ready
-  - waze provider metadata returned expected base URLs
-- Mobile bootstrap endpoint passed:
-  - `status=ok`
-  - `version=v1`
-  - expected endpoint map returned
-- Mobile snapshot endpoint passed:
-  - valid JSON payload returned with metrics + events array
-- Log maintenance script passed:
-  - output `Log maintenance complete.`
-- Stop/status passed:
-  - backend/frontend/pipeline all reported stopped.
-=======
 
 Remove:
 ```bash
@@ -176,4 +91,54 @@ After any security or model integration update, run:
 2) Android compile checks for both flavors,
 3) stack start/status/health cycle,
 4) mobile bootstrap/snapshot quick checks.
->>>>>>> feature/integrate-waze-and-service-hardening
+
+## Tailscale setup and verification (future reference)
+This project is configured to prefer a Tailscale backend path by default in the Android client (`AppPrefs.TAILSCALE_BASE_URL`), with fallback probing to alternate LAN addresses.
+
+### 1) Host machine setup (backend side)
+1. Install and start Tailscale:
+   - `curl -fsSL https://tailscale.com/install.sh | sh`
+   - `sudo systemctl enable --now tailscaled`
+2. Join the tailnet:
+   - `sudo tailscale up`
+3. Confirm host tailnet address:
+   - `tailscale ip -4`
+4. Ensure backend stack is running on port `18080`:
+   - `./start_termius_stack.sh start`
+5. Confirm backend health over localhost:
+   - `curl -fsS http://127.0.0.1:18080/api/health`
+
+### 2) Network policy checks
+1. In Tailscale admin, ensure ACLs allow the Android device/user to reach this host on TCP `18080` and `8787` (if dashboard access is needed).
+2. If host firewall is enabled, allow tailnet interface traffic to backend/frontend ports.
+3. Keep backend API hardening enabled:
+   - `BACKEND_RESTRICT_ALL_APIS=true`
+   - configure `BACKEND_GLOBAL_API_KEY` and `BACKEND_PULL_API_KEY` for non-local exposure.
+
+### 3) Android app setup
+1. In Scout app, open server settings and enable **Tailscale mode**.
+2. Set backend base URL to:
+   - `http://<host-tailnet-ip>:18080`
+3. Save; app will probe `/api/health` and cache the first reachable candidate.
+4. Re-open app and verify status panel shows live backend responses.
+
+### 4) Wireless debug + deploy workflow
+1. Enable Developer options + Wireless debugging on device.
+2. Pair once:
+   - `adb pair <device-ip>:<pair-port>`
+3. Connect for deployment:
+   - `adb connect <device-ip>:<debug-port>`
+4. Verify device visibility:
+   - `adb devices -l`
+5. Install Scout debug APK:
+   - `adb -s <device-ip>:<debug-port> install -r /home/gibi/Desktop/android-stream-client/app/build/outputs/apk/debug/scout-debug.apk`
+6. Launch and check logs:
+   - `adb -s <device-ip>:<debug-port> shell am start -n dev.warp.stream/.MainActivity`
+   - `adb -s <device-ip>:<debug-port> logcat -d -v brief MainActivity:I AndroidRuntime:E ActivityTaskManager:I *:S`
+
+### 5) Runtime verification checklist
+- `/api/health` returns `status=ok`.
+- `/api/mobile/bootstrap` returns endpoint map.
+- `/api/platform/llm/status` returns model availability payload.
+- App launches without `AndroidRuntime` fatal logs.
+- `MainActivity` logs show successful map/backend fetches.

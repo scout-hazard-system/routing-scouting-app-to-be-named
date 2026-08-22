@@ -127,7 +127,7 @@ final class RouteOverviewScreen extends Screen {
       return;
     }
     invalidate();
-    String baseUrl = AppPrefs.baseUrl(getCarContext());
+    String baseUrl = AppPrefs.resolveReachableBaseUrl(getCarContext());
     executor.submit(
         () -> {
           double[] origin = resolveOrigin(baseUrl);

@@ -149,8 +149,6 @@ h2 {
 .nav-row.tri {
   grid-template-columns: repeat(3, 1fr);
 }
-<<<<<<< HEAD
-=======
 .route-card {
   display: grid;
   gap: 12px;
@@ -224,15 +222,12 @@ h2 {
   width: 16px;
   height: 16px;
 }
->>>>>>> feature/integrate-waze-and-service-hardening
 .route-grid {
   display: grid;
   gap: 8px;
   grid-template-columns: 1fr 1fr;
   margin-bottom: 8px;
 }
-<<<<<<< HEAD
-=======
 .dest-suggest-menu {
   grid-column: 2 / 3;
   border: 1px solid #3a4f72;
@@ -362,7 +357,6 @@ h2 {
   margin: 0;
   font-size: 0.9rem;
 }
->>>>>>> feature/integrate-waze-and-service-hardening
 .map-card #integratedMap {
   width: 100%;
   min-height: 380px;
@@ -370,11 +364,6 @@ h2 {
   border-radius: 10px;
   overflow: hidden;
 }
-<<<<<<< HEAD
-.map-shell {
-  position: relative;
-}
-=======
 .map-card.isometric-mode #integratedMap {
   background: #0d1425;
   position: relative;
@@ -404,7 +393,6 @@ h2 {
   border-radius: 10px;
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.45);
 }
->>>>>>> feature/integrate-waze-and-service-hardening
 .map-quick-menu {
   position: absolute;
   top: 12px;
@@ -470,8 +458,6 @@ h2 {
   border: 1px solid #2f3d59;
   box-shadow: 0 6px 16px rgba(3, 8, 18, 0.45);
 }
-<<<<<<< HEAD
-=======
 .backend-map-panel {
   margin-top: 10px;
   border: 1px solid #2b3853;
@@ -498,7 +484,6 @@ h2 {
   border-radius: 8px;
   background: #0d1425;
 }
->>>>>>> feature/integrate-waze-and-service-hardening
 .widget-slots {
   display: grid;
   gap: 8px;
@@ -620,11 +605,6 @@ button:focus-visible {
   .top-grid,
   .mid-grid,
   .route-grid,
-<<<<<<< HEAD
-  .nav-row.tri {
-    grid-template-columns: 1fr;
-  }
-=======
   .nav-row.tri,
   .multi-stop-row {
     grid-template-columns: 1fr;
@@ -632,7 +612,6 @@ button:focus-visible {
   .dest-suggest-menu {
     grid-column: 1 / -1;
   }
->>>>>>> feature/integrate-waze-and-service-hardening
   .map-quick-menu {
     top: 10px;
     right: 10px;

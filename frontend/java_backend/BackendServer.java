@@ -4609,6 +4609,12 @@ public final class BackendServer {
               alternatives, originLat, originLon, destLat, destLon);
     }
     if (alternatives.isEmpty()) {
+      RouteAlternative fallback = buildPrimaryRouteFallbackAlternative(originLat, originLon, destLat, destLon);
+      if (fallback != null) {
+        alternatives = List.of(fallback);
+      }
+    }
+    if (alternatives.isEmpty()) {
       return "{\"error\":\"route_unavailable_no_roadway\"}";
     }
     String hazards = fetchWazeHazardsJson(originLat, originLon, destLat, destLon);
@@ -4629,10 +4635,37 @@ public final class BackendServer {
         + "\"origin\":{\"lat\":" + trimDouble(originLat) + ",\"lon\":" + trimDouble(originLon) + "},"
         + "\"destination\":{\"lat\":" + trimDouble(destLat) + ",\"lon\":" + trimDouble(destLon) + "},"
         + "\"alternatives\":" + routeAlternativesToJson(alternatives) + ","
+        + "\"routes\":" + routeAlternativesToJson(alternatives) + ","
         + "\"waze_hazards\":" + hazards + ","
         + "\"waze_route\":" + wazeRoute + ","
         + "\"alert_clusters\":" + alertClusters
         + "}";
+  }
+
+  private static RouteAlternative buildPrimaryRouteFallbackAlternative(
+      double originLat, double originLon, double destLat, double destLon) {
+    String osrmBody = fetchOsrmRouteBody(originLat, originLon, destLat, destLon);
+    if (osrmBody == null) {
+      return null;
+    }
+    List<RouteNode> nodes = parsePrimaryRouteGeometryCoordinates(osrmBody);
+    if (nodes == null || nodes.size() < 2) {
+      return null;
+    }
+    Double dist = parseOsrmDistanceMeters(osrmBody);
+    Double duration = parseOsrmDurationSeconds(osrmBody);
+    double distanceMeters = dist != null ? dist : approximateRouteMeters(nodes);
+    double durationSeconds = duration != null ? duration : 0.0;
+    SpeedLimitEtaEstimate etaEstimate =
+        estimateEtaFromMaxspeed(osrmBody, distanceMeters, durationSeconds);
+    return new RouteAlternative(
+        nodes,
+        distanceMeters,
+        durationSeconds,
+        etaEstimate.etaSeconds,
+        etaEstimate.coverage,
+        hasRouteClassHint(osrmBody, OSRM_TOLL_CLASS_PATTERN),
+        hasRouteClassHint(osrmBody, OSRM_FERRY_CLASS_PATTERN));
   }
 
   private static List<RouteAlternative> augmentRouteAlternativesWithWaypointVariants(

@@ -53,13 +53,17 @@ import org.json.JSONObject;
 public final class RouteMapScreen extends Screen implements DefaultLifecycleObserver {
   private static final String TAG = "ScannerCar";
   private static final String CAR_NAVIGATE_ACTION = "androidx.car.app.action.NAVIGATE";
+  private static final String ACTION_VOICE_COMMAND = Intent.ACTION_VOICE_COMMAND;
+  private static final String ACTION_ASSIST = Intent.ACTION_ASSIST;
+  private static final String ACTION_SEARCH = Intent.ACTION_SEARCH;
   private static final long RENDER_INTERVAL_MS = 1500L;
   private static final long GPS_POST_INTERVAL_MS = 3000L;
   private static final long ALERT_POLL_INTERVAL_MS = 5000L;
   private static final double DEFAULT_LAT = 48.4941;
   private static final double DEFAULT_LON = -122.6120;
-  private static final double MIN_MPP = 0.4;
-  private static final double MAX_MPP = 5000.0;
+  private static final double DEFAULT_COUNTRY_MPP = 9000.0;
+  private static final double MIN_MPP = 1.5;
+  private static final double MAX_MPP = 60000.0;
   private static final MediaType JSON_MEDIA = MediaType.parse("application/json; charset=utf-8");
 
   private final CarContext carContext;
@@ -81,7 +85,7 @@ public final class RouteMapScreen extends Screen implements DefaultLifecycleObse
   private int surfaceWidth;
   private int surfaceHeight;
 
-  private volatile double metersPerPixel = 2.0;
+  private volatile double metersPerPixel = DEFAULT_COUNTRY_MPP;
   private volatile boolean followVehicle = true;
   private volatile Location lastFix;
   private long lastGpsPostMs;
@@ -248,8 +252,19 @@ public final class RouteMapScreen extends Screen implements DefaultLifecycleObse
                     .setTitle("Route")
                     .setOnClickListener(this::openRouteOverview)
                     .build())
+            .addAction(
+                new Action.Builder()
+                    .setTitle("Assist")
+                    .setOnClickListener(this::openVoiceAssistantSearch)
+                    .build())
             .build();
     return new NavigationTemplate.Builder().setActionStrip(actionStrip).build();
+  }
+
+  private void openVoiceAssistantSearch() {
+    openDestinationSearch();
+    CarToast.makeText(carContext, "Voice assistant ready: speak destination", CarToast.LENGTH_SHORT)
+        .show();
   }
   private void openRouteOverview() {
     getScreenManager()
@@ -671,7 +686,13 @@ public final class RouteMapScreen extends Screen implements DefaultLifecycleObse
     Uri data = intent.getData();
     String query = extractNavigationQuery(intent, data);
     double[] coordinates = extractNavigationCoordinates(data);
-    if (TextUtils.isEmpty(query) && coordinates == null && !CAR_NAVIGATE_ACTION.equals(action)) {
+    boolean assistantAction =
+        ACTION_VOICE_COMMAND.equals(action) || ACTION_ASSIST.equals(action) || ACTION_SEARCH.equals(action);
+    if (TextUtils.isEmpty(query) && coordinates == null && !CAR_NAVIGATE_ACTION.equals(action) && !assistantAction) {
+      return;
+    }
+    if (assistantAction && TextUtils.isEmpty(query) && coordinates == null) {
+      mainHandler.post(this::openVoiceAssistantSearch);
       return;
     }
     Handler handler = renderHandler;

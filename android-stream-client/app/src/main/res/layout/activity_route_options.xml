@@ -69,5 +69,14 @@
             android:backgroundTint="@color/bg_surface"
             android:text="@string/route_options_close"
             android:textAllCaps="false" />
+        <Button
+            android:id="@+id/routeOptionsShareBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/bg_surface"
+            android:text="@string/route_options_share_eta"
+            android:textAllCaps="false" />
     </LinearLayout>
 </LinearLayout>

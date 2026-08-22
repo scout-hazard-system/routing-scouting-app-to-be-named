@@ -26,30 +26,24 @@ const state = {
   gpsWatchId: null,
   map: {
     instance: null,
-<<<<<<< HEAD
-=======
     isometricOnly: true,
     isometricImg: null,
     loadingOverlay: null,
     centerLat: null,
     centerLon: null,
     centerZoom: 6,
->>>>>>> feature/integrate-waze-and-service-hardening
     currentMarker: null,
     alertMarker: null,
     trackLine: null,
     triangulationMarker: null,
     followMode: true,
     hasAutoCentered: false,
-<<<<<<< HEAD
-=======
     lastBackendRenderAt: 0,
     lastBackendStatusAt: 0,
     lastBackendCenterKey: "",
     loadingToken: 0,
     chunkReadyToken: 0,
     imageReadyToken: 0,
->>>>>>> feature/integrate-waze-and-service-hardening
   },
   gpsIngest: {
     inFlight: false,
@@ -74,11 +68,6 @@ const state = {
     selectedRegion: "",
     selectedChannelId: "",
   },
-<<<<<<< HEAD
-};
-const BROWSER_NOTIFY_COOLDOWN_MS = 6000;
-const JURISDICTION_COOLDOWN_MS = 4 * 60 * 1000;
-=======
   routeUi: {
     options: null,
     activeAltIndex: 0,
@@ -93,12 +82,22 @@ const JURISDICTION_COOLDOWN_MS = 4 * 60 * 1000;
     appliedLabel: "",
     menuEl: null,
   },
+  google: {
+    scriptPromise: null,
+    mapsReady: false,
+    placesReady: false,
+    geocoder: null,
+    directionsService: null,
+    autocompleteService: null,
+  },
 };
 const BROWSER_NOTIFY_COOLDOWN_MS = 6000;
 const JURISDICTION_COOLDOWN_MS = 4 * 60 * 1000;
 const BACKEND_MAP_RENDER_MIN_INTERVAL_MS = 3200;
 const DEST_SUGGEST_DEBOUNCE_MS = 220;
->>>>>>> feature/integrate-waze-and-service-hardening
+const GOOGLE_ROUTE_SEARCH_ENABLED = window.SCANNER_GOOGLE_ROUTE_SEARCH_ENABLED !== false;
+const GOOGLE_MAPS_API_KEY = String(window.SCANNER_GOOGLE_MAPS_API_KEY || "").trim();
+const STARTUP_MAP_ZOOM_OUT_FACTOR = 50;
 
 const API_BASE = (window.SCANNER_API_BASE_URL || "").replace(/\/+$/, "");
 const ui = {
@@ -120,11 +119,8 @@ const ui = {
   lonInput: document.getElementById("lonInput"),
   startInput: document.getElementById("startInput"),
   endInput: document.getElementById("endInput"),
-<<<<<<< HEAD
-=======
   addStopBtn: document.getElementById("addStopBtn"),
   multiStopList: document.getElementById("multiStopList"),
->>>>>>> feature/integrate-waze-and-service-hardening
   integratedMap: document.getElementById("integratedMap"),
   openWazeBtn: document.getElementById("openWazeBtn"),
   planRouteBtn: document.getElementById("planRouteBtn"),
@@ -156,18 +152,13 @@ const ui = {
   mapAccuracyHud: document.getElementById("mapAccuracyHud"),
   mapUsersHud: document.getElementById("mapUsersHud"),
   mapTriangulationHud: document.getElementById("mapTriangulationHud"),
-<<<<<<< HEAD
-=======
   backendMapStatus: document.getElementById("backendMapStatus"),
   backendMapPreview: document.getElementById("backendMapPreview"),
   refreshBackendMapBtn: document.getElementById("refreshBackendMapBtn"),
->>>>>>> feature/integrate-waze-and-service-hardening
   recenterMapBtn: document.getElementById("recenterMapBtn"),
   toggleFollowBtn: document.getElementById("toggleFollowBtn"),
   quickRouteBtn: document.getElementById("quickRouteBtn"),
   quickAlertsBtn: document.getElementById("quickAlertsBtn"),
-<<<<<<< HEAD
-=======
   routeSketchCanvas: document.getElementById("routeSketchCanvas"),
   routeAltList: document.getElementById("routeAltList"),
   routeEtaSummary: document.getElementById("routeEtaSummary"),
@@ -177,14 +168,109 @@ const ui = {
   clusterDetailTitle: document.getElementById("clusterDetailTitle"),
   clusterDetailItems: document.getElementById("clusterDetailItems"),
   closeClusterDetailBtn: document.getElementById("closeClusterDetailBtn"),
->>>>>>> feature/integrate-waze-and-service-hardening
 };
 
 function apiUrl(path) {
   return API_BASE ? `${API_BASE}${path}` : path;
 }
-<<<<<<< HEAD
-=======
+function isGoogleRouteSearchEnabled() {
+  return GOOGLE_ROUTE_SEARCH_ENABLED && !!GOOGLE_MAPS_API_KEY;
+}
+function googleMapsScriptUrl() {
+  const params = new URLSearchParams({
+    key: GOOGLE_MAPS_API_KEY,
+    libraries: "places",
+  });
+  return `https://maps.googleapis.com/maps/api/js?${params.toString()}`;
+}
+function loadGoogleMapsApi() {
+  if (!isGoogleRouteSearchEnabled()) return Promise.resolve(false);
+  if (state.google.scriptPromise) return state.google.scriptPromise;
+  state.google.scriptPromise = new Promise((resolve) => {
+    if (window.google?.maps) {
+      state.google.mapsReady = true;
+      state.google.placesReady = !!window.google?.maps?.places;
+      resolve(true);
+      return;
+    }
+    const script = document.createElement("script");
+    script.src = googleMapsScriptUrl();
+    script.async = true;
+    script.defer = true;
+    script.onload = () => {
+      state.google.mapsReady = !!window.google?.maps;
+      state.google.placesReady = !!window.google?.maps?.places;
+      resolve(state.google.mapsReady);
+    };
+    script.onerror = () => resolve(false);
+    document.head.appendChild(script);
+  });
+  return state.google.scriptPromise;
+}
+async function ensureGoogleServices() {
+  const loaded = await loadGoogleMapsApi();
+  if (!loaded || !window.google?.maps) return false;
+  if (!state.google.geocoder) {
+    state.google.geocoder = new window.google.maps.Geocoder();
+  }
+  if (!state.google.directionsService) {
+    state.google.directionsService = new window.google.maps.DirectionsService();
+  }
+  if (state.google.placesReady && !state.google.autocompleteService) {
+    state.google.autocompleteService = new window.google.maps.places.AutocompleteService();
+  }
+  return true;
+}
+function googleLocationBias(bias) {
+  if (!window.google?.maps || !bias || !Number.isFinite(bias.lat) || !Number.isFinite(bias.lon)) return undefined;
+  return {
+    center: new window.google.maps.LatLng(bias.lat, bias.lon),
+    radius: 50000,
+  };
+}
+function geocodeResultToCandidate(result, fallbackName) {
+  const loc = result?.geometry?.location;
+  const lat = typeof loc?.lat === "function" ? loc.lat() : asFiniteNumber(loc?.lat);
+  const lon = typeof loc?.lng === "function" ? loc.lng() : asFiniteNumber(loc?.lng);
+  if (!Number.isFinite(lat) || !Number.isFinite(lon)) return null;
+  return {
+    lat,
+    lon,
+    displayName: String(result?.formatted_address || fallbackName || "").trim() || fallbackName,
+  };
+}
+function googleDirectionsRouteToAlternative(route) {
+  const legs = Array.isArray(route?.legs) ? route.legs : [];
+  let distanceM = 0;
+  let durationS = 0;
+  let durationTrafficS = 0;
+  legs.forEach((leg) => {
+    distanceM += Number(leg?.distance?.value || 0);
+    durationS += Number(leg?.duration?.value || 0);
+    durationTrafficS += Number(leg?.duration_in_traffic?.value || leg?.duration?.value || 0);
+  });
+  const overview = Array.isArray(route?.overview_path) ? route.overview_path : [];
+  const routePoints = overview
+    .map((point) => {
+      const lat = typeof point?.lat === "function" ? point.lat() : asFiniteNumber(point?.lat);
+      const lon = typeof point?.lng === "function" ? point.lng() : asFiniteNumber(point?.lng);
+      if (!Number.isFinite(lat) || !Number.isFinite(lon)) return null;
+      return { lat, lon };
+    })
+    .filter(Boolean);
+  return {
+    index: 0,
+    distance_m: distanceM,
+    duration_s: durationS,
+    eta_speed_limit_s: durationTrafficS || durationS,
+    stop_dwell_s: 0,
+    eta_with_stops_s: durationTrafficS || durationS,
+    has_toll_hint: false,
+    has_ferry_hint: false,
+    maxspeed_coverage: 1,
+    route_points: routePoints,
+  };
+}
 function setRouteVisualStatus(text) {
   if (!ui.routeVisualStatus) return;
   ui.routeVisualStatus.textContent = text;
@@ -464,7 +550,6 @@ async function loadRouteVisuals(payload) {
     setRouteVisualStatus("Route drawing unavailable");
   }
 }
->>>>>>> feature/integrate-waze-and-service-hardening
 
 function setConn(text, cls) {
   ui.connStatus.className = `pill ${cls}`;
@@ -565,8 +650,6 @@ function parseLatLonInput(text) {
   if (!m) return null;
   return { lat: Number(m[1]), lon: Number(m[2]) };
 }
-<<<<<<< HEAD
-=======
 function buildStopDayOptions(selected = 0) {
   const opts = [];
   for (let d = 0; d <= 14; d += 1) {
@@ -628,7 +711,6 @@ function stopDwellSeconds(stop) {
   const hours = Number(stop?.hours || 0);
   return Math.max(0, days) * 86400 + Math.max(0, hours) * 3600;
 }
->>>>>>> feature/integrate-waze-and-service-hardening
 
 function openWazeUrl(url) {
   window.open(url, "_blank", "noopener,noreferrer");
@@ -647,27 +729,6 @@ function setFollowMode(enabled) {
   state.map.followMode = !!enabled;
   updateFollowButtonUi();
 }
-<<<<<<< HEAD
-function initIntegratedMap() {
-  if (!ui.integratedMap || !window.L || state.map.instance) return;
-  const map = window.L.map(ui.integratedMap, { zoomControl: true }).setView([34.0522, -118.2437], 10);
-  window.L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-    maxZoom: 19,
-    attribution: "&copy; OpenStreetMap contributors",
-  }).addTo(map);
-  state.map.instance = map;
-  map.on("dragstart zoomstart", () => {
-    if (state.map.followMode) {
-      setFollowMode(false);
-      setMapHud({ triangulation: "manual view" });
-    }
-  });
-  updateFollowButtonUi();
-}
-
-function updateMapTrack(points) {
-  if (!state.map.instance || !window.L) return;
-=======
 function mapRadiusForZoom(zoom) {
   const z = Number.isFinite(zoom) ? zoom : 9;
   if (z >= 15) return 35000;
@@ -808,12 +869,15 @@ function initIntegratedMap() {
   ensureIsometricSurface();
   ensureMapLoadingOverlay();
   updateFollowButtonUi();
-  refreshBackendMapPreview(34.0522, -118.2437, { force: true, zoom: 5, radiusM: 1800000 });
+  refreshBackendMapPreview(34.0522, -118.2437, {
+    force: true,
+    zoom: 2,
+    radiusM: 1800000 * STARTUP_MAP_ZOOM_OUT_FACTOR,
+  });
 }
 
 function updateMapTrack(points) {
   if (state.map.isometricOnly || !state.map.instance || !window.L) return;
->>>>>>> feature/integrate-waze-and-service-hardening
   if (!Array.isArray(points) || !points.length) return;
   const latLngs = points
     .filter((p) => Number.isFinite(p.lat) && Number.isFinite(p.lon))
@@ -875,11 +939,7 @@ async function fetchGpsTrackSnapshot() {
     updateMapTrack(data.points);
     const latest = data.points[data.points.length - 1];
     if (!state.currentGps && Number.isFinite(latest?.lat) && Number.isFinite(latest?.lon)) {
-<<<<<<< HEAD
-      updateIntegratedMap(latest.lat, latest.lon, 12, "gps");
-=======
       updateIntegratedMap(latest.lat, latest.lon, 6, "gps");
->>>>>>> feature/integrate-waze-and-service-hardening
     }
     setMapHud({ users: Number(data?.active_users || 0) });
   } catch {
@@ -901,11 +961,7 @@ async function refreshTriangulationView() {
     }
     const tLat = Number(data.estimated_lat);
     const tLon = Number(data.estimated_lon);
-<<<<<<< HEAD
-    if (Number.isFinite(tLat) && Number.isFinite(tLon) && state.map.instance && window.L) {
-=======
     if (!state.map.isometricOnly && Number.isFinite(tLat) && Number.isFinite(tLon) && state.map.instance && window.L) {
->>>>>>> feature/integrate-waze-and-service-hardening
       const latLng = [tLat, tLon];
       if (!state.map.triangulationMarker) {
         state.map.triangulationMarker = window.L.circleMarker(latLng, {
@@ -935,55 +991,14 @@ async function refreshTriangulationView() {
 function updateIntegratedMap(lat, lon, zoom = 11, markerKind = "gps", opts = {}) {
   const { forceCenter = false } = opts;
   initIntegratedMap();
-<<<<<<< HEAD
-  if (!state.map.instance || !window.L || !Number.isFinite(lat) || !Number.isFinite(lon)) return;
-  const latLng = [lat, lon];
-=======
   if (!Number.isFinite(lat) || !Number.isFinite(lon)) return;
->>>>>>> feature/integrate-waze-and-service-hardening
   const shouldCenter =
     forceCenter ||
     markerKind === "alert" ||
     (markerKind === "gps" && (state.map.followMode || !state.map.hasAutoCentered));
-<<<<<<< HEAD
-  if (shouldCenter) {
-    state.map.instance.setView(latLng, zoom);
-    state.map.hasAutoCentered = true;
-  }
-
-  if (markerKind === "alert") {
-    if (!state.map.alertMarker) {
-      state.map.alertMarker = window.L.circleMarker(latLng, {
-        radius: 8,
-        color: "#ff5f66",
-        fillColor: "#ff7a80",
-        fillOpacity: 0.85,
-        weight: 2,
-      }).addTo(state.map.instance);
-    } else {
-      state.map.alertMarker.setLatLng(latLng);
-    }
-    state.map.alertMarker.bindPopup("Latest alert coordinate").openPopup();
-    return;
-  }
-
-  if (!state.map.currentMarker) {
-    state.map.currentMarker = window.L.circleMarker(latLng, {
-      radius: 7,
-      color: "#2fd18c",
-      fillColor: "#56e7ab",
-      fillOpacity: 0.85,
-      weight: 2,
-    }).addTo(state.map.instance);
-  } else {
-    state.map.currentMarker.setLatLng(latLng);
-  }
-  state.map.currentMarker.bindPopup("Live GPS position");
-=======
   if (!shouldCenter) return;
   state.map.hasAutoCentered = true;
   refreshBackendMapPreview(lat, lon, { zoom, force: forceCenter || markerKind === "alert" });
->>>>>>> feature/integrate-waze-and-service-hardening
 }
 function setSelectorStatus(text) {
   ui.selectorStatus.textContent = text;
@@ -1661,8 +1676,6 @@ function readBiasCoordinates() {
   }
   return null;
 }
-<<<<<<< HEAD
-=======
 function hideDestinationSuggestions() {
   if (!state.routeSearch.menuEl) return;
   state.routeSearch.menuEl.classList.add("hidden");
@@ -1703,6 +1716,16 @@ function applyDestinationSuggestion(item) {
   if (Number.isFinite(item.lat) && Number.isFinite(item.lon)) {
     ui.latInput.value = Number(item.lat).toFixed(6);
     ui.lonInput.value = Number(item.lon).toFixed(6);
+  } else if (item.place_id) {
+    resolveGooglePlaceIdToCandidate(item.place_id, item.display_name)
+      .then((candidate) => {
+        if (!candidate) return;
+        ui.latInput.value = Number(candidate.lat).toFixed(6);
+        ui.lonInput.value = Number(candidate.lon).toFixed(6);
+      })
+      .catch(() => {
+        // keep text-only destination when place lookup fails
+      });
   }
   hideDestinationSuggestions();
 }
@@ -1710,24 +1733,40 @@ function applyDestinationSuggestion(item) {
 async function fetchDestinationSuggestions(query) {
   const seq = ++state.routeSearch.requestSeq;
   const bias = readBiasCoordinates();
-  const url =
-    apiUrl(`/api/platform/address-catalog/suggest?q=${encodeURIComponent(query)}&limit=8`)
-    + buildBiasQueryString(bias);
+  const useGoogle = await ensureGoogleServices();
   try {
+    if (useGoogle && state.google.autocompleteService && window.google?.maps?.places) {
+      const request = {
+        input: query,
+        locationBias: googleLocationBias(bias),
+      };
+      const response = await state.google.autocompleteService.getPlacePredictions(request);
+      if (seq !== state.routeSearch.requestSeq) return;
+      const predictions = Array.isArray(response?.predictions) ? response.predictions : [];
+      state.routeSearch.suggestions = predictions.slice(0, 8).map((p) => ({
+        display_name: String(p?.description || "").trim(),
+        lat: null,
+        lon: null,
+        place_id: String(p?.place_id || "").trim(),
+      })).filter((p) => p.display_name);
+      state.routeSearch.activeIndex = state.routeSearch.suggestions.length ? 0 : -1;
+      renderDestinationSuggestions();
+      return;
+    }
+    const url =
+      apiUrl(`/api/platform/address-catalog/suggest?q=${encodeURIComponent(query)}&limit=8`)
+      + buildBiasQueryString(bias);
     const response = await fetch(url);
-    if (!response.ok || seq !== state.routeSearch.requestSeq) {
-      return;
-    }
+    if (!response.ok || seq !== state.routeSearch.requestSeq) return;
     const payload = await response.json();
-    if (seq !== state.routeSearch.requestSeq) {
-      return;
-    }
+    if (seq !== state.routeSearch.requestSeq) return;
     const results = Array.isArray(payload?.results) ? payload.results : [];
     state.routeSearch.suggestions = results
       .map((r) => ({
         display_name: String(r?.display_name || "").trim(),
         lat: asFiniteNumber(r?.lat),
         lon: asFiniteNumber(r?.lon),
+        place_id: "",
       }))
       .filter((r) => r.display_name);
     state.routeSearch.activeIndex = state.routeSearch.suggestions.length ? 0 : -1;
@@ -1810,7 +1849,6 @@ function initDestinationSearchUi() {
     }
   });
 }
->>>>>>> feature/integrate-waze-and-service-hardening
 
 function buildBiasQueryString(bias) {
   if (!bias || !Number.isFinite(bias.lat) || !Number.isFinite(bias.lon)) return "";
@@ -1859,6 +1897,68 @@ async function resolveFromGeocode(query, bias) {
   const first = Array.isArray(payload?.results) ? payload.results[0] : null;
   return parseAddressCandidate(first, query);
 }
+async function resolveFromGoogleGeocode(query, bias) {
+  const ready = await ensureGoogleServices();
+  if (!ready || !state.google.geocoder) return null;
+  return new Promise((resolve) => {
+    const request = { address: query };
+    const locationBias = googleLocationBias(bias);
+    if (locationBias) request.locationBias = locationBias;
+    state.google.geocoder.geocode(request, (results, status) => {
+      if (status !== "OK" || !Array.isArray(results) || !results.length) {
+        resolve(null);
+        return;
+      }
+      resolve(geocodeResultToCandidate(results[0], query));
+    });
+  });
+}
+async function resolveGooglePlaceIdToCandidate(placeId, fallbackName) {
+  const ready = await ensureGoogleServices();
+  if (!ready || !state.google.geocoder || !placeId) return null;
+  return new Promise((resolve) => {
+    state.google.geocoder.geocode({ placeId }, (results, status) => {
+      if (status !== "OK" || !Array.isArray(results) || !results.length) {
+        resolve(null);
+        return;
+      }
+      resolve(geocodeResultToCandidate(results[0], fallbackName));
+    });
+  });
+}
+async function buildGoogleDirectionsRoute(origin, destination, stops) {
+  const ready = await ensureGoogleServices();
+  if (!ready || !state.google.directionsService || !window.google?.maps?.TravelMode) return null;
+  return new Promise((resolve) => {
+    const waypointItems = (Array.isArray(stops) ? stops : [])
+      .filter((s) => Number.isFinite(s?.lat) && Number.isFinite(s?.lon))
+      .map((s) => ({
+        location: { lat: s.lat, lng: s.lon },
+        stopover: true,
+      }));
+    state.google.directionsService.route(
+      {
+        origin: { lat: origin.lat, lng: origin.lon },
+        destination: { lat: destination.lat, lng: destination.lon },
+        waypoints: waypointItems,
+        optimizeWaypoints: false,
+        provideRouteAlternatives: false,
+        travelMode: window.google.maps.TravelMode.DRIVING,
+        drivingOptions: {
+          departureTime: new Date(),
+          trafficModel: window.google.maps.TrafficModel.BEST_GUESS,
+        },
+      },
+      (result, status) => {
+        if (status !== "OK" || !result?.routes?.length) {
+          resolve(null);
+          return;
+        }
+        resolve(result.routes[0]);
+      }
+    );
+  });
+}
 
 async function upsertAddressCatalog(query, candidate, bias) {
   if (!candidate) return;
@@ -1886,15 +1986,15 @@ async function upsertAddressCatalog(query, candidate, bias) {
 
 async function resolveAddressWithFunnel(query, bias) {
   if (!query) return null;
+  const fromGoogle = await resolveFromGoogleGeocode(query, bias).catch(() => null);
+  if (fromGoogle) return { candidate: fromGoogle, fromCatalog: false, source: "google" };
   const fromCatalog = await resolveFromAddressCatalog(query, bias).catch(() => null);
-  if (fromCatalog) return { candidate: fromCatalog, fromCatalog: true };
+  if (fromCatalog) return { candidate: fromCatalog, fromCatalog: true, source: "catalog" };
   const fromGeocode = await resolveFromGeocode(query, bias).catch(() => null);
   if (!fromGeocode) return null;
   upsertAddressCatalog(query, fromGeocode, bias);
-  return { candidate: fromGeocode, fromCatalog: false };
+  return { candidate: fromGeocode, fromCatalog: false, source: "osm-fallback" };
 }
-<<<<<<< HEAD
-=======
 async function resolveWaypoint(raw, bias, labelPrefix = "Stop") {
   const parsed = parseLatLonInput(raw);
   if (parsed) {
@@ -1904,9 +2004,10 @@ async function resolveWaypoint(raw, bias, labelPrefix = "Stop") {
   if (!resolved?.candidate) {
     throw new Error(`${labelPrefix} unresolved`);
   }
+  const sourceLabel = resolved.source || (resolved.fromCatalog ? "catalog" : "osm-fallback");
   addListItem(
     ui.jurisdictionNotices,
-    `${labelPrefix}: ${resolved.fromCatalog ? "catalog" : "osm-fallback"} → ${resolved.candidate.displayName || raw}`
+    `${labelPrefix}: ${sourceLabel} → ${resolved.candidate.displayName || raw}`
   );
   return {
     lat: resolved.candidate.lat,
@@ -1916,6 +2017,31 @@ async function resolveWaypoint(raw, bias, labelPrefix = "Stop") {
 }
 
 async function buildMultiStopRouteOptions(origin, destination, stops) {
+  const googleRoute = await buildGoogleDirectionsRoute(origin, destination, stops).catch(() => null);
+  if (googleRoute) {
+    const alternative = googleDirectionsRouteToAlternative(googleRoute);
+    let stopDwellS = 0;
+    (Array.isArray(stops) ? stops : []).forEach((stop) => {
+      stopDwellS += stopDwellSeconds(stop);
+    });
+    alternative.stop_dwell_s = stopDwellS;
+    alternative.eta_with_stops_s = Number(alternative.eta_speed_limit_s || 0) + stopDwellS;
+    return {
+      ts: new Date().toISOString(),
+      status: "ok",
+      origin: { lat: origin.lat, lon: origin.lon },
+      destination: { lat: destination.lat, lon: destination.lon },
+      alternatives: [alternative],
+      alert_clusters: {
+        ts: new Date().toISOString(),
+        status: "ok",
+        grid_deg: 1.0,
+        clusters: [],
+      },
+      stop_count: Array.isArray(stops) ? stops.length : 0,
+      source: "google_traffic",
+    };
+  }
   let current = origin;
   let totalDistanceM = 0;
   let totalDurationS = 0;
@@ -1983,64 +2109,13 @@ async function buildMultiStopRouteOptions(origin, destination, stops) {
       clusters: mergedClusters,
     },
     stop_count: stops.length,
+    source: "backend_route_options",
   };
 }
->>>>>>> feature/integrate-waze-and-service-hardening
 
 async function planRoute() {
   const endRaw = ui.endInput.value.trim();
   const startRaw = ui.startInput.value.trim();
-<<<<<<< HEAD
-  let parsedEnd = parseLatLonInput(endRaw);
-  const parsedStart = parseLatLonInput(startRaw);
-  const bias = readBiasCoordinates() || parsedStart || null;
-  let resolvedEndLabel = endRaw;
-  if (!parsedEnd && endRaw) {
-    setRun("resolving destination", "warn");
-    const resolved = await resolveAddressWithFunnel(endRaw, bias);
-    if (resolved?.candidate) {
-      parsedEnd = { lat: resolved.candidate.lat, lon: resolved.candidate.lon };
-      resolvedEndLabel = resolved.candidate.displayName || endRaw;
-      addListItem(
-        ui.jurisdictionNotices,
-        `Address funnel: ${resolved.fromCatalog ? "catalog" : "osm-fallback"} → ${resolvedEndLabel}`
-      );
-      setRun("route destination resolved", "ok");
-    } else {
-      setRun("route destination unresolved", "bad");
-    }
-  }
-  const lat = parsedEnd?.lat ?? parsedStart?.lat;
-  const lon = parsedEnd?.lon ?? parsedStart?.lon;
-
-  fetchWazeRouteFromBackend({ start: startRaw, end: endRaw, lat, lon })
-    .then((route) => {
-      if (Number.isFinite(route?.lat) && Number.isFinite(route?.lon)) {
-        updateIntegratedMap(route.lat, route.lon, 12, "gps", { forceCenter: true });
-      }
-      if (route?.app_url) openWazeUrl(route.app_url);
-    })
-    .catch(() => {
-      if (parsedEnd) {
-        updateIntegratedMap(parsedEnd.lat, parsedEnd.lon, 12, "gps", { forceCenter: true });
-        openWazeFromCoords(parsedEnd.lat, parsedEnd.lon);
-      } else if (endRaw) {
-        const url = `https://waze.com/ul?q=${encodeURIComponent(endRaw)}&navigate=yes`;
-        openWazeUrl(url);
-      }
-    });
-
-  if (parsedStart) {
-    ui.latInput.value = parsedStart.lat;
-    ui.lonInput.value = parsedStart.lon;
-  }
-  if (parsedEnd) {
-    ui.latInput.value = parsedEnd.lat;
-    ui.lonInput.value = parsedEnd.lon;
-  }
-  const weatherEnd = resolvedEndLabel || endRaw;
-  fetchRouteWeatherFor(startRaw, weatherEnd);
-=======
   if (!endRaw) {
     setRun("destination missing", "bad");
     setRouteVisualStatus("Enter a destination");
@@ -2079,8 +2154,9 @@ async function planRoute() {
     ui.lonInput.value = destination.lon;
     const finalAlt = options.alternatives[0] || {};
     const etaLabel = formatDurationLabel(finalAlt.eta_with_stops_s ?? finalAlt.eta_speed_limit_s ?? finalAlt.duration_s);
+    const viaLabel = options?.source === "google_traffic" ? "google traffic" : "backend route model";
     setRouteVisualStatus(
-      `Stops: ${resolvedStops.length} • ETA: ${etaLabel} (speed limits + 30 mph fallback + stop dwell)`
+      `Stops: ${resolvedStops.length} • ETA: ${etaLabel} via ${viaLabel}`
     );
     setRun("route ready", "ok");
     fetchRouteWeatherFor(startRaw, destination.label || endRaw);
@@ -2105,7 +2181,6 @@ async function planRoute() {
     setRun("route destination unresolved", "bad");
     setRouteVisualStatus("Route drawing unavailable");
   }
->>>>>>> feature/integrate-waze-and-service-hardening
 }
 
 ui.enableNotifyBtn.addEventListener("click", async () => {
@@ -2124,12 +2199,9 @@ ui.openWazeBtn.addEventListener("click", () => {
   if (!Number.isFinite(lat) || !Number.isFinite(lon)) return;
   openWazeFromCoords(lat, lon);
 });
-<<<<<<< HEAD
-=======
 if (ui.addStopBtn) {
   ui.addStopBtn.addEventListener("click", () => addStopRow());
 }
->>>>>>> feature/integrate-waze-and-service-hardening
 
 ui.planRouteBtn.addEventListener("click", planRoute);
 
@@ -2182,8 +2254,6 @@ if (ui.quickAlertsBtn) {
     ui.alerts?.scrollIntoView({ behavior: "smooth", block: "start" });
   });
 }
-<<<<<<< HEAD
-=======
 if (ui.refreshBackendMapBtn) {
   ui.refreshBackendMapBtn.addEventListener("click", () => {
     const lat = Number(ui.latInput.value);
@@ -2199,7 +2269,6 @@ if (ui.refreshBackendMapBtn) {
     }
   });
 }
->>>>>>> feature/integrate-waze-and-service-hardening
 ui.refreshSelectorBtn.addEventListener("click", () => {
   if (!isAutoSelectorMode()) {
     applyManualSelectionToStatus();
@@ -2237,15 +2306,12 @@ ui.channelSelect.addEventListener("change", () => {
     applyManualSelectionToStatus();
   }
 });
-<<<<<<< HEAD
-=======
 if (ui.closeClusterDetailBtn) {
   ui.closeClusterDetailBtn.addEventListener("click", () => {
     closeClusterDetailPanel();
     renderClusterList();
   });
 }
->>>>>>> feature/integrate-waze-and-service-hardening
 
 ui.closeAlertModalBtn.addEventListener("click", hideAlertModal);
 ui.toggleQuietModeBtn.addEventListener("click", () => {
@@ -2268,11 +2334,6 @@ ui.clearNotifyListsBtn.addEventListener("click", () => {
 
 renderMetrics();
 renderNotificationWorkflow();
-<<<<<<< HEAD
-setRun("waiting", "mute");
-setGpsStatus("gps: pending", "mute");
-initIntegratedMap();
-=======
 clearRouteDrawing();
 setRouteVisualStatus("Route visualization idle");
 setRun("waiting", "mute");
@@ -2282,7 +2343,6 @@ if (ui.multiStopList) {
   ui.multiStopList.innerHTML = "";
 }
 initDestinationSearchUi();
->>>>>>> feature/integrate-waze-and-service-hardening
 updateFollowButtonUi();
 setSelectorModeUi();
 loadCatalogRegions();

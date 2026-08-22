@@ -18,10 +18,139 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Frontend Command Center"
+            android:text="Route Command Center"
             android:textColor="#E8EEFF"
             android:textSize="19sp"
             android:textStyle="bold" />
+        <LinearLayout
+            android:id="@+id/routeActivePanel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="#16243A"
+            android:orientation="vertical"
+            android:padding="10dp"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/routeActiveTitleText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Route Command Center"
+                android:textColor="#E8EEFF"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <AutoCompleteTextView
+                android:id="@+id/routeActionInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="#141C2D"
+                android:completionThreshold="0"
+                android:hint="Change route or Add stop: destination"
+                android:inputType="text"
+                android:padding="10dp"
+                android:textColor="#E8EEFF"
+                android:textColorHint="#9FB0CF" />
+
+            <TextView
+                android:id="@+id/routeStopsTitleText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Current stops (drag to reorder)"
+                android:textColor="#E8EEFF"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/routeStopsEmptyText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="No stops yet. Use Add stop: &lt;destination&gt;."
+                android:textColor="#9FB0CF"
+                android:textSize="12sp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/routeStopsRecycler"
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                android:layout_marginTop="6dp"
+                android:background="#101827"
+                android:padding="6dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/routeActionApplyBtn"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="#4F8CFF"
+                    android:text="Apply route action"
+                    android:textAllCaps="false" />
+
+                <Button
+                    android:id="@+id/routeClearBtn"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#B24646"
+                    android:text="Clear route"
+                    android:textAllCaps="false" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/alertManagementToggleBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:backgroundTint="#141C2D"
+                android:text="Alert management ▼"
+                android:textAllCaps="false" />
+
+            <LinearLayout
+                android:id="@+id/alertManagementSubmenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <Button
+                    android:id="@+id/errorReportBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="#B24646"
+                    android:text="Report Error"
+                    android:textAllCaps="false" />
+
+                <TextView
+                    android:id="@+id/errorReportStatusText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="Error reports: idle"
+                    android:textColor="#9FB0CF"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/autoNotificationPermissionBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:backgroundTint="#141C2D"
+                    android:text="Android Auto notification permission"
+                    android:textAllCaps="false" />
+            </LinearLayout>
+        </LinearLayout>
 
 
         <EditText
@@ -97,32 +226,6 @@
                 android:textAllCaps="false" />
         </LinearLayout>
 
-        <Button
-            android:id="@+id/errorReportBtn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:backgroundTint="#B24646"
-            android:text="Report Error"
-            android:textAllCaps="false" />
-
-        <TextView
-            android:id="@+id/errorReportStatusText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="6dp"
-            android:text="Error reports: idle"
-            android:textColor="#9FB0CF"
-            android:textSize="12sp" />
-
-        <Button
-            android:id="@+id/autoNotificationPermissionBtn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:backgroundTint="#141C2D"
-            android:text="Android Auto notification permission"
-            android:textAllCaps="false" />
 
         <TextView
             android:layout_width="match_parent"

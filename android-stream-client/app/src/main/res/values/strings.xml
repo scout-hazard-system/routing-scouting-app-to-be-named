@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Traffic Pulse Pathfinder</string>
+    <string name="app_name">Scout</string>
     <string name="draw_route">Draw Route</string>
     <string name="status_label">Status</string>
     <string name="map_target_none">Map Target: no active target</string>
@@ -9,10 +9,19 @@
     <string name="menu_close">✕ Close</string>
     <string name="destination_hint">Search destination address</string>
     <string name="search_go">Route</string>
+    <string name="assistant_prompt_hint">Ask Scout for directions</string>
+    <string name="assistant_ask">Ask Scout</string>
+    <string name="scout_speaking_title">Scout speaking</string>
+    <string name="scout_speaking_placeholder">Preparing response…</string>
+    <string name="scout_speaking_stop">Stop voice</string>
+    <string name="scout_web_lookup">Scout web lookup…</string>
+    <string name="scout_web_no_result">No web result found.</string>
     <string name="route_options_loading">Loading route options…</string>
-    <string name="route_options_hazards_loading">Waze hazards: loading…</string>
+    <string name="route_options_hazards_loading">Traffic/Hazard APIs: loading source status…</string>
     <string name="route_options_start">Start navigation</string>
     <string name="route_options_close">Close</string>
+    <string name="route_options_share_eta">Share ETA</string>
+    <string name="route_options_share_chooser">Share ETA link</string>
     <string name="tailscale_mode_off">Tailscale Mode: Off</string>
     <string name="tailscale_mode_on">Tailscale Mode: On (Prefer 100.x)</string>
     <string name="tailscale_mode_checkbox">Prefer Tailscale 100.x endpoint</string>
@@ -42,9 +51,15 @@
     <string name="popup_route_here">Route to this location</string>
     <string name="popup_dismiss">✕</string>
     <string name="popup_dismiss_icon_description">Dismiss popup</string>
-    <string name="popup_vet_pass">✅ Vetted alert</string>
-    <string name="popup_vet_fail">⚠️ Unvetted alert</string>
+    <string name="popup_core0_rating">Core0 call rating</string>
+    <string name="popup_core0_unknown">Core0 rating unavailable</string>
     <string name="map_mode_vector">Map: Vector</string>
     <string name="zoom_in">+</string>
     <string name="zoom_out">\u2212</string>
+    <string name="route_alert_channel_name">Scout Route Alerts</string>
+    <string name="route_alert_channel_description">Navigation and hazard alerts for active routes, including Android Auto.</string>
+    <string name="route_alert_notification_title">Scout route alert</string>
+    <string name="route_alert_notification_title_with_destination">Scout route alert — %1$s</string>
+    <string name="route_alert_notification_mentions">Location mentions: %1$s</string>
+    <string name="route_alert_notification_action_open_route">Open route</string>
 </resources>

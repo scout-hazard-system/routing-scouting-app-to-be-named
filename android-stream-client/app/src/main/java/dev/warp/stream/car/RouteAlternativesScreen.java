@@ -109,7 +109,7 @@ final class RouteAlternativesScreen extends Screen {
     invalidate();
     executor.submit(
         () -> {
-          String baseUrl = AppPrefs.baseUrl(getCarContext());
+          String baseUrl = AppPrefs.resolveReachableBaseUrl(getCarContext());
           List<CarRoutingClient.RouteAlternative> fetched =
               routingClient.fetchRouteAlternatives(baseUrl, originLat, originLon, destLat, destLon);
           synchronized (alternatives) {

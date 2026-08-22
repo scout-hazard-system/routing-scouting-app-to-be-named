@@ -8,21 +8,15 @@ from datetime import datetime, UTC
 from http import HTTPStatus
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
-<<<<<<< HEAD
-=======
 from urllib import error as urlerror
 from urllib import request as urlrequest
->>>>>>> feature/integrate-waze-and-service-hardening
 from urllib.parse import parse_qs, urlparse
 
 ROOT = Path(getattr(sys, "_MEIPASS", Path(__file__).resolve().parent))
 LOG_PATH = Path(os.environ.get("PIPELINE_LOG_PATH", "/tmp/pipeline_live_doordash.log"))
 HOST = os.environ.get("FRONTEND_DEV_HOST", "127.0.0.1")
 PORT = int(os.environ.get("FRONTEND_DEV_PORT", "8787"))
-<<<<<<< HEAD
-=======
 BACKEND_BASE_URL = os.environ.get("BACKEND_BASE_URL", "http://127.0.0.1:18080").rstrip("/")
->>>>>>> feature/integrate-waze-and-service-hardening
 RECENT_EVENT_LIMIT = 120
 STREAM_POLL_SECONDS = 0.35
 
@@ -194,8 +188,6 @@ class FrontendHandler(SimpleHTTPRequestHandler):
         except (BrokenPipeError, ConnectionResetError):
             return
 
-<<<<<<< HEAD
-=======
     def _proxy_backend_get(self):
         upstream_url = f"{BACKEND_BASE_URL}{self.path}"
         try:
@@ -235,7 +227,6 @@ class FrontendHandler(SimpleHTTPRequestHandler):
             )
             return
 
->>>>>>> feature/integrate-waze-and-service-hardening
     def do_GET(self):
         parsed = urlparse(self.path)
         path = parsed.path
@@ -265,12 +256,9 @@ class FrontendHandler(SimpleHTTPRequestHandler):
                 }
             )
             return
-<<<<<<< HEAD
-=======
         if path.startswith("/api/"):
             self._proxy_backend_get()
             return
->>>>>>> feature/integrate-waze-and-service-hardening
 
         return super().do_GET()
 

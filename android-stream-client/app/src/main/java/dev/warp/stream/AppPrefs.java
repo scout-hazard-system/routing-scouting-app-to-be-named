@@ -3,6 +3,7 @@ package dev.warp.stream;
 import android.content.Context;
 import android.content.SharedPreferences;
 import java.net.HttpURLConnection;
+import java.net.URI;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
@@ -27,9 +28,11 @@ public final class AppPrefs {
   private static final String KEY_DEST_LON = "dest_lon";
   private static final String KEY_DEST_LABEL = "dest_label";
   private static final String KEY_PREFERRED_ROUTE_ALT_INDEX = "preferred_route_alt_index";
+  private static final String KEY_ROUTE_SESSION_ACTIVE = "route_session_active";
   private static final String KEY_ACTIVE_TRACKING_ENABLED = "active_tracking_enabled";
   private static final String KEY_TRACKING_CONSENT_RESOLVED = "tracking_consent_resolved";
   private static final String KEY_ANALYTICS_ENABLED = "analytics_enabled";
+  private static final String KEY_SCOUT_PROFILE_SKETCH = "scout_profile_sketch";
   private static final long BASE_URL_PROBE_CACHE_MS = 15000L;
   private static final int BASE_URL_PROBE_TIMEOUT_MS = 900;
   private static volatile String cachedReachableBaseUrl = null;
@@ -130,9 +133,14 @@ public final class AppPrefs {
   private static List<String> buildProbeChain(String preferred, boolean preferTailscale) {
     Set<String> ordered = new LinkedHashSet<>();
     if (preferTailscale) {
-      ordered.add(TAILSCALE_BASE_URL);
-      if (preferred != null && !preferred.isEmpty()) {
+      if (isTailscaleCandidate(preferred)) {
         ordered.add(preferred);
+        ordered.add(TAILSCALE_BASE_URL);
+      } else {
+        ordered.add(TAILSCALE_BASE_URL);
+        if (preferred != null && !preferred.isEmpty()) {
+          ordered.add(preferred);
+        }
       }
       ordered.add(DEFAULT_BASE_URL);
       ordered.add(FALLBACK_BASE_URL);
@@ -145,6 +153,25 @@ public final class AppPrefs {
       ordered.add(DEFAULT_BASE_URL);
     }
     return new ArrayList<>(ordered);
+  }
+
+  private static boolean isTailscaleCandidate(String baseUrl) {
+    if (baseUrl == null || baseUrl.isBlank()) {
+      return false;
+    }
+    try {
+      URI uri = URI.create(baseUrl.trim());
+      String host = uri.getHost();
+      if (host == null || host.isBlank()) {
+        return false;
+      }
+      if (host.endsWith(".ts.net")) {
+        return true;
+      }
+      return host.startsWith("100.");
+    } catch (Exception ignored) {
+      return false;
+    }
   }
 
   private static boolean isBackendHealthy(String baseUrl) {
@@ -225,6 +252,25 @@ public final class AppPrefs {
     return value >= 0 ? value : null;
   }
 
+  public static void setRouteSessionActive(Context context, boolean active) {
+    prefs(context).edit().putBoolean(KEY_ROUTE_SESSION_ACTIVE, active).apply();
+  }
+
+  public static boolean isRouteSessionActive(Context context) {
+    return prefs(context).getBoolean(KEY_ROUTE_SESSION_ACTIVE, false);
+  }
+
+  public static void clearRouteSelectionCache(Context context) {
+    prefs(context)
+        .edit()
+        .remove(KEY_DEST_LAT)
+        .remove(KEY_DEST_LON)
+        .remove(KEY_DEST_LABEL)
+        .remove(KEY_PREFERRED_ROUTE_ALT_INDEX)
+        .putBoolean(KEY_ROUTE_SESSION_ACTIVE, false)
+        .apply();
+  }
+
   public static boolean isActiveTrackingEnabled(Context context) {
     return prefs(context).getBoolean(KEY_ACTIVE_TRACKING_ENABLED, true);
   }
@@ -248,5 +294,19 @@ public final class AppPrefs {
 
   public static void setAnalyticsEnabled(Context context, boolean enabled) {
     prefs(context).edit().putBoolean(KEY_ANALYTICS_ENABLED, enabled).apply();
+  }
+
+  public static String scoutProfileSketch(Context context) {
+    return prefs(context).getString(KEY_SCOUT_PROFILE_SKETCH, "");
+  }
+
+  public static void saveScoutProfileSketch(Context context, String sketchJson) {
+    SharedPreferences.Editor editor = prefs(context).edit();
+    if (sketchJson == null || sketchJson.trim().isEmpty()) {
+      editor.remove(KEY_SCOUT_PROFILE_SKETCH);
+    } else {
+      editor.putString(KEY_SCOUT_PROFILE_SKETCH, sketchJson);
+    }
+    editor.apply();
   }
 }

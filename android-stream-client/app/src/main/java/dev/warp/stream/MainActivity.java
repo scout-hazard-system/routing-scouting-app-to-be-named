@@ -2,6 +2,9 @@ package dev.warp.stream;
 
 import android.Manifest;
 import android.content.ActivityNotFoundException;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -40,6 +43,11 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.ItemTouchHelper;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import java.io.BufferedReader;
@@ -57,6 +65,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Locale;
 import java.util.Set;
+import java.util.Collections;
 import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -92,16 +101,27 @@ public class MainActivity extends AppCompatActivity {
   private static final long PIPELINE_ALERT_SPEAK_COOLDOWN_MS = 9000L;
   private static final long ALERT_CLUSTER_CACHE_MS = 20000L;
   private static final int PIPELINE_ALERT_SPEAK_MIN_RATING = 4;
-  private static final int MAX_LOCAL_CALL_CONTEXT_ITEMS = 8;
+  private static final String ROUTE_ALERT_NOTIFICATION_CHANNEL_ID = "scout_route_alerts";
+  private static final int ROUTE_ALERT_NOTIFICATION_CHANNEL_IMPORTANCE = NotificationManager.IMPORTANCE_HIGH;
+  private static final long ROUTE_ALERT_NOTIFICATION_COOLDOWN_MS = 7000L;
+  private static final int MAX_LOCAL_CALL_CONTEXT_ITEMS = 20;
+  private static final int MAX_BROADCASTIFY_CONTEXT_ITEMS = 48;
+  private static final int MAX_HAZARD_CONTEXT_ITEMS = 24;
+  private static final int MAX_CONTEXT_PAYLOAD_CHARS = 9000;
   private static final double DEFAULT_MAP_LAT = 37.7749;
   private static final double DEFAULT_MAP_LON = -122.4194;
-  private static final String ASSISTANT_MODEL_PREFERENCE = "scout-core0";
+  private static final double DEFAULT_COUNTRY_SCENE_RADIUS_M = 1_250_000.0;
+  private static final double MIN_SCENE_RADIUS_M = 120_000.0;
+  private static final String ASSISTANT_MODEL_PREFERENCE = "scout-core1.0.7";
   private static final MediaType JSON_MEDIA_TYPE = MediaType.get("application/json; charset=utf-8");
   private static final String STATE_MAP3D_ENABLED = "state_map3d_enabled";
   private static final String STATE_MAP_LAT = "state_map_lat";
   private static final String STATE_MAP_LON = "state_map_lon";
   private static final String STATE_DEVICE_LAT = "state_device_lat";
   private static final String STATE_DEVICE_LON = "state_device_lon";
+  private static final String EXTRA_FOCUS_ROUTE = "focus_route";
+  private static final String ROUTE_ACTION_CHANGE_ROUTE = "Change route";
+  private static final String ROUTE_ACTION_ADD_STOP = "Add stop";
   private static final Pattern COORDINATE_PATTERN =
       Pattern.compile("\\b(-?\\d{1,2}\\.\\d+)\\s*[, ]\\s*(-?\\d{1,3}\\.\\d+)\\b");
   private static final Pattern DESTINATION_INTENT_PATTERN =
@@ -134,6 +154,7 @@ public class MainActivity extends AppCompatActivity {
   private EditText baseUrlInput;
   private AutoCompleteTextView destinationInput;
   private EditText assistantPromptInput;
+  private AutoCompleteTextView routeActionInput;
   private TextView statusText;
   private TextView drivingModeText;
   private TextView mapTargetText;
@@ -142,6 +163,9 @@ public class MainActivity extends AppCompatActivity {
   private Button errorReportBtn;
   private TextView stackManageStatusText;
   private View controlPanel;
+  private View routeActivePanel;
+  private View alertManagementSubmenu;
+  private Button alertManagementToggleBtn;
   private Map3dView map3dView;
   private Button mapModeBtn;
   private Button tailscaleModeBtn;
@@ -230,12 +254,78 @@ public class MainActivity extends AppCompatActivity {
   private volatile String cachedAssistantEndpointPath = "/api/platform/assistant/chat";
   private String lastSpokenPipelineAlertKey = "";
   private long lastSpokenPipelineAlertAtMs = 0L;
+  private String lastRouteAlertNotificationKey = "";
+  private long lastRouteAlertNotificationAtMs = 0L;
   private volatile String cachedAlertClusterSummary = "";
   private volatile long cachedAlertClusterAtMs = 0L;
   private final Deque<String> recentLocalCallContexts = new ArrayDeque<>();
+  private final Deque<String> recentBroadcastifyContexts = new ArrayDeque<>();
+  private final Deque<String> recentHazardApiContexts = new ArrayDeque<>();
+  private ArrayAdapter<String> routeActionAdapter;
+  private RecyclerView routeStopsRecycler;
+  private TextView routeStopsEmptyText;
+  private RouteStopAdapter routeStopAdapter;
+  private final List<RouteStop> routeStops = new ArrayList<>();
+  private boolean alertManagementExpanded = false;
+  private boolean routeSessionActive = false;
 
   private interface AlertClusterSummaryCallback {
     void onReady(String summary);
+  }
+
+  private static final class RouteStop {
+    private final String label;
+    private final double lat;
+    private final double lon;
+
+    private RouteStop(String label, double lat, double lon) {
+      this.label = label;
+      this.lat = lat;
+      this.lon = lon;
+    }
+  }
+
+  private final class RouteStopViewHolder extends RecyclerView.ViewHolder {
+    private final TextView titleText;
+    private final TextView subtitleText;
+
+    private RouteStopViewHolder(View itemView) {
+      super(itemView);
+      titleText = itemView.findViewById(android.R.id.text1);
+      subtitleText = itemView.findViewById(android.R.id.text2);
+    }
+  }
+
+  private final class RouteStopAdapter extends RecyclerView.Adapter<RouteStopViewHolder> {
+    @Override
+    public RouteStopViewHolder onCreateViewHolder(android.view.ViewGroup parent, int viewType) {
+      View rowView =
+          getLayoutInflater().inflate(android.R.layout.simple_list_item_2, parent, false);
+      return new RouteStopViewHolder(rowView);
+    }
+
+    @Override
+    public void onBindViewHolder(RouteStopViewHolder holder, int position) {
+      RouteStop stop = routeStops.get(position);
+      holder.titleText.setText((position + 1) + ". " + stop.label);
+      holder.subtitleText.setText(
+          String.format(Locale.ROOT, "lat %.5f  lon %.5f", stop.lat, stop.lon));
+      holder.itemView.setOnClickListener(
+          v -> {
+            if (position == 0) {
+              return;
+            }
+            Collections.swap(routeStops, position, 0);
+            notifyItemMoved(position, 0);
+            updateRouteStopsUi();
+            applyPrimaryStopWithoutRouteOptions("ROUTE", "set active stop: " + stop.label);
+          });
+    }
+
+    @Override
+    public int getItemCount() {
+      return routeStops.size();
+    }
   }
 
   private final SensorEventListener accelListener =
@@ -316,6 +406,51 @@ public class MainActivity extends AppCompatActivity {
     zoomOutBtn.setOnClickListener(v -> map3dView.zoomBy(2.0f));
     menuBtn = findViewById(R.id.menuBtn);
     controlPanel = findViewById(R.id.controlPanel);
+    routeActivePanel = findViewById(R.id.routeActivePanel);
+    alertManagementSubmenu = findViewById(R.id.alertManagementSubmenu);
+    alertManagementToggleBtn = findViewById(R.id.alertManagementToggleBtn);
+    routeActionInput = findViewById(R.id.routeActionInput);
+    routeStopsRecycler = findViewById(R.id.routeStopsRecycler);
+    routeStopsEmptyText = findViewById(R.id.routeStopsEmptyText);
+    if (routeStopsRecycler != null) {
+      routeStopsRecycler.setLayoutManager(new LinearLayoutManager(this));
+      routeStopAdapter = new RouteStopAdapter();
+      routeStopsRecycler.setAdapter(routeStopAdapter);
+      routeStopsRecycler.setHasFixedSize(false);
+      ItemTouchHelper itemTouchHelper =
+          new ItemTouchHelper(
+              new ItemTouchHelper.SimpleCallback(
+                  ItemTouchHelper.UP | ItemTouchHelper.DOWN, 0) {
+                @Override
+                public boolean onMove(
+                    RecyclerView recyclerView,
+                    RecyclerView.ViewHolder viewHolder,
+                    RecyclerView.ViewHolder target) {
+                  int from = viewHolder.getBindingAdapterPosition();
+                  int to = target.getBindingAdapterPosition();
+                  if (from < 0 || to < 0 || from >= routeStops.size() || to >= routeStops.size()) {
+                    return false;
+                  }
+                  Collections.swap(routeStops, from, to);
+                  if (routeStopAdapter != null) {
+                    routeStopAdapter.notifyItemMoved(from, to);
+                  }
+                  return true;
+                }
+
+                @Override
+                public void onSwiped(RecyclerView.ViewHolder viewHolder, int direction) {}
+
+                @Override
+                public void clearView(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder) {
+                  super.clearView(recyclerView, viewHolder);
+                  updateRouteStopsUi();
+                  applyPrimaryStopWithoutRouteOptions("ROUTE", "stops reordered");
+                }
+              });
+      itemTouchHelper.attachToRecyclerView(routeStopsRecycler);
+    }
+    updateRouteStopsUi();
     locationPopup = findViewById(R.id.locationPopup);
     popupTitle = findViewById(R.id.popupTitle);
     popupLocationText = findViewById(R.id.popupLocationText);
@@ -334,6 +469,8 @@ public class MainActivity extends AppCompatActivity {
     errorReportBtn = findViewById(R.id.errorReportBtn);
     errorReportStatusText = findViewById(R.id.errorReportStatusText);
     Button autoNotificationPermissionBtn = findViewById(R.id.autoNotificationPermissionBtn);
+    Button routeActionApplyBtn = findViewById(R.id.routeActionApplyBtn);
+    Button routeClearBtn = findViewById(R.id.routeClearBtn);
     stackManageStatusText = findViewById(R.id.stackManageStatusText);
     Button stackStatusBtn = findViewById(R.id.stackStatusBtn);
     Button stackHealthBtn = findViewById(R.id.stackHealthBtn);
@@ -395,6 +532,35 @@ public class MainActivity extends AppCompatActivity {
     if (autoNotificationPermissionBtn != null) {
       autoNotificationPermissionBtn.setOnClickListener(v -> runAndroidAutoNotificationPermissionCheck());
     }
+    if (routeActionInput != null) {
+      routeActionAdapter =
+          new ArrayAdapter<>(
+              this,
+              android.R.layout.simple_dropdown_item_1line,
+              Arrays.asList(
+                  ROUTE_ACTION_CHANGE_ROUTE,
+                  ROUTE_ACTION_CHANGE_ROUTE + ": ",
+                  ROUTE_ACTION_ADD_STOP,
+                  ROUTE_ACTION_ADD_STOP + ": "));
+      routeActionInput.setAdapter(routeActionAdapter);
+      routeActionInput.setThreshold(0);
+      routeActionInput.setOnClickListener(v -> routeActionInput.showDropDown());
+      routeActionInput.setOnFocusChangeListener(
+          (v, hasFocus) -> {
+            if (hasFocus) {
+              routeActionInput.showDropDown();
+            }
+          });
+    }
+    if (routeActionApplyBtn != null) {
+      routeActionApplyBtn.setOnClickListener(v -> applyRouteActionFromPanel());
+    }
+    if (routeClearBtn != null) {
+      routeClearBtn.setOnClickListener(v -> clearActiveRouteSelection(true));
+    }
+    if (alertManagementToggleBtn != null) {
+      alertManagementToggleBtn.setOnClickListener(v -> toggleAlertManagementSubmenu());
+    }
     updateErrorReportStatus(getString(R.string.error_report_status_idle));
     updateStackManageStatus(getString(R.string.stack_status_idle));
     if (stackStatusBtn != null) {
@@ -430,10 +596,12 @@ public class MainActivity extends AppCompatActivity {
     }
     appendLine("MAP", "vector map engine active (OSM road geometry as line data)");
     applyAppModeUi();
+    ensureRouteAlertNotificationChannel();
     initScoutTts();
 
     restoreUiState(savedInstanceState);
     applyMapMode(true);
+    restoreRouteSelectionState(getIntent());
 
     setStatus("idle");
     updateDrivingModeUi(0f);
@@ -685,6 +853,8 @@ public class MainActivity extends AppCompatActivity {
         destLon,
         alertClusterSummary -> {
           String unifiedLocalContext = buildLocalCallContextSummary();
+          String broadcastifyStreamContext = buildBroadcastifyStreamContextSummary();
+          String hazardApiStreamContext = buildHazardApiStreamContextSummary();
           JSONObject payloadJson =
               buildAssistantPayload(
                   queryText,
@@ -696,7 +866,9 @@ public class MainActivity extends AppCompatActivity {
                   destLat,
                   destLon,
                   alertClusterSummary,
-                  unifiedLocalContext);
+                  unifiedLocalContext,
+                  broadcastifyStreamContext,
+                  hazardApiStreamContext);
           String payload = payloadJson.toString();
           appendLine("SCOUT", "querying local assistant…");
           appendLine("SCOUT", "target " + base + normalizeEndpointPath(cachedAssistantEndpointPath));
@@ -714,7 +886,9 @@ public class MainActivity extends AppCompatActivity {
       double destLat,
       double destLon,
       String alertClusterSummary,
-      String localCallContext) {
+      String localCallContext,
+      String broadcastifyStreamContext,
+      String hazardApiStreamContext) {
     JSONObject payload = new JSONObject();
     try {
       payload.put("query", queryText == null ? "" : queryText);
@@ -736,13 +910,30 @@ public class MainActivity extends AppCompatActivity {
           TextUtils.isEmpty(localCallContext)
               ? "no_recent_local_calls_observed"
               : localCallContext);
-      payload.put("memory_hint", buildAndPersistScoutMemoryHint(queryText));
+      payload.put(
+          "broadcastify_stream_context",
+          TextUtils.isEmpty(broadcastifyStreamContext)
+              ? "no_recent_broadcastify_stream_context"
+              : broadcastifyStreamContext);
+      payload.put(
+          "hazard_api_stream_context",
+          TextUtils.isEmpty(hazardApiStreamContext)
+              ? "no_recent_hazard_api_stream_context"
+              : hazardApiStreamContext);
+      payload.put(
+          "memory_hint",
+          buildAndPersistScoutMemoryHint(
+              queryText, localCallContext, broadcastifyStreamContext, hazardApiStreamContext));
       Log.i(
           TAG,
           "assistant context clusters="
               + (TextUtils.isEmpty(alertClusterSummary) ? 0 : 1)
               + " local_calls="
-              + (TextUtils.isEmpty(localCallContext) ? 0 : 1));
+              + (TextUtils.isEmpty(localCallContext) ? 0 : 1)
+              + " broadcastify_context="
+              + (TextUtils.isEmpty(broadcastifyStreamContext) ? 0 : 1)
+              + " hazard_context="
+              + (TextUtils.isEmpty(hazardApiStreamContext) ? 0 : 1));
     } catch (Exception e) {
       appendLine("SCOUT", "payload build warning: " + e.getMessage());
     }
@@ -848,7 +1039,29 @@ public class MainActivity extends AppCompatActivity {
     if (recentLocalCallContexts.isEmpty()) {
       return "";
     }
-    return TextUtils.join(" | ", recentLocalCallContexts);
+    return summarizeContextDeque(recentLocalCallContexts);
+  }
+
+  private synchronized String buildBroadcastifyStreamContextSummary() {
+    if (recentBroadcastifyContexts.isEmpty()) {
+      return "";
+    }
+    return summarizeContextDeque(recentBroadcastifyContexts);
+  }
+
+  private synchronized String buildHazardApiStreamContextSummary() {
+    if (recentHazardApiContexts.isEmpty()) {
+      return "";
+    }
+    return summarizeContextDeque(recentHazardApiContexts);
+  }
+
+  private synchronized String summarizeContextDeque(Deque<String> source) {
+    String joined = TextUtils.join(" | ", source);
+    if (joined.length() <= MAX_CONTEXT_PAYLOAD_CHARS) {
+      return joined;
+    }
+    return joined.substring(0, MAX_CONTEXT_PAYLOAD_CHARS);
   }
 
   private void updateTrafficHazardContextFromRouteOptions(JSONObject payload) {
@@ -895,6 +1108,7 @@ public class MainActivity extends AppCompatActivity {
       entry.append(" route=").append(routeMode);
     }
     pushSharedContextEntry(entry.toString());
+    pushHazardApiContextEntry(entry.toString());
   }
 
   private void updateTrafficHazardContextFromClusterPayload(JSONObject payload, JSONArray clusters) {
@@ -905,6 +1119,7 @@ public class MainActivity extends AppCompatActivity {
             + clusterCount
             + (TextUtils.isEmpty(status) ? "" : (" status=" + status));
     pushSharedContextEntry(summary);
+    pushHazardApiContextEntry(summary);
   }
 
   private synchronized void pushSharedContextEntry(String entry) {
@@ -920,6 +1135,75 @@ public class MainActivity extends AppCompatActivity {
     while (recentLocalCallContexts.size() > MAX_LOCAL_CALL_CONTEXT_ITEMS) {
       recentLocalCallContexts.removeLast();
     }
+  }
+
+  private synchronized void pushBroadcastifyContextEntry(String entry) {
+    if (TextUtils.isEmpty(entry)) {
+      return;
+    }
+    String normalized = entry.trim();
+    if (normalized.isEmpty()) {
+      return;
+    }
+    recentBroadcastifyContexts.remove(normalized);
+    recentBroadcastifyContexts.addFirst(normalized);
+    while (recentBroadcastifyContexts.size() > MAX_BROADCASTIFY_CONTEXT_ITEMS) {
+      recentBroadcastifyContexts.removeLast();
+    }
+  }
+
+  private synchronized void pushHazardApiContextEntry(String entry) {
+    if (TextUtils.isEmpty(entry)) {
+      return;
+    }
+    String normalized = entry.trim();
+    if (normalized.isEmpty()) {
+      return;
+    }
+    recentHazardApiContexts.remove(normalized);
+    recentHazardApiContexts.addFirst(normalized);
+    while (recentHazardApiContexts.size() > MAX_HAZARD_CONTEXT_ITEMS) {
+      recentHazardApiContexts.removeLast();
+    }
+  }
+
+  private void captureBroadcastifyStreamContext(JSONObject eventJson, String eventType, String kind, String text) {
+    if (eventJson == null) {
+      return;
+    }
+    String lowerType = eventType == null ? "" : eventType.toLowerCase(Locale.ROOT);
+    if (!(lowerType.startsWith("chunk_")
+        || "alert_triggered".equals(lowerType)
+        || lowerType.contains("broadcast")
+        || lowerType.contains("channel_switch")
+        || lowerType.contains("capture_failed"))) {
+      return;
+    }
+    String ts = eventJson.optString("ts", "").trim();
+    String transcript = eventJson.optString("transcript", "").trim();
+    String alert = eventJson.optString("alert", "").trim();
+    double rms = eventJson.optDouble("rms", 0.0);
+    int rating = extractLegacyCallRating(eventJson);
+    StringBuilder entry = new StringBuilder();
+    if (!TextUtils.isEmpty(ts)) {
+      entry.append(ts).append(" ");
+    }
+    entry.append(lowerType);
+    if (!TextUtils.isEmpty(kind)) {
+      entry.append("/").append(kind.toLowerCase(Locale.ROOT));
+    }
+    if (rating > 0) {
+      entry.append(" r").append(rating);
+    }
+    entry.append(" rms=").append(String.format(Locale.ROOT, "%.3f", rms));
+    String headline = !TextUtils.isEmpty(alert) ? alert : (!TextUtils.isEmpty(transcript) ? transcript : text);
+    if (!TextUtils.isEmpty(headline)) {
+      if (headline.length() > 180) {
+        headline = headline.substring(0, 180);
+      }
+      entry.append(" ").append(headline);
+    }
+    pushBroadcastifyContextEntry(entry.toString());
   }
 
   private synchronized void updateLocalCallContext(JSONObject intel, JSONObject eventJson) {
@@ -946,13 +1230,15 @@ public class MainActivity extends AppCompatActivity {
     pushSharedContextEntry(summary);
   }
 
-  private JSONObject buildAndPersistScoutMemoryHint(String queryText) {
+  private JSONObject buildAndPersistScoutMemoryHint(
+      String queryText, String localCallContext, String broadcastifyStreamContext, String hazardApiStreamContext) {
     ScoutProfileSketch sketch = ScoutProfileSketch.fromJson(AppPrefs.scoutProfileSketch(this));
     sketch.observeUserPrompt(queryText);
     String destinationLabel = destinationInput != null ? destinationInput.getText().toString().trim() : "";
     if (!TextUtils.isEmpty(destinationLabel)) {
       sketch.observeUserPrompt("destination " + destinationLabel);
     }
+    sketch.observePlatformContext(localCallContext, broadcastifyStreamContext, hazardApiStreamContext);
     AppPrefs.saveScoutProfileSketch(this, sketch.toJson());
     JSONObject memoryHint = sketch.toMemoryHintJson();
     JSONArray tags = memoryHint.optJSONArray("tags");
@@ -1810,6 +2096,103 @@ public class MainActivity extends AppCompatActivity {
   }
 
 
+  private void updateRouteStopsUi() {
+    if (routeStopAdapter != null) {
+      routeStopAdapter.notifyDataSetChanged();
+    }
+    if (routeStopsEmptyText != null) {
+      routeStopsEmptyText.setVisibility(View.VISIBLE);
+      if (!routeStops.isEmpty()) {
+        routeStopsEmptyText.setText(
+            "Next stop: " + routeStops.get(0).label + "  •  tap to prioritize, drag to reorder");
+      } else {
+        routeStopsEmptyText.setText("No stops yet. Use Add stop: <destination>.");
+      }
+    }
+  }
+
+  private void rebuildStopsFromCurrentDestination(String fallbackLabel) {
+    routeStops.clear();
+    if (lastMapLat != null && lastMapLon != null) {
+      String label = destinationInput != null ? destinationInput.getText().toString().trim() : "";
+      if (label.isBlank()) {
+        label = fallbackLabel == null || fallbackLabel.isBlank() ? "Destination" : fallbackLabel;
+      }
+      routeStops.add(new RouteStop(label, lastMapLat, lastMapLon));
+    }
+    updateRouteStopsUi();
+  }
+
+  private void applyPrimaryStopWithoutRouteOptions(String tag, String detailMessage) {
+    if (routeStops.isEmpty()) {
+      return;
+    }
+    RouteStop primary = routeStops.get(0);
+    lastMapLat = primary.lat;
+    lastMapLon = primary.lon;
+    routeSessionActive = true;
+    AppPrefs.setRouteSessionActive(this, true);
+    AppPrefs.saveDestination(this, primary.lat, primary.lon);
+    AppPrefs.saveDestinationLabel(this, primary.label);
+    if (destinationInput != null) {
+      destinationInput.setText(primary.label);
+      destinationInput.setSelection(destinationInput.getText().length());
+    }
+    updateRouteActiveVariantUi();
+    updateMapTargetUi();
+    renderRouteOnMap(true);
+    if (!TextUtils.isEmpty(detailMessage)) {
+      appendLine(tag, detailMessage);
+    }
+  }
+
+  private void applyResolvedStop(
+      AddressCatalogRouter.AddressCandidate candidate,
+      String label,
+      String sourceTag,
+      boolean addAsStop,
+      boolean openRouteOptions) {
+    if (candidate == null) {
+      return;
+    }
+    RouteStop newStop = new RouteStop(candidate.displayName, candidate.lat, candidate.lon);
+    if (addAsStop) {
+      routeStops.add(newStop);
+      updateRouteStopsUi();
+      if (routeStops.size() == 1) {
+        applyPrimaryStopWithoutRouteOptions("STOP", "first stop set: " + newStop.label);
+        if (openRouteOptions) {
+          openRouteOptionsScreen(newStop.lat, newStop.lon, newStop.label);
+        }
+        return;
+      }
+      appendLine("STOP", "added stop #" + routeStops.size() + ": " + newStop.label);
+      return;
+    }
+
+    routeStops.clear();
+    routeStops.add(newStop);
+    updateRouteStopsUi();
+    lastMapLat = newStop.lat;
+    lastMapLon = newStop.lon;
+    selectedDestinationSuggestion = candidate;
+    updateMapTargetUi();
+    appendLine(label, "destination (" + sourceTag + "): " + candidate.displayName);
+    routeSessionActive = true;
+    AppPrefs.setRouteSessionActive(this, true);
+    updateRouteActiveVariantUi();
+    uiHandler.post(
+        () -> {
+          destinationInput.setText(candidate.displayName);
+          destinationInput.setSelection(destinationInput.getText().length());
+          destinationInput.clearFocus();
+          destinationInput.dismissDropDown();
+        });
+    renderRouteOnMap(true);
+    if (openRouteOptions) {
+      openRouteOptionsScreen(candidate.lat, candidate.lon, candidate.displayName);
+    }
+  }
   private void searchDestination() {
     String query = destinationInput.getText().toString().trim();
     if (query.isEmpty()) {
@@ -1895,26 +2278,22 @@ public class MainActivity extends AppCompatActivity {
 
   private void routeToResolvedCandidate(
       AddressCatalogRouter.AddressCandidate candidate, String label, String sourceTag) {
-    if (candidate == null) {
-      return;
-    }
-    lastMapLat = candidate.lat;
-    lastMapLon = candidate.lon;
-    selectedDestinationSuggestion = candidate;
-    updateMapTargetUi();
-    appendLine(label, "destination (" + sourceTag + "): " + candidate.displayName);
-    uiHandler.post(
-        () -> {
-          destinationInput.setText(candidate.displayName);
-          destinationInput.setSelection(destinationInput.getText().length());
-          destinationInput.clearFocus();
-          destinationInput.dismissDropDown();
-        });
-    renderRouteOnMap(true);
-    openRouteOptionsScreen(candidate.lat, candidate.lon, candidate.displayName);
+    applyResolvedStop(candidate, label, sourceTag, false, true);
+  }
+
+  private void routeToResolvedCandidate(
+      AddressCatalogRouter.AddressCandidate candidate,
+      String label,
+      String sourceTag,
+      boolean addAsStop) {
+    applyResolvedStop(candidate, label, sourceTag, addAsStop, !addAsStop);
   }
 
   private void geocodeAndRoute(String query, String label) {
+    geocodeAndRoute(query, label, false);
+  }
+
+  private void geocodeAndRoute(String query, String label, boolean addAsStop) {
     String base = normalizedBaseUrl();
     if (base == null) {
       setStatus("invalid URL");
@@ -1931,7 +2310,8 @@ public class MainActivity extends AppCompatActivity {
         new AddressCatalogRouter.ResolveCallback() {
           @Override
           public void onResolved(AddressCatalogRouter.AddressCandidate candidate, boolean fromCatalog) {
-            routeToResolvedCandidate(candidate, label, fromCatalog ? "catalog" : "osm-fallback");
+            routeToResolvedCandidate(
+                candidate, label, fromCatalog ? "catalog" : "osm-fallback", addAsStop);
           }
 
           @Override
@@ -1961,11 +2341,11 @@ public class MainActivity extends AppCompatActivity {
   private void toggleMapMode() {
     map3dView.recenter();
     if (lastMapLat != null && lastMapLon != null) {
-      fetchMapScene(lastMapLat, lastMapLon, 700.0, true);
+      fetchMapScene(lastMapLat, lastMapLon, DEFAULT_COUNTRY_SCENE_RADIUS_M, true);
     } else if (lastDeviceLat != null && lastDeviceLon != null) {
-      fetchMapScene(lastDeviceLat, lastDeviceLon, 700.0, true);
+      fetchMapScene(lastDeviceLat, lastDeviceLon, DEFAULT_COUNTRY_SCENE_RADIUS_M, true);
     } else {
-      fetchMapScene(DEFAULT_MAP_LAT, DEFAULT_MAP_LON, 700.0, true);
+      fetchMapScene(DEFAULT_MAP_LAT, DEFAULT_MAP_LON, DEFAULT_COUNTRY_SCENE_RADIUS_M, true);
     }
   }
 
@@ -1987,7 +2367,7 @@ public class MainActivity extends AppCompatActivity {
       lon = DEFAULT_MAP_LON;
     }
     map3dView.recenter();
-    fetchMapScene(lat, lon, 700.0, true);
+    fetchMapScene(lat, lon, DEFAULT_COUNTRY_SCENE_RADIUS_M, true);
   }
 
   private void fetchMapScene(double lat, double lon, double radiusM, boolean force) {
@@ -2009,6 +2389,7 @@ public class MainActivity extends AppCompatActivity {
       Log.d(TAG, "fetchMapScene skip: throttled");
       return;
     }
+    double requestedRadiusM = Math.max(MIN_SCENE_RADIUS_M, radiusM);
     sceneFetchInFlight = true;
     lastSceneFetchMs = now;
     String url =
@@ -2018,7 +2399,7 @@ public class MainActivity extends AppCompatActivity {
             + "&lon="
             + String.format(Locale.ROOT, "%.6f", lon)
             + "&radius_m="
-            + Math.round(radiusM);
+            + Math.round(requestedRadiusM);
     Log.i(
         TAG,
         String.format(
@@ -2026,7 +2407,7 @@ public class MainActivity extends AppCompatActivity {
             "fetchMapScene request lat=%.6f lon=%.6f radius=%.1f force=%b url=%s",
             lat,
             lon,
-            radiusM,
+            requestedRadiusM,
             force,
             url));
     Request request = new Request.Builder().url(url).build();
@@ -2064,7 +2445,7 @@ public class MainActivity extends AppCompatActivity {
                   Log.i(TAG, "fetchMapScene applied hasScene=" + map3dView.hasScene());
                   lastSceneLat = lat;
                   lastSceneLon = lon;
-                  lastSceneRadiusM = radiusM;
+                  lastSceneRadiusM = requestedRadiusM;
                 } catch (Exception e) {
                   Log.w(TAG, "fetchMapScene parse/apply failure: " + e.getMessage(), e);
                   appendLine("MAP3D", "scene parse failed: " + e.getMessage());
@@ -2170,6 +2551,155 @@ public class MainActivity extends AppCompatActivity {
         "long-press status to set remote server URL when off local network");
   }
 
+  private void restoreRouteSelectionState(Intent intent) {
+    double[] persistedDestination = AppPrefs.destination(this);
+    if (persistedDestination != null && persistedDestination.length >= 2) {
+      if (!Double.isFinite(lastMapLat == null ? Double.NaN : lastMapLat)
+          || !Double.isFinite(lastMapLon == null ? Double.NaN : lastMapLon)) {
+        lastMapLat = persistedDestination[0];
+        lastMapLon = persistedDestination[1];
+      }
+    }
+    String persistedLabel = AppPrefs.destinationLabel(this);
+    if (!TextUtils.isEmpty(persistedLabel) && destinationInput != null) {
+      destinationInput.setText(persistedLabel);
+      destinationInput.setSelection(destinationInput.getText().length());
+    }
+    if (persistedDestination != null && persistedDestination.length >= 2) {
+      rebuildStopsFromCurrentDestination(persistedLabel);
+    } else {
+      routeStops.clear();
+      updateRouteStopsUi();
+    }
+    boolean focusRouteRequested = intent != null && intent.getBooleanExtra(EXTRA_FOCUS_ROUTE, false);
+    routeSessionActive =
+        focusRouteRequested
+            || AppPrefs.isRouteSessionActive(this)
+            || (persistedDestination != null && persistedDestination.length >= 2);
+    if (routeSessionActive) {
+      AppPrefs.setRouteSessionActive(this, true);
+    }
+    updateRouteActiveVariantUi();
+    if (focusRouteRequested) {
+      setControlPanelVisible(true);
+      intent.removeExtra(EXTRA_FOCUS_ROUTE);
+      setIntent(intent);
+    }
+  }
+
+  private void updateRouteActiveVariantUi() {
+    if (routeActivePanel == null) {
+      return;
+    }
+    boolean routeSelected = routeSessionActive && lastMapLat != null && lastMapLon != null;
+    routeActivePanel.setVisibility(routeSelected ? View.VISIBLE : View.GONE);
+    if (!routeSelected) {
+      alertManagementExpanded = false;
+      if (alertManagementSubmenu != null) {
+        alertManagementSubmenu.setVisibility(View.GONE);
+      }
+      if (alertManagementToggleBtn != null) {
+        alertManagementToggleBtn.setText("Alert management ▼");
+      }
+      if (routeActionInput != null) {
+        routeActionInput.setText("", false);
+      }
+    }
+  }
+
+  private void toggleAlertManagementSubmenu() {
+    if (alertManagementSubmenu == null || alertManagementToggleBtn == null) {
+      return;
+    }
+    alertManagementExpanded = !alertManagementExpanded;
+    alertManagementSubmenu.setVisibility(alertManagementExpanded ? View.VISIBLE : View.GONE);
+    alertManagementToggleBtn.setText(
+        alertManagementExpanded ? "Alert management ▲" : "Alert management ▼");
+  }
+
+  private String extractRouteActionQuery(String rawInput, String prefix) {
+    if (TextUtils.isEmpty(rawInput)) {
+      return "";
+    }
+    String text = rawInput.trim();
+    if (text.equalsIgnoreCase(prefix)) {
+      return "";
+    }
+    String lower = text.toLowerCase(Locale.ROOT);
+    String prefixLower = prefix.toLowerCase(Locale.ROOT);
+    if (!lower.startsWith(prefixLower)) {
+      return "";
+    }
+    String suffix = text.substring(prefix.length()).trim();
+    if (suffix.startsWith(":")) {
+      suffix = suffix.substring(1).trim();
+    }
+    return suffix;
+  }
+
+  private void applyRouteActionFromPanel() {
+    if (routeActionInput == null) {
+      return;
+    }
+    String rawAction = routeActionInput.getText() == null ? "" : routeActionInput.getText().toString().trim();
+    if (rawAction.isEmpty()) {
+      appendLine("ROUTE", "choose route action: Change route or Add stop");
+      routeActionInput.showDropDown();
+      return;
+    }
+    String lower = rawAction.toLowerCase(Locale.ROOT);
+    if (lower.startsWith(ROUTE_ACTION_CHANGE_ROUTE.toLowerCase(Locale.ROOT))) {
+      String query = extractRouteActionQuery(rawAction, ROUTE_ACTION_CHANGE_ROUTE);
+      if (query.isEmpty()) {
+        appendLine("ROUTE", "change route selected; enter destination in the top search box");
+        if (destinationInput != null) {
+          destinationInput.requestFocus();
+          destinationInput.showDropDown();
+        }
+      } else {
+        geocodeAndRoute(query, "ROUTE");
+      }
+      return;
+    }
+    if (lower.startsWith(ROUTE_ACTION_ADD_STOP.toLowerCase(Locale.ROOT))) {
+      String query = extractRouteActionQuery(rawAction, ROUTE_ACTION_ADD_STOP);
+      if (query.isEmpty()) {
+        appendLine("ROUTE", "add stop selected; use format: Add stop: <destination>");
+        return;
+      }
+      geocodeAndRoute(query, "STOP", true);
+      return;
+    }
+    appendLine("ROUTE", "unsupported route action; use Change route or Add stop");
+    routeActionInput.showDropDown();
+  }
+
+  private void clearActiveRouteSelection(boolean fromUserAction) {
+    routeSessionActive = false;
+    lastMapLat = null;
+    lastMapLon = null;
+    routeStops.clear();
+    updateRouteStopsUi();
+    selectedDestinationSuggestion = null;
+    synchronized (currentRoutePoints) {
+      currentRoutePoints.clear();
+    }
+    lastServerRouteFingerprint = "";
+    AppPrefs.clearRouteSelectionCache(this);
+    if (destinationInput != null) {
+      destinationInput.setText("");
+    }
+    if (routeActionInput != null) {
+      routeActionInput.setText("", false);
+    }
+    updateRouteActiveVariantUi();
+    updateMapTargetUi();
+    renderRouteOnMap(true);
+    if (fromUserAction) {
+      appendLine("ROUTE", "route cleared; route-active controls are now hidden");
+    }
+  }
+
   @Override
   public void onBackPressed() {
     if (controlPanel != null && controlPanel.getVisibility() == View.VISIBLE) {
@@ -2182,6 +2712,7 @@ public class MainActivity extends AppCompatActivity {
   @Override
   protected void onResume() {
     super.onResume();
+    restoreRouteSelectionState(getIntent());
     registerMotionDetection();
     ensureMicrophonePermission();
     ensureAndroidAutoAudioNotificationPermission();
@@ -2200,7 +2731,18 @@ public class MainActivity extends AppCompatActivity {
   }
 
   @Override
+  protected void onNewIntent(Intent intent) {
+    super.onNewIntent(intent);
+    setIntent(intent);
+    restoreRouteSelectionState(intent);
+  }
+
+  @Override
   protected void onDestroy() {
+    if (isFinishing() && !isChangingConfigurations()) {
+      AppPrefs.clearRouteSelectionCache(this);
+      routeSessionActive = false;
+    }
     unregisterLocationTracking();
     unregisterMotionDetection();
     uiHandler.removeCallbacks(destinationSuggestRunnable);
@@ -2654,6 +3196,7 @@ public class MainActivity extends AppCompatActivity {
       JSONObject llmIntel = json.optJSONObject("llm_intel");
       String intelLine = buildIntelLine(llmIntel);
       updateLocalCallContext(llmIntel, json);
+      captureBroadcastifyStreamContext(json, eventType, kind, text);
       boolean isAlert = "alert_triggered".equals(eventType);
       if (isAlert) {
         String coreRatingLine = buildCore0RatingLine(json);
@@ -2661,6 +3204,7 @@ public class MainActivity extends AppCompatActivity {
           intelLine = TextUtils.isEmpty(intelLine) ? coreRatingLine : (coreRatingLine + "\n" + intelLine);
         }
         maybeSpeakPipelineAlertFromRating(json, text);
+        maybePostRouteAlertNotification(json, mentions, text, intelLine);
       }
       if (!mentions.isEmpty() || (isAlert && !TextUtils.isEmpty(text))) {
         float[] levelSeries = parseAudioLevels(json.optJSONArray("audio_levels"));
@@ -2847,7 +3391,103 @@ public class MainActivity extends AppCompatActivity {
     lastSpokenPipelineAlertAtMs = now;
     String spoken = "Pipeline alert rating " + rating + ". " + alertText;
     Log.i(TAG, "pipeline alert vocalized from legacy rating=" + rating);
-    speakScoutResponse(spoken);
+    uiHandler.post(() -> speakScoutResponse(spoken));
+  }
+
+  private void ensureRouteAlertNotificationChannel() {
+    if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O) {
+      return;
+    }
+    NotificationManager notificationManager = getSystemService(NotificationManager.class);
+    if (notificationManager == null) {
+      return;
+    }
+    NotificationChannel existing =
+        notificationManager.getNotificationChannel(ROUTE_ALERT_NOTIFICATION_CHANNEL_ID);
+    if (existing != null) {
+      return;
+    }
+    NotificationChannel channel =
+        new NotificationChannel(
+            ROUTE_ALERT_NOTIFICATION_CHANNEL_ID,
+            getString(R.string.route_alert_channel_name),
+            ROUTE_ALERT_NOTIFICATION_CHANNEL_IMPORTANCE);
+    channel.setDescription(getString(R.string.route_alert_channel_description));
+    channel.enableVibration(true);
+    notificationManager.createNotificationChannel(channel);
+  }
+
+  private void maybePostRouteAlertNotification(
+      JSONObject eventJson, List<String> mentions, String alertText, String intelLine) {
+    if (!routeSessionActive || TextUtils.isEmpty(alertText)) {
+      return;
+    }
+    noteAutoAudioNotificationPermissionState();
+    if (!hasNotificationPermission()) {
+      return;
+    }
+    String eventTs = eventJson != null ? eventJson.optString("ts", "").trim() : "";
+    String dedupeKey = (eventTs.isEmpty() ? "ts_missing" : eventTs) + "|" + alertText;
+    long now = SystemClock.elapsedRealtime();
+    if (dedupeKey.equals(lastRouteAlertNotificationKey)
+        && (now - lastRouteAlertNotificationAtMs) < ROUTE_ALERT_NOTIFICATION_COOLDOWN_MS) {
+      return;
+    }
+    lastRouteAlertNotificationKey = dedupeKey;
+    lastRouteAlertNotificationAtMs = now;
+
+    String routeLabel = destinationInput != null ? destinationInput.getText().toString().trim() : "";
+    String contentTitle =
+        TextUtils.isEmpty(routeLabel)
+            ? getString(R.string.route_alert_notification_title)
+            : getString(R.string.route_alert_notification_title_with_destination, routeLabel);
+    String mentionSummary =
+        mentions == null || mentions.isEmpty()
+            ? ""
+            : getString(R.string.route_alert_notification_mentions, TextUtils.join(", ", mentions));
+    String detailText = alertText.trim();
+    if (detailText.length() > 240) {
+      detailText = detailText.substring(0, 237) + "...";
+    }
+    StringBuilder bigTextBuilder = new StringBuilder(detailText);
+    if (!TextUtils.isEmpty(mentionSummary)) {
+      bigTextBuilder.append("\n").append(mentionSummary);
+    }
+    if (!TextUtils.isEmpty(intelLine)) {
+      bigTextBuilder.append("\n").append(intelLine.replace('\n', ' '));
+    }
+    String bigText = bigTextBuilder.toString();
+
+    Intent launchIntent = new Intent(this, MainActivity.class);
+    launchIntent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+    launchIntent.putExtra(EXTRA_FOCUS_ROUTE, true);
+    int requestCode = Math.abs(dedupeKey.hashCode());
+    int pendingIntentFlags = PendingIntent.FLAG_UPDATE_CURRENT;
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+      pendingIntentFlags |= PendingIntent.FLAG_IMMUTABLE;
+    }
+    PendingIntent contentIntent =
+        PendingIntent.getActivity(this, requestCode, launchIntent, pendingIntentFlags);
+    NotificationCompat.Builder builder =
+        new NotificationCompat.Builder(this, ROUTE_ALERT_NOTIFICATION_CHANNEL_ID)
+            .setSmallIcon(android.R.drawable.ic_dialog_alert)
+            .setContentTitle(contentTitle)
+            .setContentText(detailText)
+            .setStyle(new NotificationCompat.BigTextStyle().bigText(bigText))
+            .setCategory(NotificationCompat.CATEGORY_NAVIGATION)
+            .setVisibility(NotificationCompat.VISIBILITY_PUBLIC)
+            .setPriority(NotificationCompat.PRIORITY_HIGH)
+            .setAutoCancel(true)
+            .setOnlyAlertOnce(false)
+            .setContentIntent(contentIntent)
+            .addAction(
+                android.R.drawable.ic_menu_directions,
+                getString(R.string.route_alert_notification_action_open_route),
+                contentIntent)
+            .extend(new NotificationCompat.CarExtender());
+    NotificationManagerCompat.from(this).notify(requestCode, builder.build());
+    appendLine("ALERT", "posted Android Auto route notification");
+    Log.i(TAG, "posted route alert notification for active route");
   }
 
   private void maybeShowLocationPopup(
@@ -2984,6 +3624,16 @@ public class MainActivity extends AppCompatActivity {
     AppPrefs.saveDestinationLabel(
         this,
         String.format(Locale.ROOT, "Target %.5f, %.5f", targetLat, targetLon));
+    routeStops.clear();
+    routeStops.add(
+        new RouteStop(
+            String.format(Locale.ROOT, "Target %.5f, %.5f", targetLat, targetLon),
+            targetLat,
+            targetLon));
+    updateRouteStopsUi();
+    routeSessionActive = true;
+    AppPrefs.setRouteSessionActive(this, true);
+    updateRouteActiveVariantUi();
     updateMapTargetUi();
     if (!map3dEnabled) {
       applyMapMode(true);

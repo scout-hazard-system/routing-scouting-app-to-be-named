@@ -10,9 +10,28 @@ cop_pipeline/
 frontend/dist/
 frontend/java_backend/dist/
 frontend/java_backend/*.class
+android-stream-client/**/build/
+android-stream-client/app/build/
 
 # Local temp artifacts
 frontend/__pycache__/
 frontend/java_backend/tests/__pycache__/
 buffer_chunk.wav
+buffer_chunk.wav.ts
+**/buffer_chunk.wav
+**/buffer_chunk.wav.ts
 pipeline_stress_fallback_report.csv
+
+# UI dumps / adb artifacts / screenshots
+window_dump*.xml
+**/window_dump*.xml
+wireless_*.xml
+scout_query_result.png
+CLUSTERTEST.png
+*.png
+!docs/**/*.png
+
+# Local device / debug notes
+moto_*.txt
+mobile_status.txt
+TERMIUS_DEBUG_LOG_GUIDE.txt

@@ -1,7 +1,8 @@
 """Client layer for the proprietary "scout" LLM set (Ollama-backed).
 
-Unified deployment model:
-- scout-core1.0.3: one model for alert, intel extraction, and spoken navigation guidance
+Deployment model:
+- scout-core1.0.8: navigation voice + high-level traffic chat
+- scout-vet1.0.8: scanner alert/intel/vet tasks
 - scout-rank: channel selector reranking
 
 Every query gracefully falls back to the base model (llama3.1) with inline
@@ -17,11 +18,13 @@ OLLAMA_GENERATE_URL = "http://localhost:11434/api/generate"
 OLLAMA_TAGS_URL = "http://localhost:11434/api/tags"
 BASE_MODEL = "llama3.1"
 
-CORE_MODEL = "scout-core1.0.3"
-ALERT_MODEL = CORE_MODEL
-INTEL_MODEL = CORE_MODEL
+CORE_MODEL = "scout-core1.0.8"
+ALERT_MODEL = "scout-vet1.0.8"
+INTEL_MODEL = "scout-vet1.0.8"
 RANK_MODEL = "scout-rank"
-VET_MODEL = "scout-vet1.0.4"
+VET_MODEL = "scout-vet1.0.8"
+LEGACY_CORE_MODEL = "scout-core1.0.7"
+LEGACY_VET_MODEL = "scout-vet1.0.7"
 SCOUT_MODELS = (CORE_MODEL, RANK_MODEL, VET_MODEL)
 
 # Inline fallback system prompts (mirror the Modelfile SYSTEM blocks) used when
@@ -88,6 +91,21 @@ Rules:
 - Use plain language and include a location only if clearly present.
 - If transcript has no traffic-relevant guidance, return exactly: USE CAUTION AHEAD.
 """
+CHAT_FALLBACK_SYSTEM = """
+You are a deterministic in-car traffic assistant for one active driver client.
+You receive route data plus multi-platform tool observations (weather, waze, route, alert clusters, broadcastify stream).
+Return only one compact JSON object with exactly:
+{"response":"...","confidence":"high|medium|low","missing_data":["..."],"evidence":["..."]}
+Rules:
+- Use only provided facts from tool_observations and provided context fields.
+- Never invent incidents, ETAs, closures, or coordinates.
+- Keep response short and operational.
+- For alert proximity language, avoid generic "nearby" by itself.
+- When coordinates, route geometry, or origin/destination context allow it, include an approximate distance and relative location cue (for example direction, cross-street, mile marker, or nearest landmark).
+- If spatial precision is unavailable, explicitly say approximate location is unavailable and add missing_data entries instead of guessing.
+- If critical inputs are missing, lower confidence and list missing_data.
+- Never issue self-referential or recursive tool/assistant instructions.
+"""
 
 _INTEL_LIST_KEYS = ("call_types", "codes", "units", "locations", "pois")
 
@@ -134,18 +152,23 @@ def llm_set_status(tags_url=OLLAMA_TAGS_URL, timeout_seconds=2.0, force_refresh=
         "base_model_installed": BASE_MODEL in models,
         "models": {
             CORE_MODEL: CORE_MODEL in models,
+            VET_MODEL: VET_MODEL in models,
             RANK_MODEL: RANK_MODEL in models,
         },
         "complete": all(name in models for name in SCOUT_MODELS),
     }
 
 
-def resolve_model(preferred, fallback=BASE_MODEL, tags_url=OLLAMA_TAGS_URL):
+def resolve_model(preferred, fallback=BASE_MODEL, tags_url=OLLAMA_TAGS_URL, compatible_models=None):
     """Pick the preferred scout model when installed, else the fallback base model."""
     models = installed_models(tags_url)
     if models is None or preferred in models:
         # Ollama down: keep preferred so error surfaces attribute the right model.
         return preferred, False
+    if compatible_models:
+        for candidate in compatible_models:
+            if candidate and candidate in models:
+                return candidate, False
     return fallback, True
 
 
@@ -188,12 +211,15 @@ def query_alert(
     retries=0,
     url=OLLAMA_GENERATE_URL,
     model=ALERT_MODEL,
+    options=None,
 ):
     """Enforcement alert decision. Return contract matches pipeline.query_llm plus model info."""
-    resolved_model, used_fallback = resolve_model(model)
+    resolved_model, used_fallback = resolve_model(
+        model, compatible_models=[LEGACY_VET_MODEL]
+    )
     if used_fallback:
         prompt = f"{ALERT_FALLBACK_SYSTEM}\n\nTranscript: {transcript_text}"
-    elif resolved_model == CORE_MODEL:
+    elif resolved_model == ALERT_MODEL:
         prompt = (
             "TASK: ALERT\n"
             "Output contract:\n"
@@ -204,9 +230,75 @@ def query_alert(
     else:
         prompt = f"Transcript: {transcript_text}"
     payload = {"model": resolved_model, "prompt": prompt, "stream": False}
+    if isinstance(options, dict) and options:
+        payload["options"] = options
     result = _generate(payload, url, timeout_seconds, retries)
     if not result["response"]:
         result["response"] = "IGNORE"
+    result["model"] = resolved_model
+    result["used_fallback"] = used_fallback
+    return result
+
+
+def query_chat(
+    route_context_text,
+    timeout_seconds=10.0,
+    retries=0,
+    url=OLLAMA_GENERATE_URL,
+    model=CORE_MODEL,
+    options=None,
+):
+    """High-level deterministic route/traffic assistant output."""
+    resolved_model, used_fallback = resolve_model(
+        model, compatible_models=[LEGACY_CORE_MODEL]
+    )
+    high_load_guardrail = "guardrail_mode: strict_high_query_load" in (route_context_text or "")
+    if used_fallback:
+        prompt = f"{CHAT_FALLBACK_SYSTEM}\n\nRoute context: {route_context_text}"
+    elif resolved_model == CORE_MODEL:
+        prompt = (
+            "TASK: CHAT\n"
+            "Output JSON keys exactly: response, confidence, missing_data, evidence\n"
+            "No markdown. No extra keys.\n\n"
+            "Tooling contract:\n"
+            "- Prioritize tool_observations.weather, tool_observations.waze, tool_observations.route, tool_observations.route_options, tool_observations.alerts, tool_observations.mobile_snapshot.\n"
+            "- Treat broadcastify_stream_context and hazard_api_stream_context as primary evidence.\n"
+            "- Avoid saying only 'nearby' for alert location.\n"
+            "- When context includes coordinates/route location facts, provide approximate distance plus relative location wording.\n"
+            "- If location precision is missing, state that approximate location is unavailable and include missing_data entries.\n"
+            "- Never recurse or ask Scout to call itself.\n\n"
+            f"Route context: {route_context_text}"
+        )
+    else:
+        prompt = (
+            "Return strict JSON with keys response, confidence, missing_data, evidence.\n"
+            "Use only explicit facts from route context and tool observations.\n\n"
+            f"Route context: {route_context_text}"
+        )
+    options_payload = {
+        "temperature": 0.0 if high_load_guardrail else 0.1,
+        "top_p": 0.75 if high_load_guardrail else 0.9,
+        "repeat_penalty": 1.2 if high_load_guardrail else 1.1,
+    }
+    payload = {
+        "model": resolved_model,
+        "prompt": prompt,
+        "stream": False,
+        "format": "json",
+        "options": options_payload,
+    }
+    if isinstance(options, dict) and options:
+        payload["options"].update(options)
+    result = _generate(payload, url, timeout_seconds, retries)
+    parsed = None
+    parse_error = None
+    if result["response"]:
+        try:
+            parsed = json.loads(result["response"])
+        except Exception as e:
+            parse_error = repr(e)
+    result["chat"] = parsed
+    result["parse_error"] = parse_error
     result["model"] = resolved_model
     result["used_fallback"] = used_fallback
     return result
@@ -219,9 +311,12 @@ def query_alert_vet(
     retries=0,
     url=OLLAMA_GENERATE_URL,
     model=VET_MODEL,
+    options=None,
 ):
     """Second-stage vet gate: returns VET_PASS / VET_FAIL for proposed alerts."""
-    resolved_model, used_fallback = resolve_model(model)
+    resolved_model, used_fallback = resolve_model(
+        model, compatible_models=[LEGACY_VET_MODEL]
+    )
     if used_fallback:
         prompt = (
             f"{VET_FALLBACK_SYSTEM}\n\n"
@@ -282,12 +377,15 @@ def query_intel(
     retries=0,
     url=OLLAMA_GENERATE_URL,
     model=INTEL_MODEL,
+    options=None,
 ):
     """Structured dispatch intel extraction. Returns {'intel': dict|None, ...diagnostics}."""
-    resolved_model, used_fallback = resolve_model(model)
+    resolved_model, used_fallback = resolve_model(
+        model, compatible_models=[LEGACY_VET_MODEL]
+    )
     if used_fallback:
         prompt = f"{INTEL_FALLBACK_SYSTEM}\n\nTranscript: {transcript_text}"
-    elif resolved_model == CORE_MODEL:
+    elif resolved_model == INTEL_MODEL:
         prompt = (
             "TASK: INTEL\n"
             "Return ONLY one JSON object with keys: call_types, priority, codes, units, locations, pois, summary\n\n"
@@ -329,9 +427,12 @@ def query_nav(
     retries=0,
     url=OLLAMA_GENERATE_URL,
     model=CORE_MODEL,
+    options=None,
 ):
     """Traffic-focused spoken navigation guidance for in-car TTS."""
-    resolved_model, used_fallback = resolve_model(model)
+    resolved_model, used_fallback = resolve_model(
+        model, compatible_models=[LEGACY_CORE_MODEL]
+    )
     if used_fallback:
         prompt = f"{NAV_FALLBACK_SYSTEM}\n\nTranscript: {transcript_text}"
     elif resolved_model == CORE_MODEL:
@@ -360,9 +461,9 @@ def query_nav(
 if __name__ == "__main__":
     import argparse
 
-    parser = argparse.ArgumentParser(description="scout LLM set client (status/alert/intel/nav)")
-    parser.add_argument("command", choices=["status", "alert", "intel", "nav"])
-    parser.add_argument("text", nargs="?", default="", help="Transcript text for alert/intel/nav")
+    parser = argparse.ArgumentParser(description="scout LLM set client (status/alert/intel/nav/chat)")
+    parser.add_argument("command", choices=["status", "alert", "intel", "nav", "chat"])
+    parser.add_argument("text", nargs="?", default="", help="Transcript text for alert/intel/nav or route context for chat")
     parser.add_argument("--timeout", type=float, default=20.0)
     args = parser.parse_args()
     if args.command == "status":
@@ -371,5 +472,7 @@ if __name__ == "__main__":
         print(json.dumps(query_alert(args.text, timeout_seconds=args.timeout), indent=2))
     elif args.command == "intel":
         print(json.dumps(query_intel(args.text, timeout_seconds=args.timeout), indent=2))
+    elif args.command == "chat":
+        print(json.dumps(query_chat(args.text, timeout_seconds=args.timeout), indent=2))
     else:
         print(json.dumps(query_nav(args.text, timeout_seconds=args.timeout), indent=2))

@@ -75,6 +75,37 @@
                 android:text="@string/search_go"
                 android:textAllCaps="false" />
         </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/assistantPromptInput"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/bg_chip"
+                android:hint="@string/assistant_prompt_hint"
+                android:imeOptions="actionDone"
+                android:inputType="text"
+                android:maxLines="1"
+                android:padding="10dp"
+                android:textColor="@color/text_primary"
+                android:textColorHint="@color/text_muted" />
+
+            <Button
+                android:id="@+id/assistantAskBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:backgroundTint="@color/accent"
+                android:text="@string/assistant_ask"
+                android:textAllCaps="false" />
+        </LinearLayout>
     </LinearLayout>
 
     <!-- Bottom-right quick map controls -->
@@ -212,6 +243,52 @@
             android:layout_marginTop="8dp"
             android:backgroundTint="@color/accent"
             android:text="@string/popup_route_here"
+            android:textAllCaps="false" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/scoutSpeakingOverlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg_overlay"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/scoutSpeakingTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/scout_speaking_title"
+            android:textColor="@color/text_primary"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <dev.warp.stream.AudioVisualizerView
+            android:id="@+id/scoutSpeakingVisualizer"
+            android:layout_width="match_parent"
+            android:layout_height="96dp"
+            android:layout_marginTop="18dp" />
+
+        <TextView
+            android:id="@+id/scoutSpeakingBody"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:gravity="center"
+            android:maxLines="5"
+            android:text="@string/scout_speaking_placeholder"
+            android:textColor="@color/text_primary"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/scoutSpeakingCloseBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="@color/accent"
+            android:text="@string/scout_speaking_stop"
             android:textAllCaps="false" />
     </LinearLayout>
 

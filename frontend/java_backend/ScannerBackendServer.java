@@ -127,7 +127,7 @@ public final class ScannerBackendServer {
       System.getenv().getOrDefault("OLLAMA_TAGS_URL", "http://localhost:11434/api/tags");
   private static final String LLM_BASE_MODEL =
       System.getenv().getOrDefault("LLM_BASE_MODEL", "llama3.1");
-  private static final String[] SCOUT_MODELS = {"scout-alert", "scout-intel", "scout-rank"};
+  private static final String[] SCOUT_MODELS = {"scout-core1.0.8", "scout-vet1.0.8", "scout-rank"};
   private static final Pattern MODEL_NAME_PATTERN = Pattern.compile("\"name\"\\s*:\\s*\"([^\"]+)\"");
   private static final int METRICS_MAX_ITEMS =
       parseIntOrDefault(System.getenv("BACKEND_METRICS_MAX_ITEMS"), 12);
@@ -1424,6 +1424,12 @@ public final class ScannerBackendServer {
                   fallback, approximateRouteMeters(fallback), 0.0, false, false));
     }
     String hazards = fetchWazeHazardsJson(originLat, originLon, destLat, destLon);
+    Map<String, String> wazeRouteQuery = new HashMap<>();
+    wazeRouteQuery.put("start", trimDouble(originLat) + "," + trimDouble(originLon));
+    wazeRouteQuery.put("end", trimDouble(destLat) + "," + trimDouble(destLon));
+    wazeRouteQuery.put("lat", trimDouble(destLat));
+    wazeRouteQuery.put("lon", trimDouble(destLon));
+    String wazeRoute = wazeRouteToJson(buildWazeRoute(wazeRouteQuery));
     Map<String, String> clusterQuery = new HashMap<>();
     // Route options typically span larger geographies than local incident maps;
     // use a coarser default grid so multi-state previews stay readable.
@@ -1436,6 +1442,7 @@ public final class ScannerBackendServer {
         + "\"destination\":{\"lat\":" + trimDouble(destLat) + ",\"lon\":" + trimDouble(destLon) + "},"
         + "\"alternatives\":" + routeAlternativesToJson(alternatives) + ","
         + "\"waze_hazards\":" + hazards + ","
+        + "\"waze_route\":" + wazeRoute + ","
         + "\"alert_clusters\":" + alertClusters
         + "}";
   }
@@ -2097,6 +2104,15 @@ public final class ScannerBackendServer {
       }
       models.append("\"").append(SCOUT_MODELS[i]).append("\":").append(present);
     }
+    boolean corePresent = installed.contains("scout-core1.0.8");
+    boolean vetPresent = installed.contains("scout-vet1.0.8");
+    boolean rankPresent = installed.contains("scout-rank");
+    models.append(",\"scout-alert\":").append(vetPresent);
+    models.append(",\"scout-intel\":").append(vetPresent);
+    models.append(",\"scout-vet\":").append(vetPresent);
+    models.append(",\"scout-nav\":").append(corePresent);
+    models.append(",\"scout-chat\":").append(corePresent);
+    models.append(",\"scout-rank\":").append(rankPresent);
     models.append("}");
     String payload = "{"
         + "\"ts\":\"" + Instant.now().toString() + "\","

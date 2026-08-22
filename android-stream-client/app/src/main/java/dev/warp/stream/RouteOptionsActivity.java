@@ -7,6 +7,8 @@ import android.widget.TextView;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import java.io.IOException;
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
@@ -25,12 +27,16 @@ public class RouteOptionsActivity extends AppCompatActivity {
   public static final String EXTRA_DEST_LAT = "extra_dest_lat";
   public static final String EXTRA_DEST_LON = "extra_dest_lon";
   public static final String EXTRA_DEST_LABEL = "extra_dest_label";
+  private static final double DEFAULT_COUNTRY_SCENE_RADIUS_M = 1_250_000.0;
+  private static final double MIN_SCENE_RADIUS_M = 120_000.0;
 
   private final OkHttpClient client = new OkHttpClient.Builder().build();
   private TextView statusText;
   private TextView summaryText;
   private TextView hazardsText;
   private Map3dView routeMapView;
+  private double originLat = Double.NaN;
+  private double originLon = Double.NaN;
   private double destinationLat = Double.NaN;
   private double destinationLon = Double.NaN;
   private String destinationLabel = "Destination";
@@ -90,8 +96,10 @@ public class RouteOptionsActivity extends AppCompatActivity {
     routeMapView.setRefetchListener((lat, lon, radiusM) -> fetchRouteScene(lat, lon, radiusM, false));
     Button closeButton = findViewById(R.id.routeOptionsCloseBtn);
     Button startButton = findViewById(R.id.routeOptionsStartBtn);
+    Button shareButton = findViewById(R.id.routeOptionsShareBtn);
     closeButton.setOnClickListener(v -> finish());
     startButton.setOnClickListener(v -> startNavigation());
+    shareButton.setOnClickListener(v -> createShareEtaLink());
     fetchOptions();
   }
 
@@ -102,6 +110,8 @@ public class RouteOptionsActivity extends AppCompatActivity {
     double destLat = readNumericExtra(EXTRA_DEST_LAT);
     double destLon = readNumericExtra(EXTRA_DEST_LON);
     String destLabel = getIntent().getStringExtra(EXTRA_DEST_LABEL);
+    this.originLat = originLat;
+    this.originLon = originLon;
     destinationLat = destLat;
     destinationLon = destLon;
     destinationLabel = (destLabel == null || destLabel.isBlank()) ? "Destination" : destLabel;
@@ -114,6 +124,8 @@ public class RouteOptionsActivity extends AppCompatActivity {
     if (!Double.isFinite(originLat) || !Double.isFinite(originLon)) {
       originLat = destLat;
       originLon = destLon;
+      this.originLat = originLat;
+      this.originLon = originLon;
     }
     String url =
         baseUrl
@@ -141,7 +153,7 @@ public class RouteOptionsActivity extends AppCompatActivity {
                     () -> {
                       statusText.setText("Route options unavailable");
                       summaryText.setText("Backend request failed: " + e.getMessage());
-                      hazardsText.setText("Hazards unavailable");
+                      hazardsText.setText("Traffic/Hazard APIs: unavailable");
                       wazeAppUrl = "";
                       wazeRouteMode = "unknown";
                     });
@@ -155,7 +167,7 @@ public class RouteOptionsActivity extends AppCompatActivity {
                         () -> {
                           statusText.setText("Route options unavailable");
                           summaryText.setText("HTTP " + response.code());
-                          hazardsText.setText("Hazards unavailable");
+                          hazardsText.setText("Traffic/Hazard APIs: unavailable");
                           wazeAppUrl = "";
                           wazeRouteMode = "unknown";
                         });
@@ -246,23 +258,55 @@ public class RouteOptionsActivity extends AppCompatActivity {
                       }
                     }
                   }
-                  String hazardLine = "Waze hazards: unavailable";
+                  String hazardLine = "Waze hazards API: unavailable";
+                  int hazardCount = 0;
                   if (hazards != null) {
                     String hazardStatus = hazards.optString("status", "unknown");
                     String provider = hazards.optString("provider", "waze");
-                    hazardLine = "Waze hazards: " + hazardStatus + " (" + provider + ")";
+                    JSONArray hazardItems = hazards.optJSONArray("hazards");
+                    if (hazardItems == null) {
+                      JSONObject rawObject = hazards.optJSONObject("raw");
+                      if (rawObject != null) {
+                        hazardItems = rawObject.optJSONArray("hazards");
+                        if (hazardItems == null) {
+                          hazardItems = rawObject.optJSONArray("items");
+                        }
+                      }
+                    }
+                    if (hazardItems != null) {
+                      hazardCount = hazardItems.length();
+                    } else {
+                      JSONArray rawArray = hazards.optJSONArray("raw");
+                      if (rawArray != null) {
+                        hazardCount = rawArray.length();
+                      }
+                    }
+                    hazardLine =
+                        "Waze hazards API: "
+                            + hazardStatus
+                            + " (provider="
+                            + provider
+                            + ", count="
+                            + hazardCount
+                            + ")";
                   }
-                  String wazeLine = "Waze route: unavailable";
+                  String wazeLine = "Waze route API: unavailable";
                   String routeMode = "unknown";
                   String routeAppUrl = "";
                   if (wazeRoute != null) {
                     routeMode = wazeRoute.optString("mode", "unknown");
                     routeAppUrl = wazeRoute.optString("app_url", "");
-                    if (!routeAppUrl.isBlank()) {
-                      wazeLine = "Waze route: " + routeMode;
-                    }
+                    wazeLine =
+                        "Waze route API: "
+                            + routeMode
+                            + (routeAppUrl.isBlank() ? " (deeplink=unavailable)" : " (deeplink=ready)");
                   }
-                  String clusterLine = "Alert clusters: " + alertClusterCount;
+                  String clusterStatus =
+                      alertClustersPayload == null
+                          ? "unavailable"
+                          : alertClustersPayload.optString("status", "unknown");
+                  String clusterLine =
+                      "Alert clusters API: " + clusterStatus + " (count=" + alertClusterCount + ")";
                   String text = String.join("\n", lines);
                   final String hazardDisplay = hazardLine;
                   final String wazeDisplay = wazeLine;
@@ -273,7 +317,13 @@ public class RouteOptionsActivity extends AppCompatActivity {
                       () -> {
                         statusText.setText("Choose a route");
                         summaryText.setText(text);
-                        hazardsText.setText(hazardDisplay + "  •  " + wazeDisplay + "  •  " + clusterDisplay);
+                        hazardsText.setText(
+                            "Traffic/Hazard APIs • "
+                                + hazardDisplay
+                                + "  •  "
+                                + wazeDisplay
+                                + "  •  "
+                                + clusterDisplay);
                         wazeAppUrl = finalWazeAppUrl;
                         wazeRouteMode = finalWazeRouteMode;
                         renderRoutes(
@@ -289,10 +339,77 @@ public class RouteOptionsActivity extends AppCompatActivity {
                       () -> {
                         statusText.setText("Route options unavailable");
                         summaryText.setText("Parse error: " + e.getMessage());
-                        hazardsText.setText("Hazards unavailable");
+                        hazardsText.setText("Traffic/Hazard APIs: unavailable");
                         wazeAppUrl = "";
                         wazeRouteMode = "unknown";
                       });
+                }
+              }
+            });
+  }
+
+  private void createShareEtaLink() {
+    if (activeBaseUrl == null || activeBaseUrl.isBlank()) {
+      statusText.setText("Share link unavailable");
+      return;
+    }
+    if (!Double.isFinite(originLat)
+        || !Double.isFinite(originLon)
+        || !Double.isFinite(destinationLat)
+        || !Double.isFinite(destinationLon)) {
+      statusText.setText("Share link unavailable");
+      return;
+    }
+    statusText.setText("Creating share link…");
+    String url =
+        activeBaseUrl
+            + "/api/platform/share/eta/create?origin_lat="
+            + String.format(Locale.ROOT, "%.6f", originLat)
+            + "&origin_lon="
+            + String.format(Locale.ROOT, "%.6f", originLon)
+            + "&dest_lat="
+            + String.format(Locale.ROOT, "%.6f", destinationLat)
+            + "&dest_lon="
+            + String.format(Locale.ROOT, "%.6f", destinationLon)
+            + "&destination_label="
+            + URLEncoder.encode(destinationLabel, StandardCharsets.UTF_8);
+    Request request = new Request.Builder().url(url).build();
+    client.newCall(request)
+        .enqueue(
+            new Callback() {
+              @Override
+              public void onFailure(Call call, IOException e) {
+                runOnUiThread(() -> statusText.setText("Share link failed: " + e.getMessage()));
+              }
+
+              @Override
+              public void onResponse(Call call, Response response) throws IOException {
+                try (response) {
+                  if (!response.isSuccessful() || response.body() == null) {
+                    runOnUiThread(
+                        () -> statusText.setText("Share link failed (HTTP " + response.code() + ")"));
+                    return;
+                  }
+                  JSONObject payload = new JSONObject(response.body().string());
+                  String shareUrl = payload.optString("share_url", "").trim();
+                  if (shareUrl.isBlank()) {
+                    runOnUiThread(() -> statusText.setText("Share link failed (missing URL)"));
+                    return;
+                  }
+                  runOnUiThread(
+                      () -> {
+                        Intent intent = new Intent(Intent.ACTION_SEND);
+                        intent.setType("text/plain");
+                        intent.putExtra(
+                            Intent.EXTRA_TEXT,
+                            "Scout ETA share for " + destinationLabel + ":\n" + shareUrl);
+                        startActivity(
+                            Intent.createChooser(
+                                intent, getString(R.string.route_options_share_chooser)));
+                        statusText.setText("Share link ready");
+                      });
+                } catch (Exception e) {
+                  runOnUiThread(() -> statusText.setText("Share link parse error: " + e.getMessage()));
                 }
               }
             });
@@ -355,7 +472,10 @@ public class RouteOptionsActivity extends AppCompatActivity {
     }
     double centerLat = (north + south) / 2.0;
     double centerLon = (east + west) / 2.0;
-    double radiusM = Math.max(500.0, Math.max(geoSpanMeters(north - south), geoSpanMeters(east - west)) * 0.7);
+    double radiusM =
+        Math.max(
+            DEFAULT_COUNTRY_SCENE_RADIUS_M,
+            Math.max(geoSpanMeters(north - south), geoSpanMeters(east - west)) * 0.7);
     routeMapView.setRoute(selectedRoute);
     routeMapView.setDestination(destLat, destLon);
     routeMapView.updateDevice(originLat, originLon, null, null);
@@ -399,6 +519,7 @@ public class RouteOptionsActivity extends AppCompatActivity {
     }
     AppPrefs.saveDestination(this, destinationLat, destinationLon);
     AppPrefs.saveDestinationLabel(this, destinationLabel);
+    AppPrefs.setRouteSessionActive(this, true);
     statusText.setText("In-app navigation started");
     Intent intent = new Intent(this, MainActivity.class);
     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
@@ -414,6 +535,7 @@ public class RouteOptionsActivity extends AppCompatActivity {
     if (sceneFetchInFlight && !force) {
       return;
     }
+    double adjustedRadiusM = Math.max(MIN_SCENE_RADIUS_M, radiusM);
     sceneFetchInFlight = true;
     String url =
         activeBaseUrl
@@ -422,7 +544,7 @@ public class RouteOptionsActivity extends AppCompatActivity {
             + "&lon="
             + String.format(Locale.ROOT, "%.6f", lon)
             + "&radius_m="
-            + Math.round(radiusM);
+            + Math.round(adjustedRadiusM);
     Request request = new Request.Builder().url(url).build();
     client.newCall(request)
         .enqueue(

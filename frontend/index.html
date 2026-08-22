@@ -43,31 +43,6 @@
           <span id="mapUsersHud">users: --</span>
           <span id="mapTriangulationHud">triangulation: idle</span>
         </div>
-<<<<<<< HEAD
-      </article>
-      <article class="card route-card">
-        <h2>Route Planner</h2>
-        <div class="route-grid">
-          <input id="startInput" type="text" placeholder="Start (address or lat,lon)" />
-          <input id="endInput" type="text" placeholder="Destination (address or lat,lon)" />
-          <input id="latInput" type="number" step="any" placeholder="Latitude (optional)" />
-          <input id="lonInput" type="number" step="any" placeholder="Longitude (optional)" />
-        </div>
-        <div class="nav-row tri">
-          <button id="planRouteBtn" class="primary">Plan Route in Waze</button>
-          <button id="openWazeBtn">Open Waze Route</button>
-          <button id="useAlertCoordsBtn">Use Last Alert Coords</button>
-        </div>
-        <div class="nav-row tri">
-          <button id="useCurrentGpsBtn">Use Current GPS</button>
-          <button id="refreshSelectorBtn">Refresh Broadcastify Selector</button>
-          <span id="selectorStatus" class="sub tiny">selector: idle</span>
-        </div>
-        <div class="card widget-slot">
-          <h3>Channel Selection</h3>
-          <div class="nav-row">
-            <label>
-=======
         <div class="backend-map-panel">
           <div class="backend-map-head">
             <span id="backendMapStatus" class="sub tiny">backend-map: idle</span>
@@ -112,7 +87,6 @@
           <h3>Channel Selection</h3>
           <div class="nav-row">
             <label class="route-checkbox-label">
->>>>>>> feature/integrate-waze-and-service-hardening
               <input id="autoSelectorCheckbox" type="checkbox" checked />
               Use automatic search
             </label>
@@ -127,9 +101,6 @@
             </select>
           </div>
         </div>
-<<<<<<< HEAD
-        <p class="sub tiny">Planner supports destination text + lat/lon. If both are provided, destination text takes priority.</p>
-=======
         <div class="route-section route-visual-section">
           <div class="route-visual-head">
             <h3>Route Drawing & Alert Clusters</h3>
@@ -149,7 +120,6 @@
             </section>
           </div>
         </div>
->>>>>>> feature/integrate-waze-and-service-hardening
       </article>
     </section>
     <section class="grid mid-grid">
@@ -231,8 +201,6 @@
       </p>
       <pre id="eventPreview" class="event-preview"></pre>
     </section>
-<<<<<<< HEAD
-=======
     <section class="card">
       <h2>OpenStreetMap / ODbL Attribution</h2>
       <p class="sub tiny">
@@ -244,7 +212,6 @@
         · This app reads upstream OSM data in read-only mode and does not modify upstream OSM records.
       </p>
     </section>
->>>>>>> feature/integrate-waze-and-service-hardening
   </main>
   <div id="alertModal" class="modal hidden" aria-hidden="true">
     <div class="modal-card">
@@ -258,6 +225,8 @@
   </div>
   <script>
     window.SCANNER_API_BASE_URL = "http://127.0.0.1:18080";
+    window.SCANNER_GOOGLE_ROUTE_SEARCH_ENABLED = true;
+    window.SCANNER_GOOGLE_MAPS_API_KEY = "";
   </script>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="./app.js"></script>

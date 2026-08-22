@@ -5,7 +5,10 @@ RUN apt-get update \
   && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /workspace/frontend/java_backend
+RUN useradd --create-home --uid 10001 appuser \
+  && chown -R appuser:appuser /workspace
 
 EXPOSE 18080
 
+USER appuser
 CMD ["bash", "-lc", "./build_executable.sh && java -jar dist/scanner-backend-lite.jar"]

@@ -133,7 +133,7 @@ final class DestinationSearchScreen extends Screen implements SearchTemplate.Sea
     statusText = "Searching...";
     invalidate();
     long token = searchToken.incrementAndGet();
-    String baseUrl = AppPrefs.baseUrl(getCarContext());
+    String baseUrl = AppPrefs.resolveReachableBaseUrl(getCarContext());
     executor.submit(
         () -> {
           List<CarRoutingClient.AddressCandidate> results =
@@ -157,7 +157,7 @@ final class DestinationSearchScreen extends Screen implements SearchTemplate.Sea
     }
     listener.onDestinationSelected(suggestion);
     if (!suggestion.fromCatalog && !currentQuery.isBlank()) {
-      String baseUrl = AppPrefs.baseUrl(getCarContext());
+      String baseUrl = AppPrefs.resolveReachableBaseUrl(getCarContext());
       executor.submit(
           () -> routingClient.upsertCatalog(baseUrl, currentQuery, suggestion, biasLat, biasLon));
     }

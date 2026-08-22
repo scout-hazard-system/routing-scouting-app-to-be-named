@@ -108,8 +108,8 @@ LLM/provider:
 - geocode path supports local-bias fallback behavior.
 ## Scout model integration
 Current backend-visible model baseline:
-- `scout-core1.0.3`
-- `scout-vet1.0.4`
+- `scout-core1.0.8`
+- `scout-vet1.0.8`
 - `scout-rank`
 `/api/platform/llm/status` reports model and Ollama availability.
 ## Attribution/compliance

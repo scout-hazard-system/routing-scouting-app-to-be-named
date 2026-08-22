@@ -1,13 +1,8 @@
 #!/usr/bin/env python3
 """Evaluation harness for the proprietary "scout" LLM set.
 
-<<<<<<< HEAD
-Runs the labeled transcripts in eval_cases.json against scout-alert and
-scout-intel via scanner_llm_set and reports:
-=======
 Runs the labeled transcripts in eval_cases.json against the unified
 task-routed scout-core model (or overrides) via llm_set_client and reports:
->>>>>>> feature/integrate-waze-and-service-hardening
 - alert decision accuracy, false positives, false negatives (per group)
 - location echo compliance in ALERT sentences
 - intel JSON validity plus per-field expected-substring recall
@@ -32,11 +27,7 @@ import time
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-<<<<<<< HEAD
-import scanner_llm_set  # noqa: E402
-=======
 import llm_set_client  # noqa: E402
->>>>>>> feature/integrate-waze-and-service-hardening
 
 CASES_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "eval_cases.json")
 
@@ -50,11 +41,7 @@ def eval_alert(cases, model, timeout_seconds):
     results = []
     for case in cases:
         started = time.time()
-<<<<<<< HEAD
-        out = scanner_llm_set.query_alert(
-=======
         out = llm_set_client.query_alert(
->>>>>>> feature/integrate-waze-and-service-hardening
             case["transcript"], timeout_seconds=timeout_seconds, model=model
         )
         elapsed = time.time() - started
@@ -90,11 +77,7 @@ def eval_intel(cases, model, timeout_seconds):
         if not expectations:
             continue
         started = time.time()
-<<<<<<< HEAD
-        out = scanner_llm_set.query_intel(
-=======
         out = llm_set_client.query_intel(
->>>>>>> feature/integrate-waze-and-service-hardening
             case["transcript"], timeout_seconds=timeout_seconds, model=model
         )
         elapsed = time.time() - started
@@ -192,13 +175,8 @@ def main():
     parser.add_argument("--cases", default=CASES_PATH)
     parser.add_argument("--alert-only", action="store_true")
     parser.add_argument("--intel-only", action="store_true")
-<<<<<<< HEAD
-    parser.add_argument("--alert-model", default=scanner_llm_set.ALERT_MODEL)
-    parser.add_argument("--intel-model", default=scanner_llm_set.INTEL_MODEL)
-=======
     parser.add_argument("--alert-model", default=llm_set_client.ALERT_MODEL)
     parser.add_argument("--intel-model", default=llm_set_client.INTEL_MODEL)
->>>>>>> feature/integrate-waze-and-service-hardening
     parser.add_argument("--timeout", type=float, default=30.0)
     parser.add_argument("--threshold", type=float, default=0.9)
     parser.add_argument("--json", dest="json_path", default="", help="Write full report JSON here")
@@ -208,11 +186,7 @@ def main():
     report = {"cases": len(cases), "alert": None, "intel": None}
 
     if not args.intel_only:
-<<<<<<< HEAD
-        print(f"== scout-alert eval ({args.alert_model}) over {len(cases)} cases ==")
-=======
         print(f"== alert-task eval ({args.alert_model}) over {len(cases)} cases ==")
->>>>>>> feature/integrate-waze-and-service-hardening
         alert_results = eval_alert(cases, args.alert_model, args.timeout)
         summary = summarize_alert(alert_results)
         report["alert"] = {"summary": summary, "results": alert_results}
@@ -226,11 +200,7 @@ def main():
 
     if not args.alert_only:
         intel_cases = [c for c in cases if c.get("intel")]
-<<<<<<< HEAD
-        print(f"== scout-intel eval ({args.intel_model}) over {len(intel_cases)} cases ==")
-=======
         print(f"== intel-task eval ({args.intel_model}) over {len(intel_cases)} cases ==")
->>>>>>> feature/integrate-waze-and-service-hardening
         intel_results = eval_intel(cases, args.intel_model, args.timeout)
         summary = summarize_intel(intel_results)
         report["intel"] = {"summary": summary, "results": intel_results}
