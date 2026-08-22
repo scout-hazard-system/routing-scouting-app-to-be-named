@@ -1,0 +1,77 @@
+{
+  "channels": [
+    {
+      "id": "bf-44271-nevada-highway-patrol-clark",
+      "name": "Nevada Highway Patrol - Clark County",
+      "description": "Broadcastify feed 44271 focused on Nevada Highway Patrol in Clark County / Las Vegas approaches.",
+      "city": "Las Vegas",
+      "county": "Clark County",
+      "state": "NV",
+      "service_types": [
+        "law",
+        "dispatch",
+        "highway"
+      ],
+      "tags": [
+        "nhp",
+        "highway patrol",
+        "state police",
+        "i-15",
+        "us-93"
+      ],
+      "lat": 36.1699,
+      "lon": -115.1398,
+      "listeners": 145,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44271"
+    },
+    {
+      "id": "bf-26400-las-vegas-clark-fire",
+      "name": "Las Vegas and Clark County Fire",
+      "description": "Broadcastify feed 26400 for Las Vegas and Clark County fire dispatch.",
+      "city": "Las Vegas",
+      "county": "Clark County",
+      "state": "NV",
+      "service_types": [
+        "fire",
+        "dispatch",
+        "ems"
+      ],
+      "tags": [
+        "fire",
+        "ems",
+        "dispatch",
+        "clark county",
+        "las vegas"
+      ],
+      "lat": 36.1699,
+      "lon": -115.1398,
+      "listeners": 100,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/26400"
+    },
+    {
+      "id": "bf-44438-las-vegas-city-marshals",
+      "name": "Las Vegas City Marshals",
+      "description": "Broadcastify feed 44438 for Las Vegas City Marshals public safety traffic.",
+      "city": "Las Vegas",
+      "county": "Clark County",
+      "state": "NV",
+      "service_types": [
+        "law",
+        "dispatch"
+      ],
+      "tags": [
+        "marshals",
+        "law",
+        "dispatch",
+        "downtown"
+      ],
+      "lat": 36.1716,
+      "lon": -115.1391,
+      "listeners": 65,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/44438"
+    }
+  ]
+}

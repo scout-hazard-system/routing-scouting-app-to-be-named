@@ -1,0 +1,5 @@
+{"meta":{"state":"WA","z":15,"x":5384,"y":11530,"zhs":{"key":"z/15/5384/11530|h3/9/nvcl/pfig|s2/12/f2/212/29d","z_key":"z/15/5384/11530","h_key":"h3/9/nvcl/pfig","s_key":"s2/12/f2/212/29d"},"source":"planet","roads":4,"buildings":0,"areas":0,"pois":0}}
+{"type":"road","class":"path","name":"","oneway":false,"pts":"46.965377,-120.843282;46.964967,-120.843153;46.963590,-120.842456"}
+{"type":"road","class":"path","name":"Manastash Ridge Road","oneway":false,"pts":"46.965377,-120.843751;46.964146,-120.843400;46.963647,-120.843459"}
+{"type":"road","class":"path","name":"Manastash Ridge Road","oneway":false,"pts":"46.963480,-120.838451;46.963498,-120.841622;46.963590,-120.842456"}
+{"type":"road","class":"path","name":"Hudson Road","oneway":false,"pts":"46.963769,-120.849781;46.963652,-120.849612;46.963257,-120.847241;46.963030,-120.845913;46.963173,-120.844728;46.963647,-120.843459;46.963590,-120.842456"}

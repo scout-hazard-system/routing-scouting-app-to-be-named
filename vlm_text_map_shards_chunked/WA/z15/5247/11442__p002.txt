@@ -1,0 +1,262 @@
+{"meta":{"state":"WA","z":15,"x":5247,"y":11442,"zhs":{"key":"z/15/5247/11442|h3/9/nvgh/pfq9|s2/12/f2/21c/28o","z_key":"z/15/5247/11442","h_key":"h3/9/nvgh/pfq9","s_key":"s2/12/f2/21c/28o"},"source":"planet","roads":992,"buildings":344,"areas":74,"pois":326}}
+{"type":"poi","name":"Wa'z","kind":"restaurant","lat":47.617998,"lon":-122.347519}
+{"type":"poi","name":"Golden Singha","kind":"restaurant","lat":47.618238,"lon":-122.347197}
+{"type":"poi","name":"Deep Tissue Sports Massage","kind":"massage","lat":47.614906,"lon":-122.352797}
+{"type":"poi","name":"Busy Shoes","kind":"shoe_repair","lat":47.615009,"lon":-122.349605}
+{"type":"poi","name":"Common Objects","kind":"arts_centre","lat":47.615233,"lon":-122.349975}
+{"type":"poi","name":"Lux","kind":"cannabis","lat":47.615727,"lon":-122.349281}
+{"type":"poi","name":"Northwest Strong","kind":"fitness_centre","lat":47.615783,"lon":-122.349211}
+{"type":"poi","name":"Black Bottle","kind":"restaurant","lat":47.615461,"lon":-122.349705}
+{"type":"poi","name":"Some Random Bar","kind":"bar","lat":47.615503,"lon":-122.349764}
+{"type":"poi","name":"Imperial Lounge","kind":"restaurant","lat":47.614367,"lon":-122.347800}
+{"type":"poi","name":"Crown Ink Tattoo","kind":"tattoo","lat":47.614121,"lon":-122.348087}
+{"type":"poi","name":"Shiro's Sushi","kind":"restaurant","lat":47.614797,"lon":-122.347296}
+{"type":"poi","name":"Macrina Bakery - Belltown","kind":"cafe","lat":47.614470,"lon":-122.347980}
+{"type":"poi","name":"Beyond Vape","kind":"e-cigarette","lat":47.615215,"lon":-122.347307}
+{"type":"poi","name":"Tattoo Shanky","kind":"tattoo","lat":47.614412,"lon":-122.348675}
+{"type":"poi","name":"Döner Box","kind":"restaurant","lat":47.614975,"lon":-122.347620}
+{"type":"poi","name":"Subway","kind":"fast_food","lat":47.615047,"lon":-122.347722}
+{"type":"poi","name":"Karaage Setsuna","kind":"restaurant","lat":47.615123,"lon":-122.347867}
+{"type":"poi","name":"Bang Bang Cafe","kind":"cafe","lat":47.614020,"lon":-122.349302}
+{"type":"poi","name":"Cho's Tailor","kind":"tailor","lat":47.616273,"lon":-122.347038}
+{"type":"poi","name":"Pluto Organic Cafe","kind":"cafe","lat":47.617647,"lon":-122.345440}
+{"type":"poi","name":"La Parisienne","kind":"cafe","lat":47.616790,"lon":-122.346698}
+{"type":"poi","name":"Transform 180 Training","kind":"fitness_centre","lat":47.618238,"lon":-122.345158}
+{"type":"poi","name":"Vine Street Foods","kind":"alcohol","lat":47.617663,"lon":-122.346193}
+{"type":"poi","name":"Demco Fitness","kind":"fitness_centre","lat":47.616960,"lon":-122.346979}
+{"type":"poi","name":"Artisan Cafe","kind":"cafe","lat":47.617708,"lon":-122.346263}
+{"type":"poi","name":"A-Pizza Mart","kind":"restaurant","lat":47.618370,"lon":-122.345389}
+{"type":"poi","name":"Bella Bridesmaids","kind":"bridal","lat":47.616550,"lon":-122.347583}
+{"type":"poi","name":"Belltown Inn","kind":"hotel","lat":47.614667,"lon":-122.345134}
+{"type":"poi","name":"Biscuit Bitch - Belltown","kind":"cafe","lat":47.614707,"lon":-122.345206}
+{"type":"poi","name":"Shorty's","kind":"pub","lat":47.614508,"lon":-122.346086}
+{"type":"poi","name":"Cotto","kind":"bar","lat":47.614564,"lon":-122.346193}
+{"type":"poi","name":"Studio Lovecraft Tattoo Emporium","kind":"tattoo","lat":47.614593,"lon":-122.346244}
+{"type":"poi","name":"Rendezvous","kind":"bar","lat":47.614624,"lon":-122.346295}
+{"type":"poi","name":"Vue","kind":"nightclub","lat":47.614694,"lon":-122.346371}
+{"type":"poi","name":"Chiho Bistro","kind":"bar","lat":47.614778,"lon":-122.346558}
+{"type":"poi","name":"Rob Roy","kind":"bar","lat":47.614803,"lon":-122.346604}
+{"type":"poi","name":"Art on The Table","kind":"interior_decoration","lat":47.613566,"lon":-122.346513}
+{"type":"poi","name":"Al Basha","kind":"restaurant","lat":47.613633,"lon":-122.346620}
+{"type":"poi","name":"Kfly Studios","kind":"training","lat":47.613432,"lon":-122.346918}
+{"type":"poi","name":"The Grill from Ipanema","kind":"restaurant","lat":47.613478,"lon":-122.347022}
+{"type":"poi","name":"Bangrak Market","kind":"restaurant","lat":47.614327,"lon":-122.346505}
+{"type":"poi","name":"Screwdriver Bar","kind":"bar","lat":47.613902,"lon":-122.347068}
+{"type":"poi","name":"Vindicktive Wings","kind":"pub","lat":47.613942,"lon":-122.347124}
+{"type":"poi","name":"Tavolàta","kind":"restaurant","lat":47.614439,"lon":-122.346668}
+{"type":"poi","name":"Kalabaw","kind":"restaurant","lat":47.614033,"lon":-122.347309}
+{"type":"poi","name":"Buckley's","kind":"restaurant","lat":47.614586,"lon":-122.346918}
+{"type":"poi","name":"Ora","kind":"nightclub","lat":47.614141,"lon":-122.347476}
+{"type":"poi","name":"FOB Poke Bar","kind":"fast_food","lat":47.613841,"lon":-122.343841}
+{"type":"poi","name":"Luka's","kind":"cafe","lat":47.614884,"lon":-122.343578}
+{"type":"poi","name":"Local Pho","kind":"restaurant","lat":47.614675,"lon":-122.344391}
+{"type":"poi","name":"5 Star","kind":"bar","lat":47.613772,"lon":-122.345582}
+{"type":"poi","name":"Kedai Mekan","kind":"restaurant","lat":47.613405,"lon":-122.346202}
+{"type":"poi","name":"Korean Bamboo","kind":"restaurant","lat":47.614731,"lon":-122.344501}
+{"type":"poi","name":"MOD Pizza","kind":"fast_food","lat":47.621100,"lon":-122.350654}
+{"type":"poi","name":"Rocket Dog Care","kind":"animal_boarding","lat":47.618894,"lon":-122.346049}
+{"type":"poi","name":"First Avenue North Garage","kind":"parking_entrance","lat":47.620147,"lon":-122.354763}
+{"type":"poi","name":"First Avenue North Garage","kind":"parking_entrance","lat":47.620218,"lon":-122.354763}
+{"type":"poi","name":"Black Arrows Coffee","kind":"cafe","lat":47.617065,"lon":-122.344410}
+{"type":"poi","name":"Skillet Counter","kind":"restaurant","lat":47.621198,"lon":-122.350555}
+{"type":"poi","name":"PACCAR IMAX Theater","kind":"cinema","lat":47.619681,"lon":-122.352073}
+{"type":"poi","name":"Bank of America","kind":"atm","lat":47.620147,"lon":-122.351400}
+{"type":"poi","name":"IMAX at the Center","kind":"cinema","lat":47.619782,"lon":-122.350533}
+{"type":"poi","name":"Laserdome","kind":"cinema","lat":47.619093,"lon":-122.351928}
+{"type":"poi","name":"Mee Kong Bar","kind":"restaurant","lat":47.617012,"lon":-122.347065}
+{"type":"poi","name":"Zeeks Pizza - Belltown","kind":"restaurant","lat":47.618464,"lon":-122.347830}
+{"type":"poi","name":"Subway","kind":"fast_food","lat":47.618750,"lon":-122.348318}
+{"type":"poi","name":"Ampersand Lounge","kind":"bar","lat":47.613711,"lon":-122.345813}
+{"type":"poi","name":"Limoncello Belltown","kind":"restaurant","lat":47.613996,"lon":-122.347258}
+{"type":"poi","name":"The Cheese Cellar","kind":"deli","lat":47.618941,"lon":-122.348750}
+{"type":"poi","name":"Club Pilates","kind":"fitness_centre","lat":47.618743,"lon":-122.354479}
+{"type":"poi","name":"Belltown Pizza & Game Room","kind":"bar","lat":47.614521,"lon":-122.348103}
+{"type":"poi","name":"Cyclops","kind":"bar","lat":47.614506,"lon":-122.348752}
+{"type":"poi","name":"KeyBank","kind":"bank","lat":47.614888,"lon":-122.348728}
+{"type":"poi","name":"The Crocodile","kind":"nightclub","lat":47.614647,"lon":-122.349074}
+{"type":"poi","name":"Atlas Pilates","kind":"fitness_centre","lat":47.617108,"lon":-122.348471}
+{"type":"poi","name":"Hatch Cantina","kind":"pub","lat":47.614286,"lon":-122.345654}
+{"type":"poi","name":"Elliott Bay CrossFit","kind":"fitness_centre","lat":47.614232,"lon":-122.345153}
+{"type":"poi","name":"The Loupe Lounge","kind":"bar","lat":47.620514,"lon":-122.349361}
+{"type":"poi","name":"The 5 Point","kind":"bar","lat":47.618130,"lon":-122.347333}
+{"type":"poi","name":"Charlotte Martin Theatre","kind":"information","lat":47.620965,"lon":-122.352690}
+{"type":"poi","name":"PACCAR Pavilion Garage","kind":"parking_entrance","lat":47.616157,"lon":-122.353950}
+{"type":"poi","name":"TASTE Café","kind":"cafe","lat":47.616363,"lon":-122.354245}
+{"type":"poi","name":"The Olympus Parking Garage","kind":"parking_entrance","lat":47.615407,"lon":-122.352982}
+{"type":"poi","name":"Cool Guys Fry Bar","kind":"fast_food","lat":47.621115,"lon":-122.351241}
+{"type":"poi","name":"Blue Water Taco Grill","kind":"fast_food","lat":47.621062,"lon":-122.351166}
+{"type":"poi","name":"Cafe Bee","kind":"cafe","lat":47.619883,"lon":-122.348385}
+{"type":"poi","name":"Bank of America","kind":"atm","lat":47.620970,"lon":-122.349855}
+{"type":"poi","name":"Cafe Cosmos","kind":"cafe","lat":47.617247,"lon":-122.353384}
+{"type":"poi","name":"Bank of America","kind":"atm","lat":47.621178,"lon":-122.350442}
+{"type":"poi","name":"MassageWorks","kind":"massage","lat":47.618325,"lon":-122.353250}
+{"type":"poi","name":"Green Leaf","kind":"restaurant","lat":47.616774,"lon":-122.351872}
+{"type":"poi","name":"TeKu Tavern","kind":"bar","lat":47.618739,"lon":-122.346043}
+{"type":"poi","name":"Wells Fargo","kind":"bank","lat":47.618737,"lon":-122.348691}
+{"type":"poi","name":"Mama’s Crawfish and Seafood House","kind":"restaurant","lat":47.615754,"lon":-122.350268}
+{"type":"poi","name":"Liberty Tattoo","kind":"tattoo","lat":47.617450,"lon":-122.349055}
+{"type":"poi","name":"World Class Coffee","kind":"cafe","lat":47.617256,"lon":-122.351485}
+{"type":"poi","name":"Grecian Corner","kind":"cafe","lat":47.619187,"lon":-122.348744}
+{"type":"poi","name":"McDonald's","kind":"fast_food","lat":47.619610,"lon":-122.348739}
+{"type":"poi","name":"Wasabi","kind":"restaurant","lat":47.614083,"lon":-122.346258}
+{"type":"poi","name":"Navy Strength","kind":"pub","lat":47.615318,"lon":-122.348149}
+{"type":"poi","name":"Blue Sky","kind":"locksmith","lat":47.615694,"lon":-122.348766}
+{"type":"poi","name":"La Vita é Bella","kind":"restaurant","lat":47.614919,"lon":-122.347519}
+{"type":"poi","name":"Seattle Device Repair","kind":"electronics_repair","lat":47.618435,"lon":-122.353403}
+{"type":"poi","name":"Sound Community Bank","kind":"bank","lat":47.615723,"lon":-122.346105}
+{"type":"poi","name":"Banner Bank","kind":"atm","lat":47.617548,"lon":-122.351958}
+{"type":"poi","name":"Corner Stone Cafe & Deli","kind":"cafe","lat":47.617197,"lon":-122.343517}
+{"type":"poi","name":"Mantra Restaurant & Bar","kind":"restaurant","lat":47.618457,"lon":-122.348350}
+{"type":"poi","name":"Avis","kind":"car_rental","lat":47.618900,"lon":-122.348750}
+{"type":"poi","name":"Emerald City Pilates","kind":"fitness_centre","lat":47.617620,"lon":-122.346105}
+{"type":"poi","name":"Ideal U Fitness","kind":"fitness_centre","lat":47.619169,"lon":-122.348229}
+{"type":"poi","name":"Wells Fargo","kind":"atm","lat":47.617184,"lon":-122.346695}
+{"type":"poi","name":"Alaska USA Federal Credit Union","kind":"bank","lat":47.616307,"lon":-122.346134}
+{"type":"poi","name":"Singles Going Steady","kind":"music","lat":47.613619,"lon":-122.345231}
+{"type":"poi","name":"Connect Lounge","kind":"bar","lat":47.614608,"lon":-122.346969}
+{"type":"poi","name":"Belltown Weightlifting","kind":"sports_centre","lat":47.618144,"lon":-122.354913}
+{"type":"poi","name":"Roquette","kind":"bar","lat":47.613373,"lon":-122.346164}
+{"type":"poi","name":"City Custom Tailor","kind":"tailor;dry_cleaning","lat":47.613742,"lon":-122.349404}
+{"type":"poi","name":"Vinnie's Wine Shop","kind":"pub","lat":47.615396,"lon":-122.348278}
+{"type":"poi","name":"Oriental Medicine","kind":"pharmacy","lat":47.615155,"lon":-122.351772}
+{"type":"poi","name":"Belltown Yacht Club","kind":"nightclub","lat":47.614074,"lon":-122.346837}
+{"type":"poi","name":"Rocco's","kind":"bar","lat":47.614472,"lon":-122.346030}
+{"type":"poi","name":"The Cottontail","kind":"bar","lat":47.614749,"lon":-122.343734}
+{"type":"poi","name":"Breathe","kind":"fitness_centre","lat":47.618381,"lon":-122.348607}
+{"type":"poi","name":"Here Today Brewery & Kitchen","kind":"pub","lat":47.614987,"lon":-122.353980}
+{"type":"poi","name":"Milkvue","kind":"cafe","lat":47.619189,"lon":-122.348589}
+{"type":"poi","name":"From Ashes Tattoo","kind":"tattoo","lat":47.615251,"lon":-122.347358}
+{"type":"poi","name":"Manzoku Izakaya","kind":"restaurant","lat":47.615447,"lon":-122.346424}
+{"type":"poi","name":"Himalayan Java","kind":"cafe","lat":47.618233,"lon":-122.344458}
+{"type":"poi","name":"Watson Security","kind":"locksmith","lat":47.617972,"lon":-122.348033}
+{"type":"poi","name":"Sushi Blossom","kind":"restaurant","lat":47.617690,"lon":-122.349525}
+{"type":"poi","name":"Junior's","kind":"interior_decoration","lat":47.614181,"lon":-122.348197}
+{"type":"poi","name":"Mama Chavez's Tamales","kind":"fast_food","lat":47.613508,"lon":-122.345107}
+{"type":"poi","name":"Block41","kind":"events_venue","lat":47.613700,"lon":-122.345437}
+{"type":"poi","name":"Budget","kind":"car_rental","lat":47.618889,"lon":-122.348750}
+{"type":"poi","name":"Wingstop","kind":"fast_food","lat":47.618717,"lon":-122.354919}
+{"type":"poi","name":"Skye at Belltown","kind":"residential","lat":47.617990,"lon":-122.345375}
+{"type":"poi","name":"Los Tacos Mexicali","kind":"restaurant","lat":47.615481,"lon":-122.348683}
+{"type":"poi","name":"Cyclops","kind":"cafe","lat":47.614468,"lon":-122.348688}
+{"type":"poi","name":"Kuhlman Custom Tailor","kind":"tailor","lat":47.614152,"lon":-122.348141}
+{"type":"poi","name":"Lenox","kind":"restaurant","lat":47.615061,"lon":-122.349034}
+{"type":"poi","name":"Transform 180","kind":"fitness_centre","lat":47.618860,"lon":-122.348055}
+{"type":"poi","name":"Partners In Print","kind":"copyshop","lat":47.618016,"lon":-122.347969}
+{"type":"poi","name":"Clarendon","kind":"residential","lat":47.618815,"lon":-122.354932}
+{"type":"poi","name":"Swamp Cow kava bar","kind":"bar","lat":47.618446,"lon":-122.353647}
+{"type":"poi","name":"Clarendon","kind":"residential","lat":47.618741,"lon":-122.353940}
+{"type":"poi","name":"Mulan Spa","kind":"massage","lat":47.617278,"lon":-122.352829}
+{"type":"poi","name":"Belltown P-Patch","kind":"allotments","lat":47.614071,"lon":-122.350920}
+{"type":"poi","name":"Belltown Cottage Park","kind":"park","lat":47.613959,"lon":-122.350903}
+{"type":"poi","name":"Tilikum Place","kind":"park","lat":47.618254,"lon":-122.347449}
+{"type":"poi","name":"Stadium Market","kind":"convenience","lat":47.618911,"lon":-122.344064}
+{"type":"poi","name":"Shell","kind":"fuel","lat":47.618757,"lon":-122.344155}
+{"type":"poi","name":"Essentially Seattle","kind":"gift","lat":47.621086,"lon":-122.349541}
+{"type":"poi","name":"Antioch University - Seattle","kind":"college","lat":47.615940,"lon":-122.346277}
+{"type":"poi","name":"Howard S Wright Memorial Fountain","kind":"fountain","lat":47.620086,"lon":-122.349302}
+{"type":"poi","name":"KOMO TV Heliport","kind":"helipad","lat":47.619554,"lon":-122.348664}
+{"type":"poi","name":"Expressly Northwest","kind":"gift","lat":47.621091,"lon":-122.349216}
+{"type":"poi","name":"Mural Amphitheatre","kind":"theatre","lat":47.620469,"lon":-122.350772}
+{"type":"poi","name":"Growing Vine Street Headwaters Park","kind":"park","lat":47.618309,"lon":-122.346279}
+{"type":"poi","name":"Paul G. Allen Family Fountation Plaza","kind":"pedestrian","lat":47.616249,"lon":-122.353795}
+{"type":"poi","name":"Kiro TV Helipad","kind":"helipad","lat":47.617699,"lon":-122.350386}
+{"type":"poi","name":"Ticketmaster Box Office","kind":"ticket","lat":47.621176,"lon":-122.354731}
+{"type":"poi","name":"Downtown School","kind":"school","lat":47.620048,"lon":-122.353768}
+{"type":"poi","name":"Gyrojack","kind":"artwork","lat":47.614543,"lon":-122.344783}
+{"type":"poi","name":"Zipcar","kind":"car_sharing","lat":47.615873,"lon":-122.345161}
+{"type":"poi","name":"Salon Divas","kind":"hairdresser","lat":47.617211,"lon":-122.346749}
+{"type":"poi","name":"Estrella","kind":"hairdresser","lat":47.617023,"lon":-122.353017}
+{"type":"poi","name":"Morfey's Cake","kind":"bakery","lat":47.617388,"lon":-122.352990}
+{"type":"poi","name":"Christinna's Bridal","kind":"clothes","lat":47.618133,"lon":-122.346998}
+{"type":"poi","name":"Sublime Hair","kind":"hairdresser","lat":47.617898,"lon":-122.347645}
+{"type":"poi","name":"Zik Seattle Smoke","kind":"tobacco","lat":47.618193,"lon":-122.347274}
+{"type":"poi","name":"Floral Masters","kind":"florist","lat":47.615897,"lon":-122.349176}
+{"type":"poi","name":"Belltown Market","kind":"convenience","lat":47.614725,"lon":-122.348396}
+{"type":"poi","name":"Helix Salon","kind":"hairdresser","lat":47.617727,"lon":-122.345577}
+{"type":"poi","name":"Rudy's Barbershop","kind":"hairdresser","lat":47.614342,"lon":-122.348959}
+{"type":"poi","name":"Matt Talbot Center","kind":"social_facility","lat":47.614875,"lon":-122.345488}
+{"type":"poi","name":"Rose of Lima House","kind":"social_facility","lat":47.613863,"lon":-122.346113}
+{"type":"poi","name":"Slip Gallery","kind":"studio","lat":47.613358,"lon":-122.346781}
+{"type":"poi","name":"Stylus","kind":"beauty","lat":47.614376,"lon":-122.346593}
+{"type":"poi","name":"Omni Dental","kind":"dentist","lat":47.613367,"lon":-122.344868}
+{"type":"poi","name":"Oui Salon & Spa","kind":"hairdresser","lat":47.614020,"lon":-122.343957}
+{"type":"poi","name":"2nd Avenue Grocery","kind":"convenience","lat":47.613843,"lon":-122.345641}
+{"type":"poi","name":"Chief Seattle","kind":"artwork","lat":47.618285,"lon":-122.347481}
+{"type":"poi","name":"ZoomCare","kind":"clinic","lat":47.614007,"lon":-122.345982}
+{"type":"poi","name":"Salon Q.E.","kind":"hairdresser","lat":47.615268,"lon":-122.349358}
+{"type":"poi","name":"Three Dogs","kind":"artwork","lat":47.614483,"lon":-122.344901}
+{"type":"poi","name":"Beckoning Cistern","kind":"artwork","lat":47.614850,"lon":-122.350134}
+{"type":"poi","name":"Untitled (Kiosk)","kind":"artwork","lat":47.615617,"lon":-122.344584}
+{"type":"poi","name":"Street Treatment","kind":"artwork","lat":47.617967,"lon":-122.354433}
+{"type":"poi","name":"Second Avenue Additions","kind":"artwork","lat":47.618050,"lon":-122.352049}
+{"type":"poi","name":"Olympic Iliad","kind":"artwork","lat":47.619379,"lon":-122.350059}
+{"type":"poi","name":"Moon Gates","kind":"artwork","lat":47.620041,"lon":-122.348900}
+{"type":"poi","name":"Neototems Children's Garden","kind":"artwork","lat":47.620223,"lon":-122.351719}
+{"type":"poi","name":"Black Lightning","kind":"artwork","lat":47.620429,"lon":-122.348355}
+{"type":"poi","name":"Seattle Center Totem","kind":"artwork","lat":47.620829,"lon":-122.351413}
+{"type":"poi","name":"Moses","kind":"artwork","lat":47.620771,"lon":-122.348878}
+{"type":"poi","name":"Garthgoyles: Designs for the Charlotte Martin Theatre","kind":"artwork","lat":47.620851,"lon":-122.352116}
+{"type":"poi","name":"Circus Ring Plaza","kind":"artwork","lat":47.621001,"lon":-122.350882}
+{"type":"poi","name":"Biography of a Branch","kind":"artwork","lat":47.621200,"lon":-122.351732}
+{"type":"poi","name":"Migrare","kind":"artwork","lat":47.621151,"lon":-122.351317}
+{"type":"poi","name":"Ruhamah Deli & Market","kind":"convenience","lat":47.616354,"lon":-122.351917}
+{"type":"poi","name":"New Town Market","kind":"convenience","lat":47.615689,"lon":-122.352730}
+{"type":"poi","name":"Abyssinia Market","kind":"convenience","lat":47.615154,"lon":-122.343959}
+{"type":"poi","name":"Form/Space Atelier (ArtNiche)","kind":"art","lat":47.615747,"lon":-122.352180}
+{"type":"poi","name":"2nd & Vine Dental","kind":"dentist","lat":47.616172,"lon":-122.348755}
+{"type":"poi","name":"SAM Shop/Info","kind":"art","lat":47.616354,"lon":-122.353977}
+{"type":"poi","name":"Split","kind":"artwork","lat":47.616072,"lon":-122.354042}
+{"type":"poi","name":"Stinger","kind":"artwork","lat":47.615575,"lon":-122.354828}
+{"type":"poi","name":"Typewriter Eraser, Scale X","kind":"artwork","lat":47.615949,"lon":-122.354508}
+{"type":"poi","name":"Purely Velvet Salon","kind":"hairdresser","lat":47.616578,"lon":-122.352306}
+{"type":"poi","name":"Site 17 Grocery & Deli","kind":"convenience","lat":47.614203,"lon":-122.349648}
+{"type":"poi","name":"Belltown Modern Dentistry","kind":"dentist","lat":47.616627,"lon":-122.343739}
+{"type":"poi","name":"Faux Lash Studio","kind":"beauty","lat":47.616777,"lon":-122.347940}
+{"type":"poi","name":"Curve XXIV","kind":"artwork","lat":47.616255,"lon":-122.353798}
+{"type":"poi","name":"Feminine One","kind":"artwork","lat":47.620880,"lon":-122.349664}
+{"type":"poi","name":"UW Medicine Belltown Clinic","kind":"doctors","lat":47.615454,"lon":-122.348430}
+{"type":"poi","name":"Nuevo","kind":"hairdresser","lat":47.615618,"lon":-122.348688}
+{"type":"poi","name":"Seattle Nails","kind":"beauty","lat":47.616226,"lon":-122.349672}
+{"type":"poi","name":"Bell Harbour Dental","kind":"dentist","lat":47.616199,"lon":-122.349774}
+{"type":"poi","name":"Tina's Nails","kind":"beauty","lat":47.618173,"lon":-122.347803}
+{"type":"poi","name":"CurPoint","kind":"doctors","lat":47.619061,"lon":-122.348237}
+{"type":"poi","name":"NieU Studio","kind":"beauty","lat":47.617137,"lon":-122.346604}
+{"type":"poi","name":"Belltown Barber","kind":"hairdresser","lat":47.613474,"lon":-122.345000}
+{"type":"poi","name":"The Cat","kind":"beauty","lat":47.614794,"lon":-122.345306}
+{"type":"poi","name":"Zipcar","kind":"car_sharing","lat":47.617922,"lon":-122.349922}
+{"type":"poi","name":"Zipcar","kind":"car_sharing","lat":47.616692,"lon":-122.350539}
+{"type":"poi","name":"Zipcar","kind":"car_sharing","lat":47.616240,"lon":-122.351606}
+{"type":"poi","name":"Zipcar","kind":"car_sharing","lat":47.615674,"lon":-122.350032}
+{"type":"poi","name":"Zipcar","kind":"car_sharing","lat":47.615938,"lon":-122.351990}
+{"type":"poi","name":"Chris Cornell in Performance","kind":"artwork","lat":47.621191,"lon":-122.347824}
+{"type":"poi","name":"Cross My Palm","kind":"artwork","lat":47.614995,"lon":-122.346553}
+{"type":"poi","name":"Topographic Syncretism","kind":"artwork","lat":47.614911,"lon":-122.346164}
+{"type":"poi","name":"Arrow Beauty","kind":"beauty","lat":47.613839,"lon":-122.349570}
+{"type":"poi","name":"Sonic Bloom","kind":"artwork","lat":47.620003,"lon":-122.350303}
+{"type":"poi","name":"The First Commercial Monorail in America","kind":"memorial","lat":47.621013,"lon":-122.350053}
+{"type":"poi","name":"Assembly Barber Shop","kind":"hairdresser","lat":47.617397,"lon":-122.349015}
+{"type":"poi","name":"Al Rochester's Podium","kind":"memorial","lat":47.618479,"lon":-122.350785}
+{"type":"poi","name":"Yuki's Diffusion","kind":"hairdresser","lat":47.615013,"lon":-122.343683}
+{"type":"poi","name":"Base Camp Studios","kind":"art","lat":47.614277,"lon":-122.348353}
+{"type":"poi","name":"Wax On","kind":"beauty","lat":47.614378,"lon":-122.348908}
+{"type":"poi","name":"Ghosts","kind":"clothes","lat":47.616041,"lon":-122.347470}
+{"type":"poi","name":"Greetings From Seattle","kind":"artwork","lat":47.613738,"lon":-122.345536}
+{"type":"poi","name":"Crows On Rollerskates","kind":"artwork","lat":47.615454,"lon":-122.344995}
+{"type":"poi","name":"Hostel Fish","kind":"hostel","lat":47.614467,"lon":-122.346725}
+{"type":"poi","name":"The Smile Space","kind":"dentist","lat":47.617654,"lon":-122.352121}
+{"type":"poi","name":"3rd Avenue & Bell Street","kind":"bus_stop","lat":47.615105,"lon":-122.345273}
+{"type":"poi","name":"Wall Street & 5th Avenue","kind":"bus_stop","lat":47.617576,"lon":-122.345155}
+{"type":"poi","name":"3rd Avenue & Cedar Street","kind":"bus_stop","lat":47.616882,"lon":-122.348680}
+{"type":"poi","name":"3rd Avenue & Vine Street","kind":"bus_stop","lat":47.616871,"lon":-122.348280}
+{"type":"poi","name":"3rd Avenue & Bell Street","kind":"bus_stop","lat":47.614508,"lon":-122.344662}
+{"type":"poi","name":"Denny Way & 2nd Avenue North","kind":"bus_stop","lat":47.618522,"lon":-122.352054}
+{"type":"poi","name":"1st Avenue & Broad Street","kind":"bus_stop","lat":47.617188,"lon":-122.352778}
+{"type":"poi","name":"5th Avenue North & Denny Way","kind":"bus_stop","lat":47.619213,"lon":-122.347738}
+{"type":"poi","name":"Cedar St & Denny Way","kind":"bus_stop","lat":47.618403,"lon":-122.347529}
+{"type":"poi","name":"Denny Way & 5th Avenue North","kind":"bus_stop","lat":47.618645,"lon":-122.347988}
+{"type":"poi","name":"Denny Way & 5th Avenue North","kind":"bus_stop","lat":47.618509,"lon":-122.347881}
+{"type":"poi","name":"2nd Ave & Broad St","kind":"bus_stop","lat":47.617264,"lon":-122.351306}
+{"type":"poi","name":"2nd Ave & Bell St","kind":"bus_stop","lat":47.613705,"lon":-122.345252}
+{"type":"poi","name":"7th Avenue North & Denny Way","kind":"bus_stop","lat":47.619075,"lon":-122.343511}
+{"type":"poi","name":"7th Avenue North & Thomas Street","kind":"bus_stop","lat":47.621109,"lon":-122.343881}
+{"type":"poi","name":"Denny Way & 2nd Avenue North","kind":"bus_stop","lat":47.618659,"lon":-122.352615}

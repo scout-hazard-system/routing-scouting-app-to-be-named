@@ -1,0 +1,3 @@
+{"meta":{"state":"WA","z":15,"x":5429,"y":11524,"zhs":{"key":"z/15/5429/11524|h3/9/nv8o/pfiz|s2/12/f2/20t/29f","z_key":"z/15/5429/11524","h_key":"h3/9/nv8o/pfiz","s_key":"s2/12/f2/20t/29f"},"source":"planet","roads":2,"buildings":0,"areas":0,"pois":0}}
+{"type":"road","class":"tertiary","name":"Fox Road","oneway":false,"pts":"47.010343,-120.347787;47.009494,-120.347752;47.002617,-120.347578"}
+{"type":"road","class":"service","name":"","oneway":false,"pts":"47.002617,-120.353124;47.002953,-120.353130;47.003074,-120.353259"}

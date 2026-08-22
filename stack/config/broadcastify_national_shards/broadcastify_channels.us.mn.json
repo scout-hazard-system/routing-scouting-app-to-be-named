@@ -1,0 +1,29 @@
+{
+  "channels": [
+    {
+      "id": "bf-40664-itasca-county-public-safety-law-fire-ems-a",
+      "name": "Itasca County Public Safety  Law, Fire, EMS &amp; State Interop",
+      "description": "Broadcastify Top 50 national bootstrap feed 40664 for Itasca, MN.",
+      "city": "Itasca",
+      "county": "Itasca",
+      "state": "MN",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "fire",
+        "ems",
+        "national-bootstrap",
+        "itasca"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 79,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/40664"
+    }
+  ]
+}

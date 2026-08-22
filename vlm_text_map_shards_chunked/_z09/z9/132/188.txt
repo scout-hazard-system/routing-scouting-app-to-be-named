@@ -1,0 +1,2 @@
+{"meta":{"state":"_z09","z":9,"x":132,"y":188,"zhs":{"key":"z/9/132/188|h3/9/npal/pe54|s2/12/f4/ts/1mw","z_key":"z/9/132/188","h_key":"h3/9/npal/pe54","s_key":"s2/12/f4/ts/1mw"},"source":"planet","roads":0,"buildings":0,"areas":1,"pois":0}}
+{"type":"area","kind":"water","pts":"43.084937,-87.209473;43.084937,-86.462402;42.536892,-86.462402;42.536892,-87.209473"}

@@ -1,40 +1,58 @@
-# Routing/Scouting App Progress Tracker
-This file is the high-level index for project progress.
-## Current status
-- Local-first vehicle stack is operational.
-- Unified launcher exists to start pipeline + backend + UI together.
-- Java backend supports pipeline, platform, and mobile API surfaces.
-- Frontend can be packaged as its own executable via `frontend/build_executable.sh`.
-- Deployment runbook and Phase 1 validation are documented in `deployment/README.md`.
-## Active scope decision
-- Current development focus is **local-only iteration**.
-- Cloud/consumer rollout tasks are deferred until local audio capture/transcription setup is more universal and stable.
-## Where to track progress
-- Iteration tracker: `progress/README.md`
-- Iteration sample logs: `progress/logs/`
-- Deployment validation evidence: `deployment/README.md`
-## How to update each iteration
-1. Duplicate the latest log file in `progress/logs/` with the next iteration number.
-2. Fill in summary metrics and notable changes.
-3. Append a new row/entry in `progress/README.md`.
-4. If you ran validation, add the command outcomes to `deployment/README.md`.
-## Frontend executable quickstart
-- Build frontend executable:
-  - `./frontend/build_executable.sh`
-- Start full stack (launcher will prefer frontend executable when present):
-  - `./run_vehicle_stack.sh start`
-- Override executable path (optional):
-  - `FRONTEND_EXECUTABLE_PATH=/custom/path/scanner-frontend-lite ./run_vehicle_stack.sh start`
-## Next suggested milestone
-- Improve audio setup universality on local machines:
-  - reduce hard dependency on one capture path/device setup
-  - improve auto-detection/fallback for input sources
-  - keep end-to-end launcher flow stable while iterating audio backend
-## Broadcastify channel selection (deterministic + Ollama rerank)
-- New selector script: `channel_selector.py`
-- Purpose:
-  - deterministic jurisdiction/type ranking from a channel catalog
-  - optional Ollama reranking for ambiguous candidates
-- Sample catalog: `config/broadcastify_channels.sample.json`
-- Example:
-  - `/home/gibi/Desktop/cop_pipeline/bin/python3 /home/gibi/Desktop/channel_selector.py --channels-file /home/gibi/Desktop/config/broadcastify_channels.sample.json --city "Sample City" --county "Sample County" --state "Sample State" --lat 40.0 --lon -75.0 --desired-types law,dispatch --use-ollama-rerank --output-format text`
+# Routing/Scouting App
+Local-first navigation + scanner-intel stack with a hardened Java backend, Android clients, and versioned scout models.
+
+## Repository map
+```text
+llm/                  Scout models by type + client/build tooling
+  core/ vet/ rank/ alert/ intel/
+  client/             llm_set_client.py
+  build/              build_llm_set.sh, eval_llm_set.py
+navigation/
+  frontend/           Web dashboard
+  backend/            Java API (BackendServer)
+  android/            Android + Android Auto client
+  pipeline/           pipeline.py, channel_selector, audio routes
+stack/
+  commands/           master + run_vehicle_stack + termius helpers
+  config/             vehicle_stack.env, catalogs
+  deployment/         systemd / ops
+  docker-compose.server.yml
+docs/                 guides, progress logs, script text library
+cop_pipeline/         local Python venv (gitignored)
+```
+
+## Quickstart
+```bash
+./master start
+./master status
+# or
+./run_vehicle_stack.sh start
+```
+
+See `stack/README.md` for the full command list.
+
+## Compile checks
+```bash
+# Backend
+cd navigation/backend
+javac BackendServer.java MapModel.java PlanetTileStore.java ProprietaryMapEngine.java
+
+# Android
+./navigation/android/gradlew -p navigation/android :app:compileDevDebugSources :app:compileNavigationDebugSources
+```
+
+## Scout LLM set
+```bash
+SKIP_SMOKE=1 ./llm/build/build_llm_set.sh
+cop_pipeline/bin/python3 llm/build/eval_llm_set.py --threshold 0.9
+```
+Model iterations live under `llm/{core,vet,rank,alert,intel}/`.
+
+## Documentation
+- Stack commands: `stack/README.md`
+- Deployment: `stack/deployment/README.md`
+- Frontend: `navigation/frontend/README.md`
+- Backend: `navigation/backend/README.md`
+- Scout models: `llm/README.md`
+- Progress: `docs/progress/README.md`
+- Agent rules: `docs/guides/AGENTS.md`

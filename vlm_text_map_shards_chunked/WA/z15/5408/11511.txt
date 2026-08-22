@@ -1,0 +1,7 @@
+{"meta":{"state":"WA","z":15,"x":5408,"y":11511,"zhs":{"key":"z/15/5408/11511|h3/9/nv9c/pfk5|s2/12/f2/20v/29b","z_key":"z/15/5408/11511","h_key":"h3/9/nv9c/pfk5","s_key":"s2/12/f2/20v/29b"},"source":"planet","roads":5,"buildings":0,"areas":0,"pois":1}}
+{"type":"road","class":"tertiary","name":"Reecer Creek Road","oneway":false,"pts":"47.107640,-120.581761;47.099928,-120.581783"}
+{"type":"road","class":"path","name":"","oneway":false,"pts":"47.107426,-120.586109;47.107640,-120.585288"}
+{"type":"road","class":"residential","name":"Smithson Road","oneway":false,"pts":"47.102933,-120.586109;47.102995,-120.581775;47.102933,-120.574780"}
+{"type":"road","class":"service","name":"","oneway":false,"pts":"47.105509,-120.581767;47.105489,-120.583456;47.105469,-120.584151;47.105453,-120.585291;47.105526,-120.585382;47.105631,-120.585460;47.105697,-120.585613;47.105776,-120.585750"}
+{"type":"road","class":"service","name":"","oneway":false,"pts":"47.102970,-120.583513;47.103631,-120.583542;47.103682,-120.583580;47.103798,-120.583851"}
+{"type":"poi","name":"Reecer Creek School","kind":"school","lat":47.103180,"lon":-120.580627}

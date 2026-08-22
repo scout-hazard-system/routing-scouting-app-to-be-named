@@ -1,0 +1,2 @@
+{"meta":{"state":"_z09","z":9,"x":130,"y":189,"zhs":{"key":"z/9/130/189|h3/9/npnp/pdyy|s2/12/f4/u5/1m0","z_key":"z/9/130/189","h_key":"h3/9/npnp/pdyy","s_key":"s2/12/f4/u5/1m0"},"source":"planet","roads":1081,"buildings":0,"areas":1926,"pois":63}}
+{"type":"poi","name":"Hackmatack National Wildlife Refuge","kind":"nature_reserve","lat":42.490580,"lon":-88.420372}

@@ -1,0 +1,3 @@
+{"meta":{"state":"WA","z":15,"x":5405,"y":11508,"zhs":{"key":"z/15/5405/11508|h3/9/nv9c/pfkf|s2/12/f2/20v/29a","z_key":"z/15/5405/11508","h_key":"h3/9/nv9c/pfkf","s_key":"s2/12/f2/20v/29a"},"source":"planet","roads":1,"buildings":0,"areas":0,"pois":1}}
+{"type":"road","class":"tertiary","name":"Reecer Creek Road","oneway":false,"pts":"47.130068,-120.613854;47.122359,-120.614031"}
+{"type":"poi","name":"Reimer Pond","kind":"reservoir","lat":47.128179,"lon":-120.609517}

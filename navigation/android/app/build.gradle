@@ -1,0 +1,81 @@
+plugins {
+    id("com.android.application")
+}
+
+android {
+    namespace "dev.warp.stream"
+    compileSdk 34
+    setProperty("archivesBaseName", "scout")
+
+    defaultConfig {
+        applicationId "dev.warp.stream"
+        minSdk 26
+        targetSdk 34
+        versionCode 1
+        versionName "0.1.0"
+        buildConfigField "boolean", "ENABLE_DEV_CONTROLS", "true"
+        resValue "string", "app_name", "Scanner Stream"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    buildFeatures {
+        buildConfig true
+    }
+
+    lint {
+        disable "MissingIntentFilterForMediaSearch", "MissingMediaBrowserServiceIntentFilter"
+    }
+
+    applicationVariants.all { variant ->
+        variant.outputs.all { output ->
+            outputFileName = "scout-${variant.name}.apk"
+        }
+    }
+}
+
+tasks.register("renameDebugApkToScout") {
+    doLast {
+        def apkCandidates = fileTree("${buildDir}/outputs/apk") {
+            include "**/*debug*.apk"
+            exclude "**/scout.apk"
+        }.files.toList().sort { a, b -> b.lastModified() <=> a.lastModified() }
+        if (!apkCandidates.isEmpty()) {
+            def sourceApk = apkCandidates.first()
+            def targetApk = new File(sourceApk.parentFile, "scout.apk")
+            if (targetApk.exists()) {
+                targetApk.delete()
+            }
+            sourceApk.renameTo(targetApk)
+        }
+    }
+}
+
+tasks.configureEach { task ->
+    if (task.name.toLowerCase().startsWith("assemble") && task.name.toLowerCase().contains("debug")) {
+        task.finalizedBy("renameDebugApkToScout")
+    }
+}
+
+tasks.named("assemble") {
+    finalizedBy("renameDebugApkToScout")
+}
+
+dependencies {
+    implementation project(":frontend-ui")
+    implementation "androidx.appcompat:appcompat:1.7.0"
+    implementation "com.google.android.material:material:1.12.0"
+    implementation "androidx.core:core-ktx:1.13.1"
+    implementation "com.squareup.okhttp3:okhttp:4.12.0"
+    implementation "androidx.car.app:app:1.4.0"
+}

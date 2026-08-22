@@ -1,0 +1,431 @@
+{"meta":{"state":"CA","z":15,"x":5240,"y":12666,"zhs":{"key":"z/15/5240/12666|h3/9/nxx8/pch4|s2/12/f4/tz/10e","z_key":"z/15/5240/12666","h_key":"h3/9/nxx8/pch4","s_key":"s2/12/f4/tz/10e"},"source":"planet","roads":518,"buildings":1817,"areas":59,"pois":389}}
+{"type":"area","kind":"park","pts":"37.764025,-122.429860;37.764029,-122.429814;37.763991,-122.429809;37.763989,-122.429857"}
+{"type":"area","kind":"park","pts":"37.764032,-122.429776;37.764034,-122.429728;37.763996,-122.429726;37.763993,-122.429771"}
+{"type":"area","kind":"park","pts":"37.764036,-122.429693;37.764040,-122.429645;37.764002,-122.429640;37.763998,-122.429688"}
+{"type":"area","kind":"park","pts":"37.763130,-122.429988;37.763298,-122.430004;37.763306,-122.429860;37.763139,-122.429844"}
+{"type":"area","kind":"park","pts":"37.763306,-122.430004;37.763474,-122.430021;37.763482,-122.429876;37.763315,-122.429860"}
+{"type":"area","kind":"park","pts":"37.763487,-122.430023;37.763654,-122.430039;37.763663,-122.429895;37.763495,-122.429878"}
+{"type":"area","kind":"park","pts":"37.763663,-122.430037;37.763830,-122.430053;37.763839,-122.429911;37.763671,-122.429895"}
+{"type":"area","kind":"park","pts":"37.763841,-122.430058;37.763923,-122.430066;37.763934,-122.429921;37.763849,-122.429911"}
+{"type":"area","kind":"park","pts":"37.763035,-122.429980;37.763118,-122.429988;37.763126,-122.429844;37.763043,-122.429833"}
+{"type":"area","kind":"park","pts":"37.763130,-122.429771;37.763378,-122.429793;37.763395,-122.429479;37.763149,-122.429457"}
+{"type":"area","kind":"park","pts":"37.763527,-122.429787;37.763544,-122.429498;37.763402,-122.429484;37.763385,-122.429774"}
+{"type":"area","kind":"park","pts":"37.763629,-122.429795;37.763644,-122.429557;37.763550,-122.429546;37.763535,-122.429787"}
+{"type":"area","kind":"park","pts":"37.763648,-122.429715;37.763813,-122.429731;37.763826,-122.429522;37.763660,-122.429506"}
+{"type":"area","kind":"park","pts":"37.763943,-122.429825;37.763957,-122.429602;37.763856,-122.429591;37.763843,-122.429817"}
+{"type":"area","kind":"park","pts":"37.763769,-122.430385;37.763781,-122.430122;37.763658,-122.430112;37.763646,-122.430375"}
+{"type":"area","kind":"park","pts":"37.763304,-122.430270;37.763315,-122.430109;37.763039,-122.430085;37.763029,-122.430243"}
+{"type":"area","kind":"park","pts":"37.764070,-122.427776;37.764112,-122.427778;37.764116,-122.427725;37.764072,-122.427719"}
+{"type":"area","kind":"park","pts":"37.764074,-122.427703;37.764116,-122.427706;37.764121,-122.427652;37.764078,-122.427647"}
+{"type":"area","kind":"park","pts":"37.763790,-122.427738;37.763764,-122.427880;37.763998,-122.427945;37.764021,-122.427802"}
+{"type":"area","kind":"park","pts":"37.763809,-122.427582;37.763792,-122.427727;37.764027,-122.427776;37.764044,-122.427631"}
+{"type":"area","kind":"park","pts":"37.763597,-122.424603;37.763603,-122.424487;37.763400,-122.424468;37.763393,-122.424584"}
+{"type":"area","kind":"park","pts":"37.763614,-122.424691;37.763620,-122.424605;37.763548,-122.424597;37.763542,-122.424686"}
+{"type":"area","kind":"park","pts":"37.763915,-122.425166;37.764078,-122.425182;37.764087,-122.425069;37.763921,-122.425050"}
+{"type":"area","kind":"park","pts":"37.764080,-122.425053;37.764114,-122.425056;37.764116,-122.425013;37.764082,-122.425013"}
+{"type":"area","kind":"park","pts":"37.763962,-122.425042;37.763996,-122.425045;37.763998,-122.425002;37.763964,-122.424999"}
+{"type":"area","kind":"park","pts":"37.765088,-122.425702;37.765075,-122.425823;37.765240,-122.425847;37.765253,-122.425673;37.765151,-122.425702"}
+{"type":"area","kind":"park","pts":"37.765113,-122.425689;37.765162,-122.425683;37.765185,-122.425675;37.765206,-122.425659;37.765210,-122.425651;37.765204,-122.425622;37.765204,-122.425584;37.765198,-122.425579;37.765189,-122.425579;37.765143,-122.425606;37.765113,-122.425608"}
+{"type":"area","kind":"park","pts":"37.765079,-122.425600;37.765005,-122.425595;37.764996,-122.425761;37.765071,-122.425767"}
+{"type":"area","kind":"park","pts":"37.767013,-122.421553;37.767076,-122.421558;37.767079,-122.421553;37.767091,-122.421531;37.767095,-122.421510;37.767091,-122.421480;37.767081,-122.421456;37.767019,-122.421454"}
+{"type":"area","kind":"civic","pts":"37.764485,-122.427658;37.764356,-122.427644;37.764360,-122.427590;37.764182,-122.427574;37.764203,-122.427242;37.763839,-122.427207;37.763716,-122.427966;37.763631,-122.428465;37.764424,-122.428537"}
+{"type":"area","kind":"park","pts":"37.766502,-122.429463;37.766589,-122.429350;37.766544,-122.429262;37.766478,-122.429256;37.766478,-122.429229;37.766434,-122.429262;37.766430,-122.429345;37.766404,-122.429353;37.766400,-122.429433;37.766485,-122.429441"}
+{"type":"area","kind":"park","pts":"37.766415,-122.429715;37.766377,-122.429669;37.766353,-122.429696;37.766247,-122.429688;37.766237,-122.429870;37.766286,-122.429876"}
+{"type":"area","kind":"park","pts":"37.766839,-122.430739;37.766841,-122.430694;37.766811,-122.430691;37.766809,-122.430737"}
+{"type":"area","kind":"park","pts":"37.764063,-122.426383;37.764481,-122.426421;37.764494,-122.426418;37.764504,-122.426410;37.764511,-122.426386;37.764504,-122.426362;37.764485,-122.426351;37.764068,-122.426314;37.764049,-122.426322;37.764038,-122.426343;37.764042,-122.426367;37.764053,-122.426378"}
+{"type":"area","kind":"park","pts":"37.763622,-122.426341;37.763902,-122.426367;37.763921,-122.426354;37.763928,-122.426333;37.763923,-122.426311;37.763906,-122.426298;37.763622,-122.426271;37.763603,-122.426282;37.763595,-122.426306;37.763603,-122.426330"}
+{"type":"area","kind":"park","pts":"37.764816,-122.426451;37.765234,-122.426491;37.765247,-122.426488;37.765255,-122.426480;37.765264,-122.426456;37.765255,-122.426432;37.765238,-122.426421;37.764820,-122.426381;37.764801,-122.426389;37.764791,-122.426410;37.764795,-122.426437;37.764803,-122.426445"}
+{"type":"area","kind":"park","pts":"37.765414,-122.426510;37.765696,-122.426536;37.765715,-122.426526;37.765721,-122.426502;37.765715,-122.426477;37.765700,-122.426467;37.765414,-122.426440;37.765397,-122.426451;37.765389,-122.426475;37.765397,-122.426499"}
+{"type":"area","kind":"park","pts":"37.766421,-122.426611;37.766994,-122.426673;37.767002,-122.426673;37.767013,-122.426665;37.767021,-122.426654;37.767023,-122.426638;37.767019,-122.426620;37.767002,-122.426603;37.766423,-122.426542;37.766413,-122.426544;37.766402,-122.426552;37.766394,-122.426577;37.766402,-122.426601"}
+{"type":"area","kind":"park","pts":"37.768522,-122.426818;37.768940,-122.426856;37.768959,-122.426850;37.768968,-122.426837;37.768970,-122.426821;37.768961,-122.426797;37.768944,-122.426786;37.768527,-122.426748;37.768514,-122.426751;37.768508,-122.426756;37.768497,-122.426778;37.768501,-122.426802;37.768514,-122.426815"}
+{"type":"area","kind":"water","pts":"37.766595,-122.427443;37.766597,-122.427405;37.766593,-122.427384;37.766580,-122.427371;37.766570,-122.427368;37.766555,-122.427376;37.766546,-122.427395;37.766544,-122.427408;37.766551,-122.427432;37.766546,-122.427470;37.766551,-122.427481;37.766563,-122.427491;37.766582,-122.427486;37.766589,-122.427470"}
+{"type":"area","kind":"water","pts":"37.765168,-122.427271;37.765170,-122.427228;37.765136,-122.427226;37.765138,-122.427185;37.765073,-122.427177;37.765066,-122.427261"}
+{"type":"poi","name":"Duboce Triangle","kind":"place_neighbourhood","lat":37.767138,"lon":-122.432231}
+{"type":"poi","name":"San Francisco Armory","kind":"other","lat":37.767840,"lon":-122.420606}
+{"type":"poi","name":"Valencia Gardens","kind":"residential","lat":37.767076,"lon":-122.423218}
+{"type":"poi","name":"Perramont Hotel","kind":"hotel","lat":37.766820,"lon":-122.430350}
+{"type":"poi","name":"San Francisco Fire Station 6","kind":"fire_station","lat":37.767134,"lon":-122.430874}
+{"type":"poi","name":"Twin Peaks Hotel","kind":"hotel","lat":37.766886,"lon":-122.430313}
+{"type":"poi","name":"San Francisco Mint","kind":"heritage","lat":37.770187,"lon":-122.427411}
+{"type":"poi","name":"462 Duboce Apartments","kind":"social_facility","lat":37.769769,"lon":-122.430828}
+{"type":"poi","name":"Cafe du Nord","kind":"pub","lat":37.766718,"lon":-122.430544}
+{"type":"poi","name":"Live Fit Gym","kind":"fitness_centre","lat":37.766650,"lon":-122.429530}
+{"type":"poi","name":"Mission National Bank","kind":"bank","lat":37.765208,"lon":-122.421132}
+{"type":"poi","name":"Mission Dolores Basilica","kind":"place_of_worship","lat":37.764354,"lon":-122.426955}
+{"type":"poi","name":"Blackbird","kind":"pub","lat":37.767329,"lon":-122.429672}
+{"type":"poi","name":"Dolores Park Church","kind":"place_of_worship","lat":37.762083,"lon":-122.425780}
+{"type":"poi","name":"Sha'ar Zahav","kind":"place_of_worship","lat":37.764829,"lon":-122.426711}
+{"type":"poi","name":"Saint Francis Lutheran Church","kind":"place_of_worship","lat":37.768578,"lon":-122.429382}
+{"type":"poi","name":"25 Sanchez Apartments","kind":"social_facility","lat":37.768957,"lon":-122.431053}
+{"type":"poi","name":"UCSF Dental School","kind":"university","lat":37.770956,"lon":-122.426499}
+{"type":"poi","name":"Whole Foods Market","kind":"supermarket","lat":37.768743,"lon":-122.427065}
+{"type":"poi","name":"Mission High School","kind":"school","lat":37.761981,"lon":-122.427303}
+{"type":"poi","name":"Hoff Street Garage","kind":"parking","lat":37.764371,"lon":-122.420877}
+{"type":"poi","name":"United States Mint","kind":"mint","lat":37.770049,"lon":-122.427513}
+{"type":"poi","name":"Local 6 International Brotherhood of Electrical Workers","kind":"social_centre","lat":37.769977,"lon":-122.430302}
+{"type":"poi","name":"Third Space","kind":"community_centre","lat":37.768149,"lon":-122.427663}
+{"type":"poi","name":"Safeway","kind":"supermarket","lat":37.769131,"lon":-122.428325}
+{"type":"poi","name":"Pet Food Express","kind":"pet","lat":37.769269,"lon":-122.426206}
+{"type":"poi","name":"Old Mission Dolores","kind":"place_of_worship","lat":37.764186,"lon":-122.426813}
+{"type":"poi","name":"Eureka Valley / Harvey Milk Memorial Branch Library","kind":"library","lat":37.764057,"lon":-122.431906}
+{"type":"poi","name":"Mission Police Station","kind":"police","lat":37.762857,"lon":-122.421974}
+{"type":"poi","name":"F. Lofrano and Son, Inc.","kind":"car_repair","lat":37.763173,"lon":-122.420770}
+{"type":"poi","name":"Boys & Girls Club","kind":"social_facility","lat":37.763641,"lon":-122.424570}
+{"type":"poi","name":"Chase","kind":"bank","lat":37.766194,"lon":-122.431512}
+{"type":"poi","name":"Flagship","kind":"fitness_centre","lat":37.768374,"lon":-122.429374}
+{"type":"poi","name":"SoMa West Skate Park","kind":"pitch","lat":37.770236,"lon":-122.420815}
+{"type":"poi","name":"Sanchez Elementary School","kind":"school","lat":37.763463,"lon":-122.430377}
+{"type":"poi","name":"Everett Middle School","kind":"school","lat":37.763521,"lon":-122.429414}
+{"type":"poi","name":"Zenanli Parking","kind":"parking","lat":37.768493,"lon":-122.421116}
+{"type":"poi","name":"SoMa West Dog Park","kind":"dog_park","lat":37.770327,"lon":-122.422073}
+{"type":"poi","name":"Saint John the Evangelist Episcopal Church","kind":"place_of_worship","lat":37.766400,"lon":-122.421311}
+{"type":"poi","name":"San Francisco Friends School","kind":"school","lat":37.769012,"lon":-122.422923}
+{"type":"poi","name":"Clarion Alley Mural Project","kind":"artwork","lat":37.762986,"lon":-122.420598}
+{"type":"poi","name":"Mission Dolores Academy","kind":"school","lat":37.763970,"lon":-122.427856}
+{"type":"poi","name":"Notre Dame Plaza","kind":"social_facility","lat":37.764004,"lon":-122.425788}
+{"type":"poi","name":"Shell","kind":"fuel","lat":37.764517,"lon":-122.424404}
+{"type":"poi","name":"Mission Dolores Cemetery","kind":"grave_yard","lat":37.764023,"lon":-122.426890}
+{"type":"poi","name":"Annunciation Greek Orthodox Cathedral","kind":"place_of_worship","lat":37.768807,"lon":-122.421639}
+{"type":"poi","name":"Kilowatt","kind":"pub","lat":37.764975,"lon":-122.423240}
+{"type":"poi","name":"Elixir","kind":"pub","lat":37.764924,"lon":-122.424305}
+{"type":"poi","name":"Box Dog","kind":"bicycle","lat":37.768149,"lon":-122.424088}
+{"type":"poi","name":"Church","kind":"stop","lat":37.766733,"lon":-122.429962}
+{"type":"poi","name":"Dalva","kind":"pub","lat":37.764772,"lon":-122.422462}
+{"type":"poi","name":"Mezze and Mooore","kind":"restaurant","lat":37.768092,"lon":-122.424586}
+{"type":"poi","name":"Little Star Pizza","kind":"restaurant","lat":37.766449,"lon":-122.422205}
+{"type":"poi","name":"Carlin's Laundromat","kind":"laundry","lat":37.768287,"lon":-122.422395}
+{"type":"poi","name":"San Francisco Baha'i Center","kind":"place_of_worship","lat":37.770439,"lon":-122.422626}
+{"type":"poi","name":"California Volunteers Memorial","kind":"monument","lat":37.768870,"lon":-122.426807}
+{"type":"poi","name":"Lighthouse Full Gospel Church","kind":"place_of_worship","lat":37.764543,"lon":-122.425525}
+{"type":"poi","name":"ABV","kind":"bar","lat":37.764945,"lon":-122.423538}
+{"type":"poi","name":"Church","kind":"subway_entrance","lat":37.767106,"lon":-122.429248}
+{"type":"poi","name":"Church","kind":"subway_entrance","lat":37.767464,"lon":-122.429221}
+{"type":"poi","name":"Four Barrel Coffee","kind":"cafe","lat":37.767017,"lon":-122.421926}
+{"type":"poi","name":"Wells Fargo","kind":"atm","lat":37.764918,"lon":-122.420343}
+{"type":"poi","name":"Muddy Waters","kind":"cafe","lat":37.764500,"lon":-122.421682}
+{"type":"poi","name":"Pancho Villa","kind":"restaurant","lat":37.764861,"lon":-122.421078}
+{"type":"poi","name":"El Toro","kind":"restaurant","lat":37.763436,"lon":-122.421910}
+{"type":"poi","name":"Good Vibrations","kind":"erotic","lat":37.763113,"lon":-122.421577}
+{"type":"poi","name":"Healthy Spirits","kind":"alcohol","lat":37.768039,"lon":-122.422349}
+{"type":"poi","name":"Walgreens","kind":"pharmacy","lat":37.766593,"lon":-122.429779}
+{"type":"poi","name":"Pilsner Inn","kind":"nightclub","lat":37.767136,"lon":-122.428795}
+{"type":"poi","name":"Tavola Rustica","kind":"restaurant","lat":37.767212,"lon":-122.428806}
+{"type":"poi","name":"Valencia Street Muscle","kind":"fitness_centre","lat":37.767556,"lon":-122.421985}
+{"type":"poi","name":"Puerto Allegre","kind":"restaurant","lat":37.764155,"lon":-122.421982}
+{"type":"poi","name":"Carlin's Cafe","kind":"cafe","lat":37.768213,"lon":-122.422384}
+{"type":"poi","name":"Delirium","kind":"pub","lat":37.764763,"lon":-122.422728}
+{"type":"poi","name":"Community Thrift Store","kind":"second_hand","lat":37.762761,"lon":-122.421510}
+{"type":"poi","name":"Arepas","kind":"restaurant","lat":37.764941,"lon":-122.423937}
+{"type":"poi","name":"Pakwan","kind":"restaurant","lat":37.764945,"lon":-122.423664}
+{"type":"poi","name":"The Orbit Room","kind":"bar","lat":37.770672,"lon":-122.425273}
+{"type":"poi","name":"Tara Indian Cuisine","kind":"restaurant","lat":37.765312,"lon":-122.431431}
+{"type":"poi","name":"CorePower Yoga","kind":"fitness_centre","lat":37.769349,"lon":-122.429288}
+{"type":"poi","name":"Truly Mediteranean","kind":"fast_food","lat":37.764793,"lon":-122.422213}
+{"type":"poi","name":"Dancing Yak","kind":"restaurant","lat":37.768359,"lon":-122.422395}
+{"type":"poi","name":"Pork Store Cafe Valencia","kind":"restaurant","lat":37.765011,"lon":-122.422567}
+{"type":"poi","name":"Giordano Bros.","kind":"restaurant","lat":37.764981,"lon":-122.422320}
+{"type":"poi","name":"Beit Rima","kind":"restaurant","lat":37.768732,"lon":-122.429262}
+{"type":"poi","name":"El Castillito Taqueria","kind":"fast_food","lat":37.768785,"lon":-122.429267}
+{"type":"poi","name":"Mission Child Care","kind":"school","lat":37.767768,"lon":-122.430359}
+{"type":"poi","name":"Walgreens & Live Fit Gym Underground Parking Garage","kind":"parking","lat":37.766635,"lon":-122.429688}
+{"type":"poi","name":"Mary Lane Infant & Toddler Center","kind":"kindergarten","lat":37.769990,"lon":-122.428489}
+{"type":"poi","name":"Pica Pica","kind":"restaurant","lat":37.766457,"lon":-122.421899}
+{"type":"poi","name":"Ace Hardware","kind":"doityourself","lat":37.767619,"lon":-122.428519}
+{"type":"poi","name":"Books and Bookshelves","kind":"furniture","lat":37.767706,"lon":-122.431069}
+{"type":"poi","name":"The Valencia Room","kind":"nightclub","lat":37.762547,"lon":-122.421537}
+{"type":"poi","name":"The Slice","kind":"restaurant","lat":37.767598,"lon":-122.429677}
+{"type":"poi","name":"Wash","kind":"laundry","lat":37.767589,"lon":-122.429766}
+{"type":"poi","name":"S & A Liquor","kind":"alcohol","lat":37.767702,"lon":-122.431367}
+{"type":"poi","name":"Little Ark","kind":"pet_grooming","lat":37.767780,"lon":-122.429994}
+{"type":"poi","name":"Infinity Training Center","kind":"fitness_centre","lat":37.767785,"lon":-122.429908}
+{"type":"poi","name":"Saint Matthews Lutheran Church","kind":"place_of_worship","lat":37.764481,"lon":-122.425844}
+{"type":"poi","name":"U Dessert Story","kind":"cafe","lat":37.764282,"lon":-122.430627}
+{"type":"poi","name":"Market Street & Sanchez Street","kind":"tram_stop","lat":37.766169,"lon":-122.430710}
+{"type":"poi","name":"Dinosaurs","kind":"restaurant","lat":37.764434,"lon":-122.431893}
+{"type":"poi","name":"Homey Kitchen","kind":"restaurant","lat":37.770219,"lon":-122.425850}
+{"type":"poi","name":"Raw Sugar Factory","kind":"restaurant","lat":37.764386,"lon":-122.421993}
+{"type":"poi","name":"Roxie","kind":"cinema","lat":37.764757,"lon":-122.422363}
+{"type":"poi","name":"Church Street Cafe","kind":"cafe","lat":37.766425,"lon":-122.429039}
+{"type":"poi","name":"Thanh Tam II","kind":"restaurant","lat":37.763718,"lon":-122.421609}
+{"type":"poi","name":"Panchita's Pupuseria To-Go","kind":"restaurant","lat":37.764702,"lon":-122.421716}
+{"type":"poi","name":"ACE Cash Express","kind":"money_lender","lat":37.764786,"lon":-122.422052}
+{"type":"poi","name":"Chase","kind":"bank","lat":37.768253,"lon":-122.422087}
+{"type":"poi","name":"Eric Quezada Center for Culture and Politics","kind":"events_venue","lat":37.764526,"lon":-122.422028}
+{"type":"poi","name":"One Hour Cleaners","kind":"dry_cleaning","lat":37.765138,"lon":-122.431654}
+{"type":"poi","name":"Hi Tops","kind":"pub","lat":37.764998,"lon":-122.431823}
+{"type":"poi","name":"Santeria","kind":"restaurant","lat":37.764950,"lon":-122.431882}
+{"type":"poi","name":"Salmon Bar","kind":"restaurant","lat":37.764909,"lon":-122.424493}
+{"type":"poi","name":"Church Street & Duboce Avenue","kind":"stop","lat":37.769606,"lon":-122.429181}
+{"type":"poi","name":"Duboce Avenue & Church Street","kind":"stop","lat":37.769438,"lon":-122.429455}
+{"type":"poi","name":"Duboce Avenue & Church Street","kind":"stop","lat":37.769440,"lon":-122.429857}
+{"type":"poi","name":"Little Chihuahua","kind":"restaurant","lat":37.763697,"lon":-122.421408}
+{"type":"poi","name":"Menya Kanemaru","kind":"restaurant","lat":37.770354,"lon":-122.422607}
+{"type":"poi","name":"Pizza Zone N Grill","kind":"restaurant","lat":37.770286,"lon":-122.422604}
+{"type":"poi","name":"Wells Fargo","kind":"atm","lat":37.768896,"lon":-122.428497}
+{"type":"poi","name":"FedEx Office","kind":"copyshop","lat":37.769462,"lon":-122.426086}
+{"type":"poi","name":"Picaro","kind":"restaurant","lat":37.765013,"lon":-122.422494}
+{"type":"poi","name":"Maxfield's House of Caffeine","kind":"cafe","lat":37.763143,"lon":-122.426461}
+{"type":"poi","name":"Cornerstone SF Church","kind":"place_of_worship","lat":37.763080,"lon":-122.422921}
+{"type":"poi","name":"Saucy Asian","kind":"fast_food","lat":37.762645,"lon":-122.430892}
+{"type":"poi","name":"Shanghai Dumpling King","kind":"restaurant","lat":37.767797,"lon":-122.429508}
+{"type":"poi","name":"Jasmine Garden","kind":"restaurant","lat":37.767814,"lon":-122.429355}
+{"type":"poi","name":"Last Rites","kind":"bar","lat":37.767812,"lon":-122.429452}
+{"type":"poi","name":"Ramen Izakaya Goku","kind":"restaurant","lat":37.764856,"lon":-122.424935}
+{"type":"poi","name":"Stanza","kind":"cafe","lat":37.765011,"lon":-122.422669}
+{"type":"poi","name":"Burma Love","kind":"restaurant","lat":37.769621,"lon":-122.422180}
+{"type":"poi","name":"Duboce Park Cafe","kind":"cafe","lat":37.769195,"lon":-122.431539}
+{"type":"poi","name":"Taqueria El Buen Sabor","kind":"restaurant","lat":37.761816,"lon":-122.421448}
+{"type":"poi","name":"Guerrero Launderette","kind":"laundry","lat":37.763270,"lon":-122.424149}
+{"type":"poi","name":"Taqueria Los Cayotes","kind":"fast_food","lat":37.765145,"lon":-122.420432}
+{"type":"poi","name":"Sunflower","kind":"restaurant","lat":37.764750,"lon":-122.422044}
+{"type":"poi","name":"Angie's","kind":"restaurant","lat":37.764861,"lon":-122.424871}
+{"type":"poi","name":"The Crafty Fox","kind":"pub","lat":37.769850,"lon":-122.420349}
+{"type":"poi","name":"Shizen","kind":"restaurant","lat":37.768283,"lon":-122.421668}
+{"type":"poi","name":"Taqueria La Cumbre","kind":"restaurant","lat":37.764572,"lon":-122.421714}
+{"type":"poi","name":"Cream","kind":"ice_cream","lat":37.765037,"lon":-122.422210}
+{"type":"poi","name":"Underglass Custom Framing","kind":"frame","lat":37.765077,"lon":-122.431713}
+{"type":"poi","name":"The Apothecarium","kind":"cannabis","lat":37.768340,"lon":-122.427564}
+{"type":"poi","name":"Church","kind":"stop","lat":37.767257,"lon":-122.429248}
+{"type":"poi","name":"Church","kind":"station","lat":37.767267,"lon":-122.429262}
+{"type":"poi","name":"Church Street & 16th Street","kind":"tram_stop","lat":37.764405,"lon":-122.428653}
+{"type":"poi","name":"Church Street & 16th Street","kind":"tram_stop","lat":37.764625,"lon":-122.428712}
+{"type":"poi","name":"Church Street & Duboce Avenue","kind":"stop","lat":37.769173,"lon":-122.429109}
+{"type":"poi","name":"Church Street & Market Street","kind":"stop","lat":37.767263,"lon":-122.428929}
+{"type":"poi","name":"Churchill","kind":"pub","lat":37.767848,"lon":-122.429184}
+{"type":"poi","name":"Duboce Avenue & Church Street","kind":"bus_station","lat":37.769451,"lon":-122.429170}
+{"type":"poi","name":"Custom Sofa Co","kind":"retail","lat":37.765770,"lon":-122.430844}
+{"type":"poi","name":"Tan Bella","kind":"tanning_salon","lat":37.765885,"lon":-122.430675}
+{"type":"poi","name":"Wooden Spoon","kind":"restaurant","lat":37.766652,"lon":-122.430383}
+{"type":"poi","name":"Cauliflower","kind":"restaurant","lat":37.764708,"lon":-122.423092}
+{"type":"poi","name":"Dumpling Story","kind":"restaurant","lat":37.761896,"lon":-122.421800}
+{"type":"poi","name":"Verve Coffee Roasters","kind":"cafe","lat":37.767098,"lon":-122.429141}
+{"type":"poi","name":"Market Street & Sanchez Street","kind":"tram_stop","lat":37.765660,"lon":-122.431241}
+{"type":"poi","name":"Market Street & Dolores Street","kind":"tram_stop","lat":37.768908,"lon":-122.427135}
+{"type":"poi","name":"Market Street & Buchanan Street","kind":"tram_stop","lat":37.769801,"lon":-122.426121}
+{"type":"poi","name":"Market Street & Church Street","kind":"tram_stop","lat":37.767288,"lon":-122.429173}
+{"type":"poi","name":"Market Street & Church Street","kind":"tram_stop","lat":37.767835,"lon":-122.428602}
+{"type":"poi","name":"Market Street & Guerrero Street","kind":"tram_stop","lat":37.770562,"lon":-122.425029}
+{"type":"poi","name":"Market Street & Laguna Street","kind":"tram_stop","lat":37.770946,"lon":-122.424664}
+{"type":"poi","name":"Church Street & Duboce Avenue","kind":"stop","lat":37.769307,"lon":-122.429050}
+{"type":"poi","name":"Live Fit Gym Elite Training","kind":"fitness_centre","lat":37.762045,"lon":-122.421456}
+{"type":"poi","name":"West of Pecos","kind":"restaurant","lat":37.763947,"lon":-122.421969}
+{"type":"poi","name":"Willkommen","kind":"restaurant","lat":37.766292,"lon":-122.430817}
+{"type":"poi","name":"The Detour","kind":"restaurant","lat":37.765806,"lon":-122.431448}
+{"type":"poi","name":"Barberio","kind":"restaurant","lat":37.764055,"lon":-122.421647}
+{"type":"poi","name":"Duboce Avenue & Church Street","kind":"stop","lat":37.769464,"lon":-122.428688}
+{"type":"poi","name":"Duboce Avenue & Church Street","kind":"stop","lat":37.769487,"lon":-122.428897}
+{"type":"poi","name":"Church Street & Market Street","kind":"stop","lat":37.766866,"lon":-122.428891}
+{"type":"poi","name":"Market Street & Guerrero Street","kind":"stop","lat":37.770386,"lon":-122.425254}
+{"type":"poi","name":"Market Street & Buchanan Street","kind":"stop","lat":37.769896,"lon":-122.426000}
+{"type":"poi","name":"Market Street & Dolores Street","kind":"stop","lat":37.768779,"lon":-122.427298}
+{"type":"poi","name":"Market Street & Church Street","kind":"stop","lat":37.768005,"lon":-122.428387}
+{"type":"poi","name":"Market Street & Church Street","kind":"stop","lat":37.767199,"lon":-122.429283}
+{"type":"poi","name":"Market Street & Sanchez Street","kind":"stop","lat":37.766273,"lon":-122.430576}
+{"type":"poi","name":"Market Street & Sanchez Street","kind":"stop","lat":37.765507,"lon":-122.431431}
+{"type":"poi","name":"Kanteen","kind":"restaurant","lat":37.770643,"lon":-122.425343}
+{"type":"poi","name":"Church Street & Market Street","kind":"station","lat":37.767115,"lon":-122.428886}
+{"type":"poi","name":"Duboce Avenue & Church Street","kind":"stop","lat":37.769451,"lon":-122.429455}
+{"type":"poi","name":"Morning Due Café","kind":"cafe","lat":37.763012,"lon":-122.428358}
+{"type":"poi","name":"Joyride Pizza","kind":"fast_food","lat":37.766317,"lon":-122.421872}
+{"type":"poi","name":"Eiji","kind":"restaurant","lat":37.764065,"lon":-122.430729}
+{"type":"poi","name":"Ushio Ramen","kind":"restaurant","lat":37.765009,"lon":-122.422714}
+{"type":"poi","name":"Sunflower Hawaiian Barbecue","kind":"restaurant","lat":37.764778,"lon":-122.422309}
+{"type":"poi","name":"Big Lantern","kind":"restaurant","lat":37.764954,"lon":-122.423471}
+{"type":"poi","name":"Super 7","kind":"collector","lat":37.764579,"lon":-122.425276}
+{"type":"poi","name":"Pizza Due","kind":"restaurant","lat":37.763033,"lon":-122.428392}
+{"type":"poi","name":"Il Casaro Pizzeria","kind":"restaurant","lat":37.766964,"lon":-122.428768}
+{"type":"poi","name":"Red Jade","kind":"restaurant","lat":37.766852,"lon":-122.428749}
+{"type":"poi","name":"Starbucks","kind":"cafe","lat":37.768851,"lon":-122.428256}
+{"type":"poi","name":"SPARC","kind":"cannabis","lat":37.768096,"lon":-122.424712}
+{"type":"poi","name":"Bar Part Time","kind":"bar","lat":37.768153,"lon":-122.424176}
+{"type":"poi","name":"Golden State Food & Liquor","kind":"alcohol","lat":37.770827,"lon":-122.424407}
+{"type":"poi","name":"Himalayan Hub","kind":"restaurant","lat":37.764708,"lon":-122.422036}
+{"type":"poi","name":"Manny's","kind":"cafe","lat":37.765058,"lon":-122.421716}
+{"type":"poi","name":"Taxi Stand at16th St Mission BART (southwest corner in front of Wells Fargo)","kind":"taxi","lat":37.764967,"lon":-122.420416}
+{"type":"poi","name":"EverBank","kind":"bank","lat":37.767615,"lon":-122.429229}
+{"type":"poi","name":"Art Shade Shop","kind":"window_blind","lat":37.767895,"lon":-122.428124}
+{"type":"poi","name":"Millay","kind":"bar","lat":37.767672,"lon":-122.428282}
+{"type":"poi","name":"Chef Joe's Culinary Salon","kind":"cooking_school","lat":37.768946,"lon":-122.431507}
+{"type":"poi","name":"Spot Lite Market Liquors","kind":"alcohol","lat":37.766504,"lon":-122.424447}
+{"type":"poi","name":"Bay Wheels","kind":"bicycle_rental","lat":37.766283,"lon":-122.431155}
+{"type":"poi","name":"Asta Yoga","kind":"fitness_centre","lat":37.767999,"lon":-122.422744}
+{"type":"poi","name":"Spro","kind":"cafe","lat":37.762776,"lon":-122.428669}
+{"type":"poi","name":"Maru Dojo","kind":"dojo","lat":37.766048,"lon":-122.428679}
+{"type":"poi","name":"Warakubune Sushi","kind":"restaurant","lat":37.765944,"lon":-122.428655}
+{"type":"poi","name":"Holistic Psychic Empath","kind":"psychic","lat":37.766574,"lon":-122.428709}
+{"type":"poi","name":"MX3 Fitness","kind":"fitness_centre","lat":37.764948,"lon":-122.423412}
+{"type":"poi","name":"Bay Area American Indian Two-Spirits","kind":"social_centre","lat":37.766247,"lon":-122.421875}
+{"type":"poi","name":"Bay Wheels","kind":"bicycle_rental","lat":37.769841,"lon":-122.429138}
+{"type":"poi","name":"Little Free Library","kind":"public_bookcase","lat":37.764604,"lon":-122.429176}
+{"type":"poi","name":"Deja Vu Pizza & Pasta","kind":"fast_food","lat":37.764627,"lon":-122.424771}
+{"type":"poi","name":"Earthen Ceramics","kind":"houseware","lat":37.770867,"lon":-122.430090}
+{"type":"poi","name":"Star Wash Laundromat","kind":"laundry","lat":37.763211,"lon":-122.426483}
+{"type":"poi","name":"New Deal Home","kind":"furniture","lat":37.763094,"lon":-122.426786}
+{"type":"poi","name":"Seventeen Street Upholstery","kind":"upholsterer","lat":37.763090,"lon":-122.426703}
+{"type":"poi","name":"Eclectic Box","kind":"theatre","lat":37.765700,"lon":-122.422138}
+{"type":"poi","name":"Mother","kind":"bar","lat":37.764816,"lon":-122.421333}
+{"type":"poi","name":"Alhamra","kind":"fast_food","lat":37.764812,"lon":-122.421400}
+{"type":"poi","name":"El Cafe Tazo","kind":"cafe","lat":37.764825,"lon":-122.421467}
+{"type":"poi","name":"Skylark","kind":"bar","lat":37.764818,"lon":-122.421558}
+{"type":"poi","name":"Panchitas","kind":"fast_food","lat":37.764814,"lon":-122.421631}
+{"type":"poi","name":"K&H Liquors","kind":"alcohol","lat":37.764812,"lon":-122.421733}
+{"type":"poi","name":"Black Serum","kind":"tattoo","lat":37.767806,"lon":-122.422347}
+{"type":"poi","name":"Black & Blue Tattoo","kind":"tattoo","lat":37.765162,"lon":-122.424002}
+{"type":"poi","name":"Mint Hill","kind":"information","lat":37.769555,"lon":-122.426802}
+{"type":"poi","name":"The Castro Animal Hospital","kind":"veterinary","lat":37.769099,"lon":-122.429291}
+{"type":"poi","name":"Mash","kind":"bicycle","lat":37.764610,"lon":-122.431085}
+{"type":"poi","name":"Potto","kind":"restaurant","lat":37.764494,"lon":-122.431069}
+{"type":"poi","name":"Aveda Institute","kind":"training","lat":37.763033,"lon":-122.430935}
+{"type":"poi","name":"Wash & Dry Launderland","kind":"laundry","lat":37.762859,"lon":-122.430911}
+{"type":"poi","name":"Psychic Reader","kind":"psychic","lat":37.762850,"lon":-122.431032}
+{"type":"poi","name":"S16","kind":"interior_decoration","lat":37.764564,"lon":-122.431080}
+{"type":"poi","name":"Suchada","kind":"massage","lat":37.762797,"lon":-122.428352}
+{"type":"poi","name":"Walgreens","kind":"chemist","lat":37.766568,"lon":-122.429739}
+{"type":"poi","name":"Extra Space Storage","kind":"storage_rental","lat":37.770403,"lon":-122.420550}
+{"type":"poi","name":"Savvy Laundromat","kind":"laundry","lat":37.770969,"lon":-122.425319}
+{"type":"poi","name":"Sextant Coffee Roasters","kind":"coffee","lat":37.764290,"lon":-122.421682}
+{"type":"poi","name":"2175 Market Street","kind":"residential","lat":37.766326,"lon":-122.430072}
+{"type":"poi","name":"Jake’s Steaks","kind":"fast_food","lat":37.763660,"lon":-122.421612}
+{"type":"poi","name":"Taishoken","kind":"restaurant","lat":37.762231,"lon":-122.421483}
+{"type":"poi","name":"Love Story Yoga","kind":"fitness_centre","lat":37.765403,"lon":-122.421770}
+{"type":"poi","name":"The Dog Barber","kind":"pet_grooming","lat":37.770289,"lon":-122.425115}
+{"type":"poi","name":"Apna Chulha","kind":"restaurant","lat":37.764040,"lon":-122.421963}
+{"type":"poi","name":"The Black and Brown Social Club","kind":"social_centre","lat":37.765476,"lon":-122.422154}
+{"type":"poi","name":"Centro del Pueblo","kind":"social_centre","lat":37.765389,"lon":-122.422140}
+{"type":"poi","name":"La Raza Community Resource Center","kind":"social_centre","lat":37.765327,"lon":-122.422132}
+{"type":"poi","name":"Trader Sam's","kind":"yes","lat":37.765234,"lon":-122.422108}
+{"type":"poi","name":"Venga Empanadas","kind":"restaurant","lat":37.765902,"lon":-122.421818}
+{"type":"poi","name":"Ferguson","kind":"trade","lat":37.766004,"lon":-122.421829}
+{"type":"poi","name":"Church Street & Market Street","kind":"tram_stop","lat":37.766741,"lon":-122.428916}
+{"type":"poi","name":"Rikki's","kind":"bar","lat":37.765270,"lon":-122.431472}
+{"type":"poi","name":"La Raza Community Resource Center","kind":"community_centre","lat":37.765389,"lon":-122.422438}
+{"type":"poi","name":"La Rosa Tattoo","kind":"tattoo","lat":37.767674,"lon":-122.428384}
+{"type":"poi","name":"Casanova Lounge","kind":"bar","lat":37.764386,"lon":-122.421679}
+{"type":"poi","name":"Bao","kind":"restaurant","lat":37.763514,"lon":-122.421931}
+{"type":"poi","name":"Solidcore","kind":"fitness_centre","lat":37.766203,"lon":-122.430251}
+{"type":"poi","name":"Call a Republican","kind":"telephone","lat":37.767835,"lon":-122.422323}
+{"type":"poi","name":"Curry Hyuga","kind":"restaurant","lat":37.764456,"lon":-122.421687}
+{"type":"poi","name":"Studio Aurora","kind":"fast_food","lat":37.767975,"lon":-122.422349}
+{"type":"poi","name":"Blondies Bar","kind":"bar","lat":37.764216,"lon":-122.421985}
+{"type":"poi","name":"Kiku Sushi & Vegetarian","kind":"restaurant","lat":37.764273,"lon":-122.421990}
+{"type":"poi","name":"Limón","kind":"restaurant","lat":37.764443,"lon":-122.422009}
+{"type":"poi","name":"Mission Community Woodshop","kind":"woodworking","lat":37.769396,"lon":-122.421598}
+{"type":"poi","name":"Ian James","kind":"leather","lat":37.768009,"lon":-122.422046}
+{"type":"poi","name":"Hotel Sunrise","kind":"hotel","lat":37.765823,"lon":-122.421818}
+{"type":"poi","name":"Cyclops Tattoo","kind":"tattoo","lat":37.764646,"lon":-122.421690}
+{"type":"poi","name":"Yummy Pizza","kind":"restaurant","lat":37.764333,"lon":-122.421687}
+{"type":"poi","name":"Stonemill Matcha","kind":"cafe","lat":37.763972,"lon":-122.421641}
+{"type":"poi","name":"De Angelis","kind":"furniture","lat":37.763792,"lon":-122.421625}
+{"type":"poi","name":"Curry Up Now","kind":"restaurant","lat":37.762356,"lon":-122.421494}
+{"type":"poi","name":"Hotel Tropica","kind":"hotel","lat":37.762286,"lon":-122.421486}
+{"type":"poi","name":"Black Heart Tattoo","kind":"tattoo","lat":37.770314,"lon":-122.422210}
+{"type":"poi","name":"Zeitgeist","kind":"pub","lat":37.770036,"lon":-122.422121}
+{"type":"poi","name":"Children's Day School","kind":"school","lat":37.764248,"lon":-122.425002}
+{"type":"poi","name":"Parker Guest House","kind":"guest_house","lat":37.762473,"lon":-122.428752}
+{"type":"poi","name":"First Covenant Church","kind":"place_of_worship","lat":37.761848,"lon":-122.425785}
+{"type":"poi","name":"500 Club","kind":"bar","lat":37.763022,"lon":-122.424157}
+{"type":"poi","name":"Gai","kind":"restaurant","lat":37.764246,"lon":-122.430002}
+{"type":"poi","name":"Poke","kind":"restaurant","lat":37.765802,"lon":-122.428991}
+{"type":"poi","name":"Scuderia West","kind":"motorcycle","lat":37.769729,"lon":-122.421682}
+{"type":"poi","name":"George's Market","kind":"convenience","lat":37.767918,"lon":-122.429288}
+{"type":"poi","name":"Union Spring Baptist Church","kind":"place_of_worship","lat":37.770342,"lon":-122.430364}
+{"type":"poi","name":"Bay Wheels","kind":"bicycle_rental","lat":37.768217,"lon":-122.420359}
+{"type":"poi","name":"Bay Wheels","kind":"bicycle_rental","lat":37.769250,"lon":-122.426971}
+{"type":"poi","name":"Bay Wheels","kind":"bicycle_rental","lat":37.763340,"lon":-122.422054}
+{"type":"poi","name":"Bay Wheels","kind":"bicycle_rental","lat":37.763067,"lon":-122.426617}
+{"type":"poi","name":"Bay Wheels","kind":"bicycle_rental","lat":37.766099,"lon":-122.426670}
+{"type":"poi","name":"Population","kind":"hairdresser","lat":37.768141,"lon":-122.424267}
+{"type":"poi","name":"E & M Market","kind":"convenience","lat":37.766669,"lon":-122.421915}
+{"type":"poi","name":"Foodhall","kind":"convenience","lat":37.765058,"lon":-122.422071}
+{"type":"poi","name":"Fred's Liquor","kind":"convenience","lat":37.769761,"lon":-122.422502}
+{"type":"poi","name":"K&D Market","kind":"convenience","lat":37.764699,"lon":-122.423581}
+{"type":"poi","name":"Antoine's Cookie Shop","kind":"bakery","lat":37.767672,"lon":-122.428435}
+{"type":"poi","name":"Maitri-Compassionate Care","kind":"social_facility","lat":37.769318,"lon":-122.429897}
+{"type":"poi","name":"Therapy Stores","kind":"gift","lat":37.764167,"lon":-122.421655}
+{"type":"poi","name":"The Petaler","kind":"florist","lat":37.767545,"lon":-122.430514}
+{"type":"poi","name":"Barnets Salon","kind":"hairdresser","lat":37.764589,"lon":-122.424949}
+{"type":"poi","name":"Church Street Groceteria","kind":"convenience","lat":37.766031,"lon":-122.428980}
+{"type":"poi","name":"The Mint Karaoke Lounge","kind":"karaoke_box","lat":37.770261,"lon":-122.425796}
+{"type":"poi","name":"Thorough Bread and Pastry","kind":"bakery","lat":37.766612,"lon":-122.429058}
+{"type":"poi","name":"Holy Family Day Home","kind":"social_facility","lat":37.764871,"lon":-122.426107}
+{"type":"poi","name":"wallflower","kind":"florist","lat":37.761816,"lon":-122.423696}
+{"type":"poi","name":"Sui Generis","kind":"clothes","lat":37.765179,"lon":-122.431598}
+{"type":"poi","name":"Everlane","kind":"clothes","lat":37.765526,"lon":-122.421784}
+{"type":"poi","name":"Wiggle Bike Mural","kind":"artwork","lat":37.769443,"lon":-122.428433}
+{"type":"poi","name":"Produce Market","kind":"greengrocer","lat":37.765132,"lon":-122.420783}
+{"type":"poi","name":"After Life Collective","kind":"clothes","lat":37.764231,"lon":-122.421674}
+{"type":"poi","name":"Joe's Barbershop","kind":"hairdresser","lat":37.766915,"lon":-122.430037}
+{"type":"poi","name":"Carbon Health","kind":"clinic","lat":37.769820,"lon":-122.426373}
+{"type":"poi","name":"Golden Natural Foods","kind":"greengrocer","lat":37.768885,"lon":-122.429264}
+{"type":"poi","name":"People Hair & Nails Spa","kind":"beauty","lat":37.765660,"lon":-122.430863}
+{"type":"poi","name":"Fellow Barber","kind":"hairdresser","lat":37.761790,"lon":-122.421765}
+{"type":"poi","name":"MURAL 2","kind":"artwork","lat":37.762995,"lon":-122.420821}
+{"type":"poi","name":"Nail Art iSF","kind":"beauty","lat":37.770916,"lon":-122.424278}
+{"type":"poi","name":"No Shop","kind":"clothes","lat":37.766839,"lon":-122.421931}
+{"type":"poi","name":"Bona Vada Barbershop","kind":"hairdresser","lat":37.763593,"lon":-122.423846}
+{"type":"poi","name":"One Medical","kind":"clinic","lat":37.766404,"lon":-122.429994}
+{"type":"poi","name":"One Medical","kind":"clinic","lat":37.763671,"lon":-122.421979}
+{"type":"poi","name":"The Twilight Zone","kind":"tobacco","lat":37.766905,"lon":-122.428757}
+{"type":"poi","name":"Beli SF","kind":"hairdresser","lat":37.768067,"lon":-122.429192}
+{"type":"poi","name":"Sour Cherry Comics","kind":"books","lat":37.764689,"lon":-122.423766}
+{"type":"poi","name":"Simply Unique Nails","kind":"beauty","lat":37.767791,"lon":-122.429701}
+{"type":"poi","name":"Hom's Grocery and Liquor","kind":"convenience","lat":37.763283,"lon":-122.423833}
+{"type":"poi","name":"Evolution Smoke Shop","kind":"tobacco","lat":37.764939,"lon":-122.423725}
+{"type":"poi","name":"M Spa","kind":"beauty","lat":37.765931,"lon":-122.430619}
+{"type":"poi","name":"SEV","kind":"beauty","lat":37.766502,"lon":-122.430562}
+{"type":"poi","name":"Unseen","kind":"clothes","lat":37.768062,"lon":-122.422049}
+{"type":"poi","name":"Studio Estrada","kind":"hairdresser","lat":37.770912,"lon":-122.430090}
+{"type":"poi","name":"Flower Hair Studio","kind":"hairdresser","lat":37.762698,"lon":-122.428677}
+{"type":"poi","name":"Time Frame","kind":"optician","lat":37.766158,"lon":-122.422186}
+{"type":"poi","name":"Simply Unique Nails","kind":"beauty","lat":37.767102,"lon":-122.421952}
+{"type":"poi","name":"Peoples Barber Shop","kind":"hairdresser","lat":37.767742,"lon":-122.422014}
+{"type":"poi","name":"Jesiah's Barbershop","kind":"hairdresser","lat":37.765838,"lon":-122.421821}
+{"type":"poi","name":"nooworks","kind":"clothes","lat":37.766724,"lon":-122.421918}
+{"type":"poi","name":"Glama-Rama Salon","kind":"beauty","lat":37.767886,"lon":-122.422344}
+{"type":"poi","name":"Urban Eyes","kind":"optician","lat":37.764254,"lon":-122.431037}
+{"type":"poi","name":"Orange","kind":"hairdresser","lat":37.765204,"lon":-122.424316}
+{"type":"poi","name":"Vera","kind":"beauty","lat":37.766519,"lon":-122.424133}
+{"type":"poi","name":"Minna Salon","kind":"beauty","lat":37.763410,"lon":-122.423838}
+{"type":"poi","name":"Beyond the Pale","kind":"hairdresser","lat":37.764846,"lon":-122.425083}
+{"type":"poi","name":"Oro","kind":"hairdresser","lat":37.769243,"lon":-122.429886}
+{"type":"poi","name":"Daisy Nails","kind":"beauty","lat":37.765149,"lon":-122.424310}
+{"type":"poi","name":"Retreat Skin & Hair Studio","kind":"beauty","lat":37.770950,"lon":-122.430101}
+{"type":"poi","name":"Di Ciccio","kind":"hairdresser","lat":37.769186,"lon":-122.431737}
+{"type":"poi","name":"Rose Waxing & Nail Care","kind":"beauty","lat":37.765030,"lon":-122.431120}
+{"type":"poi","name":"Ten Tigers","kind":"beauty","lat":37.764479,"lon":-122.431265}
+{"type":"poi","name":"Crossroads","kind":"clothes","lat":37.766900,"lon":-122.429382}
+{"type":"poi","name":"Self Edge","kind":"clothes","lat":37.763856,"lon":-122.421631}
+{"type":"poi","name":"Salon Baobao","kind":"hairdresser","lat":37.768270,"lon":-122.427639}
+{"type":"poi","name":"Munroe Motors","kind":"motorcycle","lat":37.766277,"lon":-122.422207}
+{"type":"poi","name":"Ucsf Alliance Health Project Services Center","kind":"clinic","lat":37.770356,"lon":-122.425683}
+{"type":"poi","name":"West Wind Automotive","kind":"car_repair","lat":37.767291,"lon":-122.421934}
+{"type":"poi","name":"Chartreuse by Rose","kind":"florist","lat":37.767460,"lon":-122.428696}
+{"type":"poi","name":"Foundry Coliving","kind":"guest_house","lat":37.762267,"lon":-122.424189}
+{"type":"poi","name":"Botanic Panic","kind":"garden_centre","lat":37.761782,"lon":-122.422033}
+{"type":"poi","name":"Right Style Salon and Barber","kind":"hairdresser","lat":37.767197,"lon":-122.429650}
+{"type":"poi","name":"Creelman Farmer","kind":"dentist","lat":37.765912,"lon":-122.430640}
+{"type":"poi","name":"Curl Up & Dye By Sam Strock","kind":"hairdresser","lat":37.762988,"lon":-122.430946}
+{"type":"poi","name":"Siren Salon","kind":"hairdresser","lat":37.767944,"lon":-122.422041}
+{"type":"poi","name":"Double Down","kind":"gift","lat":37.767825,"lon":-122.422030}
+{"type":"poi","name":"Taylor Stitch","kind":"clothes","lat":37.766890,"lon":-122.421936}
+{"type":"poi","name":"Nowhere","kind":"clothes","lat":37.766775,"lon":-122.421926}
+{"type":"poi","name":"child care center- Lutheran Church","kind":"school","lat":37.768563,"lon":-122.430428}
+{"type":"poi","name":"14th Street & Church Street","kind":"bus_stop","lat":37.767789,"lon":-122.429337}
+{"type":"poi","name":"14th Street & Church Street","kind":"bus_stop","lat":37.767645,"lon":-122.429302}
+{"type":"poi","name":"Church Street & Duboce Avenue","kind":"bus_stop","lat":37.769625,"lon":-122.429272}
+{"type":"poi","name":"16th Street & Guerrero Street","kind":"bus_stop","lat":37.764699,"lon":-122.424425}
+{"type":"poi","name":"16th Street & Church Street","kind":"bus_stop","lat":37.764602,"lon":-122.428492}
+{"type":"poi","name":"16th Street & Dolores Street","kind":"bus_stop","lat":37.764748,"lon":-122.426169}
+{"type":"poi","name":"16th Street & Valencia Street","kind":"bus_stop","lat":37.765024,"lon":-122.421700}
+{"type":"poi","name":"Hermann Street & Fillmore Street","kind":"bus_stop","lat":37.770348,"lon":-122.429935}
+{"type":"poi","name":"Church Street & Duboce Avenue","kind":"bus_stop","lat":37.769199,"lon":-122.428991}
+{"type":"poi","name":"18th Street & Valencia Street","kind":"bus_stop","lat":37.761773,"lon":-122.421859}
+{"type":"poi","name":"16th Street & Valencia Street","kind":"bus_stop","lat":37.764827,"lon":-122.422199}
+{"type":"poi","name":"16th Street & Dolores Street","kind":"bus_stop","lat":37.764557,"lon":-122.426676}
+{"type":"poi","name":"16th Street & Guerrero Street","kind":"bus_stop","lat":37.764884,"lon":-122.423935}
+{"type":"poi","name":"Hermann Street & Fillmore Street","kind":"bus_stop","lat":37.770229,"lon":-122.429720}
+{"type":"poi","name":"Market Street & 15th Street","kind":"bus_stop","lat":37.765783,"lon":-122.431354}
+{"type":"poi","name":"14th Street & Sanchez Street","kind":"bus_stop","lat":37.767681,"lon":-122.431042}
+{"type":"poi","name":"14th Street & Sanchez Street","kind":"bus_stop","lat":37.767530,"lon":-122.431386}
+{"type":"poi","name":"Church Street & Duboce Street","kind":"bus_stop","lat":37.769248,"lon":-122.429028}
+{"type":"poi","name":"Church Street & Market Street","kind":"bus_stop","lat":37.767301,"lon":-122.428835}

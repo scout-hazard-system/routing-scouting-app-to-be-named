@@ -1,0 +1,142 @@
+{
+  "scale_0_5": {
+    "settings": {
+      "samples_ms": [
+        2282,
+        796,
+        825,
+        792,
+        775,
+        836
+      ],
+      "raw": [
+        "Stopping: com.android.settings | Starting: Intent { cmp=com.android.settings/.homepage.SettingsHomepageActivity } | Status: ok | LaunchState: COLD | Activity: com.android.settings/.homepage.SettingsHomepageActivity | TotalTime: 2282 | WaitTime: 2287 | Complete",
+        "Stopping: com.android.settings | Starting: Intent { cmp=com.android.settings/.homepage.SettingsHomepageActivity } | Status: ok | LaunchState: WARM | Activity: com.android.settings/.homepage.SettingsHomepageActivity | TotalTime: 796 | WaitTime: 802 | Complete",
+        "Stopping: com.android.settings | Starting: Intent { cmp=com.android.settings/.homepage.SettingsHomepageActivity } | Status: ok | LaunchState: COLD | Activity: com.android.settings/.homepage.SettingsHomepageActivity | TotalTime: 825 | WaitTime: 829 | Complete",
+        "Stopping: com.android.settings | Starting: Intent { cmp=com.android.settings/.homepage.SettingsHomepageActivity } | Status: ok | LaunchState: COLD | Activity: com.android.settings/.homepage.SettingsHomepageActivity | TotalTime: 792 | WaitTime: 795 | Complete",
+        "Stopping: com.android.settings | Starting: Intent { cmp=com.android.settings/.homepage.SettingsHomepageActivity } | Status: ok | LaunchState: COLD | Activity: com.android.settings/.homepage.SettingsHomepageActivity | TotalTime: 775 | WaitTime: 778 | Complete",
+        "Stopping: com.android.settings | Starting: Intent { cmp=com.android.settings/.homepage.SettingsHomepageActivity } | Status: ok | LaunchState: COLD | Activity: com.android.settings/.homepage.SettingsHomepageActivity | TotalTime: 836 | WaitTime: 840 | Complete"
+      ],
+      "avg_ms": 1051,
+      "median_ms": 810.5
+    },
+    "dialer": {
+      "samples_ms": [
+        883,
+        466,
+        504,
+        476,
+        457
+      ],
+      "raw": [
+        "Stopping: com.android.dialer | Starting: Intent { cmp=com.android.dialer/.main.impl.MainActivity } | Status: ok | LaunchState: COLD | Activity: com.android.dialer/.main.impl.MainActivity | TotalTime: 883 | WaitTime: 900 | Complete",
+        "Stopping: com.android.dialer | Starting: Intent { cmp=com.android.dialer/.main.impl.MainActivity } | Status: ok | LaunchState: COLD | Activity: com.android.dialer/.main.impl.MainActivity | TotalTime: 466 | WaitTime: 470 | Complete",
+        "Stopping: com.android.dialer | Starting: Intent { cmp=com.android.dialer/.main.impl.MainActivity } | Status: ok | LaunchState: COLD | Activity: com.android.dialer/.main.impl.MainActivity | TotalTime: 504 | WaitTime: 508 | Complete",
+        "Stopping: com.android.dialer | Starting: Intent { cmp=com.android.dialer/.main.impl.MainActivity } | Status: ok | LaunchState: UNKNOWN (0) | Activity: com.android.dialer/.main.impl.MainActivity | WaitTime: 3022 | Complete",
+        "Stopping: com.android.dialer | Starting: Intent { cmp=com.android.dialer/.main.impl.MainActivity } | Status: ok | LaunchState: COLD | Activity: com.android.dialer/.main.impl.MainActivity | TotalTime: 476 | WaitTime: 480 | Complete",
+        "Stopping: com.android.dialer | Starting: Intent { cmp=com.android.dialer/.main.impl.MainActivity } | Status: ok | LaunchState: COLD | Activity: com.android.dialer/.main.impl.MainActivity | TotalTime: 457 | WaitTime: 460 | Complete"
+      ],
+      "avg_ms": 557.2,
+      "median_ms": 476
+    },
+    "camera": {
+      "samples_ms": [
+        872,
+        1109,
+        902,
+        1205,
+        952,
+        1127
+      ],
+      "raw": [
+        "Stopping: com.motorola.camera3 | Starting: Intent { cmp=com.motorola.camera3/com.motorola.camera.voice.CameraVoiceActivity } | Status: ok | LaunchState: COLD | Activity: com.motorola.camera3/com.motorola.camera.Camera | TotalTime: 872 | WaitTime: 882 | Complet",
+        "Stopping: com.motorola.camera3 | Starting: Intent { cmp=com.motorola.camera3/com.motorola.camera.voice.CameraVoiceActivity } | Status: ok | LaunchState: COLD | Activity: com.motorola.camera3/com.motorola.camera.Camera | TotalTime: 1109 | WaitTime: 1115 | Compl",
+        "Stopping: com.motorola.camera3 | Starting: Intent { cmp=com.motorola.camera3/com.motorola.camera.voice.CameraVoiceActivity } | Status: ok | LaunchState: COLD | Activity: com.motorola.camera3/com.motorola.camera.Camera | TotalTime: 902 | WaitTime: 911 | Complet",
+        "Stopping: com.motorola.camera3 | Starting: Intent { cmp=com.motorola.camera3/com.motorola.camera.voice.CameraVoiceActivity } | Status: ok | LaunchState: COLD | Activity: com.motorola.camera3/com.motorola.camera.Camera | TotalTime: 1205 | WaitTime: 1232 | Compl",
+        "Stopping: com.motorola.camera3 | Starting: Intent { cmp=com.motorola.camera3/com.motorola.camera.voice.CameraVoiceActivity } | Status: ok | LaunchState: COLD | Activity: com.motorola.camera3/com.motorola.camera.Camera | TotalTime: 952 | WaitTime: 958 | Complet",
+        "Stopping: com.motorola.camera3 | Starting: Intent { cmp=com.motorola.camera3/com.motorola.camera.voice.CameraVoiceActivity } | Status: ok | LaunchState: COLD | Activity: com.motorola.camera3/com.motorola.camera.Camera | TotalTime: 1127 | WaitTime: 1137 | Compl"
+      ],
+      "avg_ms": 1027.83,
+      "median_ms": 1030.5
+    }
+  },
+  "scale_1_0": {
+    "settings": {
+      "samples_ms": [
+        650,
+        566,
+        573,
+        771
+      ],
+      "raw": [
+        "Stopping: com.android.settings | Starting: Intent { cmp=com.android.settings/.homepage.SettingsHomepageActivity } | Status: ok | LaunchState: UNKNOWN (0) | Activity: com.android.settings/.homepage.SettingsHomepageActivity | WaitTime: 1631 | Complete",
+        "Stopping: com.android.settings | Starting: Intent { cmp=com.android.settings/.homepage.SettingsHomepageActivity } | Status: ok | LaunchState: UNKNOWN (0) | Activity: com.android.settings/.homepage.SettingsHomepageActivity | WaitTime: 3052 | Complete",
+        "Stopping: com.android.settings | Starting: Intent { cmp=com.android.settings/.homepage.SettingsHomepageActivity } | Status: ok | LaunchState: COLD | Activity: com.android.settings/.homepage.SettingsHomepageActivity | TotalTime: 650 | WaitTime: 657 | Complete",
+        "Stopping: com.android.settings | Starting: Intent { cmp=com.android.settings/.homepage.SettingsHomepageActivity } | Status: ok | LaunchState: COLD | Activity: com.android.settings/.homepage.SettingsHomepageActivity | TotalTime: 566 | WaitTime: 568 | Complete",
+        "Stopping: com.android.settings | Starting: Intent { cmp=com.android.settings/.homepage.SettingsHomepageActivity } | Status: ok | LaunchState: COLD | Activity: com.android.settings/.homepage.SettingsHomepageActivity | TotalTime: 573 | WaitTime: 577 | Complete",
+        "Stopping: com.android.settings | Starting: Intent { cmp=com.android.settings/.homepage.SettingsHomepageActivity } | Status: ok | LaunchState: COLD | Activity: com.android.settings/.homepage.SettingsHomepageActivity | TotalTime: 771 | WaitTime: 774 | Complete"
+      ],
+      "avg_ms": 640,
+      "median_ms": 611.5
+    },
+    "dialer": {
+      "samples_ms": [
+        850,
+        509,
+        501,
+        456,
+        467,
+        479
+      ],
+      "raw": [
+        "Stopping: com.android.dialer | Starting: Intent { cmp=com.android.dialer/.main.impl.MainActivity } | Status: ok | LaunchState: COLD | Activity: com.android.dialer/.main.impl.MainActivity | TotalTime: 850 | WaitTime: 854 | Complete",
+        "Stopping: com.android.dialer | Starting: Intent { cmp=com.android.dialer/.main.impl.MainActivity } | Status: ok | LaunchState: COLD | Activity: com.android.dialer/.main.impl.MainActivity | TotalTime: 509 | WaitTime: 513 | Complete",
+        "Stopping: com.android.dialer | Starting: Intent { cmp=com.android.dialer/.main.impl.MainActivity } | Status: ok | LaunchState: COLD | Activity: com.android.dialer/.main.impl.MainActivity | TotalTime: 501 | WaitTime: 504 | Complete",
+        "Stopping: com.android.dialer | Starting: Intent { cmp=com.android.dialer/.main.impl.MainActivity } | Status: ok | LaunchState: COLD | Activity: com.android.dialer/.main.impl.MainActivity | TotalTime: 456 | WaitTime: 458 | Complete",
+        "Stopping: com.android.dialer | Starting: Intent { cmp=com.android.dialer/.main.impl.MainActivity } | Status: ok | LaunchState: COLD | Activity: com.android.dialer/.main.impl.MainActivity | TotalTime: 467 | WaitTime: 470 | Complete",
+        "Stopping: com.android.dialer | Starting: Intent { cmp=com.android.dialer/.main.impl.MainActivity } | Status: ok | LaunchState: COLD | Activity: com.android.dialer/.main.impl.MainActivity | TotalTime: 479 | WaitTime: 481 | Complete"
+      ],
+      "avg_ms": 543.67,
+      "median_ms": 490.0
+    },
+    "camera": {
+      "samples_ms": [
+        657,
+        942,
+        939,
+        808,
+        835,
+        648
+      ],
+      "raw": [
+        "Stopping: com.motorola.camera3 | Starting: Intent { cmp=com.motorola.camera3/com.motorola.camera.voice.CameraVoiceActivity } | Status: ok | LaunchState: COLD | Activity: com.motorola.camera3/com.motorola.camera.Camera | TotalTime: 657 | WaitTime: 678 | Complet",
+        "Stopping: com.motorola.camera3 | Starting: Intent { cmp=com.motorola.camera3/com.motorola.camera.voice.CameraVoiceActivity } | Status: ok | LaunchState: COLD | Activity: com.motorola.camera3/com.motorola.camera.Camera | TotalTime: 942 | WaitTime: 952 | Complet",
+        "Stopping: com.motorola.camera3 | Starting: Intent { cmp=com.motorola.camera3/com.motorola.camera.voice.CameraVoiceActivity } | Status: ok | LaunchState: COLD | Activity: com.motorola.camera3/com.motorola.camera.Camera | TotalTime: 939 | WaitTime: 952 | Complet",
+        "Stopping: com.motorola.camera3 | Starting: Intent { cmp=com.motorola.camera3/com.motorola.camera.voice.CameraVoiceActivity } | Status: ok | LaunchState: COLD | Activity: com.motorola.camera3/com.motorola.camera.Camera | TotalTime: 808 | WaitTime: 817 | Complet",
+        "Stopping: com.motorola.camera3 | Starting: Intent { cmp=com.motorola.camera3/com.motorola.camera.voice.CameraVoiceActivity } | Status: ok | LaunchState: COLD | Activity: com.motorola.camera3/com.motorola.camera.Camera | TotalTime: 835 | WaitTime: 845 | Complet",
+        "Stopping: com.motorola.camera3 | Starting: Intent { cmp=com.motorola.camera3/com.motorola.camera.voice.CameraVoiceActivity } | Status: ok | LaunchState: COLD | Activity: com.motorola.camera3/com.motorola.camera.Camera | TotalTime: 648 | WaitTime: 659 | Complet"
+      ],
+      "avg_ms": 804.83,
+      "median_ms": 821.5
+    }
+  },
+  "delta": {
+    "settings": {
+      "avg_ms_change_0_5_minus_1_0": 411,
+      "relative_percent_faster_at_0_5": -64.22
+    },
+    "dialer": {
+      "avg_ms_change_0_5_minus_1_0": 13.53,
+      "relative_percent_faster_at_0_5": -2.49
+    },
+    "camera": {
+      "avg_ms_change_0_5_minus_1_0": 223.0,
+      "relative_percent_faster_at_0_5": -27.71
+    }
+  },
+  "restored_scales": [
+    "0.5",
+    "0.5",
+    "0.5"
+  ]
+}

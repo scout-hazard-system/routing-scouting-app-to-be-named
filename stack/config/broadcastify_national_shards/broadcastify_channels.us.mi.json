@@ -1,0 +1,169 @@
+{
+  "channels": [
+    {
+      "id": "bf-23096-monroe-county-sheriff-monroe-city-police-f",
+      "name": "Monroe County Sheriff, Monroe City Police, Fire and EMS Dispatch Monroe County Sheriff / Monroe City Police / Dundee Police / Erie Police / Carleton Police / Luna Pier Police/ South Rockwood Police / Milan Police\r\nMonroe County Fire Dispatch\r\nMonroe County EMS Dispatch\r\nMilan Fire Dispatch CAP",
+      "description": "Broadcastify Top 50 national bootstrap feed 23096 for Monroe, MI.",
+      "city": "Monroe",
+      "county": "Monroe",
+      "state": "MI",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "law",
+        "fire",
+        "ems",
+        "national-bootstrap",
+        "monroe"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 124,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/23096"
+    },
+    {
+      "id": "bf-30589-jackson-county-public-safety-thanks-to-all",
+      "name": "Jackson County Public Safety Thanks to all of the loyal listeners. NOTE: Improvements and reliability are coming soon.\r\nThis scanner feed receives non-encrypted digital communications from the Project 25 Phase I Michigan Public Safety Communications System (MPSCS)",
+      "description": "Broadcastify Top 50 national bootstrap feed 30589 for Jackson, MI.",
+      "city": "Jackson",
+      "county": "Jackson",
+      "state": "MI",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "jackson"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 112,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/30589"
+    },
+    {
+      "id": "bf-41557-greater-lansing-area-public-safety",
+      "name": "Greater Lansing Area Public Safety",
+      "description": "Broadcastify Top 50 national bootstrap feed 41557 for Ingham, MI.",
+      "city": "Ingham",
+      "county": "Ingham",
+      "state": "MI",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "national-bootstrap",
+        "ingham"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 94,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/41557"
+    },
+    {
+      "id": "bf-13671-detroit-police-dispatchdpd-dispatch-talkgr",
+      "name": "Detroit Police DispatchDPD Dispatch talkgroups... 8040 Cent Dispatch Precincts 1 &amp; 13; 8043 SW Dispatch Precincts 2 &amp; 3; 8046 NE Dispatch Precincts 7 &amp; 11; 8049 NW Dispatch Precincts 6 &amp; 8; 8055 Western Dispatch Precincts 10 &amp; 12; 8058 - Eastern Dispatch Precincts 5 &amp; 9",
+      "description": "Broadcastify Top 50 national bootstrap feed 13671 for Wayne, MI.",
+      "city": "Wayne",
+      "county": "Wayne",
+      "state": "MI",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "law",
+        "national-bootstrap",
+        "wayne"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 82,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/13671"
+    },
+    {
+      "id": "bf-10911-eastern-upper-peninsula-public-safetylaw-e",
+      "name": "Eastern Upper Peninsula Public SafetyLaw Enforcement, Fire and EMS\r\nFor Chippewa Co. and Luce Co.",
+      "description": "Broadcastify Top 50 national bootstrap feed 10911 for Chippewa, MI.",
+      "city": "Chippewa",
+      "county": "Chippewa",
+      "state": "MI",
+      "service_types": [
+        "dispatch",
+        "fire",
+        "ems",
+        "law"
+      ],
+      "tags": [
+        "fire",
+        "ems",
+        "national-bootstrap",
+        "chippewa"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 76,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/10911"
+    },
+    {
+      "id": "bf-5266-ionia-county-sheriff-fire-and-ems-using-a-",
+      "name": "Ionia County Sheriff, Fire and EMS Using a Whistler WS1065 Digital Scanner",
+      "description": "Broadcastify Top 50 national bootstrap feed 5266 for Ionia, MI.",
+      "city": "Ionia",
+      "county": "Ionia",
+      "state": "MI",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "law",
+        "fire",
+        "ems",
+        "national-bootstrap",
+        "ionia"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 70,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/5266"
+    },
+    {
+      "id": "bf-21385-isabella-county-police-and-fire",
+      "name": "Isabella County Police and Fire",
+      "description": "Broadcastify Top 50 national bootstrap feed 21385 for Isabella, MI.",
+      "city": "Isabella",
+      "county": "Isabella",
+      "state": "MI",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire"
+      ],
+      "tags": [
+        "law",
+        "fire",
+        "national-bootstrap",
+        "isabella"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 67,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/21385"
+    }
+  ]
+}

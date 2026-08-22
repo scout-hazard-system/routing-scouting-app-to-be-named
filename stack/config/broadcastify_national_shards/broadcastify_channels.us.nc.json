@@ -1,0 +1,30 @@
+{
+  "channels": [
+    {
+      "id": "bf-31838-rutherford-county-sheriff-fire-and-ems-rut",
+      "name": "Rutherford County Sheriff, Fire and EMS Rutherford County VIPER system.\r\n\r\nSheriff, Forest City PD, RPD, NCSHP Troop G, Fire, &amp; EMS",
+      "description": "Broadcastify Top 50 national bootstrap feed 31838 for Rutherford, NC.",
+      "city": "Rutherford",
+      "county": "Rutherford",
+      "state": "NC",
+      "service_types": [
+        "dispatch",
+        "law",
+        "fire",
+        "ems"
+      ],
+      "tags": [
+        "law",
+        "fire",
+        "ems",
+        "national-bootstrap",
+        "rutherford"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 72,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/31838"
+    }
+  ]
+}

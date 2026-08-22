@@ -1,0 +1,3 @@
+{"meta":{"state":"WA","z":15,"x":5429,"y":11537,"zhs":{"key":"z/15/5429/11537|h3/9/nv9n/pfhu|s2/12/f2/20v/29h","z_key":"z/15/5429/11537","h_key":"h3/9/nv9n/pfhu","s_key":"s2/12/f2/20v/29h"},"source":"planet","roads":2,"buildings":0,"areas":0,"pois":0}}
+{"type":"road","class":"tertiary","name":"Fourth Parallel Road","oneway":false,"pts":"46.912069,-120.344067;46.912020,-120.355396"}
+{"type":"road","class":"residential","name":"Larsen Road","oneway":false,"pts":"46.912053,-120.347677;46.912868,-120.347680"}

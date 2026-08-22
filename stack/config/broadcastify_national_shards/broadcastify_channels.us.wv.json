@@ -1,0 +1,26 @@
+{
+  "channels": [
+    {
+      "id": "bf-45401-mercer-county-public-safety-and-wv-state-p",
+      "name": "Mercer County Public Safety and WV State PoliceMercer County Dispatch with WVSP Troop 6 Dispatch",
+      "description": "Broadcastify Top 50 national bootstrap feed 45401 for Mercer, WV.",
+      "city": "Mercer",
+      "county": "Mercer",
+      "state": "WV",
+      "service_types": [
+        "dispatch",
+        "law"
+      ],
+      "tags": [
+        "law",
+        "national-bootstrap",
+        "mercer"
+      ],
+      "lat": null,
+      "lon": null,
+      "listeners": 78,
+      "online": true,
+      "stream_url": "https://www.broadcastify.com/listen/feed/45401"
+    }
+  ]
+}

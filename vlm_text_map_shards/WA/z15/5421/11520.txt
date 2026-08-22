@@ -1,0 +1,2 @@
+{"meta":{"state":"WA","z":15,"x":5421,"y":11520,"zhs":{"key":"z/15/5421/11520|h3/9/nv8z/pfjc|s2/12/f2/20u/29e","z_key":"z/15/5421/11520","h_key":"h3/9/nv8z/pfjc","s_key":"s2/12/f2/20u/29e"},"source":"planet","roads":1,"buildings":0,"areas":0,"pois":0}}
+{"type":"road","class":"tertiary","name":"Fairview Road","oneway":false,"pts":"47.040299,-120.434959;47.038652,-120.434916;47.032578,-120.434559"}

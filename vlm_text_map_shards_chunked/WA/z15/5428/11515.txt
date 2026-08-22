@@ -1,0 +1,4 @@
+{"meta":{"state":"WA","z":15,"x":5428,"y":11515,"zhs":{"key":"z/15/5428/11515|h3/9/nv83/pfjs|s2/12/f2/20s/29d","z_key":"z/15/5428/11515","h_key":"h3/9/nv83/pfjs","s_key":"s2/12/f2/20s/29d"},"source":"planet","roads":3,"buildings":0,"areas":0,"pois":0}}
+{"type":"road","class":"path","name":"","oneway":false,"pts":"47.075330,-120.366383;47.075482,-120.355053"}
+{"type":"road","class":"path","name":"","oneway":false,"pts":"47.070005,-120.360838;47.073640,-120.365066;47.074384,-120.365953;47.074753,-120.366383"}
+{"type":"road","class":"residential","name":"Secret Canyon Road","oneway":false,"pts":"47.077721,-120.365704;47.077328,-120.366383"}

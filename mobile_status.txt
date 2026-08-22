@@ -1,0 +1,42 @@
+Audio Scanner Project - Mobile Status Report
+Generated: 2026-07-24
+
+1) Current Monitoring Status
+- A child monitoring process is still running in the background.
+- It is executing the scrcpy-isolated pipeline in 1-hour mode.
+- The process is active and has not been interrupted.
+
+2) Active Monitoring Command
+/home/gibi/Desktop/cop_pipeline/bin/python /home/gibi/Desktop/pipeline.py --mode scrcpy --start-scrcpy --scrcpy-bin /home/gibi/.local/bin/scrcpy-4 --serial ZT42269G82 --duration 8
+
+3) Current Pipeline Architecture
+- Phone audio source: Moto G Play via scrcpy (audio only mode).
+- Audio isolation: scrcpy stream is moved to dedicated Pulse sink "scanner_sink".
+- Capture source used by pipeline: scanner_sink.monitor
+- Transcription engine: Whisper medium on CPU (int8).
+- Gating behavior:
+  - near-silence chunks are skipped
+  - heavily clipped chunks are skipped
+  - non-silent chunks are transcribed and printed as [Captured Chatter]
+
+4) What This Solves
+- Prevents desktop/browser/system audio bleed into scanner transcription.
+- Forces pipeline to ingest only the isolated scrcpy audio path.
+- Reduces false-positive transcriptions from silence/noise.
+
+5) Known Latest Verified Output Pattern
+- Startup confirms scrcpy routing to scanner_sink.monitor.
+- Monitoring outputs include:
+  - [Skipped]: near-silence chunk
+  - [Captured Chatter]: ... (when active scanner speech is present)
+
+6) Phone Flashing / ROM Research Status
+- Official LineageOS support for Moto G Play 2025: not confirmed/found.
+- Current recommendation: do not flash until exact model/codename and unlock eligibility are confirmed with a credible, maintained device-specific ROM path.
+
+7) Next Expected Deliverable
+- Full long-run authenticity assessment from the monitoring child agent:
+  - runtime observed
+  - representative transcript samples
+  - police-radio-like vs non-police classification
+  - confidence/limitations

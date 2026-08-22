@@ -1,0 +1,9 @@
+# query	display_name	source	lat	lon	updated_at_ms
+1+market+st+san+francisco+ca	1+Market+St+San+Francisco%2C+CA	city_catalog	37.7938200	-122.3948144	1785551375954
+900+n+forest+ave	900%2C+North+Forest+Avenue%2C+Chanute%2C+Neosho+County%2C+Kansas%2C+66720%2C+United+States	android_stream_client	37.6899290	-95.4552260	1785528443565
+14851+n+25th%2C%2C+dr	14851+N+25th%2C%2C%2C+DR	city_catalog	33.6226870	-112.1140297	1785526395680
+14851+n+25th%2C+dr	14851+N+25th%2C%2C+DR	city_catalog	33.6226870	-112.1140297	1785525963056
+14851+n+25th+dr	14851+N+25th%2C+DR	city_catalog	33.6228161	-112.1143927	1785483849980
+14851+n+25th+dr+phoenix+az	14851+N+25th+Dr+Phoenix%2C+AZ	city_catalog	33.6228161	-112.1143927	1785483849369
+oz-persist-test-1785395125	Oz+Persist+Test	smoke	47.6205000	-122.3493000	1785407653022
+oz-persist-test-1785395081	Oz+Persist+Test	smoke	47.6205000	-122.3493000	1785407653020

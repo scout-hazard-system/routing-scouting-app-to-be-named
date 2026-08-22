@@ -1,0 +1,4 @@
+{"meta":{"state":"WA","z":15,"x":5413,"y":11519,"zhs":{"key":"z/15/5413/11519|h3/9/nv9j/pfjf|s2/12/f2/20v/29d","z_key":"z/15/5413/11519","h_key":"h3/9/nv9j/pfjf","s_key":"s2/12/f2/20v/29d"},"source":"planet","roads":3,"buildings":0,"areas":0,"pois":0}}
+{"type":"road","class":"tertiary","name":"Hungry Junction Road","oneway":false,"pts":"47.043200,-120.531178;47.043333,-120.527707;47.043626,-120.519848"}
+{"type":"road","class":"service","name":"","oneway":false,"pts":"47.044911,-120.530480;47.044920,-120.530536;47.044920,-120.530593;47.044825,-120.531073;47.044808,-120.531178"}
+{"type":"road","class":"service","name":"Stephanie Road","oneway":false,"pts":"47.043333,-120.527707;47.045463,-120.527704"}

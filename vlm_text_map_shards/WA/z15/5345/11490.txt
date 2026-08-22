@@ -1,0 +1,5 @@
+{"meta":{"state":"WA","z":15,"x":5345,"y":11490,"zhs":{"key":"z/15/5345/11490|h3/9/nvcl/pfm0|s2/12/f2/213/293","z_key":"z/15/5345/11490","h_key":"h3/9/nvcl/pfm0","s_key":"s2/12/f2/213/293"},"source":"planet","roads":2,"buildings":0,"areas":2,"pois":0}}
+{"type":"road","class":"residential","name":"U-Fish Road","oneway":false,"pts":"47.263401,-121.266918;47.263747,-121.267406;47.264249,-121.268227;47.264437,-121.268611"}
+{"type":"road","class":"path","name":"Palouse to Cascades State Park Trail","oneway":false,"pts":"47.256833,-121.278248;47.256748,-121.277915"}
+{"type":"area","kind":"park","pts":"47.264437,-121.278248;47.264437,-121.266918;47.256748,-121.266918;47.256748,-121.278248"}
+{"type":"area","kind":"park","pts":"47.257017,-121.278248;47.256748,-121.277204;47.256748,-121.278248"}

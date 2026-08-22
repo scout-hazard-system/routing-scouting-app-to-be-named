@@ -1,0 +1,5 @@
+{"meta":{"state":"WA","z":15,"x":5381,"y":11542,"zhs":{"key":"z/15/5381/11542|h3/9/nvdq/pfhe|s2/12/f2/214/29e","z_key":"z/15/5381/11542","h_key":"h3/9/nvdq/pfhe","s_key":"s2/12/f2/214/29e"},"source":"planet","roads":4,"buildings":0,"areas":0,"pois":0}}
+{"type":"road","class":"path","name":"","oneway":false,"pts":"46.875331,-120.878389;46.875290,-120.878245"}
+{"type":"road","class":"path","name":"","oneway":false,"pts":"46.874405,-120.876187;46.873789,-120.874659;46.872626,-120.872792;46.872467,-120.872258;46.872483,-120.871410"}
+{"type":"road","class":"path","name":"Maloy Road","oneway":false,"pts":"46.874405,-120.876187;46.874843,-120.876909;46.875290,-120.878245"}
+{"type":"road","class":"path","name":"National Forest Development Road 1713","oneway":false,"pts":"46.875290,-120.878245;46.875331,-120.878242"}

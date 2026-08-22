@@ -1,0 +1,2 @@
+{"meta":{"state":"WA","z":15,"x":5423,"y":11532,"zhs":{"key":"z/15/5423/11532|h3/9/nv9q/pfia|s2/12/f2/20w/29g","z_key":"z/15/5423/11532","h_key":"h3/9/nv9q/pfia","s_key":"s2/12/f2/20w/29g"},"source":"planet","roads":1,"buildings":0,"areas":0,"pois":0}}
+{"type":"road","class":"tertiary","name":"Cleman Road","oneway":false,"pts":"46.942645,-120.412812;46.944037,-120.412836;46.949314,-120.413015;46.950379,-120.413085"}

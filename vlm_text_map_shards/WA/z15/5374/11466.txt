@@ -1,0 +1,4 @@
+{"meta":{"state":"WA","z":15,"x":5374,"y":11466,"zhs":{"key":"z/15/5374/11466|h3/9/nv8l/pfo5|s2/12/f2/20v/291","z_key":"z/15/5374/11466","h_key":"h3/9/nv8l/pfo5","s_key":"s2/12/f2/20v/291"},"source":"planet","roads":0,"buildings":0,"areas":1,"pois":2}}
+{"type":"area","kind":"park","pts":"47.443066,-120.959644;47.443066,-120.948315;47.435403,-120.948315;47.435403,-120.959644"}
+{"type":"poi","name":"Esmeralda Peak - West Peak","kind":"peak","lat":47.437977,"lon":-120.952445}
+{"type":"poi","name":"Esmeralda Peak - Middle Peak","kind":"peak","lat":47.437036,"lon":-120.959312}

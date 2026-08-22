@@ -1,0 +1,299 @@
+{"meta":{"state":"CA","z":15,"x":5255,"y":12661,"zhs":{"key":"z/15/5255/12661|h3/9/nxvk/pchm|s2/12/f4/tz/10h","z_key":"z/15/5255/12661","h_key":"h3/9/nxvk/pchm","s_key":"s2/12/f4/tz/10h"},"source":"planet","roads":585,"buildings":567,"areas":144,"pois":283}}
+{"type":"area","kind":"water","pts":"37.805173,-122.255516;37.805173,-122.256812;37.805268,-122.256600;37.805332,-122.256474;37.805410,-122.256409;37.805482,-122.256388;37.805601,-122.256380;37.806173,-122.256433;37.806220,-122.256436;37.806262,-122.256425;37.806292,-122.256401;37.806313,-122.256361;37.806349,-122.256246;37.806372,-122.256205;37.806408,-122.256176;37.806446,-122.256165;37.806487,-122.256168;37.806514,-122.256181;37.806527,-122.256168;37.806622,-122.256117;37.806768,-122.256069;37.806881,-122.255977;37.806917,-122.255975;37.806919,-122.255956;37.806913,-122.255932;37.806921,-122.255910;37.806940,-122.255902;37.806955,-122.255908;37.806961,-122.255905;37.807046,-122.255698;37.807076,-122.255586;37.807091,-122.255516;37.806949,-122.255516;37.806938,-122.255591;37.806902,-122.255717;37.806866,-122.255755;37.806732,-122.255787;37.806658,-122.255782;37.806620,-122.255741;37.806607,-122.255677;37.806601,-122.255516"}
+{"type":"area","kind":"water","pts":"37.805173,-122.257058;37.805173,-122.257171;37.805228,-122.257104;37.805207,-122.257069;37.805185,-122.257045"}
+{"type":"area","kind":"water","pts":"37.805173,-122.259274;37.805183,-122.261862;37.805302,-122.262071;37.805705,-122.262235;37.806073,-122.262442;37.806158,-122.262533;37.806328,-122.262747;37.806741,-122.262965;37.806997,-122.263058;37.807324,-122.263109;37.807642,-122.263099;37.807964,-122.263042;37.808241,-122.262946;37.808440,-122.262847;37.808750,-122.262683;37.809061,-122.262610;37.809371,-122.262562;37.809714,-122.262455;37.810180,-122.262275;37.810437,-122.262152;37.810545,-122.262026;37.810591,-122.261835;37.810604,-122.261664;37.810585,-122.261543;37.810356,-122.261264;37.810273,-122.261210;37.809981,-122.261181;37.809720,-122.261200;37.809307,-122.261296;37.808640,-122.261374;37.807921,-122.261481;37.807656,-122.261492;37.807324,-122.261446;37.807095,-122.261369;37.806891,-122.261235;37.806764,-122.261084;37.806756,-122.261012;37.806779,-122.260948;37.806768,-122.260840;37.806730,-122.260462;37.806654,-122.260347;37.806548,-122.260298;37.806315,-122.260261;37.806137,-122.260215;37.805493,-122.259451;37.805181,-122.259279"}
+{"type":"area","kind":"water","pts":"37.809038,-122.265129;37.809038,-122.265030;37.809053,-122.264971;37.809042,-122.264912;37.809061,-122.264882;37.809087,-122.264885;37.809123,-122.264861;37.809146,-122.264821;37.809144,-122.264756;37.809121,-122.264716;37.809080,-122.264695;37.809049,-122.264719;37.809036,-122.264756;37.809042,-122.264796;37.809040,-122.264823;37.808879,-122.265014;37.808879,-122.265054;37.808894,-122.265089;37.808943,-122.265121;37.808958,-122.265145"}
+{"type":"area","kind":"water","pts":"37.809047,-122.265177;37.809030,-122.265169;37.808968,-122.265188;37.808951,-122.265328;37.808955,-122.265362;37.808985,-122.265403;37.809034,-122.265416;37.809066,-122.265397;37.809080,-122.265362;37.809061,-122.265333;37.809059,-122.265303;37.809083,-122.265274"}
+{"type":"area","kind":"water","pts":"37.812361,-122.264724;37.812335,-122.264579;37.812295,-122.264593;37.812320,-122.264735"}
+{"type":"area","kind":"water","pts":"37.813611,-122.260014;37.813660,-122.259969;37.813617,-122.259896;37.813566,-122.259944"}
+{"type":"area","kind":"water","pts":"37.814391,-122.258410;37.814395,-122.258402;37.814395,-122.258335;37.814340,-122.258287;37.814310,-122.258338"}
+{"type":"area","kind":"water","pts":"37.813927,-122.258043;37.813935,-122.258035;37.813939,-122.258021;37.813929,-122.258002;37.813935,-122.257989;37.813941,-122.257984;37.813946,-122.257970;37.813937,-122.257960;37.813925,-122.257954;37.813914,-122.257957;37.813903,-122.257973;37.813899,-122.257992;37.813901,-122.258013;37.813908,-122.258027;37.813916,-122.258037"}
+{"type":"area","kind":"water","pts":"37.814073,-122.257761;37.814066,-122.257745;37.814075,-122.257713;37.814073,-122.257699;37.814060,-122.257702;37.814033,-122.257740;37.814033,-122.257766;37.814039,-122.257783;37.814052,-122.257791;37.814069,-122.257788;37.814075,-122.257777"}
+{"type":"area","kind":"water","pts":"37.813041,-122.258587;37.813049,-122.258593;37.813062,-122.258587;37.813071,-122.258571;37.813073,-122.258555;37.813045,-122.258520;37.813011,-122.258504;37.812999,-122.258509;37.812992,-122.258523;37.812996,-122.258536"}
+{"type":"area","kind":"water","pts":"37.812965,-122.258340;37.812984,-122.258335;37.812996,-122.258324;37.813003,-122.258308;37.812999,-122.258292;37.812956,-122.258287;37.812926,-122.258298;37.812918,-122.258314;37.812918,-122.258330;37.812929,-122.258340;37.812946,-122.258346"}
+{"type":"area","kind":"water","pts":"37.811615,-122.261884;37.811640,-122.261865;37.811596,-122.261819;37.811545,-122.261782;37.811471,-122.261744;37.811350,-122.261699;37.811206,-122.261677;37.811161,-122.261674;37.811047,-122.261623;37.810996,-122.261607;37.810939,-122.261607;37.810952,-122.261682;37.811153,-122.261752;37.811380,-122.261809;37.811551,-122.261876"}
+{"type":"area","kind":"water","pts":"37.808661,-122.260135;37.808652,-122.260116;37.808642,-122.260108;37.808627,-122.260121;37.808621,-122.260156;37.808629,-122.260180;37.808652,-122.260175"}
+{"type":"area","kind":"water","pts":"37.808006,-122.257203;37.808017,-122.257217;37.808029,-122.257230;37.808046,-122.257233;37.808061,-122.257233;37.808076,-122.257225;37.808089,-122.257209;37.808097,-122.257192;37.808099,-122.257171;37.808095,-122.257150;37.808087,-122.257131;37.808076,-122.257117;37.808059,-122.257109;37.808042,-122.257109;37.808027,-122.257115;37.808014,-122.257125;37.808004,-122.257144;37.808000,-122.257163;37.808000,-122.257182"}
+{"type":"poi","name":"Northlake","kind":"place_neighbourhood","lat":37.812967,"lon":-122.263852}
+{"type":"poi","name":"Adams Point","kind":"place_neighbourhood","lat":37.810403,"lon":-122.255902}
+{"type":"poi","name":"Financial District","kind":"place_neighbourhood","lat":37.809924,"lon":-122.264941}
+{"type":"poi","name":"Lake Park Senior Living","kind":"social_facility","lat":37.805304,"lon":-122.264064}
+{"type":"poi","name":"St. Paul's Retirement Community","kind":"social_facility","lat":37.811873,"lon":-122.260325}
+{"type":"poi","name":"Children's Fairyland","kind":"theme_park","lat":37.808824,"lon":-122.260250}
+{"type":"poi","name":"The Gardens at Lake Merritt","kind":"garden","lat":37.806412,"lon":-122.258365}
+{"type":"poi","name":"300 Lakeside","kind":"commercial","lat":37.808985,"lon":-122.264644}
+{"type":"poi","name":"Snow Park","kind":"park","lat":37.807065,"lon":-122.264257}
+{"type":"poi","name":"Lawn Bowling Greens","kind":"pitch","lat":37.807555,"lon":-122.257715}
+{"type":"poi","name":"Lakeside Garden Center","kind":"community_centre","lat":37.807114,"lon":-122.258700}
+{"type":"poi","name":"Veterans Memorial Building Senior Center","kind":"community_centre","lat":37.811414,"lon":-122.261296}
+{"type":"poi","name":"First Congregational United Church of Christ","kind":"place_of_worship","lat":37.813708,"lon":-122.261492}
+{"type":"poi","name":"Howden Building","kind":"building","lat":37.805408,"lon":-122.267074}
+{"type":"poi","name":"Chase","kind":"bank","lat":37.808712,"lon":-122.266387}
+{"type":"poi","name":"Golden State Bonsai Garden","kind":"garden","lat":37.806137,"lon":-122.257901}
+{"type":"poi","name":"Junior Center of Art and Science","kind":"museum","lat":37.806362,"lon":-122.256640}
+{"type":"poi","name":"Kaiser Rooftop Garden","kind":"garden","lat":37.809163,"lon":-122.265049}
+{"type":"poi","name":"Downtown Oakland YMCA","kind":"sports_centre","lat":37.812821,"lon":-122.265429}
+{"type":"poi","name":"Creative Growth Art Center","kind":"arts_centre","lat":37.812929,"lon":-122.264193}
+{"type":"poi","name":"Minuteman Press","kind":"copyshop","lat":37.813535,"lon":-122.264520}
+{"type":"poi","name":"Best Detail Inc","kind":"car_repair","lat":37.813592,"lon":-122.265097}
+{"type":"poi","name":"Oakland Kia","kind":"car","lat":37.813810,"lon":-122.264445}
+{"type":"poi","name":"180 Grand Public Parking","kind":"parking","lat":37.811924,"lon":-122.263404}
+{"type":"poi","name":"Car Care Automotive","kind":"car_repair","lat":37.812075,"lon":-122.264673}
+{"type":"poi","name":"The Institute Fitness","kind":"fitness_centre","lat":37.813821,"lon":-122.266658}
+{"type":"poi","name":"Grand Avenue Seventh Day Adventist Church","kind":"place_of_worship","lat":37.809466,"lon":-122.257828}
+{"type":"poi","name":"St. Paul's Episcopal Church","kind":"place_of_worship","lat":37.811077,"lon":-122.260172}
+{"type":"poi","name":"Lakeside Park Elder Care","kind":"social_facility","lat":37.808214,"lon":-122.255977}
+{"type":"poi","name":"Pacific Strength","kind":"fitness_centre","lat":37.812253,"lon":-122.261414}
+{"type":"poi","name":"Seventh Church of Christ, Scientist","kind":"place_of_worship","lat":37.812003,"lon":-122.262358}
+{"type":"poi","name":"VESPR Apartments","kind":"residential","lat":37.813662,"lon":-122.262833}
+{"type":"poi","name":"The Hive","kind":"retail","lat":37.812926,"lon":-122.266556}
+{"type":"poi","name":"Lake Merritt Plaza","kind":"pedestrian","lat":37.807945,"lon":-122.264780}
+{"type":"poi","name":"Whole Foods Market","kind":"supermarket","lat":37.813094,"lon":-122.260720}
+{"type":"poi","name":"Kissel Uptown Oakland - In the Unbound Collection","kind":"hotel","lat":37.813785,"lon":-122.265936}
+{"type":"poi","name":"Saint Paul's Episcopal School","kind":"school","lat":37.811121,"lon":-122.259794}
+{"type":"poi","name":"Lot 2270","kind":"pedestrian","lat":37.811924,"lon":-122.266046}
+{"type":"poi","name":"460 24th Street","kind":"construction","lat":37.814028,"lon":-122.266899}
+{"type":"poi","name":"The Cathedral of Christ the Light","kind":"place_of_worship","lat":37.810170,"lon":-122.263262}
+{"type":"poi","name":"Mason at the Hive Apartments","kind":"residential","lat":37.813361,"lon":-122.266551}
+{"type":"poi","name":"Snow Park Restroom","kind":"toilets","lat":37.806923,"lon":-122.264480}
+{"type":"poi","name":"Wells Fargo","kind":"bank","lat":37.809303,"lon":-122.266591}
+{"type":"poi","name":"U.S. Bank","kind":"bank","lat":37.808343,"lon":-122.266830}
+{"type":"poi","name":"U.S. Bank","kind":"bank","lat":37.808404,"lon":-122.264992}
+{"type":"poi","name":"The Mechanics Bank","kind":"bank","lat":37.807822,"lon":-122.264923}
+{"type":"poi","name":"Nomadic Bookshop","kind":"events_venue","lat":37.812032,"lon":-122.264923}
+{"type":"poi","name":"Osha Thai Express","kind":"restaurant","lat":37.812047,"lon":-122.265014}
+{"type":"poi","name":"Javi's Empanadas","kind":"cafe","lat":37.812236,"lon":-122.266036}
+{"type":"poi","name":"Farley's East","kind":"cafe","lat":37.811303,"lon":-122.266046}
+{"type":"poi","name":"True Burger","kind":"fast_food","lat":37.811356,"lon":-122.264035}
+{"type":"poi","name":"Mua Lounge","kind":"restaurant","lat":37.814075,"lon":-122.264400}
+{"type":"poi","name":"Kaiser Center Parking Garage","kind":"parking","lat":37.809178,"lon":-122.264748}
+{"type":"poi","name":"Zanzi","kind":"nightclub","lat":37.811312,"lon":-122.266288}
+{"type":"poi","name":"Public Parking Garage","kind":"parking","lat":37.812657,"lon":-122.265285}
+{"type":"poi","name":"1800 Harrison Garage","kind":"parking","lat":37.805334,"lon":-122.265746}
+{"type":"poi","name":"355","kind":"bar","lat":37.806828,"lon":-122.266974}
+{"type":"poi","name":"Sweet Bar Bakery","kind":"cafe","lat":37.813333,"lon":-122.265824}
+{"type":"poi","name":"Oakland Athletic Club","kind":"bar","lat":37.811284,"lon":-122.265647}
+{"type":"poi","name":"19th Street Station","kind":"bar","lat":37.806599,"lon":-122.266341}
+{"type":"poi","name":"Winky Dinky Dogs","kind":"fast_food","lat":37.806516,"lon":-122.266108}
+{"type":"poi","name":"Persian Nights","kind":"restaurant","lat":37.809892,"lon":-122.259185}
+{"type":"poi","name":"Japanese Gardens","kind":"garden","lat":37.806879,"lon":-122.258429}
+{"type":"poi","name":"Athenian Deli and Cafe","kind":"restaurant","lat":37.810384,"lon":-122.266789}
+{"type":"poi","name":"City National Bank","kind":"bank","lat":37.809939,"lon":-122.265963}
+{"type":"poi","name":"Western Alliance Bank","kind":"bank","lat":37.807760,"lon":-122.266382}
+{"type":"poi","name":"Molcajete","kind":"restaurant","lat":37.806179,"lon":-122.266835}
+{"type":"poi","name":"Viridian","kind":"bar","lat":37.811206,"lon":-122.266677}
+{"type":"poi","name":"Ike's Love and Sandwiches","kind":"fast_food","lat":37.811030,"lon":-122.266596}
+{"type":"poi","name":"Palmetum","kind":"garden","lat":37.806285,"lon":-122.257512}
+{"type":"poi","name":"Lake Merritt Super","kind":"alcohol","lat":37.809178,"lon":-122.256211}
+{"type":"poi","name":"Enssaro","kind":"restaurant","lat":37.808752,"lon":-122.255771}
+{"type":"poi","name":"Grand Express","kind":"alcohol","lat":37.808722,"lon":-122.255519}
+{"type":"poi","name":"alaMar Dominican Kitchen and Bar","kind":"restaurant","lat":37.811456,"lon":-122.264499}
+{"type":"poi","name":"Freedom bench","kind":"bench","lat":37.806976,"lon":-122.260953}
+{"type":"poi","name":"Marin's Coffee and Kitchen","kind":"cafe","lat":37.810019,"lon":-122.266881}
+{"type":"poi","name":"Shawarmaji","kind":"restaurant","lat":37.810668,"lon":-122.266425}
+{"type":"poi","name":"Patelco Credit Union","kind":"atm","lat":37.810791,"lon":-122.265835}
+{"type":"poi","name":"Storybook Puppet Theater Restrooms","kind":"toilets","lat":37.809530,"lon":-122.260615}
+{"type":"poi","name":"Storybook Puppet Theater","kind":"theatre","lat":37.809445,"lon":-122.260682}
+{"type":"poi","name":"OakStop","kind":"coworking_space","lat":37.812613,"lon":-122.266390}
+{"type":"poi","name":"Drake's Dealership","kind":"bar","lat":37.812734,"lon":-122.266690}
+{"type":"poi","name":"Alma","kind":"restaurant","lat":37.806885,"lon":-122.267127}
+{"type":"poi","name":"Bolo's Bites","kind":"restaurant","lat":37.811301,"lon":-122.266167}
+{"type":"poi","name":"Dave's Hot Chicken","kind":"fast_food","lat":37.811329,"lon":-122.266588}
+{"type":"poi","name":"Sensory Garden","kind":"garden","lat":37.805844,"lon":-122.258110}
+{"type":"poi","name":"Two Pitchers Brewing Company","kind":"pub","lat":37.812960,"lon":-122.264850}
+{"type":"poi","name":"Jitters and Shakes Cafe","kind":"cafe","lat":37.810600,"lon":-122.265821}
+{"type":"poi","name":"King Kog","kind":"bicycle","lat":37.805404,"lon":-122.266854}
+{"type":"poi","name":"Clio’s Bookshop","kind":"bar","lat":37.808750,"lon":-122.255977}
+{"type":"poi","name":"Oasis","kind":"restaurant","lat":37.809167,"lon":-122.256372}
+{"type":"poi","name":"The Moon","kind":"gallery","lat":37.814268,"lon":-122.266468}
+{"type":"poi","name":"Vessel Gallery","kind":"gallery","lat":37.814386,"lon":-122.267143}
+{"type":"poi","name":"Oakopolis","kind":"gallery","lat":37.814291,"lon":-122.266586}
+{"type":"poi","name":"Alameda County Master Gardeners Lake Merritt Trial Gardens","kind":"garden","lat":37.805946,"lon":-122.258555}
+{"type":"poi","name":"Oakland Fukuoka Sister City Garden","kind":"garden","lat":37.806133,"lon":-122.258279}
+{"type":"poi","name":"Easterbrook Fountain","kind":"fountain","lat":37.806391,"lon":-122.257643}
+{"type":"poi","name":"Vireya Garden","kind":"garden","lat":37.806796,"lon":-122.257844}
+{"type":"poi","name":"Firescape Garden","kind":"garden","lat":37.806336,"lon":-122.258925}
+{"type":"poi","name":"Rhododendron Garden","kind":"garden","lat":37.806643,"lon":-122.258786}
+{"type":"poi","name":"Taava Kitchen","kind":"restaurant","lat":37.813348,"lon":-122.264421}
+{"type":"poi","name":"La Bonita Taqueria","kind":"restaurant","lat":37.810979,"lon":-122.266559}
+{"type":"poi","name":"Sandwicheez Burger","kind":"restaurant","lat":37.810907,"lon":-122.266411}
+{"type":"poi","name":"Agave Uptown","kind":"restaurant","lat":37.810771,"lon":-122.266902}
+{"type":"poi","name":"First Foundation Bank","kind":"bank","lat":37.808101,"lon":-122.265765}
+{"type":"poi","name":"Mountain Mike's","kind":"restaurant","lat":37.806635,"lon":-122.266529}
+{"type":"poi","name":"Pinocchio's Castle","kind":"attraction","lat":37.808546,"lon":-122.259950}
+{"type":"poi","name":"Peter Rabbit's Village","kind":"attraction","lat":37.808561,"lon":-122.259832}
+{"type":"poi","name":"Willie the Whale","kind":"attraction","lat":37.808659,"lon":-122.260113}
+{"type":"poi","name":"Three Billy Goats Gruff","kind":"attraction","lat":37.808947,"lon":-122.260599}
+{"type":"poi","name":"Fairy Music Farm","kind":"attraction","lat":37.809099,"lon":-122.260830}
+{"type":"poi","name":"Rapunzel's Castle","kind":"attraction","lat":37.808695,"lon":-122.259625}
+{"type":"poi","name":"Hey, Diddle Diddle","kind":"attraction","lat":37.808748,"lon":-122.259604}
+{"type":"poi","name":"Little Miss Muffet","kind":"attraction","lat":37.808794,"lon":-122.259864}
+{"type":"poi","name":"Peter's Big Pumpkin Espresso","kind":"cafe","lat":37.808869,"lon":-122.259867}
+{"type":"poi","name":"Oswald the Bubble Elf","kind":"attraction","lat":37.808932,"lon":-122.259993}
+{"type":"poi","name":"Ching Lung the Happy Dragon","kind":"attraction","lat":37.808875,"lon":-122.259950}
+{"type":"poi","name":"The Three Little Pigs","kind":"attraction","lat":37.808841,"lon":-122.260022}
+{"type":"poi","name":"Mary Had a Little Lamb","kind":"attraction","lat":37.808930,"lon":-122.259781}
+{"type":"poi","name":"OMI Gallery","kind":"gallery","lat":37.812441,"lon":-122.266325}
+{"type":"poi","name":"Bay Pl at Vernon St","kind":"bicycle_rental","lat":37.812119,"lon":-122.260671}
+{"type":"poi","name":"Snow Park","kind":"bicycle_rental","lat":37.807627,"lon":-122.264606}
+{"type":"poi","name":"Grand Ave at Webster St","kind":"bicycle_rental","lat":37.811219,"lon":-122.265027}
+{"type":"poi","name":"Equator Coffees & Teas","kind":"cafe","lat":37.812200,"lon":-122.261138}
+{"type":"poi","name":"Parche","kind":"restaurant","lat":37.811918,"lon":-122.266698}
+{"type":"poi","name":"Golden 1 Credit Union","kind":"bank","lat":37.811750,"lon":-122.266840}
+{"type":"poi","name":"eVgo","kind":"charging_station","lat":37.813333,"lon":-122.260604}
+{"type":"poi","name":"The Halal Guys","kind":"fast_food","lat":37.811142,"lon":-122.266653}
+{"type":"poi","name":"Mixt","kind":"restaurant","lat":37.812083,"lon":-122.266594}
+{"type":"poi","name":"Boba Binge","kind":"cafe","lat":37.811091,"lon":-122.266631}
+{"type":"poi","name":"Low Bar","kind":"bar","lat":37.812136,"lon":-122.265081}
+{"type":"poi","name":"Proyecto Diaz Coffee","kind":"cafe","lat":37.811214,"lon":-122.267109}
+{"type":"poi","name":"Bay Wheels","kind":"bicycle_rental","lat":37.807260,"lon":-122.266494}
+{"type":"poi","name":"North Beach Sandwicheez","kind":"fast_food","lat":37.808559,"lon":-122.264636}
+{"type":"poi","name":"Downtown Oakland YMCA Pool","kind":"swimming_pool","lat":37.812566,"lon":-122.265746}
+{"type":"poi","name":"1888 Coffee Company","kind":"cafe","lat":37.809845,"lon":-122.259118}
+{"type":"poi","name":"True Zero","kind":"fuel","lat":37.809292,"lon":-122.255830}
+{"type":"poi","name":"Timeless Coffee","kind":"cafe","lat":37.805749,"lon":-122.267111}
+{"type":"poi","name":"The Melt","kind":"restaurant","lat":37.811657,"lon":-122.266304}
+{"type":"poi","name":"High 5ive","kind":"bar","lat":37.814192,"lon":-122.266181}
+{"type":"poi","name":"Otto’s","kind":"restaurant","lat":37.813666,"lon":-122.265676}
+{"type":"poi","name":"God's Gym","kind":"fitness_centre","lat":37.814259,"lon":-122.265228}
+{"type":"poi","name":"Kiss Lounge Bar & Restaurant","kind":"bar","lat":37.814336,"lon":-122.265183}
+{"type":"poi","name":"Mela Bistro","kind":"restaurant","lat":37.811297,"lon":-122.265953}
+{"type":"poi","name":"Poke Parlor","kind":"fast_food","lat":37.807968,"lon":-122.265454}
+{"type":"poi","name":"Los Cantaros Restaurant And Taqueria","kind":"restaurant","lat":37.809182,"lon":-122.256554}
+{"type":"poi","name":"Todos Cantina + Cocina","kind":"restaurant","lat":37.811952,"lon":-122.264303}
+{"type":"poi","name":"Haus of Chefs","kind":"restaurant","lat":37.810049,"lon":-122.267079}
+{"type":"poi","name":"Jaji","kind":"restaurant","lat":37.813554,"lon":-122.265778}
+{"type":"poi","name":"Ripple Fountain","kind":"fountain","lat":37.805859,"lon":-122.258056}
+{"type":"poi","name":"Merritt Horticultural Display","kind":"garden","lat":37.805906,"lon":-122.258437}
+{"type":"poi","name":"People's Victory Garden","kind":"garden","lat":37.805961,"lon":-122.258676}
+{"type":"poi","name":"Toddler's Garden","kind":"garden","lat":37.806033,"lon":-122.258743}
+{"type":"poi","name":"Pollinator Garden","kind":"garden","lat":37.806056,"lon":-122.258515}
+{"type":"poi","name":"Senor Sisig","kind":"fast_food","lat":37.805709,"lon":-122.266980}
+{"type":"poi","name":"Alliant Credit Union","kind":"bank","lat":37.808426,"lon":-122.265134}
+{"type":"poi","name":"Copymat Oakland","kind":"copyshop","lat":37.806730,"lon":-122.266036}
+{"type":"poi","name":"Kume","kind":"massage","lat":37.806762,"lon":-122.266108}
+{"type":"poi","name":"Mama's Boy","kind":"restaurant","lat":37.811318,"lon":-122.266349}
+{"type":"poi","name":"Calabash","kind":"restaurant","lat":37.811943,"lon":-122.264019}
+{"type":"poi","name":"Catch MMA","kind":"fitness_centre","lat":37.807133,"lon":-122.266272}
+{"type":"poi","name":"Hella Bees","kind":"bar","lat":37.812170,"lon":-122.261599}
+{"type":"poi","name":"Budget","kind":"car_rental","lat":37.814007,"lon":-122.264552}
+{"type":"poi","name":"Avis","kind":"car_rental","lat":37.813948,"lon":-122.264566}
+{"type":"poi","name":"Baygreens","kind":"restaurant","lat":37.810956,"lon":-122.265674}
+{"type":"poi","name":"Patelco Credit Union","kind":"bank","lat":37.810835,"lon":-122.265773}
+{"type":"poi","name":"Not Your Average Cleaners","kind":"cleaning","lat":37.814092,"lon":-122.255854}
+{"type":"poi","name":"Bliss Bound Hound","kind":"pet_grooming","lat":37.805446,"lon":-122.266969}
+{"type":"poi","name":"Wells Fargo Center Parking Garage","kind":"parking_entrance","lat":37.806874,"lon":-122.265837}
+{"type":"poi","name":"Park Plaza Parking Garage","kind":"parking_entrance","lat":37.807224,"lon":-122.265159}
+{"type":"poi","name":"Lake Merritt Plaza Parking Garage","kind":"parking_entrance","lat":37.807330,"lon":-122.265027}
+{"type":"poi","name":"Tacos La San Marqueña","kind":"fast_food","lat":37.808212,"lon":-122.266250}
+{"type":"poi","name":"Title Boxing Club","kind":"fitness_centre","lat":37.810888,"lon":-122.266229}
+{"type":"poi","name":"Little Free Library","kind":"public_bookcase","lat":37.814192,"lon":-122.256085}
+{"type":"poi","name":"Free Library","kind":"public_bookcase","lat":37.810545,"lon":-122.256458}
+{"type":"poi","name":"The Overlook","kind":"events_venue","lat":37.808529,"lon":-122.264974}
+{"type":"poi","name":"Flour + Water Pizza Shop","kind":"restaurant","lat":37.812746,"lon":-122.262653}
+{"type":"poi","name":"Commercial Bank of California","kind":"bank","lat":37.811280,"lon":-122.263101}
+{"type":"poi","name":"Highwire Coffee Roasters","kind":"cafe","lat":37.813092,"lon":-122.262753}
+{"type":"poi","name":"Town Biscuits","kind":"restaurant","lat":37.814378,"lon":-122.266071}
+{"type":"poi","name":"Monogram Apartments at Kissel","kind":"residential","lat":37.813988,"lon":-122.265652}
+{"type":"poi","name":"drink thicc","kind":"restaurant","lat":37.813299,"lon":-122.264391}
+{"type":"poi","name":"Fez Coffee Roasters","kind":"cafe","lat":37.807955,"lon":-122.265051}
+{"type":"poi","name":"Fungi Foods","kind":"restaurant","lat":37.814370,"lon":-122.266012}
+{"type":"poi","name":"James P. Edoff Memorial Bandstand","kind":"bandstand","lat":37.807678,"lon":-122.260137}
+{"type":"poi","name":"Franklin Square","kind":"park","lat":37.811032,"lon":-122.266733}
+{"type":"poi","name":"Rotary Nature Center","kind":"museum","lat":37.807124,"lon":-122.255964}
+{"type":"poi","name":"Sandbar","kind":"bar","lat":37.813700,"lon":-122.265051}
+{"type":"poi","name":"Au","kind":"bar","lat":37.813956,"lon":-122.264936}
+{"type":"poi","name":"Jason's Auto Services","kind":"car_repair","lat":37.813816,"lon":-122.264995}
+{"type":"poi","name":"Chevron","kind":"fuel","lat":37.809235,"lon":-122.255650}
+{"type":"poi","name":"7-Eleven","kind":"convenience","lat":37.812373,"lon":-122.261404}
+{"type":"poi","name":"Old West Junction","kind":"attraction","lat":37.808123,"lon":-122.260980}
+{"type":"poi","name":"Johnny Appleseed's Cafe","kind":"restaurant","lat":37.808500,"lon":-122.260870}
+{"type":"poi","name":"Noah's Ark","kind":"attraction","lat":37.808705,"lon":-122.260508}
+{"type":"poi","name":"Humpty Dumpty Wall Restrooms","kind":"toilets","lat":37.808873,"lon":-122.259604}
+{"type":"poi","name":"The Merry Miller Pond","kind":"attraction","lat":37.808563,"lon":-122.260081}
+{"type":"poi","name":"The Emerald City Stage","kind":"theatre","lat":37.809167,"lon":-122.260481}
+{"type":"poi","name":"The Alice in Wonderland Tunnel","kind":"attraction","lat":37.808866,"lon":-122.260733}
+{"type":"poi","name":"Cinderella's Party Area","kind":"picnic_site","lat":37.809439,"lon":-122.260808}
+{"type":"poi","name":"Wishing Well","kind":"attraction","lat":37.808782,"lon":-122.260087}
+{"type":"poi","name":"The Chapel of Peace","kind":"attraction","lat":37.809070,"lon":-122.260730}
+{"type":"poi","name":"Play Island","kind":"attraction","lat":37.808907,"lon":-122.260931}
+{"type":"poi","name":"Emerald City Lawn","kind":"grass","lat":37.809267,"lon":-122.260548}
+{"type":"poi","name":"Alice's Reading Room","kind":"library","lat":37.809167,"lon":-122.260288}
+{"type":"poi","name":"The Crooked Man's House","kind":"attraction","lat":37.809227,"lon":-122.260741}
+{"type":"poi","name":"Japanese Party Area","kind":"picnic_site","lat":37.809381,"lon":-122.260419}
+{"type":"poi","name":"Circus Party Area","kind":"picnic_site","lat":37.809159,"lon":-122.260065}
+{"type":"poi","name":"Oasis Coffee Garden","kind":"cafe","lat":37.809381,"lon":-122.256154}
+{"type":"poi","name":"CityLift Automated Parking Structure","kind":"parking","lat":37.813367,"lon":-122.266993}
+{"type":"poi","name":"Cafenated Kiosk","kind":"cafe","lat":37.812729,"lon":-122.266411}
+{"type":"poi","name":"Propel","kind":"fuel","lat":37.809252,"lon":-122.255835}
+{"type":"poi","name":"Lovely’s","kind":"fast_food","lat":37.812793,"lon":-122.264464}
+{"type":"poi","name":"Humphry Slocombe Ice Cream","kind":"ice_cream","lat":37.812823,"lon":-122.266551}
+{"type":"poi","name":"Sally Rutherford Thales Memorial Fountain","kind":"fountain","lat":37.808053,"lon":-122.257171}
+{"type":"poi","name":"Bay Wheels","kind":"bicycle_rental","lat":37.808924,"lon":-122.256766}
+{"type":"poi","name":"Flowers for Joy","kind":"florist","lat":37.808288,"lon":-122.266242}
+{"type":"poi","name":"Mid-Century Monster","kind":"artwork","lat":37.807019,"lon":-122.260612}
+{"type":"poi","name":"USS Maine Torpedo Port","kind":"artwork","lat":37.810983,"lon":-122.261336}
+{"type":"poi","name":"Eva Whitmore","kind":"doctors","lat":37.811816,"lon":-122.260918}
+{"type":"poi","name":"VIP Auto Collision Repair","kind":"car_repair","lat":37.813944,"lon":-122.262718}
+{"type":"poi","name":"Dragon Slide","kind":"playground","lat":37.808767,"lon":-122.260516}
+{"type":"poi","name":"Jack and Jill Hill","kind":"amusement_ride","lat":37.808680,"lon":-122.259885}
+{"type":"poi","name":"Anansi's Magic Web Ferris Wheel","kind":"playground","lat":37.808417,"lon":-122.259786}
+{"type":"poi","name":"Zipcar","kind":"car_sharing","lat":37.806546,"lon":-122.266575}
+{"type":"poi","name":"Besa Quality Auto Care","kind":"car_repair","lat":37.813100,"lon":-122.264818}
+{"type":"poi","name":"Gregory's Gourmet Desserts","kind":"bakery","lat":37.811664,"lon":-122.264005}
+{"type":"poi","name":"Perma Cuts","kind":"hairdresser","lat":37.805524,"lon":-122.266599}
+{"type":"poi","name":"Miracles Hair Studio","kind":"hairdresser","lat":37.805497,"lon":-122.266527}
+{"type":"poi","name":"Nailphoria","kind":"beauty","lat":37.805558,"lon":-122.266677}
+{"type":"poi","name":"Adom Hair Braiding","kind":"hairdresser","lat":37.805469,"lon":-122.266457}
+{"type":"poi","name":"Beauty Nail","kind":"beauty","lat":37.805493,"lon":-122.267106}
+{"type":"poi","name":"Lake Merritt Dental","kind":"dentist","lat":37.807059,"lon":-122.266320}
+{"type":"poi","name":"Water Writes Mural","kind":"artwork","lat":37.810235,"lon":-122.267066}
+{"type":"poi","name":"Fritz and Peters","kind":"car_repair","lat":37.814306,"lon":-122.265636}
+{"type":"poi","name":"25th Street Recording","kind":"studio","lat":37.814333,"lon":-122.265816}
+{"type":"poi","name":"Peoples Barber & Shop","kind":"hairdresser","lat":37.812901,"lon":-122.266443}
+{"type":"poi","name":"Children's Memorial Statue","kind":"artwork","lat":37.805183,"lon":-122.258866}
+{"type":"poi","name":"Real Cutie Pies","kind":"bakery","lat":37.805522,"lon":-122.267168}
+{"type":"poi","name":"Chubby Up Mini Mart","kind":"convenience","lat":37.811320,"lon":-122.266419}
+{"type":"poi","name":"Gift Shop","kind":"gift","lat":37.809051,"lon":-122.259851}
+{"type":"poi","name":"The Cathedral Shop","kind":"gift","lat":37.810197,"lon":-122.263477}
+{"type":"poi","name":"Rotary Nature Center Totem Pole","kind":"artwork","lat":37.806641,"lon":-122.256940}
+{"type":"poi","name":"Order of Malta Clinic","kind":"clinic","lat":37.809496,"lon":-122.263407}
+{"type":"poi","name":"One Click Travel","kind":"travel_agency","lat":37.807784,"lon":-122.265118}
+{"type":"poi","name":"Oakland A's Stomper Mural","kind":"artwork","lat":37.807286,"lon":-122.266800}
+{"type":"poi","name":"Makewatz","kind":"artwork","lat":37.807836,"lon":-122.263938}
+{"type":"poi","name":"Small Trans Depot","kind":"childcare","lat":37.810843,"lon":-122.264475}
+{"type":"poi","name":"My Salon Suite","kind":"hairdresser","lat":37.812526,"lon":-122.264161}
+{"type":"poi","name":"STRIDES of Alameda County","kind":"social_facility","lat":37.805380,"lon":-122.265440}
+{"type":"poi","name":"3 Point Celebration","kind":"artwork","lat":37.812626,"lon":-122.265708}
+{"type":"poi","name":"Tarts de Feybesse","kind":"bakery","lat":37.813107,"lon":-122.262884}
+{"type":"poi","name":"James and The Giant Cupcake","kind":"bakery","lat":37.812274,"lon":-122.261141}
+{"type":"poi","name":"Solara House","kind":"social_facility","lat":37.811914,"lon":-122.261661}
+{"type":"poi","name":"Wild One Boutique","kind":"gift","lat":37.811460,"lon":-122.264668}
+{"type":"poi","name":"Skaia POPOS","kind":"park","lat":37.805630,"lon":-122.266787}
+{"type":"poi","name":"Thomas L. Berkley Way & Webster Street","kind":"bus_stop","lat":37.808472,"lon":-122.265853}
+{"type":"poi","name":"Harrison Street & 21st Street","kind":"bus_stop","lat":37.809530,"lon":-122.263048}
+{"type":"poi","name":"Grand Avenue & Harrison Street","kind":"bus_stop","lat":37.811041,"lon":-122.262672}
+{"type":"poi","name":"Broadway & Grand Avenue","kind":"bus_stop","lat":37.811801,"lon":-122.266400}
+{"type":"poi","name":"Grand Avenue & Valdez Street","kind":"bus_stop","lat":37.811399,"lon":-122.264609}
+{"type":"poi","name":"Thomas L. Berkley Way & Webster Street","kind":"bus_stop","lat":37.808186,"lon":-122.265751}
+{"type":"poi","name":"Grand Avenue & Harrison Street","kind":"bus_stop","lat":37.810820,"lon":-122.262699}
+{"type":"poi","name":"Broadway & West Grand Avenue","kind":"bus_stop","lat":37.811189,"lon":-122.267066}
+{"type":"poi","name":"Grand Avenue & Webster Street","kind":"bus_stop","lat":37.811363,"lon":-122.265607}
+{"type":"poi","name":"Webster Street & Thomas L. Berkley Way","kind":"bus_stop","lat":37.808597,"lon":-122.266172}
+{"type":"poi","name":"Broadway & 22nd Street","kind":"bus_stop","lat":37.810814,"lon":-122.267017}
+{"type":"poi","name":"Grand Avenue & Bellevue Avenue","kind":"bus_stop","lat":37.809856,"lon":-122.259692}
+{"type":"poi","name":"Grand Avenue & Park View Terrace","kind":"bus_stop","lat":37.809824,"lon":-122.259220}
+{"type":"poi","name":"Grand Avenue & Perkins Street","kind":"bus_stop","lat":37.809087,"lon":-122.255857}
+{"type":"poi","name":"Grand Avenue & Perkins Street","kind":"bus_stop","lat":37.808845,"lon":-122.256428}
+{"type":"poi","name":"Harrison Street & Grand Avenue","kind":"bus_stop","lat":37.811199,"lon":-122.262098}
+{"type":"poi","name":"Harrison Street & Grand Avenue","kind":"bus_stop","lat":37.811106,"lon":-122.262458}
+{"type":"poi","name":"Harrison Street & Bay Place","kind":"bus_stop","lat":37.812469,"lon":-122.261530}
+{"type":"poi","name":"Broadway & 25th Street","kind":"bus_stop","lat":37.814039,"lon":-122.264987}
+{"type":"poi","name":"Broadway & 25th Street","kind":"bus_stop","lat":37.813969,"lon":-122.265352}
+{"type":"poi","name":"Harrison Street & Westlake Middle School","kind":"bus_stop","lat":37.814062,"lon":-122.260567}
+{"type":"poi","name":"Grand Avenue & Webster Street","kind":"bus_stop","lat":37.811225,"lon":-122.265151}
+{"type":"poi","name":"Flecto Carousel","kind":"playground","lat":37.808498,"lon":-122.260602}
+{"type":"poi","name":"Aesop's Playhouse","kind":"playground","lat":37.808140,"lon":-122.260513}
+{"type":"poi","name":"Alice's Wonder-Go-Round","kind":"playground","lat":37.809237,"lon":-122.260215}
+{"type":"poi","name":"The Jolly Roger Pirate Ship","kind":"playground","lat":37.809314,"lon":-122.260856}
+{"type":"poi","name":"Clocktower Slide","kind":"playground","lat":37.808669,"lon":-122.260046}

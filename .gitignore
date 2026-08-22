@@ -1,0 +1,37 @@
+# Python caches
+__pycache__/
+*.py[cod]
+
+# Local virtual environments / toolchains
+cop_pipeline/
+.android-toolchain/
+
+# Frontend/backend/android build outputs
+navigation/frontend/dist/
+navigation/backend/dist/
+navigation/backend/*.class
+navigation/android/**/build/
+navigation/android/app/build/
+navigation/android/.gradle/
+
+# Local temp artifacts
+buffer_chunk.wav
+buffer_chunk.wav.ts
+**/buffer_chunk.wav
+**/buffer_chunk.wav.ts
+pipeline_stress_fallback_report.csv
+
+# UI dumps / adb artifacts / screenshots
+window_dump*.xml
+**/window_dump*.xml
+wireless_*.xml
+scout_query_result.png
+CLUSTERTEST.png
+*.png
+!docs/**/*.png
+
+# Local device / debug notes
+moto_*.txt
+mobile_status.txt
+TERMIUS_DEBUG_LOG_GUIDE.txt
+docs/guides/TERMIUS_DEBUG_LOG_GUIDE.txt

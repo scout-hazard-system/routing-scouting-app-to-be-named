@@ -1,0 +1,6 @@
+{"meta":{"state":"WA","z":15,"x":5427,"y":11535,"zhs":{"key":"z/15/5427/11535|h3/9/nv9n/pfi0|s2/12/f2/20v/29h","z_key":"z/15/5427/11535","h_key":"h3/9/nv9n/pfi0","s_key":"s2/12/f2/20v/29h"},"source":"planet","roads":5,"buildings":0,"areas":0,"pois":0}}
+{"type":"road","class":"tertiary","name":"Thrall Road","oneway":false,"pts":"46.926857,-120.369245;46.926876,-120.377369"}
+{"type":"road","class":"residential","name":"Upper Badger Pocket Road","oneway":false,"pts":"46.920138,-120.376677;46.920164,-120.376728;46.920572,-120.377369"}
+{"type":"road","class":"residential","name":"Thrall Road","oneway":false,"pts":"46.926841,-120.366039;46.926857,-120.369245"}
+{"type":"road","class":"residential","name":"Hamilton Road","oneway":false,"pts":"46.920138,-120.369419;46.926857,-120.369245;46.927876,-120.369234"}
+{"type":"road","class":"service","name":"","oneway":false,"pts":"46.926843,-120.366299;46.927171,-120.366281;46.927345,-120.366254;46.927378,-120.366214;46.927394,-120.366165;46.927401,-120.366039"}
