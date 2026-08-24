@@ -1,3 +1,19 @@
+/**
+ * Copyright 2026 Scout Project Contributors
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 const state = {
   metrics: {
     captured: 0,
@@ -863,11 +879,30 @@ function refreshBackendMapPreview(lat, lon, opts = {}) {
   setBackendMapStatus(`backend-map: render @ ${lat.toFixed(4)}, ${lon.toFixed(4)} r=${Math.round(radiusM)}m`);
   refreshBackendMapStatus();
 }
+
+function ensureOsmAttributionWatermark() {
+  const shell = document.querySelector(".map-shell");
+  if (!shell) return null;
+  let el = document.getElementById("osmAttributionWatermark");
+  if (el) return el;
+  el = document.createElement("aside");
+  el.id = "osmAttributionWatermark";
+  el.className = "osm-attribution-watermark";
+  el.setAttribute("aria-label", "OpenStreetMap attribution");
+  el.innerHTML =
+    '<a class="osm-attribution-link" href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">' +
+    "© OpenStreetMap contributors" +
+    "</a>";
+  shell.appendChild(el);
+  return el;
+}
+
 function initIntegratedMap() {
   if (!ui.integratedMap) return;
   document.querySelector(".map-card")?.classList.add("isometric-mode");
   ensureIsometricSurface();
   ensureMapLoadingOverlay();
+  ensureOsmAttributionWatermark();
   updateFollowButtonUi();
   refreshBackendMapPreview(34.0522, -118.2437, {
     force: true,

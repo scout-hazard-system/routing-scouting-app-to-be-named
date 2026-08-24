@@ -83,3 +83,7 @@ echo "== smoke: $VET_MODEL vet task =="
 "$OLLAMA_BIN" run "$VET_MODEL" $'TASK: VET\nTranscript: Unit 23 running radar on I-5 northbound near mile marker 212.\nProposed alert: ALERT: active radar enforcement on I-5 northbound near mile marker 212.'
 
 echo "== scout LLM set build complete =="
+
+# Unified high-context Scout (Hermes-class single brain). Optional:
+#   bash "$(dirname "$0")/../unified/build_hermes_hc.sh"
+# Tags: scout-hermes-hc1.0.0 (100k), scout-hermes-hc1.0.0-64k (64k floor)

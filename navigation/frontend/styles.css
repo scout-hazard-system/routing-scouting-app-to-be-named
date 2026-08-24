@@ -1,3 +1,19 @@
+/**
+ * Copyright 2026 Scout Project Contributors
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 :root {
   --bg: #0b1020;
   --bg-top: #111933;
@@ -620,5 +636,50 @@ button:focus-visible {
   .map-quick-btn {
     padding: 6px 10px;
     font-size: 0.72rem;
+  }
+}
+
+
+/* Floating OpenStreetMap contributor attribution (device/map post-display) */
+.osm-attribution-watermark {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  z-index: 550;
+  max-width: min(70%, 280px);
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(80, 104, 148, 0.55);
+  background: rgba(8, 14, 26, 0.78);
+  box-shadow: 0 6px 16px rgba(3, 8, 18, 0.35);
+  backdrop-filter: blur(6px);
+  pointer-events: auto;
+}
+.osm-attribution-link {
+  color: #d5e4ff;
+  text-decoration: none;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.15px;
+  white-space: nowrap;
+}
+.osm-attribution-link:hover,
+.osm-attribution-link:focus-visible {
+  color: #ffffff;
+  text-decoration: underline;
+  outline: none;
+}
+.map-card.isometric-mode .osm-attribution-watermark {
+  bottom: 12px;
+  right: 12px;
+}
+@media (max-width: 900px) {
+  .osm-attribution-watermark {
+    right: 8px;
+    bottom: 8px;
+    padding: 5px 8px;
+  }
+  .osm-attribution-link {
+    font-size: 0.68rem;
   }
 }

@@ -1,11 +1,9 @@
 [Desktop Entry]
-Version=1.0
 Type=Application
 Name=Scout Crew
-Comment=Local CrewAI control plane + terminal (Ollama only)
-Exec=/home/gibi/Desktop/scout_crew/bin/scout-gui
+Comment=Hermes + CrewAI + Blackboard (local Ollama)
+Exec=/home/gibi/.local/bin/scout-gui
 Icon=/home/gibi/Desktop/scout_crew/assets/scout.png
 Terminal=false
-Categories=Development;Utility;
+Categories=Development;
 StartupNotify=true
-Path=/home/gibi/Desktop/scout_crew

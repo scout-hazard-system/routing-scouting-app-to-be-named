@@ -1,0 +1,8 @@
+Scout Hermes unified model definitions
+Copyright 2026 Scout Project Contributors
+
+Licensed under the Apache License, Version 2.0.
+
+Model base weights referenced by Modelfiles (for example Qwen3 and Llama) are
+subject to their upstream model licenses and are not redistributed by these
+Modelfile definitions alone.

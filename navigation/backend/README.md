@@ -1,4 +1,6 @@
 # Java Backend
+
+**License:** Apache License, Version 2.0. See [`LICENSE`](LICENSE) and [`NOTICE`](NOTICE).
 Current API/runtime reference for the hardened backend serving frontend/mobile/scanner integrations.
 ## Overview
 `BackendServer.java` is the primary backend process. It provides:
