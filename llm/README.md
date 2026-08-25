@@ -64,3 +64,13 @@ If scout models are not installed, client logic falls back to `qwen3:8b` prompt-
 - `build/` — build + evaluation scripts
 
 Build targets the highest complete local iterations present on disk (`scout-core1.0.5`, `scout-vet1.0.6`, `scout-rank`). The client may pin newer tags and falls back when those models are not installed.
+
+## Specialist template note
+
+Pipeline specialists (`scout-alert`, `scout-intel`, `scout-vet*`, `scout-rank`, `scout-core*`, `scout-dev`) are built `FROM qwen3:8b` with a Modelfile **TEMPLATE** that forces `/no_think` so CrewAI's OpenAI-compatible client receives non-empty contract outputs. Hermes-hc keeps default Qwen thinking behavior.
+
+Rebuild after Modelfile edits:
+
+```bash
+bash llm/build/build_llm_set.sh
+```
