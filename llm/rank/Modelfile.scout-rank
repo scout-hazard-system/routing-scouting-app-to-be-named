@@ -1,7 +1,7 @@
 # scout-rank - proprietary radio channel rerank model for the channel selector
-# Base: llama3.1 (local Ollama). Build: ollama create scout-rank -f Modelfile.scout-rank
+# Base: qwen3:8b (Meta-free lineage; same family as scout-hermes-hc) (local Ollama). Build: ollama create scout-rank -f Modelfile.scout-rank
 # Used by channel_selector.py --ollama-model scout-rank (prompt is the selector's JSON payload).
-FROM llama3.1
+FROM qwen3:8b
 
 PARAMETER temperature 0
 PARAMETER top_p 0.9

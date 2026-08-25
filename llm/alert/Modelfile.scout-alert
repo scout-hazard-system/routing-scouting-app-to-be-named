@@ -1,8 +1,8 @@
 # scout-alert - proprietary enforcement alert decision model
-# Base: llama3.1 (local Ollama). Build: ollama create scout-alert -f Modelfile.scout-alert
+# Base: qwen3:8b (Meta-free lineage; same family as scout-hermes-hc) (local Ollama). Build: ollama create scout-alert -f Modelfile.scout-alert
 # Few-shot examples below are deliberately distinct from llm_set/eval_cases.json
 # so eval results stay honest. Keep it that way when editing.
-FROM llama3.1
+FROM qwen3:8b
 
 PARAMETER temperature 0
 PARAMETER top_p 0.9

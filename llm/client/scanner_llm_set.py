@@ -5,7 +5,7 @@ The scout set is built from llm_set/Modelfile.* (see llm_set/build_llm_set.sh):
 - scout-intel: structured dispatch intel extraction (strict JSON)
 - scout-rank:  channel selector reranking (strict JSON; used via channel_selector.py)
 
-Every query gracefully falls back to the base model (llama3.1) with an inline
+Every query gracefully falls back to the base model (qwen3:8b) with an inline
 system prompt when the scout model is not installed, so the pipeline keeps
 working before/without `llm_set/build_llm_set.sh` having been run.
 """
@@ -17,7 +17,7 @@ import requests
 
 OLLAMA_GENERATE_URL = "http://localhost:11434/api/generate"
 OLLAMA_TAGS_URL = "http://localhost:11434/api/tags"
-BASE_MODEL = "llama3.1"
+BASE_MODEL = "qwen3:8b"
 
 ALERT_MODEL = "scout-alert"
 INTEL_MODEL = "scout-intel"

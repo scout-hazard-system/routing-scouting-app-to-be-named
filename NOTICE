@@ -41,6 +41,17 @@ OpenStreetMap, you must also comply with ODbL share-alike and attribution
 obligations for that database content. The Apache-2.0 license on this
 repository's original source code does not re-license OpenStreetMap data.
 
+
+-------------------------------------------------------------------------------
+Model weights (Scout inference lineage)
+-------------------------------------------------------------------------------
+
+Default Scout / Ollama model definitions in this monorepo use the Qwen3 family
+(qwen3:8b and derived specialist / hermes-hc tags). Model weights are subject
+to their upstream Qwen terms and are separate from this repository's Apache-2.0
+source license. This monorepo does not distribute Meta Llama weights and does
+not include a Llama Community License.
+
 -------------------------------------------------------------------------------
 Other third-party components (not modified upstream licenses)
 -------------------------------------------------------------------------------

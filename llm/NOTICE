@@ -1,0 +1,10 @@
+Scout LLM set (Modelfiles, build scripts, local clients)
+Copyright 2026 Scout Project Contributors
+
+Licensed under the Apache License, Version 2.0.
+See LICENSE in the monorepo root or nested package LICENSE files.
+
+Default base model for all Scout tags: qwen3:8b (Qwen3 lineage).
+Model weights are separate from this source license. Comply with applicable
+Qwen terms when downloading or serving weights. Meta Llama weights and the
+Llama Community License are not part of the default Scout set.

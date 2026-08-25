@@ -1,4 +1,5 @@
 FROM scout-core1.0.5
+# Base chain: scout-core1.0.5 <- qwen3:8b (not Llama)
 
 # Development / process-upkeep specialist. Slightly warmer than core for design tradeoffs,
 # still deterministic enough for code and ops checklists.
@@ -80,7 +81,7 @@ MESSAGE assistant """## Plan
 
 ### local_llms.py (prefs)
 ```python
-"dev": ["scout-dev", "scout-core1.0.5", "llama3.1"],
+"dev": ["scout-dev", "scout-core1.0.5", "qwen3:8b"],
 ```
 ```python
 "dev": "OLLAMA_MODEL_DEV",

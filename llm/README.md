@@ -1,4 +1,7 @@
 # Scout LLM Set
+
+**License:** Apache-2.0 (source/Modelfiles). Default weights: Qwen3 (`qwen3:8b`). See `LICENSE` and `NOTICE`. This set does not ship Meta Llama weights or a Llama Community License.
+
 Versioned local Ollama model set used by scanner + navigation assistant flows with deterministic single-client behavior.
 
 ## Current baseline models
@@ -7,7 +10,7 @@ Versioned local Ollama model set used by scanner + navigation assistant flows wi
 - `scout-rank` — Broadcastify candidate reranking
 
 Base model:
-- `llama3.1` (fallback when scout artifacts are unavailable)
+- `qwen3:8b` (Qwen3 base; fallback when scout artifacts are unavailable)
 
 ## Build
 ```bash
@@ -44,7 +47,7 @@ Flow per transcript:
 6. selector rerank uses `scout-rank` when enabled
 
 ## Fallback behavior
-If scout models are not installed, client logic falls back to `llama3.1` prompt-mode behavior to avoid runtime hard failures.
+If scout models are not installed, client logic falls back to `qwen3:8b` prompt-mode behavior to avoid runtime hard failures.
 
 ## Operational guidance
 - Keep model version bumps explicit and intentional.

@@ -5,7 +5,7 @@ Deployment model:
 - scout-vet1.0.8: scanner alert/intel/vet tasks
 - scout-rank: channel selector reranking
 
-Every query gracefully falls back to the base model (llama3.1) with inline
+Every query gracefully falls back to the base model (qwen3:8b) with inline
 system prompts when the preferred scout model is not installed.
 """
 
@@ -16,7 +16,7 @@ import requests
 
 OLLAMA_GENERATE_URL = "http://localhost:11434/api/generate"
 OLLAMA_TAGS_URL = "http://localhost:11434/api/tags"
-BASE_MODEL = "llama3.1"
+BASE_MODEL = "qwen3:8b"
 
 CORE_MODEL = "scout-core1.0.8"
 ALERT_MODEL = "scout-vet1.0.8"

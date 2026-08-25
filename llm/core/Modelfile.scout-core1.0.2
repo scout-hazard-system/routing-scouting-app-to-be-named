@@ -1,6 +1,6 @@
 # scout-core1.0.2 - unified proprietary scanner model (alert + intel + nav tasks)
-# Base: llama3.1 (local Ollama). Build: ollama create scout-core1.0.2 -f Modelfile.scout-core1.0.2
-FROM llama3.1
+# Base: qwen3:8b (Qwen3 lineage; not Llama/Meta). Build: ollama create scout-core1.0.2 -f Modelfile.scout-core1.0.2
+FROM qwen3:8b
 
 PARAMETER temperature 0
 PARAMETER top_p 0.9

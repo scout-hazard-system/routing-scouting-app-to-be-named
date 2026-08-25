@@ -3,6 +3,8 @@ Copyright 2026 Scout Project Contributors
 
 Licensed under the Apache License, Version 2.0.
 
-Model base weights referenced by Modelfiles (for example Qwen3 and Llama) are
-subject to their upstream model licenses and are not redistributed by these
-Modelfile definitions alone.
+Modelfile definitions and build scripts in this directory are Apache-2.0.
+Referenced base weights are Qwen3 (qwen3:8b). Those weights are subject to
+their upstream Qwen model terms and are not redistributed by these Modelfile
+definitions alone. This directory does not reference or license Meta Llama
+materials.

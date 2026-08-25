@@ -1,18 +1,23 @@
 #!/usr/bin/env bash
 # Build the proprietary "scout" LLM set from local Modelfiles.
-# Requires: ollama running with the base model (llama3.1) pulled.
+# Requires: ollama running with base model qwen3:8b pulled
+# (same Meta-free lineage as scout-hermes-hc). No Llama weights.
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 LLM_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 OLLAMA_BIN="${OLLAMA_BIN:-ollama}"
+BASE_MODEL="${SCOUT_BASE_MODEL:-qwen3:8b}"
 
 # Highest complete local iterations present after reorg.
 # Client may pin newer tags; missing tags fall back at runtime.
+# alert/intel are standalone tags; core/vet/rank/dev are the main set.
 MODELS=(
   "scout-core1.0.5:core"
   "scout-rank:rank"
   "scout-vet1.0.6:vet"
+  "scout-alert:alert"
+  "scout-intel:intel"
   "scout-dev:dev"
 )
 
@@ -37,6 +42,13 @@ find_modelfile() {
 if ! command -v "$OLLAMA_BIN" >/dev/null 2>&1; then
   echo "error: ollama binary not found (set OLLAMA_BIN)" >&2
   exit 1
+fi
+
+echo "== ensuring base model $BASE_MODEL is available =="
+if ! "$OLLAMA_BIN" list 2>/dev/null | awk '{print $1}' | grep -qx "$BASE_MODEL" \
+  && ! "$OLLAMA_BIN" list 2>/dev/null | awk '{print $1}' | grep -qx "${BASE_MODEL}:latest"; then
+  echo "pulling $BASE_MODEL ..."
+  "$OLLAMA_BIN" pull "$BASE_MODEL"
 fi
 
 for entry in "${MODELS[@]}"; do

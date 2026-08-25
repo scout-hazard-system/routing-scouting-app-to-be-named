@@ -12,7 +12,7 @@ Usage:
   python3 llm/build/eval_llm_set.py                 # full eval
   python3 llm/build/eval_llm_set.py --alert-only
   python3 llm/build/eval_llm_set.py --intel-only
-  python3 llm/build/eval_llm_set.py --alert-model llama3.1   # compare baselines
+  python3 llm/build/eval_llm_set.py --alert-model qwen3:8b   # compare baselines
   python3 llm/build/eval_llm_set.py --json /tmp/report.json  # machine-readable report
 
 Exit code 0 when alert accuracy >= --threshold (default 0.9), else 1.
