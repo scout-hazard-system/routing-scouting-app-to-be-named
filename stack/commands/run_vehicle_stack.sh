@@ -25,6 +25,9 @@ STOP_TIMEOUT_SECONDS="${STOP_TIMEOUT_SECONDS:-20}"
 DOCKER_STOP_TIMEOUT_SECONDS="${DOCKER_STOP_TIMEOUT_SECONDS:-45}"
 ENABLE_PIPELINE_AUTOSTART="${ENABLE_PIPELINE_AUTOSTART:-true}"
 JAVA_BACKEND_HOST="${JAVA_BACKEND_HOST:-0.0.0.0}"
+FRONTEND_DEV_HOST="${FRONTEND_DEV_HOST:-0.0.0.0}"
+PLANET_PMTILES_URL="${PLANET_PMTILES_URL:-https://build.protomaps.com/20260811.pmtiles}"
+SCOUT_NETWORK_ADVERTISE_HOST="${SCOUT_NETWORK_ADVERTISE_HOST:-}"
 PYTHON_BIN="${PYTHON_BIN:-$DEFAULT_PYTHON_BIN}"
 PIPELINE_MODE="${PIPELINE_MODE:-broadcastify}"
 PIPELINE_EXTRA_ARGS="${PIPELINE_EXTRA_ARGS:-}"
@@ -274,7 +277,8 @@ start_frontend() {
   else
     frontend_cmd="$PYTHON_BIN $FRONTEND_DIR/dev_server.py"
   fi
-  nohup env FRONTEND_DEV_PORT="$FRONTEND_PORT" PIPELINE_LOG_PATH="$PIPELINE_LOG" \
+  nohup env FRONTEND_DEV_HOST="$FRONTEND_DEV_HOST" FRONTEND_DEV_PORT="$FRONTEND_PORT" \
+    PIPELINE_LOG_PATH="$PIPELINE_LOG" BACKEND_BASE_URL="http://127.0.0.1:${BACKEND_PORT}" \
     bash -lc "$frontend_cmd" >"$FRONTEND_LOG_FILE" 2>&1 &
   echo $! >"$FRONTEND_PID_FILE"
   if ! wait_for_http "http://127.0.0.1:${FRONTEND_PORT}/index.html" 30 0.25; then
@@ -359,10 +363,17 @@ start_all() {
     start_pipeline
   fi
   printf "Vehicle stack started.\n"
-  printf "UI: http://127.0.0.1:%s\n" "$FRONTEND_PORT"
-  printf "Backend health: http://127.0.0.1:%s/api/health\n" "$BACKEND_PORT"
-  printf "Map status: http://127.0.0.1:%s/api/map/status\n" "$BACKEND_PORT"
-  printf "Mobile bootstrap: http://127.0.0.1:%s/api/mobile/bootstrap\n" "$BACKEND_PORT"
+  local adv_host="127.0.0.1"
+  if [[ -n "${SCOUT_NETWORK_ADVERTISE_HOST}" ]]; then
+    adv_host="$SCOUT_NETWORK_ADVERTISE_HOST"
+  fi
+  printf "UI (local): http://127.0.0.1:%s\n" "$FRONTEND_PORT"
+  printf "UI (mesh):  http://%s:%s\n" "$adv_host" "$FRONTEND_PORT"
+  printf "Backend health: http://%s:%s/api/health\n" "$adv_host" "$BACKEND_PORT"
+  printf "Map status: http://%s:%s/api/map/status\n" "$adv_host" "$BACKEND_PORT"
+  printf "Map shard AZ: http://%s:%s/api/map/shard?state=AZ\n" "$adv_host" "$BACKEND_PORT"
+  printf "Mobile bootstrap: http://%s:%s/api/mobile/bootstrap\n" "$adv_host" "$BACKEND_PORT"
+  printf "Blackboard: http://%s:8765/health\n" "$adv_host"
   printf "Logs: %s and %s (pipeline: %s)\n" "$BACKEND_LOG_FILE" "$FRONTEND_LOG_FILE" "$PIPELINE_LOG"
 }
 

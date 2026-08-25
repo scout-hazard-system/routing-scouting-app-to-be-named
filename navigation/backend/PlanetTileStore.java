@@ -28,7 +28,7 @@ final class PlanetTileStore {
   private PlanetTileStore() {}
 
   static final String PLANET_PMTILES_URL =
-      System.getenv().getOrDefault("PLANET_PMTILES_URL", "https://build.protomaps.com/20260727.pmtiles");
+      System.getenv().getOrDefault("PLANET_PMTILES_URL", "https://build.protomaps.com/20260811.pmtiles");
   private static final String USER_AGENT =
       System.getenv().getOrDefault("EXTERNAL_HTTP_USER_AGENT", "scanner-stream-backend/0.1 (self-hosted)");
   private static final int RANGE_TIMEOUT_MS = 20000;

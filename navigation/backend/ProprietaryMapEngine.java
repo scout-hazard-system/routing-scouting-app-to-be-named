@@ -1360,6 +1360,8 @@ final class ProprietaryMapEngine {
       // report what we have
     }
     sb.append("],\"prefetch\":").append(prefetchStatusJson());
+    sb.append(",\"text_map_shards\":").append(textMapShardRootsJson());
+    sb.append(",\"network\":").append(networkAdvertiseJson());
     sb.append(",\"attribution\":\"").append(esc(ATTRIBUTION)).append("\"}");
     return sb.toString();
   }
@@ -1378,7 +1380,87 @@ final class ProprietaryMapEngine {
    * from the planet extract around the state's center outward, capped so a
    * single request stays light.
    */
-  static String startShardPrefetch(String stateCode, int maxTiles) {
+  static String networkAdvertiseJsonPublic() {
+    return networkAdvertiseJson();
+  }
+
+  private static String textMapShardRootsJson() {
+    String rootsEnv =
+        System.getenv()
+            .getOrDefault(
+                "SCOUT_TEXT_MAP_SHARD_ROOTS",
+                System.getProperty("user.home", "/home/gibi")
+                    + "/Desktop/vlm_text_map_shards,"
+                    + System.getProperty("user.home", "/home/gibi")
+                    + "/Desktop/vlm_text_map_shards_chunked");
+    String[] roots = rootsEnv.split(",");
+    StringBuilder sb = new StringBuilder();
+    sb.append('[');
+    boolean first = true;
+    for (String raw : roots) {
+      String root = raw == null ? "" : raw.trim();
+      if (root.isEmpty()) {
+        continue;
+      }
+      Path az = Path.of(root, "AZ");
+      long files = 0L;
+      long bytes = 0L;
+      boolean exists = Files.isDirectory(az);
+      if (exists) {
+        try (var stream = Files.walk(az)) {
+          for (Path f : (Iterable<Path>) stream.filter(Files::isRegularFile)::iterator) {
+            files++;
+            try {
+              bytes += Files.size(f);
+            } catch (IOException ignored) {
+              // skip
+            }
+          }
+        } catch (IOException ignored) {
+          // report empty
+        }
+      }
+      if (!first) {
+        sb.append(',');
+      }
+      first = false;
+      sb.append("{\"root\":\"").append(esc(root)).append("\",")
+          .append("\"az_path\":\"").append(esc(az.toString())).append("\",")
+          .append("\"az_exists\":").append(exists).append(',')
+          .append("\"az_files\":").append(files).append(',')
+          .append("\"az_bytes\":").append(bytes).append('}');
+    }
+    sb.append(']');
+    return sb.toString();
+  }
+
+  private static String networkAdvertiseJson() {
+    String host =
+        System.getenv()
+            .getOrDefault(
+                "SCOUT_NETWORK_ADVERTISE_HOST",
+                System.getenv().getOrDefault("JAVA_BACKEND_HOST", "0.0.0.0"));
+    String backendPort = System.getenv().getOrDefault("JAVA_BACKEND_PORT", "18080");
+    String frontendPort = System.getenv().getOrDefault("FRONTEND_PORT", "8787");
+    String blackboardPort = System.getenv().getOrDefault("SCOUT_BLACKBOARD_PORT", "8765");
+    String base = "http://" + host;
+    return "{"
+        + "\"advertise_host\":\"" + esc(host) + "\","
+        + "\"backend_port\":" + backendPort + ","
+        + "\"frontend_port\":" + frontendPort + ","
+        + "\"blackboard_port\":" + blackboardPort + ","
+        + "\"urls\":{"
+        + "\"health\":\"" + esc(base + ":" + backendPort + "/api/health") + "\","
+        + "\"map_status\":\"" + esc(base + ":" + backendPort + "/api/map/status") + "\","
+        + "\"map_shard_az\":\"" + esc(base + ":" + backendPort + "/api/map/shard?state=AZ") + "\","
+        + "\"map_shard_status\":\"" + esc(base + ":" + backendPort + "/api/map/shard?status=1") + "\","
+        + "\"mobile_bootstrap\":\"" + esc(base + ":" + backendPort + "/api/mobile/bootstrap") + "\","
+        + "\"frontend\":\"" + esc(base + ":" + frontendPort + "/") + "\","
+        + "\"blackboard_health\":\"" + esc(base + ":" + blackboardPort + "/health") + "\""
+        + "}}";
+  }
+
+    static String startShardPrefetch(String stateCode, int maxTiles) {
     double[] bounds = MapModel.stateBounds(stateCode);
     if (bounds == null) {
       return "{\"status\":\"error\",\"error\":\"unknown_state\"}";

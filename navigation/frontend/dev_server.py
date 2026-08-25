@@ -28,7 +28,7 @@ from urllib.parse import parse_qs, urlparse
 
 ROOT = Path(getattr(sys, "_MEIPASS", Path(__file__).resolve().parent))
 LOG_PATH = Path(os.environ.get("PIPELINE_LOG_PATH", "/tmp/pipeline_live_doordash.log"))
-HOST = os.environ.get("FRONTEND_DEV_HOST", "127.0.0.1")
+HOST = os.environ.get("FRONTEND_DEV_HOST", "0.0.0.0")
 PORT = int(os.environ.get("FRONTEND_DEV_PORT", "8787"))
 BACKEND_BASE_URL = os.environ.get("BACKEND_BASE_URL", "http://127.0.0.1:18080").rstrip("/")
 RECENT_EVENT_LIMIT = 120

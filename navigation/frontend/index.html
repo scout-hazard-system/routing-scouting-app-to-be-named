@@ -247,7 +247,12 @@
     </div>
   </div>
   <script>
-    window.SCANNER_API_BASE_URL = "http://127.0.0.1:18080";
+    (function () {
+      var host = window.location.hostname || "127.0.0.1";
+      var backendPort = "18080";
+      // Prefer same host as the UI (Tailscale/LAN/localhost) so map/shard APIs stay reachable.
+      window.SCANNER_API_BASE_URL = "http://" + host + ":" + backendPort;
+    })();
     window.SCANNER_GOOGLE_ROUTE_SEARCH_ENABLED = true;
     window.SCANNER_GOOGLE_MAPS_API_KEY = "";
   </script>

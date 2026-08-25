@@ -1885,7 +1885,8 @@ public final class BackendServer {
         + "\"map_status\":\"/api/map/status\","
         + "\"map_shard\":\"/api/map/shard\""
         + "},"
-        + "\"notes\":\"Compact endpoints are intended for low-bandwidth mobile companion clients.\""
+        + "\"network\":" + ProprietaryMapEngine.networkAdvertiseJsonPublic() + ","
+        + "\"notes\":\"Compact endpoints are intended for low-bandwidth mobile companion clients. Map/shard URLs are also advertised under network.urls.\""
         + "}";
   }
 
