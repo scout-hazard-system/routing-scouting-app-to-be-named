@@ -239,7 +239,7 @@ public final class BackendServer {
   private static final int MAX_REQUEST_BODY_BYTES =
       parseIntOrDefault(System.getenv("BACKEND_MAX_REQUEST_BODY_BYTES"), 65536);
   private static final String CORS_ALLOW_ORIGIN =
-      System.getenv().getOrDefault("BACKEND_CORS_ALLOW_ORIGIN", "");
+      System.getenv().getOrDefault("BACKEND_CORS_ALLOW_ORIGIN", "*");
   private static final boolean RESTRICT_ALL_API_ROUTES =
       !"false".equalsIgnoreCase(System.getenv().getOrDefault("BACKEND_RESTRICT_ALL_APIS", "true"));
   private static final String GLOBAL_API_KEY =
@@ -1472,6 +1472,10 @@ public final class BackendServer {
       long started = System.nanoTime();
       boolean success = false;
       try {
+        if (handleCorsPreflight(exchange)) {
+          success = true;
+          return;
+        }
         String rawQuery = exchange.getRequestURI() == null ? null : exchange.getRequestURI().getRawQuery();
         validateRawQuery(rawQuery);
         enforceGlobalApiAccess(path, exchange);
@@ -5195,9 +5199,7 @@ public final class BackendServer {
     headers.set("X-Content-Type-Options", "nosniff");
     headers.set("X-Frame-Options", "DENY");
     headers.set("Referrer-Policy", "no-referrer");
-    if (!CORS_ALLOW_ORIGIN.isBlank()) {
-      headers.set("Access-Control-Allow-Origin", CORS_ALLOW_ORIGIN);
-    }
+    applyCorsHeaders(headers, exchange);
     exchange.sendResponseHeaders(statusCode, payload.length);
     try (OutputStream os = exchange.getResponseBody()) {
       os.write(payload);
@@ -5225,9 +5227,7 @@ public final class BackendServer {
     headers.set("X-Content-Type-Options", "nosniff");
     headers.set("X-Frame-Options", "DENY");
     headers.set("Referrer-Policy", "no-referrer");
-    if (!CORS_ALLOW_ORIGIN.isBlank()) {
-      headers.set("Access-Control-Allow-Origin", CORS_ALLOW_ORIGIN);
-    }
+    applyCorsHeaders(headers, exchange);
     exchange.sendResponseHeaders(statusCode, payload.length);
     try (OutputStream os = exchange.getResponseBody()) {
       os.write(payload);
@@ -5242,9 +5242,7 @@ public final class BackendServer {
     headers.set("X-Content-Type-Options", "nosniff");
     headers.set("X-Frame-Options", "DENY");
     headers.set("Referrer-Policy", "no-referrer");
-    if (!CORS_ALLOW_ORIGIN.isBlank()) {
-      headers.set("Access-Control-Allow-Origin", CORS_ALLOW_ORIGIN);
-    }
+    applyCorsHeaders(headers, exchange);
     exchange.sendResponseHeaders(200, 0);
   }
 

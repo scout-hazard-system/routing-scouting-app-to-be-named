@@ -115,7 +115,26 @@ const GOOGLE_ROUTE_SEARCH_ENABLED = window.SCANNER_GOOGLE_ROUTE_SEARCH_ENABLED !
 const GOOGLE_MAPS_API_KEY = String(window.SCANNER_GOOGLE_MAPS_API_KEY || "").trim();
 const STARTUP_MAP_ZOOM_OUT_FACTOR = 50;
 
-const API_BASE = (window.SCANNER_API_BASE_URL || "").replace(/\/+$/, "");
+function resolveApiBase() {
+  const configured = String(window.SCANNER_API_BASE_URL || "").trim().replace(/\/+$/, "");
+  const pageHost = window.location.hostname || "127.0.0.1";
+  const pageIsLocal = pageHost === "127.0.0.1" || pageHost === "localhost";
+  const fallback = `http://${pageHost}:18080`;
+  if (!configured) return fallback;
+  try {
+    const u = new URL(configured);
+    const cfgLocal = u.hostname === "127.0.0.1" || u.hostname === "localhost";
+    // Peer browsers loading the mesh UI must not call their own localhost backend.
+    if (cfgLocal && !pageIsLocal) return fallback;
+    return configured;
+  } catch (_) {
+    return fallback;
+  }
+}
+const API_BASE = resolveApiBase();
+if (typeof console !== "undefined") {
+  console.info("[scanner] API_BASE=", API_BASE, "page=", window.location.origin);
+}
 const ui = {
   connStatus: document.getElementById("connStatus"),
   runStatus: document.getElementById("runStatus"),

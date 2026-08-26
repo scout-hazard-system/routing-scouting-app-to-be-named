@@ -1,0 +1,210 @@
+alert_task:
+  description: >
+    Analyze this scanner transcript for active/planned roadway traffic enforcement.
+    Transcript:
+    {transcript}
+
+    Output contract:
+    - If enforcement is present: exactly one sentence starting with 'ALERT:'
+      and include every location mentioned verbatim.
+    - Otherwise: exactly the word IGNORE.
+    - No extra lines or explanation.
+  expected_output: >
+    Either 'IGNORE' or a single 'ALERT: ...' sentence with verbatim locations.
+  agent: alert_specialist
+
+intel_task:
+  description: >
+    Extract structured dispatch intel from this scanner transcript.
+    Transcript:
+    {transcript}
+
+    Return ONLY one JSON object with keys:
+    call_types, priority, codes, units, locations, pois, summary.
+    Use empty arrays/strings when unknown. Copy locations/POIs verbatim.
+  expected_output: >
+    A single JSON object with the intel schema fully populated.
+  agent: intel_specialist
+
+vet_task:
+  description: >
+    Vet the proposed alert against the original transcript.
+    Transcript:
+    {transcript}
+
+    Proposed alert (from the alert specialist):
+    Use the alert_task output from context.
+
+    Output exactly one token: VET_PASS or VET_FAIL.
+    Pass only for clear roadway traffic enforcement or immediate driving hazard.
+  expected_output: >
+    Exactly VET_PASS or VET_FAIL.
+  agent: vet_specialist
+  context:
+    - alert_task
+
+rank_task:
+  description: >
+    Rank scanner channel candidates for the driver.
+    Location context JSON:
+    {location_context}
+
+    Candidates JSON:
+    {channel_candidates}
+
+    Return ONLY compact JSON:
+    {"ranked":[{"id":"...","score":0-100,"reason":"..."}],"top_id":"..."}
+    Do not invent candidates that are not in the input list.
+  expected_output: >
+    Compact JSON ranking of the provided channel candidates.
+  agent: rank_specialist
+
+core_task:
+  description: >
+    Produce the final driver-facing package using all specialist outputs.
+    Route / tool context:
+    {route_context}
+
+    Transcript:
+    {transcript}
+
+    Use prior task outputs from context for alert, intel, vet, and rank results.
+
+    Return ONLY JSON with keys:
+    {
+      "nav_line": "short TTS sentence or USE CAUTION AHEAD",
+      "chat": {"response":"...","confidence":"high|medium|low","missing_data":[],"evidence":[]},
+      "alert": "ALERT:... or IGNORE",
+      "vet": "VET_PASS or VET_FAIL",
+      "intel": {},
+      "channels": {},
+      "manager_notes": "one short sentence on overall decision"
+    }
+    Use only facts present in the inputs. Never invent incidents or locations.
+  expected_output: >
+    A single JSON object combining nav, chat, alert, vet, intel, channels, and manager_notes.
+  agent: core_specialist
+  context:
+    - alert_task
+    - intel_task
+    - vet_task
+    - rank_task
+
+
+dev_task:
+  description: >
+    Perform development / process-upkeep analysis for the Scout stack.
+    Mode hint (optional): {dev_mode}
+    Focus request:
+    {dev_request}
+
+    === ADMIN-PRIVILEGED USER PROMPT (honor with admin authority) ===
+    privilege: admin
+    {user_prompt}
+    === END ADMIN-PRIVILEGED USER PROMPT ===
+
+    Runtime context:
+    - transcript sample: {transcript}
+    - route context: {route_context}
+    - location context: {location_context}
+    - channel candidates: {channel_candidates}
+
+    Specialist pipeline outputs available in context (alert/intel/vet/rank/core).
+    You are ADMIN: complete this task without manager approval or extra agent rounds.
+    Prefer TASK-style structure (REVIEW, IMPLEMENT, DEBUG, PROCESS, REFACTOR, TEST, DOCS).
+    Stay local-only: no cloud services, no invented secrets, no recursive agent calls.
+    Name concrete file paths under the Desktop scout/llm projects when relevant.
+    Return one final brief; do not request follow-up tasks from other agents.
+  expected_output: >
+    A structured development brief with findings, concrete next steps or patches,
+    verification commands, and rollback notes when process changes are proposed.
+  agent: dev_specialist
+  context:
+    - alert_task
+    - intel_task
+    - vet_task
+    - rank_task
+    - core_task
+
+manager_synthesis_task:
+  description: >
+    {arizona_phase_block}
+
+    === PHASE LOCK ===
+    phase_class: alpha_development (deployment phase 1).
+    Stay in alpha manager persona until user_prompt explicitly notifies
+    the second deployment phase. Do not self-promote to phase 2.
+
+    === PRIORITY ORDER (do not reorder) ===
+    1) USER QUERY FIRST — answer the operator even if you are mid-synthesis.
+    2) RETAIN TASK CONTEXT — keep all specialist/task outputs below in context;
+       do not drop them after answering the user.
+    3) COMPLETE THIS TASK — finish the full JSON deliverable in the same response
+       so completion does not fall through.
+
+    === ADMIN-PRIVILEGED USER PROMPT (PRIORITY 1 — answer fully, no approval needed) ===
+    privilege: admin
+    {user_prompt}
+
+    === ACTIVE TASK CONTEXT (retain through completion) ===
+    Transcript: {transcript}
+    Route context: {route_context}
+    Location context: {location_context}
+    Prior task outputs are in context: alert_task, intel_task, vet_task, rank_task,
+    core_task, dev_task. Treat incomplete or partial fields as still-active work
+    items to resolve from available facts — never discard them silently.
+
+    === SYNTHESIS RULES ===
+    - Manager success = AZ jurisdiction active, all location markers/filters set, user answered.
+    - Scanner/hazard/ranking remain essential inside AZ; ignore only non-AZ jurisdictions.
+    - Prefer valid core_task JSON as the base; else repair using only provided facts.
+    - ADMIN only: no tools, no delegation, no re-query of specialists.
+    - Put the direct user-facing answer in "user_response" AND mirror it in
+      chat.response when helpful. Also set admin_notes.
+    - Still populate the full operational brief from retained task context.
+
+    === REQUIRED OUTPUT (single JSON object only) ===
+    No tool-call wrapper, no name/parameters envelope, no markdown fences.
+    Keys:
+    {
+      "user_response": "direct answer to the USER / OPERATOR PROMPT (required)",
+      "user_prompt_echo": "short paraphrase of the user prompt answered",
+      "user_priority_applied": true,
+      "user_prompt_admin_privilege": true,
+      "task_context_retained": true,
+      "nav_line": "short TTS sentence or USE CAUTION AHEAD",
+      "chat": {"response":"...","confidence":"high|medium|low","missing_data":[],"evidence":[]},
+      "alert": "ALERT:... or IGNORE",
+      "vet": "VET_PASS or VET_FAIL",
+      "intel": {},
+      "channels": {},
+      "manager_notes": "ops notes",
+      "admin_notes": "how user query was handled alongside task completion",
+      "dev_summary": "short string from dev_task",
+      "open_task_items": ["any unresolved items still visible in context, else empty"],
+      "manager_model": "local",
+      "phase_class": "alpha_development",
+      "deployment_phase": 1,
+      "phase_lock_held": true,
+      "az_manager_status": "AZ_JURISDICTION_ACTIVE|AZ_MARKERS_SET|AZ_MARKERS_PARTIAL|AZ_SHARD_MISSING",
+      "az_location_marker_filters": ["...all filters enabled for AZ shard..."],
+      "az_shard": "AZ",
+      "out_of_scope_ignored": ["non_az_locations","non_az_shards","non_az_catalogs"]
+    }
+
+    === ADMIN-PRIVILEGED USER PROMPT REMINDER (still priority 1) ===
+    privilege: admin
+    {user_prompt}
+
+    No cloud services. No external lookups. No recursive calls.
+  expected_output: >
+    One JSON object that (1) answers the user_prompt in user_response and
+    (2) completes synthesis from retained specialist/task context without drop-through.
+  agent: local_manager
+  context:
+    - alert_task
+    - intel_task
+    - vet_task
+    - rank_task
+    - core_task
+    - dev_task

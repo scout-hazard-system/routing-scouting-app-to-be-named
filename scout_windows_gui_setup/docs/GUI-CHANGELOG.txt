@@ -1,0 +1,7 @@
+Scout GUI update
+- Hermes tab selected at startup (Project Director chat via scout-hermes-hc)
+- Launch classic Hermes Electron GUI (hermes desktop)
+- Blackboard monitor tab (start server :8765, live stats/snapshot)
+- Pipeline monitor tab (blackboard pipeline + local_brief/dev_brief/roster)
+- Main chat roles: manager, core, hermes, scout-hermes-hc1.0.0
+- Models/roster refresh includes hermes assignment
