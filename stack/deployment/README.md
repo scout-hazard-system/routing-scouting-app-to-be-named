@@ -58,6 +58,16 @@ Backend:
 - `GET /api/health`
 - `GET /api/platform/providers/status`
 - `GET /api/platform/llm/status`
+- `GET /api/map/status` (expect `planet.ready=true` and `network.urls`)
+- `GET /api/map/shard?state=AZ` (state required)
+- `GET /api/map/shard?status=1`
+
+Mesh (replace host with `SCOUT_NETWORK_ADVERTISE_HOST`):
+- Frontend `http://<host>:8787/`
+- Blackboard `http://<host>:8765/health`
+- Ollama `http://<host>:11434/api/tags`
+
+See `docs/guides/FINAL_DEPLOYMENT_CONFIG.md` for the verified baseline.
 
 Mobile-facing:
 - `GET /api/mobile/bootstrap`

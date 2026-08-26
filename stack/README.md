@@ -39,3 +39,23 @@ Equivalents:
 ## Config
 Default config: `stack/config/vehicle_stack.env`
 Override with `VEHICLE_STACK_CONFIG_FILE=/path/to.env`.
+
+## Mesh / Tailscale broadcast
+
+Config keys in `stack/config/vehicle_stack.env`:
+
+- `JAVA_BACKEND_HOST=0.0.0.0`
+- `FRONTEND_DEV_HOST=0.0.0.0`
+- `SCOUT_NETWORK_ADVERTISE_HOST=<tailscale-ip>`
+- `PLANET_PMTILES_URL=https://build.protomaps.com/20260811.pmtiles`
+
+After `start`, the launcher prints local and mesh URLs. Live discovery:
+
+```bash
+curl -s http://127.0.0.1:18080/api/map/status | jq '.network,.planet.ready,.shards[]|select(.state=="AZ")'
+curl -s 'http://127.0.0.1:18080/api/map/shard?state=AZ'
+curl -s 'http://127.0.0.1:18080/api/map/shard?status=1'
+```
+
+Full runbook: `docs/guides/FINAL_DEPLOYMENT_CONFIG.md`
+
