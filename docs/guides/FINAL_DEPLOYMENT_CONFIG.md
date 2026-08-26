@@ -58,11 +58,25 @@ CrewAI mesh (`scout_crew/.env`):
 ```bash
 SCOUT_TAILSCALE_IP=100.78.191.61
 SCOUT_PEER_WINDOWS_IP=100.82.130.47
+SCOUT_PEER_OLLAMA_OPENAI=http://100.82.130.47:11434/v1
+OLLAMA_HOST_HERMES=http://100.82.130.47:11434
+OLLAMA_HOST_MANAGER=http://100.82.130.47:11434
 SCOUT_BLACKBOARD_URL=http://100.78.191.61:8765
 SCOUT_BLACKBOARD_HOST=0.0.0.0
 SCOUT_BLACKBOARD_PORT=8765
-OPENAI_BASE_URL=http://127.0.0.1:11434/v1   # or shared mesh Ollama
+OPENAI_BASE_URL=http://127.0.0.1:11434/v1   # specialists on Linux loopback
 ```
+
+### Peer Ollama listen lock (important)
+
+| Host | Tailscale IP | Ollama listen | Client URL |
+|------|--------------|---------------|------------|
+| pop-os (Linux hub) | `100.78.191.61` | `0.0.0.0:11434` (all ifaces) | `http://100.78.191.61:11434` or loopback |
+| gibdowsvista (Windows Hermes) | `100.82.130.47` | **Tailscale-only** | **only** `http://100.82.130.47:11434` |
+
+Windows peer Ollama does **not** answer on the LAN IP (e.g. `192.168.1.160:11434` times out).
+Always pin `SCOUT_PEER_WINDOWS_IP` / `SCOUT_PEER_OLLAMA_OPENAI` to the Tailscale `100.x` address.
+Verify with `scout-mesh-status` (expects TS win UP, LAN win DOWN).
 
 ## Map / sharding
 
@@ -113,6 +127,11 @@ cd scout_crew
 - Prefer mesh URLs from `/api/map/status` → `network.urls` instead of hardcoding localhost on peers.
 - Never call `/api/map/shard` without `?state=AZ` (returns `missing_state`).
 - AZ scope artifacts: `stack/config/jurisdiction_scope.active.json`, `scout_crew/output/az_manager_status.json` (runtime; may be gitignored).
+
+## Team deployment runbook
+
+Full step-by-step (Linux hub + Windows Hermes, lock checks, acceptance):
+**[`docs/guides/PEER_MESH_DEPLOYMENT.md`](PEER_MESH_DEPLOYMENT.md)**
 
 ## Related commits
 

@@ -49,6 +49,7 @@ cop_pipeline/bin/python3 llm/build/eval_llm_set.py --threshold 0.9
 Model iterations live under `llm/{core,vet,rank,alert,intel}/`.
 
 ## Documentation
+- Peer mesh team runbook: `docs/guides/PEER_MESH_DEPLOYMENT.md`
 - Final deployment / mesh config: `docs/guides/FINAL_DEPLOYMENT_CONFIG.md`
 - Stack commands: `stack/README.md`
 - Deployment: `stack/deployment/README.md`

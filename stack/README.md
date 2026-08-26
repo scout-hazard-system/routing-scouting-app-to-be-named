@@ -57,5 +57,6 @@ curl -s 'http://127.0.0.1:18080/api/map/shard?state=AZ'
 curl -s 'http://127.0.0.1:18080/api/map/shard?status=1'
 ```
 
-Full runbook: `docs/guides/FINAL_DEPLOYMENT_CONFIG.md`
+Full runbook: `docs/guides/FINAL_DEPLOYMENT_CONFIG.md`  
+Peer mesh team steps (Windows Hermes lock): `docs/guides/PEER_MESH_DEPLOYMENT.md`
 
