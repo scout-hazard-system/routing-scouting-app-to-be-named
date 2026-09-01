@@ -53,7 +53,7 @@ import javax.imageio.ImageIO;
 
 public final class BackendServer {
   private static final String DEFAULT_HOST = "0.0.0.0";
-  private static final int DEFAULT_PORT = 8080;
+  private static final int DEFAULT_PORT = 18080;
   private static final int RECENT_EVENT_LIMIT = 120;
   private static final int SNAPSHOT_EVENT_RETURN_LIMIT = 30;
   private static final int MOBILE_EVENT_RETURN_LIMIT = 12;
@@ -166,13 +166,13 @@ public final class BackendServer {
   private static final long LLM_STATUS_CACHE_TTL_MS =
       parseLongOrDefault(System.getenv("LLM_STATUS_CACHE_TTL_MS"), 5000L);
   private static final String SELECTOR_PYTHON_BIN =
-      System.getenv().getOrDefault("SELECTOR_PYTHON_BIN", "/home/gibi/Desktop/cop_pipeline/bin/python3");
+      System.getenv().getOrDefault("SELECTOR_PYTHON_BIN", repoPath("cop_pipeline/bin/python3"));
   private static final String SELECTOR_SCRIPT_PATH =
-      System.getenv().getOrDefault("SELECTOR_SCRIPT_PATH", "/home/gibi/Desktop/navigation/pipeline/channel_selector.py");
+      System.getenv().getOrDefault("SELECTOR_SCRIPT_PATH", repoPath("navigation/pipeline/channel_selector.py"));
   private static final String BROADCASTIFY_CATALOG_SCRIPT_PATH =
-      System.getenv().getOrDefault("BROADCASTIFY_CATALOG_SCRIPT_PATH", "/home/gibi/Desktop/navigation/pipeline/broadcastify_catalog_service.py");
+      System.getenv().getOrDefault("BROADCASTIFY_CATALOG_SCRIPT_PATH", repoPath("navigation/pipeline/broadcastify_catalog_service.py"));
   private static final String BROADCASTIFY_CHANNELS_FILE =
-      System.getenv().getOrDefault("BROADCASTIFY_CHANNELS_FILE", "/home/gibi/Desktop/stack/config/broadcastify_channels.sample.json");
+      System.getenv().getOrDefault("BROADCASTIFY_CHANNELS_FILE", repoPath("stack/config/broadcastify_channels.sample.json"));
   private static final String BROADCASTIFY_SELECTOR_CITY =
       System.getenv().getOrDefault("BROADCASTIFY_SELECTOR_CITY", "Sample City");
   private static final String BROADCASTIFY_SELECTOR_COUNTY =
@@ -201,11 +201,11 @@ public final class BackendServer {
   private static final int HELPER_PROCESS_TIMEOUT_SECONDS =
       parseIntOrDefault(System.getenv("BACKEND_HELPER_TIMEOUT_SECONDS"), 90);
   private static final String LLM_SET_CLIENT_SCRIPT_PATH =
-      System.getenv().getOrDefault("LLM_SET_CLIENT_SCRIPT_PATH", "/home/gibi/Desktop/llm_set_client.py");
+      System.getenv().getOrDefault("LLM_SET_CLIENT_SCRIPT_PATH", repoPath("llm_set_client.py"));
   private static final int LLM_CHAT_HELPER_TIMEOUT_SECONDS =
       parseIntOrDefault(System.getenv("LLM_CHAT_HELPER_TIMEOUT_SECONDS"), 45);
   private static final String STACK_MANAGE_SCRIPT_PATH =
-      System.getenv().getOrDefault("STACK_MANAGE_SCRIPT_PATH", "/home/gibi/Desktop/stack/commands/start_termius_stack.sh");
+      System.getenv().getOrDefault("STACK_MANAGE_SCRIPT_PATH", repoPath("stack/commands/start_termius_stack.sh"));
   private static final int STACK_MANAGE_TIMEOUT_SECONDS =
       parseIntOrDefault(System.getenv("STACK_MANAGE_TIMEOUT_SECONDS"), 45);
   private static final int STACK_MANAGE_OUTPUT_MAX_CHARS =
@@ -307,13 +307,13 @@ public final class BackendServer {
           System.getenv()
               .getOrDefault(
                   "ADDRESS_CATALOG_STORE_PATH",
-                  "/home/gibi/Desktop/stack/config/address_catalog_store.tsv"));
+                  repoPath("stack/config/address_catalog_store.tsv")));
   private static final Path ERROR_REPORT_STORE_PATH =
       Path.of(
           System.getenv()
               .getOrDefault(
                   "ERROR_REPORT_STORE_PATH",
-                  "/home/gibi/Desktop/stack/config/error_report_store.tsv"));
+                  repoPath("stack/config/error_report_store.tsv")));
   private static final Path LOG_PATH =
       Path.of(System.getenv().getOrDefault("PIPELINE_LOG_PATH", "/tmp/pipeline_live_events.log"));
   private static final String HOST = System.getenv().getOrDefault("JAVA_BACKEND_HOST", DEFAULT_HOST);
@@ -1616,6 +1616,19 @@ public final class BackendServer {
       return fallback;
     }
   }
+
+  private static Path repoRoot() {
+    String root = System.getenv("SCOUT_REPO_ROOT");
+    if (root != null && !root.isBlank()) {
+      return Path.of(root);
+    }
+    return Path.of("/home/gibi/Desktop");
+  }
+
+  private static String repoPath(String relPath) {
+    return repoRoot().resolve(relPath).toString();
+  }
+
   private static int parseIntOrDefault(String value, int fallback) {
     if (value == null || value.isBlank()) {
       return fallback;
@@ -5244,6 +5257,23 @@ public final class BackendServer {
     headers.set("Referrer-Policy", "no-referrer");
     applyCorsHeaders(headers, exchange);
     exchange.sendResponseHeaders(200, 0);
+  }
+
+  private static boolean handleCorsPreflight(HttpExchange exchange) throws IOException {
+    if (!"OPTIONS".equals(exchange.getRequestMethod())) {
+      return false;
+    }
+    Headers headers = exchange.getResponseHeaders();
+    applyCorsHeaders(headers, exchange);
+    headers.set("Access-Control-Allow-Methods", "GET, HEAD, POST, PUT, DELETE, OPTIONS");
+    headers.set("Access-Control-Allow-Headers", "Content-Type, Authorization, X-Requested-With");
+    headers.set("Access-Control-Max-Age", "600");
+    exchange.sendResponseHeaders(204, -1);
+    return true;
+  }
+
+  private static void applyCorsHeaders(Headers headers, HttpExchange exchange) {
+    headers.set("Access-Control-Allow-Origin", CORS_ALLOW_ORIGIN);
   }
 
   private static boolean isGet(HttpExchange exchange) {

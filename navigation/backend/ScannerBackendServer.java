@@ -34,7 +34,7 @@ import java.util.regex.Pattern;
 
 public final class ScannerBackendServer {
   private static final String DEFAULT_HOST = "0.0.0.0";
-  private static final int DEFAULT_PORT = 8080;
+  private static final int DEFAULT_PORT = 18080;
   private static final int RECENT_EVENT_LIMIT = 120;
   private static final int SNAPSHOT_EVENT_RETURN_LIMIT = 30;
   private static final int MOBILE_EVENT_RETURN_LIMIT = 12;
@@ -89,13 +89,13 @@ public final class ScannerBackendServer {
   private static final long LLM_STATUS_CACHE_TTL_MS =
       parseLongOrDefault(System.getenv("LLM_STATUS_CACHE_TTL_MS"), 5000L);
   private static final String SELECTOR_PYTHON_BIN =
-      System.getenv().getOrDefault("SELECTOR_PYTHON_BIN", "/home/gibi/Desktop/cop_pipeline/bin/python3");
+      System.getenv().getOrDefault("SELECTOR_PYTHON_BIN", repoPath("cop_pipeline/bin/python3"));
   private static final String SELECTOR_SCRIPT_PATH =
-      System.getenv().getOrDefault("SELECTOR_SCRIPT_PATH", "/home/gibi/Desktop/navigation/pipeline/channel_selector.py");
+      System.getenv().getOrDefault("SELECTOR_SCRIPT_PATH", repoPath("navigation/pipeline/channel_selector.py"));
   private static final String BROADCASTIFY_CATALOG_SCRIPT_PATH =
-      System.getenv().getOrDefault("BROADCASTIFY_CATALOG_SCRIPT_PATH", "/home/gibi/Desktop/navigation/pipeline/broadcastify_catalog_service.py");
+      System.getenv().getOrDefault("BROADCASTIFY_CATALOG_SCRIPT_PATH", repoPath("navigation/pipeline/broadcastify_catalog_service.py"));
   private static final String BROADCASTIFY_CHANNELS_FILE =
-      System.getenv().getOrDefault("BROADCASTIFY_CHANNELS_FILE", "/home/gibi/Desktop/stack/config/broadcastify_channels.sample.json");
+      System.getenv().getOrDefault("BROADCASTIFY_CHANNELS_FILE", repoPath("stack/config/broadcastify_channels.sample.json"));
   private static final String BROADCASTIFY_SELECTOR_CITY =
       System.getenv().getOrDefault("BROADCASTIFY_SELECTOR_CITY", "Sample City");
   private static final String BROADCASTIFY_SELECTOR_COUNTY =
@@ -138,7 +138,7 @@ public final class ScannerBackendServer {
           System.getenv()
               .getOrDefault(
                   "ADDRESS_CATALOG_STORE_PATH",
-                  "/home/gibi/Desktop/stack/config/address_catalog_store.tsv"));
+                  repoPath("stack/config/address_catalog_store.tsv")));
   private static final Path LOG_PATH =
       Path.of(System.getenv().getOrDefault("PIPELINE_LOG_PATH", "/tmp/pipeline_live_doordash.log"));
   private static final String HOST = System.getenv().getOrDefault("JAVA_BACKEND_HOST", DEFAULT_HOST);
@@ -443,6 +443,19 @@ public final class ScannerBackendServer {
       return fallback;
     }
   }
+
+  private static Path repoRoot() {
+    String root = System.getenv("SCOUT_REPO_ROOT");
+    if (root != null && !root.isBlank()) {
+      return Path.of(root);
+    }
+    return Path.of("/home/gibi/Desktop");
+  }
+
+  private static String repoPath(String relPath) {
+    return repoRoot().resolve(relPath).toString();
+  }
+
   private static int parseIntOrDefault(String value, int fallback) {
     if (value == null || value.isBlank()) {
       return fallback;

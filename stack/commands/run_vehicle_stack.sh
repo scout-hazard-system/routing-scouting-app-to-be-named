@@ -3,6 +3,7 @@ set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 ROOT_DIR="${ROOT_DIR:-$(cd "$SCRIPT_DIR/../.." && pwd)}"
+export SCOUT_REPO_ROOT="${SCOUT_REPO_ROOT:-$ROOT_DIR}"
 FRONTEND_DIR="$ROOT_DIR/navigation/frontend"
 BACKEND_DIR="$ROOT_DIR/navigation/backend"
 PIPELINE_SCRIPT="$ROOT_DIR/navigation/pipeline/pipeline.py"

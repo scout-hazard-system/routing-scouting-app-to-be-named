@@ -9,9 +9,11 @@ UNIT_DST_DIR="$HOME/.config/systemd/user"
 UNIT_DST="$UNIT_DST_DIR/vehicle-stack.service"
 
 mkdir -p "$UNIT_DST_DIR"
-cp "$UNIT_SRC" "$UNIT_DST"
+sed -e "s|@ROOT_DIR@|$ROOT_DIR|g" "$UNIT_SRC" > "$UNIT_DST"
 systemctl --user daemon-reload
 systemctl --user enable vehicle-stack.service
 
 echo "Installed and enabled user service: vehicle-stack.service"
+echo "  Repo root: $ROOT_DIR"
+echo "  Unit file: $UNIT_DST"
 echo "Start now with: systemctl --user start vehicle-stack.service"

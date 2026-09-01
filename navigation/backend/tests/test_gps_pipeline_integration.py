@@ -33,7 +33,8 @@ def _free_port() -> int:
 class GpsPipelineIntegrationTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.repo_dir = Path("/home/gibi/Desktop/frontend/java_backend")
+        cls.repo_root = Path(__file__).resolve().parents[3]
+        cls.repo_dir = cls.repo_root / "navigation" / "backend"
         cls.server_source = cls.repo_dir / "BackendServer.java"
         cls.build_dir = Path(tempfile.mkdtemp(prefix="scanner-backend-test-build-"))
         cls.port = _free_port()
@@ -55,7 +56,7 @@ class GpsPipelineIntegrationTests(unittest.TestCase):
         env["JAVA_BACKEND_PORT"] = str(cls.port)
         env["PIPELINE_LOG_PATH"] = str(cls.pipeline_log)
         env["SELECTOR_PYTHON_BIN"] = "python3"
-        env["BROADCASTIFY_CHANNELS_FILE"] = "/home/gibi/Desktop/config/broadcastify_channels.national.manifest.json"
+        env["BROADCASTIFY_CHANNELS_FILE"] = str(cls.repo_root / "stack/config/broadcastify_channels.national.manifest.json")
         env["BROADCASTIFY_SELECTOR_USE_OLLAMA_RERANK"] = "false"
         env["BROADCASTIFY_SELECTOR_LOCK_STATE"] = "false"
         cls.map_cache_dir = Path(tempfile.mkdtemp(prefix="scanner-backend-map-cache-"))

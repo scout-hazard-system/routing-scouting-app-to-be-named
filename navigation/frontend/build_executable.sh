@@ -16,11 +16,12 @@
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PROJECT_ROOT="$(cd "$SCRIPT_DIR/../.." && pwd)"
 DIST_DIR="$SCRIPT_DIR/dist"
 BUILD_DIR="$DIST_DIR/build"
 APP_NAME="scanner-frontend-lite"
 
-PYTHON_BIN="${PYTHON_BIN:-/home/gibi/Desktop/cop_pipeline/bin/python3}"
+PYTHON_BIN="${PYTHON_BIN:-$PROJECT_ROOT/cop_pipeline/bin/python3}"
 if [[ ! -x "$PYTHON_BIN" ]]; then
   PYTHON_BIN="python3"
 fi

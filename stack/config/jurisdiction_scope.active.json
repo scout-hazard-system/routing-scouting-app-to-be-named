@@ -75,12 +75,12 @@
     ]
   },
   "catalogs": {
-    "broadcastify_channels_file": "/home/gibi/Desktop/stack/config/broadcastify_national_shards/broadcastify_channels.us.az.json",
-    "broadcastify_channels_active": "/home/gibi/Desktop/stack/config/broadcastify_channels.active.json"
+    "broadcastify_channels_file": "<ROOT_DIR>/stack/config/broadcastify_national_shards/broadcastify_channels.us.az.json",
+    "broadcastify_channels_active": "<ROOT_DIR>/stack/config/broadcastify_channels.active.json"
   },
   "map_shards": [
-    "/home/gibi/Desktop/vlm_text_map_shards/AZ",
-    "/home/gibi/Desktop/vlm_text_map_shards_chunked/AZ"
+    "<ROOT_DIR>/vlm_text_map_shards/AZ",
+    "<ROOT_DIR>/vlm_text_map_shards_chunked/AZ"
   ],
   "location_marker_filters": [
     "mile marker",

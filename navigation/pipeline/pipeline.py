@@ -51,7 +51,7 @@ SHOULD_EXIT = False
 sd = None
 HTTP_SESSION = requests.Session()
 ALERT_PREFIX_RE = re.compile(r"^\s*ALERT\s*:", flags=re.IGNORECASE)
-PIPER_BIN = os.environ.get("PIPER_BIN", "/home/gibi/Desktop/cop_pipeline/bin/piper")
+PIPER_BIN = os.environ.get("PIPER_BIN", os.path.join(os.environ.get("SCOUT_REPO_ROOT", "/home/gibi/Desktop"), "cop_pipeline", "bin", "piper"))
 PIPER_MODEL_PATH = os.environ.get("PIPER_MODEL_PATH", "").strip()
 PIPER_MODEL_CONFIG_PATH = os.environ.get("PIPER_MODEL_CONFIG_PATH", "").strip()
 TTS_REPEAT_SUPPRESS_SECONDS = float(os.environ.get("TTS_REPEAT_SUPPRESS_SECONDS", "20"))

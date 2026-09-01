@@ -20,11 +20,11 @@
     "PIPELINE": "compact multi-key JSON pack"
   },
   "sources": {
-    "eval_cases": "/home/gibi/Desktop/llm/build/eval_cases.json",
+    "eval_cases": "<ROOT_DIR>/llm/build/eval_cases.json",
     "pipeline_log": "/tmp/pipeline_live_doordash.log",
-    "progress_logs": "/home/gibi/Desktop/docs/progress/logs",
-    "hermes_modelfile": "/home/gibi/Desktop/llm/unified/Modelfile.scout-hermes-hc1.1.0",
-    "smoke_script": "/home/gibi/Desktop/llm/unified/smoke_hermes_hc.sh"
+    "progress_logs": "<ROOT_DIR>/docs/progress/logs",
+    "hermes_modelfile": "<ROOT_DIR>/llm/unified/Modelfile.scout-hermes-hc1.1.0",
+    "smoke_script": "<ROOT_DIR>/llm/unified/smoke_hermes_hc.sh"
   },
   "stats": {
     "num_examples": 605,

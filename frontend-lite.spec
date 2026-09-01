@@ -1,11 +1,18 @@
 # -*- mode: python ; coding: utf-8 -*-
+from pathlib import Path
 
+PROJECT_ROOT = Path(SPECPATH).resolve()
+FRONTEND = PROJECT_ROOT / "navigation" / "frontend"
 
 a = Analysis(
-    ['/home/gibi/Desktop/frontend/dev_server.py'],
+    [str(FRONTEND / "dev_server.py")],
     pathex=[],
     binaries=[],
-    datas=[('/home/gibi/Desktop/frontend/index.html', '.'), ('/home/gibi/Desktop/frontend/app.js', '.'), ('/home/gibi/Desktop/frontend/styles.css', '.')],
+    datas=[
+        (str(FRONTEND / "index.html"), "."),
+        (str(FRONTEND / "app.js"), "."),
+        (str(FRONTEND / "styles.css"), "."),
+    ],
     hiddenimports=[],
     hookspath=[],
     hooksconfig={},

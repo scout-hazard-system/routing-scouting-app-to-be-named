@@ -1,8 +1,11 @@
 # -*- mode: python ; coding: utf-8 -*-
+from pathlib import Path
 
+PROJECT_ROOT = Path(SPECPATH).resolve()
+FRONTEND = PROJECT_ROOT / "navigation" / "frontend"
 
 a = Analysis(
-    ['/home/gibi/Desktop/frontend/stream_client.py'],
+    [str(FRONTEND / "stream_client.py")],
     pathex=[],
     binaries=[],
     datas=[],
