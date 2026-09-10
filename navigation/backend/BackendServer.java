@@ -200,10 +200,15 @@ public final class BackendServer {
       System.getenv().getOrDefault("BROADCASTIFY_SELECTOR_OLLAMA_WEIGHT", "0.2");
   private static final int HELPER_PROCESS_TIMEOUT_SECONDS =
       parseIntOrDefault(System.getenv("BACKEND_HELPER_TIMEOUT_SECONDS"), 90);
-  private static final String LLM_SET_CLIENT_SCRIPT_PATH =
-      System.getenv().getOrDefault("LLM_SET_CLIENT_SCRIPT_PATH", repoPath("llm_set_client.py"));
+private static final String LLM_SET_CLIENT_SCRIPT_PATH =
+      System.getenv()
+          .getOrDefault("LLM_SET_CLIENT_SCRIPT_PATH", repoPath("llm/client/llm_set_client.py"));
   private static final int LLM_CHAT_HELPER_TIMEOUT_SECONDS =
       parseIntOrDefault(System.getenv("LLM_CHAT_HELPER_TIMEOUT_SECONDS"), 45);
+  private static final int LLM_GATE_HELPER_TIMEOUT_SECONDS =
+      parseIntOrDefault(System.getenv("LLM_GATE_HELPER_TIMEOUT_SECONDS"), 45);
+  private static final String GATE_MODEL =
+      System.getenv().getOrDefault("SCOUT_GATE_MODEL", "scout-dev1.0.1");
   private static final String STACK_MANAGE_SCRIPT_PATH =
       System.getenv().getOrDefault("STACK_MANAGE_SCRIPT_PATH", repoPath("stack/commands/start_termius_stack.sh"));
   private static final int STACK_MANAGE_TIMEOUT_SECONDS =
@@ -216,7 +221,8 @@ public final class BackendServer {
       System.getenv().getOrDefault("OLLAMA_TAGS_URL", "http://localhost:11434/api/tags");
   private static final String LLM_BASE_MODEL =
       System.getenv().getOrDefault("LLM_BASE_MODEL", "llama3.1");
-  private static final String[] SCOUT_MODELS = {"scout-core1.0.8", "scout-vet1.0.8", "scout-rank"};
+private static final String[] SCOUT_MODELS =
+      {"scout-core1.0.8", "scout-vet1.0.8", "scout-rank", "scout-dev1.0.1", "scout-dev"};
   private static final Pattern MODEL_NAME_PATTERN = Pattern.compile("\"name\"\\s*:\\s*\"([^\"]+)\"");
   private static final int METRICS_MAX_ITEMS =
       parseIntOrDefault(System.getenv("BACKEND_METRICS_MAX_ITEMS"), 12);
@@ -249,10 +255,10 @@ public final class BackendServer {
   private static final String SECURE_PULL_ALLOWLIST_RAW =
       System.getenv().getOrDefault("BACKEND_PULL_ALLOWLIST", "127.0.0.1,::1,localhost");
   private static final String SECURE_PULL_ALLOW_CIDRS_RAW =
-      System.getenv()
+System.getenv()
           .getOrDefault(
               "BACKEND_PULL_ALLOW_CIDRS",
-              "100.64.0.0/10,127.0.0.1/32,::1/128,172.16.0.0/12,192.168.0.0/16,10.0.0.0/8");
+              "10.66.0.0/16,100.64.0.0/10,127.0.0.1/32,::1/128,172.16.0.0/12,192.168.0.0/16,10.0.0.0/8");
   private static final String SECURE_PULL_API_KEY =
       System.getenv().getOrDefault("BACKEND_PULL_API_KEY", "");
   private static final String SECURE_PULL_API_KEY_HEADER =
@@ -286,8 +292,14 @@ public final class BackendServer {
       parseLowercaseCsv(SECURE_PULL_ALLOWLIST_RAW);
   private static final List<CidrBlock> SECURE_PULL_ALLOWED_CIDRS =
       parseCidrCsv(SECURE_PULL_ALLOW_CIDRS_RAW);
-  private static final Set<String> GLOBAL_PUBLIC_ENDPOINTS =
-      Set.of("/api/health", "/api/public/share/eta");
+private static final Set<String> GLOBAL_PUBLIC_ENDPOINTS =
+      Set.of(
+          "/api/health",
+          "/api/public/share/eta",
+          "/api/mesh/enroll",
+          "/api/mesh/profile",
+          "/api/admin/status",
+          "/api/admin/tokens/status");
   private static final Set<String> SECURE_PULL_ENDPOINTS =
       Set.of(
           "/api/pipeline/snapshot",
@@ -419,7 +431,15 @@ public final class BackendServer {
     registerContext(server, "/api/platform/assistant/chat", new AssistantChatHandler());
     registerContext(server, "/api/platform/dev/stack/manage", new DevStackManageHandler());
     registerContext(server, "/api/platform/llm/status", new LlmStatusHandler());
-    registerContext(server, "/api/mobile/bootstrap", new MobileBootstrapHandler());
+registerContext(server, "/api/mobile/bootstrap", new MobileBootstrapHandler());
+registerContext(server, "/api/mesh/enroll", new MeshEnrollHandler());
+    registerContext(server, "/api/mesh/profile", new MeshProfileHandler());
+    registerContext(server, "/api/mesh/peer/revoke", new MeshPeerRevokeHandler());
+    registerContext(server, "/api/admin/subscription/issue", new AdminSubscriptionIssueHandler());
+    registerContext(server, "/api/admin/subscription/revoke", new AdminSubscriptionRevokeHandler());
+    registerContext(server, "/api/admin/tokens/status", new AdminTokensStatusHandler());
+registerContext(server, "/api/admin/status", new AdminStatusHandler());
+    registerContext(server, "/api/admin/gate/analyze", new AdminGateAnalyzeHandler());
     registerContext(server, "/api/mobile/snapshot", new MobileSnapshotHandler());
     registerContext(server, "/api/mobile/stream", new MobileStreamHandler());
     registerContext(server, "/api/mobile/client/register", new MobileClientRegisterHandler());
@@ -629,21 +649,88 @@ public final class BackendServer {
     return parseFlexibleBoolean(raw, fallback);
   }
 
+
+  private static String extractJsonString(String json, String key) {
+    if (json == null || key == null) {
+      return null;
+    }
+    String pattern = "\"" + key + "\"";
+    int k = json.indexOf(pattern);
+    if (k < 0) {
+      return null;
+    }
+    int colon = json.indexOf(':', k + pattern.length());
+    if (colon < 0) {
+      return null;
+    }
+    int i = colon + 1;
+    while (i < json.length() && Character.isWhitespace(json.charAt(i))) {
+      i++;
+    }
+    if (i >= json.length()) {
+      return null;
+    }
+    if (json.charAt(i) == '"') {
+      i++;
+      StringBuilder sb = new StringBuilder();
+      while (i < json.length()) {
+        char c = json.charAt(i++);
+        if (c == '\\' && i < json.length()) {
+          sb.append(json.charAt(i++));
+          continue;
+        }
+        if (c == '"') {
+          break;
+        }
+        sb.append(c);
+      }
+      return sb.toString();
+    }
+    int start = i;
+    while (i < json.length()) {
+      char c = json.charAt(i);
+      if (c == ',' || c == '}' || c == ']') {
+        break;
+      }
+      i++;
+    }
+    return json.substring(start, i).trim();
+  }
+
   private static void enforceGlobalApiAccess(String path, HttpExchange exchange) {
     if (!RESTRICT_ALL_API_ROUTES || GLOBAL_PUBLIC_ENDPOINTS.contains(path)) {
       return;
     }
-    String remoteAddress = remoteAddressFromExchange(exchange);
+    // Admin machines bypass with X-Scout-Admin-Token (path-scoped or any-path).
+    if (ScoutAdminAuth.isAuthorizedAdmin(exchange, path) || ScoutAdminAuth.isAuthorizedAdminAny(exchange)) {
+      return;
+    }
+    // Admin API without admin token → 401 (not paywall).
+    if (path != null && path.startsWith("/api/admin/") && !"/api/admin/status".equals(path)) {
+      throw new IllegalArgumentException("admin_required");
+    }
+    // Paywall: unregistered Android/mesh APs need device-bound subscription token.
+    if (ScoutSubscriptionAuth.required() && !ScoutSubscriptionAuth.isExemptPath(path)) {
+      if (!ScoutSubscriptionAuth.isAuthorized(exchange, path)) {
+        throw new IllegalArgumentException("subscription_required");
+      }
+      return;
+    }
+    String remoteAddress =
+        exchange.getRemoteAddress() != null && exchange.getRemoteAddress().getAddress() != null
+            ? exchange.getRemoteAddress().getAddress().getHostAddress()
+            : "";
     if (!isAllowedPullSource(remoteAddress)) {
       throw new IllegalArgumentException("forbidden_network_source");
     }
-    if (!GLOBAL_API_KEY.isBlank()) {
+    if (GLOBAL_API_KEY != null && !GLOBAL_API_KEY.isBlank()) {
       String received = exchange.getRequestHeaders().getFirst(GLOBAL_API_KEY_HEADER);
       if (received == null || !GLOBAL_API_KEY.equals(received.trim())) {
         throw new IllegalArgumentException("invalid_global_api_key");
       }
     }
   }
+
 
   private static Set<String> parseLowercaseCsv(String raw) {
     Set<String> out = new HashSet<>();
@@ -1080,6 +1167,12 @@ public final class BackendServer {
     }
   }
   private static int requestValidationStatus(String reason) {
+    if ("subscription_required".equals(reason)) {
+      return 402;
+    }
+    if ("admin_required".equals(reason)) {
+      return 401;
+    }
     if ("query_too_large".equals(reason)) {
       return 414;
     }
@@ -1489,7 +1582,11 @@ public final class BackendServer {
           String reason = ex.getMessage() == null ? "invalid_request" : ex.getMessage();
           int status = requestValidationStatus(reason);
           logRequestRejection(path, exchange, reason, status, "request_gate");
-          writeJson(exchange, status, "{\"error\":\"" + jsonEscape(reason) + "\"}");
+          if ("subscription_required".equals(reason)) {
+            writeJson(exchange, status, ScoutSubscriptionAuth.paywallJson(reason));
+          } else {
+            writeJson(exchange, status, "{\"error\":\"" + jsonEscape(reason) + "\"}");
+          }
         } catch (IOException ignored) {
         }
       } catch (Exception ex) {
@@ -1900,10 +1997,14 @@ public final class BackendServer {
         + "\"map_scene\":\"/api/map/scene\","
         + "\"map_render\":\"/api/map/render\","
         + "\"map_status\":\"/api/map/status\","
-        + "\"map_shard\":\"/api/map/shard\""
++ "\"map_shard\":\"/api/map/shard\","
+        + "\"mesh_enroll\":\"/api/mesh/enroll\","
+        + "\"mesh_profile\":\"/api/mesh/profile\""
         + "},"
         + "\"network\":" + ProprietaryMapEngine.networkAdvertiseJsonPublic() + ","
-        + "\"notes\":\"Compact endpoints are intended for low-bandwidth mobile companion clients. Map/shard URLs are also advertised under network.urls.\""
++ "\"mesh\":" + ScoutMeshControl.publicMeshJson() + ","
+        + "\"admin\":" + ScoutAdminAuth.publicStatusJson() + ","
+        + "\"notes\":\"Compact endpoints are intended for low-bandwidth mobile companion clients. Map/shard URLs are also advertised under network.urls. Mesh join uses /api/mesh/enroll then in-APK VpnService. Windows/job PCs use X-Scout-Admin-Token over HTTPS (no VPN).\""
         + "}";
   }
 
@@ -5410,7 +5511,7 @@ public final class BackendServer {
       String token = query.getOrDefault("token", "").trim();
       ShareEtaTokenData tokenData = decodeShareEtaToken(token);
       if (tokenData == null) {
-        writeJson(exchange, 403, "{\"error\":\"invalid_or_expired_share_token\"}");
+writeJson(exchange, 403, "{\"error\":\"invalid_or_expired_share_token\"}");
         return;
       }
       String format = query.getOrDefault("format", "html").trim().toLowerCase(Locale.ROOT);
@@ -6088,12 +6189,20 @@ public final class BackendServer {
     }
   }
 
-  private static final class DevStackManageHandler implements HttpHandler {
+private static final class DevStackManageHandler implements HttpHandler {
     @Override
     public void handle(HttpExchange exchange) throws IOException {
       String method = exchange.getRequestMethod();
       if (!"POST".equals(method) && !"GET".equals(method)) {
         writeJson(exchange, 405, "{\"error\":\"method_not_allowed\"}");
+        return;
+      }
+      // Extra belt-and-suspenders: stack manage from off-mesh requires admin token
+      // when SCOUT_ADMIN_TOKEN is configured (VPN-free Windows admin path).
+      if (ScoutAdminAuth.enabled()
+          && !ScoutAdminAuth.isAuthorizedAdmin(exchange, "/api/platform/dev/stack/manage")
+          && !isAllowedPullSource(remoteAddressFromExchange(exchange))) {
+        writeJson(exchange, 403, "{\"error\":\"admin_token_required\"}");
         return;
       }
       Map<String, String> query = parseQuery(exchange.getRequestURI().getRawQuery());
@@ -6111,7 +6220,106 @@ public final class BackendServer {
     }
   }
 
-  private static final class MobileBootstrapHandler implements HttpHandler {
+private static final class AdminStatusHandler implements HttpHandler {
+    @Override
+    public void handle(HttpExchange exchange) throws IOException {
+      if (!isGet(exchange)) {
+        writeJson(exchange, 405, "{\"error\":\"method_not_allowed\"}");
+        return;
+      }
+      writeJson(
+          exchange,
+          200,
+          "{"
+              + "\"status\":\"ok\","
+              + "\"ts\":\""
+              + Instant.now()
+              + "\","
+              + "\"admin\":"
+              + ScoutAdminAuth.publicStatusJson()
+              + ","
+              + "\"mesh\":"
+              + ScoutMeshControl.publicMeshJson()
+              + ","
+              + "\"gate_model\":\""
+              + jsonEscape(GATE_MODEL)
+              + "\""
+              + "}");
+    }
+  }
+
+  private static final class AdminGateAnalyzeHandler implements HttpHandler {
+    @Override
+    public void handle(HttpExchange exchange) throws IOException {
+      String method = exchange.getRequestMethod();
+      if (!"POST".equals(method) && !"GET".equals(method)) {
+        writeJson(exchange, 405, "{\"error\":\"method_not_allowed\"}");
+        return;
+      }
+      Map<String, String> query = parseQuery(exchange.getRequestURI().getRawQuery());
+      String body = "POST".equals(method) ? readRequestBody(exchange) : "";
+      String event =
+          extractStringFieldByName(body, "event", query.getOrDefault("event", "")).trim();
+      if (event.isBlank()) {
+        event =
+            extractStringFieldByName(body, "message", query.getOrDefault("message", "")).trim();
+      }
+      if (event.isBlank()) {
+        writeJson(exchange, 400, "{\"error\":\"missing_event\"}");
+        return;
+      }
+      String task =
+          extractStringFieldByName(body, "task", query.getOrDefault("task", "GATE")).trim();
+      if (task.isBlank()) {
+        task = "GATE";
+      }
+      String remote = remoteAddressFromExchange(exchange);
+      // Enrich with request remote if not already in event text.
+      if (!event.contains(remote) && remote != null && !remote.isBlank()) {
+        event = event + "\nObserver remote: " + remote;
+      }
+      String payload = runGateAnalysis(task, event);
+      int status = helperResponseStatus(payload);
+      writeJson(exchange, status, payload);
+    }
+  }
+
+  private static String runGateAnalysis(String task, String eventText) {
+    List<String> cmd = new ArrayList<>();
+    cmd.add(SELECTOR_PYTHON_BIN);
+    cmd.add(LLM_SET_CLIENT_SCRIPT_PATH);
+    cmd.add("gate");
+    cmd.add(eventText == null ? "" : eventText);
+    cmd.add("--task");
+    cmd.add(task == null || task.isBlank() ? "GATE" : task.trim().toUpperCase(Locale.ROOT));
+    cmd.add("--timeout");
+    cmd.add(String.valueOf(LLM_GATE_HELPER_TIMEOUT_SECONDS));
+    String raw = runHelperCommand(cmd, "llm_gate", LLM_GATE_HELPER_TIMEOUT_SECONDS);
+    if (raw == null || raw.isBlank()) {
+      return "{\"error\":\"gate_empty_response\",\"model\":\"" + jsonEscape(GATE_MODEL) + "\"}";
+    }
+    String trimmed = raw.trim();
+    // Prefer last JSON object in helper stdout.
+    int start = trimmed.lastIndexOf('{');
+    int end = trimmed.lastIndexOf('}');
+    if (start >= 0 && end > start) {
+      String maybe = trimmed.substring(start, end + 1);
+      if (maybe.contains("\"gate\"") || maybe.contains("\"decision\"") || maybe.contains("\"error\"")) {
+        return maybe;
+      }
+    }
+    return "{"
+        + "\"status\":\"ok\","
+        + "\"model\":\""
+        + jsonEscape(GATE_MODEL)
+        + "\","
+        + "\"raw\":\""
+        + jsonEscape(trimmed.length() > 4000 ? trimmed.substring(0, 4000) : trimmed)
+        + "\""
+        + "}";
+  }
+
+private static final class MobileBootstrapHandler implements HttpHandler {
     @Override
     public void handle(HttpExchange exchange) throws IOException {
       if (!isGet(exchange)) {
@@ -6119,6 +6327,148 @@ public final class BackendServer {
         return;
       }
       writeJson(exchange, 200, mobileBootstrapJson());
+    }
+  }
+
+  private 
+  static final class MeshPeerRevokeHandler implements HttpHandler {
+    @Override
+    public void handle(HttpExchange exchange) throws IOException {
+      if (!"POST".equalsIgnoreCase(exchange.getRequestMethod())) {
+        writeJson(exchange, 405, "{\"error\":\"method_not_allowed\"}");
+        return;
+      }
+      if (!ScoutAdminAuth.isAuthorizedAdminAny(exchange)) {
+        writeJson(exchange, 401, "{\"error\":\"admin_required\"}");
+        return;
+      }
+      String body = new String(exchange.getRequestBody().readAllBytes(), StandardCharsets.UTF_8);
+      String deviceId = extractJsonString(body, "device_id");
+      writeJson(exchange, 200, ScoutMeshControl.revokePeer(deviceId));
+    }
+  }
+
+  static final class AdminSubscriptionIssueHandler implements HttpHandler {
+    @Override
+    public void handle(HttpExchange exchange) throws IOException {
+      if (!"POST".equalsIgnoreCase(exchange.getRequestMethod())) {
+        writeJson(exchange, 405, "{\"error\":\"method_not_allowed\"}");
+        return;
+      }
+      if (!ScoutAdminAuth.isAuthorizedAdminAny(exchange)) {
+        writeJson(exchange, 401, "{\"error\":\"admin_required\"}");
+        return;
+      }
+      String body = new String(exchange.getRequestBody().readAllBytes(), StandardCharsets.UTF_8);
+      String deviceId = extractJsonString(body, "device_id");
+      long ttl = 0L;
+      try {
+        String ttlRaw = extractJsonString(body, "ttl_seconds");
+        if (ttlRaw != null && !ttlRaw.isBlank()) {
+          ttl = Long.parseLong(ttlRaw.trim());
+        }
+      } catch (Exception ignored) {
+        ttl = 0L;
+      }
+      ScoutSubscriptionAuth.IssueResult result = ScoutSubscriptionAuth.issue(deviceId, ttl);
+      writeJson(exchange, result.status, result.body);
+    }
+  }
+
+  static final class AdminSubscriptionRevokeHandler implements HttpHandler {
+    @Override
+    public void handle(HttpExchange exchange) throws IOException {
+      if (!"POST".equalsIgnoreCase(exchange.getRequestMethod())) {
+        writeJson(exchange, 405, "{\"error\":\"method_not_allowed\"}");
+        return;
+      }
+      if (!ScoutAdminAuth.isAuthorizedAdminAny(exchange)) {
+        writeJson(exchange, 401, "{\"error\":\"admin_required\"}");
+        return;
+      }
+      String body = new String(exchange.getRequestBody().readAllBytes(), StandardCharsets.UTF_8);
+      String deviceId = extractJsonString(body, "device_id");
+      int n = ScoutSubscriptionAuth.revokeDevice(deviceId);
+      writeJson(
+          exchange,
+          200,
+          "{\"status\":\"ok\",\"device_id\":\""
+              + (deviceId == null ? "" : deviceId.replace("\"", ""))
+              + "\",\"revoked\":"
+              + n
+              + "}");
+    }
+  }
+
+  static final class AdminTokensStatusHandler implements HttpHandler {
+    @Override
+    public void handle(HttpExchange exchange) throws IOException {
+      if (!"GET".equalsIgnoreCase(exchange.getRequestMethod())
+          && !"POST".equalsIgnoreCase(exchange.getRequestMethod())) {
+        writeJson(exchange, 405, "{\"error\":\"method_not_allowed\"}");
+        return;
+      }
+      // Public metadata only (no secrets). Full detail if admin.
+      boolean admin = ScoutAdminAuth.isAuthorizedAdminAny(exchange);
+      StringBuilder sb = new StringBuilder();
+      sb.append('{');
+      sb.append("\"status\":\"ok\",");
+      sb.append("\"admin\":").append(ScoutAdminAuth.publicStatusJson()).append(',');
+      sb.append("\"subscription\":").append(ScoutSubscriptionAuth.publicPolicyJson()).append(',');
+      sb.append("\"mesh\":").append(ScoutMeshControl.publicMeshJson()).append(',');
+      sb.append("\"admin_authenticated\":").append(admin ? "true" : "false");
+      sb.append('}');
+      writeJson(exchange, 200, sb.toString());
+    }
+  }
+
+static final class MeshEnrollHandler implements HttpHandler {
+    @Override
+    public void handle(HttpExchange exchange) throws IOException {
+      String method = exchange.getRequestMethod();
+      if (!"POST".equals(method) && !"GET".equals(method)) {
+        writeJson(exchange, 405, "{\"error\":\"method_not_allowed\"}");
+        return;
+      }
+      Map<String, String> query = parseQuery(exchange.getRequestURI().getRawQuery());
+      String body = "POST".equals(method) ? readRequestBody(exchange) : "";
+      String entryToken =
+          extractStringFieldByName(body, "entry_token", query.getOrDefault("entry_token", ""));
+      String deviceId =
+          extractStringFieldByName(body, "device_id", query.getOrDefault("device_id", ""));
+      String platform =
+          extractStringFieldByName(body, "platform", query.getOrDefault("platform", "android"));
+      String clientPublicKey =
+          extractStringFieldByName(
+              body, "client_public_key", query.getOrDefault("client_public_key", ""));
+      String preferredEndpoint =
+          extractStringFieldByName(
+              body, "preferred_endpoint", query.getOrDefault("preferred_endpoint", ""));
+      String remoteIp = "";
+      try {
+        if (exchange.getRemoteAddress() != null && exchange.getRemoteAddress().getAddress() != null) {
+          remoteIp = exchange.getRemoteAddress().getAddress().getHostAddress();
+        }
+      } catch (Exception ignored) {
+        remoteIp = "";
+      }
+      ScoutMeshControl.EnrollResult result =
+          ScoutMeshControl.enroll(
+              entryToken, deviceId, platform, clientPublicKey, preferredEndpoint, remoteIp);
+      writeJson(exchange, result.status, result.body);
+    }
+  }
+
+  private static final class MeshProfileHandler implements HttpHandler {
+    @Override
+    public void handle(HttpExchange exchange) throws IOException {
+      if (!isGet(exchange)) {
+        writeJson(exchange, 405, "{\"error\":\"method_not_allowed\"}");
+        return;
+      }
+      Map<String, String> query = parseQuery(exchange.getRequestURI().getRawQuery());
+      String deviceId = query.getOrDefault("device_id", "");
+      writeJson(exchange, 200, ScoutMeshControl.profileStatusJson(deviceId));
     }
   }
 

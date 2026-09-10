@@ -42,3 +42,8 @@ scout_crew/
 # Local stack backup snapshots
 stack/config/*.bak_*
 stack/config/*.bak
+
+# Scout Mesh runtime secrets
+stack/mesh/state/
+stack/mesh/peers/*.conf
+!stack/mesh/peers/.gitkeep
