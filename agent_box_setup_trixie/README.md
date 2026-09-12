@@ -17,8 +17,27 @@ can be smoke-tested on the reference box before powering a new machine.
 | Mesh | WireGuard `scoutwg0` (`10.66.0.0/16`) | reach hub + peers; Internet stays on LAN default route |
 | Ollama | `127.0.0.1:11434` (specialists) | `scout-alert/intel/vet/rank/core/dev` + optional hermes brain | 
 | Crew | `scout_crew` venv, run via the `scout` CLI | headless agent execution, blackboard reads/writes |
-| Stack | Java backend `:18080`, frontend `:8787`, (optional) blackboard `:8765` | map/pipeline/UI services as systemd user units |
+| Stack | Java backend `:18080` (**map sharding backend**), frontend `:8787`, (optional) blackboard `:8765` | shard serving + map/pipeline/UI services as systemd user units |
 | Control plane | `master`/`scout` CLI, `ssh` | everything; **no GUI, no `Scout-Crew.desktop`, no PySide6** |
+
+### Map sharding backend (still keeps roles split)
+
+Roles stay split (agent box vs map server/hub are separate suites), but every
+agent box runs its own sharding backend: the Java backend on `:18080` serves
+the local MVT shard cache (`~/.scanner_stream/map_cache/shards/`, state =
+`MAP_SHARD_STATE`, default AZ) plus the text-map roots. Pull shards from the
+hub with:
+
+```bash
+./install_services.sh --with-shards <user@host[:port]>   # rsync-over-SSH
+# or re-run standalone any time after the source updates:
+map_server_setup/sync_shards.sh <user@hub>
+curl -fsS http://127.0.0.1:18080/api/map/shard?state=AZ   # sanity check
+```
+
+So crew `map_*` tools and the frontend answer from local shard data even when
+the hub is unreachable — the mesh hub remains the primary host for the
+blackboard and full zonal sync.
 
 The agent box is pure-CLI. The PySide6 GUI (`scout_windows_gui_setup/gui/gui.py`)
 only exists on the Windows peer; this box manages the crew with:
@@ -64,6 +83,11 @@ SCOUT_BLACKBOARD_ENTRY_TOKEN="<from hub operator>" \
 
 # 5. systemd user services (+ blackboard when this box is also the hub).
 ./install_services.sh --with-blackboard   # or without --with-blackboard
+
+# Even when this box is NOT the hub, it serves its own map sharding backend:
+# pull the AZ shards + text-map roots from the map-server host (passwordless SSH,
+# rsync over ssh like map_server_setup/sync_shards.sh).
+./install_services.sh --with-shards tooluser@10.66.2.3
 
 # 6. Verify the whole box.
 ./verify_agent_box.sh

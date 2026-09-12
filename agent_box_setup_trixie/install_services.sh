@@ -39,10 +39,14 @@ SCOUT_CREW_ROOT="${SCOUT_CREW_ROOT:-$HOME/scout_crew}"
 BB_ENV="${BB_ENV:-$HOME/.config/scout/blackboard.env}"
 BB_DIR="${BB_DIR:-$HOME/.scout/blackboard}"
 INSTALL_BLACKBOARD=0
-for arg in "$@"; do
-  case "$arg" in
-    --with-blackboard) INSTALL_BLACKBOARD=1 ;;
-    *) fail "unknown argument: $arg (supported: --with-blackboard)" ;;
+SHARD_SRC=""
+ARGS=("$@")
+i=0
+while ((i < ${#ARGS[@]})); do
+  case "${ARGS[$i]}" in
+    --with-blackboard) INSTALL_BLACKBOARD=1; i=$((i + 1)) ;;
+    --with-shards)     SHARD_SRC="${ARGS[$((i + 1))]:-}"; i=$((i + 2)) ;;
+    *) fail "unknown argument: ${ARGS[$i]} (supported: --with-blackboard, --with-shards <user@host[:port]>)" ;;
   esac
 done
 
@@ -68,6 +72,28 @@ if ((INSTALL_BLACKBOARD)); then
   )
 fi
 
+if [[ -n "$SHARD_SRC" ]]; then
+  # The agent box serves its own map sharding backend on :18080 (same data the
+  # crew's map_* tools read). Pull the MVT shard cache + text-map roots from the
+  # hub/map-server host pre-install so the backend is authoritative on boot.
+  SYNCS=(
+    "$ROOT/map_server_setup_trixie/sync_shards.sh"
+    "$ROOT/map_server_setup/sync_shards.sh"
+  )
+  SYNC=""
+  for cand in "${SYNCS[@]}"; do
+    if [[ -x "$cand" ]]; then
+      SYNC="$cand"
+      break
+    fi
+  done
+  if [[ -z "$SYNC" ]]; then
+    fail "--with-shards needs map_server_setup/sync_shards.sh in this clone (map-server suite)."
+  fi
+  info "Syncing map shards from $SHARD_SRC (backend serves MAP_SHARD_STATE from cache)..."
+  "$SYNC" "$SHARD_SRC"
+fi
+
 info "Starting user services..."
 systemctl --user daemon-reload
 systemctl --user start vehicle-stack.service
@@ -84,4 +110,9 @@ Useful journal/tail commands:
   journalctl --user -u vehicle-stack.service -f
   journalctl --user -u scout-blackboard.service -f
   ./verify_agent_box.sh
+
+Shards:
+  The backend serves map shards from ~/.scanner_stream/map_cache/shards/.
+  To pull them from the map-server host:
+    ./install_services.sh --with-shards <user@host[:port]>   (passwordless SSH)
 EOF
