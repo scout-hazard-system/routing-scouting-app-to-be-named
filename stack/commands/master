@@ -7,7 +7,7 @@ STACK_SCRIPT="$SCRIPT_DIR/start_termius_stack.sh"
 
 usage() {
   cat <<EOF
-Usage: $(basename "$0") {start|stop|restart|status|health|stream|logs [pipeline|backend|frontend|all]|check|urls|prepare-move|up|down}
+Usage: $(basename "$0") {start|stop|restart|status|health|stream|logs [pipeline|backend|frontend|all]|check|models [--verify]|urls|prepare-move|up|down}
 
 Server stack commands:
   start      Start pipeline + backend + frontend
@@ -18,6 +18,7 @@ Server stack commands:
   stream     Open terminal event stream client
   logs       Tail logs (default: all)
   check      Run status + health in one command
+  models     Print required Ollama roster (--verify to check installed tags)
   urls       Print Termius port-forward URLs
   prepare-move  Gracefully stop stack and sync disks before power move
 
@@ -57,6 +58,10 @@ check_all() {
   run_stack health
 }
 
+show_models() {
+  "$SCRIPT_DIR/models.sh" "$@"
+}
+
 prepare_move() {
   echo "Stopping stack gracefully..."
   run_stack stop
@@ -81,6 +86,9 @@ case "$CMD" in
     ;;
   check)
     check_all
+    ;;
+  models)
+    show_models "${@:2}"
     ;;
   urls)
     print_urls
