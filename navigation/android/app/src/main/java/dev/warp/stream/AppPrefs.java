@@ -33,6 +33,7 @@ public final class AppPrefs {
   private static final String KEY_TRACKING_CONSENT_RESOLVED = "tracking_consent_resolved";
   private static final String KEY_ANALYTICS_ENABLED = "analytics_enabled";
   private static final String KEY_SCOUT_PROFILE_SKETCH = "scout_profile_sketch";
+  private static final String KEY_PREAUTHORIZED_KEY = "preauthorized_key";
   private static final long BASE_URL_PROBE_CACHE_MS = 15000L;
   private static final int BASE_URL_PROBE_TIMEOUT_MS = 900;
   private static volatile String cachedReachableBaseUrl = null;
@@ -308,5 +309,24 @@ public final class AppPrefs {
       editor.putString(KEY_SCOUT_PROFILE_SKETCH, sketchJson);
     }
     editor.apply();
+  }
+
+  public static String preauthorizedKey(Context context) {
+    return prefs(context).getString(KEY_PREAUTHORIZED_KEY, "");
+  }
+
+  public static void savePreauthorizedKey(Context context, String key) {
+    SharedPreferences.Editor editor = prefs(context).edit();
+    if (key == null || key.trim().isEmpty()) {
+      editor.remove(KEY_PREAUTHORIZED_KEY);
+    } else {
+      editor.putString(KEY_PREAUTHORIZED_KEY, key.trim());
+    }
+    editor.apply();
+  }
+
+  public static boolean hasValidPreauthorizedKey(Context context) {
+    String key = preauthorizedKey(context);
+    return key != null && !key.trim().isEmpty();
   }
 }

@@ -257,6 +257,10 @@ public final class BackendServer {
       System.getenv().getOrDefault("BACKEND_PULL_API_KEY", "");
   private static final String SECURE_PULL_API_KEY_HEADER =
       System.getenv().getOrDefault("BACKEND_PULL_API_KEY_HEADER", "X-Backend-Api-Key");
+  private static final String PREAUTHORIZED_KEY =
+      System.getenv().getOrDefault("BACKEND_PREAUTHORIZED_KEY", "");
+  private static final String PREAUTHORIZED_KEY_HEADER =
+      System.getenv().getOrDefault("BACKEND_PREAUTHORIZED_KEY_HEADER", "X-Preauthorized-Key");
   private static final String CLIENT_PULL_TOKEN_HEADER =
       System.getenv().getOrDefault("BACKEND_CLIENT_PULL_TOKEN_HEADER", "X-Client-Pull-Token");
   private static final String ANALYTICS_OPT_OUT_HEADER =
@@ -420,6 +424,7 @@ public final class BackendServer {
     registerContext(server, "/api/platform/dev/stack/manage", new DevStackManageHandler());
     registerContext(server, "/api/platform/llm/status", new LlmStatusHandler());
     registerContext(server, "/api/mobile/bootstrap", new MobileBootstrapHandler());
+    registerContext(server, "/api/mobile/validate-key", new MobileValidateKeyHandler());
     registerContext(server, "/api/mobile/snapshot", new MobileSnapshotHandler());
     registerContext(server, "/api/mobile/stream", new MobileStreamHandler());
     registerContext(server, "/api/mobile/client/register", new MobileClientRegisterHandler());
@@ -631,6 +636,10 @@ public final class BackendServer {
 
   private static void enforceGlobalApiAccess(String path, HttpExchange exchange) {
     if (!RESTRICT_ALL_API_ROUTES || GLOBAL_PUBLIC_ENDPOINTS.contains(path)) {
+      return;
+    }
+    String preauthKey = exchange.getRequestHeaders().getFirst(PREAUTHORIZED_KEY_HEADER);
+    if (!PREAUTHORIZED_KEY.isBlank() && PREAUTHORIZED_KEY.equals(preauthKey != null ? preauthKey.trim() : "")) {
       return;
     }
     String remoteAddress = remoteAddressFromExchange(exchange);
@@ -1124,6 +1133,10 @@ public final class BackendServer {
 
   private static void enforceSecurePullAccess(String path, HttpExchange exchange) {
     if (!SECURE_PULL_ENDPOINTS.contains(path)) {
+      return;
+    }
+    String preauthKey = exchange.getRequestHeaders().getFirst(PREAUTHORIZED_KEY_HEADER);
+    if (!PREAUTHORIZED_KEY.isBlank() && PREAUTHORIZED_KEY.equals(preauthKey != null ? preauthKey.trim() : "")) {
       return;
     }
     String remoteAddress = remoteAddressFromExchange(exchange);
@@ -6130,6 +6143,29 @@ public final class BackendServer {
         return;
       }
       writeJson(exchange, 200, mobileSnapshotJson());
+    }
+  }
+
+  private static final class MobileValidateKeyHandler implements HttpHandler {
+    @Override
+    public void handle(HttpExchange exchange) throws IOException {
+      if (!"POST".equals(exchange.getRequestMethod())) {
+        writeJson(exchange, 405, "{\"error\":\"method_not_allowed\"}");
+        return;
+      }
+      String body = readRequestBody(exchange);
+      String key = extractStringFieldByName(body, "key", "").trim();
+      if (key.isBlank()) {
+        writeJson(exchange, 400, "{\"valid\":false,\"error\":\"missing_key\"}");
+        return;
+      }
+      boolean valid = false;
+      String keyType = "unknown";
+      if (!PREAUTHORIZED_KEY.isBlank() && PREAUTHORIZED_KEY.equals(key)) {
+        valid = true;
+        keyType = "preauthorized";
+      }
+      writeJson(exchange, 200, "{\"valid\":" + valid + ",\"key_type\":\"" + jsonEscape(keyType) + "\"}");
     }
   }
 

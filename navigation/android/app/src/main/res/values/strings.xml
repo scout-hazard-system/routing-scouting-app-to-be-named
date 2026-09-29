@@ -62,4 +62,13 @@
     <string name="route_alert_notification_title_with_destination">Scout route alert — %1$s</string>
     <string name="route_alert_notification_mentions">Location mentions: %1$s</string>
     <string name="route_alert_notification_action_open_route">Open route</string>
+    <string name="paywall_title">Unlock Full Access</string>
+    <string name="paywall_message">This feature requires a valid license key. Enter your key below or use a preauthorized key for development/testing.</string>
+    <string name="paywall_key_hint">License key</string>
+    <string name="paywall_preauthorized_option">Use preauthorized key (dev/testing)</string>
+    <string name="paywall_preauthorized_hint">Preauthorized key</string>
+    <string name="paywall_submit">Unlock</string>
+    <string name="paywall_cancel">Cancel</string>
+    <string name="paywall_invalid_key">Invalid key. Please try again.</string>
+    <string name="paywall_success">Access unlocked successfully!</string>
 </resources>
