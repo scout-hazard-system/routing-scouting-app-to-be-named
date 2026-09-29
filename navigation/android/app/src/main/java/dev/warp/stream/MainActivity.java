@@ -1604,6 +1604,28 @@ public class MainActivity extends AppCompatActivity {
     return cachedClientId;
   }
 
+  private Request buildAuthenticatedRequest(String url, String payload) {
+    Request.Builder builder = new Request.Builder()
+        .url(url)
+        .post(RequestBody.create(payload, JSON_MEDIA_TYPE));
+    String preauthKey = AppPrefs.preauthorizedKey(this);
+    if (!TextUtils.isEmpty(preauthKey)) {
+      builder.addHeader("X-Preauthorized-Key", preauthKey);
+    }
+    return builder.build();
+  }
+
+  private Request buildAuthenticatedGetRequest(String url) {
+    Request.Builder builder = new Request.Builder()
+        .url(url)
+        .get();
+    String preauthKey = AppPrefs.preauthorizedKey(this);
+    if (!TextUtils.isEmpty(preauthKey)) {
+      builder.addHeader("X-Preauthorized-Key", preauthKey);
+    }
+    return builder.build();
+  }
+
   private void registerClientRoute(String base) {
     if (TextUtils.isEmpty(base)) {
       return;
@@ -1624,11 +1646,7 @@ public class MainActivity extends AppCompatActivity {
             + "\"session_id\":\""
             + streamSessionId
             + "\"}";
-    Request request =
-        new Request.Builder()
-            .url(base + "/api/mobile/client/register")
-            .post(RequestBody.create(payload, JSON_MEDIA_TYPE))
-            .build();
+    Request request = buildAuthenticatedRequest(base + "/api/mobile/client/register", payload);
     client.newCall(request)
         .enqueue(
             new Callback() {
@@ -1731,6 +1749,110 @@ public class MainActivity extends AppCompatActivity {
         .show();
   }
 
+  private void showPaywallDialog() {
+    LinearLayout container = new LinearLayout(this);
+    container.setOrientation(LinearLayout.VERTICAL);
+    container.setPadding(24, 16, 24, 16);
+
+    TextView message = new TextView(this);
+    message.setText(getString(R.string.paywall_message));
+    message.setTextSize(14);
+    container.addView(message);
+
+    CheckBox preauthBox = new CheckBox(this);
+    preauthBox.setText(getString(R.string.paywall_preauthorized_option));
+    container.addView(preauthBox);
+
+    EditText keyInput = new EditText(this);
+    keyInput.setHint(getString(R.string.paywall_key_hint));
+    keyInput.setSingleLine(true);
+    container.addView(keyInput);
+
+    EditText preauthInput = new EditText(this);
+    preauthInput.setHint(getString(R.string.paywall_preauthorized_hint));
+    preauthInput.setSingleLine(true);
+    preauthInput.setVisibility(View.GONE);
+    container.addView(preauthInput);
+
+    preauthBox.setOnCheckedChangeListener((buttonView, isChecked) -> {
+      keyInput.setVisibility(isChecked ? View.GONE : View.VISIBLE);
+      preauthInput.setVisibility(isChecked ? View.VISIBLE : View.GONE);
+    });
+
+    new AlertDialog.Builder(this)
+        .setTitle(getString(R.string.paywall_title))
+        .setView(container)
+        .setPositiveButton(getString(R.string.paywall_submit), (dialog, which) -> {
+          String enteredKey = preauthBox.isChecked()
+              ? preauthInput.getText().toString().trim()
+              : keyInput.getText().toString().trim();
+          if (enteredKey.isEmpty()) {
+            appendLine("PAYWALL", "no key entered");
+            return;
+          }
+          validateAndSaveKey(enteredKey);
+        })
+        .setNegativeButton(getString(R.string.paywall_cancel), null)
+        .setCancelable(false)
+        .show();
+  }
+
+  private void validateAndSaveKey(String key) {
+    String base = normalizedBaseUrl();
+    if (base == null) {
+      appendLine("PAYWALL", "invalid server URL");
+      return;
+    }
+    appendLine("PAYWALL", "validating key...");
+    String payload = "{\"key\":\"" + jsonEscapeLocal(key) + "\"}";
+    Request request = buildAuthenticatedRequest(base + "/api/mobile/validate-key", payload);
+    client.newCall(request).enqueue(new Callback() {
+      @Override
+      public void onFailure(Call call, IOException e) {
+        uiHandler.post(() -> {
+          appendLine("PAYWALL", "validation failed: " + e.getMessage());
+          showPaywallDialog();
+        });
+      }
+
+      @Override
+      public void onResponse(Call call, Response response) throws IOException {
+        try (response) {
+          if (!response.isSuccessful() || response.body() == null) {
+            uiHandler.post(() -> {
+              appendLine("PAYWALL", "validation failed (HTTP " + response.code() + ")");
+              showPaywallDialog();
+            });
+            return;
+          }
+          JSONObject json = new JSONObject(response.body().string());
+          boolean valid = json.optBoolean("valid", false);
+          String keyType = json.optString("key_type", "");
+          uiHandler.post(() -> {
+            if (valid) {
+              AppPrefs.savePreauthorizedKey(MainActivity.this, key);
+              appendLine("PAYWALL", getString(R.string.paywall_success) + " (" + keyType + ")");
+            } else {
+              appendLine("PAYWALL", getString(R.string.paywall_invalid_key));
+              showPaywallDialog();
+            }
+          });
+        } catch (Exception e) {
+          uiHandler.post(() -> {
+            appendLine("PAYWALL", "validation error: " + e.getMessage());
+            showPaywallDialog();
+          });
+        }
+      }
+    });
+  }
+
+  private void checkAndShowPaywall() {
+    if (!AppPrefs.hasValidPreauthorizedKey(this)) {
+      uiHandler.post(this::showPaywallDialog);
+    }
+  }
+
   private void submitErrorReport(String message) {
     String base = normalizedBaseUrl();
     if (base == null) {
@@ -1767,11 +1889,7 @@ public class MainActivity extends AppCompatActivity {
             + "\"analytics_opt_out\":"
             + (analyticsOptOut ? "true" : "false")
             + "}";
-    Request request =
-        new Request.Builder()
-            .url(base + "/api/platform/error-reports/submit")
-            .post(RequestBody.create(payload, JSON_MEDIA_TYPE))
-            .build();
+    Request request = buildAuthenticatedRequest(base + "/api/platform/error-reports/submit", payload);
     client.newCall(request)
         .enqueue(
             new Callback() {
@@ -3016,6 +3134,7 @@ public class MainActivity extends AppCompatActivity {
       setStatus("invalid URL");
       return;
     }
+    checkAndShowPaywall();
     AppPrefs.saveBaseUrl(this, base);
     String resolved = AppPrefs.resolveReachableBaseUrl(this);
     if (!resolved.equals(base)) {
