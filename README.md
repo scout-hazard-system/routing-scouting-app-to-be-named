@@ -53,6 +53,7 @@ Model iterations live under `llm/{core,vet,rank,alert,intel}/`.
 - Final deployment / mesh config: `docs/guides/FINAL_DEPLOYMENT_CONFIG.md`
 - Stack commands: `stack/README.md`
 - Deployment: `stack/deployment/README.md`
+- Map server setup suite (new Pop!_OS host): `map_server_setup/README.md`
 - Frontend: `navigation/frontend/README.md`
 - Backend: `navigation/backend/README.md`
 - Scout models: `llm/README.md`
