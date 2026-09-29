@@ -16,25 +16,11 @@ STACK_LOG_DIR="/tmp/vehicle_stack/logs"
 BACKEND_LOG_FILE="$STACK_LOG_DIR/backend.log"
 FRONTEND_LOG_FILE="$STACK_LOG_DIR/frontend.log"
 
-rotate_log() {
-  local file_path="$1"
-  [[ -f "$file_path" ]] || return 0
-  local max_bytes=$((MAX_LOG_SIZE_MB * 1024 * 1024))
-  local size
-  size="$(wc -c < "$file_path" | tr -d ' ')"
-  if (( size < max_bytes )); then
-    return 0
-  fi
-  for i in $(seq "$MAX_LOG_BACKUPS" -1 1); do
-    [[ -f "${file_path}.${i}" ]] && mv "${file_path}.${i}" "${file_path}.$((i + 1))"
-  done
-  mv "$file_path" "${file_path}.1"
-  : > "$file_path"
-}
+LOG_ROTATION_SH="$ROOT_DIR/stack/config/log_rotation.sh"
+# shellcheck source=../config/log_rotation.sh
+source "$LOG_ROTATION_SH"
 
 mkdir -p "$STACK_LOG_DIR"
-rotate_log "$BACKEND_LOG_FILE"
-rotate_log "$FRONTEND_LOG_FILE"
-rotate_log "$PIPELINE_LOG"
+rotate_logs
 
 echo "Log maintenance complete."
