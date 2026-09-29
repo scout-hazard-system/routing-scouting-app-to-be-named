@@ -26,7 +26,8 @@ for tag_mf in \
   "scout-hermes-hc1.1.0:unified/Modelfile.scout-hermes-hc1.1.0" \
   "scout-hermes-hc1.1.0-64k:unified/Modelfile.scout-hermes-hc1.1.0-64k" \
   "scout-hermes-hc1.0.0:unified/Modelfile.scout-hermes-hc1.0.0" \
-  "scout-hermes-hc1.0.0-64k:unified/Modelfile.scout-hermes-hc1.0.0-64k"
+  "scout-hermes-hc1.0.0-64k:unified/Modelfile.scout-hermes-hc1.0.0-64k" \
+  "scout-hermes-pa300k:unified/Modelfile.scout-hermes-pa300k"
 do
   tag="${tag_mf%%:*}"
   mf="${tag_mf#*:}"
