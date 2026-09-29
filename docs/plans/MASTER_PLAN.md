@@ -1,5 +1,11 @@
 # Rewritten Master Plan: Scout & Imagoro Multi-Host Deployment
 
+> **Canonical location.** This file is the single source of truth for the unified
+> multi-repo deployment plan. It lives in the **public**
+> `routing-scouting-app-to-be-named` repo so it is readable by every repo in the
+> ecosystem — `imagoro` is private. The other repos carry a short pointer stub at
+> their own `docs/MASTER_PLAN.md` that links here. Edit this file, not the stubs.
+>
 > **Version:** 2.0 (Live Hardware & Netboot Reality Baseline)  
 > **Date:** September 29, 2026  
 > **Target Topology:**  
@@ -68,7 +74,7 @@ graph TD
 ## 3. Detailed Workstreams & Sequential Roadmap
 
 ### Workstream 1: Wire Imagoro Backend & Blackboard onto Dell (High Priority)
-- **Files:** [`client/server/serve.mjs`](file:///c:/Users/gryph/kepler/worktrees/imago-recov-5128b/client/server/serve.mjs), [`server/src/blackboard.mjs`](file:///c:/Users/gryph/kepler/worktrees/imago-recov-5128b/server/src/blackboard.mjs), [`server/acl-matrix.json`](file:///c:/Users/gryph/kepler/worktrees/imago-recov-5128b/server/acl-matrix.json).
+- **Files (repo [`scout-hazard-system/imagoro`](https://github.com/scout-hazard-system/imagoro)):** [`client/server/serve.mjs`](https://github.com/scout-hazard-system/imagoro/blob/main/client/server/serve.mjs), [`server/src/blackboard.mjs`](https://github.com/scout-hazard-system/imagoro/blob/main/server/src/blackboard.mjs), [`server/acl-matrix.json`](https://github.com/scout-hazard-system/imagoro/blob/main/server/acl-matrix.json).
 - **Execution Steps:**
   1. Package and stage `client/server/serve.mjs`, `server/src/`, and `harness/src/guard.mjs` to `/opt/imagoro-backend/` on the Dell via SSH/rsync.
   2. Create systemd unit `/etc/systemd/system/imagoro-backend.service`:
@@ -82,7 +88,7 @@ graph TD
 ---
 
 ### Workstream 2: Deploy Scout Map Server onto Dell (High Priority)
-- **Files:** [`navigation/backend/BackendServer.java`](file:///c:/Users/gryph/kepler/worktrees/routi-recov-2e852/navigation/backend/BackendServer.java), [`map_server_setup/`](file:///c:/Users/gryph/kepler/worktrees/routi-recov-2e852/map_server_setup), planet vector tiles & PMTiles shards.
+- **Files (this repo):** [`navigation/backend/BackendServer.java`](../../navigation/backend/BackendServer.java), [`map_server_setup/`](../../map_server_setup), planet vector tiles & PMTiles shards.
 - **Execution Steps:**
   1. Sync map engine source and Arizona shard pack onto Dell (`/opt/scout-map-server/`).
   2. Compile Java map server:
