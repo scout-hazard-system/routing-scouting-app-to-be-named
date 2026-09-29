@@ -1,0 +1,4 @@
+{"meta":{"state":"WA","z":15,"x":5422,"y":11533,"zhs":{"key":"z/15/5422/11533|h3/9/nv9v/pfi6|s2/12/f2/20w/29g","z_key":"z/15/5422/11533","h_key":"h3/9/nv9v/pfi6","s_key":"s2/12/f2/20w/29g"},"source":"planet","roads":3,"buildings":0,"areas":0,"pois":0}}
+{"type":"road","class":"residential","name":"Sorenson Road","oneway":false,"pts":"46.941462,-120.432301;46.941466,-120.423683;46.941478,-120.420971"}
+{"type":"road","class":"service","name":"","oneway":false,"pts":"46.936898,-120.423535;46.939316,-120.423626;46.941466,-120.423683"}
+{"type":"road","class":"service","name":"","oneway":false,"pts":"46.941466,-120.423811;46.941933,-120.423809;46.942015,-120.423822;46.942191,-120.423911"}

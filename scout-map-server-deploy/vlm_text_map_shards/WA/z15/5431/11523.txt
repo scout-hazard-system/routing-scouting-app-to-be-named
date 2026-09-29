@@ -1,0 +1,7 @@
+{"meta":{"state":"WA","z":15,"x":5431,"y":11523,"zhs":{"key":"z/15/5431/11523|h3/9/nv8g/pfj3|s2/12/f2/20t/29f","z_key":"z/15/5431/11523","h_key":"h3/9/nv8g/pfj3","s_key":"s2/12/f2/20t/29f"},"source":"planet","roads":6,"buildings":0,"areas":0,"pois":0}}
+{"type":"road","class":"tertiary","name":"Parke Creek Road","oneway":false,"pts":"47.010109,-120.325865;47.015992,-120.326064"}
+{"type":"road","class":"residential","name":"Christensen Road","oneway":false,"pts":"47.016047,-120.332863;47.016045,-120.332568"}
+{"type":"road","class":"residential","name":"Parke Creek Road","oneway":false,"pts":"47.015992,-120.326064;47.015758,-120.322094"}
+{"type":"road","class":"residential","name":"Christensen Road","oneway":false,"pts":"47.016052,-120.333424;47.016047,-120.332863"}
+{"type":"road","class":"residential","name":"Christensen Road","oneway":false,"pts":"47.016045,-120.332568;47.016012,-120.326584;47.015992,-120.326064"}
+{"type":"road","class":"path","name":"","oneway":false,"pts":"47.017563,-120.333424;47.017371,-120.333169;47.017129,-120.332946;47.016925,-120.332868;47.016047,-120.332863;47.015747,-120.332807;47.015496,-120.332724;47.015315,-120.332630;47.015035,-120.332450;47.014587,-120.332104;47.013209,-120.331018;47.012493,-120.330505;47.012263,-120.330320;47.011036,-120.329390;47.010109,-120.328676"}

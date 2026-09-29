@@ -1,0 +1,2 @@
+{"meta":{"state":"WA","z":15,"x":5415,"y":11508,"zhs":{"key":"z/15/5415/11508|h3/9/nv8k/pfkf|s2/12/f2/20u/29b","z_key":"z/15/5415/11508","h_key":"h3/9/nv8k/pfkf","s_key":"s2/12/f2/20u/29b"},"source":"planet","roads":1,"buildings":0,"areas":0,"pois":0}}
+{"type":"road","class":"residential","name":"Wilson Creek Road","oneway":false,"pts":"47.130068,-120.500788;47.129750,-120.500523;47.126834,-120.497875"}

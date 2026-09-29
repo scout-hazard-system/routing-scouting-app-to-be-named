@@ -1,0 +1,4 @@
+{"meta":{"state":"WA","z":15,"x":5428,"y":11522,"zhs":{"key":"z/15/5428/11522|h3/9/nv8m/pfj6|s2/12/f2/20t/29e","z_key":"z/15/5428/11522","h_key":"h3/9/nv8m/pfj6","s_key":"s2/12/f2/20t/29e"},"source":"planet","roads":3,"buildings":0,"areas":0,"pois":0}}
+{"type":"road","class":"tertiary","name":"Lyons Road","oneway":false,"pts":"47.023592,-120.366383;47.023608,-120.364175;47.023630,-120.355053"}
+{"type":"road","class":"tertiary","name":"Venture Road","oneway":false,"pts":"47.025323,-120.364181;47.023608,-120.364175"}
+{"type":"road","class":"service","name":"","oneway":false,"pts":"47.023601,-120.365114;47.022732,-120.365044;47.022224,-120.365050;47.021823,-120.365036"}

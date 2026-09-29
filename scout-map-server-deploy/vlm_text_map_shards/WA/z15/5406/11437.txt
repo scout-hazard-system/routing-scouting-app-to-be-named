@@ -1,0 +1,2 @@
+{"meta":{"state":"WA","z":15,"x":5406,"y":11437,"zhs":{"key":"z/15/5406/11437|h3/9/nv3z/pfqp|s2/12/f2/20m/28z","z_key":"z/15/5406/11437","h_key":"h3/9/nv3z/pfqp","s_key":"s2/12/f2/20m/28z"},"source":"planet","roads":1,"buildings":0,"areas":0,"pois":0}}
+{"type":"road","class":"residential","name":"Bjork Canyon Road","oneway":false,"pts":"47.650472,-120.597415;47.650934,-120.596752"}

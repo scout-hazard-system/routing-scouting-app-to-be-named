@@ -1,0 +1,3 @@
+{"meta":{"state":"WA","z":11,"x":319,"y":709,"zhs":{"key":"z/11/319/709|h3/9/nvjr/pfy6|s2/12/f2/21k/27z","z_key":"z/11/319/709","h_key":"h3/9/nvjr/pfy6","s_key":"s2/12/f2/21k/27z"},"source":"planet","roads":0,"buildings":0,"areas":1,"pois":1}}
+{"type":"area","kind":"water","pts":"48.345297,-123.931274;48.345297,-123.744507;48.221013,-123.744507;48.221013,-123.931274"}
+{"type":"poi","name":"Otter Land District","kind":"cadastral","lat":48.320505,"lon":-123.821797}

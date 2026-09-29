@@ -1,0 +1,2 @@
+{"meta":{"state":"WA","z":15,"x":5401,"y":11505,"zhs":{"key":"z/15/5401/11505|h3/9/nv9f/pfko|s2/12/f2/20w/29a","z_key":"z/15/5401/11505","h_key":"h3/9/nv9f/pfko","s_key":"s2/12/f2/20w/29a"},"source":"planet","roads":1,"buildings":0,"areas":0,"pois":0}}
+{"type":"road","class":"residential","name":"Gemstone Drive","oneway":false,"pts":"47.144781,-120.661965;47.144826,-120.661841"}

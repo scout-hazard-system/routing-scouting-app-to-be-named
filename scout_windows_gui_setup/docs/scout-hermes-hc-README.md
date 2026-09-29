@@ -19,7 +19,7 @@ Hermes floor: **≥ 65536**. Prefer 100k when RAM allows.
 
 ```bash
 ollama pull qwen3:8b
-bash ~/Desktop/llm/unified/build_hermes_hc.sh
+bash ~/repo/llm/unified/build_hermes_hc.sh
 ```
 
 ## CrewAI routing

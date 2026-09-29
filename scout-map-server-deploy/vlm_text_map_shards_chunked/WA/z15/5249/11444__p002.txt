@@ -1,0 +1,102 @@
+{"meta":{"state":"WA","z":15,"x":5249,"y":11444,"zhs":{"key":"z/15/5249/11444|h3/9/nvgh/pfq3|s2/12/f2/21c/28o","z_key":"z/15/5249/11444","h_key":"h3/9/nvgh/pfq3","s_key":"s2/12/f2/21c/28o"},"source":"planet","roads":1102,"buildings":313,"areas":33,"pois":376}}
+{"type":"poi","name":"4 (Where shall I go ahead?)","kind":"artwork","lat":47.599318,"lon":-122.330183}
+{"type":"poi","name":"Anawog","kind":"artwork","lat":47.601067,"lon":-122.331616}
+{"type":"poi","name":"Fortson Square","kind":"artwork","lat":47.601117,"lon":-122.331699}
+{"type":"poi","name":"Evolving Wing and the Gravity of Presence","kind":"artwork","lat":47.603763,"lon":-122.329880}
+{"type":"poi","name":"Return","kind":"artwork","lat":47.603716,"lon":-122.329778}
+{"type":"poi","name":"Blue Glass Passage","kind":"artwork","lat":47.603725,"lon":-122.330014}
+{"type":"poi","name":"Continuum","kind":"artwork","lat":47.603669,"lon":-122.329878}
+{"type":"poi","name":"illumine","kind":"artwork","lat":47.603866,"lon":-122.330551}
+{"type":"poi","name":"Hatch Covers","kind":"artwork","lat":47.603901,"lon":-122.330832}
+{"type":"poi","name":"Points of View","kind":"artwork","lat":47.604015,"lon":-122.329145}
+{"type":"poi","name":"Wings","kind":"artwork","lat":47.604098,"lon":-122.329062}
+{"type":"poi","name":"Witness and Dilemma, Levels, Weights and Measures","kind":"artwork","lat":47.604011,"lon":-122.329084}
+{"type":"poi","name":"Justice is Served: Celebrating the People Who Work For a Change","kind":"artwork","lat":47.604082,"lon":-122.329188}
+{"type":"poi","name":"Ornamental Iron in Leather/Contradictory Vibrations?","kind":"artwork","lat":47.603962,"lon":-122.329089}
+{"type":"poi","name":"Common Ground","kind":"artwork","lat":47.604049,"lon":-122.329159}
+{"type":"poi","name":"Points of View","kind":"artwork","lat":47.603978,"lon":-122.329164}
+{"type":"poi","name":"Codes & Protocol","kind":"artwork","lat":47.604261,"lon":-122.329467}
+{"type":"poi","name":"Codes & Protocol","kind":"artwork","lat":47.604394,"lon":-122.329526}
+{"type":"poi","name":"Listening","kind":"artwork","lat":47.604183,"lon":-122.329239}
+{"type":"poi","name":"Codes & Protocol","kind":"artwork","lat":47.604378,"lon":-122.329583}
+{"type":"poi","name":"Codes & Protocol","kind":"artwork","lat":47.604290,"lon":-122.329387}
+{"type":"poi","name":"Transition","kind":"artwork","lat":47.604997,"lon":-122.329757}
+{"type":"poi","name":"Water Weaving Light Cycle","kind":"artwork","lat":47.603604,"lon":-122.329875}
+{"type":"poi","name":"112 Wristwatches","kind":"artwork","lat":47.604123,"lon":-122.329220}
+{"type":"poi","name":"Gary Manuel","kind":"beauty","lat":47.602287,"lon":-122.332233}
+{"type":"poi","name":"Hill's Barbershop","kind":"hairdresser","lat":47.602434,"lon":-122.332903}
+{"type":"poi","name":"76","kind":"convenience","lat":47.606145,"lon":-122.324202}
+{"type":"poi","name":"Stockbox First Hill Grocery","kind":"convenience","lat":47.605519,"lon":-122.324417}
+{"type":"poi","name":"Entercom Communications","kind":"studio","lat":47.605727,"lon":-122.330020}
+{"type":"poi","name":"Eyes on James","kind":"optician","lat":47.605800,"lon":-122.323754}
+{"type":"poi","name":"Bonfire","kind":"gift","lat":47.599925,"lon":-122.326104}
+{"type":"poi","name":"Jose Marti Child Development Center","kind":"childcare","lat":47.600148,"lon":-122.328767}
+{"type":"poi","name":"Sairen","kind":"clothes","lat":47.599349,"lon":-122.326163}
+{"type":"poi","name":"Dong Sing Market","kind":"convenience","lat":47.599039,"lon":-122.325347}
+{"type":"poi","name":"Modern Trading Co.","kind":"gift","lat":47.599339,"lon":-122.324875}
+{"type":"poi","name":"Gene SJ Liaw MD","kind":"doctors","lat":47.599339,"lon":-122.324478}
+{"type":"poi","name":"Cindy's Beauty Salon","kind":"hairdresser","lat":47.599374,"lon":-122.324358}
+{"type":"poi","name":"Bahtoh","kind":"florist","lat":47.599361,"lon":-122.324240}
+{"type":"poi","name":"Sixth Avenue Dentistry - Nigel W. Saw","kind":"dentist","lat":47.599725,"lon":-122.326562}
+{"type":"poi","name":"Bayani Travel","kind":"travel_agency","lat":47.599345,"lon":-122.326530}
+{"type":"poi","name":"Barber Shop","kind":"hairdresser","lat":47.599405,"lon":-122.325549}
+{"type":"poi","name":"Kim Hair Salon","kind":"hairdresser","lat":47.599349,"lon":-122.326584}
+{"type":"poi","name":"Center of Contemporary Art","kind":"art","lat":47.601114,"lon":-122.330068}
+{"type":"poi","name":"Myrkott Pa Reutersvard","kind":"artwork","lat":47.601264,"lon":-122.330910}
+{"type":"poi","name":"Efter Reutersvard","kind":"artwork","lat":47.601309,"lon":-122.330564}
+{"type":"poi","name":"Tumbling Figures","kind":"artwork","lat":47.603112,"lon":-122.327839}
+{"type":"poi","name":"Grandmother Frog","kind":"artwork","lat":47.601609,"lon":-122.331637}
+{"type":"poi","name":"The Lemon Grove","kind":"clothes","lat":47.599077,"lon":-122.331980}
+{"type":"poi","name":"The Outpost Stationery","kind":"stationery","lat":47.599075,"lon":-122.332402}
+{"type":"poi","name":"2nd Ave Ext S & S Jackson St","kind":"bus_stop","lat":47.599397,"lon":-122.330022}
+{"type":"poi","name":"3rd Avenue South & South Main Street","kind":"bus_stop","lat":47.600280,"lon":-122.330385}
+{"type":"poi","name":"South Washington Street & 4th Avenue South","kind":"bus_stop","lat":47.600803,"lon":-122.329408}
+{"type":"poi","name":"3rd Avenue & James Street","kind":"bus_stop","lat":47.602177,"lon":-122.331039}
+{"type":"poi","name":"3rd Avenue & James Street","kind":"bus_stop","lat":47.602642,"lon":-122.331184}
+{"type":"poi","name":"South Jackson Street & Maynard Avenue South","kind":"bus_stop","lat":47.599273,"lon":-122.325648}
+{"type":"poi","name":"South Jackson Street & Maynard Avenue South","kind":"bus_stop","lat":47.599112,"lon":-122.324548}
+{"type":"poi","name":"South Jackson Street & 5th Avenue South","kind":"bus_stop","lat":47.599305,"lon":-122.328461}
+{"type":"poi","name":"South Jackson Street & 5th Avenue South","kind":"bus_stop","lat":47.599124,"lon":-122.328008}
+{"type":"poi","name":"Prefontaine Place South & Yesler Way","kind":"bus_stop","lat":47.601604,"lon":-122.329735}
+{"type":"poi","name":"3rd Avenue & Cherry Street","kind":"bus_stop","lat":47.603798,"lon":-122.332493}
+{"type":"poi","name":"3rd Avenue & Columbia Street","kind":"bus_stop","lat":47.604040,"lon":-122.332466}
+{"type":"poi","name":"4th Avenue South & South Jackson Street","kind":"bus_stop","lat":47.599663,"lon":-122.329065}
+{"type":"poi","name":"South Washington Street & 3rd Avenue South","kind":"bus_stop","lat":47.600949,"lon":-122.330841}
+{"type":"poi","name":"South Jackson Street & 8th Avenue South","kind":"bus_stop","lat":47.599115,"lon":-122.321954}
+{"type":"poi","name":"South Jackson Street & 8th Avenue South","kind":"bus_stop","lat":47.599301,"lon":-122.322107}
+{"type":"poi","name":"Yesler Way & Prefontaine Place South","kind":"bus_stop","lat":47.601649,"lon":-122.329768}
+{"type":"poi","name":"Yesler Way & 3rd Avenue","kind":"bus_stop","lat":47.601796,"lon":-122.329797}
+{"type":"poi","name":"2nd Ave & James St","kind":"bus_stop","lat":47.602479,"lon":-122.332850}
+{"type":"poi","name":"Boren Ave & Jefferson St","kind":"bus_stop","lat":47.606130,"lon":-122.322102}
+{"type":"poi","name":"James Street & 5th Avenue","kind":"bus_stop","lat":47.603785,"lon":-122.328705}
+{"type":"poi","name":"James Street & 5th Avenue","kind":"bus_stop","lat":47.603850,"lon":-122.329054}
+{"type":"poi","name":"James Street & 8th Avenue","kind":"bus_stop","lat":47.605163,"lon":-122.325500}
+{"type":"poi","name":"James Street & 8th Avenue","kind":"bus_stop","lat":47.605241,"lon":-122.325774}
+{"type":"poi","name":"Jefferson Street & 9th Avenue","kind":"bus_stop","lat":47.605000,"lon":-122.323912}
+{"type":"poi","name":"Terrace Street & 5th Avenue","kind":"bus_stop","lat":47.602119,"lon":-122.328078}
+{"type":"poi","name":"Yesler Way & 5th Avenue","kind":"bus_stop","lat":47.601788,"lon":-122.327399}
+{"type":"poi","name":"Yesler Way & 6th Aveune South","kind":"bus_stop","lat":47.601638,"lon":-122.325058}
+{"type":"poi","name":"Yesler Way & 8th Ave S","kind":"bus_stop","lat":47.601673,"lon":-122.323558}
+{"type":"poi","name":"4th Ave South & South Jackson Street","kind":"bus_stop","lat":47.598670,"lon":-122.328880}
+{"type":"poi","name":"4th Avenue South & South Washington Street","kind":"bus_stop","lat":47.601222,"lon":-122.328888}
+{"type":"poi","name":"5th Ave & James St","kind":"bus_stop","lat":47.603570,"lon":-122.329006}
+{"type":"poi","name":"5th Avenue & Jefferson Street","kind":"bus_stop","lat":47.603092,"lon":-122.328751}
+{"type":"poi","name":"5th Ave S & S Jackson St","kind":"bus_stop","lat":47.599880,"lon":-122.327560}
+{"type":"poi","name":"9th Avenue & Alder Street","kind":"bus_stop","lat":47.603555,"lon":-122.323051}
+{"type":"poi","name":"9th Avenue & Alder Street","kind":"bus_stop","lat":47.604038,"lon":-122.323242}
+{"type":"poi","name":"9th Avenue & Cherry Street","kind":"bus_stop","lat":47.606091,"lon":-122.325363}
+{"type":"poi","name":"9th Avenue & James Street","kind":"bus_stop","lat":47.606022,"lon":-122.325058}
+{"type":"poi","name":"9th Avenue & Jefferson Street","kind":"bus_stop","lat":47.604982,"lon":-122.324344}
+{"type":"poi","name":"James Street & 3rd Avenue","kind":"bus_stop","lat":47.602911,"lon":-122.330905}
+{"type":"poi","name":"4th Avenue & Madison Street","kind":"bus_stop","lat":47.605977,"lon":-122.332672}
+{"type":"poi","name":"4th Avenue & James Street","kind":"bus_stop","lat":47.603112,"lon":-122.330036}
+{"type":"poi","name":"Yesler Way & 8th Ave","kind":"bus_stop","lat":47.601750,"lon":-122.323805}
+{"type":"poi","name":"James Street & 4th Avenue","kind":"bus_stop","lat":47.603062,"lon":-122.330929}
+{"type":"poi","name":"3rd Avenue & Columbia Street","kind":"bus_stop","lat":47.604293,"lon":-122.332941}
+{"type":"poi","name":"Amtrak Thruway","kind":"bus_stop","lat":47.598938,"lon":-122.330154}
+{"type":"poi","name":"2nd Ave Ext S & Yesler Way","kind":"bus_stop","lat":47.601421,"lon":-122.331873}
+{"type":"poi","name":"5th Ave & Marion St","kind":"bus_stop","lat":47.605644,"lon":-122.330857}
+{"type":"poi","name":"4th Avenue & Cherry Street","kind":"bus_stop","lat":47.604362,"lon":-122.331200}
+{"type":"poi","name":"5th Avenue & Marion Street","kind":"bus_stop","lat":47.605924,"lon":-122.331334}
+{"type":"poi","name":"Yesler Way & 2nd Avenue South","kind":"bus_stop","lat":47.601653,"lon":-122.331173}
+{"type":"poi","name":"South Washington Street & 5th Avenue South","kind":"bus_stop","lat":47.600803,"lon":-122.327941}

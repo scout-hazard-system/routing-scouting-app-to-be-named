@@ -1,0 +1,3 @@
+{"meta":{"state":"WA","z":15,"x":5426,"y":11517,"zhs":{"key":"z/15/5426/11517|h3/9/nv8e/pfjm|s2/12/f2/20t/29d","z_key":"z/15/5426/11517","h_key":"h3/9/nv8e/pfjm","s_key":"s2/12/f2/20t/29d"},"source":"planet","roads":2,"buildings":0,"areas":0,"pois":0}}
+{"type":"road","class":"residential","name":"Cooke Canyon Road","oneway":false,"pts":"47.062755,-120.385847;47.056720,-120.385882;47.055037,-120.385885"}
+{"type":"road","class":"residential","name":"Schnebly Road","oneway":false,"pts":"47.060402,-120.385858;47.060329,-120.388355"}

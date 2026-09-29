@@ -1,0 +1,3 @@
+{"meta":{"state":"WA","z":15,"x":5424,"y":11526,"zhs":{"key":"z/15/5424/11526|h3/9/nv97/pfit|s2/12/f2/20v/29f","z_key":"z/15/5424/11526","h_key":"h3/9/nv97/pfit","s_key":"s2/12/f2/20v/29f"},"source":"planet","roads":2,"buildings":0,"areas":0,"pois":0}}
+{"type":"road","class":"residential","name":"Hazel Lane","oneway":false,"pts":"46.990232,-120.408906;46.991505,-120.408874;46.991580,-120.408941;46.991608,-120.409040;46.991578,-120.410328"}
+{"type":"road","class":"service","name":"","oneway":false,"pts":"46.992464,-120.410328;46.992512,-120.408397;46.992442,-120.408043"}

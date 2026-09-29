@@ -2,7 +2,7 @@
 
 Verified baseline for the local + Tailscale mesh vehicle stack and Scout CrewAI integration.
 
-**Host:** Pop!_OS Linux (`100.78.191.61` on Tailscale)  
+**Host:** Debian Linux (`100.78.191.61` on Tailscale)  
 **Branch:** `master`  
 **Jurisdiction:** Arizona alpha (`AZ_JURISDICTION_ACTIVE`)  
 **Verified:** 2026-08-26
@@ -71,7 +71,7 @@ OPENAI_BASE_URL=http://127.0.0.1:11434/v1   # specialists on Linux loopback
 
 | Host | Tailscale IP | Ollama listen | Client URL |
 |------|--------------|---------------|------------|
-| pop-os (Linux hub) | `100.78.191.61` | `0.0.0.0:11434` (all ifaces) | `http://100.78.191.61:11434` or loopback |
+| debian (Linux hub) | `100.78.191.61` | `0.0.0.0:11434` (all ifaces) | `http://100.78.191.61:11434` or loopback |
 | gibdowsvista (Windows Hermes) | `100.82.130.47` | **Tailscale-only** | **only** `http://100.82.130.47:11434` |
 
 Windows peer Ollama does **not** answer on the LAN IP (e.g. `192.168.1.160:11434` times out).
@@ -93,7 +93,7 @@ Verify with `scout-mesh-status` (expects TS win UP, LAN win DOWN).
 
 ## Launch / operate
 
-From repo root (`/home/gibi/Desktop`):
+From repo root (`~/repo`):
 
 ```bash
 ./master start          # or ./stack/commands/run_vehicle_stack.sh start

@@ -1,0 +1,7 @@
+{"meta":{"state":"WA","z":15,"x":5421,"y":11518,"zhs":{"key":"z/15/5421/11518|h3/9/nv8u/pfji|s2/12/f2/20u/29d","z_key":"z/15/5421/11518","h_key":"h3/9/nv8u/pfji","s_key":"s2/12/f2/20u/29d"},"source":"planet","roads":6,"buildings":0,"areas":0,"pois":0}}
+{"type":"road","class":"tertiary","name":"Fairview Road","oneway":false,"pts":"47.047851,-120.435149;47.047552,-120.435141"}
+{"type":"road","class":"tertiary","name":"Fairview Road","oneway":false,"pts":"47.055271,-120.434757;47.052440,-120.434881;47.049597,-120.435095;47.048679,-120.435136;47.047893,-120.435149"}
+{"type":"road","class":"tertiary","name":"Fairview Road","oneway":false,"pts":"47.047893,-120.435149;47.047851,-120.435149"}
+{"type":"road","class":"service","name":"","oneway":false,"pts":"47.048436,-120.443287;47.048436,-120.442957;47.048478,-120.440261;47.048665,-120.435779;47.048679,-120.435136"}
+{"type":"road","class":"service","name":"","oneway":false,"pts":"47.051408,-120.434959;47.051402,-120.434095"}
+{"type":"road","class":"service","name":"","oneway":false,"pts":"47.050973,-120.434991;47.050971,-120.433770"}

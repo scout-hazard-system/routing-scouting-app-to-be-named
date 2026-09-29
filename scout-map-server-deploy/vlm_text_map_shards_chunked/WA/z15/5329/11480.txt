@@ -1,0 +1,3 @@
+{"meta":{"state":"WA","z":15,"x":5329,"y":11480,"zhs":{"key":"z/15/5329/11480|h3/9/nvd3/pfmw|s2/12/f2/214/290","z_key":"z/15/5329/11480","h_key":"h3/9/nvd3/pfmw","s_key":"s2/12/f2/214/290"},"source":"planet","roads":1,"buildings":0,"areas":1,"pois":0}}
+{"type":"road","class":"path","name":"National Forest Development Road 5044","oneway":false,"pts":"47.331559,-121.442699;47.331470,-121.442914;47.331261,-121.443324"}
+{"type":"area","kind":"park","pts":"47.338939,-121.454029;47.338939,-121.442699;47.331261,-121.442699;47.331261,-121.454029"}

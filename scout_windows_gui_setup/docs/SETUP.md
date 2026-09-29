@@ -9,7 +9,7 @@ No cloud LLM tokens: all OpenAI-compatible traffic is forced to `http://127.0.0.
 
 | Tool | Why |
 |------|-----|
-| Linux desktop (Pop!_OS tested) | GUI + Ollama host |
+| Linux desktop (Debian tested) | GUI + Ollama host |
 | Python `>=3.10,<3.14` | CrewAI runtime |
 | [uv](https://docs.astral.sh/uv/) | deps + CrewAI CLI install |
 | [Ollama](https://ollama.com) | local model server on `:11434` |
@@ -46,9 +46,9 @@ curl -s http://127.0.0.1:11434/api/tags | head
 Build / refresh from the sibling llm tree (outside this repo):
 
 ```bash
-ollama create scout-dev -f ~/Desktop/llm/dev/Modelfile.scout-dev
+ollama create scout-dev -f ~/repo/llm/dev/Modelfile.scout-dev
 # or full set:
-bash ~/Desktop/llm/build/build_llm_set.sh
+bash ~/repo/llm/build/build_llm_set.sh
 ollama list | egrep 'scout-|llama3.1'
 ```
 
@@ -57,7 +57,7 @@ ollama list | egrep 'scout-|llama3.1'
 ## 3. Project install
 
 ```bash
-cd ~/Desktop/scout_crew
+cd ~/repo/scout_crew
 cp -n .env.example .env
 crewai install          # creates .venv, installs crewai + PySide6, etc.
 
@@ -97,7 +97,7 @@ eval "$(scout env)"
 
 ### Desktop launcher (optional)
 
-- `~/Desktop/Scout-Crew.desktop`
+- `~/repo/Scout-Crew.desktop`
 - `~/.local/share/applications/scout-crew.desktop`
 
 If the icon is blocked: right-click → **Allow Launching**, or run `scout-gui`.
@@ -182,7 +182,7 @@ scout-gui
 | Enable traces | already on via `.env`; or `crewai traces enable` |
 | View last task outputs | `crewai log-tasks-outputs` |
 | Update deps | `uv lock && crewai install` |
-| Rebuild a scout model | `ollama create <tag> -f ~/Desktop/llm/...` |
+| Rebuild a scout model | `ollama create <tag> -f ~/repo/llm/...` |
 
 ---
 

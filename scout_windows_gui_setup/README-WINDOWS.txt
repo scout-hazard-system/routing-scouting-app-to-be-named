@@ -28,7 +28,7 @@ Verify:
 
 Mesh IP set (locked listen)
 ---------------------------
-Linux hub (pop-os):     100.78.191.61
+Linux hub (debian):     100.78.191.61
 Windows peer (Hermes):  100.82.130.47
 
 Windows Ollama is reachable on the Tailscale address ONLY.

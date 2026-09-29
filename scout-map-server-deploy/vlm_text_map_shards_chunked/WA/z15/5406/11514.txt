@@ -1,0 +1,3 @@
+{"meta":{"state":"WA","z":15,"x":5406,"y":11514,"zhs":{"key":"z/15/5406/11514|h3/9/nv9p/pfjv|s2/12/f2/20w/29c","z_key":"z/15/5406/11514","h_key":"h3/9/nv9p/pfjv","s_key":"s2/12/f2/20w/29c"},"source":"planet","roads":2,"buildings":0,"areas":0,"pois":0}}
+{"type":"road","class":"residential","name":"Lower Green Canyon Road","oneway":false,"pts":"47.085202,-120.603020;47.077487,-120.603071"}
+{"type":"road","class":"service","name":"","oneway":false,"pts":"47.084958,-120.603023;47.084958,-120.602919;47.084912,-120.602371;47.084884,-120.602232;47.084848,-120.602160;47.084771,-120.602076;47.084621,-120.601961"}

@@ -449,7 +449,7 @@ public final class ScannerBackendServer {
     if (root != null && !root.isBlank()) {
       return Path.of(root);
     }
-    return Path.of("/home/gibi/Desktop");
+    return Path.of(System.getProperty("user.dir"));
   }
 
   private static String repoPath(String relPath) {

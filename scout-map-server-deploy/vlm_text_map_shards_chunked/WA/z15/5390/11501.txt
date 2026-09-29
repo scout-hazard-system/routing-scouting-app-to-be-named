@@ -1,0 +1,2 @@
+{"meta":{"state":"WA","z":15,"x":5390,"y":11501,"zhs":{"key":"z/15/5390/11501|h3/9/nv9z/pfl1|s2/12/f2/20x/298","z_key":"z/15/5390/11501","h_key":"h3/9/nv9z/pfl1","s_key":"s2/12/f2/20x/298"},"source":"planet","roads":0,"buildings":0,"areas":0,"pois":1}}
+{"type":"poi","name":"Lookout Mountain","kind":"peak","lat":47.175677,"lon":-120.778413}

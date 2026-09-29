@@ -1,0 +1,77 @@
+{"meta":{"state":"WA","z":15,"x":5247,"y":11441,"zhs":{"key":"z/15/5247/11441|h3/9/nvge/pfqc|s2/12/f2/21c/28o","z_key":"z/15/5247/11441","h_key":"h3/9/nvge/pfqc","s_key":"s2/12/f2/21c/28o"},"source":"planet","roads":833,"buildings":459,"areas":55,"pois":170}}
+{"type":"poi","name":"Amazon Locker - Joliet","kind":"parcel_locker","lat":47.626090,"lon":-122.345786}
+{"type":"poi","name":"QFC Pharmacey #881","kind":"waste_basket","lat":47.624692,"lon":-122.347285}
+{"type":"poi","name":"Seattle Opera Ticket Office","kind":"ticket","lat":47.624296,"lon":-122.349629}
+{"type":"poi","name":"Seattle Center","kind":"station","lat":47.621241,"lon":-122.349750}
+{"type":"poi","name":"Amazon Locker","kind":"parcel_locker","lat":47.624974,"lon":-122.354736}
+{"type":"poi","name":"Seattle","kind":"toll_gantry","lat":47.622478,"lon":-122.344225}
+{"type":"poi","name":"Seattle","kind":"toll_gantry","lat":47.622436,"lon":-122.344088}
+{"type":"poi","name":"Rochambeau","kind":"pub","lat":47.625318,"lon":-122.351695}
+{"type":"poi","name":"Hagen","kind":"cafe","lat":47.626384,"lon":-122.347392}
+{"type":"poi","name":"Cairde Public House","kind":"pub","lat":47.625605,"lon":-122.347827}
+{"type":"poi","name":"Unravel","kind":"spa","lat":47.625571,"lon":-122.352623}
+{"type":"poi","name":"Hawaiian Shave Ice","kind":"ice_cream","lat":47.621671,"lon":-122.349144}
+{"type":"poi","name":"Mammoth","kind":"fast_food","lat":47.624830,"lon":-122.352094}
+{"type":"poi","name":"Path with Art","kind":"arts_centre","lat":47.624754,"lon":-122.352462}
+{"type":"poi","name":"Ward Springs Park","kind":"park","lat":47.627765,"lon":-122.349238}
+{"type":"poi","name":"Seattle Tours & Attractions","kind":"ticket","lat":47.621420,"lon":-122.347036}
+{"type":"poi","name":"Kobe Friendship Bell","kind":"monument","lat":47.623483,"lon":-122.352247}
+{"type":"poi","name":"Basilic","kind":"restaurant","lat":47.625591,"lon":-122.349924}
+{"type":"poi","name":"Bahn Thai","kind":"restaurant","lat":47.625240,"lon":-122.348371}
+{"type":"poi","name":"Werner's Crash Shop","kind":"car_repair","lat":47.625808,"lon":-122.345949}
+{"type":"poi","name":"Shell","kind":"fuel","lat":47.626106,"lon":-122.346057}
+{"type":"poi","name":"Essentially Seattle","kind":"gift","lat":47.621086,"lon":-122.349541}
+{"type":"poi","name":"Citizen Cafe","kind":"cafe","lat":47.625697,"lon":-122.345952}
+{"type":"poi","name":"Expressly Northwest","kind":"gift","lat":47.621091,"lon":-122.349216}
+{"type":"poi","name":"UpGarden","kind":"allotments","lat":47.625014,"lon":-122.349686}
+{"type":"poi","name":"Seattle Monorail Concourse","kind":"pedestrian","lat":47.621234,"lon":-122.350000}
+{"type":"poi","name":"Ticketmaster Box Office","kind":"ticket","lat":47.621176,"lon":-122.354731}
+{"type":"poi","name":"7th Avenue North & Thomas Street","kind":"platform","lat":47.621344,"lon":-122.343892}
+{"type":"poi","name":"Grass Blades","kind":"artwork","lat":47.622167,"lon":-122.348492}
+{"type":"poi","name":"FedEx Office","kind":"stationery","lat":47.624987,"lon":-122.354559}
+{"type":"poi","name":"Plaid Pantry","kind":"convenience","lat":47.626124,"lon":-122.345786}
+{"type":"poi","name":"Dentists of Queen Anne","kind":"dentist","lat":47.625240,"lon":-122.354500}
+{"type":"poi","name":"Seattle Center Totem","kind":"artwork","lat":47.620829,"lon":-122.351413}
+{"type":"poi","name":"Moses","kind":"artwork","lat":47.620771,"lon":-122.348878}
+{"type":"poi","name":"Garthgoyles: Designs for the Charlotte Martin Theatre","kind":"artwork","lat":47.620851,"lon":-122.352116}
+{"type":"poi","name":"Circus Ring Plaza","kind":"artwork","lat":47.621001,"lon":-122.350882}
+{"type":"poi","name":"Biography of a Branch","kind":"artwork","lat":47.621200,"lon":-122.351732}
+{"type":"poi","name":"Twine and Branch","kind":"artwork","lat":47.621350,"lon":-122.352068}
+{"type":"poi","name":"Migrare","kind":"artwork","lat":47.621151,"lon":-122.351317}
+{"type":"poi","name":"Human Forms in Balance","kind":"artwork","lat":47.622080,"lon":-122.350946}
+{"type":"poi","name":"Acrobat Constellation","kind":"artwork","lat":47.622084,"lon":-122.352832}
+{"type":"poi","name":"Neototems","kind":"artwork","lat":47.622349,"lon":-122.352550}
+{"type":"poi","name":"Pool","kind":"artwork","lat":47.623067,"lon":-122.352867}
+{"type":"poi","name":"Fountain of Seseragi","kind":"artwork","lat":47.623349,"lon":-122.352470}
+{"type":"poi","name":"Untitled","kind":"artwork","lat":47.623568,"lon":-122.352049}
+{"type":"poi","name":"Encircled Stream","kind":"artwork","lat":47.623899,"lon":-122.352051}
+{"type":"poi","name":"Dreaming in Color","kind":"artwork","lat":47.623882,"lon":-122.351134}
+{"type":"poi","name":"Neon For The Bagley Wright Theatre","kind":"artwork","lat":47.623891,"lon":-122.353256}
+{"type":"poi","name":"The Lang Fountain","kind":"artwork","lat":47.624119,"lon":-122.352121}
+{"type":"poi","name":"Barbet","kind":"artwork","lat":47.624249,"lon":-122.352330}
+{"type":"poi","name":"An Equal And Opposite Reaction","kind":"artwork","lat":47.624316,"lon":-122.351118}
+{"type":"poi","name":"Fu","kind":"artwork","lat":47.624418,"lon":-122.351467}
+{"type":"poi","name":"August Wilson Memorial","kind":"artwork","lat":47.623331,"lon":-122.353948}
+{"type":"poi","name":"Top Nails","kind":"beauty","lat":47.625349,"lon":-122.354323}
+{"type":"poi","name":"Feminine One","kind":"artwork","lat":47.620880,"lon":-122.349664}
+{"type":"poi","name":"Chris Cornell in Performance","kind":"artwork","lat":47.621191,"lon":-122.347824}
+{"type":"poi","name":"Två Enhörning","kind":"artwork","lat":47.623092,"lon":-122.353950}
+{"type":"poi","name":"Studio 4 Brow","kind":"beauty","lat":47.625350,"lon":-122.354447}
+{"type":"poi","name":"Typewriter Eraser, Scale X","kind":"artwork","lat":47.621986,"lon":-122.348495}
+{"type":"poi","name":"Artists at Play Playground","kind":"playground","lat":47.621831,"lon":-122.349224}
+{"type":"poi","name":"Kraken Team Store","kind":"gift","lat":47.621326,"lon":-122.351196}
+{"type":"poi","name":"The First Commercial Monorail in America","kind":"memorial","lat":47.621013,"lon":-122.350053}
+{"type":"poi","name":"Melissa Leone DDS","kind":"dentist","lat":47.627321,"lon":-122.347384}
+{"type":"poi","name":"eyeballs","kind":"optician","lat":47.625282,"lon":-122.347781}
+{"type":"poi","name":"Sue Bird Statue","kind":"artwork","lat":47.621881,"lon":-122.355061}
+{"type":"poi","name":"Impatient Optimist","kind":"artwork","lat":47.623430,"lon":-122.346164}
+{"type":"poi","name":"Berlin Wall","kind":"artwork","lat":47.621326,"lon":-122.351075}
+{"type":"poi","name":"Lalascuts","kind":"hairdresser","lat":47.626457,"lon":-122.349243}
+{"type":"poi","name":"5th Avenue North & Valley Street","kind":"bus_stop","lat":47.626041,"lon":-122.347666}
+{"type":"poi","name":"5th Avenue North & Republican Street","kind":"bus_stop","lat":47.623499,"lon":-122.347730}
+{"type":"poi","name":"5th Avenue North & Broad Street","kind":"bus_stop","lat":47.621210,"lon":-122.347704}
+{"type":"poi","name":"5th Avenue North & Republican Street","kind":"bus_stop","lat":47.623642,"lon":-122.347417}
+{"type":"poi","name":"Valley Street & Taylor Avenue North","kind":"bus_stop","lat":47.626227,"lon":-122.346633}
+{"type":"poi","name":"5th Avenue North & Broad Street","kind":"bus_stop","lat":47.621304,"lon":-122.347484}
+{"type":"poi","name":"7th Avenue North & Thomas Street","kind":"bus_stop","lat":47.621109,"lon":-122.343881}
+{"type":"poi","name":"7th Avenue North & Harrison Street","kind":"bus_stop","lat":47.621827,"lon":-122.343546}
