@@ -18,13 +18,18 @@ scout-map-server-deploy/
 
 ## Quick Start (Debian 13.6)
 
-### 1. Extract to target machine
+### 1. Copy the package to the target machine
 ```bash
-# If using Ventoy: boot into Debian live, mount the Ventoy partition
-# Copy this folder to the target machine (e.g., /home/user/scout-map-server-deploy)
-# Or extract from zip:
-unzip scout-map-server-deploy.zip -d /home/user/
+# Online: clone the repo (this folder is tracked in git) and copy it into place
+git clone --depth 1 https://github.com/scout-hazard-system/routing-scouting-app-to-be-named.git
+cp -r routing-scouting-app-to-be-named/scout-map-server-deploy /home/user/
+
+# Offline (Ventoy/USB or PXE): copy the folder from the mounted source
+rsync -a /path/to/source/scout-map-server-deploy/ /home/user/scout-map-server-deploy/
 ```
+
+There is no zip archive of this package. It exceeds GitHub's 100 MiB file
+limit and duplicated this tracked folder, so it is gitignored.
 
 ### 2. Run automated setup
 ```bash
