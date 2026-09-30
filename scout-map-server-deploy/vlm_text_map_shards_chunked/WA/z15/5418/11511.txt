@@ -1,0 +1,7 @@
+{"meta":{"state":"WA","z":15,"x":5418,"y":11511,"zhs":{"key":"z/15/5418/11511|h3/9/nv8k/pfk5|s2/12/f2/20u/29c","z_key":"z/15/5418/11511","h_key":"h3/9/nv8k/pfk5","s_key":"s2/12/f2/20u/29c"},"source":"planet","roads":6,"buildings":0,"areas":0,"pois":0}}
+{"type":"road","class":"tertiary","name":"Charlton Road","oneway":false,"pts":"47.103293,-120.476246;47.103333,-120.474030"}
+{"type":"road","class":"tertiary","name":"Naneum Road","oneway":false,"pts":"47.103333,-120.474030;47.102718,-120.474146;47.101975,-120.474261;47.101642,-120.474291;47.100992,-120.474274;47.099928,-120.474215"}
+{"type":"road","class":"residential","name":"Naneum Road","oneway":false,"pts":"47.107640,-120.472727;47.105699,-120.473054;47.105374,-120.473161;47.104112,-120.473714;47.103333,-120.474030"}
+{"type":"road","class":"residential","name":"Charlton Road","oneway":false,"pts":"47.103333,-120.474030;47.103355,-120.464916"}
+{"type":"road","class":"service","name":"","oneway":false,"pts":"47.103340,-120.470930;47.103165,-120.470876;47.102908,-120.470863;47.102495,-120.470876"}
+{"type":"road","class":"service","name":"","oneway":false,"pts":"47.103353,-120.465225;47.103755,-120.465125;47.104007,-120.465018"}

@@ -42,3 +42,10 @@ scout_crew/
 # Local stack backup snapshots
 stack/config/*.bak_*
 stack/config/*.bak
+
+# Packaged map-server deploy bundle.
+# The extracted scout-map-server-deploy/ tree is tracked (the PXE stack deploys from
+# it), but the single-file archive duplicates that same content, is ~107 MB, and
+# exceeds GitHub's 100 MiB per-file hard limit -- so it can never be pushed.
+# Re-archive it locally from the tracked tree if you need a single-file copy.
+scout-map-server-deploy.zip

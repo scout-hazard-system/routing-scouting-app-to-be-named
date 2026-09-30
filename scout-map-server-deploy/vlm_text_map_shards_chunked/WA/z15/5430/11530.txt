@@ -1,0 +1,4 @@
+{"meta":{"state":"WA","z":15,"x":5430,"y":11530,"zhs":{"key":"z/15/5430/11530|h3/9/nv91/pfig|s2/12/f2/20u/29g","z_key":"z/15/5430/11530","h_key":"h3/9/nv91/pfig","s_key":"s2/12/f2/20u/29g"},"source":"planet","roads":3,"buildings":0,"areas":0,"pois":0}}
+{"type":"road","class":"motorway","name":"I 90","oneway":true,"pts":"46.965377,-120.336369;46.964923,-120.335261;46.964238,-120.333794;46.963874,-120.333080"}
+{"type":"road","class":"motorway","name":"I 90","oneway":true,"pts":"46.964297,-120.333080;46.965377,-120.335626"}
+{"type":"road","class":"tertiary","name":"Boylston Road","oneway":false,"pts":"46.963293,-120.333080;46.963348,-120.333163;46.963531,-120.333512;46.963918,-120.334408;46.965377,-120.337949"}

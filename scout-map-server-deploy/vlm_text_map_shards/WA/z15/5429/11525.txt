@@ -1,0 +1,9 @@
+{"meta":{"state":"WA","z":15,"x":5429,"y":11525,"zhs":{"key":"z/15/5429/11525|h3/9/nv8r/pfiw|s2/12/f2/20u/29f","z_key":"z/15/5429/11525","h_key":"h3/9/nv8r/pfiw","s_key":"s2/12/f2/20u/29f"},"source":"planet","roads":8,"buildings":0,"areas":0,"pois":0}}
+{"type":"road","class":"tertiary","name":"Fox Road","oneway":false,"pts":"47.002851,-120.347586;47.001185,-120.347543"}
+{"type":"road","class":"secondary","name":"Vantage Highway","oneway":false,"pts":"47.001190,-120.344067;47.001185,-120.347543;47.001161,-120.350330;47.001146,-120.355396"}
+{"type":"road","class":"service","name":"","oneway":false,"pts":"47.001146,-120.355023;47.000698,-120.355034"}
+{"type":"road","class":"service","name":"","oneway":false,"pts":"47.001150,-120.353905;47.000894,-120.353889"}
+{"type":"road","class":"service","name":"","oneway":false,"pts":"47.001152,-120.353103;47.002851,-120.353130"}
+{"type":"road","class":"service","name":"","oneway":false,"pts":"47.002507,-120.353124;47.002551,-120.353406;47.002525,-120.353739"}
+{"type":"road","class":"service","name":"","oneway":false,"pts":"47.001161,-120.350330;46.999910,-120.350378;46.999760,-120.350550;46.999611,-120.350764;46.999562,-120.351016"}
+{"type":"road","class":"service","name":"","oneway":false,"pts":"47.001157,-120.351689;46.999664,-120.351754"}

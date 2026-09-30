@@ -1,0 +1,52 @@
+{"meta":{"state":"_z09","z":9,"x":148,"y":194,"zhs":{"key":"z/9/148/194|h3/9/nn75/pd3e|s2/12/f4/v9/1u0","z_key":"z/9/148/194","h_key":"h3/9/nn75/pd3e","s_key":"s2/12/f4/v9/1u0"},"source":"planet","roads":1441,"buildings":0,"areas":1778,"pois":59}}
+{"type":"poi","name":"Middletown","kind":"place_city","lat":39.449715,"lon":-75.716572}
+{"type":"poi","name":"Springfield","kind":"place_town","lat":39.930669,"lon":-75.320206}
+{"type":"poi","name":"Marple Township","kind":"place_town","lat":39.977515,"lon":-75.378399}
+{"type":"poi","name":"West Deptford Township","kind":"place_town","lat":39.832400,"lon":-75.188885}
+{"type":"poi","name":"Glassboro","kind":"place_town","lat":39.702828,"lon":-75.111980}
+{"type":"poi","name":"West Chester","kind":"place_town","lat":39.959754,"lon":-75.604477}
+{"type":"poi","name":"Elkton","kind":"place_town","lat":39.606482,"lon":-75.833130}
+{"type":"poi","name":"Smyrna","kind":"place_town","lat":39.299768,"lon":-75.604649}
+{"type":"poi","name":"Ardmore","kind":"place_town","lat":40.007895,"lon":-75.291023}
+{"type":"poi","name":"Hockessin","kind":"place_town","lat":39.787566,"lon":-75.696487}
+{"type":"poi","name":"Pennsville","kind":"place_town","lat":39.653416,"lon":-75.516586}
+{"type":"poi","name":"Coatesville","kind":"place_town","lat":39.983171,"lon":-75.823860}
+{"type":"poi","name":"Collingswood","kind":"place_town","lat":39.918163,"lon":-75.071297}
+{"type":"poi","name":"Havre de Grace","kind":"place_town","lat":39.548795,"lon":-76.089764}
+{"type":"poi","name":"Mantua Township","kind":"place_town","lat":39.794029,"lon":-75.172062}
+{"type":"poi","name":"Darby","kind":"place_town","lat":39.918426,"lon":-75.259094}
+{"type":"poi","name":"Yeadon","kind":"place_town","lat":39.938962,"lon":-75.255661}
+{"type":"poi","name":"Westtown","kind":"place_town","lat":39.930932,"lon":-75.551949}
+{"type":"poi","name":"Claymont","kind":"place_town","lat":39.799964,"lon":-75.460968}
+{"type":"poi","name":"Willistown","kind":"place_town","lat":39.961201,"lon":-75.495987}
+{"type":"poi","name":"Upper Providence","kind":"place_town","lat":39.955149,"lon":-75.423031}
+{"type":"poi","name":"Clayton","kind":"place_town","lat":39.660156,"lon":-75.092411}
+{"type":"poi","name":"Brookhaven","kind":"place_town","lat":39.872726,"lon":-75.388184}
+{"type":"poi","name":"Downingtown","kind":"place_town","lat":40.006448,"lon":-75.703354}
+{"type":"poi","name":"Salem","kind":"place_town","lat":39.571822,"lon":-75.467148}
+{"type":"poi","name":"Media","kind":"place_town","lat":39.916715,"lon":-75.387669}
+{"type":"poi","name":"New Castle","kind":"place_town","lat":39.662007,"lon":-75.566368}
+{"type":"poi","name":"Kennett Square","kind":"place_town","lat":39.846767,"lon":-75.711765}
+{"type":"poi","name":"Fairfield Township","kind":"place_town","lat":39.388979,"lon":-75.214119}
+{"type":"poi","name":"Oxford","kind":"place_town","lat":39.785191,"lon":-75.979042}
+{"type":"poi","name":"Hopewell Township","kind":"place_town","lat":39.440038,"lon":-75.283813}
+{"type":"poi","name":"Parkesburg","kind":"place_town","lat":39.958833,"lon":-75.919132}
+{"type":"poi","name":"Chadds Ford","kind":"place_town","lat":39.872067,"lon":-75.591431}
+{"type":"poi","name":"Alloway Township","kind":"place_town","lat":39.560839,"lon":-75.362434}
+{"type":"poi","name":"Lawrence Township","kind":"place_town","lat":39.327791,"lon":-75.192833}
+{"type":"poi","name":"Malvern","kind":"place_town","lat":40.036158,"lon":-75.513840}
+{"type":"poi","name":"West Grove","kind":"place_town","lat":39.823040,"lon":-75.827293}
+{"type":"poi","name":"Chester Heights","kind":"place_town","lat":39.890246,"lon":-75.475388}
+{"type":"poi","name":"Downe Township","kind":"place_town","lat":39.294985,"lon":-75.134983}
+{"type":"poi","name":"Lower Alloways Creek Township","kind":"place_town","lat":39.500597,"lon":-75.436764}
+{"type":"poi","name":"Avondale","kind":"place_town","lat":39.824754,"lon":-75.783348}
+{"type":"poi","name":"Greenwich Township","kind":"place_town","lat":39.393887,"lon":-75.342007}
+{"type":"poi","name":"Modena","kind":"place_town","lat":39.961201,"lon":-75.801544}
+{"type":"poi","name":"Wayne","kind":"place_town","lat":40.044043,"lon":-75.387840}
+{"type":"poi","name":"Brookside","kind":"place_town","lat":39.662667,"lon":-75.726528}
+{"type":"poi","name":"Delaware National Estuarine Research Reserve","kind":"protected_area","lat":39.391101,"lon":-75.630054}
+{"type":"poi","name":"Elk Neck State Forest","kind":"nature_reserve","lat":39.582143,"lon":-75.906944}
+{"type":"poi","name":"White Clay Creek State Park","kind":"nature_reserve","lat":39.721052,"lon":-75.770988}
+{"type":"poi","name":"First State National Historical Park","kind":"protected_area","lat":39.828973,"lon":-75.565166}
+{"type":"poi","name":"Salem River Wildlife Management Area","kind":"nature_reserve","lat":39.646808,"lon":-75.458393}
+{"type":"poi","name":"Dix Wildlife Management Area","kind":"nature_reserve","lat":39.354211,"lon":-75.314884}

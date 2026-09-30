@@ -34,7 +34,7 @@ final class ExportMapTextShards {
     Path outputRoot =
         args.length > 1
             ? Paths.get(args[1])
-            : Path.of(System.getProperty("user.home"), "Desktop", "vlm_text_map_shards");
+            : Path.of(System.getProperty("user.dir"), "vlm_text_map_shards");
     int maxPoints =
         args.length > 2
             ? parsePositiveInt(args[2], DEFAULT_MAX_POINTS_PER_FEATURE)

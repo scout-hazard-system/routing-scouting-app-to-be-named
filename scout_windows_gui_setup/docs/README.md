@@ -10,7 +10,7 @@ Local-only [CrewAI](https://crewai.com) multi-agent system for on-device **scout
 - Arizona **alpha** jurisdiction lock (all facets on, non-AZ out of scope)
 - CLI + desktop GUI (admin/core chat + Dev Conversations window)
 
-> Related model sources live outside this repo under `~/Desktop/llm/` (Modelfiles, build scripts).
+> Related model sources live outside this repo under `~/repo/llm/` (Modelfiles, build scripts).
 
 ---
 
@@ -67,9 +67,9 @@ curl -s http://127.0.0.1:11434/api/tags | head
 Build / refresh from the sibling llm tree:
 
 ```bash
-ollama create scout-dev -f ~/Desktop/llm/dev/Modelfile.scout-dev
+ollama create scout-dev -f ~/repo/llm/dev/Modelfile.scout-dev
 # or full set:
-bash ~/Desktop/llm/build/build_llm_set.sh
+bash ~/repo/llm/build/build_llm_set.sh
 ollama list | egrep 'scout-|llama3.1'
 ```
 
@@ -80,7 +80,7 @@ ollama list | egrep 'scout-|llama3.1'
 ### 1. Clone and install the project
 
 ```bash
-cd ~/Desktop/scout_crew          # or: git clone https://github.com/wendigoro/scout_crew.git
+cd ~/repo/scout_crew          # or: git clone https://github.com/wendigoro/scout_crew.git
 cp -n .env.example .env
 crewai install                   # creates .venv + installs deps (CrewAI, PySide6, …)
 
@@ -121,7 +121,7 @@ eval "$(scout env)"
 
 ### 3. Desktop launcher (optional)
 
-- `~/Desktop/Scout-Crew.desktop`
+- `~/repo/Scout-Crew.desktop`
 - `~/.local/share/applications/scout-crew.desktop`
 
 If the icon is blocked: right-click → **Allow Launching**, or run `scout-gui`.
@@ -368,7 +368,7 @@ Runtime `output/*` is gitignored except `.gitkeep` and `output/verification/**`.
 | `Ollama is unreachable` | `ollama serve`; `curl -s http://127.0.0.1:11434/api/tags` |
 | Missing model tag | `ollama list`; rebuild Modelfile; check `OLLAMA_MODEL_*` in `.env` |
 | Cloud key refused | unset provider keys; restore `.env` from `.env.example` |
-| `scout: missing venv` | `cd ~/Desktop/scout_crew && crewai install` |
+| `scout: missing venv` | `cd ~/repo/scout_crew && crewai install` |
 | Crew slow | normal on CPU; first call loads model weights |
 | Manager tool-shaped JSON | admins have delegation disabled; use sequential `scout crew` only |
 | GUI won’t start | run `scout-gui` from a desktop session; check `DISPLAY` |

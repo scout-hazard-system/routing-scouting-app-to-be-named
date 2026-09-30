@@ -1,0 +1,6 @@
+{"meta":{"state":"WA","z":15,"x":5416,"y":11520,"zhs":{"key":"z/15/5416/11520|h3/9/nv9d/pfjc|s2/12/f2/20v/29d","z_key":"z/15/5416/11520","h_key":"h3/9/nv9d/pfjc","s_key":"s2/12/f2/20v/29d"},"source":"planet","roads":5,"buildings":0,"areas":0,"pois":0}}
+{"type":"road","class":"tertiary","name":"Brick Mill Road","oneway":false,"pts":"47.036609,-120.498219;47.036651,-120.497696;47.036658,-120.486889"}
+{"type":"road","class":"tertiary","name":"Wilson Creek Road","oneway":false,"pts":"47.040299,-120.497814;47.037493,-120.497763;47.036651,-120.497696;47.032578,-120.497588"}
+{"type":"road","class":"service","name":"","oneway":false,"pts":"47.036654,-120.493275;47.037619,-120.493264"}
+{"type":"road","class":"service","name":"","oneway":false,"pts":"47.039497,-120.497800;47.039491,-120.498219"}
+{"type":"road","class":"service","name":"","oneway":false,"pts":"47.037340,-120.487930;47.036658,-120.487860"}

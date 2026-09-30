@@ -1,0 +1,2 @@
+{"meta":{"state":"WA","z":15,"x":5424,"y":11514,"zhs":{"key":"z/15/5424/11514|h3/9/nv8b/pfjv|s2/12/f2/20t/29d","z_key":"z/15/5424/11514","h_key":"h3/9/nv8b/pfjv","s_key":"s2/12/f2/20t/29d"},"source":"planet","roads":1,"buildings":0,"areas":0,"pois":0}}
+{"type":"road","class":"residential","name":"Coleman Creek Road","oneway":false,"pts":"47.085202,-120.399647;47.084989,-120.399476;47.084773,-120.399242;47.084689,-120.399079;47.084665,-120.398998"}

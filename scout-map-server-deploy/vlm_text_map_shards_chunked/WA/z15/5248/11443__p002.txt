@@ -1,0 +1,801 @@
+{"meta":{"state":"WA","z":15,"x":5248,"y":11443,"zhs":{"key":"z/15/5248/11443|h3/9/nvgh/pfq6|s2/12/f2/21c/28o","z_key":"z/15/5248/11443","h_key":"h3/9/nvgh/pfq6","s_key":"s2/12/f2/21c/28o"},"source":"planet","roads":1061,"buildings":536,"areas":58,"pois":771}}
+{"type":"area","kind":"park","pts":"47.606047,-122.340751;47.606299,-122.340990;47.606308,-122.342047;47.607261,-122.342049;47.607261,-122.341977;47.607293,-122.342031;47.607546,-122.342422;47.607821,-122.342886;47.608167,-122.343452;47.608386,-122.343847;47.608429,-122.343922;47.608581,-122.343922;47.608554,-122.343847;47.608541,-122.343750;47.608539,-122.343656;47.608543,-122.343568;47.608556,-122.343482;47.608630,-122.343082;47.608666,-122.342967;47.608322,-122.342613;47.608093,-122.342398;47.607944,-122.342232;47.607792,-122.342047;47.607765,-122.342044;47.607751,-122.342036;47.607604,-122.341827;47.607413,-122.341564;47.607302,-122.341438;47.607214,-122.341349;47.607201,-122.341323;47.607192,-122.341288;47.607178,-122.341264;47.606834,-122.340947;47.606814,-122.340936;47.606787,-122.340939;47.606765,-122.340934;47.606196,-122.340411;47.606179,-122.340387;47.606172,-122.340357;47.606156,-122.340328;47.606047,-122.340228"}
+{"type":"area","kind":"park","pts":"47.606839,-122.341620;47.606843,-122.341990;47.607073,-122.341999;47.607073,-122.341894"}
+{"type":"area","kind":"park","pts":"47.606378,-122.341980;47.606445,-122.341980;47.606443,-122.341862;47.606452,-122.341862;47.606452,-122.341728;47.606460,-122.341728;47.606460,-122.341583;47.606378,-122.341583"}
+{"type":"area","kind":"park","pts":"47.606275,-122.340534;47.606284,-122.340518;47.606185,-122.340429;47.606165,-122.340395;47.606154,-122.340360;47.606145,-122.340346;47.606105,-122.340309;47.606100,-122.340325;47.606129,-122.340352;47.606141,-122.340368;47.606149,-122.340384;47.606161,-122.340424;47.606172,-122.340437"}
+{"type":"area","kind":"park","pts":"47.606047,-122.340252;47.606055,-122.340234;47.606047,-122.340228"}
+{"type":"area","kind":"park","pts":"47.607854,-122.342288;47.607865,-122.342261;47.607718,-122.342122;47.607693,-122.342087;47.607660,-122.342170;47.607680,-122.342189;47.607666,-122.342229;47.607691,-122.342251;47.607812,-122.342251"}
+{"type":"area","kind":"park","pts":"47.607731,-122.342047;47.607720,-122.342060;47.607738,-122.342084;47.607883,-122.342218;47.607886,-122.342210;47.607845,-122.342173;47.607848,-122.342167;47.607836,-122.342154;47.607832,-122.342162;47.607780,-122.342111;47.607780,-122.342100;47.607742,-122.342068"}
+{"type":"area","kind":"park","pts":"47.607178,-122.341497;47.607169,-122.341518;47.607199,-122.341545;47.607190,-122.341567;47.607221,-122.341594;47.607203,-122.341636;47.607259,-122.341687;47.607268,-122.341666;47.607338,-122.341728;47.607329,-122.341754;47.607376,-122.341795;47.607360,-122.341838;47.607461,-122.341929;47.607443,-122.341972;47.607550,-122.342066;47.607566,-122.342025;47.607597,-122.342052;47.607626,-122.341977;47.607489,-122.341779"}
+{"type":"area","kind":"park","pts":"47.607489,-122.341779;47.607306,-122.341545;47.607167,-122.341395;47.607154,-122.341374;47.607140,-122.341320;47.607131,-122.341309;47.606962,-122.341156;47.606948,-122.341188;47.607002,-122.341237;47.606989,-122.341269;47.607134,-122.341398;47.607116,-122.341443"}
+{"type":"area","kind":"park","pts":"47.606980,-122.341108;47.606973,-122.341124;47.607150,-122.341285;47.607165,-122.341301;47.607176,-122.341341;47.607192,-122.341374;47.607346,-122.341534;47.607416,-122.341623;47.607537,-122.341789;47.607650,-122.341956;47.607660,-122.341942;47.607590,-122.341835;47.607586,-122.341843;47.607541,-122.341776;47.607545,-122.341768;47.607532,-122.341752;47.607528,-122.341760;47.607420,-122.341612;47.607423,-122.341607;47.607353,-122.341518;47.607349,-122.341526;47.607299,-122.341470;47.607302,-122.341462;47.607203,-122.341360;47.607190,-122.341333;47.607178,-122.341293;47.607172,-122.341282"}
+{"type":"area","kind":"park","pts":"47.606906,-122.341100;47.606829,-122.341030;47.606801,-122.341025;47.606776,-122.341030;47.606760,-122.341025;47.606745,-122.341014;47.606328,-122.340633;47.606313,-122.340668;47.606333,-122.340684;47.606338,-122.340674;47.606877,-122.341167"}
+{"type":"area","kind":"park","pts":"47.606852,-122.341167;47.606592,-122.340926;47.606586,-122.340942;47.606527,-122.340888;47.606532,-122.340872;47.606348,-122.340703;47.606344,-122.340714;47.606308,-122.340682;47.606284,-122.340738;47.606302,-122.340754;47.606310,-122.340735;47.606349,-122.340770;47.606364,-122.340735;47.606469,-122.340834;47.606454,-122.340872;47.606501,-122.340912;47.606476,-122.340971;47.606687,-122.341162"}
+{"type":"area","kind":"park","pts":"47.606897,-122.341052;47.606904,-122.341036;47.606825,-122.340966;47.606771,-122.340961;47.606758,-122.340950;47.606360,-122.340588;47.606355,-122.340606;47.606756,-122.340971;47.606776,-122.340982;47.606809,-122.340982;47.606819,-122.340985;47.606843,-122.341001"}
+{"type":"area","kind":"park","pts":"47.606252,-122.340631;47.606217,-122.340598;47.606212,-122.340609;47.606170,-122.340572;47.606176,-122.340561;47.606047,-122.340443;47.606047,-122.340521;47.606060,-122.340534;47.606047,-122.340564;47.606047,-122.340580;47.606100,-122.340625;47.606116,-122.340582;47.606230,-122.340687"}
+{"type":"area","kind":"park","pts":"47.606272,-122.340580;47.606156,-122.340475;47.606136,-122.340446;47.606125,-122.340419;47.606118,-122.340395;47.606107,-122.340373;47.606065,-122.340336;47.606047,-122.340378;47.606047,-122.340419;47.606259,-122.340612"}
+{"type":"area","kind":"park","pts":"47.606418,-122.340880;47.606413,-122.340896;47.606344,-122.340834;47.606351,-122.340818;47.606326,-122.340792;47.606311,-122.340821;47.606420,-122.340920;47.606432,-122.340891"}
+{"type":"area","kind":"lot","pts":"47.606047,-122.342658;47.606310,-122.342843;47.606308,-122.342342;47.606375,-122.342125;47.606310,-122.342074;47.606299,-122.340990;47.606047,-122.340751"}
+{"type":"area","kind":"lot","pts":"47.607543,-122.342884;47.607543,-122.342792;47.607548,-122.342792;47.607546,-122.342422;47.607293,-122.342031;47.607261,-122.341977;47.607264,-122.342983;47.607275,-122.343817;47.607337,-122.343922;47.607548,-122.343922;47.607546,-122.343557;47.607548,-122.343079;47.607543,-122.343079"}
+{"type":"area","kind":"lot","pts":"47.612385,-122.338522;47.613685,-122.336806;47.613685,-122.333815;47.612707,-122.332922;47.612839,-122.332592;47.607293,-122.332592;47.606807,-122.333753;47.606047,-122.333045;47.606047,-122.334242;47.606483,-122.334633;47.606738,-122.334858;47.609874,-122.337731;47.608942,-122.339955;47.610445,-122.341320;47.610639,-122.341647;47.610903,-122.341307;47.610700,-122.340969;47.610555,-122.340829;47.610404,-122.340692;47.610613,-122.340191;47.610355,-122.339955;47.610597,-122.339340;47.611255,-122.339928;47.611659,-122.339354;47.611716,-122.339348;47.611814,-122.339220;47.612076,-122.338589"}
+{"type":"area","kind":"lot","pts":"47.612385,-122.338522;47.613685,-122.336806;47.613685,-122.333815;47.612707,-122.332922;47.612839,-122.332592;47.607293,-122.332592;47.606807,-122.333753;47.606047,-122.333045;47.606047,-122.334242;47.606483,-122.334633;47.606738,-122.334858;47.609874,-122.337731;47.608942,-122.339955;47.610445,-122.341320;47.610639,-122.341647;47.610903,-122.341307;47.610700,-122.340969;47.610555,-122.340829;47.610404,-122.340692;47.610613,-122.340191;47.610355,-122.339955;47.610597,-122.339340;47.611255,-122.339928;47.611659,-122.339354;47.611716,-122.339348;47.611814,-122.339220;47.612076,-122.338589"}
+{"type":"area","kind":"lot","pts":"47.607546,-122.343557;47.607700,-122.343554;47.607720,-122.343549;47.607736,-122.343530;47.607745,-122.343501;47.607745,-122.343460;47.607731,-122.343425;47.607747,-122.343404;47.607760,-122.343425;47.607767,-122.343466;47.607778,-122.343493;47.607796,-122.343522;47.607792,-122.343533;47.607800,-122.343549;47.607830,-122.343573;47.607848,-122.343578;47.607865,-122.343581;47.607865,-122.343656;47.607856,-122.343656;47.607857,-122.343726;47.608015,-122.343723;47.608011,-122.343455;47.608167,-122.343452;47.607821,-122.342886;47.607543,-122.342884;47.607543,-122.343079;47.607548,-122.343079"}
+{"type":"area","kind":"water","pts":"47.607550,-122.344093;47.608387,-122.344093;47.608386,-122.343847;47.608167,-122.343452;47.608011,-122.343455;47.608015,-122.343723;47.607857,-122.343726;47.607856,-122.343656;47.607865,-122.343656;47.607865,-122.343581;47.607830,-122.343573;47.607800,-122.343549;47.607792,-122.343533;47.607796,-122.343522;47.607778,-122.343493;47.607767,-122.343466;47.607760,-122.343425;47.607747,-122.343404;47.607731,-122.343425;47.607745,-122.343460;47.607745,-122.343501;47.607736,-122.343530;47.607720,-122.343549;47.607700,-122.343554;47.607546,-122.343557"}
+{"type":"area","kind":"water","pts":"47.605932,-122.344093;47.607436,-122.344093;47.607275,-122.343817;47.607264,-122.342983;47.607263,-122.342141;47.607246,-122.341985;47.607192,-122.341907;47.606787,-122.341430;47.606590,-122.341242;47.606308,-122.340998;47.606264,-122.341339;47.606268,-122.341467;47.606268,-122.341940;47.606306,-122.341974;47.606310,-122.342074;47.606375,-122.342125;47.606308,-122.342342;47.606310,-122.342843;47.605932,-122.342578"}
+{"type":"area","kind":"water","pts":"47.607883,-122.343648;47.607961,-122.343645;47.607959,-122.343522;47.607942,-122.343543;47.607912,-122.343562;47.607895,-122.343570;47.607895,-122.343543;47.607881,-122.343546"}
+{"type":"area","kind":"water","pts":"47.607821,-122.342886;47.607546,-122.342422;47.607548,-122.342792;47.607543,-122.342792;47.607543,-122.342884"}
+{"type":"area","kind":"water","pts":"47.606839,-122.341486;47.606839,-122.341620;47.607073,-122.341894;47.607073,-122.341999;47.607194,-122.341999;47.607196,-122.341905;47.606995,-122.341661"}
+{"type":"area","kind":"water","pts":"47.607366,-122.339206;47.607338,-122.339182;47.607282,-122.339319;47.607311,-122.339346;47.607328,-122.339308;47.607324,-122.339306"}
+{"type":"area","kind":"water","pts":"47.606487,-122.339163;47.606490,-122.339145;47.606461,-122.339129;47.606438,-122.339091;47.606429,-122.339091;47.606422,-122.339099;47.606445,-122.339134;47.606467,-122.339155"}
+{"type":"area","kind":"water","pts":"47.606734,-122.338541;47.606740,-122.338522;47.606754,-122.338520;47.606758,-122.338504;47.606778,-122.338455;47.606796,-122.338407;47.606765,-122.338391;47.606733,-122.338340;47.606693,-122.338458;47.606691,-122.338488;47.606686,-122.338498;47.606700,-122.338520"}
+{"type":"poi","name":"West Edge","kind":"place_neighbourhood","lat":47.606340,"lon":-122.337632}
+{"type":"poi","name":"Central Business District","kind":"place_neighbourhood","lat":47.609532,"lon":-122.336291}
+{"type":"poi","name":"The Seattle Public Library - Central Library","kind":"attraction","lat":47.606715,"lon":-122.332699}
+{"type":"poi","name":"Pike Place Market","kind":"attraction","lat":47.609396,"lon":-122.341411}
+{"type":"poi","name":"Seattle Great Wheel","kind":"attraction","lat":47.606167,"lon":-122.342500}
+{"type":"poi","name":"The Mailbox & Gifts","kind":"post_office","lat":47.613420,"lon":-122.342138}
+{"type":"poi","name":"Midtown Post Office","kind":"post_office","lat":47.608720,"lon":-122.336487}
+{"type":"poi","name":"Wanderers' Mail Service","kind":"post_office","lat":47.610159,"lon":-122.342599}
+{"type":"poi","name":"Christian Science Reading Room","kind":"library","lat":47.609843,"lon":-122.339713}
+{"type":"poi","name":"Westlake","kind":"station","lat":47.611772,"lon":-122.336194}
+{"type":"poi","name":"Pacific Place","kind":"mall","lat":47.612883,"lon":-122.335290}
+{"type":"poi","name":"Sorreano Parking Garage","kind":"parking","lat":47.608720,"lon":-122.337914}
+{"type":"poi","name":"Thompson Seattle","kind":"hotel","lat":47.610552,"lon":-122.341333}
+{"type":"poi","name":"Hilton Motif Seattle","kind":"hotel","lat":47.610022,"lon":-122.335534}
+{"type":"poi","name":"Decatur Building","kind":"parking","lat":47.611628,"lon":-122.335349}
+{"type":"poi","name":"Seattle Aquarium","kind":"aquarium","lat":47.607429,"lon":-122.343053}
+{"type":"poi","name":"PCC Corner Market","kind":"supermarket","lat":47.609087,"lon":-122.335263}
+{"type":"poi","name":"University of Washington - Professional & Continuing Education","kind":"university","lat":47.608711,"lon":-122.335862}
+{"type":"poi","name":"H Mart","kind":"supermarket","lat":47.610310,"lon":-122.340247}
+{"type":"poi","name":"Victor Steinbrueck Park","kind":"park","lat":47.610091,"lon":-122.343793}
+{"type":"poi","name":"Fairmont Olympic Hotel","kind":"hotel","lat":47.608062,"lon":-122.333928}
+{"type":"poi","name":"Westlake Center","kind":"mall","lat":47.611991,"lon":-122.337390}
+{"type":"poi","name":"Hotel Andra","kind":"hotel","lat":47.613436,"lon":-122.340054}
+{"type":"poi","name":"Nordstrom","kind":"department_store","lat":47.612257,"lon":-122.336253}
+{"type":"poi","name":"Benaroya Hall","kind":"theatre","lat":47.608116,"lon":-122.336969}
+{"type":"poi","name":"Plymouth Congregational Church","kind":"place_of_worship","lat":47.608653,"lon":-122.332648}
+{"type":"poi","name":"Public Storage","kind":"storage_rental","lat":47.607013,"lon":-122.340373}
+{"type":"poi","name":"West Edge Garage","kind":"parking","lat":47.609644,"lon":-122.338769}
+{"type":"poi","name":"Westlake Center Plaza","kind":"pedestrian","lat":47.611570,"lon":-122.337372}
+{"type":"poi","name":"Midtown Parking Lot 60","kind":"parking","lat":47.613255,"lon":-122.336838}
+{"type":"poi","name":"Pike Place Market Parking","kind":"parking","lat":47.608820,"lon":-122.342146}
+{"type":"poi","name":"Corner Market","kind":"marketplace","lat":47.608939,"lon":-122.340566}
+{"type":"poi","name":"Sanitary Public Market","kind":"marketplace","lat":47.609181,"lon":-122.340810}
+{"type":"poi","name":"Cobb Garage","kind":"parking","lat":47.608149,"lon":-122.335848}
+{"type":"poi","name":"Midtown Parking","kind":"parking","lat":47.613519,"lon":-122.336162}
+{"type":"poi","name":"Hahn Building","kind":"building","lat":47.608816,"lon":-122.339555}
+{"type":"poi","name":"The Paramount Hotel","kind":"hotel","lat":47.613134,"lon":-122.333587}
+{"type":"poi","name":"Sheraton Seattle","kind":"hotel","lat":47.610854,"lon":-122.333389}
+{"type":"poi","name":"Arne Gillam Courtyard","kind":"garden","lat":47.610140,"lon":-122.332710}
+{"type":"poi","name":"Third and Stewart Garage","kind":"parking","lat":47.610999,"lon":-122.339424}
+{"type":"poi","name":"Olympic Garage","kind":"parking","lat":47.607490,"lon":-122.333104}
+{"type":"poi","name":"W Hotel Seattle","kind":"hotel","lat":47.607398,"lon":-122.333657}
+{"type":"poi","name":"Executive Hotel Pacific","kind":"hotel","lat":47.607022,"lon":-122.333440}
+{"type":"poi","name":"Kimpton Hotel Monaco Seattle","kind":"hotel","lat":47.606921,"lon":-122.334116}
+{"type":"poi","name":"Diamond Parking","kind":"parking","lat":47.612879,"lon":-122.342919}
+{"type":"poi","name":"Upark","kind":"parking","lat":47.612080,"lon":-122.340963}
+{"type":"poi","name":"Trust Parking","kind":"parking","lat":47.611452,"lon":-122.341875}
+{"type":"poi","name":"Midtown Parking Lot 61","kind":"parking","lat":47.613577,"lon":-122.336430}
+{"type":"poi","name":"Impark Lot 106","kind":"parking","lat":47.612919,"lon":-122.338402}
+{"type":"poi","name":"Impark","kind":"parking","lat":47.613510,"lon":-122.333107}
+{"type":"poi","name":"Mayflower Park Hotel Seattle","kind":"hotel","lat":47.612168,"lon":-122.338109}
+{"type":"poi","name":"The Westin Seattle","kind":"hotel","lat":47.613687,"lon":-122.338268}
+{"type":"poi","name":"Four Seasons Seattle","kind":"hotel","lat":47.607376,"lon":-122.339161}
+{"type":"poi","name":"Trust Parking","kind":"parking","lat":47.612275,"lon":-122.342066}
+{"type":"poi","name":"Kimpton Palladian Hotel","kind":"hotel","lat":47.612055,"lon":-122.341690}
+{"type":"poi","name":"Hilton Seattle","kind":"hotel","lat":47.609322,"lon":-122.333244}
+{"type":"poi","name":"Warwick Hotel Parking","kind":"parking","lat":47.613758,"lon":-122.340601}
+{"type":"poi","name":"Jiffy Lube","kind":"car_repair","lat":47.613346,"lon":-122.341298}
+{"type":"poi","name":"Hotel Theodore","kind":"hotel","lat":47.612293,"lon":-122.334424}
+{"type":"poi","name":"Stewart House","kind":"social_facility","lat":47.609905,"lon":-122.342240}
+{"type":"poi","name":"Atsuhiko and Ina Goodwin Tateuchi Plaza","kind":"pedestrian","lat":47.606597,"lon":-122.333228}
+{"type":"poi","name":"Pirates Plunder","kind":"gift","lat":47.606140,"lon":-122.341049}
+{"type":"poi","name":"The Crab Pot","kind":"restaurant","lat":47.605993,"lon":-122.341084}
+{"type":"poi","name":"The Fisherman's Restaurant & Bar","kind":"restaurant","lat":47.606044,"lon":-122.342167}
+{"type":"poi","name":"Seattle Antiques Market","kind":"antiques","lat":47.607458,"lon":-122.340950}
+{"type":"poi","name":"KeyBank","kind":"bank","lat":47.608935,"lon":-122.335867}
+{"type":"poi","name":"Inn at the Market Building","kind":"hotel","lat":47.609897,"lon":-122.341317}
+{"type":"poi","name":"Eatery","kind":"food_court","lat":47.611921,"lon":-122.337782}
+{"type":"poi","name":"Marketside Flats","kind":"residential","lat":47.607648,"lon":-122.340032}
+{"type":"poi","name":"Republic Parking","kind":"parking","lat":47.607901,"lon":-122.341205}
+{"type":"poi","name":"Westlake","kind":"platform","lat":47.611825,"lon":-122.336355}
+{"type":"poi","name":"Westlake","kind":"platform","lat":47.611695,"lon":-122.336216}
+{"type":"poi","name":"Symphony","kind":"platform","lat":47.607782,"lon":-122.335862}
+{"type":"poi","name":"Symphony","kind":"platform","lat":47.607700,"lon":-122.336055}
+{"type":"poi","name":"6th Avenue Garage - Hilton Seattle Parking","kind":"parking","lat":47.609244,"lon":-122.333171}
+{"type":"poi","name":"1001 Fourth Avenue Plaza Heliport","kind":"helipad","lat":47.606125,"lon":-122.333845}
+{"type":"poi","name":"Boon Boona Coffee","kind":"cafe","lat":47.608839,"lon":-122.342658}
+{"type":"poi","name":"Harbor Steps","kind":"pedestrian","lat":47.606507,"lon":-122.338986}
+{"type":"poi","name":"Harbor Steps","kind":"pedestrian","lat":47.606639,"lon":-122.338748}
+{"type":"poi","name":"Westlake Hub","kind":"tram_stop","lat":47.612975,"lon":-122.337315}
+{"type":"poi","name":"Westlake Center","kind":"stop","lat":47.612033,"lon":-122.336916}
+{"type":"poi","name":"Maximilien","kind":"restaurant","lat":47.608317,"lon":-122.340853}
+{"type":"poi","name":"Chase","kind":"atm","lat":47.610212,"lon":-122.342937}
+{"type":"poi","name":"Elephant and Castle","kind":"pub","lat":47.609937,"lon":-122.335360}
+{"type":"poi","name":"Seattle Art Museum","kind":"museum","lat":47.607700,"lon":-122.338557}
+{"type":"poi","name":"Moore Coffee","kind":"cafe","lat":47.611635,"lon":-122.341266}
+{"type":"poi","name":"Moore Theater","kind":"theatre","lat":47.611731,"lon":-122.341425}
+{"type":"poi","name":"La Llorona","kind":"restaurant","lat":47.611501,"lon":-122.341028}
+{"type":"poi","name":"Moore Hotel","kind":"hotel","lat":47.611568,"lon":-122.341138}
+{"type":"poi","name":"Le Pichet","kind":"restaurant","lat":47.610807,"lon":-122.342559}
+{"type":"poi","name":"Virginia Inn","kind":"restaurant","lat":47.610857,"lon":-122.342629}
+{"type":"poi","name":"Regal Meridian 16","kind":"cinema","lat":47.611689,"lon":-122.333700}
+{"type":"poi","name":"Miss Cafe","kind":"restaurant","lat":47.609380,"lon":-122.340759}
+{"type":"poi","name":"Salt & Straw","kind":"ice_cream","lat":47.609011,"lon":-122.339928}
+{"type":"poi","name":"Subway","kind":"fast_food","lat":47.609103,"lon":-122.339796}
+{"type":"poi","name":"Hellenika Cultured Creamery","kind":"cafe","lat":47.610141,"lon":-122.342830}
+{"type":"poi","name":"Target","kind":"department_store","lat":47.608443,"lon":-122.338662}
+{"type":"poi","name":"Maggie's Shoes","kind":"shoes","lat":47.610733,"lon":-122.342350}
+{"type":"poi","name":"Michou Deli","kind":"restaurant","lat":47.609861,"lon":-122.342339}
+{"type":"poi","name":"Pike & Western Wine Shop","kind":"deli","lat":47.610402,"lon":-122.343232}
+{"type":"poi","name":"Pike Plaza Garage","kind":"parking_entrance","lat":47.608194,"lon":-122.338509}
+{"type":"poi","name":"Piroshky Piroshky","kind":"restaurant","lat":47.609932,"lon":-122.342457}
+{"type":"poi","name":"Turkish Delight","kind":"fast_food","lat":47.610340,"lon":-122.343122}
+{"type":"poi","name":"Half Shell","kind":"restaurant","lat":47.610776,"lon":-122.343849}
+{"type":"poi","name":"Seatown Rub Shack & FishFry","kind":"restaurant","lat":47.610586,"lon":-122.343474}
+{"type":"poi","name":"Qiao Lin Hotpot","kind":"restaurant","lat":47.612022,"lon":-122.333472}
+{"type":"poi","name":"Purple Cafe and Wine Bar - Seattle","kind":"restaurant","lat":47.607964,"lon":-122.334907}
+{"type":"poi","name":"Dzul Ink Lounge","kind":"tattoo","lat":47.613474,"lon":-122.342331}
+{"type":"poi","name":"Nyberg Lock","kind":"locksmith","lat":47.613512,"lon":-122.342412}
+{"type":"poi","name":"Annex","kind":"nightclub","lat":47.612984,"lon":-122.343452}
+{"type":"poi","name":"The Whisky Bar","kind":"bar","lat":47.613109,"lon":-122.343670}
+{"type":"poi","name":"Puzzle Break","kind":"escape_game","lat":47.613161,"lon":-122.343780}
+{"type":"poi","name":"Common Area Maintenance","kind":"arts_centre","lat":47.612901,"lon":-122.344053}
+{"type":"poi","name":"Jupiter Bar","kind":"bar","lat":47.613214,"lon":-122.343868}
+{"type":"poi","name":"Bento World Sushi & Teryaki","kind":"restaurant","lat":47.613483,"lon":-122.342044}
+{"type":"poi","name":"Swifty Printing & Digital Imaging, Inc.","kind":"copyshop","lat":47.612366,"lon":-122.341272}
+{"type":"poi","name":"Assaggio Ristorante","kind":"restaurant","lat":47.613427,"lon":-122.340322}
+{"type":"poi","name":"Subway","kind":"fast_food","lat":47.613181,"lon":-122.341859}
+{"type":"poi","name":"Neb Wine Bar","kind":"restaurant","lat":47.612903,"lon":-122.340494}
+{"type":"poi","name":"Christ Our Hope Catholic Church","kind":"place_of_worship","lat":47.611172,"lon":-122.340437}
+{"type":"poi","name":"Urban Yoga Spa","kind":"fitness_centre","lat":47.612588,"lon":-122.338839}
+{"type":"poi","name":"3rd Ave Cafe","kind":"cafe","lat":47.612024,"lon":-122.339931}
+{"type":"poi","name":"Orcas Paley","kind":"interior_decoration","lat":47.611458,"lon":-122.340952}
+{"type":"poi","name":"Belltown Self Storage","kind":"storage_rental","lat":47.611832,"lon":-122.340285}
+{"type":"poi","name":"Third & Stewart Animal Wellness Center","kind":"veterinary","lat":47.611921,"lon":-122.340403}
+{"type":"poi","name":"Retro Restaurant Lounge","kind":"bar","lat":47.611503,"lon":-122.340027}
+{"type":"poi","name":"Suite 410 Bar & Lounge","kind":"bar","lat":47.612590,"lon":-122.338627}
+{"type":"poi","name":"Mariners Team Store","kind":"sports","lat":47.612371,"lon":-122.338431}
+{"type":"poi","name":"Zane+Wylie's Seattle Steakhouse","kind":"restaurant","lat":47.613613,"lon":-122.335443}
+{"type":"poi","name":"Spin Seattle","kind":"bar","lat":47.611498,"lon":-122.335062}
+{"type":"poi","name":"Tap House Grill","kind":"pub","lat":47.611617,"lon":-122.334641}
+{"type":"poi","name":"Baby & Company","kind":"baby_goods","lat":47.611315,"lon":-122.342709}
+{"type":"poi","name":"Crystal Lounge by Crystallography Gems","kind":"yes","lat":47.611454,"lon":-122.342945}
+{"type":"poi","name":"Camerich","kind":"interior_decoration","lat":47.612103,"lon":-122.342822}
+{"type":"poi","name":"Ghost Alley Espresso","kind":"coffee","lat":47.608510,"lon":-122.340574}
+{"type":"poi","name":"Cobb's Popcorn","kind":"cafe","lat":47.608418,"lon":-122.341036}
+{"type":"poi","name":"Merry Tails","kind":"pet","lat":47.608803,"lon":-122.341170}
+{"type":"poi","name":"Pure Food Fish Market","kind":"seafood","lat":47.608762,"lon":-122.341097}
+{"type":"poi","name":"Brooke Westlund Studio and Gallery","kind":"gallery","lat":47.608829,"lon":-122.341387}
+{"type":"poi","name":"Leolo Handmade Shoes and Leather Goods","kind":"leather","lat":47.608854,"lon":-122.341400}
+{"type":"poi","name":"Lowell's","kind":"restaurant","lat":47.608830,"lon":-122.341315}
+{"type":"poi","name":"Chukar Cherries","kind":"confectionery","lat":47.608792,"lon":-122.341065}
+{"type":"poi","name":"The Chocolate Market","kind":"confectionery","lat":47.610131,"lon":-122.341926}
+{"type":"poi","name":"Biscuit Bitch","kind":"fast_food","lat":47.610398,"lon":-122.341792}
+{"type":"poi","name":"Perennial Tea Room","kind":"cafe","lat":47.610235,"lon":-122.342106}
+{"type":"poi","name":"Starbucks","kind":"cafe","lat":47.610008,"lon":-122.342581}
+{"type":"poi","name":"Maíz","kind":"restaurant","lat":47.610044,"lon":-122.342637}
+{"type":"poi","name":"El Callejón","kind":"restaurant","lat":47.610302,"lon":-122.342218}
+{"type":"poi","name":"Emmett Watson's Oyster Bar","kind":"restaurant","lat":47.610317,"lon":-122.342495}
+{"type":"poi","name":"Kells Irish Restaurant & Bar","kind":"restaurant","lat":47.610344,"lon":-122.342288}
+{"type":"poi","name":"Seattle Cutlery","kind":"kitchen","lat":47.610111,"lon":-122.342776}
+{"type":"poi","name":"Old School PinUps","kind":"photo","lat":47.610463,"lon":-122.342444}
+{"type":"poi","name":"Urara","kind":"restaurant","lat":47.609923,"lon":-122.342025}
+{"type":"poi","name":"Antiques at Pike Place","kind":"antiques","lat":47.610129,"lon":-122.341760}
+{"type":"poi","name":"World Spice Merchants","kind":"spices","lat":47.608597,"lon":-122.341556}
+{"type":"poi","name":"Madame Lazonga's","kind":"tattoo","lat":47.608876,"lon":-122.341846}
+{"type":"poi","name":"Ludi's","kind":"restaurant","lat":47.610942,"lon":-122.340751}
+{"type":"poi","name":"Design Within Reach","kind":"furniture","lat":47.610818,"lon":-122.341872}
+{"type":"poi","name":"Herman Miller","kind":"furniture","lat":47.610932,"lon":-122.342068}
+{"type":"poi","name":"Seattle Coffee Works","kind":"cafe","lat":47.610087,"lon":-122.340620}
+{"type":"poi","name":"Cupcake Royale","kind":"cafe","lat":47.610121,"lon":-122.340542}
+{"type":"poi","name":"Beecher's Handmade Cheese","kind":"cheese","lat":47.609583,"lon":-122.341816}
+{"type":"poi","name":"Café Campagne","kind":"restaurant","lat":47.609711,"lon":-122.341529}
+{"type":"poi","name":"Sur La Table","kind":"kitchenware","lat":47.609644,"lon":-122.341677}
+{"type":"poi","name":"Chan Seattle","kind":"restaurant","lat":47.609886,"lon":-122.341398}
+{"type":"poi","name":"Deja Vu Showgirls","kind":"stripclub","lat":47.609181,"lon":-122.340075}
+{"type":"poi","name":"The Hart and the Hunter","kind":"restaurant","lat":47.609845,"lon":-122.340499}
+{"type":"poi","name":"Musubi Kai","kind":"restaurant","lat":47.608074,"lon":-122.338876}
+{"type":"poi","name":"Luke's Lobster","kind":"restaurant","lat":47.609129,"lon":-122.339684}
+{"type":"poi","name":"Japonessa","kind":"restaurant","lat":47.608051,"lon":-122.339037}
+{"type":"poi","name":"Plantiful Superfoods","kind":"fast_food","lat":47.608002,"lon":-122.339515}
+{"type":"poi","name":"The Blarney Stone Pub","kind":"pub","lat":47.608346,"lon":-122.339322}
+{"type":"poi","name":"Baxter & Frost","kind":"confectionery","lat":47.608326,"lon":-122.339778}
+{"type":"poi","name":"Bottega Italiana","kind":"restaurant","lat":47.608451,"lon":-122.339890}
+{"type":"poi","name":"Freya Bakery and Cafe","kind":"cafe","lat":47.608127,"lon":-122.340714}
+{"type":"poi","name":"Market Theater","kind":"theatre","lat":47.608339,"lon":-122.340263}
+{"type":"poi","name":"La Vaca","kind":"restaurant","lat":47.608554,"lon":-122.339992}
+{"type":"poi","name":"DeLaurenti Specialty Food & Wine","kind":"deli","lat":47.608651,"lon":-122.340081}
+{"type":"poi","name":"SIXT","kind":"car_rental","lat":47.609776,"lon":-122.339652}
+{"type":"poi","name":"Mr Waffle","kind":"cafe","lat":47.609651,"lon":-122.340480}
+{"type":"poi","name":"Saffron Spice","kind":"restaurant","lat":47.608595,"lon":-122.340271}
+{"type":"poi","name":"Showbox at the Market","kind":"theatre","lat":47.608514,"lon":-122.339472}
+{"type":"poi","name":"Aditi Chai","kind":"cafe","lat":47.608814,"lon":-122.340572}
+{"type":"poi","name":"Falafel King","kind":"restaurant","lat":47.609091,"lon":-122.340496}
+{"type":"poi","name":"Mr. D's Greek Delicacies","kind":"restaurant","lat":47.609216,"lon":-122.341221}
+{"type":"poi","name":"Copacabana","kind":"cafe","lat":47.609241,"lon":-122.341264}
+{"type":"poi","name":"El Borracho","kind":"restaurant","lat":47.609310,"lon":-122.340695}
+{"type":"poi","name":"Truffle Queen","kind":"cafe","lat":47.609288,"lon":-122.341336}
+{"type":"poi","name":"So Much Yarn","kind":"sewing","lat":47.609373,"lon":-122.340926}
+{"type":"poi","name":"The Juice Emporium","kind":"cafe","lat":47.609326,"lon":-122.341398}
+{"type":"poi","name":"The Confectional","kind":"confectionery","lat":47.609344,"lon":-122.341430}
+{"type":"poi","name":"Pike Place Chowder","kind":"cafe","lat":47.609402,"lon":-122.341229}
+{"type":"poi","name":"The Tap Room at Pike Place","kind":"bar","lat":47.609528,"lon":-122.340872}
+{"type":"poi","name":"Lands of Origin","kind":"cafe","lat":47.609367,"lon":-122.341473}
+{"type":"poi","name":"Pike Place Fish Market","kind":"seafood","lat":47.608631,"lon":-122.340730}
+{"type":"poi","name":"Pike Place Bar & Grill","kind":"restaurant","lat":47.608948,"lon":-122.340724}
+{"type":"poi","name":"NYC Deli Market","kind":"cafe","lat":47.612244,"lon":-122.333651}
+{"type":"poi","name":"Starbucks","kind":"cafe","lat":47.612318,"lon":-122.333724}
+{"type":"poi","name":"Vietlicious Bakery and Boba","kind":"cafe","lat":47.612843,"lon":-122.336232}
+{"type":"poi","name":"Cherry Street Coffee House","kind":"cafe","lat":47.612743,"lon":-122.336881}
+{"type":"poi","name":"Seattle Visitor Center","kind":"information","lat":47.611498,"lon":-122.332780}
+{"type":"poi","name":"Café Yumm!","kind":"fast_food","lat":47.612718,"lon":-122.333407}
+{"type":"poi","name":"Grand Hyatt Seattle","kind":"hotel","lat":47.612501,"lon":-122.333448}
+{"type":"poi","name":"Ruth's Chris Steak House","kind":"restaurant","lat":47.612818,"lon":-122.333169}
+{"type":"poi","name":"Gameworks Seattle","kind":"amusement_arcade","lat":47.611800,"lon":-122.333997}
+{"type":"poi","name":"Dog In the Park","kind":"fast_food","lat":47.611022,"lon":-122.336747}
+{"type":"poi","name":"Dr. Martens","kind":"shoes","lat":47.610832,"lon":-122.337503}
+{"type":"poi","name":"McDonald's","kind":"fast_food","lat":47.610702,"lon":-122.338391}
+{"type":"poi","name":"Victrola Coffee Roasters","kind":"cafe","lat":47.610995,"lon":-122.338603}
+{"type":"poi","name":"Scientology","kind":"place_of_worship","lat":47.610796,"lon":-122.338211}
+{"type":"poi","name":"Portland Leather","kind":"bag","lat":47.610438,"lon":-122.336607}
+{"type":"poi","name":"Sephora","kind":"cosmetics","lat":47.611364,"lon":-122.336757}
+{"type":"poi","name":"WaFd Bank","kind":"bank","lat":47.610460,"lon":-122.335623}
+{"type":"poi","name":"Actual","kind":"gallery","lat":47.610923,"lon":-122.335513}
+{"type":"poi","name":"Monorail Espresso","kind":"cafe","lat":47.610966,"lon":-122.335301}
+{"type":"poi","name":"Alder & Ash","kind":"restaurant","lat":47.611338,"lon":-122.333458}
+{"type":"poi","name":"Cortina","kind":"restaurant","lat":47.610338,"lon":-122.332737}
+{"type":"poi","name":"4th Avenue Espresso Bar","kind":"cafe","lat":47.607879,"lon":-122.334274}
+{"type":"poi","name":"Brick + Mortar","kind":"shoes","lat":47.607946,"lon":-122.334338}
+{"type":"poi","name":"The Capital Grille","kind":"restaurant","lat":47.608264,"lon":-122.335188}
+{"type":"poi","name":"5th Avenue Theater","kind":"theatre","lat":47.609169,"lon":-122.333984}
+{"type":"poi","name":"Bank of America","kind":"bank","lat":47.608409,"lon":-122.335352}
+{"type":"poi","name":"Mephisto","kind":"shoes","lat":47.609310,"lon":-122.334113}
+{"type":"poi","name":"Washington Athletic Club","kind":"sports_centre","lat":47.609716,"lon":-122.333601}
+{"type":"poi","name":"Museum of Illusions","kind":"museum","lat":47.609628,"lon":-122.334394}
+{"type":"poi","name":"Gelatiamo","kind":"cafe","lat":47.608948,"lon":-122.336808}
+{"type":"poi","name":"Pane Pane Gourmet Sandwiches","kind":"cafe","lat":47.608971,"lon":-122.336725}
+{"type":"poi","name":"Fogo de Chão","kind":"restaurant","lat":47.608422,"lon":-122.334757}
+{"type":"poi","name":"Blue Water Taco Grill","kind":"fast_food","lat":47.609841,"lon":-122.333861}
+{"type":"poi","name":"Pho 25","kind":"restaurant","lat":47.610355,"lon":-122.338659}
+{"type":"poi","name":"Enterprise","kind":"car_rental","lat":47.611311,"lon":-122.339601}
+{"type":"poi","name":"John Fluevog Shoes","kind":"shoes","lat":47.610324,"lon":-122.339391}
+{"type":"poi","name":"Walgreens","kind":"pharmacy","lat":47.609782,"lon":-122.338152}
+{"type":"poi","name":"The Diller Room","kind":"bar","lat":47.606807,"lon":-122.337889}
+{"type":"poi","name":"Enoteca Due Leoni","kind":"bar","lat":47.606774,"lon":-122.337873}
+{"type":"poi","name":"B & B Italia","kind":"furniture","lat":47.606554,"lon":-122.339222}
+{"type":"poi","name":"Noi Thai Cuisine","kind":"restaurant","lat":47.606639,"lon":-122.338986}
+{"type":"poi","name":"Mason's","kind":"restaurant","lat":47.607051,"lon":-122.338648}
+{"type":"poi","name":"Fran's Chocolates","kind":"confectionery","lat":47.607637,"lon":-122.339196}
+{"type":"poi","name":"Wild Ginger - Seattle","kind":"restaurant","lat":47.608782,"lon":-122.337195}
+{"type":"poi","name":"Hot As Pho!","kind":"restaurant","lat":47.608825,"lon":-122.338155}
+{"type":"poi","name":"Spice King","kind":"restaurant","lat":47.609436,"lon":-122.338168}
+{"type":"poi","name":"The Triple Door","kind":"theatre","lat":47.608644,"lon":-122.337686}
+{"type":"poi","name":"1928 Tap and Grill","kind":"restaurant","lat":47.607085,"lon":-122.333571}
+{"type":"poi","name":"Riot Athletics","kind":"fitness_centre","lat":47.606094,"lon":-122.339265}
+{"type":"poi","name":"Von's 1000 Spirits","kind":"bar","lat":47.606639,"lon":-122.338305}
+{"type":"poi","name":"YWCA","kind":"sports_centre","lat":47.607877,"lon":-122.332809}
+{"type":"poi","name":"Hotel Seattle","kind":"hotel","lat":47.607273,"lon":-122.334464}
+{"type":"poi","name":"American Freestyle Alterations","kind":"tailor","lat":47.607322,"lon":-122.334378}
+{"type":"poi","name":"Lola","kind":"restaurant","lat":47.613257,"lon":-122.340032}
+{"type":"poi","name":"Serious Pie","kind":"restaurant","lat":47.613027,"lon":-122.340341}
+{"type":"poi","name":"Gearbox Photography","kind":"photographer","lat":47.610033,"lon":-122.339973}
+{"type":"poi","name":"CoffeeTab","kind":"cafe","lat":47.612543,"lon":-122.342779}
+{"type":"poi","name":"Wells Fargo","kind":"atm","lat":47.609093,"lon":-122.340016}
+{"type":"poi","name":"Starbucks","kind":"cafe","lat":47.612660,"lon":-122.335623}
+{"type":"poi","name":"Chase","kind":"bank","lat":47.612783,"lon":-122.335741}
+{"type":"poi","name":"Avis","kind":"car_rental","lat":47.613248,"lon":-122.338742}
+{"type":"poi","name":"CaffeUmbria","kind":"cafe","lat":47.613584,"lon":-122.335529}
+{"type":"poi","name":"Chipotle","kind":"fast_food","lat":47.609997,"lon":-122.337720}
+{"type":"poi","name":"Nordstrom eBar","kind":"cafe","lat":47.612306,"lon":-122.335789}
+{"type":"poi","name":"The Crumpet Shop","kind":"cafe","lat":47.608968,"lon":-122.340389}
+{"type":"poi","name":"Caffe Ladro","kind":"cafe","lat":47.613044,"lon":-122.332718}
+{"type":"poi","name":"Hertz","kind":"car_rental","lat":47.612196,"lon":-122.332568}
+{"type":"poi","name":"Freya Bakery & Cafe","kind":"cafe","lat":47.609905,"lon":-122.334590}
+{"type":"poi","name":"Market at Century Square","kind":"food_court","lat":47.610255,"lon":-122.337956}
+{"type":"poi","name":"Wells Fargo","kind":"atm","lat":47.606130,"lon":-122.340891}
+{"type":"poi","name":"3rd Avenue & Pine Street","kind":"subway_entrance","lat":47.611011,"lon":-122.338383}
+{"type":"poi","name":"3rd Avenue & Pine Street","kind":"subway_entrance","lat":47.610839,"lon":-122.338155}
+{"type":"poi","name":"5th Avenue & Pine Street","kind":"subway_entrance","lat":47.612060,"lon":-122.335907}
+{"type":"poi","name":"Veggie Grill","kind":"fast_food","lat":47.609870,"lon":-122.336618}
+{"type":"poi","name":"Oliver's Lounge","kind":"bar","lat":47.612192,"lon":-122.338225}
+{"type":"poi","name":"Andaluca","kind":"restaurant","lat":47.612358,"lon":-122.337686}
+{"type":"poi","name":"Cannonball Arts","kind":"arts_centre","lat":47.612425,"lon":-122.340368}
+{"type":"poi","name":"WeRise Wines","kind":"bar","lat":47.611120,"lon":-122.341028}
+{"type":"poi","name":"Jelly Bar","kind":"bar","lat":47.610839,"lon":-122.340864}
+{"type":"poi","name":"Ace Hardware","kind":"doityourself","lat":47.612545,"lon":-122.339598}
+{"type":"poi","name":"Squire Barbershop","kind":"hair","lat":47.611187,"lon":-122.341175}
+{"type":"poi","name":"Fountain of Wisdom","kind":"fountain","lat":47.606308,"lon":-122.332823}
+{"type":"poi","name":"MOD Pizza","kind":"fast_food","lat":47.609492,"lon":-122.332670}
+{"type":"poi","name":"HomeStreet Bank","kind":"bank","lat":47.609655,"lon":-122.332898}
+{"type":"poi","name":"Fonté Coffee","kind":"cafe","lat":47.607442,"lon":-122.339021}
+{"type":"poi","name":"U.S. Bank","kind":"bank","lat":47.610635,"lon":-122.335011}
+{"type":"poi","name":"Westlake","kind":"stop","lat":47.611554,"lon":-122.336884}
+{"type":"poi","name":"Symphony","kind":"stop","lat":47.608188,"lon":-122.336304}
+{"type":"poi","name":"Davids & Co","kind":"cafe","lat":47.608152,"lon":-122.336661}
+{"type":"poi","name":"Redtrees","kind":"restaurant","lat":47.609194,"lon":-122.332946}
+{"type":"poi","name":"Honor Coffee & Tea","kind":"cafe","lat":47.608064,"lon":-122.336578}
+{"type":"poi","name":"Subway","kind":"fast_food","lat":47.611702,"lon":-122.332501}
+{"type":"poi","name":"La Creperie Voila","kind":"fast_food","lat":47.611660,"lon":-122.332638}
+{"type":"poi","name":"National","kind":"car_rental","lat":47.611228,"lon":-122.339493}
+{"type":"poi","name":"Matt's in the Market","kind":"restaurant","lat":47.608856,"lon":-122.340566}
+{"type":"poi","name":"Radiator Whiskey","kind":"restaurant","lat":47.608923,"lon":-122.340397}
+{"type":"poi","name":"Sushi Kudasai","kind":"fast_food","lat":47.610375,"lon":-122.334054}
+{"type":"poi","name":"Jimmy John's","kind":"fast_food","lat":47.610275,"lon":-122.334140}
+{"type":"poi","name":"Wildfire Taqueria","kind":"fast_food","lat":47.610436,"lon":-122.334113}
+{"type":"poi","name":"Prestige","kind":"copyshop","lat":47.610456,"lon":-122.338927}
+{"type":"poi","name":"Roche Bobois","kind":"furniture","lat":47.613078,"lon":-122.339713}
+{"type":"poi","name":"Bank of the West","kind":"bank","lat":47.606215,"lon":-122.336379}
+{"type":"poi","name":"Potbelly","kind":"fast_food","lat":47.606523,"lon":-122.335135}
+{"type":"poi","name":"Outlier","kind":"restaurant","lat":47.606832,"lon":-122.333909}
+{"type":"poi","name":"Phoenix Cafe","kind":"cafe","lat":47.605993,"lon":-122.334620}
+{"type":"poi","name":"Peet's Coffee","kind":"cafe","lat":47.606071,"lon":-122.334708}
+{"type":"poi","name":"Provisions Cafe","kind":"cafe","lat":47.606988,"lon":-122.333485}
+{"type":"poi","name":"Soups du Jour","kind":"fast_food","lat":47.605998,"lon":-122.333576}
+{"type":"poi","name":"Joelle's Espresso Shop","kind":"cafe","lat":47.605961,"lon":-122.333670}
+{"type":"poi","name":"Chase","kind":"atm","lat":47.608700,"lon":-122.340306}
+{"type":"poi","name":"Jasmine Thai Restaurant","kind":"restaurant","lat":47.609467,"lon":-122.341170}
+{"type":"poi","name":"Sound View Cafe","kind":"restaurant","lat":47.608516,"lon":-122.341127}
+{"type":"poi","name":"Westlake Hub","kind":"tram_stop","lat":47.613161,"lon":-122.337353}
+{"type":"poi","name":"Symphony","kind":"stop","lat":47.607302,"lon":-122.335620}
+{"type":"poi","name":"Westlake","kind":"stop","lat":47.611881,"lon":-122.335896}
+{"type":"poi","name":"Hyatt at Olive 8","kind":"hotel","lat":47.613711,"lon":-122.334166}
+{"type":"poi","name":"Bank of America","kind":"atm","lat":47.608402,"lon":-122.335269}
+{"type":"poi","name":"Inn at the Market","kind":"hotel","lat":47.609962,"lon":-122.341457}
+{"type":"poi","name":"Sushi Kashiba","kind":"restaurant","lat":47.609774,"lon":-122.341427}
+{"type":"poi","name":"Steinway Piano Gallery","kind":"musical_instrument","lat":47.607740,"lon":-122.335663}
+{"type":"poi","name":"Chase","kind":"bank","lat":47.608073,"lon":-122.338077}
+{"type":"poi","name":"Simo Silk","kind":"bed","lat":47.607905,"lon":-122.339517}
+{"type":"poi","name":"Wells Fargo","kind":"atm","lat":47.606080,"lon":-122.341795}
+{"type":"poi","name":"Bernard's on Seneca","kind":"restaurant","lat":47.607254,"lon":-122.334529}
+{"type":"poi","name":"Starbucks","kind":"cafe","lat":47.607196,"lon":-122.335687}
+{"type":"poi","name":"Market","kind":"cafe","lat":47.607351,"lon":-122.338404}
+{"type":"poi","name":"Trace","kind":"bar","lat":47.607490,"lon":-122.333941}
+{"type":"poi","name":"Umpqua Bank","kind":"bank","lat":47.606870,"lon":-122.335403}
+{"type":"poi","name":"1201 Third Avenue Parking","kind":"parking","lat":47.606986,"lon":-122.335770}
+{"type":"poi","name":"IBM Building Parking","kind":"parking","lat":47.608671,"lon":-122.333021}
+{"type":"poi","name":"USPS","kind":"post_box","lat":47.612347,"lon":-122.340623}
+{"type":"poi","name":"Starbucks","kind":"cafe","lat":47.610022,"lon":-122.332444}
+{"type":"poi","name":"Evergreens","kind":"fast_food","lat":47.609729,"lon":-122.332563}
+{"type":"poi","name":"Blue Water Taco Grill","kind":"fast_food","lat":47.609666,"lon":-122.332514}
+{"type":"poi","name":"Fresh Table Cafe","kind":"fast_food","lat":47.609655,"lon":-122.332579}
+{"type":"poi","name":"AlphaGraphics","kind":"signmaker","lat":47.609565,"lon":-122.332522}
+{"type":"poi","name":"Walla Walla Farms","kind":"cafe","lat":47.609944,"lon":-122.332528}
+{"type":"poi","name":"HSBC","kind":"bank","lat":47.609962,"lon":-122.333611}
+{"type":"poi","name":"Mrs. Fields","kind":"confectionery","lat":47.610275,"lon":-122.333896}
+{"type":"poi","name":"Vivienne's Bistro","kind":"restaurant","lat":47.610364,"lon":-122.333517}
+{"type":"poi","name":"TCBY","kind":"ice_cream","lat":47.610328,"lon":-122.333981}
+{"type":"poi","name":"Goldfinch Tavern","kind":"restaurant","lat":47.607604,"lon":-122.339273}
+{"type":"poi","name":"USPS","kind":"post_box","lat":47.609825,"lon":-122.336470}
+{"type":"poi","name":"Bacco Cafe","kind":"restaurant","lat":47.610051,"lon":-122.341387}
+{"type":"poi","name":"Kastoori Grill","kind":"restaurant","lat":47.610219,"lon":-122.341642}
+{"type":"poi","name":"Paris-Madrid Grocery","kind":"deli","lat":47.607899,"lon":-122.340510}
+{"type":"poi","name":"Shuckers Oyster Bar","kind":"restaurant","lat":47.607669,"lon":-122.334150}
+{"type":"poi","name":"Public Market Clock","kind":"attraction","lat":47.608537,"lon":-122.340660}
+{"type":"poi","name":"Sanitary Market Building","kind":"attraction","lat":47.609510,"lon":-122.340979}
+{"type":"poi","name":"Rachel's Ginger Beer - Pike Place Market","kind":"bar","lat":47.609505,"lon":-122.341357}
+{"type":"poi","name":"Relish Burger Bistro","kind":"restaurant","lat":47.613329,"lon":-122.337830}
+{"type":"poi","name":"USPS","kind":"post_box","lat":47.612120,"lon":-122.338313}
+{"type":"poi","name":"Mustardseed Cafe & Catering","kind":"cafe","lat":47.608499,"lon":-122.333322}
+{"type":"poi","name":"Copperworks Tasting Room & Distillery","kind":"bar","lat":47.606008,"lon":-122.339729}
+{"type":"poi","name":"AMC Pacific Place 11","kind":"cinema","lat":47.613148,"lon":-122.335532}
+{"type":"poi","name":"Jack's Fish Spot","kind":"seafood","lat":47.609056,"lon":-122.340928}
+{"type":"poi","name":"Shy Giant Frozen Yogurt","kind":"ice_cream","lat":47.609015,"lon":-122.340655}
+{"type":"poi","name":"Storyville Coffee","kind":"cafe","lat":47.608973,"lon":-122.340601}
+{"type":"poi","name":"Seng Tong Thai","kind":"restaurant","lat":47.612801,"lon":-122.335500}
+{"type":"poi","name":"Pike Place Chowder","kind":"fast_food","lat":47.612651,"lon":-122.335328}
+{"type":"poi","name":"Adonis Commercial Photography","kind":"photographer","lat":47.606085,"lon":-122.333861}
+{"type":"poi","name":"Seattle Beer Company","kind":"bar","lat":47.608203,"lon":-122.341186}
+{"type":"poi","name":"Shaker & Spear","kind":"restaurant","lat":47.611986,"lon":-122.341612}
+{"type":"poi","name":"Bank of America","kind":"bank","lat":47.610554,"lon":-122.336532}
+{"type":"poi","name":"Union Deli","kind":"cafe","lat":47.608677,"lon":-122.335958}
+{"type":"poi","name":"New Saigon","kind":"restaurant","lat":47.611874,"lon":-122.335331}
+{"type":"poi","name":"Chase","kind":"bank","lat":47.610400,"lon":-122.337085}
+{"type":"poi","name":"Yard House","kind":"restaurant","lat":47.610557,"lon":-122.337243}
+{"type":"poi","name":"Century Square Garage","kind":"parking","lat":47.610035,"lon":-122.337385}
+{"type":"poi","name":"Seattle Dumpling Company","kind":"restaurant","lat":47.610241,"lon":-122.342487}
+{"type":"poi","name":"Zig Zag Café","kind":"restaurant","lat":47.608320,"lon":-122.341534}
+{"type":"poi","name":"Kasala","kind":"furniture","lat":47.608407,"lon":-122.341363}
+{"type":"poi","name":"Pike Street Press","kind":"printing","lat":47.608254,"lon":-122.341733}
+{"type":"poi","name":"Wells Fargo","kind":"bank","lat":47.611810,"lon":-122.337889}
+{"type":"poi","name":"Subway","kind":"fast_food","lat":47.611904,"lon":-122.337938}
+{"type":"poi","name":"Taco Del Mar","kind":"fast_food","lat":47.611942,"lon":-122.337844}
+{"type":"poi","name":"Wild Tiger Pizza & Salads","kind":"fast_food","lat":47.611832,"lon":-122.337873}
+{"type":"poi","name":"Fountain Wine Bar & Lounge","kind":"bar","lat":47.611069,"lon":-122.334003}
+{"type":"poi","name":"Meridian Parking","kind":"parking_entrance","lat":47.611440,"lon":-122.334094}
+{"type":"poi","name":"Founders Club","kind":"bar","lat":47.608163,"lon":-122.333826}
+{"type":"poi","name":"Il Bistro","kind":"restaurant","lat":47.608628,"lon":-122.340196}
+{"type":"poi","name":"World Fresh Asian Eatery","kind":"restaurant","lat":47.610058,"lon":-122.332664}
+{"type":"poi","name":"Wings over Washington","kind":"attraction","lat":47.606154,"lon":-122.342159}
+{"type":"poi","name":"Penny Royal","kind":"restaurant","lat":47.611915,"lon":-122.341744}
+{"type":"poi","name":"Chip & Drew's Filling Station","kind":"cafe","lat":47.607720,"lon":-122.337761}
+{"type":"poi","name":"DelinoMore","kind":"cafe","lat":47.607848,"lon":-122.332764}
+{"type":"poi","name":"Psychic Reader","kind":"psychic","lat":47.606852,"lon":-122.337745}
+{"type":"poi","name":"Seattle Athletic Club","kind":"fitness_centre","lat":47.610859,"lon":-122.343986}
+{"type":"poi","name":"Shoe Express","kind":"shoemaker","lat":47.606946,"lon":-122.336310}
+{"type":"poi","name":"Walla Walla Farms Cafe & Catering","kind":"cafe","lat":47.605984,"lon":-122.336146}
+{"type":"poi","name":"Benaroya Hall Garage","kind":"parking_entrance","lat":47.608140,"lon":-122.337645}
+{"type":"poi","name":"Buffalo Wild Wings","kind":"restaurant","lat":47.611988,"lon":-122.338056}
+{"type":"poi","name":"Starbucks","kind":"cafe","lat":47.610393,"lon":-122.334719}
+{"type":"poi","name":"Specialty's Cafe and Bakery","kind":"cafe","lat":47.610581,"lon":-122.335046}
+{"type":"poi","name":"Bank of America","kind":"bank","lat":47.606499,"lon":-122.333627}
+{"type":"poi","name":"Benaroya Hall Ticket Office","kind":"ticket","lat":47.608427,"lon":-122.336967}
+{"type":"poi","name":"Cobb Garage","kind":"parking_entrance","lat":47.608870,"lon":-122.336312}
+{"type":"poi","name":"Cobb Garage","kind":"parking_entrance","lat":47.608040,"lon":-122.335583}
+{"type":"poi","name":"Din Tai Fung","kind":"restaurant","lat":47.612528,"lon":-122.335194}
+{"type":"poi","name":"Pacific Place","kind":"parking_entrance","lat":47.612870,"lon":-122.335894}
+{"type":"poi","name":"Pacific Place","kind":"parking_entrance","lat":47.613183,"lon":-122.334955}
+{"type":"poi","name":"The Tasting Room","kind":"wine","lat":47.610498,"lon":-122.342441}
+{"type":"poi","name":"The Pink Door","kind":"restaurant","lat":47.610387,"lon":-122.342532}
+{"type":"poi","name":"The George","kind":"restaurant","lat":47.608460,"lon":-122.333783}
+{"type":"poi","name":"Los Agaves","kind":"fast_food","lat":47.609163,"lon":-122.340891}
+{"type":"poi","name":"Kitchen Basics","kind":"kitchen","lat":47.609221,"lon":-122.340749}
+{"type":"poi","name":"Tint School of Makeup & Cosmetology","kind":"cosmetology_school","lat":47.612194,"lon":-122.343771}
+{"type":"poi","name":"Old Stove Brewing Co. Marketfront","kind":"pub","lat":47.609496,"lon":-122.342849}
+{"type":"poi","name":"Farvahar Cafe","kind":"cafe","lat":47.609508,"lon":-122.341199}
+{"type":"poi","name":"The Rabbit Box","kind":"restaurant","lat":47.608883,"lon":-122.340354}
+{"type":"poi","name":"Anchorhead Coffee Co","kind":"cafe","lat":47.613374,"lon":-122.334676}
+{"type":"poi","name":"Alibi Room","kind":"bar","lat":47.608257,"lon":-122.340365}
+{"type":"poi","name":"6th Ave & Union St","kind":"crossing","lat":47.610020,"lon":-122.333440}
+{"type":"poi","name":"FedEx Office","kind":"copyshop","lat":47.613713,"lon":-122.338206}
+{"type":"poi","name":"Rider","kind":"restaurant","lat":47.612420,"lon":-122.334295}
+{"type":"poi","name":"Union Bank","kind":"bank","lat":47.608340,"lon":-122.333158}
+{"type":"poi","name":"Union Bank","kind":"atm","lat":47.608416,"lon":-122.333284}
+{"type":"poi","name":"artly","kind":"cafe","lat":47.610311,"lon":-122.341033}
+{"type":"poi","name":"Pasta Casalinga","kind":"restaurant","lat":47.608537,"lon":-122.340234}
+{"type":"poi","name":"Chase","kind":"bank","lat":47.607532,"lon":-122.336135}
+{"type":"poi","name":"Delicatus","kind":"deli","lat":47.607816,"lon":-122.337063}
+{"type":"poi","name":"Coffee Tab","kind":"school","lat":47.613201,"lon":-122.342610}
+{"type":"poi","name":"Frolik Kitchen + Cocktails","kind":"restaurant","lat":47.610121,"lon":-122.335449}
+{"type":"poi","name":"Piroshky Piroshky at Century Square","kind":"cafe","lat":47.610084,"lon":-122.337801}
+{"type":"poi","name":"Aveda","kind":"cosmetics","lat":47.612827,"lon":-122.335620}
+{"type":"poi","name":"The Art Of Shaving","kind":"razors","lat":47.612886,"lon":-122.335650}
+{"type":"poi","name":"Papyrus","kind":"vacant","lat":47.612848,"lon":-122.335545}
+{"type":"poi","name":"Caffe Migliore","kind":"cafe","lat":47.607780,"lon":-122.334751}
+{"type":"poi","name":"The Original Deli","kind":"cafe","lat":47.607481,"lon":-122.334869}
+{"type":"poi","name":"The Nest at Thompson Seattle","kind":"bar","lat":47.610519,"lon":-122.341379}
+{"type":"poi","name":"Jim Ryan Clock","kind":"clock","lat":47.608961,"lon":-122.334231}
+{"type":"poi","name":"Patagon","kind":"restaurant","lat":47.611062,"lon":-122.340059}
+{"type":"poi","name":"Fog Room","kind":"bar","lat":47.611138,"lon":-122.339973}
+{"type":"poi","name":"The Charter Hotel Seattle","kind":"hotel","lat":47.610935,"lon":-122.340116}
+{"type":"poi","name":"White Horse Trading Co.","kind":"bar","lat":47.610199,"lon":-122.342049}
+{"type":"poi","name":"Bobbie Medlin","kind":"interior_decoration","lat":47.611349,"lon":-122.342768}
+{"type":"poi","name":"Moore Coffee Seattle","kind":"cafe","lat":47.610772,"lon":-122.340958}
+{"type":"poi","name":"Seleušs Chocolates","kind":"chocolate","lat":47.610691,"lon":-122.341661}
+{"type":"poi","name":"The Athenian Seafood Restaurant and Bar","kind":"restaurant","lat":47.608814,"lon":-122.341298}
+{"type":"poi","name":"Ben Paris","kind":"restaurant","lat":47.609326,"lon":-122.339171}
+{"type":"poi","name":"The State Hotel","kind":"hotel","lat":47.609358,"lon":-122.339209}
+{"type":"poi","name":"Xi'an Noodles","kind":"restaurant","lat":47.611702,"lon":-122.337412}
+{"type":"poi","name":"Sushi Kudasai","kind":"fast_food","lat":47.610217,"lon":-122.337763}
+{"type":"poi","name":"Gyros Place","kind":"fast_food","lat":47.610132,"lon":-122.337686}
+{"type":"poi","name":"Taste of Asia","kind":"fast_food","lat":47.610304,"lon":-122.337841}
+{"type":"poi","name":"Seattle Aquarium Cafe","kind":"restaurant","lat":47.607324,"lon":-122.342556}
+{"type":"poi","name":"Dogtopia","kind":"animal_boarding","lat":47.606756,"lon":-122.338707}
+{"type":"poi","name":"Symphony","kind":"station","lat":47.607740,"lon":-122.335939}
+{"type":"poi","name":"Westlake Center","kind":"stop","lat":47.612022,"lon":-122.336940}
+{"type":"poi","name":"Westlake Center","kind":"station","lat":47.612011,"lon":-122.336918}
+{"type":"poi","name":"Can Can Culinary Cabaret","kind":"restaurant","lat":47.609572,"lon":-122.341178}
+{"type":"poi","name":"Kitchen & Market","kind":"kitchen","lat":47.610259,"lon":-122.342983}
+{"type":"poi","name":"CVS Pharmacy","kind":"pharmacy","lat":47.608584,"lon":-122.338890}
+{"type":"poi","name":"Starbucks","kind":"cafe","lat":47.608264,"lon":-122.338611}
+{"type":"poi","name":"Indi Chocolate","kind":"chocolate","lat":47.609776,"lon":-122.343227}
+{"type":"poi","name":"Haidilao Hot Pot","kind":"restaurant","lat":47.612545,"lon":-122.335355}
+{"type":"poi","name":"Seattle Convention Center Arch at 705 Pike","kind":"conference_centre","lat":47.611389,"lon":-122.332549}
+{"type":"poi","name":"5th Avenue","kind":"subway_entrance","lat":47.611883,"lon":-122.336838}
+{"type":"poi","name":"Westlake Center","kind":"subway_entrance","lat":47.611707,"lon":-122.337117}
+{"type":"poi","name":"Chan Seattle","kind":"restaurant","lat":47.613159,"lon":-122.333485}
+{"type":"poi","name":"Cafe Zum Zum","kind":"fast_food","lat":47.610310,"lon":-122.337986}
+{"type":"poi","name":"Art on the Table","kind":"houseware","lat":47.610344,"lon":-122.340156}
+{"type":"poi","name":"The Shop by Porter","kind":"cafe","lat":47.606425,"lon":-122.337533}
+{"type":"poi","name":"Xing Fu Tang","kind":"cafe","lat":47.612291,"lon":-122.339153}
+{"type":"poi","name":"Watson Kennedy","kind":"houseware","lat":47.609908,"lon":-122.341556}
+{"type":"poi","name":"Rowdy Box","kind":"fitness_centre","lat":47.612743,"lon":-122.339155}
+{"type":"poi","name":"ChargePoint","kind":"charging_station","lat":47.607865,"lon":-122.338359}
+{"type":"poi","name":"JPMorganChase Center Parking Garage","kind":"parking_entrance","lat":47.607993,"lon":-122.338498}
+{"type":"poi","name":"Ladro","kind":"cafe","lat":47.607076,"lon":-122.337200}
+{"type":"poi","name":"Xi'an Noodles","kind":"restaurant","lat":47.612313,"lon":-122.337329}
+{"type":"poi","name":"The Alabaster Owl","kind":"antiques","lat":47.609398,"lon":-122.341475}
+{"type":"poi","name":"Market Diner","kind":"restaurant","lat":47.609197,"lon":-122.340829}
+{"type":"poi","name":"Karoo","kind":"bar","lat":47.610601,"lon":-122.342151}
+{"type":"poi","name":"Sonya's","kind":"restaurant","lat":47.610563,"lon":-122.342076}
+{"type":"poi","name":"Evergreens","kind":"fast_food","lat":47.609102,"lon":-122.338418}
+{"type":"poi","name":"Tiger Sugar","kind":"cafe","lat":47.608937,"lon":-122.338281}
+{"type":"poi","name":"Wells Fargo","kind":"bank","lat":47.609178,"lon":-122.338471}
+{"type":"poi","name":"Armistice","kind":"cafe","lat":47.610740,"lon":-122.341744}
+{"type":"poi","name":"Homa Rugs","kind":"carpet","lat":47.606691,"lon":-122.337793}
+{"type":"poi","name":"Tower 12","kind":"deli","lat":47.611711,"lon":-122.342106}
+{"type":"poi","name":"Uli’s Famous Sausage","kind":"fast_food","lat":47.608749,"lon":-122.341070}
+{"type":"poi","name":"Budget","kind":"car_rental","lat":47.613235,"lon":-122.338724}
+{"type":"poi","name":"Ben Bridge Street Clock","kind":"clock","lat":47.611668,"lon":-122.336277}
+{"type":"poi","name":"V.O.G.U.E.","kind":"fixme","lat":47.611512,"lon":-122.343082}
+{"type":"poi","name":"Red Light Camera","kind":"speed_camera","lat":47.607040,"lon":-122.332828}
+{"type":"poi","name":"Red Light Camera","kind":"speed_camera","lat":47.608778,"lon":-122.332434}
+{"type":"poi","name":"Cassina","kind":"furniture","lat":47.606107,"lon":-122.338831}
+{"type":"poi","name":"Mendocino Farms","kind":"fast_food","lat":47.609192,"lon":-122.335432}
+{"type":"poi","name":"Debonair Décor","kind":"interior_decoration","lat":47.612780,"lon":-122.334818}
+{"type":"poi","name":"Midnight Cookie","kind":"pastry","lat":47.613094,"lon":-122.335414}
+{"type":"poi","name":"Onyx Fine Art Gallery","kind":"gallery","lat":47.612707,"lon":-122.335473}
+{"type":"poi","name":"Pumarosa Candles","kind":"candles","lat":47.612711,"lon":-122.335414}
+{"type":"poi","name":"Timothy De Clue Collection","kind":"interior_decoration","lat":47.612724,"lon":-122.334698}
+{"type":"poi","name":"Olympia Coffee","kind":"cafe","lat":47.610431,"lon":-122.335164}
+{"type":"poi","name":"Spruce Cafe","kind":"restaurant","lat":47.613078,"lon":-122.333533}
+{"type":"poi","name":"Harbor Cafe","kind":"fast_food","lat":47.609351,"lon":-122.336304}
+{"type":"poi","name":"Alamo","kind":"car_rental","lat":47.611288,"lon":-122.339531}
+{"type":"poi","name":"Olympic Bar","kind":"bar","lat":47.608136,"lon":-122.334024}
+{"type":"poi","name":"Tesla Supercharger","kind":"charging_station","lat":47.606660,"lon":-122.337149}
+{"type":"poi","name":"Dough Zone","kind":"restaurant","lat":47.606371,"lon":-122.338981}
+{"type":"poi","name":"Waterfront Fountain","kind":"fountain","lat":47.606393,"lon":-122.341162}
+{"type":"poi","name":"Urban Coffee House","kind":"cafe","lat":47.612521,"lon":-122.338734}
+{"type":"poi","name":"Pike Street Coffee","kind":"cafe","lat":47.608366,"lon":-122.341449}
+{"type":"poi","name":"Pizza Pasta Bar","kind":"restaurant","lat":47.609418,"lon":-122.341129}
+{"type":"poi","name":"Cleopatra Ink","kind":"tattoo","lat":47.611727,"lon":-122.335245}
+{"type":"poi","name":"Crêpe de France","kind":"cafe","lat":47.608364,"lon":-122.340078}
+{"type":"poi","name":"Animated Cafe","kind":"cafe","lat":47.607071,"lon":-122.341403}
+{"type":"poi","name":"Berry Much","kind":"fast_food","lat":47.610892,"lon":-122.344053}
+{"type":"poi","name":"Taz Matcha","kind":"cafe","lat":47.610758,"lon":-122.336680}
+{"type":"poi","name":"Lingon","kind":"restaurant","lat":47.610876,"lon":-122.336707}
+{"type":"poi","name":"Westlake Park","kind":"park","lat":47.610914,"lon":-122.336991}
+{"type":"poi","name":"McGraw Square","kind":"park","lat":47.613136,"lon":-122.337455}
+{"type":"poi","name":"Westlake Square","kind":"park","lat":47.613622,"lon":-122.337289}
+{"type":"poi","name":"Market Heritage Center","kind":"information","lat":47.609196,"lon":-122.342151}
+{"type":"poi","name":"Nom House","kind":"restaurant","lat":47.606275,"lon":-122.335250}
+{"type":"poi","name":"Westman's Bagel & Coffee","kind":"fast_food","lat":47.606324,"lon":-122.334987}
+{"type":"poi","name":"Westlake Hub","kind":"platform","lat":47.613058,"lon":-122.337294}
+{"type":"poi","name":"Westlake Hub","kind":"platform","lat":47.612971,"lon":-122.337342}
+{"type":"poi","name":"Mark's Ark","kind":"yes","lat":47.606165,"lon":-122.341508}
+{"type":"poi","name":"Photo Booth","kind":"photographer","lat":47.606241,"lon":-122.342315}
+{"type":"poi","name":"Hoememade Ice Cream","kind":"ice_cream","lat":47.606132,"lon":-122.341623}
+{"type":"poi","name":"Sports Den","kind":"clothes","lat":47.605989,"lon":-122.341384}
+{"type":"poi","name":"The Carousel","kind":"attraction","lat":47.606194,"lon":-122.341897}
+{"type":"poi","name":"The Salmon Cooker","kind":"restaurant","lat":47.606008,"lon":-122.340775}
+{"type":"poi","name":"The Sourdough Bakery","kind":"bakery","lat":47.606161,"lon":-122.341261}
+{"type":"poi","name":"Waterfront Arcade","kind":"amusement_arcade","lat":47.606051,"lon":-122.341886}
+{"type":"poi","name":"Klondike Arcade","kind":"amusement_arcade","lat":47.606136,"lon":-122.341382}
+{"type":"poi","name":"Kudedon Sushi","kind":"restaurant","lat":47.608715,"lon":-122.335663}
+{"type":"poi","name":"Caffe Migliore","kind":"cafe","lat":47.608830,"lon":-122.335770}
+{"type":"poi","name":"Seattle Great Wheel Tickets","kind":"ticket","lat":47.606322,"lon":-122.342232}
+{"type":"poi","name":"Fisherman's Bistro","kind":"restaurant","lat":47.606083,"lon":-122.342189}
+{"type":"poi","name":"Shucky Muckers","kind":"restaurant","lat":47.606174,"lon":-122.341937}
+{"type":"poi","name":"Sourdough Pizza","kind":"restaurant","lat":47.605975,"lon":-122.342015}
+{"type":"poi","name":"Yukon Jack's BBQ","kind":"restaurant","lat":47.605975,"lon":-122.341929}
+{"type":"poi","name":"Taqueria El Burro","kind":"restaurant","lat":47.605975,"lon":-122.341843}
+{"type":"poi","name":"Patagonia","kind":"clothes","lat":47.612033,"lon":-122.343900}
+{"type":"poi","name":"Cinnamon Works","kind":"bakery","lat":47.609414,"lon":-122.341556}
+{"type":"poi","name":"Le Panier","kind":"bakery","lat":47.609827,"lon":-122.342277}
+{"type":"poi","name":"Pensione Nichols B&B","kind":"guest_house","lat":47.610595,"lon":-122.342328}
+{"type":"poi","name":"Zebraclub Stores","kind":"clothes","lat":47.610315,"lon":-122.341658}
+{"type":"poi","name":"Spa Noir","kind":"beauty","lat":47.613053,"lon":-122.343581}
+{"type":"poi","name":"Lino Tagliapietra Inc","kind":"art","lat":47.612087,"lon":-122.341969}
+{"type":"poi","name":"Swink Style Bar","kind":"hairdresser","lat":47.612400,"lon":-122.339386}
+{"type":"poi","name":"Do The Extraordinary","kind":"clothes","lat":47.613326,"lon":-122.336280}
+{"type":"poi","name":"Buki Pop-Up Shop","kind":"clothes","lat":47.613577,"lon":-122.336680}
+{"type":"poi","name":"Alexandra's","kind":"clothes","lat":47.612503,"lon":-122.338101}
+{"type":"poi","name":"SPEX","kind":"optician","lat":47.613713,"lon":-122.336642}
+{"type":"poi","name":"Young Flower","kind":"florist","lat":47.613752,"lon":-122.336594}
+{"type":"poi","name":"Kucumber","kind":"beauty","lat":47.611138,"lon":-122.343063}
+{"type":"poi","name":"Market Grocery & Deli","kind":"convenience","lat":47.611080,"lon":-122.342945}
+{"type":"poi","name":"Ottica","kind":"optician","lat":47.611583,"lon":-122.343871}
+{"type":"poi","name":"Happy Days & Funny Nights","kind":"gift","lat":47.611011,"lon":-122.342921}
+{"type":"poi","name":"Eclipse Hat Shop","kind":"clothes","lat":47.608894,"lon":-122.341433}
+{"type":"poi","name":"Post Alley Kids","kind":"clothes","lat":47.610098,"lon":-122.341870}
+{"type":"poi","name":"Totem Smokehouse","kind":"butcher","lat":47.609895,"lon":-122.342398}
+{"type":"poi","name":"Market Optical Eyeware","kind":"optician","lat":47.609962,"lon":-122.342508}
+{"type":"poi","name":"Experience Craft Beer & Tobacco","kind":"tobacco","lat":47.610449,"lon":-122.341859}
+{"type":"poi","name":"Harris/Harvey Gallery","kind":"art","lat":47.610492,"lon":-122.341956}
+{"type":"poi","name":"Antonio","kind":"hairdresser","lat":47.611263,"lon":-122.342114}
+{"type":"poi","name":"Jackstraw","kind":"clothes","lat":47.610971,"lon":-122.342133}
+{"type":"poi","name":"Natural Home","kind":"clothes","lat":47.611082,"lon":-122.342307}
+{"type":"poi","name":"Simply Seattle","kind":"gift","lat":47.609993,"lon":-122.340861}
+{"type":"poi","name":"MUTO","kind":"gift","lat":47.610210,"lon":-122.341062}
+{"type":"poi","name":"Seattle Shirt Company","kind":"gift","lat":47.608810,"lon":-122.339713}
+{"type":"poi","name":"Green Tortoise Hostel","kind":"hostel","lat":47.608834,"lon":-122.339593}
+{"type":"poi","name":"Seattle Shirt Company","kind":"clothes","lat":47.608892,"lon":-122.339477}
+{"type":"poi","name":"Pendleton","kind":"clothes","lat":47.609959,"lon":-122.340156}
+{"type":"poi","name":"Vetri","kind":"art","lat":47.608105,"lon":-122.339094}
+{"type":"poi","name":"8th Generation","kind":"gift","lat":47.608150,"lon":-122.339134}
+{"type":"poi","name":"Pirkko","kind":"clothes","lat":47.608060,"lon":-122.339579}
+{"type":"poi","name":"the Vutique","kind":"clothes","lat":47.608194,"lon":-122.339177}
+{"type":"poi","name":"Milagros Mexican Folk Art","kind":"art","lat":47.608112,"lon":-122.339630}
+{"type":"poi","name":"The Jewelry Box","kind":"jewelry","lat":47.608169,"lon":-122.339668}
+{"type":"poi","name":"De'Core of Seattle","kind":"gift","lat":47.608282,"lon":-122.339743}
+{"type":"poi","name":"Providence Vincent House","kind":"social_facility","lat":47.608373,"lon":-122.339821}
+{"type":"poi","name":"J & J Sportswear","kind":"clothes","lat":47.608508,"lon":-122.339949}
+{"type":"poi","name":"Smoke Plus","kind":"tobacco","lat":47.608735,"lon":-122.339721}
+{"type":"poi","name":"Don & Joe's Meats","kind":"butcher","lat":47.608501,"lon":-122.340676}
+{"type":"poi","name":"Pike Place Flowers","kind":"florist","lat":47.608926,"lon":-122.340354}
+{"type":"poi","name":"Oriental Mart","kind":"convenience","lat":47.608921,"lon":-122.340749}
+{"type":"poi","name":"Frank's Quality Produce","kind":"greengrocer","lat":47.608959,"lon":-122.340810}
+{"type":"poi","name":"Metsker Maps of Seattle","kind":"books","lat":47.609131,"lon":-122.340531}
+{"type":"poi","name":"Three Girls Bakery","kind":"bakery","lat":47.609006,"lon":-122.340869}
+{"type":"poi","name":"Magpie Mouse","kind":"jewelry","lat":47.609102,"lon":-122.340805}
+{"type":"poi","name":"Choice Produce & Peppers","kind":"greengrocer","lat":47.609131,"lon":-122.341001}
+{"type":"poi","name":"Mee Sum Pastry","kind":"bakery","lat":47.609308,"lon":-122.341366}
+{"type":"poi","name":"Robot vs Sloth","kind":"gift","lat":47.609642,"lon":-122.341020}
+{"type":"poi","name":"Left Bank Book Collective","kind":"books","lat":47.608877,"lon":-122.340419}
+{"type":"poi","name":"Verizon","kind":"mobile_phone","lat":47.612957,"lon":-122.336366}
+{"type":"poi","name":"Trudy's Floral Designs","kind":"florist","lat":47.612772,"lon":-122.336808}
+{"type":"poi","name":"Emergency Dental Care USA","kind":"dentist","lat":47.612868,"lon":-122.336580}
+{"type":"poi","name":"The Handmade Showroom","kind":"gift","lat":47.612555,"lon":-122.334985}
+{"type":"poi","name":"Men's Wearhouse","kind":"clothes","lat":47.609554,"lon":-122.335760}
+{"type":"poi","name":"See Eyewear","kind":"optician","lat":47.610391,"lon":-122.335545}
+{"type":"poi","name":"AllSaints","kind":"clothes","lat":47.611376,"lon":-122.336511}
+{"type":"poi","name":"Mario's","kind":"clothes","lat":47.611577,"lon":-122.335116}
+{"type":"poi","name":"Metro by T-Mobile","kind":"mobile_phone","lat":47.610349,"lon":-122.338091}
+{"type":"poi","name":"International Cigar and Tobacco","kind":"tobacco","lat":47.610398,"lon":-122.338117}
+{"type":"poi","name":"T-Mobile","kind":"mobile_phone","lat":47.611805,"lon":-122.335314}
+{"type":"poi","name":"Ben Bridge","kind":"jewelry","lat":47.611595,"lon":-122.336178}
+{"type":"poi","name":"Carhartt","kind":"clothes","lat":47.610243,"lon":-122.336146}
+{"type":"poi","name":"Self-Made Couture","kind":"clothes","lat":47.610637,"lon":-122.336111}
+{"type":"poi","name":"Old Navy","kind":"clothes","lat":47.611716,"lon":-122.335977}
+{"type":"poi","name":"Pandora","kind":"jewelry","lat":47.611828,"lon":-122.335714}
+{"type":"poi","name":"Crane Jeweler","kind":"jewelry","lat":47.611868,"lon":-122.335596}
+{"type":"poi","name":"Barnes & Noble","kind":"books","lat":47.611197,"lon":-122.334786}
+{"type":"poi","name":"Seattle Eye M.D.s","kind":"optician","lat":47.611903,"lon":-122.335502}
+{"type":"poi","name":"Eileen Fisher","kind":"clothes","lat":47.611932,"lon":-122.335424}
+{"type":"poi","name":"Forever 21","kind":"clothes","lat":47.612062,"lon":-122.335054}
+{"type":"poi","name":"Gene Juarez Salon & Spa","kind":"hairdresser","lat":47.612129,"lon":-122.334869}
+{"type":"poi","name":"Luly Yang","kind":"clothes","lat":47.608029,"lon":-122.334421}
+{"type":"poi","name":"Moonride","kind":"clothes","lat":47.609008,"lon":-122.333839}
+{"type":"poi","name":"Northwest Pendleton","kind":"clothes","lat":47.608579,"lon":-122.335408}
+{"type":"poi","name":"Visions Northwest","kind":"optician","lat":47.608617,"lon":-122.335441}
+{"type":"poi","name":"Seattle Beauty Boss","kind":"beauty","lat":47.609358,"lon":-122.334153}
+{"type":"poi","name":"Husky Central","kind":"clothes","lat":47.608653,"lon":-122.335478}
+{"type":"poi","name":"OSKA","kind":"clothes","lat":47.609411,"lon":-122.334201}
+{"type":"poi","name":"Joseph Jewelry","kind":"jewelry","lat":47.609411,"lon":-122.336232}
+{"type":"poi","name":"Samuels Jewelers","kind":"jewelry","lat":47.609301,"lon":-122.337138}
+{"type":"poi","name":"Nesbit's Fine Watch Service","kind":"jewelry","lat":47.609810,"lon":-122.336578}
+{"type":"poi","name":"Suitsupply","kind":"clothes","lat":47.608776,"lon":-122.334140}
+{"type":"poi","name":"ZoomCare","kind":"clinic","lat":47.609865,"lon":-122.333804}
+{"type":"poi","name":"Beckett & Robb","kind":"clothes","lat":47.609890,"lon":-122.333748}
+{"type":"poi","name":"Myano Nails & Spa","kind":"beauty","lat":47.610268,"lon":-122.338568}
+{"type":"poi","name":"Tobaccorner","kind":"tobacco","lat":47.610514,"lon":-122.338791}
+{"type":"poi","name":"Simple Life","kind":"clothes","lat":47.610263,"lon":-122.339539}
+{"type":"poi","name":"Michael Maslan Vintage Posters","kind":"art","lat":47.606917,"lon":-122.337661}
+{"type":"poi","name":"Ancient Grounds","kind":"clothes","lat":47.606740,"lon":-122.337833}
+{"type":"poi","name":"West Edge Market","kind":"convenience","lat":47.606684,"lon":-122.339002}
+{"type":"poi","name":"Eyes On You","kind":"optician","lat":47.606022,"lon":-122.337047}
+{"type":"poi","name":"Community Grocery and Teriyaki","kind":"convenience","lat":47.607765,"lon":-122.333311}
+{"type":"poi","name":"Queen Bee Nails & Spa","kind":"beauty","lat":47.607302,"lon":-122.334416}
+{"type":"poi","name":"Harper's Hair Studio","kind":"hairdresser","lat":47.607337,"lon":-122.334343}
+{"type":"poi","name":"Gum Wall","kind":"artwork","lat":47.608416,"lon":-122.340378}
+{"type":"poi","name":"Shine in the Market","kind":"hairdresser","lat":47.609834,"lon":-122.341349}
+{"type":"poi","name":"Dahlia Bakery","kind":"bakery","lat":47.613145,"lon":-122.340526}
+{"type":"poi","name":"Uniqlo","kind":"clothes","lat":47.611264,"lon":-122.337946}
+{"type":"poi","name":"Scott Chreist Gallery","kind":"art","lat":47.611266,"lon":-122.342645}
+{"type":"poi","name":"Vann Studio","kind":"hairdresser","lat":47.611698,"lon":-122.343342}
+{"type":"poi","name":"Urban Outfitters","kind":"clothes","lat":47.611044,"lon":-122.336124}
+{"type":"poi","name":"Abmeyer & Wood Fine Art","kind":"art","lat":47.607261,"lon":-122.336597}
+{"type":"poi","name":"Three Piece Sculpture #3: Vertebrae","kind":"artwork","lat":47.606187,"lon":-122.333281}
+{"type":"poi","name":"Sculptural Screen","kind":"artwork","lat":47.606530,"lon":-122.333077}
+{"type":"poi","name":"Untitled Mural","kind":"artwork","lat":47.606121,"lon":-122.334990}
+{"type":"poi","name":"Braincast","kind":"artwork","lat":47.606729,"lon":-122.333043}
+{"type":"poi","name":"Babe, The Phoenix Fairy, and The Magic Grove","kind":"artwork","lat":47.606550,"lon":-122.332868}
+{"type":"poi","name":"Making Visible the Invisible","kind":"artwork","lat":47.606651,"lon":-122.332976}
+{"type":"poi","name":"Activity in Growth","kind":"artwork","lat":47.606738,"lon":-122.332863}
+{"type":"poi","name":"Hammering Man","kind":"artwork","lat":47.607031,"lon":-122.338125}
+{"type":"poi","name":"Breaching Orca","kind":"artwork","lat":47.607333,"lon":-122.342135}
+{"type":"poi","name":"Seattle Garden","kind":"artwork","lat":47.607433,"lon":-122.339866}
+{"type":"poi","name":"Skytones","kind":"artwork","lat":47.607776,"lon":-122.336752}
+{"type":"poi","name":"Farmer's Pole","kind":"artwork","lat":47.609964,"lon":-122.343828}
+{"type":"poi","name":"Children's Art Tiles","kind":"artwork","lat":47.610901,"lon":-122.336900}
+{"type":"poi","name":"Governor John Harte Mcgraw","kind":"artwork","lat":47.612982,"lon":-122.337605}
+{"type":"poi","name":"Marine-Life Paintings","kind":"artwork","lat":47.607324,"lon":-122.342194}
+{"type":"poi","name":"Sea Otter, Salmon, And Raven","kind":"artwork","lat":47.607344,"lon":-122.342184}
+{"type":"poi","name":"Beyond The Reef","kind":"artwork","lat":47.607349,"lon":-122.342237}
+{"type":"poi","name":"LEW Floor","kind":"artwork","lat":47.606693,"lon":-122.332595}
+{"type":"poi","name":"Downtown Seattle Medical Center","kind":"clinic","lat":47.610243,"lon":-122.334059}
+{"type":"poi","name":"Symphonica","kind":"gift","lat":47.608234,"lon":-122.336739}
+{"type":"poi","name":"Urban Garden","kind":"artwork","lat":47.610669,"lon":-122.332681}
+{"type":"poi","name":"Rachel the Piggy Bank","kind":"artwork","lat":47.608628,"lon":-122.340606}
+{"type":"poi","name":"AT&T","kind":"mobile_phone","lat":47.611548,"lon":-122.334590}
+{"type":"poi","name":"Happy Hues","kind":"art","lat":47.609715,"lon":-122.339595}
+{"type":"poi","name":"New Archetypes","kind":"artwork","lat":47.607011,"lon":-122.336505}
+{"type":"poi","name":"Fine Cuts","kind":"hairdresser","lat":47.606026,"lon":-122.334657}
+{"type":"poi","name":"Roberto's for Hair","kind":"hairdresser","lat":47.606449,"lon":-122.335290}
+{"type":"poi","name":"Siamonto Jewelers","kind":"jewelry","lat":47.607141,"lon":-122.334185}
+{"type":"poi","name":"Traver Gallery","kind":"art","lat":47.608094,"lon":-122.338804}
+{"type":"poi","name":"Sal Floral Design","kind":"florist","lat":47.606454,"lon":-122.338142}
+{"type":"poi","name":"4th and Seneca Dental","kind":"dentist","lat":47.607259,"lon":-122.334199}
+{"type":"poi","name":"Seattle Vision","kind":"optician","lat":47.608872,"lon":-122.336277}
+{"type":"poi","name":"Dimples","kind":"convenience","lat":47.609637,"lon":-122.332646}
+{"type":"poi","name":"Beyond Threads","kind":"clothes","lat":47.609892,"lon":-122.341218}
+{"type":"poi","name":"Isadora's Antique Jewlery","kind":"jewelry","lat":47.609852,"lon":-122.341183}
+{"type":"poi","name":"Ugly Baby","kind":"gift","lat":47.608226,"lon":-122.340826}
+{"type":"poi","name":"Sean's Place","kind":"convenience","lat":47.610387,"lon":-122.332630}
+{"type":"poi","name":"Zipcars","kind":"car_sharing","lat":47.609675,"lon":-122.338906}
+{"type":"poi","name":"El Mercado Latino","kind":"convenience","lat":47.609210,"lon":-122.341073}
+{"type":"poi","name":"Paper Hammer","kind":"stationery","lat":47.608514,"lon":-122.337935}
+{"type":"poi","name":"The Souk Mid East Grocery & Gifts","kind":"convenience","lat":47.610109,"lon":-122.342658}
+{"type":"poi","name":"Nordstrom Rack","kind":"clothes","lat":47.611765,"lon":-122.336833}
+{"type":"poi","name":"Floral Masters","kind":"florist","lat":47.610400,"lon":-122.332587}
+{"type":"poi","name":"GroupHealth","kind":"doctors","lat":47.610373,"lon":-122.334979}
+{"type":"poi","name":"Simone David Barbershop","kind":"hairdresser","lat":47.610335,"lon":-122.334196}
+{"type":"poi","name":"Ummelina International Day Spa","kind":"beauty","lat":47.610742,"lon":-122.337533}
+{"type":"poi","name":"Zara","kind":"clothes","lat":47.611669,"lon":-122.337055}
+{"type":"poi","name":"La Sirena Rosa","kind":"gift","lat":47.608284,"lon":-122.341610}
+{"type":"poi","name":"Marcella's La Boutique","kind":"clothes","lat":47.609434,"lon":-122.336275}
+{"type":"poi","name":"Seattle Dental Associates","kind":"dentist","lat":47.608583,"lon":-122.335722}
+{"type":"poi","name":"Marco","kind":"beauty","lat":47.609877,"lon":-122.332917}
+{"type":"poi","name":"Charbon","kind":"hairdresser","lat":47.612400,"lon":-122.342514}
+{"type":"poi","name":"Tempus Detailing","kind":"car_wash","lat":47.607503,"lon":-122.332874}
+{"type":"poi","name":"Mutual Detail","kind":"car_wash","lat":47.606973,"lon":-122.335878}
+{"type":"poi","name":"Peter Lopez Salon","kind":"hairdresser","lat":47.606892,"lon":-122.336269}
+{"type":"poi","name":"Pike Market Medical Clinic","kind":"clinic","lat":47.610659,"lon":-122.342822}
+{"type":"poi","name":"Optical Illusions","kind":"optician","lat":47.609758,"lon":-122.335988}
+{"type":"poi","name":"Earth Wind and Fire","kind":"clothes","lat":47.609158,"lon":-122.340698}
+{"type":"poi","name":"Lamplight Books","kind":"books","lat":47.609116,"lon":-122.340657}
+{"type":"poi","name":"Honest Biscuits","kind":"bakery","lat":47.609657,"lon":-122.343270}
+{"type":"poi","name":"Bocz Salon","kind":"hairdresser","lat":47.611461,"lon":-122.335154}
+{"type":"poi","name":"Trades of the Duwamish","kind":"artwork","lat":47.607328,"lon":-122.340333}
+{"type":"poi","name":"Garden of Remembrance","kind":"memorial","lat":47.607863,"lon":-122.337289}
+{"type":"poi","name":"Melange Market","kind":"convenience","lat":47.607386,"lon":-122.336495}
+{"type":"poi","name":"JNBY","kind":"clothes","lat":47.612863,"lon":-122.334904}
+{"type":"poi","name":"Seattle Ice Arena Memorial","kind":"memorial","lat":47.608704,"lon":-122.333456}
+{"type":"poi","name":"Indochino","kind":"clothes","lat":47.612727,"lon":-122.337822}
+{"type":"poi","name":"In Loving Memory of Peter Cipra","kind":"artwork","lat":47.611140,"lon":-122.341795}
+{"type":"poi","name":"Seattle Infant Development Center","kind":"childcare","lat":47.608496,"lon":-122.332546}
+{"type":"poi","name":"Fossil & Stone","kind":"art","lat":47.610480,"lon":-122.339743}
+{"type":"poi","name":"Passport Health Downtown Seattle Travel Clinic","kind":"clinic","lat":47.609892,"lon":-122.338174}
+{"type":"poi","name":"Lina's Fruit and Produce","kind":"greengrocer","lat":47.608908,"lon":-122.341213}
+{"type":"poi","name":"Seattle Infectious Disease Clinic","kind":"clinic","lat":47.612798,"lon":-122.336736}
+{"type":"poi","name":"Made in Washington","kind":"gift","lat":47.609364,"lon":-122.341060}
+{"type":"poi","name":"Young Flowers","kind":"florist","lat":47.612329,"lon":-122.339196}
+{"type":"poi","name":"Resilience Barbers","kind":"hairdresser","lat":47.612036,"lon":-122.339343}
+{"type":"poi","name":"Electric Lascaux","kind":"artwork","lat":47.606975,"lon":-122.336194}
+{"type":"poi","name":"SAM Shop","kind":"gift","lat":47.607503,"lon":-122.338555}
+{"type":"poi","name":"Single Store","kind":"gift","lat":47.607745,"lon":-122.339686}
+{"type":"poi","name":"Kühl","kind":"clothes","lat":47.609259,"lon":-122.338538}
+{"type":"poi","name":"Tetris Mural","kind":"artwork","lat":47.613696,"lon":-122.333590}
+{"type":"poi","name":"Kubode","kind":"florist","lat":47.608986,"lon":-122.341940}
+{"type":"poi","name":"Providence Heritage House at the Market","kind":"clinic","lat":47.608933,"lon":-122.342141}
+{"type":"poi","name":"Pike Market Food Bank","kind":"social_facility","lat":47.608942,"lon":-122.342184}
+{"type":"poi","name":"Play Line Friends","kind":"clothes","lat":47.612675,"lon":-122.335408}
+{"type":"poi","name":"Proto101","kind":"clothes","lat":47.612577,"lon":-122.335261}
+{"type":"poi","name":"S2Heart","kind":"clothes","lat":47.613107,"lon":-122.335242}
+{"type":"poi","name":"Play Slopes","kind":"playground","lat":47.609210,"lon":-122.343020}
+{"type":"poi","name":"Moritis & Shin Dentistry","kind":"dentist","lat":47.612734,"lon":-122.336688}
+{"type":"poi","name":"Cartier","kind":"jewelry","lat":47.611449,"lon":-122.336049}
+{"type":"poi","name":"Fused Flawlessly","kind":"jewelry","lat":47.608084,"lon":-122.339131}
+{"type":"poi","name":"Världskrydda","kind":"artwork","lat":47.608622,"lon":-122.341532}
+{"type":"poi","name":"MochiThings","kind":"stationery","lat":47.610254,"lon":-122.341076}
+{"type":"poi","name":"Sergio's Barber Shop","kind":"hairdresser","lat":47.609499,"lon":-122.341079}
+{"type":"poi","name":"Swami Vivekananda","kind":"artwork","lat":47.613676,"lon":-122.337361}
+{"type":"poi","name":"Turgeon Raine Jewelers","kind":"jewelry","lat":47.608917,"lon":-122.333694}
+{"type":"poi","name":"3rd Avenue & Seneca Street","kind":"bus_stop","lat":47.606968,"lon":-122.335097}
+{"type":"poi","name":"2nd Ave & Seneca St","kind":"bus_stop","lat":47.606201,"lon":-122.336240}
+{"type":"poi","name":"3rd Avenue & Virginia Street","kind":"bus_stop","lat":47.612550,"lon":-122.341320}
+{"type":"poi","name":"3rd Avenue & Virginia Street","kind":"bus_stop","lat":47.612799,"lon":-122.341384}
+{"type":"poi","name":"Stewart St & 4th Ave","kind":"bus_stop","lat":47.612112,"lon":-122.339134}
+{"type":"poi","name":"4th Ave & Stewart St","kind":"bus_stop","lat":47.612633,"lon":-122.339115}
+{"type":"poi","name":"Olive Way & 6th Avenue","kind":"bus_stop","lat":47.613002,"lon":-122.336476}
+{"type":"poi","name":"3rd Avenue & Pine Street","kind":"bus_stop","lat":47.611074,"lon":-122.338876}
+{"type":"poi","name":"3rd Avenue & Pine Street","kind":"bus_stop","lat":47.610957,"lon":-122.339080}
+{"type":"poi","name":"Pine Street & 4th Avenue","kind":"bus_stop","lat":47.611100,"lon":-122.338077}
+{"type":"poi","name":"3rd Avenue & Seneca Street","kind":"bus_stop","lat":47.606505,"lon":-122.334971}
+{"type":"poi","name":"3rd Avenue & Pike Street","kind":"bus_stop","lat":47.609955,"lon":-122.338142}
+{"type":"poi","name":"Pike Street & 4th Avenue","kind":"bus_stop","lat":47.610056,"lon":-122.336897}
+{"type":"poi","name":"3rd Avenue & Union Street","kind":"bus_stop","lat":47.608532,"lon":-122.336559}
+{"type":"poi","name":"3rd Avenue & Union Street","kind":"bus_stop","lat":47.608116,"lon":-122.336470}
+{"type":"poi","name":"Union St & 5th Ave","kind":"bus_stop","lat":47.609838,"lon":-122.334537}
+{"type":"poi","name":"Union St & 4th Ave","kind":"bus_stop","lat":47.609103,"lon":-122.336293}
+{"type":"poi","name":"4th Avenue & Madison Street","kind":"bus_stop","lat":47.605977,"lon":-122.332672}
+{"type":"poi","name":"2nd Ave & Pike St","kind":"bus_stop","lat":47.608666,"lon":-122.338490}
+{"type":"poi","name":"4th Avenue & Pike Street","kind":"bus_stop","lat":47.611013,"lon":-122.337329}
+{"type":"poi","name":"3rd Avenue & Pike Street","kind":"bus_stop","lat":47.609069,"lon":-122.337289}
+{"type":"poi","name":"3rd Avenue & Pike Street","kind":"bus_stop","lat":47.609552,"lon":-122.337508}
+{"type":"poi","name":"Pine Street & 5th Avenue","kind":"bus_stop","lat":47.611827,"lon":-122.336344}
+{"type":"poi","name":"Pine Street & 9th Avenue","kind":"bus_stop","lat":47.613412,"lon":-122.332514}
+{"type":"poi","name":"Seneca Street & 4th Avenue","kind":"bus_stop","lat":47.607433,"lon":-122.334625}
+{"type":"poi","name":"Pike Street & 6th Avenue","kind":"bus_stop","lat":47.610988,"lon":-122.334687}
+{"type":"poi","name":"4th Avenue & Seneca Street","kind":"bus_stop","lat":47.607427,"lon":-122.334059}
+{"type":"poi","name":"2nd Ave & Lenora St","kind":"bus_stop","lat":47.612092,"lon":-122.342546}
+{"type":"poi","name":"6th Ave & Union St","kind":"bus_stop","lat":47.610093,"lon":-122.333383}
+{"type":"poi","name":"Pike Street & 7th Avenue","kind":"bus_stop","lat":47.611785,"lon":-122.332667}
+{"type":"poi","name":"5th Avenue & Pine Street","kind":"bus_stop","lat":47.611796,"lon":-122.336707}
+{"type":"poi","name":"5th Avenue & Seneca Street","kind":"bus_stop","lat":47.608178,"lon":-122.333405}
+{"type":"poi","name":"2nd Ave & Stewart St","kind":"bus_stop","lat":47.610633,"lon":-122.340301}
+{"type":"poi","name":"Virginia Street & 4th Avenue","kind":"bus_stop","lat":47.612754,"lon":-122.340338}
+{"type":"poi","name":"Spring Street & 3rd Avenue","kind":"bus_stop","lat":47.606136,"lon":-122.334968}
+{"type":"poi","name":"4th Ave & Union St","kind":"bus_stop","lat":47.609161,"lon":-122.335609}
+{"type":"poi","name":"Spring Street & 4th Avenue","kind":"bus_stop","lat":47.606910,"lon":-122.333091}
+{"type":"poi","name":"Westlake Park Children’s Play Area","kind":"playground","lat":47.611011,"lon":-122.336921}

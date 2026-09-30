@@ -1,0 +1,7 @@
+{"meta":{"state":"WA","z":15,"x":5424,"y":11533,"zhs":{"key":"z/15/5424/11533|h3/9/nv9q/pfi7|s2/12/f2/20v/29g","z_key":"z/15/5424/11533","h_key":"h3/9/nv9q/pfi7","s_key":"s2/12/f2/20v/29g"},"source":"planet","roads":5,"buildings":0,"areas":0,"pois":1}}
+{"type":"road","class":"tertiary","name":"Badger Pocket Road","oneway":false,"pts":"46.935144,-120.401463;46.936827,-120.401552;46.941782,-120.401621;46.942879,-120.401624"}
+{"type":"road","class":"residential","name":"Sorenson Road","oneway":false,"pts":"46.941574,-120.410328;46.941662,-120.405838;46.941782,-120.401621;46.941792,-120.398998"}
+{"type":"road","class":"residential","name":"Little Badger Lane","oneway":false,"pts":"46.941788,-120.400114;46.940449,-120.398998"}
+{"type":"road","class":"service","name":"","oneway":false,"pts":"46.941669,-120.405583;46.941407,-120.405497;46.941052,-120.405178;46.940793,-120.404837;46.940693,-120.404626;46.940504,-120.404011;46.940288,-120.403435;46.940176,-120.402863"}
+{"type":"road","class":"service","name":"","oneway":false,"pts":"46.936995,-120.402110;46.936827,-120.401552"}
+{"type":"poi","name":"Denmark School","kind":"school","lat":46.935127,"lon":-120.400342}

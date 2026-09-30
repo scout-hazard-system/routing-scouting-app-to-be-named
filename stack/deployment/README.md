@@ -86,7 +86,7 @@ Manual maintenance:
 
 Suggested recurring execution:
 ```bash
-*/15 * * * * /home/gibi/Desktop/stack/deployment/maintain_logs.sh >> /tmp/vehicle_stack/logs/maintenance.log 2>&1
+*/15 * * * * $HOME/stack/deployment/maintain_logs.sh >> /tmp/vehicle_stack/logs/maintenance.log 2>&1
 ```
 
 ## Security operations notes
@@ -141,7 +141,7 @@ This project is configured to prefer a Tailscale backend path by default in the 
 4. Verify device visibility:
    - `adb devices -l`
 5. Install Scout debug APK:
-   - `adb -s <device-ip>:<debug-port> install -r /home/gibi/Desktop/android-stream-client/app/build/outputs/apk/debug/scout-debug.apk`
+    - `adb -s <device-ip>:<debug-port> install -r $HOME/android-stream-client/app/build/outputs/apk/debug/scout-debug.apk`
 6. Launch and check logs:
    - `adb -s <device-ip>:<debug-port> shell am start -n dev.warp.stream/.MainActivity`
    - `adb -s <device-ip>:<debug-port> logcat -d -v brief MainActivity:I AndroidRuntime:E ActivityTaskManager:I *:S`

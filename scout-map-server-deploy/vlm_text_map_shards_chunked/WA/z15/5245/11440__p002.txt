@@ -1,0 +1,54 @@
+{"meta":{"state":"WA","z":15,"x":5245,"y":11440,"zhs":{"key":"z/15/5245/11440|h3/9/nvgh/pfqf|s2/12/f2/21c/28n","z_key":"z/15/5245/11440","h_key":"h3/9/nvgh/pfqf","s_key":"s2/12/f2/21c/28n"},"source":"planet","roads":571,"buildings":668,"areas":58,"pois":45}}
+{"type":"area","kind":"park","pts":"47.628293,-122.368949;47.628539,-122.369041;47.628760,-122.369338;47.628935,-122.369129;47.628832,-122.369105;47.628765,-122.369027;47.628729,-122.369046;47.628709,-122.369049;47.628684,-122.369014;47.628676,-122.368987;47.628604,-122.368888;47.628575,-122.368869;47.628537,-122.368858;47.628440,-122.368855;47.628396,-122.368872;47.628367,-122.368872;47.628340,-122.368853;47.628310,-122.368802;47.628264,-122.368746;47.628264,-122.368936;47.628281,-122.368963"}
+{"type":"area","kind":"park","pts":"47.635312,-122.376398;47.635274,-122.376398;47.635274,-122.376411;47.635274,-122.376881;47.635310,-122.376881"}
+{"type":"area","kind":"park","pts":"47.634764,-122.366635;47.634757,-122.366645;47.634743,-122.366712;47.634737,-122.366763;47.634735,-122.367286;47.634723,-122.367402;47.634697,-122.367501;47.634654,-122.367589;47.634596,-122.367654;47.634535,-122.367702;47.634461,-122.367732;47.634359,-122.367742;47.633510,-122.367748;47.632358,-122.367766;47.632360,-122.367783;47.632366,-122.367796;47.632378,-122.367799;47.633362,-122.367785;47.633754,-122.367785;47.634401,-122.367772;47.634677,-122.367758;47.634717,-122.367748;47.634755,-122.367691;47.634777,-122.367606;47.634775,-122.366651"}
+{"type":"area","kind":"park","pts":"47.632266,-122.367799;47.632275,-122.367793;47.632277,-122.367777;47.632274,-122.367766;47.631198,-122.367764;47.631113,-122.367753;47.630880,-122.367691;47.630676,-122.367624;47.630500,-122.367555;47.630374,-122.367488;47.630377,-122.367573;47.630638,-122.367646;47.631111,-122.367793;47.631735,-122.367801"}
+{"type":"area","kind":"park","pts":"47.629985,-122.366978;47.629983,-122.366560;47.629806,-122.366551;47.629788,-122.366592;47.629788,-122.366707;47.629884,-122.366855"}
+{"type":"area","kind":"park","pts":"47.628825,-122.369786;47.628825,-122.369518;47.628789,-122.369376;47.628539,-122.369041;47.628293,-122.368949;47.628281,-122.368963;47.628264,-122.368936;47.628264,-122.369875;47.628555,-122.370264;47.628696,-122.370057;47.628778,-122.369952"}
+{"type":"area","kind":"water","pts":"47.629342,-122.375711;47.629179,-122.375714;47.629215,-122.375891;47.629371,-122.375923"}
+{"type":"area","kind":"water","pts":"47.629233,-122.375953;47.629266,-122.376068;47.629315,-122.376205;47.629353,-122.376285;47.629418,-122.376411;47.629463,-122.376494;47.629564,-122.376637;47.629618,-122.376693;47.629723,-122.376784;47.629794,-122.376835;47.629900,-122.376891;47.630018,-122.376937;47.630065,-122.376948;47.630153,-122.376958;47.630153,-122.376950;47.630188,-122.376948;47.630076,-122.376916;47.629983,-122.376873;47.629980,-122.376881;47.629960,-122.376870;47.629954,-122.376891;47.629945,-122.376883;47.629951,-122.376865;47.629859,-122.376800;47.629819,-122.376765;47.629761,-122.376709;47.629756,-122.376717;47.629727,-122.376688;47.629645,-122.376580;47.629600,-122.376508;47.629541,-122.376395;47.629533,-122.376401;47.629504,-122.376339;47.629452,-122.376194;47.629445,-122.376197;47.629400,-122.376033;47.629392,-122.376036;47.629381,-122.375985"}
+{"type":"poi","name":"Pier 89","kind":"place_locality","lat":47.628696,"lon":-122.377409}
+{"type":"poi","name":"Southwest Queen Anne Greenbelt","kind":"wood","lat":47.632420,"lon":-122.373219}
+{"type":"poi","name":"Queen Anne Boulevard","kind":"park","lat":47.629933,"lon":-122.366737}
+{"type":"poi","name":"Expedia Group","kind":"commercial","lat":47.628700,"lon":-122.375515}
+{"type":"poi","name":"Diamond Parking","kind":"parking","lat":47.629101,"lon":-122.374268}
+{"type":"poi","name":"Taco Time","kind":"fast_food","lat":47.629604,"lon":-122.371696}
+{"type":"poi","name":"Starbucks","kind":"cafe","lat":47.629851,"lon":-122.372047}
+{"type":"poi","name":"Brown Bear","kind":"car_wash","lat":47.635122,"lon":-122.375877}
+{"type":"poi","name":"Chevron","kind":"fuel","lat":47.635805,"lon":-122.375813}
+{"type":"poi","name":"Simply Self Storage","kind":"storage_rental","lat":47.634068,"lon":-122.375636}
+{"type":"poi","name":"Club Pilates","kind":"fitness_centre","lat":47.635444,"lon":-122.376881}
+{"type":"poi","name":"Albert Lee Appliance","kind":"electronics","lat":47.632109,"lon":-122.375065}
+{"type":"poi","name":"Blue Sky Cleaners","kind":"dry_cleaning","lat":47.628823,"lon":-122.371945}
+{"type":"poi","name":"Holy Mountain Brewing","kind":"brewery","lat":47.630828,"lon":-122.374561}
+{"type":"poi","name":"Chef Shop","kind":"deli","lat":47.631039,"lon":-122.374491}
+{"type":"poi","name":"Seattle Wood Fired Pizza","kind":"restaurant","lat":47.630361,"lon":-122.372796}
+{"type":"poi","name":"Little Free Library","kind":"public_bookcase","lat":47.634829,"lon":-122.367876}
+{"type":"poi","name":"Little Free Library","kind":"public_bookcase","lat":47.635437,"lon":-122.369159}
+{"type":"poi","name":"Strala Yoga","kind":"fitness_centre","lat":47.631619,"lon":-122.375556}
+{"type":"poi","name":"Wells Fargo","kind":"atm","lat":47.635494,"lon":-122.376580}
+{"type":"poi","name":"Batch 206 Distillery","kind":"bar","lat":47.630652,"lon":-122.374276}
+{"type":"poi","name":"addo:206","kind":"restaurant","lat":47.630580,"lon":-122.374212}
+{"type":"poi","name":"Interbay Cleaners","kind":"dry_cleaning","lat":47.635476,"lon":-122.377028}
+{"type":"poi","name":"Marshall Park","kind":"park","lat":47.629325,"lon":-122.366817}
+{"type":"poi","name":"Parsons Gardens","kind":"park","lat":47.629850,"lon":-122.366095}
+{"type":"poi","name":"Verizon","kind":"mobile_phone","lat":47.635446,"lon":-122.376658}
+{"type":"poi","name":"Fuji Bakery","kind":"bakery","lat":47.628295,"lon":-122.370269}
+{"type":"poi","name":"Seattle Scatter Piece","kind":"artwork","lat":47.632467,"lon":-122.375650}
+{"type":"poi","name":"Northwest Artists Salute Betty Bowen","kind":"artwork","lat":47.629535,"lon":-122.366592}
+{"type":"poi","name":"Captain George Vancouver Plaque","kind":"memorial","lat":47.629600,"lon":-122.366621}
+{"type":"poi","name":"Hungry Bear Market","kind":"convenience","lat":47.635775,"lon":-122.375818}
+{"type":"poi","name":"AT&T","kind":"mobile_phone","lat":47.635444,"lon":-122.376714}
+{"type":"poi","name":"Olympic Way West & West Lee Street","kind":"bus_stop","lat":47.631120,"lon":-122.370215}
+{"type":"poi","name":"10th Avenue West & West Galer Street","kind":"bus_stop","lat":47.632527,"lon":-122.370304}
+{"type":"poi","name":"10th Avenue West & West Howe Street","kind":"bus_stop","lat":47.635762,"lon":-122.370462}
+{"type":"poi","name":"Elliott Avenue West & West Galer Street","kind":"bus_stop","lat":47.631930,"lon":-122.375481}
+{"type":"poi","name":"Elliott Avenue West & West Galer Street","kind":"bus_stop","lat":47.631963,"lon":-122.375067}
+{"type":"poi","name":"Elliott Avenue West & West Prospect Street","kind":"bus_stop","lat":47.628995,"lon":-122.371304}
+{"type":"poi","name":"Elliott Avenue West & West Prospect Street","kind":"bus_stop","lat":47.629119,"lon":-122.371913}
+{"type":"poi","name":"Olympic Way West & West Lee Street","kind":"bus_stop","lat":47.631287,"lon":-122.370116}
+{"type":"poi","name":"10th Avenue West & West Galer Street","kind":"bus_stop","lat":47.632442,"lon":-122.370518}
+{"type":"poi","name":"10th Avenue West & West Blaine Street","kind":"bus_stop","lat":47.634956,"lon":-122.370261}
+{"type":"poi","name":"Olympic Way West & West Prospect Street","kind":"bus_stop","lat":47.629060,"lon":-122.367981}
+{"type":"poi","name":"Olympic Way West & 9th Avenue West","kind":"bus_stop","lat":47.629497,"lon":-122.368652}
+{"type":"poi","name":"10th Avenue West & West Blaine Street","kind":"bus_stop","lat":47.634536,"lon":-122.370486}

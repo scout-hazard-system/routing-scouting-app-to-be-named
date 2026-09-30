@@ -1,0 +1,4 @@
+{"meta":{"state":"WA","z":15,"x":5402,"y":11503,"zhs":{"key":"z/15/5402/11503|h3/9/nv97/pfkv|s2/12/f2/20v/299","z_key":"z/15/5402/11503","h_key":"h3/9/nv97/pfkv","s_key":"s2/12/f2/20v/299"},"source":"planet","roads":3,"buildings":0,"areas":0,"pois":0}}
+{"type":"road","class":"residential","name":"Upper Green Canyon Road","oneway":false,"pts":"47.167426,-120.640909;47.167202,-120.640810;47.166881,-120.640697"}
+{"type":"road","class":"residential","name":"Tomahawk Lane","oneway":false,"pts":"47.159723,-120.645528;47.160923,-120.645555;47.160898,-120.640869;47.160892,-120.640697"}
+{"type":"road","class":"service","name":"","oneway":false,"pts":"47.160905,-120.642352;47.160783,-120.642393;47.160653,-120.642446;47.160606,-120.642441;47.160548,-120.642406"}

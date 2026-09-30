@@ -1,0 +1,7 @@
+{"meta":{"state":"WA","z":15,"x":5406,"y":11518,"zhs":{"key":"z/15/5406/11518|h3/9/nva0/pfjj|s2/12/f2/20w/29c","z_key":"z/15/5406/11518","h_key":"h3/9/nva0/pfjj","s_key":"s2/12/f2/20w/29c"},"source":"planet","roads":6,"buildings":0,"areas":0,"pois":0}}
+{"type":"road","class":"residential","name":"Lower Green Canyon Road","oneway":false,"pts":"47.055271,-120.603822;47.054657,-120.604402;47.054326,-120.604694;47.054118,-120.604887"}
+{"type":"road","class":"residential","name":"Lower Green Canyon Road","oneway":false,"pts":"47.054061,-120.604941;47.052713,-120.606180;47.050618,-120.608082"}
+{"type":"road","class":"residential","name":"Lower Green Canyon Road","oneway":false,"pts":"47.054118,-120.604887;47.054061,-120.604941"}
+{"type":"road","class":"residential","name":"","oneway":false,"pts":"47.055271,-120.603444;47.054838,-120.602417"}
+{"type":"road","class":"service","name":"","oneway":false,"pts":"47.052713,-120.606180;47.052757,-120.607012;47.052736,-120.607097;47.052689,-120.607114;47.052621,-120.607065;47.052581,-120.606953;47.052566,-120.606768;47.052534,-120.606532;47.052475,-120.606395"}
+{"type":"road","class":"service","name":"","oneway":false,"pts":"47.051614,-120.607178;47.051538,-120.606961;47.051455,-120.606805;47.051289,-120.606513;47.051026,-120.606220"}

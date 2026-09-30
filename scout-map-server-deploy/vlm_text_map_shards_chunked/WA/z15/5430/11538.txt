@@ -1,0 +1,2 @@
+{"meta":{"state":"WA","z":15,"x":5430,"y":11538,"zhs":{"key":"z/15/5430/11538|h3/9/nv9m/pfhq|s2/12/f2/20v/29h","z_key":"z/15/5430/11538","h_key":"h3/9/nv9m/pfhq","s_key":"s2/12/f2/20v/29h"},"source":"planet","roads":1,"buildings":0,"areas":0,"pois":0}}
+{"type":"road","class":"residential","name":"Camion Road","oneway":false,"pts":"46.897622,-120.339944;46.905363,-120.340041"}

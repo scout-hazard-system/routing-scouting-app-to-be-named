@@ -1,0 +1,2 @@
+{"meta":{"state":"WA","z":15,"x":5402,"y":11505,"zhs":{"key":"z/15/5402/11505|h3/9/nv9c/pfko|s2/12/f2/20v/29a","z_key":"z/15/5402/11505","h_key":"h3/9/nv9c/pfko","s_key":"s2/12/f2/20v/29a"},"source":"planet","roads":1,"buildings":0,"areas":0,"pois":0}}
+{"type":"road","class":"residential","name":"Tomahawk Lane","oneway":false,"pts":"47.150024,-120.645314;47.152486,-120.645367"}

@@ -1,0 +1,3 @@
+{"meta":{"state":"WA","z":15,"x":5412,"y":11502,"zhs":{"key":"z/15/5412/11502|h3/9/nv8c/pfky|s2/12/f2/20t/29a","z_key":"z/15/5412/11502","h_key":"h3/9/nv8c/pfky","s_key":"s2/12/f2/20t/29a"},"source":"planet","roads":2,"buildings":0,"areas":0,"pois":0}}
+{"type":"road","class":"path","name":"","oneway":false,"pts":"47.167379,-120.542164;47.167193,-120.542000"}
+{"type":"road","class":"path","name":"","oneway":false,"pts":"47.174895,-120.532873;47.174632,-120.531907;47.174073,-120.530834"}

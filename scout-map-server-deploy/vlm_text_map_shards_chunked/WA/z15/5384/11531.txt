@@ -1,0 +1,2 @@
+{"meta":{"state":"WA","z":15,"x":5384,"y":11531,"zhs":{"key":"z/15/5384/11531|h3/9/nvco/pfid|s2/12/f2/212/29d","z_key":"z/15/5384/11531","h_key":"h3/9/nvco/pfid","s_key":"s2/12/f2/212/29d"},"source":"planet","roads":1,"buildings":0,"areas":0,"pois":0}}
+{"type":"road","class":"path","name":"Hudson Road","oneway":false,"pts":"46.950145,-120.847308;46.950295,-120.847246;46.952525,-120.848008;46.953745,-120.849781"}

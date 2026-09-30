@@ -1,0 +1,5 @@
+{"meta":{"state":"WA","z":15,"x":5415,"y":11528,"zhs":{"key":"z/15/5415/11528|h3/9/nva1/pfim|s2/12/f2/20w/29e","z_key":"z/15/5415/11528","h_key":"h3/9/nva1/pfim","s_key":"s2/12/f2/20w/29e"},"source":"planet","roads":4,"buildings":0,"areas":0,"pois":0}}
+{"type":"road","class":"residential","name":"McCullough Road","oneway":false,"pts":"46.977663,-120.497875;46.977661,-120.498042"}
+{"type":"road","class":"residential","name":"Rein Road","oneway":false,"pts":"46.973902,-120.498055;46.973908,-120.497875"}
+{"type":"road","class":"residential","name":"Number 6 Road","oneway":false,"pts":"46.972639,-120.498071;46.973902,-120.498055;46.977242,-120.498092;46.977661,-120.498042;46.980369,-120.498031"}
+{"type":"road","class":"service","name":"","oneway":false,"pts":"46.973051,-120.497875;46.973047,-120.498066"}

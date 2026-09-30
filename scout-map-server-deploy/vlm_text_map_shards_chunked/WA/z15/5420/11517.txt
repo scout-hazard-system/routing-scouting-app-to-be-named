@@ -1,0 +1,3 @@
+{"meta":{"state":"WA","z":15,"x":5420,"y":11517,"zhs":{"key":"z/15/5420/11517|h3/9/nv8u/pfjm|s2/12/f2/20u/29d","z_key":"z/15/5420/11517","h_key":"h3/9/nv8u/pfjm","s_key":"s2/12/f2/20u/29d"},"source":"planet","roads":2,"buildings":0,"areas":0,"pois":0}}
+{"type":"road","class":"residential","name":"Rader Road","oneway":false,"pts":"47.059419,-120.454273;47.059644,-120.442944"}
+{"type":"road","class":"service","name":"","oneway":false,"pts":"47.059479,-120.451132;47.060082,-120.451159;47.062383,-120.451178;47.062755,-120.451191"}

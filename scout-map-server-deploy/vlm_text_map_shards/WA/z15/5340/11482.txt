@@ -1,0 +1,16 @@
+{"meta":{"state":"WA","z":15,"x":5340,"y":11482,"zhs":{"key":"z/15/5340/11482|h3/9/nvce/pfmq|s2/12/f2/212/291","z_key":"z/15/5340/11482","h_key":"h3/9/nvce/pfmq","s_key":"s2/12/f2/212/291"},"source":"planet","roads":14,"buildings":0,"areas":1,"pois":0}}
+{"type":"road","class":"motorway","name":"I 90","oneway":true,"pts":"47.322305,-121.325068;47.321963,-121.324669"}
+{"type":"road","class":"motorway","name":"I 90","oneway":true,"pts":"47.322147,-121.324320;47.322485,-121.324701"}
+{"type":"road","class":"motorway","name":"I 90","oneway":true,"pts":"47.321963,-121.324669;47.319540,-121.321850"}
+{"type":"road","class":"motorway","name":"I 90","oneway":true,"pts":"47.322620,-121.325433;47.322305,-121.325068"}
+{"type":"road","class":"motorway","name":"I 90","oneway":true,"pts":"47.324047,-121.327099;47.323918,-121.326949"}
+{"type":"road","class":"motorway","name":"I 90","oneway":true,"pts":"47.323641,-121.326632;47.322932,-121.325798"}
+{"type":"road","class":"motorway","name":"I 90","oneway":true,"pts":"47.323192,-121.325527;47.323874,-121.326329"}
+{"type":"road","class":"motorway","name":"I 90","oneway":true,"pts":"47.322485,-121.324701;47.322894,-121.325176"}
+{"type":"road","class":"motorway","name":"I 90","oneway":true,"pts":"47.319991,-121.321850;47.320458,-121.322405;47.322147,-121.324320"}
+{"type":"road","class":"motorway","name":"I 90","oneway":true,"pts":"47.322894,-121.325176;47.323192,-121.325527"}
+{"type":"road","class":"motorway","name":"I 90","oneway":true,"pts":"47.322932,-121.325798;47.322620,-121.325433"}
+{"type":"road","class":"motorway","name":"I 90","oneway":true,"pts":"47.323918,-121.326949;47.323641,-121.326632"}
+{"type":"road","class":"motorway","name":"I 90","oneway":true,"pts":"47.323874,-121.326329;47.324047,-121.326530"}
+{"type":"road","class":"path","name":"","oneway":false,"pts":"47.321618,-121.333179;47.321923,-121.332646;47.321681,-121.332560;47.321001,-121.332758"}
+{"type":"area","kind":"park","pts":"47.324047,-121.333179;47.324047,-121.321850;47.316367,-121.321850;47.316367,-121.333179"}

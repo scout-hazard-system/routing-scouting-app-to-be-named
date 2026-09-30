@@ -1,9 +1,9 @@
-Scout deploy bundle from pop-os
-================================
+Scout deploy bundle from debian
+===============================
 Contents:
   bin/           scout / scout-gui launchers (Linux; on Windows use WSL or reinstall)
   config/        .env.example, agents.yaml, tasks.yaml, arizona_phase.json, pyproject.toml
-  ssh/           pop-os public key to authorize
+  ssh/           debian public key to authorize (id_ed25519_popos.pub)
   SETUP-WINDOWS.ps1  enable OpenSSH + install authorized_keys + copy configs
 
 On Windows (Admin PowerShell):
@@ -13,12 +13,12 @@ On Windows (Admin PowerShell):
   4. git clone https://github.com/wendigoro/scout_crew.git
   5. Copy config files into the clone; cp .env.example .env and edit
 
-After OpenSSH is on, from pop-os:
+After OpenSSH is on, from debian:
   ssh -i ~/.ssh/id_ed25519_popos <windows-user>@100.82.130.47
 
 Mesh IP set (locked listen)
 ---------------------------
-Linux hub (pop-os):     100.78.191.61
+Linux hub (debian):     100.78.191.61
 Windows peer (Hermes):  100.82.130.47
 
 Windows Ollama is reachable on the Tailscale address ONLY.

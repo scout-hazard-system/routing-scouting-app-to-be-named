@@ -2,8 +2,8 @@
 Type=Application
 Name=Scout Crew
 Comment=Hermes + CrewAI + Blackboard (local Ollama)
-Exec=/home/gibi/.local/bin/scout-gui
-Icon=/home/gibi/Desktop/scout_crew/assets/scout.png
+Exec=$HOME/.local/bin/scout-gui
+Icon=$HOME/scout_crew/assets/scout.png
 Terminal=false
 Categories=Development;
 StartupNotify=true

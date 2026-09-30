@@ -1,0 +1,7 @@
+{"meta":{"state":"WA","z":15,"x":5406,"y":11517,"zhs":{"key":"z/15/5406/11517|h3/9/nv9x/pfjm|s2/12/f2/20w/29c","z_key":"z/15/5406/11517","h_key":"h3/9/nv9x/pfjm","s_key":"s2/12/f2/20w/29c"},"source":"planet","roads":6,"buildings":0,"areas":0,"pois":0}}
+{"type":"road","class":"residential","name":"Clarke Road","oneway":false,"pts":"47.057575,-120.608082;47.057577,-120.603227;47.057647,-120.597715;47.057654,-120.596752"}
+{"type":"road","class":"residential","name":"Lower Green Canyon Road","oneway":false,"pts":"47.062755,-120.603206;47.059604,-120.603224;47.057577,-120.603227;47.056430,-120.603246;47.056090,-120.603307;47.055794,-120.603439;47.055339,-120.603758;47.055037,-120.604042"}
+{"type":"road","class":"residential","name":"","oneway":false,"pts":"47.055388,-120.603723;47.055037,-120.602889"}
+{"type":"road","class":"residential","name":"","oneway":false,"pts":"47.057621,-120.599831;47.055933,-120.599853"}
+{"type":"road","class":"service","name":"","oneway":false,"pts":"47.057647,-120.597715;47.056294,-120.597755"}
+{"type":"road","class":"service","name":"","oneway":false,"pts":"47.055933,-120.599853;47.055823,-120.599654;47.055644,-120.599558;47.055459,-120.599496"}

@@ -1,0 +1,2 @@
+{"meta":{"state":"WA","z":15,"x":5401,"y":11502,"zhs":{"key":"z/15/5401/11502|h3/9/nv97/pfky|s2/12/f2/20v/299","z_key":"z/15/5401/11502","h_key":"h3/9/nv97/pfky","s_key":"s2/12/f2/20v/299"},"source":"planet","roads":0,"buildings":0,"areas":0,"pois":1}}
+{"type":"poi","name":"Kittitas County","kind":"administrative","lat":47.168535,"lon":-120.662836}

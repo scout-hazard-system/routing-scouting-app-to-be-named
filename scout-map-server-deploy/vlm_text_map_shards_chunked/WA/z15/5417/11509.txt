@@ -1,0 +1,2 @@
+{"meta":{"state":"WA","z":15,"x":5417,"y":11509,"zhs":{"key":"z/15/5417/11509|h3/9/nv8h/pfkb|s2/12/f2/20t/29b","z_key":"z/15/5417/11509","h_key":"h3/9/nv8h/pfkb","s_key":"s2/12/f2/20t/29b"},"source":"planet","roads":1,"buildings":0,"areas":0,"pois":0}}
+{"type":"road","class":"residential","name":"Naneum Road","oneway":false,"pts":"47.122593,-120.477737;47.122273,-120.477217;47.122093,-120.476828;47.121912,-120.476367;47.121753,-120.476004;47.121695,-120.475903"}

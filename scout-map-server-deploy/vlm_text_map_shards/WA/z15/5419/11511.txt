@@ -1,0 +1,3 @@
+{"meta":{"state":"WA","z":15,"x":5419,"y":11511,"zhs":{"key":"z/15/5419/11511|h3/9/nv8h/pfk5|s2/12/f2/20t/29c","z_key":"z/15/5419/11511","h_key":"h3/9/nv8h/pfk5","s_key":"s2/12/f2/20t/29c"},"source":"planet","roads":2,"buildings":0,"areas":0,"pois":0}}
+{"type":"road","class":"residential","name":"Charlton Road","oneway":false,"pts":"47.103353,-120.465260;47.103388,-120.457993;47.103399,-120.453930"}
+{"type":"road","class":"service","name":"","oneway":false,"pts":"47.103353,-120.465225;47.103755,-120.465125;47.104007,-120.465018"}

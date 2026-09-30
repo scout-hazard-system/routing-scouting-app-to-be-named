@@ -1,0 +1,3 @@
+{"meta":{"state":"_z05","z":5,"x":3,"y":10,"zhs":{"key":"z/5/3/10|h3/9/nx61/phc4|s2/12/f2/24a/21a","z_key":"z/5/3/10","h_key":"h3/9/nx61/phc4","s_key":"s2/12/f2/24a/21a"},"source":"planet","roads":0,"buildings":0,"areas":1,"pois":1}}
+{"type":"area","kind":"water","pts":"55.973798,-146.601563;55.973798,-134.648438;48.690960,-134.648438;48.690960,-146.601563"}
+{"type":"poi","name":"Sitka","kind":"place_town","lat":57.052682,"lon":-135.337830}

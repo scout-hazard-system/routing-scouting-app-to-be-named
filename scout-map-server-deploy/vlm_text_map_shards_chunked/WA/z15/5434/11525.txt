@@ -1,0 +1,3 @@
+{"meta":{"state":"WA","z":15,"x":5434,"y":11525,"zhs":{"key":"z/15/5434/11525|h3/9/nv8d/pfiw|s2/12/f2/20t/29f","z_key":"z/15/5434/11525","h_key":"h3/9/nv8d/pfiw","s_key":"s2/12/f2/20t/29f"},"source":"planet","roads":2,"buildings":0,"areas":0,"pois":0}}
+{"type":"road","class":"secondary","name":"Vantage Highway","oneway":false,"pts":"46.995124,-120.292246;46.997786,-120.300465"}
+{"type":"road","class":"residential","name":"Sunset Road","oneway":false,"pts":"46.995124,-120.297640;46.995607,-120.299000;46.996136,-120.300465"}

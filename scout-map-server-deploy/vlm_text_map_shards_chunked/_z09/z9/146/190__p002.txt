@@ -1,0 +1,15 @@
+{"meta":{"state":"_z09","z":9,"x":146,"y":190,"zhs":{"key":"z/9/146/190|h3/9/nnbq/pdsq|s2/12/f4/u0/1t4","z_key":"z/9/146/190","h_key":"h3/9/nnbq/pdsq","s_key":"s2/12/f4/u0/1t4"},"source":"planet","roads":137,"buildings":0,"areas":400,"pois":12}}
+{"type":"area","kind":"water","pts":"41.572307,-76.620197;41.574490,-76.619854;41.574361,-76.618996;41.573206,-76.618824;41.573077,-76.618652;41.569481,-76.618652;41.569224,-76.618996;41.569353,-76.620197;41.571279,-76.621056"}
+{"type":"area","kind":"water","pts":"42.003897,-77.243328;42.003259,-77.241955;42.000453,-77.243328;42.002366,-77.245045;42.003642,-77.244530"}
+{"type":"poi","name":"Elmira","kind":"place_city","lat":42.089815,"lon":-76.807652}
+{"type":"poi","name":"Corning","kind":"place_town","lat":42.143551,"lon":-77.054329}
+{"type":"poi","name":"Sayre","kind":"place_town","lat":41.979018,"lon":-76.515484}
+{"type":"poi","name":"Mansfield","kind":"place_town","lat":41.805742,"lon":-77.079220}
+{"type":"poi","name":"Big Flats","kind":"place_town","lat":42.137314,"lon":-76.936913}
+{"type":"poi","name":"Southport","kind":"place_town","lat":42.055666,"lon":-76.818466}
+{"type":"poi","name":"Loyalsock State Forest","kind":"nature_reserve","lat":41.513333,"lon":-76.864643}
+{"type":"poi","name":"State Game Lands Number 12","kind":"nature_reserve","lat":41.621602,"lon":-76.699505}
+{"type":"poi","name":"State Game Lands Number 313","kind":"nature_reserve","lat":41.800879,"lon":-77.294312}
+{"type":"poi","name":"Tioga-Hammond Lakes","kind":"nature_reserve","lat":41.870456,"lon":-77.199726}
+{"type":"poi","name":"State Game Lands Number 37","kind":"nature_reserve","lat":41.857544,"lon":-77.168827}
+{"type":"poi","name":"McIntyre Wild Area","kind":"nature_reserve","lat":41.533511,"lon":-76.923180}

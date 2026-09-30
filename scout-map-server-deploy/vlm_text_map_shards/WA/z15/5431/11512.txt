@@ -1,0 +1,2 @@
+{"meta":{"state":"WA","z":15,"x":5431,"y":11512,"zhs":{"key":"z/15/5431/11512|h3/9/nv7n/pfk2|s2/12/f2/20s/29d","z_key":"z/15/5431/11512","h_key":"h3/9/nv7n/pfk2","s_key":"s2/12/f2/20s/29d"},"source":"planet","roads":1,"buildings":0,"areas":0,"pois":0}}
+{"type":"road","class":"path","name":"Little Caribou Road","oneway":false,"pts":"47.100162,-120.330755;47.099603,-120.332509;47.098734,-120.333142;47.098425,-120.333424"}

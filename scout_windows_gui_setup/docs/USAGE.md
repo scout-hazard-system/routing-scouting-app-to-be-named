@@ -17,13 +17,13 @@ ollama serve   # if not already a service
 ollama list    # confirm scout-* and llama3.1
 
 # Project
-cd ~/Desktop/scout_crew
+cd ~/repo/scout_crew
 cp -n .env.example .env
 crewai install
 
 # PATH (once)
-ln -sfn "$HOME/Desktop/scout_crew/bin/scout" "$HOME/.local/bin/scout"
-ln -sfn "$HOME/Desktop/scout_crew/bin/scout-gui" "$HOME/.local/bin/scout-gui"
+ln -sfn "$HOME/repo/scout_crew/bin/scout" "$HOME/.local/bin/scout"
+ln -sfn "$HOME/repo/scout_crew/bin/scout-gui" "$HOME/.local/bin/scout-gui"
 ```
 
 Verify:
@@ -167,7 +167,7 @@ Flags:
 Also available via CrewAI:
 
 ```bash
-cd ~/Desktop/scout_crew
+cd ~/repo/scout_crew
 crewai run
 ```
 
@@ -250,9 +250,9 @@ scout-gui
 6. Optional: use **Send chat** for quick single-model checks
 7. Optional: **Terminal** tab for `ollama list`, `scout status`, etc.
 
-### Desktop entry notes (Pop!_OS / COSMIC)
+### Desktop entry notes (Debian / GNOME)
 
-- File: `~/Desktop/Scout-Crew.desktop`
+- File: `~/repo/Scout-Crew.desktop`
 - If double-click opens an editor, right-click → **Allow Launching**, or run `scout-gui` from a terminal
 - Icon: `assets/scout.png`
 
@@ -312,7 +312,7 @@ scout_crew/
 └── tests/
 ```
 
-Sibling (not in this git repo): `~/Desktop/llm/` Modelfiles and `build_llm_set.sh`.
+Sibling (not in this git repo): `~/repo/llm/` Modelfiles and `build_llm_set.sh`.
 
 ---
 
@@ -323,12 +323,12 @@ Sibling (not in this git repo): `~/Desktop/llm/` Modelfiles and `build_llm_set.s
 | `Ollama is unreachable` | `ollama serve`; `curl -s http://127.0.0.1:11434/api/tags` |
 | Wrong / missing model | `ollama list`; rebuild with Modelfile; check `OLLAMA_MODEL_*` in `.env` |
 | Cloud key refused | Unset provider keys; restore `.env` from `.env.example` |
-| `scout: missing venv` | `cd ~/Desktop/scout_crew && crewai install` |
+| `scout: missing venv` | `cd ~/repo/scout_crew && crewai install` |
 | GUI won’t start | Ensure `DISPLAY` set; run `scout-gui` from terminal; check `/tmp/scout-gui.log` |
 | Desktop file opens in editor | Allow Launching, or use `scout-gui` |
 | Crew slow | Normal on CPU; first load pulls model into memory |
 | Manager JSON looks tool-shaped | Known formatting quirk with some local models; specialists still ran — tighten manager prompt/task if needed |
-| Nested git confusion | This project is `~/Desktop/scout_crew` (its own repo), not the parent Desktop repo |
+| Nested git confusion | This project is `~/repo/scout_crew` (its own repo), not the parent repo |
 
 Debug one model:
 

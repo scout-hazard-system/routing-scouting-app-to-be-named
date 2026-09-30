@@ -1,0 +1,3 @@
+{"meta":{"state":"WA","z":15,"x":5426,"y":11514,"zhs":{"key":"z/15/5426/11514|h3/9/nv85/pfjv|s2/12/f2/20t/29d","z_key":"z/15/5426/11514","h_key":"h3/9/nv85/pfjv","s_key":"s2/12/f2/20t/29d"},"source":"planet","roads":2,"buildings":0,"areas":0,"pois":0}}
+{"type":"road","class":"residential","name":"Cooke Canyon Road","oneway":false,"pts":"47.082422,-120.377026;47.082386,-120.379992;47.082399,-120.381465;47.082397,-120.382251;47.082496,-120.385931;47.077487,-120.385912"}
+{"type":"road","class":"residential","name":"Coleman Creek Road","oneway":false,"pts":"47.082528,-120.388355;47.082496,-120.385931"}

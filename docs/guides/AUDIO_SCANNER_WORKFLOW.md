@@ -15,10 +15,10 @@ This workflow captures scanner audio from a connected Android phone, isolates th
 
 ## Run command
 ```bash
-/home/gibi/Desktop/cop_pipeline/bin/python /home/gibi/Desktop/pipeline.py \
+$HOME/cop_pipeline/bin/python $HOME/pipeline.py \
   --mode scrcpy \
   --start-scrcpy \
-  --scrcpy-bin /home/gibi/.local/bin/scrcpy-4 \
+  --scrcpy-bin $HOME/.local/bin/scrcpy-4 \
   --serial ZT42269G82 \
   --duration 8
 ```
