@@ -59,6 +59,7 @@ class GpsPipelineIntegrationTests(unittest.TestCase):
         env["BROADCASTIFY_CHANNELS_FILE"] = str(cls.repo_root / "stack/config/broadcastify_channels.national.manifest.json")
         env["BROADCASTIFY_SELECTOR_USE_OLLAMA_RERANK"] = "false"
         env["BROADCASTIFY_SELECTOR_LOCK_STATE"] = "false"
+        env["SCOUT_SUBSCRIPTION_REQUIRED"] = "false"
         cls.map_cache_dir = Path(tempfile.mkdtemp(prefix="scanner-backend-map-cache-"))
         env["MAP_CACHE_DIR"] = str(cls.map_cache_dir)
 
