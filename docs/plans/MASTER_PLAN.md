@@ -74,7 +74,7 @@ graph TD
 ## 3. Detailed Workstreams & Sequential Roadmap
 
 ### Workstream 1: Wire Imagoro Backend & Blackboard onto Dell (High Priority)
-- **Files (repo [`scout-hazard-system/imagoro`](https://github.com/scout-hazard-system/imagoro)):** [`client/server/serve.mjs`](https://github.com/scout-hazard-system/imagoro/blob/main/client/server/serve.mjs), [`server/src/blackboard.mjs`](https://github.com/scout-hazard-system/imagoro/blob/main/server/src/blackboard.mjs), [`server/acl-matrix.json`](https://github.com/scout-hazard-system/imagoro/blob/main/server/acl-matrix.json).
+- **Files (repo [`Imagoro-Gibibyte/imagoro`](https://github.com/Imagoro-Gibibyte/imagoro)):** [`client/server/serve.mjs`](https://github.com/Imagoro-Gibibyte/imagoro/blob/main/client/server/serve.mjs), [`server/src/blackboard.mjs`](https://github.com/Imagoro-Gibibyte/imagoro/blob/main/server/src/blackboard.mjs), [`server/acl-matrix.json`](https://github.com/Imagoro-Gibibyte/imagoro/blob/main/server/acl-matrix.json).
 - **Execution Steps:**
   1. Package and stage `client/server/serve.mjs`, `server/src/`, and `harness/src/guard.mjs` to `/opt/imagoro-backend/` on the Dell via SSH/rsync.
   2. Create systemd unit `/etc/systemd/system/imagoro-backend.service`:
