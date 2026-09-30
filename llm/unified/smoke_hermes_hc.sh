@@ -56,4 +56,9 @@ Transcript: Unit 12 Phoenix PD traffic stop on I-10 eastbound near 7th Ave, rada
 Route: fastest_min=14; jurisdiction=AZ
 Channels: [{\"id\":\"a\",\"name\":\"Phoenix Police\",\"state\":\"AZ\"},{\"id\":\"b\",\"name\":\"Arizona DPS\",\"state\":\"AZ\"}]"
 
+run ASSISTANT "MODE: ASSISTANT
+=== USER QUERY (ADMIN-PRIVILEGED) ===
+What are the key differences between scout-hermes-hc and scout-hermes-pa?
+=== END USER QUERY ==="
+
 echo "SMOKE complete for $MODEL"

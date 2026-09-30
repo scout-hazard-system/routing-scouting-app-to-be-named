@@ -47,3 +47,10 @@ stack/config/*.bak
 stack/mesh/state/
 stack/mesh/peers/*.conf
 !stack/mesh/peers/.gitkeep
+
+# Packaged map-server deploy bundle.
+# The extracted scout-map-server-deploy/ tree is tracked (the PXE stack deploys from
+# it), but the single-file archive duplicates that same content, is ~107 MB, and
+# exceeds GitHub's 100 MiB per-file hard limit -- so it can never be pushed.
+# Re-archive it locally from the tracked tree if you need a single-file copy.
+scout-map-server-deploy.zip

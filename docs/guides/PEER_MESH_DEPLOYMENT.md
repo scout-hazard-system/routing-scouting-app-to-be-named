@@ -9,14 +9,14 @@ Step-by-step deployment for the **Linux hub + Windows Hermes peer** Tailscale me
 **Verified:** 2026-08-26  
 **Jurisdiction:** Arizona alpha  
 **Repos:**
-- Monorepo (vehicle stack / docs): `/home/gibi/Desktop`
-- CrewAI: `/home/gibi/Desktop/scout_crew` (separate git repo)
+- Monorepo (vehicle stack / docs): `~/repo`
+- CrewAI: `~/scout_crew` (separate git repo)
 
 ## Locked mesh IP set
 
 | Machine | Hostname | Tailscale IP | Role |
 |---------|----------|--------------|------|
-| Linux hub | pop-os | `100.78.191.61` | specialists Ollama, blackboard, backend `:18080`, UI `:8787` |
+| Linux hub | debian | `100.78.191.61` | specialists Ollama, blackboard, backend `:18080`, UI `:8787` |
 | Windows peer | gibdowsvista | `100.82.130.47` | Hermes / manager Ollama |
 
 **Critical lock:** Windows Ollama is reachable on **Tailscale `100.82.130.47:11434` only**.  
@@ -39,15 +39,15 @@ Windows Hermes → http://100.82.130.47:11434   (Tailscale only)
 ```bash
 # From either side
 tailscale status
-# expect pop-os and gibdowsvista online
+# expect debian and gibdowsvista online
 ```
 
 ---
 
-## 2. Linux hub (pop-os) — vehicle stack
+## 2. Linux hub (debian) — vehicle stack
 
 ```bash
-cd ~/Desktop   # monorepo root
+cd ~/repo   # monorepo root
 ./master start
 ./master status
 ./master health
@@ -80,7 +80,7 @@ Build specialist models (Qwen3 lineage):
 
 ```bash
 ollama pull qwen3:8b
-bash ~/Desktop/llm/build/build_llm_set.sh
+bash ~/repo/llm/build/build_llm_set.sh
 ollama list | egrep 'scout-|qwen3:8b'
 ```
 
@@ -129,13 +129,13 @@ OLLAMA_HOST_MANAGER=http://100.82.130.47:11434
 SCOUT_BLACKBOARD_URL=http://100.78.191.61:8765
 SCOUT_BLACKBOARD_HOST=0.0.0.0
 SCOUT_BLACKBOARD_PORT=8765
-SCOUT_BLACKBOARD_PATH=/home/gibi/Desktop/scout_crew/data/blackboard/scout_blackboard.db
+SCOUT_BLACKBOARD_PATH=~/scout_crew/data/blackboard/scout_blackboard.db
 ```
 
 Start blackboard (if not already running):
 
 ```bash
-cd ~/Desktop/scout_crew
+cd ~/repo/scout_crew
 .venv/bin/python -m scout_crew.blackboard.server --host 0.0.0.0 --port 8765
 # or background; health:
 curl -s http://100.78.191.61:8765/health
@@ -147,7 +147,7 @@ curl -s http://100.78.191.61:8765/health
 
 ### 4.1 Bootstrap packages (from Linux)
 
-On Linux these live under `~/Desktop/`:
+On Linux these live under `~/repo/`:
 
 | Bundle | Purpose |
 |--------|---------|
@@ -265,8 +265,8 @@ scout crew -v   # optional longer run
 | Stack health | `./master status` / `./master health` |
 | Restart stack | `./master restart` |
 | Restart blackboard | see §3 start command |
-| Rebuild Linux specialists | `bash ~/Desktop/llm/build/build_llm_set.sh` |
-| Rebuild Hermes-hc | `bash ~/Desktop/llm/unified/build_hermes_hc.sh` (run on Windows or copy tags) |
+| Rebuild Linux specialists | `bash ~/repo/llm/build/build_llm_set.sh` |
+| Rebuild Hermes-hc | `bash ~/repo/llm/unified/build_hermes_hc.sh` (run on Windows or copy tags) |
 | Mesh URLs cheat sheet | `./master urls` or `docs/guides/FINAL_DEPLOYMENT_CONFIG.md` |
 
 ### Token budget note

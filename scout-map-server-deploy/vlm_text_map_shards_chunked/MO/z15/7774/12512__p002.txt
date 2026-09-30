@@ -1,0 +1,63 @@
+{"meta":{"state":"MO","z":15,"x":7774,"y":12512,"zhs":{"key":"z/15/7774/12512|h3/9/nrgh/pcwv|s2/12/f4/w4/1hz","z_key":"z/15/7774/12512","h_key":"h3/9/nrgh/pcwv","s_key":"s2/12/f4/w4/1hz"},"source":"planet","roads":722,"buildings":442,"areas":347,"pois":226}}
+{"type":"poi","name":"Martin City Tavern & Terrace","kind":"bar","lat":39.089349,"lon":-94.583469}
+{"type":"poi","name":"Town Topic Hamburgers","kind":"restaurant","lat":39.088437,"lon":-94.588814}
+{"type":"poi","name":"Raygun","kind":"clothes","lat":39.091606,"lon":-94.584469}
+{"type":"poi","name":"University Health Behavioral Health Crossroads","kind":"clinic","lat":39.090403,"lon":-94.587752}
+{"type":"poi","name":"Sinclair","kind":"fuel","lat":39.093196,"lon":-94.581594}
+{"type":"poi","name":"Windstar","kind":"convenience","lat":39.092992,"lon":-94.581768}
+{"type":"poi","name":"18 Broadway Park","kind":"park","lat":39.091527,"lon":-94.588329}
+{"type":"poi","name":"Crossroads","kind":"shelter","lat":39.090174,"lon":-94.583777}
+{"type":"poi","name":"Crossroads","kind":"shelter","lat":39.090638,"lon":-94.583568}
+{"type":"poi","name":"Soli Printing","kind":"stationery","lat":39.088968,"lon":-94.589174}
+{"type":"poi","name":"Made Mobb","kind":"clothes","lat":39.088671,"lon":-94.587275}
+{"type":"poi","name":"LoveStoned","kind":"clothes","lat":39.095143,"lon":-94.582112}
+{"type":"poi","name":"Jones Art Gallery","kind":"art","lat":39.092691,"lon":-94.582259}
+{"type":"poi","name":"Guevel","kind":"clothes","lat":39.090617,"lon":-94.581639}
+{"type":"poi","name":"Spira Care","kind":"clinic","lat":39.089634,"lon":-94.581709}
+{"type":"poi","name":"Beco Flowers","kind":"florist","lat":39.089551,"lon":-94.585073}
+{"type":"poi","name":"Sutherlin Optical Lab","kind":"optician","lat":39.089691,"lon":-94.587331}
+{"type":"poi","name":"Blue Gallery","kind":"art","lat":39.090253,"lon":-94.585475}
+{"type":"poi","name":"Dear Society","kind":"clothes","lat":39.091752,"lon":-94.585268}
+{"type":"poi","name":"For Strange Women","kind":"perfumery","lat":39.091683,"lon":-94.585277}
+{"type":"poi","name":"Coki Bijou Fine Jewelry","kind":"jewelry","lat":39.091685,"lon":-94.585424}
+{"type":"poi","name":"Revive Hair Company","kind":"hairdresser","lat":39.091281,"lon":-94.585832}
+{"type":"poi","name":"Crossroads Dentistry","kind":"dentist","lat":39.091146,"lon":-94.585851}
+{"type":"poi","name":"Silver Screen Salon","kind":"hairdresser","lat":39.092124,"lon":-94.586138}
+{"type":"poi","name":"Verdant","kind":"gift","lat":39.091993,"lon":-94.585746}
+{"type":"poi","name":"Daisy Lee Vintage","kind":"clothes","lat":39.091991,"lon":-94.585671}
+{"type":"poi","name":"Birdies","kind":"clothes","lat":39.091987,"lon":-94.585572}
+{"type":"poi","name":"True Society","kind":"clothes","lat":39.092158,"lon":-94.585781}
+{"type":"poi","name":"Speak Salon","kind":"hairdresser","lat":39.091498,"lon":-94.589007}
+{"type":"poi","name":"Flock Salon and Gallery","kind":"hairdresser","lat":39.088689,"lon":-94.584711}
+{"type":"poi","name":"Midwest Barbery","kind":"hairdresser","lat":39.088658,"lon":-94.583981}
+{"type":"poi","name":"Tan360","kind":"beauty","lat":39.088533,"lon":-94.590614}
+{"type":"poi","name":"Todd's Clothiers","kind":"clothes","lat":39.088111,"lon":-94.589222}
+{"type":"poi","name":"Office Products Alliance","kind":"stationery","lat":39.088637,"lon":-94.589917}
+{"type":"poi","name":"Ricca Sposa","kind":"clothes","lat":39.089716,"lon":-94.584002}
+{"type":"poi","name":"Scissors And Scorch","kind":"hairdresser","lat":39.089957,"lon":-94.583911}
+{"type":"poi","name":"Lumine Salon","kind":"hairdresser","lat":39.090257,"lon":-94.583520}
+{"type":"poi","name":"Luxury Brow And Skin","kind":"beauty","lat":39.092328,"lon":-94.583769}
+{"type":"poi","name":"Catalyst Barber Co.","kind":"hairdresser","lat":39.087988,"lon":-94.588329}
+{"type":"poi","name":"Something White Bridal Boutique","kind":"clothes","lat":39.095305,"lon":-94.582527}
+{"type":"poi","name":"Vision Source Eyecare","kind":"optician","lat":39.095118,"lon":-94.582533}
+{"type":"poi","name":"Salon on Grand","kind":"hairdresser","lat":39.094558,"lon":-94.580974}
+{"type":"poi","name":"Michael's Fine Clothes for Men","kind":"clothes","lat":39.090736,"lon":-94.583906}
+{"type":"poi","name":"Turnsol Books","kind":"books","lat":39.093057,"lon":-94.588911}
+{"type":"poi","name":"Turnsol Books","kind":"books","lat":39.093028,"lon":-94.588930}
+{"type":"poi","name":"Morning Rounds Bakery","kind":"bakery","lat":39.089934,"lon":-94.586937}
+{"type":"poi","name":"Hairpin Salon","kind":"hairdresser","lat":39.091808,"lon":-94.587583}
+{"type":"poi","name":"Blue Gallery","kind":"clothes","lat":39.090319,"lon":-94.585370}
+{"type":"poi","name":"Blackbird Collection","kind":"clothes","lat":39.090151,"lon":-94.585660}
+{"type":"poi","name":"Skyline Downtown Salon","kind":"hairdresser","lat":39.088762,"lon":-94.581146}
+{"type":"poi","name":"Lovely Beauty KC","kind":"beauty","lat":39.088735,"lon":-94.581774}
+{"type":"poi","name":"Dan's Barber Shop and Shave Parlor","kind":"hairdresser","lat":39.090792,"lon":-94.585655}
+{"type":"poi","name":"Southwest Blvd. at Broadway","kind":"bus_stop","lat":39.088006,"lon":-94.588755}
+{"type":"poi","name":"Broadway at 20th","kind":"bus_stop","lat":39.089353,"lon":-94.589053}
+{"type":"poi","name":"Broadway at 20th","kind":"bus_stop","lat":39.089412,"lon":-94.588825}
+{"type":"poi","name":"Broadway at 17th","kind":"bus_stop","lat":39.092643,"lon":-94.588871}
+{"type":"poi","name":"Broadway at 17th","kind":"bus_stop","lat":39.093330,"lon":-94.588619}
+{"type":"poi","name":"Grand at Truman","kind":"bus_stop","lat":39.095490,"lon":-94.581272}
+{"type":"poi","name":"Grand at 17th","kind":"bus_stop","lat":39.093267,"lon":-94.581130}
+{"type":"poi","name":"Grand at 19th","kind":"bus_stop","lat":39.090467,"lon":-94.581532}
+{"type":"poi","name":"Grand at 19th","kind":"bus_stop","lat":39.090255,"lon":-94.581277}
+{"type":"poi","name":"Broadway at Southwest Boulevard","kind":"bus_stop","lat":39.088059,"lon":-94.588900}

@@ -263,6 +263,10 @@ System.getenv()
       System.getenv().getOrDefault("BACKEND_PULL_API_KEY", "");
   private static final String SECURE_PULL_API_KEY_HEADER =
       System.getenv().getOrDefault("BACKEND_PULL_API_KEY_HEADER", "X-Backend-Api-Key");
+  private static final String PREAUTHORIZED_KEY =
+      System.getenv().getOrDefault("BACKEND_PREAUTHORIZED_KEY", "");
+  private static final String PREAUTHORIZED_KEY_HEADER =
+      System.getenv().getOrDefault("BACKEND_PREAUTHORIZED_KEY_HEADER", "X-Preauthorized-Key");
   private static final String CLIENT_PULL_TOKEN_HEADER =
       System.getenv().getOrDefault("BACKEND_CLIENT_PULL_TOKEN_HEADER", "X-Client-Pull-Token");
   private static final String ANALYTICS_OPT_OUT_HEADER =
@@ -431,14 +435,15 @@ private static final Set<String> GLOBAL_PUBLIC_ENDPOINTS =
     registerContext(server, "/api/platform/assistant/chat", new AssistantChatHandler());
     registerContext(server, "/api/platform/dev/stack/manage", new DevStackManageHandler());
     registerContext(server, "/api/platform/llm/status", new LlmStatusHandler());
-registerContext(server, "/api/mobile/bootstrap", new MobileBootstrapHandler());
-registerContext(server, "/api/mesh/enroll", new MeshEnrollHandler());
+    registerContext(server, "/api/mobile/bootstrap", new MobileBootstrapHandler());
+    registerContext(server, "/api/mobile/validate-key", new MobileValidateKeyHandler());
+    registerContext(server, "/api/mesh/enroll", new MeshEnrollHandler());
     registerContext(server, "/api/mesh/profile", new MeshProfileHandler());
     registerContext(server, "/api/mesh/peer/revoke", new MeshPeerRevokeHandler());
     registerContext(server, "/api/admin/subscription/issue", new AdminSubscriptionIssueHandler());
     registerContext(server, "/api/admin/subscription/revoke", new AdminSubscriptionRevokeHandler());
     registerContext(server, "/api/admin/tokens/status", new AdminTokensStatusHandler());
-registerContext(server, "/api/admin/status", new AdminStatusHandler());
+    registerContext(server, "/api/admin/status", new AdminStatusHandler());
     registerContext(server, "/api/admin/gate/analyze", new AdminGateAnalyzeHandler());
     registerContext(server, "/api/mobile/snapshot", new MobileSnapshotHandler());
     registerContext(server, "/api/mobile/stream", new MobileStreamHandler());
@@ -701,6 +706,12 @@ registerContext(server, "/api/admin/status", new AdminStatusHandler());
     if (!RESTRICT_ALL_API_ROUTES || GLOBAL_PUBLIC_ENDPOINTS.contains(path)) {
       return;
     }
+    // Preauthorized key bypass: a single shared secret that unlocks the whole API
+    // without a subscription token (see the Android paywall bypass work on main).
+    String preauthKey = exchange.getRequestHeaders().getFirst(PREAUTHORIZED_KEY_HEADER);
+    if (!PREAUTHORIZED_KEY.isBlank() && PREAUTHORIZED_KEY.equals(preauthKey != null ? preauthKey.trim() : "")) {
+      return;
+    }
     // Admin machines bypass with X-Scout-Admin-Token (path-scoped or any-path).
     if (ScoutAdminAuth.isAuthorizedAdmin(exchange, path) || ScoutAdminAuth.isAuthorizedAdminAny(exchange)) {
       return;
@@ -716,10 +727,7 @@ registerContext(server, "/api/admin/status", new AdminStatusHandler());
       }
       return;
     }
-    String remoteAddress =
-        exchange.getRemoteAddress() != null && exchange.getRemoteAddress().getAddress() != null
-            ? exchange.getRemoteAddress().getAddress().getHostAddress()
-            : "";
+    String remoteAddress = remoteAddressFromExchange(exchange);
     if (!isAllowedPullSource(remoteAddress)) {
       throw new IllegalArgumentException("forbidden_network_source");
     }
@@ -1217,6 +1225,10 @@ registerContext(server, "/api/admin/status", new AdminStatusHandler());
 
   private static void enforceSecurePullAccess(String path, HttpExchange exchange) {
     if (!SECURE_PULL_ENDPOINTS.contains(path)) {
+      return;
+    }
+    String preauthKey = exchange.getRequestHeaders().getFirst(PREAUTHORIZED_KEY_HEADER);
+    if (!PREAUTHORIZED_KEY.isBlank() && PREAUTHORIZED_KEY.equals(preauthKey != null ? preauthKey.trim() : "")) {
       return;
     }
     String remoteAddress = remoteAddressFromExchange(exchange);
@@ -1719,7 +1731,7 @@ registerContext(server, "/api/admin/status", new AdminStatusHandler());
     if (root != null && !root.isBlank()) {
       return Path.of(root);
     }
-    return Path.of("/home/gibi/Desktop");
+    return Path.of(System.getProperty("user.dir"));
   }
 
   private static String repoPath(String relPath) {
@@ -6480,6 +6492,29 @@ static final class MeshEnrollHandler implements HttpHandler {
         return;
       }
       writeJson(exchange, 200, mobileSnapshotJson());
+    }
+  }
+
+  private static final class MobileValidateKeyHandler implements HttpHandler {
+    @Override
+    public void handle(HttpExchange exchange) throws IOException {
+      if (!"POST".equals(exchange.getRequestMethod())) {
+        writeJson(exchange, 405, "{\"error\":\"method_not_allowed\"}");
+        return;
+      }
+      String body = readRequestBody(exchange);
+      String key = extractStringFieldByName(body, "key", "").trim();
+      if (key.isBlank()) {
+        writeJson(exchange, 400, "{\"valid\":false,\"error\":\"missing_key\"}");
+        return;
+      }
+      boolean valid = false;
+      String keyType = "unknown";
+      if (!PREAUTHORIZED_KEY.isBlank() && PREAUTHORIZED_KEY.equals(key)) {
+        valid = true;
+        keyType = "preauthorized";
+      }
+      writeJson(exchange, 200, "{\"valid\":" + valid + ",\"key_type\":\"" + jsonEscape(keyType) + "\"}");
     }
   }
 

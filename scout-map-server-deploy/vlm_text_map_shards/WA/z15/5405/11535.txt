@@ -1,0 +1,4 @@
+{"meta":{"state":"WA","z":15,"x":5405,"y":11535,"zhs":{"key":"z/15/5405/11535|h3/9/nvbc/pfi0|s2/12/f2/20z/29f","z_key":"z/15/5405/11535","h_key":"h3/9/nvbc/pfi0","s_key":"s2/12/f2/20z/29f"},"source":"planet","roads":3,"buildings":0,"areas":0,"pois":0}}
+{"type":"road","class":"residential","name":"Coyote Run","oneway":false,"pts":"46.923124,-120.619068;46.923135,-120.617987;46.923309,-120.611636"}
+{"type":"road","class":"residential","name":"Overlook Road","oneway":false,"pts":"46.920138,-120.618333;46.923135,-120.617987"}
+{"type":"road","class":"service","name":"","oneway":false,"pts":"46.923274,-120.612872;46.923190,-120.612808;46.923111,-120.612792;46.923066,-120.612746;46.922827,-120.612403;46.922697,-120.612188"}

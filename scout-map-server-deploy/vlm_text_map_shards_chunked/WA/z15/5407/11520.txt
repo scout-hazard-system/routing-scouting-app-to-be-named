@@ -1,0 +1,5 @@
+{"meta":{"state":"WA","z":15,"x":5407,"y":11520,"zhs":{"key":"z/15/5407/11520|h3/9/nva2/pfjc|s2/12/f2/20x/29d","z_key":"z/15/5407/11520","h_key":"h3/9/nva2/pfjc","s_key":"s2/12/f2/20x/29d"},"source":"planet","roads":4,"buildings":0,"areas":0,"pois":0}}
+{"type":"road","class":"residential","name":"Faust Road","oneway":false,"pts":"47.040299,-120.592710;47.035077,-120.592648;47.032578,-120.592675"}
+{"type":"road","class":"service","name":"","oneway":false,"pts":"47.038738,-120.592415;47.038705,-120.592353;47.038638,-120.592294;47.038420,-120.592195;47.038332,-120.592136;47.038257,-120.592066;47.038219,-120.592018"}
+{"type":"road","class":"service","name":"","oneway":false,"pts":"47.038764,-120.592691;47.038755,-120.592522"}
+{"type":"road","class":"service","name":"","oneway":false,"pts":"47.038755,-120.592522;47.038738,-120.592415"}

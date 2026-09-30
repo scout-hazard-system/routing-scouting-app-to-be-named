@@ -1,0 +1,297 @@
+{"meta":{"state":"WA","z":15,"x":5248,"y":11442,"zhs":{"key":"z/15/5248/11442|h3/9/nvge/pfq9|s2/12/f2/21c/28o","z_key":"z/15/5248/11442","h_key":"h3/9/nvge/pfq9","s_key":"s2/12/f2/21c/28o"},"source":"planet","roads":976,"buildings":448,"areas":52,"pois":324}}
+{"type":"poi","name":"Recovery Café","kind":"social_facility","lat":47.618274,"lon":-122.334622}
+{"type":"poi","name":"Hotel Max","kind":"hotel","lat":47.614217,"lon":-122.336602}
+{"type":"poi","name":"Midtown Parking","kind":"parking","lat":47.613519,"lon":-122.336162}
+{"type":"poi","name":"Astra Hotel Seattle","kind":"hotel","lat":47.621116,"lon":-122.336787}
+{"type":"poi","name":"Denny Park Lutheran Church","kind":"place_of_worship","lat":47.620012,"lon":-122.341454}
+{"type":"poi","name":"Worldmark Seattle - The Camlin","kind":"hotel","lat":47.613940,"lon":-122.332863}
+{"type":"poi","name":"Diamond Parking","kind":"parking","lat":47.613864,"lon":-122.340000}
+{"type":"poi","name":"Midtown Parking Lot 61","kind":"parking","lat":47.613577,"lon":-122.336430}
+{"type":"poi","name":"Midtown Parking Lot 69","kind":"parking","lat":47.613919,"lon":-122.336133}
+{"type":"poi","name":"Impark","kind":"parking","lat":47.613510,"lon":-122.333107}
+{"type":"poi","name":"Cascade II","kind":"residential","lat":47.620185,"lon":-122.333901}
+{"type":"poi","name":"The Westin Seattle","kind":"hotel","lat":47.613687,"lon":-122.338268}
+{"type":"poi","name":"Warwick Hotel Parking","kind":"parking","lat":47.613758,"lon":-122.340601}
+{"type":"poi","name":"Jiffy Lube","kind":"car_repair","lat":47.613346,"lon":-122.341298}
+{"type":"poi","name":"St Martins On Westlake","kind":"social_facility","lat":47.615515,"lon":-122.337549}
+{"type":"poi","name":"2200 Plaza","kind":"service","lat":47.617871,"lon":-122.337235}
+{"type":"poi","name":"Seattle Glassblowing Studio","kind":"attraction","lat":47.615609,"lon":-122.342969}
+{"type":"poi","name":"Cascade I","kind":"residential","lat":47.620241,"lon":-122.333319}
+{"type":"poi","name":"citizenM","kind":"hotel","lat":47.619967,"lon":-122.338879}
+{"type":"poi","name":"Day 1 Field","kind":"grass","lat":47.615971,"lon":-122.339606}
+{"type":"poi","name":"Denny Substation Dog Park","kind":"dog_park","lat":47.619148,"lon":-122.332702}
+{"type":"poi","name":"Residence Inn Seattle Downtown/Convention Center","kind":"hotel","lat":47.615544,"lon":-122.332804}
+{"type":"poi","name":"REN","kind":"residential","lat":47.618153,"lon":-122.333879}
+{"type":"poi","name":"Chase","kind":"bank","lat":47.614499,"lon":-122.337943}
+{"type":"poi","name":"The Waverly","kind":"residential","lat":47.620225,"lon":-122.340719}
+{"type":"poi","name":"Mirabella Seattle","kind":"social_facility","lat":47.619064,"lon":-122.333625}
+{"type":"poi","name":"Westlake & 7th","kind":"tram_stop","lat":47.615606,"lon":-122.337849}
+{"type":"poi","name":"Westlake & 7th","kind":"tram_stop","lat":47.614995,"lon":-122.337852}
+{"type":"poi","name":"Top Pot Doughnuts","kind":"cafe","lat":47.615150,"lon":-122.341242}
+{"type":"poi","name":"Kati Vegan Thai","kind":"restaurant","lat":47.620930,"lon":-122.333273}
+{"type":"poi","name":"Einstein Bros. Bagels","kind":"fast_food","lat":47.618113,"lon":-122.338965}
+{"type":"poi","name":"Barry's","kind":"fitness_centre","lat":47.618688,"lon":-122.338243}
+{"type":"poi","name":"west elm","kind":"furniture","lat":47.618386,"lon":-122.339662}
+{"type":"poi","name":"Live 2 Dance","kind":"dancing_school","lat":47.621192,"lon":-122.339601}
+{"type":"poi","name":"Banya 5","kind":"spa","lat":47.620341,"lon":-122.339944}
+{"type":"poi","name":"FOB Poke Bar","kind":"fast_food","lat":47.613841,"lon":-122.343841}
+{"type":"poi","name":"Pineapple Bistro and Bar","kind":"restaurant","lat":47.615485,"lon":-122.341768}
+{"type":"poi","name":"First Tech Federal Credit Union","kind":"bank","lat":47.618047,"lon":-122.338828}
+{"type":"poi","name":"Askatu","kind":"cafe","lat":47.614671,"lon":-122.343104}
+{"type":"poi","name":"Kanak","kind":"restaurant","lat":47.614740,"lon":-122.343227}
+{"type":"poi","name":"Luka's","kind":"cafe","lat":47.614884,"lon":-122.343578}
+{"type":"poi","name":"Deli Shez Cafe","kind":"cafe","lat":47.614371,"lon":-122.343152}
+{"type":"poi","name":"Ann Sacks Tile & Stone","kind":"tiles","lat":47.617954,"lon":-122.338691}
+{"type":"poi","name":"Palace Ballroom","kind":"restaurant","lat":47.614707,"lon":-122.340488}
+{"type":"poi","name":"Willmott’s Ghost","kind":"restaurant","lat":47.615391,"lon":-122.339625}
+{"type":"poi","name":"Dzul Ink Lounge","kind":"tattoo","lat":47.613474,"lon":-122.342331}
+{"type":"poi","name":"Nyberg Lock","kind":"locksmith","lat":47.613512,"lon":-122.342412}
+{"type":"poi","name":"Shake Shack","kind":"fast_food","lat":47.617016,"lon":-122.338426}
+{"type":"poi","name":"2120","kind":"restaurant","lat":47.615801,"lon":-122.340333}
+{"type":"poi","name":"Monorail Espresso","kind":"cafe","lat":47.617296,"lon":-122.338042}
+{"type":"poi","name":"The Butcher's Table","kind":"restaurant","lat":47.617542,"lon":-122.338530}
+{"type":"poi","name":"The Moo Bar","kind":"cafe","lat":47.617343,"lon":-122.338050}
+{"type":"poi","name":"The Moo Bar","kind":"ice_cream","lat":47.617388,"lon":-122.338058}
+{"type":"poi","name":"Lady Yum - Amazon Seattle Campus","kind":"restaurant","lat":47.615955,"lon":-122.340617}
+{"type":"poi","name":"Bento World Sushi & Teryaki","kind":"restaurant","lat":47.613483,"lon":-122.342044}
+{"type":"poi","name":"Assaggio Ristorante","kind":"restaurant","lat":47.613427,"lon":-122.340322}
+{"type":"poi","name":"Sephora","kind":"cosmetics","lat":47.616229,"lon":-122.337785}
+{"type":"poi","name":"Palace Kitchen","kind":"restaurant","lat":47.614524,"lon":-122.340175}
+{"type":"poi","name":"Premier Pilates","kind":"sports_centre","lat":47.617123,"lon":-122.336650}
+{"type":"poi","name":"Dimitriou's Jazz Alley","kind":"theatre","lat":47.614816,"lon":-122.339692}
+{"type":"poi","name":"Le Caviste","kind":"bar","lat":47.614709,"lon":-122.337146}
+{"type":"poi","name":"Phở Bắc","kind":"restaurant","lat":47.614765,"lon":-122.337243}
+{"type":"poi","name":"Petra Mediterranean Bistro","kind":"fast_food","lat":47.614846,"lon":-122.337463}
+{"type":"poi","name":"Barolo Ristorante","kind":"restaurant","lat":47.614599,"lon":-122.337460}
+{"type":"poi","name":"Miller's Guild","kind":"restaurant","lat":47.614123,"lon":-122.336634}
+{"type":"poi","name":"Downtown Spirits","kind":"alcohol","lat":47.613812,"lon":-122.335728}
+{"type":"poi","name":"KinderCare","kind":"kindergarten","lat":47.614573,"lon":-122.335068}
+{"type":"poi","name":"Zane+Wylie's Seattle Steakhouse","kind":"restaurant","lat":47.613613,"lon":-122.335443}
+{"type":"poi","name":"A Pizza Mart - Stewart","kind":"restaurant","lat":47.616067,"lon":-122.333539}
+{"type":"poi","name":"First Church of Christ, Scientist","kind":"place_of_worship","lat":47.621006,"lon":-122.339550}
+{"type":"poi","name":"Seeking Kombucha","kind":"cafe","lat":47.620654,"lon":-122.336127}
+{"type":"poi","name":"BECU","kind":"bank","lat":47.618878,"lon":-122.338249}
+{"type":"poi","name":"Sushi Katsu-ya","kind":"restaurant","lat":47.619383,"lon":-122.338233}
+{"type":"poi","name":"The Victor Tavern","kind":"pub","lat":47.615195,"lon":-122.340100}
+{"type":"poi","name":"Kitchen Counter","kind":"fast_food","lat":47.615291,"lon":-122.340446}
+{"type":"poi","name":"Starbucks","kind":"cafe","lat":47.614300,"lon":-122.335886}
+{"type":"poi","name":"Brasserie Margaux","kind":"restaurant","lat":47.613939,"lon":-122.340963}
+{"type":"poi","name":"CaffeUmbria","kind":"cafe","lat":47.613584,"lon":-122.335529}
+{"type":"poi","name":"Cafe Madeline","kind":"fast_food","lat":47.615081,"lon":-122.337058}
+{"type":"poi","name":"Discovery Portal","kind":"museum","lat":47.615938,"lon":-122.334652}
+{"type":"poi","name":"Herkimer Coffee","kind":"cafe","lat":47.614116,"lon":-122.342304}
+{"type":"poi","name":"Vinason","kind":"restaurant","lat":47.617607,"lon":-122.338112}
+{"type":"poi","name":"BB's Teriyaki Grill","kind":"restaurant","lat":47.620245,"lon":-122.338262}
+{"type":"poi","name":"Mello Fellos Bike Shop","kind":"bicycle","lat":47.615711,"lon":-122.340923}
+{"type":"poi","name":"Taco Del Mar","kind":"fast_food","lat":47.615817,"lon":-122.334467}
+{"type":"poi","name":"Gethsemane Lutheran Church","kind":"place_of_worship","lat":47.615741,"lon":-122.333995}
+{"type":"poi","name":"Umpqua Bank","kind":"bank","lat":47.619880,"lon":-122.338201}
+{"type":"poi","name":"Chipotle","kind":"fast_food","lat":47.620364,"lon":-122.338262}
+{"type":"poi","name":"Flight Club","kind":"restaurant","lat":47.621022,"lon":-122.338066}
+{"type":"poi","name":"Marination","kind":"restaurant","lat":47.614638,"lon":-122.338372}
+{"type":"poi","name":"Cinque Terre","kind":"restaurant","lat":47.615083,"lon":-122.338074}
+{"type":"poi","name":"Great State Burger - Downtown","kind":"restaurant","lat":47.615461,"lon":-122.338506}
+{"type":"poi","name":"King Leroy","kind":"restaurant","lat":47.615560,"lon":-122.338632}
+{"type":"poi","name":"Café Amazon","kind":"cafe","lat":47.615624,"lon":-122.336009}
+{"type":"poi","name":"Caffe Ladro","kind":"cafe","lat":47.615260,"lon":-122.333509}
+{"type":"poi","name":"Citydog! Club","kind":"veterinary","lat":47.614293,"lon":-122.333002}
+{"type":"poi","name":"Market Fresh","kind":"restaurant","lat":47.614181,"lon":-122.334732}
+{"type":"poi","name":"Midtown Espresso","kind":"cafe","lat":47.615051,"lon":-122.341787}
+{"type":"poi","name":"Papa poy-yo","kind":"restaurant","lat":47.621192,"lon":-122.340035}
+{"type":"poi","name":"Blink","kind":"charging_station","lat":47.618000,"lon":-122.338104}
+{"type":"poi","name":"Greenlots","kind":"charging_station","lat":47.617994,"lon":-122.337905}
+{"type":"poi","name":"FedEx Office","kind":"copyshop","lat":47.617949,"lon":-122.336768}
+{"type":"poi","name":"Hyatt at Olive 8","kind":"hotel","lat":47.613711,"lon":-122.334166}
+{"type":"poi","name":"Poke Alice 2","kind":"restaurant","lat":47.614490,"lon":-122.338895}
+{"type":"poi","name":"Xfinity","kind":"telecommunication","lat":47.618027,"lon":-122.337951}
+{"type":"poi","name":"Dryp Yoga","kind":"fitness_centre","lat":47.617896,"lon":-122.337667}
+{"type":"poi","name":"Astound Broadband","kind":"telecommunication","lat":47.617754,"lon":-122.337393}
+{"type":"poi","name":"Bank of America","kind":"bank","lat":47.618030,"lon":-122.338155}
+{"type":"poi","name":"Swan Healthy Gourmet","kind":"beverages","lat":47.617692,"lon":-122.337686}
+{"type":"poi","name":"Potbelly","kind":"fast_food","lat":47.614855,"lon":-122.338748}
+{"type":"poi","name":"Starbucks","kind":"cafe","lat":47.615237,"lon":-122.338117}
+{"type":"poi","name":"Evergreens","kind":"fast_food","lat":47.615188,"lon":-122.339228}
+{"type":"poi","name":"Olympia Coffee Roasting Company","kind":"cafe","lat":47.614886,"lon":-122.338128}
+{"type":"poi","name":"Artly Coffee @ Hill7","kind":"cafe","lat":47.616745,"lon":-122.332662}
+{"type":"poi","name":"nohm sushi","kind":"deli","lat":47.616703,"lon":-122.332710}
+{"type":"poi","name":"Pow Bao","kind":"restaurant","lat":47.614732,"lon":-122.338187}
+{"type":"poi","name":"Paninoteca","kind":"restaurant","lat":47.614749,"lon":-122.338235}
+{"type":"poi","name":"Juicy Cafe","kind":"beverages","lat":47.614000,"lon":-122.334687}
+{"type":"poi","name":"Mr West Cafe Bar","kind":"cafe","lat":47.614112,"lon":-122.334494}
+{"type":"poi","name":"Anar Juice","kind":"beverages","lat":47.615065,"lon":-122.338485}
+{"type":"poi","name":"Café an' Clair","kind":"cafe","lat":47.621138,"lon":-122.339987}
+{"type":"poi","name":"Flight Club","kind":"sports_centre","lat":47.621071,"lon":-122.338198}
+{"type":"poi","name":"U.S. Bank","kind":"bank","lat":47.616284,"lon":-122.343087}
+{"type":"poi","name":"Gyo Gyo En","kind":"restaurant","lat":47.616372,"lon":-122.337366}
+{"type":"poi","name":"Urban Donburi Kitchen","kind":"restaurant","lat":47.613893,"lon":-122.337168}
+{"type":"poi","name":"Toast To Toast","kind":"cafe","lat":47.620138,"lon":-122.342650}
+{"type":"poi","name":"Metropolitan Towers Apartments Parking Garage","kind":"parking_entrance","lat":47.614546,"lon":-122.336790}
+{"type":"poi","name":"Orangetheory Fitness","kind":"fitness_centre","lat":47.616454,"lon":-122.343383}
+{"type":"poi","name":"Transform 180","kind":"fitness_centre","lat":47.620995,"lon":-122.333960}
+{"type":"poi","name":"Urban Sushi Kitchen","kind":"restaurant","lat":47.615917,"lon":-122.337162}
+{"type":"poi","name":"Doce Donut Co.","kind":"fast_food","lat":47.616745,"lon":-122.342626}
+{"type":"poi","name":"Mi Plus","kind":"cafe","lat":47.621097,"lon":-122.338721}
+{"type":"poi","name":"The Market Hall","kind":"restaurant","lat":47.613830,"lon":-122.333595}
+{"type":"poi","name":"Tidal Seafood","kind":"restaurant","lat":47.613854,"lon":-122.334142}
+{"type":"poi","name":"Anchorhead Coffee Co","kind":"cafe","lat":47.613374,"lon":-122.334676}
+{"type":"poi","name":"FedEx Office","kind":"copyshop","lat":47.613713,"lon":-122.338206}
+{"type":"poi","name":"Corner Stone Cafe & Deli","kind":"cafe","lat":47.617197,"lon":-122.343517}
+{"type":"poi","name":"SoulCycle","kind":"fitness_centre","lat":47.617152,"lon":-122.337356}
+{"type":"poi","name":"Pandora Fitness","kind":"fitness_centre","lat":47.615723,"lon":-122.336296}
+{"type":"poi","name":"Maíz","kind":"restaurant","lat":47.617000,"lon":-122.343093}
+{"type":"poi","name":"Jack’s BBQ","kind":"restaurant","lat":47.620455,"lon":-122.339617}
+{"type":"poi","name":"General Porpoise Doughnuts - Amazon Spheres","kind":"cafe","lat":47.615577,"lon":-122.339534}
+{"type":"poi","name":"Mendocino Farms","kind":"restaurant","lat":47.617218,"lon":-122.338040}
+{"type":"poi","name":"Wild Ginger - McKenzie","kind":"restaurant","lat":47.617501,"lon":-122.339249}
+{"type":"poi","name":"Deep Dive","kind":"bar","lat":47.615604,"lon":-122.339324}
+{"type":"poi","name":"Victrola Coffee Roasters","kind":"cafe","lat":47.621010,"lon":-122.334754}
+{"type":"poi","name":"Nana’s Green Tea","kind":"cafe","lat":47.616172,"lon":-122.333048}
+{"type":"poi","name":"Sweetgreen","kind":"fast_food","lat":47.616497,"lon":-122.337653}
+{"type":"poi","name":"Daniel's Broiler","kind":"restaurant","lat":47.614524,"lon":-122.334156}
+{"type":"poi","name":"Andare","kind":"restaurant","lat":47.614631,"lon":-122.334306}
+{"type":"poi","name":"Fulcrum Coffee","kind":"cafe","lat":47.616642,"lon":-122.342594}
+{"type":"poi","name":"The Sound Hotel Seattle Belltown","kind":"hotel","lat":47.614378,"lon":-122.341883}
+{"type":"poi","name":"Currant Bistro","kind":"restaurant","lat":47.614331,"lon":-122.341795}
+{"type":"poi","name":"Thomas Street Warehouse","kind":"pub","lat":47.620749,"lon":-122.339236}
+{"type":"poi","name":"45th Stop N Shop","kind":"restaurant","lat":47.618144,"lon":-122.337364}
+{"type":"poi","name":"Subway","kind":"fast_food","lat":47.615692,"lon":-122.334896}
+{"type":"poi","name":"Urban Animal","kind":"veterinary","lat":47.616275,"lon":-122.340979}
+{"type":"poi","name":"Casco Antiguo","kind":"restaurant","lat":47.616208,"lon":-122.338925}
+{"type":"poi","name":"Bright Horizons","kind":"kindergarten","lat":47.616712,"lon":-122.339281}
+{"type":"poi","name":"Joe & the Juice","kind":"beverages","lat":47.616443,"lon":-122.339107}
+{"type":"poi","name":"Gage Academy of Art","kind":"school","lat":47.616550,"lon":-122.338498}
+{"type":"poi","name":"Sub Pop on 7th","kind":"music","lat":47.616517,"lon":-122.339558}
+{"type":"poi","name":"District H","kind":"food_court","lat":47.618690,"lon":-122.337447}
+{"type":"poi","name":"The Halal Guys","kind":"fast_food","lat":47.621039,"lon":-122.341296}
+{"type":"poi","name":"Urban Gyro","kind":"cafe","lat":47.620502,"lon":-122.334059}
+{"type":"poi","name":"Evergreens","kind":"fast_food","lat":47.620655,"lon":-122.336242}
+{"type":"poi","name":"The Deck","kind":"food_court","lat":47.620708,"lon":-122.336259}
+{"type":"poi","name":"Hotel Max breakfast","kind":"cafe","lat":47.614288,"lon":-122.336578}
+{"type":"poi","name":"Tous les Jours","kind":"cafe","lat":47.618810,"lon":-122.337436}
+{"type":"poi","name":"MBR Bike Shop","kind":"bicycle","lat":47.615951,"lon":-122.335355}
+{"type":"poi","name":"Grumpy Bean","kind":"cafe","lat":47.615848,"lon":-122.334424}
+{"type":"poi","name":"ISMMA","kind":"fitness_centre","lat":47.620773,"lon":-122.340899}
+{"type":"poi","name":"The Sanctuary at Denny Park","kind":"events_venue","lat":47.620001,"lon":-122.341280}
+{"type":"poi","name":"Kitanda","kind":"cafe","lat":47.617685,"lon":-122.339644}
+{"type":"poi","name":"Likelihood","kind":"shoes","lat":47.616604,"lon":-122.340515}
+{"type":"poi","name":"Sushi By Scratch","kind":"caterer","lat":47.617085,"lon":-122.343232}
+{"type":"poi","name":"The Cottontail","kind":"bar","lat":47.614749,"lon":-122.343734}
+{"type":"poi","name":"Capsule","kind":"pharmacy","lat":47.614642,"lon":-122.339204}
+{"type":"poi","name":"Mala & Satay","kind":"restaurant","lat":47.620332,"lon":-122.333979}
+{"type":"poi","name":"Momiji SLU","kind":"restaurant","lat":47.617736,"lon":-122.340513}
+{"type":"poi","name":"Happy Lemon","kind":"cafe","lat":47.617457,"lon":-122.340341}
+{"type":"poi","name":"House of Eve","kind":"restaurant","lat":47.617238,"lon":-122.339531}
+{"type":"poi","name":"Caffe Ladro","kind":"cafe","lat":47.621156,"lon":-122.336977}
+{"type":"poi","name":"BENTOFUL","kind":"restaurant","lat":47.614199,"lon":-122.334850}
+{"type":"poi","name":"Red Light Camera","kind":"speed_camera","lat":47.618459,"lon":-122.334837}
+{"type":"poi","name":"Tonbi","kind":"fountain","lat":47.616436,"lon":-122.339306}
+{"type":"poi","name":"Mainstay Provisions","kind":"cafe","lat":47.617085,"lon":-122.341317}
+{"type":"poi","name":"Phocific Standard Time","kind":"bar","lat":47.614703,"lon":-122.337272}
+{"type":"poi","name":"Evoke Cafe Bar","kind":"cafe","lat":47.620482,"lon":-122.339595}
+{"type":"poi","name":"Drift","kind":"restaurant","lat":47.618309,"lon":-122.337704}
+{"type":"poi","name":"La Loba","kind":"restaurant","lat":47.618249,"lon":-122.337428}
+{"type":"poi","name":"HEYTEA (South Lake Union)","kind":"cafe","lat":47.619858,"lon":-122.339563}
+{"type":"poi","name":"Fob Sushi Bar","kind":"restaurant","lat":47.614036,"lon":-122.341993}
+{"type":"poi","name":"Social Fabric","kind":"cafe","lat":47.618325,"lon":-122.333547}
+{"type":"poi","name":"The Escape Game","kind":"escape_game","lat":47.616365,"lon":-122.338348}
+{"type":"poi","name":"Thai Thani Kitchen","kind":"restaurant","lat":47.619954,"lon":-122.336098}
+{"type":"poi","name":"Cascade P-Patch","kind":"allotments","lat":47.621057,"lon":-122.332630}
+{"type":"poi","name":"Westlake Square","kind":"park","lat":47.613622,"lon":-122.337289}
+{"type":"poi","name":"The Park at Onni South Lake Union","kind":"park","lat":47.619451,"lon":-122.334813}
+{"type":"poi","name":"Stadium Market","kind":"convenience","lat":47.618911,"lon":-122.344064}
+{"type":"poi","name":"Just Poke","kind":"restaurant","lat":47.614573,"lon":-122.333222}
+{"type":"poi","name":"El Grito Taqueria","kind":"restaurant","lat":47.620690,"lon":-122.333987}
+{"type":"poi","name":"Black Market Skateboards","kind":"sports","lat":47.618406,"lon":-122.342720}
+{"type":"poi","name":"Westlake Avenue & 9th Avenue","kind":"platform","lat":47.617929,"lon":-122.338496}
+{"type":"poi","name":"Westlake Avenue & 9th Avenue","kind":"platform","lat":47.618227,"lon":-122.338345}
+{"type":"poi","name":"Spruce Street School","kind":"school","lat":47.616969,"lon":-122.335494}
+{"type":"poi","name":"Urban Triangle Park","kind":"park","lat":47.617049,"lon":-122.337922}
+{"type":"poi","name":"South Lake Union Dog Park","kind":"dog_park","lat":47.619408,"lon":-122.341092}
+{"type":"poi","name":"Day 1 Dog Park","kind":"dog_park","lat":47.615747,"lon":-122.339877}
+{"type":"poi","name":"Cornish College of the Arts at Seattle University","kind":"college","lat":47.616801,"lon":-122.335867}
+{"type":"poi","name":"Simply Dental","kind":"doctors","lat":47.618706,"lon":-122.342843}
+{"type":"poi","name":"Oculus Eyecare","kind":"optician","lat":47.618703,"lon":-122.342677}
+{"type":"poi","name":"Winston Wächter Fine Art","kind":"art","lat":47.619896,"lon":-122.342650}
+{"type":"poi","name":"Oui Salon & Spa","kind":"hairdresser","lat":47.614020,"lon":-122.343957}
+{"type":"poi","name":"Mermaid Hair Extensions","kind":"beauty","lat":47.617522,"lon":-122.338091}
+{"type":"poi","name":"Brow Arc","kind":"beauty","lat":47.617566,"lon":-122.338099}
+{"type":"poi","name":"Perfection Nails Salon","kind":"beauty","lat":47.614991,"lon":-122.341693}
+{"type":"poi","name":"Globe Optical","kind":"optician","lat":47.614094,"lon":-122.339394}
+{"type":"poi","name":"Fantasy Unlimited","kind":"clothes","lat":47.615698,"lon":-122.338168}
+{"type":"poi","name":"Dentist Downtown Seattle","kind":"dentist","lat":47.616023,"lon":-122.338243}
+{"type":"poi","name":"Urban Rest Stop Care","kind":"social_facility","lat":47.616260,"lon":-122.335239}
+{"type":"poi","name":"Buki Pop-Up Shop","kind":"clothes","lat":47.613577,"lon":-122.336680}
+{"type":"poi","name":"Mary's Place","kind":"social_facility","lat":47.615524,"lon":-122.333971}
+{"type":"poi","name":"SPEX","kind":"optician","lat":47.613713,"lon":-122.336642}
+{"type":"poi","name":"Young Flower","kind":"florist","lat":47.613752,"lon":-122.336594}
+{"type":"poi","name":"ZoomCare","kind":"clinic","lat":47.618951,"lon":-122.338251}
+{"type":"poi","name":"Weldon","kind":"hairdresser","lat":47.613953,"lon":-122.337291}
+{"type":"poi","name":"7-Eleven","kind":"convenience","lat":47.616052,"lon":-122.335894}
+{"type":"poi","name":"Rudy's","kind":"hairdresser","lat":47.615649,"lon":-122.340824}
+{"type":"poi","name":"Dr. Mark A. Matthews","kind":"memorial","lat":47.618712,"lon":-122.341108}
+{"type":"poi","name":"Abyssinia Market","kind":"convenience","lat":47.615154,"lon":-122.343959}
+{"type":"poi","name":"Sola Salon Studios","kind":"hairdresser","lat":47.615899,"lon":-122.333284}
+{"type":"poi","name":"Funny Bunny","kind":"beauty","lat":47.617862,"lon":-122.336892}
+{"type":"poi","name":"Queen Bee","kind":"beauty","lat":47.617757,"lon":-122.337015}
+{"type":"poi","name":"Robert Leonard Salon & Day Spa","kind":"hairdresser","lat":47.614581,"lon":-122.339153}
+{"type":"poi","name":"E-Brow Lounge","kind":"beauty","lat":47.617812,"lon":-122.336948}
+{"type":"poi","name":"Amazing Lash Studio","kind":"beauty","lat":47.617987,"lon":-122.337833}
+{"type":"poi","name":"Salon Refine","kind":"beauty","lat":47.617960,"lon":-122.337779}
+{"type":"poi","name":"2200 Westlake Dentistry","kind":"dentist","lat":47.617927,"lon":-122.337728}
+{"type":"poi","name":"Goodsoul","kind":"clothes","lat":47.617495,"lon":-122.337345}
+{"type":"poi","name":"Capelli's","kind":"hairdresser","lat":47.615081,"lon":-122.339078}
+{"type":"poi","name":"Market pl","kind":"convenience","lat":47.614826,"lon":-122.338211}
+{"type":"poi","name":"Avenue Smiles","kind":"dentist","lat":47.616022,"lon":-122.337358}
+{"type":"poi","name":"Amazon Go","kind":"convenience","lat":47.616260,"lon":-122.339866}
+{"type":"poi","name":"Belltown Modern Dentistry","kind":"dentist","lat":47.616627,"lon":-122.343739}
+{"type":"poi","name":"Giant Popsicle","kind":"artwork","lat":47.614394,"lon":-122.342618}
+{"type":"poi","name":"Gene Juarez","kind":"hairdresser","lat":47.616906,"lon":-122.342929}
+{"type":"poi","name":"The Market","kind":"convenience","lat":47.614463,"lon":-122.334089}
+{"type":"poi","name":"Re-Stack","kind":"artwork","lat":47.620983,"lon":-122.340057}
+{"type":"poi","name":"Jax","kind":"hairdresser","lat":47.616202,"lon":-122.333118}
+{"type":"poi","name":"Structure Salon","kind":"hairdresser","lat":47.614562,"lon":-122.342983}
+{"type":"poi","name":"Refine Nails and Spa","kind":"beauty","lat":47.616371,"lon":-122.339094}
+{"type":"poi","name":"Transforest","kind":"artwork","lat":47.618748,"lon":-122.332836}
+{"type":"poi","name":"Rubinstein Bagels","kind":"bakery","lat":47.615175,"lon":-122.340011}
+{"type":"poi","name":"The Seattle Barkery","kind":"bakery","lat":47.617378,"lon":-122.339839}
+{"type":"poi","name":"Pillar Arc","kind":"artwork","lat":47.614642,"lon":-122.336116}
+{"type":"poi","name":"One Medical","kind":"clinic","lat":47.618672,"lon":-122.337750}
+{"type":"poi","name":"Elephant Super Sign","kind":"artwork","lat":47.616815,"lon":-122.340051}
+{"type":"poi","name":"Waxology","kind":"beauty","lat":47.616906,"lon":-122.341022}
+{"type":"poi","name":"Kinwell","kind":"clinic","lat":47.620570,"lon":-122.338246}
+{"type":"poi","name":"Innovative Dentistry","kind":"dentist","lat":47.616213,"lon":-122.340859}
+{"type":"poi","name":"Universal Adaptor","kind":"artwork","lat":47.618430,"lon":-122.339244}
+{"type":"poi","name":"Yuki's Diffusion","kind":"hairdresser","lat":47.615013,"lon":-122.343683}
+{"type":"poi","name":"Tetris Mural","kind":"artwork","lat":47.613696,"lon":-122.333590}
+{"type":"poi","name":"Petros","kind":"artwork","lat":47.615378,"lon":-122.338359}
+{"type":"poi","name":"Mike's Song","kind":"artwork","lat":47.614969,"lon":-122.339625}
+{"type":"poi","name":"Seattle Doesn’t Settle","kind":"artwork","lat":47.614083,"lon":-122.336755}
+{"type":"poi","name":"Bouquet","kind":"florist","lat":47.616595,"lon":-122.339713}
+{"type":"poi","name":"Swami Vivekananda","kind":"artwork","lat":47.613676,"lon":-122.337361}
+{"type":"poi","name":"Westlake & 9th-Denny","kind":"bus_stop","lat":47.617896,"lon":-122.338455}
+{"type":"poi","name":"Westlake & 9th-Denny","kind":"bus_stop","lat":47.618289,"lon":-122.338386}
+{"type":"poi","name":"Olive Way & 8th Avenue","kind":"bus_stop","lat":47.613926,"lon":-122.334185}
+{"type":"poi","name":"Howell Street & 9th Avenue'","kind":"bus_stop","lat":47.614631,"lon":-122.333297}
+{"type":"poi","name":"Virginia Street & 6th Avenue","kind":"bus_stop","lat":47.614217,"lon":-122.338412}
+{"type":"poi","name":"Stewart Street & 7th Avenue","kind":"bus_stop","lat":47.614465,"lon":-122.336055}
+{"type":"poi","name":"Dexter Avenue North & Denny Way","kind":"bus_stop","lat":47.619028,"lon":-122.342248}
+{"type":"poi","name":"Denny Way & Westlake Avenue","kind":"bus_stop","lat":47.618627,"lon":-122.338992}
+{"type":"poi","name":"Denny Way & Westlake Avenue","kind":"bus_stop","lat":47.618468,"lon":-122.337994}
+{"type":"poi","name":"Lenora St & 4th Ave","kind":"bus_stop","lat":47.614007,"lon":-122.341242}
+{"type":"poi","name":"Dexter Avenue & Denny Way","kind":"bus_stop","lat":47.618224,"lon":-122.342586}
+{"type":"poi","name":"Denny Way & Dexter Avenue","kind":"bus_stop","lat":47.618482,"lon":-122.342760}
+{"type":"poi","name":"Virginia St & 9th Ave","kind":"bus_stop","lat":47.616533,"lon":-122.335398}
+{"type":"poi","name":"Stewart Street & 9th Avenue","kind":"bus_stop","lat":47.615788,"lon":-122.334432}
+{"type":"poi","name":"Denny Way & Fairview Avenue North","kind":"bus_stop","lat":47.618631,"lon":-122.334014}
+{"type":"poi","name":"Denny Way & Fairview Avenue","kind":"bus_stop","lat":47.618453,"lon":-122.334593}
+{"type":"poi","name":"Pine Street & 9th Avenue","kind":"bus_stop","lat":47.613412,"lon":-122.332514}
+{"type":"poi","name":"Fairview Ave & Denny Way","kind":"bus_stop","lat":47.618363,"lon":-122.334180}
+{"type":"poi","name":"Boren Avenue & Virginia Street","kind":"bus_stop","lat":47.617491,"lon":-122.333794}
+{"type":"poi","name":"Fairview Avenue North & Thomas Street","kind":"bus_stop","lat":47.620536,"lon":-122.334419}
+{"type":"poi","name":"Blanchard Street & 6th Avenue","kind":"bus_stop","lat":47.615790,"lon":-122.341009}
+{"type":"poi","name":"7th Avenue North & Denny Way","kind":"bus_stop","lat":47.619075,"lon":-122.343511}
+{"type":"poi","name":"7th Avenue North & Thomas Street","kind":"bus_stop","lat":47.621109,"lon":-122.343881}
+{"type":"poi","name":"7th Avenue & Blanchard Street","kind":"bus_stop","lat":47.616931,"lon":-122.340494}
+{"type":"poi","name":"4th Ave & Lenora St","kind":"bus_stop","lat":47.614150,"lon":-122.341728}
+{"type":"poi","name":"7th Avenue & Blanchard Street","kind":"bus_stop","lat":47.616363,"lon":-122.339813}
+{"type":"poi","name":"Denny Way & 7th Avenue North","kind":"bus_stop","lat":47.618625,"lon":-122.343324}

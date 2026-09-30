@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-ROOT_DIR="/home/gibi/Desktop"
+ROOT_DIR="${ROOT_DIR:-$(pwd)}"
 STACK_SCRIPT="$ROOT_DIR/start_termius_stack.sh"
 
 usage() {

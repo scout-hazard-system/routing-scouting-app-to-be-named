@@ -1,0 +1,2 @@
+{"meta":{"state":"WA","z":15,"x":5424,"y":11532,"zhs":{"key":"z/15/5424/11532|h3/9/nv9n/pfia|s2/12/f2/20v/29g","z_key":"z/15/5424/11532","h_key":"h3/9/nv9n/pfia","s_key":"s2/12/f2/20v/29g"},"source":"planet","roads":1,"buildings":0,"areas":0,"pois":0}}
+{"type":"road","class":"tertiary","name":"Badger Pocket Road","oneway":false,"pts":"46.942645,-120.401624;46.946078,-120.401640;46.950379,-120.401675"}

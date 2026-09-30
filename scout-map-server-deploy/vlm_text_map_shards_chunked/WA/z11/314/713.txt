@@ -1,0 +1,4 @@
+{"meta":{"state":"WA","z":11,"x":314,"y":713,"zhs":{"key":"z/11/314/713|h3/9/nvuu/pfsl|s2/12/f2/225/282","z_key":"z/11/314/713","h_key":"h3/9/nvuu/pfsl","s_key":"s2/12/f2/225/282"},"source":"planet","roads":0,"buildings":0,"areas":2,"pois":1}}
+{"type":"area","kind":"park","pts":"47.873986,-124.807434;47.873986,-124.626160;47.752251,-124.626160;47.752251,-124.807434"}
+{"type":"area","kind":"water","pts":"47.875829,-124.810181;47.875829,-124.623413;47.750405,-124.623413;47.750405,-124.810181"}
+{"type":"poi","name":"Olympic Coast National Marine Sanctuary","kind":"nature_reserve","lat":47.822059,"lon":-124.794774}

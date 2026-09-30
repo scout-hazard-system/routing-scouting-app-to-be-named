@@ -1,0 +1,4 @@
+{"meta":{"state":"WA","z":15,"x":5407,"y":11509,"zhs":{"key":"z/15/5407/11509|h3/9/nv99/pfkb|s2/12/f2/20v/29b","z_key":"z/15/5407/11509","h_key":"h3/9/nv99/pfkb","s_key":"s2/12/f2/20v/29b"},"source":"planet","roads":3,"buildings":0,"areas":0,"pois":0}}
+{"type":"road","class":"tertiary","name":"Reecer Creek Road","oneway":false,"pts":"47.117356,-120.597095;47.117475,-120.585766"}
+{"type":"road","class":"service","name":"","oneway":false,"pts":"47.118221,-120.589615;47.117435,-120.589467"}
+{"type":"road","class":"service","name":"","oneway":false,"pts":"47.114883,-120.587244;47.115095,-120.587351;47.115160,-120.587423;47.115191,-120.587539;47.115228,-120.588966"}

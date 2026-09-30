@@ -1,0 +1,3 @@
+{"meta":{"state":"WA","z":15,"x":5430,"y":11523,"zhs":{"key":"z/15/5430/11523|h3/9/nv8j/pfj3|s2/12/f2/20t/29f","z_key":"z/15/5430/11523","h_key":"h3/9/nv8j/pfj3","s_key":"s2/12/f2/20t/29f"},"source":"planet","roads":2,"buildings":0,"areas":0,"pois":0}}
+{"type":"road","class":"residential","name":"Christensen Road","oneway":false,"pts":"47.016169,-120.344410;47.016049,-120.333080"}
+{"type":"road","class":"path","name":"","oneway":false,"pts":"47.017833,-120.333783;47.017371,-120.333169;47.017274,-120.333080"}

@@ -1385,14 +1385,16 @@ final class ProprietaryMapEngine {
   }
 
   private static String textMapShardRootsJson() {
+    String repoRoot = System.getenv("SCOUT_REPO_ROOT");
+    if (repoRoot == null || repoRoot.isBlank()) {
+      repoRoot = System.getProperty("user.dir");
+    }
     String rootsEnv =
         System.getenv()
             .getOrDefault(
                 "SCOUT_TEXT_MAP_SHARD_ROOTS",
-                System.getProperty("user.home", "/home/gibi")
-                    + "/Desktop/vlm_text_map_shards,"
-                    + System.getProperty("user.home", "/home/gibi")
-                    + "/Desktop/vlm_text_map_shards_chunked");
+                repoRoot + "/vlm_text_map_shards,"
+                    + repoRoot + "/vlm_text_map_shards_chunked");
     String[] roots = rootsEnv.split(",");
     StringBuilder sb = new StringBuilder();
     sb.append('[');

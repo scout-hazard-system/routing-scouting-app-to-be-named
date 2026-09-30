@@ -1,0 +1,190 @@
+{"meta":{"state":"NJ","z":15,"x":9647,"y":12318,"zhs":{"key":"z/15/9647/12318|h3/9/nmrr/pdgb|s2/12/f4/uf/1uz","z_key":"z/15/9647/12318","h_key":"h3/9/nmrr/pdgb","s_key":"s2/12/f4/uf/1uz"},"source":"planet","roads":627,"buildings":764,"areas":190,"pois":220}}
+{"type":"poi","name":"Ear Inn","kind":"bar","lat":40.725903,"lon":-74.009488}
+{"type":"poi","name":"Ponte's","kind":"restaurant","lat":40.723423,"lon":-74.010480}
+{"type":"poi","name":"Modernhaus SoHo","kind":"hotel","lat":40.722630,"lon":-74.004845}
+{"type":"poi","name":"Port Sa'id","kind":"restaurant","lat":40.727903,"lon":-74.007028}
+{"type":"poi","name":"Sullivan Taqueria","kind":"fast_food","lat":40.724458,"lon":-74.003922}
+{"type":"poi","name":"Ba‘al Cafe & Falafel","kind":"fast_food","lat":40.724480,"lon":-74.003901}
+{"type":"poi","name":"Taureau","kind":"restaurant","lat":40.724466,"lon":-74.005663}
+{"type":"poi","name":"CBD Kratom","kind":"cannabis","lat":40.725826,"lon":-74.004121}
+{"type":"poi","name":"Chuva Shoe & Hand Bag Repair","kind":"shoe_repair","lat":40.726732,"lon":-74.003753}
+{"type":"poi","name":"The Wne Hut","kind":"alcohol","lat":40.726836,"lon":-74.003713}
+{"type":"poi","name":"Napoli Pizza","kind":"fast_food","lat":40.729169,"lon":-74.005030}
+{"type":"poi","name":"Taco Bell","kind":"fast_food","lat":40.729263,"lon":-74.005006}
+{"type":"poi","name":"Renewing Wellness","kind":"massage","lat":40.728678,"lon":-74.005017}
+{"type":"poi","name":"Daily Provisions","kind":"cafe","lat":40.729245,"lon":-74.003702}
+{"type":"poi","name":"Ueki","kind":"restaurant","lat":40.729200,"lon":-74.003893}
+{"type":"poi","name":"Ama on Downing","kind":"restaurant","lat":40.729314,"lon":-74.003963}
+{"type":"poi","name":"McDonald's","kind":"fast_food","lat":40.728824,"lon":-74.005084}
+{"type":"poi","name":"Carmine Street Beers","kind":"bar","lat":40.729842,"lon":-74.003638}
+{"type":"poi","name":"Art Projects International","kind":"gallery","lat":40.722636,"lon":-74.009815}
+{"type":"poi","name":"SoHo 54 Hotel","kind":"hotel","lat":40.723819,"lon":-74.005258}
+{"type":"poi","name":"Bisou Wine Bar","kind":"bar","lat":40.723742,"lon":-74.004461}
+{"type":"poi","name":"Kushie Punch","kind":"cannabis","lat":40.723848,"lon":-74.004381}
+{"type":"poi","name":"The Market Table","kind":"restaurant","lat":40.729779,"lon":-74.003743}
+{"type":"poi","name":"The Grey Dog","kind":"restaurant","lat":40.730005,"lon":-74.003914}
+{"type":"poi","name":"Citi Bike - 6 Ave & Broome St","kind":"bicycle_rental","lat":40.724458,"lon":-74.004681}
+{"type":"poi","name":"Citi Bike - Greenwich Street & West Houston Street","kind":"bicycle_rental","lat":40.728734,"lon":-74.008557}
+{"type":"poi","name":"Citi Bike - Watts St & Greenwich St","kind":"bicycle_rental","lat":40.724055,"lon":-74.009660}
+{"type":"poi","name":"FIKA Tribeca & Chocolate Factory","kind":"cafe","lat":40.723712,"lon":-74.010427}
+{"type":"poi","name":"La Loteria","kind":"restaurant","lat":40.730793,"lon":-74.004204}
+{"type":"poi","name":"Greenwich & Desbrosses El 1881","kind":"other","lat":40.723464,"lon":-74.009491}
+{"type":"poi","name":"Jerrell's BETR BRGR","kind":"fast_food","lat":40.723907,"lon":-74.004899}
+{"type":"poi","name":"Piora","kind":"restaurant","lat":40.730625,"lon":-74.006532}
+{"type":"poi","name":"Berimbau do Brasil","kind":"restaurant","lat":40.730062,"lon":-74.003670}
+{"type":"poi","name":"Black Tap","kind":"restaurant","lat":40.723870,"lon":-74.004215}
+{"type":"poi","name":"Canal Street","kind":"stop","lat":40.722258,"lon":-74.006406}
+{"type":"poi","name":"Houston Street","kind":"stop","lat":40.729110,"lon":-74.005156}
+{"type":"poi","name":"La Sirène","kind":"restaurant","lat":40.724470,"lon":-74.005711}
+{"type":"poi","name":"David Burke Kitchen","kind":"restaurant","lat":40.722781,"lon":-74.004875}
+{"type":"poi","name":"Village Community Boathouse","kind":"boat_rental","lat":40.728440,"lon":-74.013326}
+{"type":"poi","name":"The River Project Wetlab","kind":"aquarium","lat":40.728456,"lon":-74.013530}
+{"type":"poi","name":"P3 Batting Cage","kind":"sports_centre","lat":40.728413,"lon":-74.013004}
+{"type":"poi","name":"New York Kayak Company","kind":"boat_rental","lat":40.728397,"lon":-74.012803}
+{"type":"poi","name":"Spring Street Park","kind":"information","lat":40.725377,"lon":-74.004244}
+{"type":"poi","name":"lupe's East L.A. Kitchen","kind":"restaurant","lat":40.723681,"lon":-74.004529}
+{"type":"poi","name":"Getting Hungry","kind":"cafe","lat":40.728915,"lon":-74.005473}
+{"type":"poi","name":"Canal Street","kind":"stop","lat":40.723639,"lon":-74.006041}
+{"type":"poi","name":"Altro Paradiso","kind":"restaurant","lat":40.725454,"lon":-74.004740}
+{"type":"poi","name":"Spunto Thin Crust Pizza","kind":"restaurant","lat":40.729793,"lon":-74.004636}
+{"type":"poi","name":"Village Tavern","kind":"bar","lat":40.730554,"lon":-74.004228}
+{"type":"poi","name":"Arrojo Cosmetology School","kind":"school","lat":40.723055,"lon":-74.007830}
+{"type":"poi","name":"Houston Street","kind":"stop","lat":40.727716,"lon":-74.005513}
+{"type":"poi","name":"Canal Street","kind":"station","lat":40.722557,"lon":-74.006291}
+{"type":"poi","name":"cncpts","kind":"shoes","lat":40.724267,"lon":-74.008056}
+{"type":"poi","name":"Film Forum","kind":"cinema","lat":40.728389,"lon":-74.004386}
+{"type":"poi","name":"LE DU Wines","kind":"alcohol","lat":40.730572,"lon":-74.009206}
+{"type":"poi","name":"ChargePoint","kind":"charging_station","lat":40.728649,"lon":-74.007390}
+{"type":"poi","name":"Westville","kind":"restaurant","lat":40.727255,"lon":-74.007508}
+{"type":"poi","name":"Emily","kind":"restaurant","lat":40.729354,"lon":-74.003842}
+{"type":"poi","name":"Seven Grams Caffé","kind":"cafe","lat":40.727303,"lon":-74.005969}
+{"type":"poi","name":"ESSEN - Fast Slow Food","kind":"fast_food","lat":40.726596,"lon":-74.005411}
+{"type":"poi","name":"Papatzu Mexican Restaurant","kind":"restaurant","lat":40.722209,"lon":-74.003625}
+{"type":"poi","name":"Little Branch","kind":"bar","lat":40.730117,"lon":-74.005025}
+{"type":"poi","name":"Color Factory","kind":"attraction","lat":40.725769,"lon":-74.005430}
+{"type":"poi","name":"Jimmy at The James","kind":"bar","lat":40.722449,"lon":-74.004818}
+{"type":"poi","name":"The Greene Space at WNYC/WQXR","kind":"arts_centre","lat":40.726956,"lon":-74.005218}
+{"type":"poi","name":"Shake Shack","kind":"fast_food","lat":40.729208,"lon":-74.005459}
+{"type":"poi","name":"Oishi Judo Club","kind":"dojo","lat":40.727169,"lon":-74.008742}
+{"type":"poi","name":"The Woo","kind":"restaurant","lat":40.725220,"lon":-74.003778}
+{"type":"poi","name":"Chase","kind":"bank","lat":40.727472,"lon":-74.007484}
+{"type":"poi","name":"CAVA","kind":"restaurant","lat":40.727497,"lon":-74.007111}
+{"type":"poi","name":"MakiMaki","kind":"restaurant","lat":40.727736,"lon":-74.007071}
+{"type":"poi","name":"Glaze","kind":"restaurant","lat":40.727797,"lon":-74.007061}
+{"type":"poi","name":"TD Bank","kind":"bank","lat":40.727291,"lon":-74.005744}
+{"type":"poi","name":"Dunkin'","kind":"fast_food","lat":40.727397,"lon":-74.005722}
+{"type":"poi","name":"Chipotle","kind":"fast_food","lat":40.728198,"lon":-74.005159}
+{"type":"poi","name":"Dunkin'","kind":"fast_food","lat":40.729377,"lon":-74.007216}
+{"type":"poi","name":"Five Boys Fresh Pizza","kind":"restaurant","lat":40.728728,"lon":-74.005094}
+{"type":"poi","name":"SOB's","kind":"dance","lat":40.728440,"lon":-74.005097}
+{"type":"poi","name":"The Brooklyneer","kind":"bar","lat":40.728655,"lon":-74.004590}
+{"type":"poi","name":"Quique Crudo","kind":"restaurant","lat":40.729182,"lon":-74.003662}
+{"type":"poi","name":"Spring Street","kind":"stop","lat":40.724732,"lon":-74.004421}
+{"type":"poi","name":"Spring Street","kind":"stop","lat":40.726348,"lon":-74.003606}
+{"type":"poi","name":"Torch & Crown Brewing Company","kind":"bar","lat":40.726137,"lon":-74.004327}
+{"type":"poi","name":"Citi Bike - King St & Varick St","kind":"bicycle_rental","lat":40.727903,"lon":-74.005172}
+{"type":"poi","name":"Azabu","kind":"restaurant","lat":40.722407,"lon":-74.009914}
+{"type":"poi","name":"Hudson Wine Spirits","kind":"alcohol","lat":40.722134,"lon":-74.008453}
+{"type":"poi","name":"Wine Spring","kind":"wine","lat":40.723391,"lon":-74.005950}
+{"type":"poi","name":"Kaña Tapas Bar","kind":"restaurant","lat":40.725895,"lon":-74.009418}
+{"type":"poi","name":"Little Italy Pizzeria & Deli","kind":"restaurant","lat":40.727267,"lon":-74.005322}
+{"type":"poi","name":"CVS Pharmacy","kind":"pharmacy","lat":40.725675,"lon":-74.004292}
+{"type":"poi","name":"Walk NYC","kind":"information","lat":40.728533,"lon":-74.004984}
+{"type":"poi","name":"Chopt","kind":"fast_food","lat":40.728147,"lon":-74.005159}
+{"type":"poi","name":"King Wok","kind":"fast_food","lat":40.729060,"lon":-74.005046}
+{"type":"poi","name":"Wingstop","kind":"fast_food","lat":40.729450,"lon":-74.004891}
+{"type":"poi","name":"Sveta","kind":"restaurant","lat":40.729671,"lon":-74.004156}
+{"type":"poi","name":"Mishka Soho","kind":"restaurant","lat":40.723673,"lon":-74.003871}
+{"type":"poi","name":"Jackie Robinson Museum","kind":"museum","lat":40.723177,"lon":-74.006881}
+{"type":"poi","name":"North Bar","kind":"bar","lat":40.723708,"lon":-74.009633}
+{"type":"poi","name":"Gregory’s coffee","kind":"cafe","lat":40.728261,"lon":-74.005145}
+{"type":"poi","name":"Janovic","kind":"paint","lat":40.723801,"lon":-74.003668}
+{"type":"poi","name":"Moustache Pitza (Moustache)","kind":"restaurant","lat":40.730688,"lon":-74.004252}
+{"type":"poi","name":"Lelabar","kind":"bar","lat":40.730389,"lon":-74.006637}
+{"type":"poi","name":"drip coffee makers","kind":"cafe","lat":40.723344,"lon":-74.006572}
+{"type":"poi","name":"Sui Yoga Studio.Cafe","kind":"cafe","lat":40.725879,"lon":-74.003617}
+{"type":"poi","name":"Starbucks","kind":"cafe","lat":40.725777,"lon":-74.005534}
+{"type":"poi","name":"Vestry","kind":"restaurant","lat":40.725523,"lon":-74.005325}
+{"type":"poi","name":"Jajaja Mexicana","kind":"restaurant","lat":40.729816,"lon":-74.004553}
+{"type":"poi","name":"Restaurante Félix","kind":"restaurant","lat":40.722541,"lon":-74.003837}
+{"type":"poi","name":"Kintsugi","kind":"restaurant","lat":40.722927,"lon":-74.004641}
+{"type":"poi","name":"Now or Never","kind":"cafe","lat":40.722886,"lon":-74.004577}
+{"type":"poi","name":"Soho's Finest Market","kind":"deli","lat":40.722687,"lon":-74.004612}
+{"type":"poi","name":"SoHo Playhouse","kind":"theatre","lat":40.726450,"lon":-74.004376}
+{"type":"poi","name":"Starbucks Pickup","kind":"cafe","lat":40.729340,"lon":-74.004995}
+{"type":"poi","name":"Ubani","kind":"restaurant","lat":40.729629,"lon":-74.003925}
+{"type":"poi","name":"Cotenna","kind":"restaurant","lat":40.729029,"lon":-74.003579}
+{"type":"poi","name":"Village Gyrotonic","kind":"fitness_centre","lat":40.729513,"lon":-74.003853}
+{"type":"poi","name":"Soho Diner","kind":"restaurant","lat":40.722096,"lon":-74.004228}
+{"type":"poi","name":"HERE Arts Center","kind":"theatre","lat":40.725059,"lon":-74.005076}
+{"type":"poi","name":"Elisabeth Irwin High School","kind":"school","lat":40.726927,"lon":-74.004783}
+{"type":"poi","name":"Laliko","kind":"restaurant","lat":40.729460,"lon":-74.004824}
+{"type":"poi","name":"Citi Bike - Varick St & Watts St","kind":"bicycle_rental","lat":40.723649,"lon":-74.006009}
+{"type":"poi","name":"Citi Bike - Washington St & Laight St","kind":"bicycle_rental","lat":40.722331,"lon":-74.010598}
+{"type":"poi","name":"Citi Bike - Spring St & Hudson St","kind":"bicycle_rental","lat":40.725736,"lon":-74.007669}
+{"type":"poi","name":"Citi Bike - Pier 40 - Hudson River Park","kind":"bicycle_rental","lat":40.728045,"lon":-74.011170}
+{"type":"poi","name":"KABIN","kind":"bar","lat":40.725777,"lon":-74.007935}
+{"type":"poi","name":"The future perfect","kind":"gallery","lat":40.730293,"lon":-74.006033}
+{"type":"poi","name":"Broome Street Academy Charter High School","kind":"school","lat":40.724169,"lon":-74.005159}
+{"type":"poi","name":"NYC iSchool","kind":"school","lat":40.724728,"lon":-74.005103}
+{"type":"poi","name":"City As School","kind":"school","lat":40.729153,"lon":-74.006253}
+{"type":"poi","name":"P.S. 721M - Manhattan Occupational Training Center","kind":"school","lat":40.728952,"lon":-74.006379}
+{"type":"poi","name":"Duarte Square","kind":"park","lat":40.722510,"lon":-74.005510}
+{"type":"poi","name":"James J Walker Park","kind":"park","lat":40.729743,"lon":-74.006307}
+{"type":"poi","name":"Spring Street Park","kind":"park","lat":40.724923,"lon":-74.004507}
+{"type":"poi","name":"Chelsea Career and Techincal High School","kind":"school","lat":40.724626,"lon":-74.004993}
+{"type":"poi","name":"Courtyard","kind":"hotel","lat":40.727543,"lon":-74.005786}
+{"type":"poi","name":"Top Thai 55 Carmine","kind":"restaurant","lat":40.729966,"lon":-74.004231}
+{"type":"poi","name":"Freeman Plaza West","kind":"park","lat":40.724214,"lon":-74.007559}
+{"type":"poi","name":"Canal Park","kind":"park","lat":40.725484,"lon":-74.010695}
+{"type":"poi","name":"Freeman Plaza East","kind":"park","lat":40.724153,"lon":-74.006470}
+{"type":"poi","name":"Freeman Plaza North","kind":"park","lat":40.724358,"lon":-74.006562}
+{"type":"poi","name":"Urban Park","kind":"park","lat":40.723567,"lon":-74.003571}
+{"type":"poi","name":"Holland Tunnel Admin Lot C","kind":"parking","lat":40.724047,"lon":-74.007101}
+{"type":"poi","name":"Albert Capsouto Park","kind":"park","lat":40.722110,"lon":-74.006071}
+{"type":"poi","name":"Grand Canal Court","kind":"park","lat":40.722299,"lon":-74.005046}
+{"type":"poi","name":"Charlton-King-Vandam Historic District","kind":"district","lat":40.727222,"lon":-74.004722}
+{"type":"poi","name":"Dahesh Museum of Art Gift Shop and Offices","kind":"gift","lat":40.725096,"lon":-74.004907}
+{"type":"poi","name":"Juan Pablo Duarte","kind":"artwork","lat":40.722606,"lon":-74.005462}
+{"type":"poi","name":"General José Artigas","kind":"memorial","lat":40.724917,"lon":-74.004534}
+{"type":"poi","name":"Ducati","kind":"motorcycle","lat":40.725411,"lon":-74.004695}
+{"type":"poi","name":"Barber Shop","kind":"hairdresser","lat":40.726580,"lon":-74.003818}
+{"type":"poi","name":"Spring Street Finest Deli","kind":"convenience","lat":40.725875,"lon":-74.009252}
+{"type":"poi","name":"Houston News International","kind":"convenience","lat":40.728690,"lon":-74.005100}
+{"type":"poi","name":"Talukder N Corp","kind":"convenience","lat":40.729198,"lon":-74.005025}
+{"type":"poi","name":"Angelica Flowers & Events","kind":"florist","lat":40.730814,"lon":-74.006583}
+{"type":"poi","name":"Twister","kind":"artwork","lat":40.724183,"lon":-74.011913}
+{"type":"poi","name":"Offshoot","kind":"artwork","lat":40.722870,"lon":-74.012154}
+{"type":"poi","name":"Healthy & Fresh Gourmet Deli","kind":"convenience","lat":40.724572,"lon":-74.005770}
+{"type":"poi","name":"Ben’s Garden","kind":"stationery","lat":40.722655,"lon":-74.004107}
+{"type":"poi","name":"Upkeep","kind":"beauty","lat":40.729464,"lon":-74.003828}
+{"type":"poi","name":"Varick News International","kind":"newsagent","lat":40.728771,"lon":-74.005092}
+{"type":"poi","name":"Soho Smile","kind":"dentist","lat":40.725216,"lon":-74.003772}
+{"type":"poi","name":"Heavenly Market & Deli","kind":"convenience","lat":40.729728,"lon":-74.003984}
+{"type":"poi","name":"Joanne Hendricks Cookbooks","kind":"books","lat":40.725269,"lon":-74.009359}
+{"type":"poi","name":"New York Subway Stations","kind":"artwork","lat":40.725561,"lon":-74.003745}
+{"type":"poi","name":"Game Inside the Game","kind":"artwork","lat":40.728484,"lon":-74.005078}
+{"type":"poi","name":"Dbong Nails & Spa","kind":"beauty","lat":40.726631,"lon":-74.003796}
+{"type":"poi","name":"Hotel Flower Delivery NYC","kind":"florist","lat":40.730671,"lon":-74.005347}
+{"type":"poi","name":"SoHo Cigar Bar","kind":"tobacco","lat":40.723641,"lon":-74.004319}
+{"type":"poi","name":"Dainese","kind":"motorcycle","lat":40.724484,"lon":-74.004242}
+{"type":"poi","name":"Yigal Azrouël","kind":"clothes","lat":40.722968,"lon":-74.004730}
+{"type":"poi","name":"Crispy Heaven","kind":"bakery","lat":40.722718,"lon":-74.004212}
+{"type":"poi","name":"Gentle Monster","kind":"optician","lat":40.722433,"lon":-74.004107}
+{"type":"poi","name":"WFAN 660","kind":"studio","lat":40.727755,"lon":-74.007884}
+{"type":"poi","name":"Neighborhood Cut & Shave","kind":"hairdresser","lat":40.729696,"lon":-74.003960}
+{"type":"poi","name":"Occupational & Industrial Orthopedic Center","kind":"clinic","lat":40.729145,"lon":-74.004523}
+{"type":"poi","name":"AHRC Betty Pendler Day Services","kind":"social_facility","lat":40.728444,"lon":-74.004934}
+{"type":"poi","name":"Lemon Tree Gourmet Deli","kind":"convenience","lat":40.722360,"lon":-74.004008}
+{"type":"poi","name":"Octetra","kind":"artwork","lat":40.724067,"lon":-74.006363}
+{"type":"poi","name":"Hudson Street & Spring Street","kind":"bus_stop","lat":40.726096,"lon":-74.007417}
+{"type":"poi","name":"West Houston Street & Hudson Street","kind":"bus_stop","lat":40.728806,"lon":-74.006859}
+{"type":"poi","name":"6th Avenue & Spring Street","kind":"bus_stop","lat":40.725690,"lon":-74.003823}
+{"type":"poi","name":"6th Avenue & Broome Street","kind":"bus_stop","lat":40.724472,"lon":-74.004298}
+{"type":"poi","name":"6th Avenue & Grand Street","kind":"bus_stop","lat":40.723248,"lon":-74.004781}
+{"type":"poi","name":"6th Avenue & Thompson Street","kind":"bus_stop","lat":40.722470,"lon":-74.005145}
+{"type":"poi","name":"Spring Street & Greenwich Street","kind":"bus_stop","lat":40.725891,"lon":-74.008702}
+{"type":"poi","name":"Hudson Street & West Houston Street","kind":"bus_stop","lat":40.729123,"lon":-74.006932}
+{"type":"poi","name":"Varick Street & Charlton Street","kind":"bus_stop","lat":40.726891,"lon":-74.005719}
+{"type":"poi","name":"Varick Street & Clarkson Street","kind":"bus_stop","lat":40.729011,"lon":-74.005376}
+{"type":"poi","name":"Varick Street & Watts Street","kind":"bus_stop","lat":40.723397,"lon":-74.006326}

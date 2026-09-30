@@ -1,0 +1,4 @@
+scout phase=alpha_arizona_jurisdiction
+scope=alpha_all_facets_within_arizona_only
+scanner=essential_within_AZ
+state=AZ

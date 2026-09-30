@@ -1,0 +1,6 @@
+{"meta":{"state":"WA","z":15,"x":5421,"y":11529,"zhs":{"key":"z/15/5421/11529|h3/9/nv9n/pfij|s2/12/f2/20v/29f","z_key":"z/15/5421/11529","h_key":"h3/9/nv9n/pfij","s_key":"s2/12/f2/20v/29f"},"source":"planet","roads":5,"buildings":0,"areas":0,"pois":0}}
+{"type":"road","class":"motorway","name":"I 90","oneway":true,"pts":"46.970961,-120.443287;46.971113,-120.441428;46.971486,-120.435034;46.971537,-120.433424;46.971556,-120.431957"}
+{"type":"road","class":"motorway","name":"I 90","oneway":true,"pts":"46.971843,-120.431957;46.971845,-120.432083;46.971816,-120.433403;46.971764,-120.435012;46.971376,-120.441428;46.971190,-120.443287"}
+{"type":"road","class":"tertiary","name":"Denmark Road","oneway":false,"pts":"46.965142,-120.435082;46.969171,-120.435109;46.971380,-120.435066"}
+{"type":"road","class":"tertiary","name":"Fairview Road","oneway":false,"pts":"46.972874,-120.435023;46.971860,-120.435069"}
+{"type":"road","class":"path","name":"Fairview-Denmark underpass","oneway":false,"pts":"46.971860,-120.435069;46.971380,-120.435066"}

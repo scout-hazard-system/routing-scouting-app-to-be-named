@@ -1,0 +1,7 @@
+{"meta":{"state":"WA","z":15,"x":5347,"y":11469,"zhs":{"key":"z/15/5347/11469|h3/9/nvav/pfnv|s2/12/f2/210/290","z_key":"z/15/5347/11469","h_key":"h3/9/nvav/pfnv","s_key":"s2/12/f2/210/290"},"source":"planet","roads":5,"buildings":0,"areas":1,"pois":0}}
+{"type":"road","class":"path","name":"Mineral Creek Connector","oneway":false,"pts":"47.415380,-121.245050;47.415371,-121.244946"}
+{"type":"road","class":"path","name":"Mineral Creek Trail","oneway":false,"pts":"47.420770,-121.245171;47.420506,-121.245055;47.420177,-121.244946"}
+{"type":"road","class":"path","name":"Mineral Creek Trail","oneway":false,"pts":"47.417182,-121.244946;47.417101,-121.245013;47.416972,-121.245026;47.416582,-121.244946"}
+{"type":"road","class":"path","name":"Mineral Creek Trail","oneway":false,"pts":"47.415856,-121.244946;47.415734,-121.245023;47.415613,-121.245055;47.415473,-121.245031;47.415380,-121.245050"}
+{"type":"road","class":"path","name":"Little Kachess Trail","oneway":false,"pts":"47.414907,-121.244946;47.415090,-121.244978;47.415231,-121.245031;47.415380,-121.245050"}
+{"type":"area","kind":"park","pts":"47.420770,-121.256275;47.420770,-121.244946;47.413104,-121.244946;47.413104,-121.256275"}

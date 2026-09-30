@@ -1,0 +1,6 @@
+{"meta":{"state":"WA","z":15,"x":5427,"y":11512,"zhs":{"key":"z/15/5427/11512|h3/9/nv7y/pfk2|s2/12/f2/20s/29d","z_key":"z/15/5427/11512","h_key":"h3/9/nv7y/pfk2","s_key":"s2/12/f2/20s/29d"},"source":"planet","roads":5,"buildings":0,"areas":0,"pois":0}}
+{"type":"road","class":"residential","name":"Cooke Canyon Road","oneway":false,"pts":"47.100162,-120.377160;47.099473,-120.377369"}
+{"type":"road","class":"residential","name":"Cooke Canyon Road","oneway":false,"pts":"47.093309,-120.377369;47.092449,-120.377187"}
+{"type":"road","class":"service","name":"","oneway":false,"pts":"47.099973,-120.377216;47.099986,-120.377369"}
+{"type":"road","class":"service","name":"","oneway":false,"pts":"47.092624,-120.377227;47.092626,-120.377369"}
+{"type":"road","class":"service","name":"","oneway":false,"pts":"47.092503,-120.377369;47.092525,-120.377205"}

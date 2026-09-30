@@ -1,0 +1,4 @@
+{"meta":{"state":"WA","z":15,"x":5429,"y":11535,"zhs":{"key":"z/15/5429/11535|h3/9/nv9h/pfi0|s2/12/f2/20v/29h","z_key":"z/15/5429/11535","h_key":"h3/9/nv9h/pfi0","s_key":"s2/12/f2/20v/29h"},"source":"planet","roads":3,"buildings":0,"areas":0,"pois":0}}
+{"type":"road","class":"residential","name":"Larsen Road","oneway":false,"pts":"46.920138,-120.347709;46.926758,-120.347757"}
+{"type":"road","class":"residential","name":"Bare Road","oneway":false,"pts":"46.926758,-120.347757;46.927876,-120.347814"}
+{"type":"road","class":"residential","name":"Thrall Road","oneway":false,"pts":"46.926760,-120.344067;46.926758,-120.347757;46.926791,-120.355396"}

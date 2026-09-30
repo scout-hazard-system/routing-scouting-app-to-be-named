@@ -1,0 +1,267 @@
+{"meta":{"state":"IL","z":15,"x":8407,"y":12179,"zhs":{"key":"z/15/8407/12179|h3/9/npkz/pdty|s2/12/f4/ue/1md","z_key":"z/15/8407/12179","h_key":"h3/9/npkz/pdty","s_key":"s2/12/f4/ue/1md"},"source":"planet","roads":1117,"buildings":305,"areas":293,"pois":250}}
+{"type":"area","kind":"civic","pts":"41.875595,-87.626886;41.875605,-87.626792;41.875605,-87.626781;41.874464,-87.626781;41.874464,-87.626851;41.875187,-87.626878"}
+{"type":"area","kind":"civic","pts":"41.872357,-87.626806;41.872357,-87.626781;41.871882,-87.626781;41.871882,-87.626795"}
+{"type":"area","kind":"lot","pts":"41.872002,-87.636062;41.872006,-87.635818;41.871962,-87.635802;41.870665,-87.635601;41.870613,-87.635571;41.870404,-87.635544;41.869924,-87.635472;41.869924,-87.635450;41.869677,-87.635445;41.869677,-87.635461;41.869433,-87.635418;41.869433,-87.636920;41.869565,-87.637041;41.869717,-87.637116;41.870128,-87.637355;41.870230,-87.637398;41.870897,-87.637500;41.871458,-87.637593;41.871668,-87.637577;41.871856,-87.637551;41.871950,-87.637532;41.871986,-87.637508"}
+{"type":"area","kind":"park","pts":"41.875431,-87.636083;41.875431,-87.636014;41.875459,-87.636014;41.875459,-87.635941;41.875447,-87.635941;41.875397,-87.636059;41.875349,-87.636024;41.875367,-87.635981;41.875297,-87.635928;41.875291,-87.635941;41.874993,-87.635711;41.875035,-87.635609;41.874919,-87.635536;41.874680,-87.635348;41.874672,-87.635367;41.874624,-87.635365;41.874606,-87.635373;41.874588,-87.635383;41.874568,-87.635410;41.874556,-87.635442;41.874552,-87.635488;41.874570,-87.635485;41.874572,-87.635676;41.874630,-87.635678;41.875247,-87.635944;41.875391,-87.636083"}
+{"type":"area","kind":"water","pts":"41.869880,-87.635461;41.869753,-87.635458;41.869753,-87.635614;41.869880,-87.635614"}
+{"type":"area","kind":"water","pts":"41.870613,-87.635571;41.872097,-87.635850;41.872191,-87.635882;41.874023,-87.636285;41.874560,-87.636413;41.875441,-87.637052;41.875780,-87.637186;41.875810,-87.637202;41.875820,-87.637301;41.876138,-87.637542;41.876693,-87.637744;41.876897,-87.637899;41.877042,-87.637867;41.877166,-87.637907;41.877178,-87.637888;41.877194,-87.637891;41.877216,-87.637915;41.877424,-87.637969;41.877442,-87.637985;41.877614,-87.638122;41.877997,-87.638049;41.877947,-87.637341;41.877502,-87.637293;41.876921,-87.637129;41.876661,-87.637049;41.876214,-87.636789;41.875439,-87.636105;41.875381,-87.636094;41.874554,-87.635689;41.874165,-87.635584;41.872183,-87.635155;41.872197,-87.635217;41.872087,-87.635220;41.872101,-87.635131;41.870735,-87.634431;41.870310,-87.634793;41.869713,-87.634568;41.869305,-87.635397;41.869924,-87.635450;41.870404,-87.635544"}
+{"type":"area","kind":"water","pts":"41.873823,-87.634021;41.873827,-87.633841;41.873785,-87.633838;41.873781,-87.634021"}
+{"type":"area","kind":"water","pts":"41.871336,-87.632763;41.871340,-87.632575;41.871285,-87.632572;41.871279,-87.632760"}
+{"type":"area","kind":"water","pts":"41.872379,-87.633959;41.872373,-87.633932;41.872333,-87.633930;41.872331,-87.633873;41.872261,-87.633871;41.872259,-87.634018"}
+{"type":"area","kind":"water","pts":"41.871141,-87.631494;41.871141,-87.631422;41.871031,-87.631419;41.871031,-87.631491"}
+{"type":"area","kind":"water","pts":"41.870885,-87.628450;41.870885,-87.628356;41.870743,-87.628353;41.870741,-87.628447"}
+{"type":"area","kind":"water","pts":"41.870068,-87.628431;41.870070,-87.628241;41.869992,-87.628238;41.869990,-87.628428"}
+{"type":"area","kind":"water","pts":"41.869850,-87.626948;41.869797,-87.626945;41.869795,-87.627130;41.869848,-87.627133"}
+{"type":"area","kind":"water","pts":"41.877328,-87.638092;41.877340,-87.637969;41.877184,-87.637931;41.877166,-87.638087"}
+{"type":"area","kind":"water","pts":"41.875936,-87.632666;41.875918,-87.632690;41.875916,-87.632706;41.875916,-87.632725;41.875920,-87.632739;41.875928,-87.632752;41.875940,-87.632760;41.875952,-87.632765;41.875964,-87.632763;41.875976,-87.632755;41.875984,-87.632744;41.875990,-87.632728;41.875992,-87.632712;41.875988,-87.632693;41.875982,-87.632680;41.875972,-87.632669;41.875960,-87.632664"}
+{"type":"area","kind":"water","pts":"41.873240,-87.629346;41.873230,-87.629354;41.873218,-87.629383;41.873218,-87.629399;41.873224,-87.629415;41.873242,-87.629437;41.873264,-87.629437;41.873276,-87.629431;41.873284,-87.629421;41.873292,-87.629391;41.873284,-87.629362;41.873276,-87.629351;41.873264,-87.629343;41.873252,-87.629340"}
+{"type":"poi","name":"Printer's Row","kind":"place_neighbourhood","lat":41.873787,"lon":-87.628900}
+{"type":"poi","name":"LaSalle Street Station","kind":"station","lat":41.875315,"lon":-87.632218}
+{"type":"poi","name":"Old Colony Building","kind":"building","lat":41.876615,"lon":-87.628994}
+{"type":"poi","name":"Monadnock Building","kind":"building","lat":41.877540,"lon":-87.629552}
+{"type":"poi","name":"Dearborn Park","kind":"residential","lat":41.870088,"lon":-87.629021}
+{"type":"poi","name":"The UPS Store","kind":"post_office","lat":41.872053,"lon":-87.629067}
+{"type":"poi","name":"Southbank Development","kind":"construction","lat":41.873673,"lon":-87.634498}
+{"type":"poi","name":"D'Angelo Park","kind":"park","lat":41.876062,"lon":-87.634418}
+{"type":"poi","name":"Harold Washington Library Center","kind":"library","lat":41.876284,"lon":-87.628211}
+{"type":"poi","name":"Metra Car Washing Facility","kind":"wash","lat":41.870470,"lon":-87.638122}
+{"type":"poi","name":"Manhattan Building","kind":"building","lat":41.876056,"lon":-87.628981}
+{"type":"poi","name":"The Standard Club","kind":"hotel","lat":41.877684,"lon":-87.629018}
+{"type":"poi","name":"Union League Club","kind":"hotel","lat":41.877805,"lon":-87.630019}
+{"type":"poi","name":"Metropolitan Correctional Center","kind":"prison","lat":41.876607,"lon":-87.630483}
+{"type":"poi","name":"318 South Federal","kind":"parking","lat":41.877220,"lon":-87.630003}
+{"type":"poi","name":"Franklin-Van Buren Parking Garage","kind":"parking","lat":41.877258,"lon":-87.634774}
+{"type":"poi","name":"Traders Self Park","kind":"parking","lat":41.877492,"lon":-87.634166}
+{"type":"poi","name":"Chicago Fire Department Engine Company 1","kind":"fire_station","lat":41.876234,"lon":-87.633361}
+{"type":"poi","name":"Federal Parking Facility","kind":"parking","lat":41.876086,"lon":-87.630153}
+{"type":"poi","name":"Dearborn Park","kind":"park","lat":41.870975,"lon":-87.629099}
+{"type":"poi","name":"Park 1","kind":"parking","lat":41.877452,"lon":-87.626618}
+{"type":"poi","name":"430 S Clark Street","kind":"parking","lat":41.876098,"lon":-87.631057}
+{"type":"poi","name":"Wyndham Blake Hotel","kind":"hotel","lat":41.875139,"lon":-87.629504}
+{"type":"poi","name":"901 South Plymouth Court Garage","kind":"parking","lat":41.870122,"lon":-87.627860}
+{"type":"poi","name":"Plymouth Court Garage","kind":"parking","lat":41.873170,"lon":-87.628372}
+{"type":"poi","name":"515 S Financial Pl Parking","kind":"parking","lat":41.874969,"lon":-87.632371}
+{"type":"poi","name":"Hilti","kind":"power_tools","lat":41.869619,"lon":-87.627170}
+{"type":"poi","name":"Chicago Central Carrier Annex","kind":"post_depot","lat":41.875095,"lon":-87.637427}
+{"type":"poi","name":"Fifth Third Bank","kind":"bank","lat":41.874264,"lon":-87.630373}
+{"type":"poi","name":"River City Marina","kind":"marina","lat":41.871354,"lon":-87.634734}
+{"type":"poi","name":"D'Angelo Dog Park","kind":"dog_park","lat":41.875940,"lon":-87.635668}
+{"type":"poi","name":"RESERV","kind":"events_venue","lat":41.872507,"lon":-87.629405}
+{"type":"poi","name":"Jones College Prep","kind":"school","lat":41.873503,"lon":-87.627948}
+{"type":"poi","name":"Southbank Park","kind":"park","lat":41.873460,"lon":-87.635314}
+{"type":"poi","name":"British International School of Chicago–South Loop","kind":"school","lat":41.870292,"lon":-87.632792}
+{"type":"poi","name":"BP","kind":"fuel","lat":41.875900,"lon":-87.629504}
+{"type":"poi","name":"University of Illinois Chicago School of Law","kind":"university","lat":41.877907,"lon":-87.628241}
+{"type":"poi","name":"311 South Wacker Drive","kind":"parking","lat":41.877739,"lon":-87.636102}
+{"type":"poi","name":"111 West Jackson","kind":"parking","lat":41.877857,"lon":-87.631148}
+{"type":"poi","name":"1010 S. Wells at Riverline","kind":"construction","lat":41.869575,"lon":-87.634149}
+{"type":"poi","name":"Play Street Meuseum","kind":"museum","lat":41.869337,"lon":-87.632277}
+{"type":"poi","name":"Nando's","kind":"restaurant","lat":41.869759,"lon":-87.632355}
+{"type":"poi","name":"600 S. LaSalle St. Lot","kind":"parking","lat":41.874155,"lon":-87.632167}
+{"type":"poi","name":"Harrison","kind":"station","lat":41.873112,"lon":-87.627554}
+{"type":"poi","name":"LaSalle/Van Buren","kind":"station","lat":41.876883,"lon":-87.631389}
+{"type":"poi","name":"Harold Washington Library-State/Van Buren","kind":"station","lat":41.876917,"lon":-87.628943}
+{"type":"poi","name":"Grace Episcopal Church","kind":"place_of_worship","lat":41.873460,"lon":-87.628884}
+{"type":"poi","name":"LaSalle Street Station","kind":"stop","lat":41.875095,"lon":-87.632119}
+{"type":"poi","name":"LaSalle Street Station","kind":"stop","lat":41.875095,"lon":-87.632162}
+{"type":"poi","name":"LaSalle Street Station","kind":"stop","lat":41.875091,"lon":-87.632454}
+{"type":"poi","name":"LaSalle Street Station","kind":"stop","lat":41.875097,"lon":-87.631990}
+{"type":"poi","name":"LaSalle Street Station","kind":"stop","lat":41.875099,"lon":-87.631947}
+{"type":"poi","name":"LaSalle Street Station","kind":"stop","lat":41.875093,"lon":-87.632285}
+{"type":"poi","name":"LaSalle Street Station","kind":"stop","lat":41.875091,"lon":-87.632500}
+{"type":"poi","name":"LaSalle Street Station","kind":"stop","lat":41.875093,"lon":-87.632331}
+{"type":"poi","name":"LaSalle/Van Buren","kind":"stop","lat":41.876871,"lon":-87.630740}
+{"type":"poi","name":"Harold Washington Library-State/Van Buren","kind":"stop","lat":41.876901,"lon":-87.628192}
+{"type":"poi","name":"Harold Washington Library-State/Van Buren","kind":"stop","lat":41.876915,"lon":-87.629753}
+{"type":"poi","name":"LaSalle/Van Buren","kind":"stop","lat":41.876889,"lon":-87.632159}
+{"type":"poi","name":"LaSalle","kind":"station","lat":41.875615,"lon":-87.631239}
+{"type":"poi","name":"Plymouth Court Cleaners","kind":"dry_cleaning","lat":41.875001,"lon":-87.628965}
+{"type":"poi","name":"Jimmy John's","kind":"fast_food","lat":41.872301,"lon":-87.627345}
+{"type":"poi","name":"South Loop Montessori School","kind":"school","lat":41.871600,"lon":-87.629171}
+{"type":"poi","name":"Kasey's Tavern","kind":"bar","lat":41.873176,"lon":-87.628951}
+{"type":"poi","name":"Pazzo's","kind":"restaurant","lat":41.877514,"lon":-87.635421}
+{"type":"poi","name":"Harrison","kind":"stop","lat":41.873865,"lon":-87.627546}
+{"type":"poi","name":"Lou Malnati's Pizzeria","kind":"restaurant","lat":41.871554,"lon":-87.627339}
+{"type":"poi","name":"Clark St & Ida B Wells Dr","kind":"bicycle_rental","lat":41.875940,"lon":-87.630612}
+{"type":"poi","name":"McDonald's","kind":"fast_food","lat":41.877995,"lon":-87.631671}
+{"type":"poi","name":"Jackson","kind":"stop","lat":41.877626,"lon":-87.627718}
+{"type":"poi","name":"LA Fitness","kind":"fitness_centre","lat":41.871243,"lon":-87.627326}
+{"type":"poi","name":"LaSalle","kind":"stop","lat":41.875646,"lon":-87.631424}
+{"type":"poi","name":"Jackson","kind":"stop","lat":41.877745,"lon":-87.629311}
+{"type":"poi","name":"Wells St & Polk St","kind":"bicycle_rental","lat":41.872567,"lon":-87.633511}
+{"type":"poi","name":"Chicago Curry House","kind":"restaurant","lat":41.870755,"lon":-87.628375}
+{"type":"poi","name":"First Draft","kind":"bar","lat":41.873422,"lon":-87.630459}
+{"type":"poi","name":"Señoritas Cantina","kind":"restaurant","lat":41.873983,"lon":-87.629375}
+{"type":"poi","name":"Bank of America","kind":"bank","lat":41.877923,"lon":-87.637100}
+{"type":"poi","name":"CVS Pharmacy","kind":"pharmacy","lat":41.875425,"lon":-87.627862}
+{"type":"poi","name":"The Buckingham Hotel","kind":"hotel","lat":41.875840,"lon":-87.632680}
+{"type":"poi","name":"Jazz Showcase","kind":"nightclub","lat":41.871752,"lon":-87.628793}
+{"type":"poi","name":"Luke's Italian Beef","kind":"fast_food","lat":41.877995,"lon":-87.634329}
+{"type":"poi","name":"Honeyberry Cafe","kind":"restaurant","lat":41.870332,"lon":-87.627254}
+{"type":"poi","name":"LaSalle","kind":"stop","lat":41.875567,"lon":-87.632833}
+{"type":"poi","name":"Jackson","kind":"subway_entrance","lat":41.877757,"lon":-87.627559}
+{"type":"poi","name":"Jackson","kind":"subway_entrance","lat":41.877416,"lon":-87.627801}
+{"type":"poi","name":"Meli","kind":"restaurant","lat":41.875405,"lon":-87.629431}
+{"type":"poi","name":"Half Sour","kind":"restaurant","lat":41.872429,"lon":-87.630424}
+{"type":"poi","name":"Taco Madre","kind":"restaurant","lat":41.871183,"lon":-87.627323}
+{"type":"poi","name":"Clark St & 9th St (AMLI)","kind":"bicycle_rental","lat":41.870837,"lon":-87.631068}
+{"type":"poi","name":"South Loop Strength","kind":"sports_centre","lat":41.873627,"lon":-87.630314}
+{"type":"poi","name":"Persona","kind":"bar","lat":41.876561,"lon":-87.633873}
+{"type":"poi","name":"Harry's Sandwch Shop","kind":"cafe","lat":41.877210,"lon":-87.629448}
+{"type":"poi","name":"Big Shoulders Coffee","kind":"coffee","lat":41.877618,"lon":-87.632537}
+{"type":"poi","name":"Brando’s Speakeasy","kind":"bar","lat":41.877244,"lon":-87.629118}
+{"type":"poi","name":"Sofi Restaurant","kind":"restaurant","lat":41.873867,"lon":-87.629372}
+{"type":"poi","name":"Umai","kind":"restaurant","lat":41.872345,"lon":-87.630832}
+{"type":"poi","name":"Sky-Ride Tap","kind":"bar","lat":41.876773,"lon":-87.631103}
+{"type":"poi","name":"Mau's House","kind":"pet_grooming","lat":41.870310,"lon":-87.628388}
+{"type":"poi","name":"O’Neil’s on Wells","kind":"bar","lat":41.876419,"lon":-87.633525}
+{"type":"poi","name":"Financial Pl & Ida B Wells Dr","kind":"bicycle_rental","lat":41.874975,"lon":-87.633109}
+{"type":"poi","name":"Federal St & Polk St","kind":"bicycle_rental","lat":41.872109,"lon":-87.629568}
+{"type":"poi","name":"Starbucks","kind":"cafe","lat":41.874664,"lon":-87.628954}
+{"type":"poi","name":"Potbelly","kind":"fast_food","lat":41.874804,"lon":-87.629383}
+{"type":"poi","name":"Metra","kind":"vending_machine","lat":41.875459,"lon":-87.632071}
+{"type":"poi","name":"Metra Police Department","kind":"police","lat":41.875457,"lon":-87.632387}
+{"type":"poi","name":"The Loop Church of the Nazarene","kind":"place_of_worship","lat":41.873541,"lon":-87.628302}
+{"type":"poi","name":"LaSalle Street Station","kind":"stop","lat":41.873036,"lon":-87.632454}
+{"type":"poi","name":"LaSalle Street Station","kind":"stop","lat":41.873036,"lon":-87.632401}
+{"type":"poi","name":"LaSalle Street Station","kind":"stop","lat":41.873036,"lon":-87.632277}
+{"type":"poi","name":"LaSalle Street Station","kind":"stop","lat":41.873036,"lon":-87.632229}
+{"type":"poi","name":"LaSalle Street Station","kind":"stop","lat":41.873040,"lon":-87.632114}
+{"type":"poi","name":"LaSalle Street Station","kind":"stop","lat":41.873042,"lon":-87.631945}
+{"type":"poi","name":"LaSalle Street Station","kind":"stop","lat":41.873044,"lon":-87.631891}
+{"type":"poi","name":"Panda Express","kind":"fast_food","lat":41.875253,"lon":-87.627382}
+{"type":"poi","name":"Art of Pizza","kind":"restaurant","lat":41.872395,"lon":-87.627345}
+{"type":"poi","name":"Wingstop","kind":"fast_food","lat":41.874522,"lon":-87.627122}
+{"type":"poi","name":"Dunkin'","kind":"fast_food","lat":41.877070,"lon":-87.627444}
+{"type":"poi","name":"Amarit","kind":"restaurant","lat":41.874296,"lon":-87.629383}
+{"type":"poi","name":"Qdoba","kind":"fast_food","lat":41.876999,"lon":-87.633522}
+{"type":"poi","name":"Panda Express","kind":"fast_food","lat":41.877813,"lon":-87.633916}
+{"type":"poi","name":"Maharaj Indian Grill","kind":"restaurant","lat":41.877520,"lon":-87.627393}
+{"type":"poi","name":"Dunkin'","kind":"fast_food","lat":41.873705,"lon":-87.630829}
+{"type":"poi","name":"ChargePoint","kind":"charging_station","lat":41.876316,"lon":-87.632629}
+{"type":"poi","name":"ChargePoint","kind":"charging_station","lat":41.876331,"lon":-87.632629}
+{"type":"poi","name":"Hops & Scotch","kind":"alcohol","lat":41.872311,"lon":-87.633812}
+{"type":"poi","name":"Dunkin'","kind":"fast_food","lat":41.876735,"lon":-87.633227}
+{"type":"poi","name":"Taco Bell Cantina","kind":"fast_food","lat":41.876677,"lon":-87.629099}
+{"type":"poi","name":"Printers Row Wine Shop","kind":"wine","lat":41.873044,"lon":-87.628967}
+{"type":"poi","name":"Partners Animal Hopsital","kind":"veterinary","lat":41.874664,"lon":-87.629394}
+{"type":"poi","name":"U.S. Postal Inspection Service","kind":"police","lat":41.873753,"lon":-87.637363}
+{"type":"poi","name":"Chipotle","kind":"fast_food","lat":41.877686,"lon":-87.635386}
+{"type":"poi","name":"Frainklin Tap","kind":"pub","lat":41.877314,"lon":-87.635029}
+{"type":"poi","name":"Code of Conduct","kind":"tattoo","lat":41.869361,"lon":-87.626862}
+{"type":"poi","name":"Burnham Park Animal Hospital","kind":"veterinary","lat":41.869355,"lon":-87.627280}
+{"type":"poi","name":"Blaze Pizza","kind":"restaurant","lat":41.875429,"lon":-87.627385}
+{"type":"poi","name":"Epic Burger","kind":"fast_food","lat":41.875091,"lon":-87.627377}
+{"type":"poi","name":"Gong Cha","kind":"cafe","lat":41.874636,"lon":-87.627355}
+{"type":"poi","name":"Devil Dawgs","kind":"fast_food","lat":41.872181,"lon":-87.627350}
+{"type":"poi","name":"9Round","kind":"fitness_centre","lat":41.872067,"lon":-87.627342}
+{"type":"poi","name":"Potbelly","kind":"fast_food","lat":41.877398,"lon":-87.632878}
+{"type":"poi","name":"Halsted Street Deli","kind":"deli","lat":41.877254,"lon":-87.632881}
+{"type":"poi","name":"Saucy Porka","kind":"restaurant","lat":41.877148,"lon":-87.635016}
+{"type":"poi","name":"Bereket","kind":"restaurant","lat":41.877200,"lon":-87.635008}
+{"type":"poi","name":"Dollop","kind":"cafe","lat":41.877646,"lon":-87.637108}
+{"type":"poi","name":"Taureaux","kind":"restaurant","lat":41.876635,"lon":-87.632967}
+{"type":"poi","name":"Necessary Coffee","kind":"cafe","lat":41.872768,"lon":-87.629327}
+{"type":"poi","name":"Roosevelt Cleaners","kind":"dry_cleaning","lat":41.872635,"lon":-87.629327}
+{"type":"poi","name":"Subway","kind":"fast_food","lat":41.876797,"lon":-87.628933}
+{"type":"poi","name":"Chicago Fit Results","kind":"fitness_centre","lat":41.872555,"lon":-87.628514}
+{"type":"poi","name":"A&A Ballet Center for Dance","kind":"dance","lat":41.872717,"lon":-87.628498}
+{"type":"poi","name":"Yarnify","kind":"craft","lat":41.873577,"lon":-87.628538}
+{"type":"poi","name":"Knuckleheads Boxing & Family Fitness","kind":"fitness_centre","lat":41.873432,"lon":-87.628511}
+{"type":"poi","name":"CP Harrison","kind":"crossover","lat":41.873428,"lon":-87.638234}
+{"type":"poi","name":"Jackson","kind":"subway_entrance","lat":41.877428,"lon":-87.627549}
+{"type":"poi","name":"Jackson","kind":"subway_entrance","lat":41.877787,"lon":-87.627811}
+{"type":"poi","name":"Jackson","kind":"subway_entrance","lat":41.877608,"lon":-87.627806}
+{"type":"poi","name":"Vivi Bubble Tea","kind":"cafe","lat":41.877316,"lon":-87.627455}
+{"type":"poi","name":"Ewing Annex Hotel","kind":"hotel","lat":41.876264,"lon":-87.630909}
+{"type":"poi","name":"Royal Pawn Shop","kind":"pawnbroker","lat":41.876204,"lon":-87.630909}
+{"type":"poi","name":"Pressbox","kind":"restaurant","lat":41.872081,"lon":-87.628967}
+{"type":"poi","name":"Harrison","kind":"stop","lat":41.872461,"lon":-87.627597}
+{"type":"poi","name":"Ceres Cafe","kind":"restaurant","lat":41.877867,"lon":-87.632041}
+{"type":"poi","name":"Planet Fitness","kind":"fitness_centre","lat":41.875355,"lon":-87.627232}
+{"type":"poi","name":"Printers Square Garage","kind":"parking_entrance","lat":41.874442,"lon":-87.629968}
+{"type":"poi","name":"Market 96","kind":"cannabis","lat":41.875211,"lon":-87.633270}
+{"type":"poi","name":"Flaco's Tacos","kind":"restaurant","lat":41.872727,"lon":-87.628957}
+{"type":"poi","name":"105F Yoga","kind":"fitness_centre","lat":41.871868,"lon":-87.629115}
+{"type":"poi","name":"Subway","kind":"fast_food","lat":41.873827,"lon":-87.630834}
+{"type":"poi","name":"Pat's Pizza","kind":"restaurant","lat":41.873961,"lon":-87.630837}
+{"type":"poi","name":"Vitology","kind":"bar","lat":41.872868,"lon":-87.628959}
+{"type":"poi","name":"Chase","kind":"bank","lat":41.876991,"lon":-87.632224}
+{"type":"poi","name":"Chicago Board of Trade Building Museum","kind":"museum","lat":41.877989,"lon":-87.632068}
+{"type":"poi","name":"Chengdu Bistro","kind":"restaurant","lat":41.872603,"lon":-87.628957}
+{"type":"poi","name":"Cafe Deko","kind":"cafe","lat":41.873092,"lon":-87.628962}
+{"type":"poi","name":"Americana Submarine","kind":"fast_food","lat":41.876779,"lon":-87.630915}
+{"type":"poi","name":"Bagel & Bean","kind":"fast_food","lat":41.877991,"lon":-87.631478}
+{"type":"poi","name":"Sushi Plus Rotary Sushi Bar","kind":"restaurant","lat":41.874344,"lon":-87.633471}
+{"type":"poi","name":"Lakeside Bank","kind":"bank","lat":41.876995,"lon":-87.632446}
+{"type":"poi","name":"Embers + Apothecary","kind":"candles","lat":41.872854,"lon":-87.629327}
+{"type":"poi","name":"Bistro Monadnock","kind":"restaurant","lat":41.877456,"lon":-87.629638}
+{"type":"poi","name":"Holden Ct.","kind":"crossover","lat":41.876977,"lon":-87.626790}
+{"type":"poi","name":"Ventra","kind":"vending_machine","lat":41.876815,"lon":-87.631792}
+{"type":"poi","name":"Ventra","kind":"vending_machine","lat":41.876929,"lon":-87.631795}
+{"type":"poi","name":"Ventra","kind":"vending_machine","lat":41.876905,"lon":-87.628584}
+{"type":"poi","name":"Grand Central Station","kind":"other","lat":41.874270,"lon":-87.634587}
+{"type":"poi","name":"Bloc","kind":"cannabis","lat":41.876723,"lon":-87.633903}
+{"type":"poi","name":"Sonder Plymouth","kind":"hotel","lat":41.876345,"lon":-87.628986}
+{"type":"poi","name":"Pritzker Park","kind":"park","lat":41.877410,"lon":-87.628029}
+{"type":"poi","name":"Pancho's Rooftop Cantina","kind":"restaurant","lat":41.877476,"lon":-87.628458}
+{"type":"poi","name":"Chicago Central Processing & Distribution Operations","kind":"post_depot","lat":41.873378,"lon":-87.637856}
+{"type":"poi","name":"Printers Row Park","kind":"park","lat":41.873422,"lon":-87.629429}
+{"type":"poi","name":"BP Shop","kind":"convenience","lat":41.875976,"lon":-87.629507}
+{"type":"poi","name":"Ferd Kramer Memorial Garden","kind":"park","lat":41.872014,"lon":-87.629611}
+{"type":"poi","name":"Franklin St & Jackson Blvd","kind":"bicycle_rental","lat":41.877751,"lon":-87.635319}
+{"type":"poi","name":"Agriculture","kind":"artwork","lat":41.877987,"lon":-87.631878}
+{"type":"poi","name":"Industry","kind":"artwork","lat":41.877989,"lon":-87.631803}
+{"type":"poi","name":"State St & Van Buren St","kind":"bicycle_rental","lat":41.877208,"lon":-87.627862}
+{"type":"poi","name":"Dearborn St & Van Buren St","kind":"bicycle_rental","lat":41.876312,"lon":-87.629161}
+{"type":"poi","name":"Polk Street Pier","kind":"park","lat":41.872083,"lon":-87.634737}
+{"type":"poi","name":"State St & Harrison St","kind":"bicycle_rental","lat":41.873967,"lon":-87.627742}
+{"type":"poi","name":"AMC Roosevelt Collection 16","kind":"cinema","lat":41.869675,"lon":-87.632755}
+{"type":"poi","name":"The Jackknife Bridge","kind":"ruins","lat":41.877444,"lon":-87.638028}
+{"type":"poi","name":"LaSalle/Van Buren CTA Station","kind":"shelter","lat":41.876779,"lon":-87.631797}
+{"type":"poi","name":"South Loop Market","kind":"convenience","lat":41.876731,"lon":-87.634753}
+{"type":"poi","name":"7-Eleven","kind":"convenience","lat":41.871712,"lon":-87.627342}
+{"type":"poi","name":"Alchemy—Birds and Stone","kind":"artwork","lat":41.870809,"lon":-87.629155}
+{"type":"poi","name":"Astoria Marketplace","kind":"convenience","lat":41.870645,"lon":-87.627251}
+{"type":"poi","name":"7-Eleven","kind":"convenience","lat":41.874364,"lon":-87.629383}
+{"type":"poi","name":"Sandmeyer's","kind":"books","lat":41.873010,"lon":-87.629335}
+{"type":"poi","name":"Ceres","kind":"artwork","lat":41.877632,"lon":-87.632269}
+{"type":"poi","name":"San Marco II","kind":"artwork","lat":41.875952,"lon":-87.632715}
+{"type":"poi","name":"Totto's Market","kind":"convenience","lat":41.872419,"lon":-87.628973}
+{"type":"poi","name":"Oscar O. D'Angelo Park","kind":"memorial","lat":41.874652,"lon":-87.634901}
+{"type":"poi","name":"Wells Pantry","kind":"convenience","lat":41.874155,"lon":-87.633466}
+{"type":"poi","name":"Physicians Immediate Care","kind":"clinic","lat":41.871091,"lon":-87.627318}
+{"type":"poi","name":"J’s Blossom Nail Spa","kind":"beauty","lat":41.872587,"lon":-87.627353}
+{"type":"poi","name":"River City Market","kind":"convenience","lat":41.871163,"lon":-87.633946}
+{"type":"poi","name":"Blocks Child Care Center","kind":"childcare","lat":41.873062,"lon":-87.633412}
+{"type":"poi","name":"State Street Barbers","kind":"hairdresser","lat":41.877518,"lon":-87.632913}
+{"type":"poi","name":"Funk’s Barber Shop","kind":"hairdresser","lat":41.876112,"lon":-87.629083}
+{"type":"poi","name":"Nails Spa On State","kind":"beauty","lat":41.877212,"lon":-87.627455}
+{"type":"poi","name":"Mayor Harold Washington","kind":"artwork","lat":41.876349,"lon":-87.627905}
+{"type":"poi","name":"Mayor Harold Washington","kind":"memorial","lat":41.876347,"lon":-87.627841}
+{"type":"poi","name":"Kpop Nara","kind":"gift","lat":41.874720,"lon":-87.627369}
+{"type":"poi","name":"Kids & Company","kind":"childcare","lat":41.874638,"lon":-87.630368}
+{"type":"poi","name":"All Roads Lead Back to the Loop","kind":"artwork","lat":41.875854,"lon":-87.628981}
+{"type":"poi","name":"Clark & Polk","kind":"bus_stop","lat":41.872121,"lon":-87.630518}
+{"type":"poi","name":"State & Balbo","kind":"bus_stop","lat":41.872974,"lon":-87.627420}
+{"type":"poi","name":"Dearborn & Harrison","kind":"bus_stop","lat":41.874772,"lon":-87.629107}
+{"type":"poi","name":"State & Polk","kind":"bus_stop","lat":41.872028,"lon":-87.627680}
+{"type":"poi","name":"State & Harrison/Ida B Wells Drive","kind":"bus_stop","lat":41.874862,"lon":-87.627487}
+{"type":"poi","name":"State & Harrison/Ida B Wells Drive","kind":"bus_stop","lat":41.874830,"lon":-87.627739}
+{"type":"poi","name":"State & Van Buren","kind":"bus_stop","lat":41.876795,"lon":-87.627532}
+{"type":"poi","name":"State & Van Buren","kind":"bus_stop","lat":41.877112,"lon":-87.627795}
+{"type":"poi","name":"State & 9th Street","kind":"bus_stop","lat":41.870348,"lon":-87.627361}
+{"type":"poi","name":"State & 9th Street","kind":"bus_stop","lat":41.870344,"lon":-87.627650}
+{"type":"poi","name":"Van Buren & Financial Place","kind":"bus_stop","lat":41.876929,"lon":-87.632508}
+{"type":"poi","name":"Financial Place & Ida B Wells Drive (LaSalle Street Station)","kind":"bus_stop","lat":41.875299,"lon":-87.632993}
+{"type":"poi","name":"Clark & Polk","kind":"bus_stop","lat":41.871900,"lon":-87.630727}
+{"type":"poi","name":"Dearborn & Polk","kind":"bus_stop","lat":41.872573,"lon":-87.629040}
+{"type":"poi","name":"Dearborn & Ida B Wells Drive","kind":"bus_stop","lat":41.876092,"lon":-87.629158}
+{"type":"poi","name":"Van Buren & Franklin","kind":"bus_stop","lat":41.876893,"lon":-87.635622}
+{"type":"poi","name":"Franklin & Jackson","kind":"bus_stop","lat":41.877931,"lon":-87.635110}
+{"type":"poi","name":"Dearborn & Jackson","kind":"bus_stop","lat":41.877983,"lon":-87.629201}
+{"type":"poi","name":"Clark & Van Buren","kind":"bus_stop","lat":41.876579,"lon":-87.630834}
+{"type":"poi","name":"Clark & Harrison","kind":"bus_stop","lat":41.874039,"lon":-87.630770}
+{"type":"poi","name":"Balbo & State","kind":"bus_stop","lat":41.873042,"lon":-87.627168}
+{"type":"poi","name":"Balbo & State","kind":"bus_stop","lat":41.873160,"lon":-87.627334}
+{"type":"poi","name":"Van Buren & Clark","kind":"bus_stop","lat":41.876941,"lon":-87.631041}
