@@ -462,7 +462,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument(
         "--use-ollama-rerank",
         action=argparse.BooleanOptionalAction,
-        default=True,
+        default=False,
         help="Enable optional Ollama reranking on top deterministic candidates.",
     )
     parser.add_argument("--ollama-model", type=str, default="llama3.1", help="Ollama model for reranking.")

@@ -22,6 +22,8 @@ BACKEND_PORT="${BACKEND_PORT:-$FIXED_BACKEND_PORT}"
 FRONTEND_PORT="${FRONTEND_PORT:-$FIXED_FRONTEND_PORT}"
 MAX_LOG_SIZE_MB="${MAX_LOG_SIZE_MB:-32}"
 MAX_LOG_BACKUPS="${MAX_LOG_BACKUPS:-5}"
+# shellcheck source=../config/log_rotation.sh
+source "$ROOT_DIR/stack/config/log_rotation.sh"
 STOP_TIMEOUT_SECONDS="${STOP_TIMEOUT_SECONDS:-20}"
 DOCKER_STOP_TIMEOUT_SECONDS="${DOCKER_STOP_TIMEOUT_SECONDS:-45}"
 ENABLE_PIPELINE_AUTOSTART="${ENABLE_PIPELINE_AUTOSTART:-true}"
@@ -139,24 +141,6 @@ status_docker_servers() {
     || printf "docker-services: unavailable (current user cannot access docker daemon)\n"
 }
 
-rotate_one_log() {
-  local file_path="$1"
-  [[ -f "$file_path" ]] || return 0
-  local max_bytes=$((MAX_LOG_SIZE_MB * 1024 * 1024))
-  local size
-  size="$(wc -c < "$file_path" | tr -d ' ')"
-  if (( size < max_bytes )); then
-    return 0
-  fi
-  for i in $(seq "$MAX_LOG_BACKUPS" -1 1); do
-    if [[ -f "${file_path}.${i}" ]]; then
-      mv "${file_path}.${i}" "${file_path}.$((i + 1))"
-    fi
-  done
-  mv "$file_path" "${file_path}.1"
-  : > "$file_path"
-}
-
 parse_shell_words() {
   local raw="$1"
   local parser_bin="$PYTHON_BIN"
@@ -171,12 +155,6 @@ raw = sys.argv[1]
 for token in shlex.split(raw):
     print(token)
 PY
-}
-
-rotate_logs() {
-  rotate_one_log "$BACKEND_LOG_FILE"
-  rotate_one_log "$FRONTEND_LOG_FILE"
-  rotate_one_log "$PIPELINE_LOG"
 }
 
 port_in_use() {

@@ -980,7 +980,7 @@ parser.add_argument("--selector-lat", type=float, default=None, help="Latitude f
 parser.add_argument("--selector-lon", type=float, default=None, help="Longitude for distance-aware selector scoring")
 parser.add_argument("--selector-desired-types", type=str, default="law,dispatch", help="Comma-separated desired channel type tokens")
 parser.add_argument("--selector-top-k", type=int, default=8, help="Top deterministic candidates to consider before reranking")
-parser.add_argument("--selector-use-ollama-rerank", action=argparse.BooleanOptionalAction, default=True, help="Enable optional Ollama rerank for selector")
+parser.add_argument("--selector-use-ollama-rerank", action=argparse.BooleanOptionalAction, default=False, help="Enable optional Ollama rerank for selector")
 parser.add_argument("--selector-ollama-model", type=str, default="scout-rank", help="Ollama model for selector reranking (scout-rank from the proprietary LLM set; falls back to llama3.1 when not built)")
 parser.add_argument("--selector-ollama-url", type=str, default="http://localhost:11434/api/generate", help="Ollama endpoint for selector reranking")
 parser.add_argument("--selector-ollama-timeout", type=float, default=8.0, help="Ollama timeout in seconds for selector reranking")
