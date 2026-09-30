@@ -2,6 +2,10 @@
 
 Step-by-step deployment for the **Linux hub + Windows Hermes peer** Tailscale mesh.
 
+> **Product path:** paid deployments should use **Scout Mesh** (WireGuard in-APK),
+> not Tailscale. See [`SCOUT_MESH.md`](SCOUT_MESH.md). This runbook remains the
+> internal lab mesh until GPU/Hermes peers are cut over.
+
 **Verified:** 2026-08-26  
 **Jurisdiction:** Arizona alpha  
 **Repos:**

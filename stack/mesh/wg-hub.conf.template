@@ -1,0 +1,12 @@
+# Scout Mesh hub template — rendered by install_hub.sh
+# Interface name: scoutwg0
+
+[Interface]
+Address = {{HUB_ADDRESS}}
+ListenPort = {{LISTEN_PORT}}
+PrivateKey = {{HUB_PRIVATE_KEY}}
+# Optional: PostUp/PostDown NAT if peers need internet via hub (off by default — split tunnel)
+# PostUp = iptables -A FORWARD -i scoutwg0 -j ACCEPT; iptables -t nat -A POSTROUTING -o {{WAN_IF}} -j MASQUERADE
+# PostDown = iptables -D FORWARD -i scoutwg0 -j ACCEPT; iptables -t nat -D POSTROUTING -o {{WAN_IF}} -j MASQUERADE
+
+# Peers are appended under stack/mesh/peers/*.conf and merged by apply_peers.sh

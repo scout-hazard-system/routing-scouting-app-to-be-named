@@ -43,6 +43,11 @@ scout_crew/
 stack/config/*.bak_*
 stack/config/*.bak
 
+# Scout Mesh runtime secrets
+stack/mesh/state/
+stack/mesh/peers/*.conf
+!stack/mesh/peers/.gitkeep
+
 # Packaged map-server deploy bundle.
 # The extracted scout-map-server-deploy/ tree is tracked (the PXE stack deploys from
 # it), but the single-file archive duplicates that same content, is ~107 MB, and
