@@ -158,4 +158,4 @@ For multi-machine deployments (Linux hub + Windows Hermes peer):
 
 ---
 
-**Note:** This package does **not** include the PMTiles planet file (~16GB) due to size. The setup script downloads it automatically on first run, or you can provide it via `--pmtiles-path`.
+**Note:** This package does **not** include the PMTiles planet file (~16GB) due to size. The setup script downloads it automatically on first run, or you can provide it via `--pmtiles-path`.
