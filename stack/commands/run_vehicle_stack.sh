@@ -8,7 +8,13 @@ FRONTEND_DIR="$ROOT_DIR/navigation/frontend"
 BACKEND_DIR="$ROOT_DIR/navigation/backend"
 PIPELINE_SCRIPT="$ROOT_DIR/navigation/pipeline/pipeline.py"
 CONFIG_FILE="${VEHICLE_STACK_CONFIG_FILE:-$ROOT_DIR/stack/config/vehicle_stack.env}"
+# Headless/Debian installs put the crew/stack venv in the repo root
+# (agent_box_setup_trixie creates ~/.scout/venv and /opt/scout/.venv patterns);
+# the legacy cop_pipeline venv is the Pop!_OS default and stays as a fallback.
 DEFAULT_PYTHON_BIN="$ROOT_DIR/cop_pipeline/bin/python3"
+if [[ ! -x "$DEFAULT_PYTHON_BIN" ]]; then
+  DEFAULT_PYTHON_BIN="$ROOT_DIR/.venv/bin/python"
+fi
 FIXED_BACKEND_PORT="18080"
 FIXED_FRONTEND_PORT="8787"
 
