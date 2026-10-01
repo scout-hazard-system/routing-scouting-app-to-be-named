@@ -5,9 +5,9 @@ Pop!_OS / Ubuntu machine. The suite stands up the Java map backend (`:18080`), t
 frontend dashboard (`:8787`), and seeds the on-disk shard data by pulling it live from
 an existing source host over rsync-over-SSH.
 
-Scope: **map server + shards only**. The scanner pipeline, Ollama scout models,
-blackboard, and CrewAI are out of scope — see `stack/` and `docs/guides/` for the
-full-stack runbooks.
+Scope: **map server + shards**, and optionally the **blackboard on the hub**. The
+scanner pipeline, Ollama scout models, blackboard (on peer/apps), and CrewAI are
+out of scope — see `stack/` and `docs/guides/` for the full-stack runbooks.
 
 ## Layout
 
@@ -17,7 +17,9 @@ full-stack runbooks.
 | `ssh_setup.sh` | wire SSH both directions between new host and source host |
 | `sync_shards.sh` | rsync MVT shard cache `~/.scanner_stream/map_cache/shards` + text-map roots from source |
 | `configure_map_server.sh` | build backend jar, wire `vehicle_stack.env`, export map env, optional systemd |
+| `setup_blackboard.sh` | bootstrap the key-authorized blackboard on the hub: secrets, venv, systemd service, manager + per-device tokens |
 | `verify_map_server.sh` | health checks: backend, planet, shard prefetch, frontend |
+| `verify_blackboard.sh` | health, key-authorization round trip, manager audit, per-device mesh presence |
 
 All scripts are idempotent and reusable; run them from this `map_server_setup/` directory.
 
@@ -72,7 +74,37 @@ Frontend:      http://<this-host-ip>:8787/
 Backend:       http://<this-host-ip>:18080/api/health
 Map status:    http://<this-host-ip>:18080/api/map/status
 Map shard AZ:  http://<this-host-ip>:18080/api/map/shard?state=AZ
+Blackboard:    http://<this-host-ip>:8765/health   (after setup_blackboard.sh)
 ```
+
+## Blackboard on the hub (optional)
+
+The hub also hosts the Scout blackboard (`:8765`) for the multi-machine crew.
+Bootstrap it after `configure_map_server.sh`:
+
+```bash
+# SCOUT_CREW_ROOT defaults to ~/Desktop/scout_crew (needs src/scout_crew/blackboard/)
+./setup_blackboard.sh --device az-vehicle --device ground-station
+./verify_blackboard.sh
+```
+
+What `setup_blackboard.sh` does:
+
+1. Creates a venv at `<scout_crew>/.venv-bb` (the blackboard is pure-stdlib).
+2. Generates the **master secret** and **entry token** once into `~/.config/scout/blackboard.env`
+   (0600). The secret never leaves the hub; peer devices only ever hold their own minted token.
+3. Appends a managed exports block to `stack/config/vehicle_stack.env`
+   (`SCOUT_BLACKBOARD_URL`, `SCOUT_BLACKBOARD_HOST/PORT`, `SCOUT_BLACKBOARD_SANDBOX_WRITERS`).
+4. Installs + starts the `scout-blackboard` user service
+   (`stack/deployment/install_blackboard_service.sh` + `systemd/scout-blackboard.service`).
+5. Mints the **manager token** (`~/.scout/blackboard/tokens/manager.token`) for crew
+   moderation, and one **per-device token** per `--device` via key authorization
+   (`~/.scout/blackboard/tokens/<id>.token`, plus `devices/<id>.json` with `observed_ip`).
+
+Device tokens are role-scoped, category-scoped, and time-limited; the `/v1/audit`
+endpoint (manager-only) shows per-token volume for flood moderation. See
+`docs/guides/SCOUT_BLACKBOARD_ON_MAPSERVER.md` for the full model and the
+per-device scoping seams (device-id assignment, IP-presence check, analytics).
 
 ## Script reference
 
