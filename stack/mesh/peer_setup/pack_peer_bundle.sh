@@ -41,9 +41,9 @@ fi
 
 cat > "$STAGE/$NAME/OPERATOR_SECRETS.env.example" <<'EOF'
 # Fill on the peer shell before ./install_all.sh or ./join_mesh.sh
-export SCOUT_MESH_ENROLL_URL="http://192.168.1.154:18080"
+export SCOUT_MESH_ENROLL_URL="http://192.168.1.100:18080"
 export SCOUT_MESH_ENTRY_TOKEN=""
-# export SCOUT_MESH_ENDPOINT_OVERRIDE="192.168.1.154:51820"
+# export SCOUT_MESH_ENDPOINT_OVERRIDE="192.168.1.100:51820"
 # export SCOUT_MESH_DEVICE_ID="popos-peer-$(hostname)"
 EOF
 
