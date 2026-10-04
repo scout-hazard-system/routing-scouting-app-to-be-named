@@ -1,0 +1,7 @@
+[Unit]
+Description=Renew Scout blackboard device token
+Wants=network-online.target wg-quick@scoutwg0.service
+After=network-online.target wg-quick@scoutwg0.service
+[Service]
+Type=oneshot
+ExecStart=/usr/local/sbin/scout-bb-refresh

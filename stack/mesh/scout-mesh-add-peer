@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# scout-mesh-add-peer <name> <pubkey> <mesh-ip>  — add/replace a peer on the hub (live + persisted)
+set -euo pipefail
+name="$1"; pub="$2"; ip="$3"
+[[ "$ip" =~ ^10\.66\.[0-9]+\.[0-9]+$ ]] || { echo "mesh ip must be 10.66.x.y"; exit 1; }
+conf=/etc/wireguard/scoutwg0.conf
+python3 - "$conf" "$name" "$pub" "$ip" <<'PY'
+import sys,re
+p,name,pub,ip=sys.argv[1:]
+s=open(p).read()
+blocks=re.split(r'(?m)^(?=# peer: |\[Peer\])',s)
+keep=[b for b in blocks if not (b.startswith('# peer: '+name+'\n') or ('PublicKey = '+pub) in b or ('AllowedIPs = '+ip+'/32') in b)]
+s=''.join(keep).rstrip()+f"\n\n# peer: {name}\n[Peer]\nPublicKey = {pub}\nAllowedIPs = {ip}/32\n"
+open(p,'w').write(s)
+PY
+wg set scoutwg0 peer "$pub" allowed-ips "$ip/32"
+echo "peer $name ($ip) added"

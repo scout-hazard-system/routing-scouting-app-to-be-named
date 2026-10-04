@@ -1,0 +1,23 @@
+#!/usr/bin/env python3
+"""Renew this device's Scout blackboard token via the hub's proof-gated
+/v1/keys/authorize (entry token = device credential, root-only file) and
+write SCOUT_BLACKBOARD_TOKEN into the agent-box env files."""
+import json, os, re, sys, urllib.request
+HUB = os.environ.get("SCOUT_BLACKBOARD_URL", "http://10.66.0.1:8765").rstrip("/")
+ENV_FILES = ["/etc/scout/agent-box.env", "/opt/scout-agent-box/.env"]
+entry = open("/etc/scout/blackboard-entry.token").read().strip()
+body = json.dumps({"proof": {"entry_token": entry}, "device_id": "nuxci7",
+                   "role": "manager", "categories": ["pipeline", "dev_debug"],
+                   "ttl": 86400}).encode()
+req = urllib.request.Request(HUB + "/v1/keys/authorize", data=body,
+                             headers={"Content-Type": "application/json"})
+tok = json.load(urllib.request.urlopen(req, timeout=15))["token"]
+for p in ENV_FILES:
+    s = open(p).read()
+    line = "SCOUT_BLACKBOARD_TOKEN=" + tok
+    s = re.sub(r"(?m)^SCOUT_BLACKBOARD_TOKEN=.*$", line, s) if re.search(r"(?m)^SCOUT_BLACKBOARD_TOKEN=", s) else s.rstrip("\n") + "\n" + line + "\n"
+    tmp = p + ".tmp"
+    with open(tmp, "w") as f: f.write(s)
+    os.chmod(tmp, 0o640); os.chown(tmp, 0, __import__("grp").getgrnam("scout").gr_gid)
+    os.replace(tmp, p)
+print("blackboard token renewed (24h)")

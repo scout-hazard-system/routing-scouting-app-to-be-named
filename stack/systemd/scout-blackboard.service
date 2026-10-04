@@ -1,0 +1,22 @@
+[Unit]
+Description=Scout blackboard hub (scout_crew, token auth, :8765)
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+User=scout
+Group=scout
+WorkingDirectory=/opt/scout-blackboard
+Environment=PYTHONPATH=/opt/scout-blackboard/src
+Environment=SCOUT_BLACKBOARD_PATH=/var/lib/scout-blackboard/blackboard.sqlite
+EnvironmentFile=/etc/scout-blackboard.env
+ExecStart=/usr/bin/python3 -m scout_crew.blackboard.server --host 0.0.0.0 --port 8765
+Restart=always
+RestartSec=3s
+NoNewPrivileges=true
+ProtectSystem=strict
+ReadWritePaths=/var/lib/scout-blackboard
+ProtectHome=true
+
+[Install]
+WantedBy=multi-user.target

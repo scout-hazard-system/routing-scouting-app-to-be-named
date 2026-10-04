@@ -1,0 +1,21 @@
+[Unit]
+Description=Scout vLLM rack node (OpenAI /v1 on :8000, GTX 1650)
+Wants=network-online.target
+After=network-online.target
+# Shares the 4 GB GPU with Ollama: not enabled at boot; start on demand.
+
+[Service]
+User=scout
+Group=scout
+WorkingDirectory=/opt/vllm
+Environment=VLLM_ATTENTION_BACKEND=TRITON_ATTN
+Environment=VLLM_USE_FLASHINFER_SAMPLER=0
+Environment=HF_HOME=/opt/vllm/hf
+ExecStartPre=-/usr/local/bin/ollama stop qwen3:4b
+ExecStart=/opt/vllm/venv-cu12/bin/vllm serve Qwen/Qwen3-0.6B --host 0.0.0.0 --port 8000 --dtype half --max-model-len 4096 --gpu-memory-utilization 0.85 --enforce-eager --served-model-name qwen3-0.6b
+Restart=on-failure
+RestartSec=10s
+TimeoutStartSec=600
+
+[Install]
+WantedBy=multi-user.target
