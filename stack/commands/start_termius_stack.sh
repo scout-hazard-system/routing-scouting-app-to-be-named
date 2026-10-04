@@ -90,9 +90,16 @@ start_and_print() {
 }
 
 stream_events() {
-  local python_bin="${PYTHON_BIN:-$ROOT_DIR/cop_pipeline/bin/python3}"
-  if [[ ! -x "$python_bin" ]]; then
-    python_bin="python3"
+  local python_bin="${PYTHON_BIN:-}"
+  # Headless/Debian: repo venv first, then legacy cop_pipeline, then python3.
+  if [[ -z "$python_bin" || ! -x "$python_bin" ]]; then
+    if [[ -x "$ROOT_DIR/.venv/bin/python" ]]; then
+      python_bin="$ROOT_DIR/.venv/bin/python"
+    elif [[ -x "$ROOT_DIR/cop_pipeline/bin/python3" ]]; then
+      python_bin="$ROOT_DIR/cop_pipeline/bin/python3"
+    else
+      python_bin="python3"
+    fi
   fi
   if [[ ! -f "$STREAM_CLIENT" ]]; then
     echo "Missing stream client: $STREAM_CLIENT" >&2
