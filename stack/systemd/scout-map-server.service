@@ -1,0 +1,18 @@
+[Unit]
+Description=Scout map/route backend (Java, :18080)
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=simple
+User=scout
+Group=scout
+ExecStart=/usr/local/bin/scout-map-server
+Restart=always
+RestartSec=5s
+NoNewPrivileges=true
+PrivateTmp=false
+TimeoutStopSec=20
+
+[Install]
+WantedBy=multi-user.target

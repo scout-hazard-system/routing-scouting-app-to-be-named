@@ -1,0 +1,25 @@
+#!ipxe
+# Scout netboot menu (served by the Dell at http://192.168.1.100/boot.ipxe).
+# DEFAULT IS LOCAL BOOT: the installer wipes the first internal disk, so it
+# must be chosen on purpose at the machine's console.
+set server 192.168.1.100
+menu Scout netboot (${net0/mac})
+item --gap -- Default in 15s: boot local disk
+item local    Boot from local disk
+item install  Install Debian trixie Scout agent box (WIPES FIRST INTERNAL DISK)
+item shell    iPXE shell
+choose --default local --timeout 15000 target || goto local
+goto ${target}
+
+:local
+exit
+exit
+
+:install
+prompt --key y --timeout 30000 Wipe first internal disk and install? Press y to continue... || goto local
+kernel http://${server}/trixie/linux initrd=initrd.gz auto=true priority=critical netcfg/get_hostname=nuxci7 netcfg/get_domain=lan preseed/url=http://${server}/preseed.cfg log_host=${server} log_port=5514 video=1920x1080@60 gfxpayload=1920x1080
+initrd http://${server}/trixie/initrd.gz
+boot
+
+:shell
+shell

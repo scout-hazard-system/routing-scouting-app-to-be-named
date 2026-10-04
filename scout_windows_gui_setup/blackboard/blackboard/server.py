@@ -94,6 +94,19 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--port", type=int, default=int(os.getenv("SCOUT_BLACKBOARD_PORT", "8765")))
     p.add_argument("--db", default=os.getenv("SCOUT_BLACKBOARD_PATH", ""))
     args = p.parse_args(argv)
+    # This bundled copy has NO authentication. Fail closed: refuse any
+    # non-loopback bind unless explicitly accepted. For a networked hub use the
+    # canonical scout_crew blackboard with SCOUT_BLACKBOARD_TOKEN_SECRET.
+    host = args.host.strip().lower()
+    if not (host in {"127.0.0.1", "::1", "localhost"} or host.startswith("127.")) and os.getenv(
+        "SCOUT_BLACKBOARD_ALLOW_NOAUTH", "0"
+    ) not in {"1", "true", "True", "yes"}:
+        print(
+            f"scout blackboard: refusing to listen on {args.host} — this build has no auth. "
+            "Use the scout_crew blackboard with a token secret, bind --host 127.0.0.1, "
+            "or set SCOUT_BLACKBOARD_ALLOW_NOAUTH=1 for an isolated lab."
+        )
+        return 2
     db = Path(args.db).expanduser() if args.db else None
     store = BlackboardStore(db_path=db)
     httpd = ThreadingHTTPServer((args.host, args.port), make_handler(store))

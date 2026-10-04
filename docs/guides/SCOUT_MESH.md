@@ -89,7 +89,7 @@ export SCOUT_MESH_ENABLED=true
 export SCOUT_MESH_ENDPOINT="YOUR_PUBLIC_IP:51820"
 export SCOUT_MESH_HUB_PUBLIC_KEY="$(sudo cat /etc/wireguard/scoutwg0.publickey 2>/dev/null || cat stack/mesh/state/hub.publickey)"
 export SCOUT_NETWORK_ADVERTISE_HOST=10.66.0.1
-export BACKEND_PULL_ALLOW_CIDRS="10.66.0.0/16,127.0.0.1/32,::1/128,172.16.0.0/12,192.168.0.0/16,10.0.0.0/8"
+export BACKEND_PULL_ALLOW_CIDRS="10.66.0.0/16,100.64.0.0/10,127.0.0.1/32,::1/128"
 ```
 
 Phone / curl:

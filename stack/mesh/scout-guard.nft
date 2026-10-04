@@ -1,0 +1,29 @@
+# Scout service guard: only trusted sources may reach Scout/Imagoro app ports.
+#   trusted = this host, WireGuard mesh, the Windows workstation, the Scout LAN (eno1)
+# SSH (22), PXE (67/69/80 on eno1) are deliberately not in this list.
+table inet scout_guard {
+  set trusted4 { type ipv4_addr; flags interval; elements = { 127.0.0.0/8, 192.168.1.0/24, 192.168.12.188, 10.66.0.0/16 } }
+  set guarded { type inet_service; elements = {
+      11434,   # ollama
+      8000,    # vllm
+      8765,    # scout blackboard hub
+      8080,    # imagoro blackboard
+      19020,   # imagoro backend (serve.mjs)
+      8790,    # imagoro command center (static)
+      18080,   # scout map/route backend
+      3389,    # xrdp
+      443, 8443 # nginx edge
+  } }
+  chain input {
+    type filter hook input priority -10; policy accept;
+    iifname "lo" accept
+    tcp dport @guarded ip saddr @trusted4 accept
+    tcp dport @guarded ip6 saddr ::1 accept
+    tcp dport @guarded drop
+  }
+  chain forward {
+    type filter hook forward priority -10; policy drop;
+    ct state established,related accept
+    iifname "scoutwg0" oifname "scoutwg0" accept
+  }
+}

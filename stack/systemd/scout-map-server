@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+# Scout map/route backend (Java, :18080) — systemd entrypoint.
+# Mirrors start_backend() in stack/commands/run_vehicle_stack.sh.
+set -euo pipefail
+ROOT_DIR="${SCOUT_REPO_ROOT:-/home/scout/routing-scouting-app-to-be-named}"
+cd "$ROOT_DIR"
+set -a
+# shellcheck disable=SC1091
+source "${VEHICLE_STACK_CONFIG_FILE:-$ROOT_DIR/stack/config/vehicle_stack.env}"
+set +a
+# Host-local overrides (secrets, CORS) win over the repo env file.
+if [[ -r /etc/scout-map-server.env ]]; then set -a; source /etc/scout-map-server.env; set +a; fi
+PYTHON_BIN="${PYTHON_BIN:-$ROOT_DIR/cop_pipeline/bin/python3}"
+export PIPELINE_LOG_PATH="${PIPELINE_LOG:-/tmp/pipeline_live_doordash.log}"
+export JAVA_BACKEND_HOST="${JAVA_BACKEND_HOST:-0.0.0.0}"
+export JAVA_BACKEND_PORT="${BACKEND_PORT:-18080}"
+export SELECTOR_PYTHON_BIN="${SELECTOR_PYTHON_BIN:-$PYTHON_BIN}"
+export SELECTOR_SCRIPT_PATH="${SELECTOR_SCRIPT_PATH:-$ROOT_DIR/navigation/pipeline/channel_selector.py}"
+export BROADCASTIFY_CATALOG_SCRIPT_PATH="${BROADCASTIFY_CATALOG_SCRIPT_PATH:-$ROOT_DIR/navigation/pipeline/broadcastify_catalog_service.py}"
+export BROADCASTIFY_SELECTOR_TOP_K="${BROADCASTIFY_SELECTOR_TOP_K:-8}"
+export BROADCASTIFY_SELECTOR_PRINT_TOP="${BROADCASTIFY_SELECTOR_PRINT_TOP:-3}"
+export BROADCASTIFY_SELECTOR_OLLAMA_URL="${BROADCASTIFY_SELECTOR_OLLAMA_URL:-http://localhost:11434/api/generate}"
+export BROADCASTIFY_SELECTOR_OLLAMA_TIMEOUT="${BROADCASTIFY_SELECTOR_OLLAMA_TIMEOUT:-8.0}"
+export BROADCASTIFY_SELECTOR_OLLAMA_WEIGHT="${BROADCASTIFY_SELECTOR_OLLAMA_WEIGHT:-0.2}"
+export BACKEND_HELPER_TIMEOUT_SECONDS="${BACKEND_HELPER_TIMEOUT_SECONDS:-90}"
+exec java ${SCOUT_MAP_JAVA_OPTS:-} -jar "${SCOUT_MAP_JAR:-$ROOT_DIR/navigation/backend/dist/backend-lite.jar}"

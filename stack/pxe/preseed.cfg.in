@@ -1,0 +1,90 @@
+# Scout agent box (nuxci7) - unattended Debian trixie netboot preseed.
+# Rendered by install-pxe.sh (password hash + server IP are filled on the Dell).
+# Wipes the FIRST NON-USB disk; plain (unencrypted) atomic layout so a headless
+# box reboots without a console passphrase. No secrets in plain text here:
+# the password is a SHA-512 crypt hash; SSH is keys-only after install.
+
+### Localisation
+d-i debian-installer/locale string en_US.UTF-8
+d-i keyboard-configuration/xkb-keymap select us
+d-i console-setup/ask_detect boolean false
+d-i console-setup/layoutcode string us
+
+### Network
+d-i netcfg/choose_interface select auto
+d-i netcfg/hostname string nuxci7
+d-i netcfg/domain string lan
+d-i netcfg/dhcp_timeout string 60
+d-i hw-detect/load_firmware boolean true
+
+### Mirror
+d-i mirror/country string manual
+d-i mirror/protocol string http
+d-i mirror/http/hostname string deb.debian.org
+d-i mirror/http/directory string /debian
+d-i mirror/http/proxy string
+d-i mirror/suite string trixie
+d-i mirror/udeb/suite string trixie
+d-i apt-setup/non-free-firmware boolean true
+d-i apt-setup/non-free boolean true
+d-i apt-setup/contrib boolean false
+d-i apt-setup/services-select multiselect security, updates
+d-i apt-setup/security_host string security.debian.org
+d-i apt-setup/cdrom/set-first boolean false
+d-i apt-setup/disable-cdrom-entries boolean true
+popularity-contest popularity-contest/participate boolean false
+
+### Clock
+d-i clock-setup/utc boolean true
+d-i time/zone string UTC
+d-i clock-setup/ntp boolean true
+
+### Account
+d-i passwd/root-login boolean false
+d-i passwd/user-fullname string Scout Agent Box
+d-i passwd/username string scout
+d-i passwd/user-password-crypted password @@PASSWORD_HASH@@
+d-i user-setup/allow-password-weak boolean false
+
+### Partitioning - first internal (non-USB) disk, regular atomic
+# Runs right before partitioning (disks are detected by then). Picks the first
+# non-USB disk; never fails the installer (partman would then just ask).
+d-i partman/early_command string \
+  disk=""; for d in $(list-devices disk); do \
+    case "$(readlink -f /sys/block/${d##*/} 2>/dev/null)" in *usb*) continue;; esac; \
+    disk=$d; break; \
+  done; \
+  if [ -n "$disk" ]; then debconf-set partman-auto/disk "$disk"; fi; \
+  true
+d-i partman-auto/method string regular
+d-i partman-auto/choose_recipe select atomic
+d-i partman-lvm/device_remove_lvm boolean true
+d-i partman-md/device_remove_md boolean true
+d-i partman-partitioning/confirm_write_new_label boolean true
+d-i partman/choose_partition select finish
+d-i partman/confirm boolean true
+d-i partman/confirm_nooverwrite boolean true
+
+### Base system
+tasksel tasksel/first multiselect standard, ssh-server
+d-i pkgsel/include string openssh-server sudo curl ca-certificates rsync
+d-i pkgsel/upgrade select safe-upgrade
+d-i base-installer/kernel/image string linux-image-amd64
+
+### Bootloader
+d-i grub-installer/only_debian boolean true
+d-i grub-installer/bootdev string default
+
+### Post-install: SSH keys (from the Dell), keys-only sshd, passwordless sudo
+d-i preseed/late_command string \
+  mkdir -p /target/home/scout/.ssh; \
+  wget -q -O /target/home/scout/.ssh/authorized_keys http://@@SERVER@@/keys/authorized_keys; \
+  wget -q -O /target/etc/ssh/sshd_config.d/00-scout-hardening.conf http://@@SERVER@@/keys/00-scout-hardening.conf; \
+  in-target chown -R scout:scout /home/scout/.ssh; \
+  in-target chmod 700 /home/scout/.ssh; \
+  in-target chmod 600 /home/scout/.ssh/authorized_keys; \
+  echo 'scout ALL=(ALL) NOPASSWD: ALL' > /target/etc/sudoers.d/90-scout-agent; \
+  chmod 440 /target/etc/sudoers.d/90-scout-agent
+
+### Finish
+d-i finish-install/reboot_in_progress note
