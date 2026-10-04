@@ -174,16 +174,7 @@ public static final Set<String> ADMIN_ENDPOINTS =
     if (!override.isEmpty()) {
       return Path.of(override);
     }
-    String repo = env("SCOUT_REPO_ROOT", "").trim();
-    if (!repo.isEmpty()) {
-      return Path.of(repo, "stack/mesh/state/admin_token");
-    }
-    return Path.of(
-        System.getProperty("user.home", "/home/gibi"),
-        "Desktop",
-        "routing-scouting-app-to-be-named",
-        "stack/mesh/state",
-        "admin_token");
+    return ScoutPaths.meshStateDir().resolve("admin_token");
   }
 
   private static String extractToken(HttpExchange exchange) {

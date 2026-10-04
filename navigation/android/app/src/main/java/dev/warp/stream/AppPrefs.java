@@ -19,7 +19,8 @@ import java.util.Set;
 public final class AppPrefs {
   public static final String TAILSCALE_BASE_URL = "http://100.78.191.61:18080";
   public static final String DEFAULT_BASE_URL = TAILSCALE_BASE_URL;
-  public static final String FALLBACK_BASE_URL = "http://192.168.1.39:18080";
+  // Scout mesh hub (WireGuard scoutwg0); a stale LAN IP here broke first-run.
+  public static final String FALLBACK_BASE_URL = "http://10.66.0.1:18080";
 
   private static final String PREFS_NAME = "scanner_stream_prefs";
   private static final String KEY_BASE_URL = "base_url";

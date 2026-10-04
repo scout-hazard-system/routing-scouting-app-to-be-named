@@ -233,18 +233,9 @@ public final class ScoutSubscriptionAuth {
     if (!override.isEmpty()) {
       return Path.of(override);
     }
-    String state = env("SCOUT_MESH_STATE_DIR", "").trim();
-    if (!state.isEmpty()) {
-      return Path.of(state, "subscriptions.tsv");
-    }
-    return Path.of(
-        System.getProperty("user.home", "/home/gibi"),
-        "Desktop",
-        "routing-scouting-app-to-be-named",
-        "stack",
-        "mesh",
-        "state",
-        "subscriptions.tsv");
+    // Same directory as the admin token and mesh allocator (was a
+    // user.home/Desktop guess that diverged from SCOUT_REPO_ROOT).
+    return ScoutPaths.meshStateDir().resolve("subscriptions.tsv");
   }
 
   private static Map<String, SubRecord> loadAll() throws Exception {

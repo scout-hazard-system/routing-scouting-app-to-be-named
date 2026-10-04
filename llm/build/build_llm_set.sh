@@ -7,6 +7,10 @@ set -euo pipefail
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 LLM_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 OLLAMA_BIN="${OLLAMA_BIN:-ollama}"
+# Use a NON-thinking base. Ollama's plain "qwen3:4b" tag is the Thinking-2507
+# build: its output lands in the OpenAI-compat "reasoning" field and CrewAI sees an
+# empty reply (/no_think, think:false and reasoning_effort are all ignored). For a
+# 4 GB GPU use SCOUT_BASE_MODEL=qwen3:4b-instruct-2507-q4_K_M.
 BASE_MODEL="${SCOUT_BASE_MODEL:-qwen3:8b}"
 
 # Highest complete local iterations present after reorg.
@@ -59,7 +63,17 @@ for entry in "${MODELS[@]}"; do
     exit 1
   fi
   echo "== building $model from $modelfile =="
-  "$OLLAMA_BIN" create "$model" -f "$modelfile"
+  # Modelfiles pin "FROM qwen3:8b"; SCOUT_BASE_MODEL rebases the qwen3 ones so a
+  # host builds the set on what fits its GPU (e.g. qwen3:4b on a 4 GB card).
+  # Chained bases (e.g. scout-dev FROM scout-core*) are left alone.
+  if [[ -n "${SCOUT_BASE_MODEL:-}" ]] && grep -qE '^FROM qwen3:' "$modelfile"; then
+    rebased="$(mktemp)"
+    sed -E "s#^FROM qwen3:[^[:space:]]+#FROM ${BASE_MODEL}#" "$modelfile" > "$rebased"
+    (cd "$(dirname "$modelfile")" && "$OLLAMA_BIN" create "$model" -f "$rebased")
+    rm -f "$rebased"
+  else
+    "$OLLAMA_BIN" create "$model" -f "$modelfile"
+  fi
 done
 
 echo "== installed scout models =="

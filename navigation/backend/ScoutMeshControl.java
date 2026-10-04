@@ -337,41 +337,18 @@ public final class ScoutMeshControl {
   }
 
   private static Path repoRoot() {
-    String fromEnv = env("SCOUT_REPO_ROOT", "").trim();
-    if (!fromEnv.isEmpty()) {
-      return Path.of(fromEnv);
-    }
-    // navigation/backend → repo root
-    Path here = Path.of("").toAbsolutePath().normalize();
-    Path candidate = here;
-    for (int i = 0; i < 6; i++) {
-      if (Files.isDirectory(candidate.resolve("stack/mesh"))) {
-        return candidate;
-      }
-      Path parent = candidate.getParent();
-      if (parent == null) {
-        break;
-      }
-      candidate = parent;
-    }
-    return Path.of(System.getProperty("user.home", "/home/gibi"), "Desktop");
+    Path repo = ScoutPaths.repoRoot();
+    return repo != null ? repo : Path.of("").toAbsolutePath().normalize();
   }
 
   private static Path stateDir() {
-    String override = env("SCOUT_MESH_STATE_DIR", "").trim();
-    if (!override.isEmpty()) {
-      return Path.of(override);
-    }
-    return repoRoot().resolve("stack/mesh/state");
+    return ScoutPaths.meshStateDir();
   }
 
   private static Path peersDir() {
-    String override = env("SCOUT_MESH_PEERS_DIR", "").trim();
-    if (!override.isEmpty()) {
-      return Path.of(override);
-    }
-    return repoRoot().resolve("stack/mesh/peers");
+    return ScoutPaths.meshPeersDir();
   }
+
 
   private static Path allocatorPath() {
     return stateDir().resolve("ip_allocator.tsv");
