@@ -7,6 +7,10 @@ set -euo pipefail
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 LLM_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 OLLAMA_BIN="${OLLAMA_BIN:-ollama}"
+# Use a NON-thinking base. Ollama's plain "qwen3:4b" tag is the Thinking-2507
+# build: its output lands in the OpenAI-compat "reasoning" field and CrewAI sees an
+# empty reply (/no_think, think:false and reasoning_effort are all ignored). For a
+# 4 GB GPU use SCOUT_BASE_MODEL=qwen3:4b-instruct-2507-q4_K_M.
 BASE_MODEL="${SCOUT_BASE_MODEL:-qwen3:8b}"
 
 # Highest complete local iterations present after reorg.
