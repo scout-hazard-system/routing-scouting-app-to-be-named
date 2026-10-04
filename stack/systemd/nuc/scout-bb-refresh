@@ -1,23 +1,48 @@
 #!/usr/bin/env python3
-"""Renew this device's Scout blackboard token via the hub's proof-gated
-/v1/keys/authorize (entry token = device credential, root-only file) and
-write SCOUT_BLACKBOARD_TOKEN into the agent-box env files."""
-import json, os, re, sys, urllib.request
+"""Renew this device's Scout blackboard tokens via the hub's proof-gated
+/v1/keys/authorize (entry token = device credential, root-only file).
+
+One token per crew role, scoped to exactly the categories that role appears
+in under scout_crew.blackboard.store.ROLE_ACL, written to the agent-box env
+files as SCOUT_BLACKBOARD_TOKEN_<ROLE>. SCOUT_BLACKBOARD_TOKEN (generic
+fallback) is the manager token."""
+import grp, json, os, re, urllib.request
+
 HUB = os.environ.get("SCOUT_BLACKBOARD_URL", "http://10.66.0.1:8765").rstrip("/")
+DEVICE = os.environ.get("SCOUT_DEVICE_ID", "nuxci7")
 ENV_FILES = ["/etc/scout/agent-box.env", "/opt/scout-agent-box/.env"]
+ROLES = {
+    "alert": ["pipeline"], "intel": ["pipeline"], "vet": ["pipeline"],
+    "rank": ["pipeline"], "core": ["pipeline"],
+    "manager": ["pipeline", "dev_debug"], "dev": ["pipeline", "dev_debug"],
+    "hermes": ["pipeline", "dev_debug"], "pa": ["pipeline", "dev_debug"],
+}
+
 entry = open("/etc/scout/blackboard-entry.token").read().strip()
-body = json.dumps({"proof": {"entry_token": entry}, "device_id": "nuxci7",
-                   "role": "manager", "categories": ["pipeline", "dev_debug"],
-                   "ttl": 86400}).encode()
-req = urllib.request.Request(HUB + "/v1/keys/authorize", data=body,
-                             headers={"Content-Type": "application/json"})
-tok = json.load(urllib.request.urlopen(req, timeout=15))["token"]
+
+
+def mint(role, categories):
+    body = json.dumps({"proof": {"entry_token": entry}, "device_id": DEVICE,
+                       "role": role, "categories": categories,
+                       "ttl": 86400}).encode()
+    req = urllib.request.Request(HUB + "/v1/keys/authorize", data=body,
+                                 headers={"Content-Type": "application/json"})
+    return json.load(urllib.request.urlopen(req, timeout=15))["token"]
+
+
+tokens = {r: mint(r, c) for r, c in ROLES.items()}
+lines = [f"SCOUT_BLACKBOARD_TOKEN={tokens['manager']}"]
+lines += [f"SCOUT_BLACKBOARD_TOKEN_{r.upper()}={t}" for r, t in tokens.items()]
+
+gid = grp.getgrnam("scout").gr_gid
 for p in ENV_FILES:
     s = open(p).read()
-    line = "SCOUT_BLACKBOARD_TOKEN=" + tok
-    s = re.sub(r"(?m)^SCOUT_BLACKBOARD_TOKEN=.*$", line, s) if re.search(r"(?m)^SCOUT_BLACKBOARD_TOKEN=", s) else s.rstrip("\n") + "\n" + line + "\n"
+    s = re.sub(r"(?m)^SCOUT_BLACKBOARD_TOKEN(_[A-Z]+)?=.*\n?", "", s)
+    s = s.rstrip("\n") + "\n" + "\n".join(lines) + "\n"
     tmp = p + ".tmp"
-    with open(tmp, "w") as f: f.write(s)
-    os.chmod(tmp, 0o640); os.chown(tmp, 0, __import__("grp").getgrnam("scout").gr_gid)
+    with open(tmp, "w") as f:
+        f.write(s)
+    os.chmod(tmp, 0o640)
+    os.chown(tmp, 0, gid)
     os.replace(tmp, p)
-print("blackboard token renewed (24h)")
+print(f"blackboard tokens renewed for {len(tokens)} roles (24h)")
