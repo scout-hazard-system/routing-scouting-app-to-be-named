@@ -34,6 +34,21 @@ BACKEND_BASE_URL = os.environ.get("BACKEND_BASE_URL", "http://127.0.0.1:18080").
 RECENT_EVENT_LIMIT = 120
 STREAM_POLL_SECONDS = 0.35
 
+# The backend trusts loopback callers for its "secure pull" endpoints, and every
+# proxied request arrives from 127.0.0.1. Only forward the API families this UI
+# actually calls, so a LAN host that can reach this port cannot reach mobile
+# client pulls, client lists or error reports through it as "localhost".
+PROXY_ALLOWED_PREFIXES = ("/api/platform/", "/api/map/", "/api/gps/")
+PROXY_DENIED_PATHS = frozenset(
+    {
+        "/api/platform/error-reports/recent",
+        "/api/gps/latest",
+    }
+)
+# Never serve the server's own source / build files as static content.
+STATIC_DENIED_SUFFIXES = (".py", ".sh", ".pyc", ".spec", ".log")
+STATIC_DENIED_NAMES = frozenset({"dockerfile"})
+
 
 def now_iso():
     return datetime.now(UTC).isoformat()
@@ -99,7 +114,6 @@ def build_snapshot():
 
     return {
         "ts": now_iso(),
-        "log_path": str(LOG_PATH),
         "event_type_counts": dict(counters),
         "metrics": metrics,
         "recentEvents": events[-30:],
@@ -143,7 +157,8 @@ class FrontendHandler(SimpleHTTPRequestHandler):
         self.send_header("Content-Type", "text/event-stream; charset=utf-8")
         self.send_header("Cache-Control", "no-cache, no-store, must-revalidate")
         self.send_header("Connection", "keep-alive")
-        self.send_header("Access-Control-Allow-Origin", "*")
+        # Same-origin only: no wildcard CORS, so other sites open in a browser
+        # on this LAN cannot read the live pipeline/alert stream.
         self.end_headers()
 
     def _stream_pipeline_events(self):
@@ -152,7 +167,6 @@ class FrontendHandler(SimpleHTTPRequestHandler):
             "ts": now_iso(),
             "event_type": "server_heartbeat",
             "source": "dev_server",
-            "log_path": str(LOG_PATH),
         }
         self.wfile.write(f"data: {json.dumps(heartbeat)}\n\n".encode("utf-8"))
         self.wfile.flush()
@@ -161,7 +175,7 @@ class FrontendHandler(SimpleHTTPRequestHandler):
             warn = {
                 "ts": now_iso(),
                 "event_type": "server_warning",
-                "message": f"log file not found: {LOG_PATH}",
+                "message": "pipeline log not found",
             }
             self.wfile.write(f"data: {json.dumps(warn)}\n\n".encode("utf-8"))
             self.wfile.flush()
@@ -231,14 +245,9 @@ class FrontendHandler(SimpleHTTPRequestHandler):
             self.wfile.write(body)
             return
         except Exception as exc:
-            self._send_json(
-                {
-                    "error": "backend_proxy_unavailable",
-                    "message": str(exc),
-                    "upstream": upstream_url,
-                },
-                status=HTTPStatus.BAD_GATEWAY,
-            )
+            # Log details locally; never echo internal URLs/errors to clients.
+            self.log_error("backend proxy failed for %s: %s", urlparse(self.path).path, exc)
+            self._send_json({"error": "backend_proxy_unavailable"}, status=HTTPStatus.BAD_GATEWAY)
             return
 
     def do_GET(self):
@@ -266,12 +275,19 @@ class FrontendHandler(SimpleHTTPRequestHandler):
                     "status": "ok",
                     "ts": now_iso(),
                     "log_exists": LOG_PATH.exists(),
-                    "log_path": str(LOG_PATH),
                 }
             )
             return
         if path.startswith("/api/"):
+            if path in PROXY_DENIED_PATHS or not path.startswith(PROXY_ALLOWED_PREFIXES):
+                self._send_json({"error": "not_found"}, status=HTTPStatus.NOT_FOUND)
+                return
             self._proxy_backend_get()
+            return
+
+        name = path.rsplit("/", 1)[-1].lower()
+        if name.endswith(STATIC_DENIED_SUFFIXES) or name in STATIC_DENIED_NAMES or name.startswith("."):
+            self.send_error(HTTPStatus.NOT_FOUND)
             return
 
         return super().do_GET()

@@ -245,7 +245,7 @@ private static final String[] SCOUT_MODELS =
   private static final int MAX_REQUEST_BODY_BYTES =
       parseIntOrDefault(System.getenv("BACKEND_MAX_REQUEST_BODY_BYTES"), 65536);
   private static final String CORS_ALLOW_ORIGIN =
-      System.getenv().getOrDefault("BACKEND_CORS_ALLOW_ORIGIN", "*");
+      System.getenv().getOrDefault("BACKEND_CORS_ALLOW_ORIGIN", "");
   private static final boolean RESTRICT_ALL_API_ROUTES =
       !"false".equalsIgnoreCase(System.getenv().getOrDefault("BACKEND_RESTRICT_ALL_APIS", "true"));
   private static final String GLOBAL_API_KEY =
@@ -258,7 +258,10 @@ private static final String[] SCOUT_MODELS =
 System.getenv()
           .getOrDefault(
               "BACKEND_PULL_ALLOW_CIDRS",
-              "10.66.0.0/16,100.64.0.0/10,127.0.0.1/32,::1/128,172.16.0.0/12,192.168.0.0/16,10.0.0.0/8");
+              // Mesh (WireGuard) + Tailscale + loopback only. The old default also
+              // trusted every RFC1918 range, i.e. the whole home/ISP LAN. Add a
+              // specific LAN host (e.g. 192.168.12.188/32) via env if needed.
+              "10.66.0.0/16,100.64.0.0/10,127.0.0.1/32,::1/128");
   private static final String SECURE_PULL_API_KEY =
       System.getenv().getOrDefault("BACKEND_PULL_API_KEY", "");
   private static final String SECURE_PULL_API_KEY_HEADER =
@@ -709,7 +712,7 @@ private static final Set<String> GLOBAL_PUBLIC_ENDPOINTS =
     // Preauthorized key bypass: a single shared secret that unlocks the whole API
     // without a subscription token (see the Android paywall bypass work on main).
     String preauthKey = exchange.getRequestHeaders().getFirst(PREAUTHORIZED_KEY_HEADER);
-    if (!PREAUTHORIZED_KEY.isBlank() && PREAUTHORIZED_KEY.equals(preauthKey != null ? preauthKey.trim() : "")) {
+    if (!PREAUTHORIZED_KEY.isBlank() && secretEquals(PREAUTHORIZED_KEY, preauthKey)) {
       return;
     }
     // Admin machines bypass with X-Scout-Admin-Token (path-scoped or any-path).
@@ -733,7 +736,7 @@ private static final Set<String> GLOBAL_PUBLIC_ENDPOINTS =
     }
     if (GLOBAL_API_KEY != null && !GLOBAL_API_KEY.isBlank()) {
       String received = exchange.getRequestHeaders().getFirst(GLOBAL_API_KEY_HEADER);
-      if (received == null || !GLOBAL_API_KEY.equals(received.trim())) {
+      if (!secretEquals(GLOBAL_API_KEY, received)) {
         throw new IllegalArgumentException("invalid_global_api_key");
       }
     }
@@ -1228,19 +1231,43 @@ private static final Set<String> GLOBAL_PUBLIC_ENDPOINTS =
       return;
     }
     String preauthKey = exchange.getRequestHeaders().getFirst(PREAUTHORIZED_KEY_HEADER);
-    if (!PREAUTHORIZED_KEY.isBlank() && PREAUTHORIZED_KEY.equals(preauthKey != null ? preauthKey.trim() : "")) {
+    if (!PREAUTHORIZED_KEY.isBlank() && secretEquals(PREAUTHORIZED_KEY, preauthKey)) {
       return;
     }
     String remoteAddress = remoteAddressFromExchange(exchange);
     if (!isAllowedPullSource(remoteAddress)) {
       throw new IllegalArgumentException("forbidden_pull_source");
     }
-    if (!SECURE_PULL_API_KEY.isBlank()) {
-      String received = exchange.getRequestHeaders().getFirst(SECURE_PULL_API_KEY_HEADER);
-      if (received == null || !SECURE_PULL_API_KEY.equals(received.trim())) {
+    if (SECURE_PULL_API_KEY.isBlank()) {
+      // Fail closed: without a pull key only same-host callers may pull.
+      if (!isLoopbackSource(remoteAddress)) {
         throw new IllegalArgumentException("invalid_pull_api_key");
       }
+      return;
     }
+    String received = exchange.getRequestHeaders().getFirst(SECURE_PULL_API_KEY_HEADER);
+    if (!secretEquals(SECURE_PULL_API_KEY, received)) {
+      throw new IllegalArgumentException("invalid_pull_api_key");
+    }
+  }
+
+  private static boolean secretEquals(String expected, String received) {
+    if (received == null) {
+      return false;
+    }
+    return java.security.MessageDigest.isEqual(
+        expected.getBytes(java.nio.charset.StandardCharsets.UTF_8),
+        received.trim().getBytes(java.nio.charset.StandardCharsets.UTF_8));
+  }
+
+  private static boolean isLoopbackSource(String remoteAddress) {
+    if (remoteAddress == null || remoteAddress.isBlank()) {
+      return false;
+    }
+    String normalized = normalizeIpLiteral(remoteAddress);
+    return normalized.startsWith("127.")
+        || "::1".equals(normalized)
+        || "0:0:0:0:0:0:0:1".equals(normalized);
   }
 
   private static boolean isAllowedPullSource(String remoteAddress) {
@@ -5386,7 +5413,12 @@ private static final Set<String> GLOBAL_PUBLIC_ENDPOINTS =
   }
 
   private static void applyCorsHeaders(Headers headers, HttpExchange exchange) {
-    headers.set("Access-Control-Allow-Origin", CORS_ALLOW_ORIGIN);
+    // No CORS unless an explicit origin is configured: a wildcard let any web
+    // page open on the LAN read pipeline/GPS/mobile-client data cross-origin.
+    if (!CORS_ALLOW_ORIGIN.isBlank()) {
+      headers.set("Access-Control-Allow-Origin", CORS_ALLOW_ORIGIN);
+      headers.set("Vary", "Origin");
+    }
   }
 
   private static boolean isGet(HttpExchange exchange) {
@@ -6510,7 +6542,7 @@ static final class MeshEnrollHandler implements HttpHandler {
       }
       boolean valid = false;
       String keyType = "unknown";
-      if (!PREAUTHORIZED_KEY.isBlank() && PREAUTHORIZED_KEY.equals(key)) {
+      if (!PREAUTHORIZED_KEY.isBlank() && secretEquals(PREAUTHORIZED_KEY, key)) {
         valid = true;
         keyType = "preauthorized";
       }
