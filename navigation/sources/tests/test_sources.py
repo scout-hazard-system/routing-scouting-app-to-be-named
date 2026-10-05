@@ -93,8 +93,26 @@ class ProvidersTest(unittest.TestCase):
         self.assertNotIn("SECRET", e.source_url)
 
     def test_tomtom(self):
+        P._tomtom_last_call = 0.0
         (e,) = P.tomtom(PHX)
         self.assertEqual((e.kind, e.severity, e.road), ("incident", "major", "I-10"))
+
+    def test_tomtom_tiles_stay_under_cap_and_cover_region(self):
+        import math
+        for radius in (20, 50, 80, 150):
+            reg = Region(33.4484, -112.0740, radius)
+            tiles = P.tomtom_tiles(reg)
+            k = 111.0 * math.cos(math.radians(reg.lat))
+            for a, b, c, d in tiles:
+                self.assertLess((c - a) * k * (d - b) * 111.0, 10000.0)
+            self.assertAlmostEqual(min(t[0] for t in tiles), reg.bbox()[0])
+            self.assertAlmostEqual(max(t[3] for t in tiles), reg.bbox()[3])
+
+    def test_tomtom_rate_limited(self):
+        P._tomtom_last_call = 0.0
+        self.assertEqual(len(P.tomtom(PHX)), 1)
+        self.assertEqual(P.tomtom(PHX), [])  # within SCOUT_TOMTOM_MIN_INTERVAL_S
+        P._tomtom_last_call = 0.0
 
     def test_tomtom_without_key_is_inert(self):
         with mock.patch.dict(os.environ, {"SCOUT_TOMTOM_KEY": ""}):
@@ -125,6 +143,7 @@ class AccountabilityTest(unittest.TestCase):
              tempfile.TemporaryDirectory() as d:
             log = os.path.join(d, "p.log")
             seen = Seen(Path(d) / "seen.json")
+            P._tomtom_last_call = 0.0
             first = poll_once(PHX, ["AZ"], ["nws", "511", "wzdx", "tomtom"], log_file=log, seen=seen)
             second = poll_once(PHX, ["AZ"], ["nws", "511", "wzdx", "tomtom"], log_file=log, seen=seen)
             self.assertEqual(first["new_or_changed"], 4)

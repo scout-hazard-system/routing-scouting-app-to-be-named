@@ -6,7 +6,9 @@ Keys come only from the environment; nothing here writes a key anywhere.
 
 from __future__ import annotations
 
+import math
 import os
+import time
 from datetime import datetime, timezone
 from typing import Any, Dict, Iterable, List, Optional
 
@@ -188,18 +190,43 @@ TOMTOM_FIELDS = ("{incidents{type,geometry{type,coordinates},properties{id,iconC
                  "events{description,code},startTime,endTime,from,to,length,delay,roadNumbers,lastReportTime}}}")
 
 
+TOMTOM_MAX_TILE_KM2 = 9000.0          # API hard cap is 10,000 km^2 per bbox
+_tomtom_last_call = 0.0
+
+
+def tomtom_tiles(region: Region, max_km2: float = TOMTOM_MAX_TILE_KM2):
+    """Split the region's bbox into an n x n grid whose tiles each stay under the cap."""
+    min_lon, min_lat, max_lon, max_lat = region.bbox()
+    km_per_lon = 111.0 * max(math.cos(math.radians(region.lat)), 0.01)
+    area = (max_lon - min_lon) * km_per_lon * (max_lat - min_lat) * 111.0
+    n = max(1, math.ceil(math.sqrt(area / max_km2)))
+    dlon, dlat = (max_lon - min_lon) / n, (max_lat - min_lat) / n
+    return [(min_lon + i * dlon, min_lat + j * dlat, min_lon + (i + 1) * dlon, min_lat + (j + 1) * dlat)
+            for i in range(n) for j in range(n)]
+
+
 def tomtom(region: Region, states: Iterable[str] = ()) -> List[HazardEvent]:
+    """TomTom incidents over the whole region (tiled under the bbox cap), rate
+    limited by SCOUT_TOMTOM_MIN_INTERVAL_S (default 600 s) for the free tier."""
+    global _tomtom_last_call
     key = os.getenv("SCOUT_TOMTOM_KEY", "").strip()
     if not key:
         return []
-    # Incident Details caps the bbox at 10,000 km^2: clamp to a ~50 km radius.
-    r = Region(region.lat, region.lon, min(region.radius_km, 50.0))
-    min_lon, min_lat, max_lon, max_lat = r.bbox()
+    min_interval = float(os.getenv("SCOUT_TOMTOM_MIN_INTERVAL_S", "600") or 600)
+    if _tomtom_last_call and time.monotonic() - _tomtom_last_call < min_interval:
+        return []
+    _tomtom_last_call = time.monotonic()
     url = "https://api.tomtom.com/traffic/services/5/incidentDetails"
-    data = get_json(url, params={
-        "key": key, "bbox": f"{min_lon:.5f},{min_lat:.5f},{max_lon:.5f},{max_lat:.5f}",
-        "fields": TOMTOM_FIELDS, "language": "en-US", "timeValidityFilter": "present",
-    })
+    incidents: Dict[str, Any] = {}
+    for (a, b, c, d) in tomtom_tiles(region):
+        data = get_json(url, params={
+            "key": key, "bbox": f"{a:.5f},{b:.5f},{c:.5f},{d:.5f}",
+            "fields": TOMTOM_FIELDS, "language": "en-US", "timeValidityFilter": "present",
+        })
+        for f in data.get("incidents", []) or []:
+            pid = str((f.get("properties") or {}).get("id") or len(incidents))
+            incidents[pid] = f  # tiles overlap at edges: merge by incident id
+    data = {"incidents": [f for f in incidents.values() if any_point_in(region, f.get("geometry"))]}
     out: List[HazardEvent] = []
     for f in data.get("incidents", []) or []:
         p = f.get("properties") or {}
