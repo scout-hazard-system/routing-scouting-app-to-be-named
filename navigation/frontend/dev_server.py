@@ -38,11 +38,14 @@ STREAM_POLL_SECONDS = 0.35
 # proxied request arrives from 127.0.0.1. Only forward the API families this UI
 # actually calls, so a LAN host that can reach this port cannot reach mobile
 # client pulls, client lists or error reports through it as "localhost".
-PROXY_ALLOWED_PREFIXES = ("/api/platform/", "/api/map/", "/api/gps/")
+#
+# /api/gps/* is deliberately absent: a coordinate-free hub refuses those endpoints,
+# and this UI reads /api/gps/policy directly from the backend instead. Clients that
+# hold a position use the page's own backend origin, never this proxy.
+PROXY_ALLOWED_PREFIXES = ("/api/platform/", "/api/map/")
 PROXY_DENIED_PATHS = frozenset(
     {
         "/api/platform/error-reports/recent",
-        "/api/gps/latest",
     }
 )
 # Never serve the server's own source / build files as static content.
