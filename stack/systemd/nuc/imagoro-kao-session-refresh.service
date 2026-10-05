@@ -1,0 +1,7 @@
+[Unit]
+Description=Renew Imagoro Kao session token from the Dell
+Wants=wg-quick@scoutwg0.service
+After=wg-quick@scoutwg0.service
+[Service]
+Type=oneshot
+ExecStart=/usr/local/sbin/imagoro-kao-session-refresh

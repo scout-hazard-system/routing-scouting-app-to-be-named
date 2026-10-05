@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# Fetch a 24h Imagoro session token for Kao from the Dell (mesh agent key; the
+# session secret never leaves the Dell) and restart Kao to pick it up.
+set -euo pipefail
+tok="$(runuser -u scout -- ssh dell 'sudo /usr/local/sbin/imagoro-mint-session kao-nuc enterprise 1 86400')"
+[[ ${#tok} -gt 100 ]] || { echo "mint failed" >&2; exit 1; }
+umask 027
+printf 'IMAGORO_SESSION_TOKEN=%s\n' "$tok" > /etc/imagoro-kao/session.env.tmp
+chown root:scout /etc/imagoro-kao/session.env.tmp; chmod 640 /etc/imagoro-kao/session.env.tmp
+mv /etc/imagoro-kao/session.env.tmp /etc/imagoro-kao/session.env
+systemctl --no-block try-restart imagoro-kao.service
+echo "kao session token renewed (24h)"

@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# imagoro-mint-session <sub> <role> <tenant> [ttlSec]  -> prints a session token
+# Root-only: reads IMAGORO_SESSION_SECRET from /etc/imagoro-backend.env.
+set -euo pipefail
+sub="${1:?sub}"; role="${2:?role}"; tenant="${3:?tenant}"; ttl="${4:-86400}"
+[[ "$role" =~ ^(personal|business|enterprise)$ ]] || { echo "bad role" >&2; exit 2; }
+[[ "$tenant" =~ ^[0-9]+$ && "$ttl" =~ ^[0-9]+$ ]] || { echo "bad tenant/ttl" >&2; exit 2; }
+secret="$(awk -F= '/^IMAGORO_SESSION_SECRET=/{print substr($0, index($0,"=")+1)}' /etc/imagoro-backend.env)"
+SECRET="$secret" SUB="$sub" ROLE="$role" TENANT="$tenant" TTL="$ttl" node --input-type=module -e '
+import { createSession } from "/opt/imagoro-backend/server/src/session.mjs";
+const { token } = createSession(process.env.SECRET, { sub: process.env.SUB, role: process.env.ROLE, tenant: Number(process.env.TENANT), ttlSec: Number(process.env.TTL) });
+process.stdout.write(token + "\n");'
