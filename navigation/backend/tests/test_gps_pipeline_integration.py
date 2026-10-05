@@ -35,6 +35,16 @@ def _repo_root() -> Path:
     return Path(__file__).resolve().parents[3]
 
 
+def _channel_selector():
+    """navigation/pipeline/channel_selector.py, the module pipeline.py and the hub selector share."""
+    pipeline_dir = str(_repo_root() / "navigation" / "pipeline")
+    if pipeline_dir not in sys.path:
+        sys.path.insert(0, pipeline_dir)
+    import channel_selector
+
+    return channel_selector
+
+
 _COMPILED: dict[str, Path] = {}
 
 
@@ -87,6 +97,7 @@ class _BackendFixture:
         env["BROADCASTIFY_SELECTOR_LOCK_STATE"] = "false"
         env["SCOUT_SUBSCRIPTION_REQUIRED"] = "false"
         env["MAP_CACHE_DIR"] = str(self.map_cache_dir)
+        env["NOMINATIM_REVERSE_URL"] = "http://127.0.0.1:9/reverse"  # never reach a third party from tests
         # None means "unset": the shipped default is coordinate-free.
         if self.accept_client_gps is None:
             env.pop("SCOUT_ACCEPT_CLIENT_GPS", None)
@@ -214,6 +225,10 @@ class _BackendTestCase(unittest.TestCase):
 
 class GpsPipelineIntegrationTests(_BackendTestCase):
     """Vehicle-local mode: SCOUT_ACCEPT_CLIENT_GPS=true keeps the GPS features alive."""
+
+    def test_pipeline_policy_probe_sees_vehicle_local(self):
+        probe = _channel_selector().hub_accepts_client_gps(self.base_url + "/api/gps/policy")
+        self.assertIs(probe, True)
 
     def test_update_and_latest(self):
         update = self._request_json(
@@ -555,6 +570,60 @@ class GpsPolicyIntegrationTests(_BackendTestCase):
         status, body, _ = self._request_raw("GET", "/api/platform/hazards?shards=9tbq,9tbr,9tbp")
         self.assertEqual(status, 502)
         self.assertEqual(body.get("error"), "hazards_unavailable")
+
+    def test_jurisdiction_resolves_from_cell_centre(self):
+        status, body, _ = self._request_raw("GET", "/api/platform/jurisdiction?shard=9tbq")
+        self.assertEqual(status, 200)
+        self.assertEqual(body.get("cell"), "9tbq")
+        self.assertEqual(body.get("precision"), "cell_center")
+        # 9tbq is central Phoenix: the centre must come back as lat ~33.49, lon ~-111.97 (not swapped).
+        self.assertAlmostEqual(body["center"]["lat"], 33.486, delta=0.01)
+        self.assertAlmostEqual(body["center"]["lon"], -111.973, delta=0.01)
+
+    def test_pipeline_policy_probe_sees_coordinate_free(self):
+        cs = _channel_selector()
+        self.assertIs(cs.hub_accepts_client_gps(self.base_url + "/api/gps/policy"), False)
+        # An unreachable hub is "unknown", which the pipeline treats as no GPS.
+        self.assertIsNone(cs.hub_accepts_client_gps("http://127.0.0.1:9/api/gps/policy", timeout_seconds=0.5))
+
+    def test_pipeline_shard_centre_matches_hub(self):
+        status, body, _ = self._request_raw("GET", "/api/platform/jurisdiction?shard=9tbq")
+        self.assertEqual(status, 200)
+        lat, lon = _channel_selector().shard_center("9tbq")
+        self.assertAlmostEqual(lat, body["center"]["lat"], places=4)
+        self.assertAlmostEqual(lon, body["center"]["lon"], places=4)
+        self.assertIsNone(_channel_selector().shard_center("33.44,-112.07"))
+
+    def test_selector_cli_shard_ranks_like_the_hub(self):
+        # Phoenix (9tbq) is also the catalogue's tie-break winner, so Seattle (c23n) is the
+        # case that proves the cell centre, not the fallback order, drove the ranking.
+        catalog = str(self.repo_root / "stack/config/broadcastify_channels.national.manifest.json")
+        for cell, state in (("9tbq", "AZ"), ("c23n", "WA")):
+            with self.subTest(cell=cell):
+                out = subprocess.run(
+                    [sys.executable, str(self.repo_root / "navigation/pipeline/channel_selector.py"),
+                     "--channels-file", catalog, "--shard", cell, "--output-format", "json"],
+                    capture_output=True, text=True, timeout=60,
+                )
+                self.assertEqual(out.returncode, 0, out.stderr)
+                cli = json.loads(out.stdout)
+                status, hub, _ = self._request_raw("GET", "/api/platform/broadcastify/select?shard=" + cell)
+                self.assertEqual(status, 200)
+                self.assertEqual(cli["selected"].get("state"), state)
+                self.assertEqual(str(cli["selected"]["id"]), str(hub["selected"]["id"]))
+
+    def test_jurisdiction_refuses_coordinates_and_bad_cells(self):
+        for query, error in (
+            ("shard=9tbq&lat=33.4&lon=-112.0", "coordinates_not_accepted"),
+            ("lat=33.4&lon=-112.0", "coordinates_not_accepted"),
+            ("shard=9tbq,9tbr", "bad_shard"),
+            ("shard=nope", "bad_shard"),
+            ("", "bad_shard"),
+        ):
+            with self.subTest(query=query):
+                status, body, _ = self._request_raw("GET", "/api/platform/jurisdiction?" + query)
+                self.assertEqual(status, 400)
+                self.assertEqual(body.get("error"), error)
 
 
 if __name__ == "__main__":
