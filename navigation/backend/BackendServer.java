@@ -118,6 +118,8 @@ public final class BackendServer {
       System.getenv().getOrDefault("WAZE_HAZARDS_API_KEY", "");
   private static final String NOMINATIM_SEARCH_URL =
       System.getenv().getOrDefault("NOMINATIM_SEARCH_URL", "https://nominatim.openstreetmap.org/search");
+  private static final String NOMINATIM_REVERSE_URL =
+      System.getenv().getOrDefault("NOMINATIM_REVERSE_URL", "https://nominatim.openstreetmap.org/reverse");
   private static final double GEOCODE_BIAS_RADIUS_DEGREES =
       parseDouble(System.getenv("GEOCODE_BIAS_RADIUS_DEGREES"), 0.35);
   private static final int SUGGEST_DEFAULT_LIMIT =
@@ -165,6 +167,11 @@ public final class BackendServer {
       parseIntOrDefault(System.getenv("OSRM_CACHE_MAX_ENTRIES"), 512);
   private static final long LLM_STATUS_CACHE_TTL_MS =
       parseLongOrDefault(System.getenv("LLM_STATUS_CACHE_TTL_MS"), 5000L);
+  /** A cell's jurisdiction does not change; cache long so cell-centred reverse geocoding is rare. */
+  private static final long JURISDICTION_CACHE_TTL_MS =
+      parseLongOrDefault(System.getenv("JURISDICTION_CACHE_TTL_MS"), 1800000L);
+  private static final int JURISDICTION_CACHE_MAX_ENTRIES =
+      parseIntOrDefault(System.getenv("JURISDICTION_CACHE_MAX_ENTRIES"), 512);
   private static final String SELECTOR_PYTHON_BIN =
       System.getenv().getOrDefault("SELECTOR_PYTHON_BIN", repoPath("cop_pipeline/bin/python3"));
   private static final String SELECTOR_SCRIPT_PATH =
@@ -390,6 +397,7 @@ private static final Set<String> GLOBAL_PUBLIC_ENDPOINTS =
   private static final Map<String, TimedStringValue> OSRM_ROUTE_CACHE = new ConcurrentHashMap<>();
   private static final Map<String, TimedStringValue> OSRM_ALT_CACHE = new ConcurrentHashMap<>();
   private static final Map<String, TimedStringValue> SUGGEST_POI_SCENE_CACHE = new ConcurrentHashMap<>();
+  private static final Map<String, TimedStringValue> JURISDICTION_BY_CELL_CACHE = new ConcurrentHashMap<>();
   private static volatile TimedStringValue llmStatusCache = null;
   private static final Object ADDRESS_CATALOG_IO_LOCK = new Object();
   private static final Object GPS_LOCK = new Object();
@@ -432,6 +440,7 @@ private static final Set<String> GLOBAL_PUBLIC_ENDPOINTS =
     registerContext(server, "/api/gps/triangulation", new GpsTriangulationHandler());
     registerContext(server, "/api/gps/policy", new GpsPolicyHandler());
     registerContext(server, "/api/platform/hazards", new PlatformHazardsHandler());
+    registerContext(server, "/api/platform/jurisdiction", new PlatformJurisdictionHandler());
     registerContext(server, "/api/platform/broadcastify/select", new BroadcastifySelectHandler());
     registerContext(server, "/api/platform/broadcastify/catalog", new BroadcastifyCatalogHandler());
     registerContext(server, "/api/platform/providers/status", new ProviderStatusHandler());
@@ -2021,6 +2030,8 @@ private static final Set<String> GLOBAL_PUBLIC_ENDPOINTS =
         + "\"weather\":\"/api/platform/weather/forecast\","
         + "\"waze\":\"/api/platform/waze/route\","
         + "\"geocode\":\"/api/platform/geocode\","
+    + "\"jurisdiction\":\"/api/platform/jurisdiction\","
+    + "\"hazards\":\"/api/platform/hazards\","
         + "\"address_catalog_resolve\":\"/api/platform/address-catalog/resolve\","
         + "\"address_catalog_suggest\":\"/api/platform/address-catalog/suggest\","
         + "\"address_catalog_upsert\":\"/api/platform/address-catalog/upsert\","
@@ -5079,8 +5090,8 @@ private static final Set<String> GLOBAL_PUBLIC_ENDPOINTS =
           return "{\"error\":\"bad_shard\",\"detail\":\"shard must be a geohash-" + SHARD_PRECISION
               + " cell id computed on the client\"}";
         }
-        lat = trimDouble(center[1]);
-        lon = trimDouble(center[0]);
+        lat = trimDouble(center[0]);
+        lon = trimDouble(center[1]);
       }
     }
     if (lat.isBlank() || lon.isBlank()) {
@@ -5492,6 +5503,99 @@ private static final Set<String> GLOBAL_PUBLIC_ENDPOINTS =
               + "\"hazards_path\":\"" + HAZARDS_PATH + "\""
               + "}");
     }
+  }
+
+  /**
+   * Jurisdiction (city/county/state) for the cell the client is standing in.
+   *
+   * <p>The browser used to reverse-geocode its own exact fix against Nominatim, which handed a
+   * live position to a third party on every selector refresh. It now sends only the cell id it
+   * already computed for hazards; the hub derives the cell centre and reverse-geocodes that here.
+   * Coordinates are refused outright so a client bug cannot reintroduce the leak.
+   */
+  private static final class PlatformJurisdictionHandler implements HttpHandler {
+    @Override
+    public void handle(HttpExchange exchange) throws IOException {
+      if (!isGet(exchange)) {
+        writeJson(exchange, 405, "{\"error\":\"method_not_allowed\"}");
+        return;
+      }
+      Map<String, String> query = parseQuery(exchange.getRequestURI().getRawQuery());
+      List<String> bad = coordinateParamsIn(query);
+      if (!bad.isEmpty()) {
+        writeJson(
+            exchange,
+            400,
+            "{\"error\":\"coordinates_not_accepted\",\"detail\":\"send only the geohash-"
+                + SHARD_PRECISION
+                + " cell id you computed on-device (shard=...); refused parameters: "
+                + jsonEscape(String.join(", ", bad)) + "\"}");
+        return;
+      }
+      List<String> ids = parseShardIds(query.getOrDefault("shard", ""));
+      if (ids == null || ids.size() != 1) {
+        writeJson(
+            exchange,
+            400,
+            "{\"error\":\"bad_shard\",\"detail\":\"shard must be a single geohash-"
+                + SHARD_PRECISION
+                + " cell id computed on-device\"}");
+        return;
+      }
+      writeJson(exchange, 200, jurisdictionJson(ids.get(0)));
+    }
+  }
+
+  /** Cached city/county/state for a cell, resolved from the cell centre only. */
+  private static String jurisdictionJson(String cell) {
+    String cached = getCachedString(JURISDICTION_BY_CELL_CACHE, cell);
+    if (cached != null) {
+      return cached;
+    }
+    double[] center = geohashCellCenter(cell);
+    if (center == null) {
+      return "{\"error\":\"bad_shard\"}";
+    }
+    // geohashCellCenter returns {lat, lon}; the hub reverse-geocodes the centre, never the device's fix.
+    double cellLat = center[0];
+    double cellLon = center[1];
+    String city = "";
+    String county = "";
+    String state = MapModel.stateFor(cellLat, cellLon);
+    if (state == null || state.isBlank() || "XX".equalsIgnoreCase(state)) {
+      state = "";
+    }
+    String body =
+        httpGetExternal(
+            NOMINATIM_REVERSE_URL
+                + "?format=jsonv2&zoom=10&addressdetails=1&lat="
+                + trimDouble(cellLat)
+                + "&lon="
+                + trimDouble(cellLon));
+    if (body != null && looksLikeJson(body)) {
+      String cityRaw = extractJsonString(body, "city");
+      if (cityRaw == null || cityRaw.isBlank()) {
+        cityRaw = extractJsonString(body, "town");
+      }
+      if (cityRaw == null || cityRaw.isBlank()) {
+        cityRaw = extractJsonString(body, "village");
+      }
+      city = cityRaw == null ? "" : cityRaw.trim();
+      String countyRaw = extractJsonString(body, "county");
+      county = countyRaw == null ? "" : countyRaw.trim();
+    }
+    String payload =
+        "{\"ts\":\"" + Instant.now() + "\","
+            + "\"cell\":\"" + jsonEscape(cell) + "\","
+            + "\"status\":\"ok\","
+            + "\"precision\":\"cell_center\","
+            + "\"center\":{\"lat\":" + trimDouble(cellLat) + ",\"lon\":" + trimDouble(cellLon) + "},"
+            + "\"city\":\"" + jsonEscape(city) + "\","
+            + "\"county\":\"" + jsonEscape(county) + "\","
+            + "\"state\":\"" + jsonEscape(state) + "\"}";
+    putCachedString(
+        JURISDICTION_BY_CELL_CACHE, cell, payload, JURISDICTION_CACHE_TTL_MS, JURISDICTION_CACHE_MAX_ENTRIES);
+    return payload;
   }
 
   /**
