@@ -16,6 +16,7 @@ import json
 import os
 import socket
 import subprocess
+import sys
 import tempfile
 import time
 import unittest
@@ -30,93 +31,189 @@ def _free_port() -> int:
         return int(s.getsockname()[1])
 
 
-class GpsPipelineIntegrationTests(unittest.TestCase):
-    @classmethod
-    def setUpClass(cls):
-        cls.repo_root = Path(__file__).resolve().parents[3]
-        cls.repo_dir = cls.repo_root / "navigation" / "backend"
-        cls.server_source = cls.repo_dir / "BackendServer.java"
-        cls.build_dir = Path(tempfile.mkdtemp(prefix="scanner-backend-test-build-"))
-        cls.port = _free_port()
-        cls.log_file = Path(tempfile.mkstemp(prefix="scanner-backend-test-log-", suffix=".log")[1])
-        cls.pipeline_log = Path(tempfile.mkstemp(prefix="scanner-backend-pipeline-log-", suffix=".log")[1])
-        cls.base_url = f"http://127.0.0.1:{cls.port}"
+def _repo_root() -> Path:
+    return Path(__file__).resolve().parents[3]
 
-        compile_cmd = ["javac", "-d", str(cls.build_dir)] + [
-            str(p) for p in sorted(cls.repo_dir.glob("*.java"))
-        ]
-        compile_result = subprocess.run(compile_cmd, cwd=str(cls.repo_dir), capture_output=True, text=True)
-        if compile_result.returncode != 0:
-            raise RuntimeError(
-                f"Backend compilation failed:\nSTDOUT:\n{compile_result.stdout}\nSTDERR:\n{compile_result.stderr}"
-            )
 
+_COMPILED: dict[str, Path] = {}
+
+
+def _compiled_backend(repo_root: Path) -> Path:
+    """Compile BackendServer.java once per test process and reuse the classes."""
+    key = str(repo_root)
+    if key in _COMPILED:
+        return _COMPILED[key]
+    repo_dir = repo_root / "navigation" / "backend"
+    build_dir = Path(tempfile.mkdtemp(prefix="scanner-backend-test-build-"))
+    compile_cmd = ["javac", "-d", str(build_dir)] + [
+        str(p) for p in sorted(repo_dir.glob("*.java"))
+    ]
+    compile_result = subprocess.run(compile_cmd, cwd=str(repo_dir), capture_output=True, text=True)
+    if compile_result.returncode != 0:
+        raise RuntimeError(
+            f"Backend compilation failed:\nSTDOUT:\n{compile_result.stdout}\nSTDERR:\n{compile_result.stderr}"
+        )
+    _COMPILED[key] = build_dir
+    return build_dir
+
+
+class _BackendFixture:
+    """One BackendServer.java process on a loopback port, with a chosen GPS policy."""
+
+    def __init__(self, repo_root: Path, port: int, *, accept_client_gps: bool | None):
+        self.repo_root = repo_root
+        self.repo_dir = repo_root / "navigation" / "backend"
+        self.port = port
+        self.base_url = f"http://127.0.0.1:{port}"
+        self.build_dir = _compiled_backend(repo_root)
+        self.log_file = Path(tempfile.mkstemp(prefix="scanner-backend-test-log-", suffix=".log")[1])
+        self.pipeline_log = Path(tempfile.mkstemp(prefix="scanner-backend-pipeline-log-", suffix=".log")[1])
+        self.map_cache_dir = Path(tempfile.mkdtemp(prefix="scanner-backend-map-cache-"))
+        self.accept_client_gps = accept_client_gps
+        self.proc: subprocess.Popen | None = None
+        self._log_handle = None
+
+    def _env(self) -> dict:
         env = os.environ.copy()
         env["JAVA_BACKEND_HOST"] = "127.0.0.1"
-        env["JAVA_BACKEND_PORT"] = str(cls.port)
-        env["PIPELINE_LOG_PATH"] = str(cls.pipeline_log)
-        env["SELECTOR_PYTHON_BIN"] = "python3"
-        env["BROADCASTIFY_CHANNELS_FILE"] = str(cls.repo_root / "stack/config/broadcastify_channels.national.manifest.json")
+        env["JAVA_BACKEND_PORT"] = str(self.port)
+        env["SCOUT_REPO_ROOT"] = str(self.repo_root)  # helper scripts resolve from the repo root, not cwd
+        env["PIPELINE_LOG_PATH"] = str(self.pipeline_log)
+        env["SELECTOR_PYTHON_BIN"] = sys.executable
+        env["BROADCASTIFY_CHANNELS_FILE"] = str(
+            self.repo_root / "stack/config/broadcastify_channels.national.manifest.json"
+        )
         env["BROADCASTIFY_SELECTOR_USE_OLLAMA_RERANK"] = "false"
         env["BROADCASTIFY_SELECTOR_LOCK_STATE"] = "false"
         env["SCOUT_SUBSCRIPTION_REQUIRED"] = "false"
-        cls.map_cache_dir = Path(tempfile.mkdtemp(prefix="scanner-backend-map-cache-"))
-        env["MAP_CACHE_DIR"] = str(cls.map_cache_dir)
+        env["MAP_CACHE_DIR"] = str(self.map_cache_dir)
+        # None means "unset": the shipped default is coordinate-free.
+        if self.accept_client_gps is None:
+            env.pop("SCOUT_ACCEPT_CLIENT_GPS", None)
+        else:
+            env["SCOUT_ACCEPT_CLIENT_GPS"] = "true" if self.accept_client_gps else "false"
+        return env
 
-        log_handle = open(cls.log_file, "w", encoding="utf-8")
-        cls._log_handle = log_handle
-        cls.proc = subprocess.Popen(
-            ["java", "-cp", str(cls.build_dir), "BackendServer"],
-            cwd=str(cls.repo_dir),
-            env=env,
-            stdout=log_handle,
-            stderr=log_handle,
+    def start(self) -> None:
+        self._log_handle = open(self.log_file, "w", encoding="utf-8")
+        self.proc = subprocess.Popen(
+            ["java", "-cp", str(self.build_dir), "BackendServer"],
+            cwd=str(self.repo_dir),
+            env=self._env(),
+            stdout=self._log_handle,
+            stderr=self._log_handle,
         )
-        cls._wait_for_health()
+        self.wait_for_health()
 
-    @classmethod
-    def tearDownClass(cls):
-        if getattr(cls, "proc", None) is not None:
-            cls.proc.terminate()
+    def stop(self) -> None:
+        if self.proc is not None:
+            self.proc.terminate()
             try:
-                cls.proc.wait(timeout=8)
+                self.proc.wait(timeout=8)
             except subprocess.TimeoutExpired:
-                cls.proc.kill()
-                cls.proc.wait(timeout=5)
-        if getattr(cls, "_log_handle", None):
-            cls._log_handle.close()
+                self.proc.kill()
+                self.proc.wait(timeout=5)
+            self.proc = None
+        if self._log_handle is not None:
+            self._log_handle.close()
+            self._log_handle = None
 
-    @classmethod
-    def _wait_for_health(cls):
+    def log_tail(self, limit: int = 4000) -> str:
+        return self.log_file.read_text(encoding="utf-8", errors="replace")[-limit:]
+
+    def wait_for_health(self) -> None:
         deadline = time.time() + 12.0
         last_err = None
         while time.time() < deadline:
             try:
-                health = cls._request_json("GET", "/api/health")
+                health = self.request_json("GET", "/api/health")
                 if health.get("status") == "ok":
                     return
             except Exception as exc:  # noqa: BLE001
                 last_err = exc
             time.sleep(0.2)
-        raise RuntimeError(f"Backend did not become healthy in time: {last_err}")
+        raise RuntimeError(f"Backend did not become healthy in time: {last_err}\n{self.log_tail()}")
 
-    @classmethod
-    def _request_json(cls, method: str, path: str, payload: dict | None = None):
-        url = cls.base_url + path
+    def request_json(self, method: str, path: str, payload: dict | None = None):
+        """Raises HTTPError on 4xx/5xx, matching the pre-existing test style."""
+        url = self.base_url + path
         body = None
         headers = {"Accept": "application/json"}
         if payload is not None:
             headers["Content-Type"] = "application/json"
             body = json.dumps(payload).encode("utf-8")
         req = Request(url, data=body, method=method, headers=headers)
-        with urlopen(req, timeout=8.0) as resp:
+        with urlopen(req, timeout=30.0) as resp:
             return json.loads(resp.read().decode("utf-8"))
+
+    def request_raw(self, method: str, path: str, payload: dict | None = None):
+        """Returns (status, parsed_body, raw_bytes) without raising on 4xx/5xx."""
+        url = self.base_url + path
+        body = None
+        headers = {"Accept": "application/json"}
+        if payload is not None:
+            headers["Content-Type"] = "application/json"
+            body = json.dumps(payload).encode("utf-8")
+        req = Request(url, data=body, method=method, headers=headers)
+        try:
+            with urlopen(req, timeout=30.0) as resp:
+                raw = resp.read()
+                status = resp.status
+        except HTTPError as exc:
+            raw = exc.read()
+            status = exc.code
+        parsed: dict
+        try:
+            parsed = json.loads(raw.decode("utf-8"))
+        except (UnicodeDecodeError, json.JSONDecodeError):
+            parsed = {"_raw": raw[:512].decode("utf-8", "replace")}
+        return status, parsed, raw
+
+    def request_bytes(self, path: str, timeout: float = 30.0):
+        req = Request(self.base_url + path, method="GET")
+        with urlopen(req, timeout=timeout) as resp:
+            return resp.status, resp.headers.get("Content-Type", ""), resp.read()
+
+
+class _BackendTestCase(unittest.TestCase):
+    accept_client_gps: bool | None = True
+
+    @classmethod
+    def setUpClass(cls):
+        cls.repo_root = _repo_root()
+        cls.repo_dir = cls.repo_root / "navigation" / "backend"
+        cls.port = _free_port()
+        cls.base_url = f"http://127.0.0.1:{cls.port}"
+        cls.pipeline_log = None
+        cls.map_cache_dir = None
+        cls.server = _BackendFixture(cls.repo_root, cls.port, accept_client_gps=cls.accept_client_gps)
+        cls.pipeline_log = cls.server.pipeline_log
+        cls.map_cache_dir = cls.server.map_cache_dir
+        cls.server.start()
+
+    @classmethod
+    def tearDownClass(cls):
+        cls.server.stop()
+
+    @classmethod
+    def _wait_for_health(cls):
+        cls.server.wait_for_health()
+
+    @classmethod
+    def _request_json(cls, method: str, path: str, payload: dict | None = None):
+        return cls.server.request_json(method, path, payload)
+
+    @classmethod
+    def _request_raw(cls, method: str, path: str, payload: dict | None = None):
+        return cls.server.request_raw(method, path, payload)
 
     @classmethod
     def _request_bytes(cls, path: str, timeout: float = 30.0):
-        req = Request(cls.base_url + path, method="GET")
-        with urlopen(req, timeout=timeout) as resp:
-            return resp.status, resp.headers.get("Content-Type", ""), resp.read()
+        return cls.server.request_bytes(path, timeout)
+
+
+class GpsPipelineIntegrationTests(_BackendTestCase):
+    """Vehicle-local mode: SCOUT_ACCEPT_CLIENT_GPS=true keeps the GPS features alive."""
 
     def test_update_and_latest(self):
         update = self._request_json(
@@ -360,6 +457,104 @@ class GpsPipelineIntegrationTests(unittest.TestCase):
             tx_state,
             "Selector returned same shard/state for far-apart coordinates; expected cross-shard behavior",
         )
+
+
+class GpsPolicyIntegrationTests(_BackendTestCase):
+    """Hub mode: with no SCOUT_ACCEPT_CLIENT_GPS the backend takes no positions at all."""
+
+    accept_client_gps = None  # leave the variable unset -> shipped default
+
+    GPS_SAMPLE = {
+        "user_id": "should-not-be-stored",
+        "lat": 33.4484,
+        "lon": -112.0740,
+        "accuracy": 8.0,
+        "seq": 1,
+        "source": "integration_test",
+    }
+
+    def test_policy_reports_coordinate_free(self):
+        status, body, _ = self._request_raw("GET", "/api/gps/policy")
+        self.assertEqual(status, 200)
+        self.assertFalse(body.get("accepts_client_gps"))
+        self.assertEqual(body.get("mode"), "coordinate_free")
+        self.assertEqual(body.get("shard_precision"), 4)
+        self.assertTrue(body.get("hazards_path"))
+
+    def test_gps_intake_is_refused(self):
+        status, body, _ = self._request_raw("POST", "/api/gps/update", self.GPS_SAMPLE)
+        self.assertEqual(status, 410)
+        self.assertEqual(body.get("error"), "gps_not_accepted")
+        # The refusal must not echo the position back.
+        self.assertNotIn(str(self.GPS_SAMPLE["lat"]), json.dumps(body))
+        self.assertNotIn(str(self.GPS_SAMPLE["lon"]), json.dumps(body))
+
+    def test_gps_replay_endpoints_are_refused(self):
+        for path in ("/api/gps/latest", "/api/gps/track", "/api/gps/triangulation"):
+            with self.subTest(path=path):
+                status, body, _ = self._request_raw("GET", path)
+                self.assertEqual(status, 410)
+                self.assertEqual(body.get("error"), "gps_not_accepted")
+
+    def test_refused_positions_never_become_selection_or_route_defaults(self):
+        # Nothing was stored, so the server must fall back to configured defaults
+        # instead of silently using the refused fix.
+        status, body, _ = self._request_raw("GET", "/api/map/scene")
+        self.assertEqual(status, 400)
+        self.assertEqual(body.get("error"), "missing_coordinates")
+
+        status, body, _ = self._request_raw("GET", "/api/platform/route/options?dest_lat=33.1&dest_lon=-112.1")
+        self.assertEqual(status, 400)
+        self.assertEqual(body.get("error"), "invalid_route_coordinates")
+
+    def test_selector_accepts_a_coarse_shard(self):
+        status, body, _ = self._request_raw("GET", "/api/platform/broadcastify/select?shard=9tbq")
+        self.assertEqual(status, 200)
+        selected = body.get("selected")
+        self.assertIsInstance(selected, dict)
+        self.assertTrue(str(selected.get("name", "")).strip())
+
+    def test_selector_refuses_a_bad_shard(self):
+        status, body, _ = self._request_raw("GET", "/api/platform/broadcastify/select?shard=nope")
+        self.assertEqual(status, 400)
+        self.assertEqual(body.get("error"), "bad_shard")
+
+    def test_selector_ignores_client_coordinates_in_hub_mode(self):
+        # lat/lon are no longer an accepted input on a coordinate-free hub: the client must send
+        # its own cell. A coordinate-bearing request therefore has to rank exactly like a
+        # parameterless one, proving the position never reached the selector.
+        status, with_coords, _ = self._request_raw(
+            "GET", "/api/platform/broadcastify/select?lat=48.5126&lon=-122.6127"
+        )
+        self.assertEqual(status, 200)
+        status, without, _ = self._request_raw("GET", "/api/platform/broadcastify/select")
+        self.assertEqual(status, 200)
+        self.assertEqual(
+            str(with_coords.get("selected", {}).get("id", "")),
+            str(without.get("selected", {}).get("id", "")),
+            "selector honoured client coordinates on a coordinate-free hub",
+        )
+
+    def test_hazards_refuse_coordinate_parameters(self):
+        for bad in ("lat=33.4&lon=-112.0", "gps=1", "bbox=1,2,3,4", "latitude=33.4"):
+            with self.subTest(query=bad):
+                status, body, _ = self._request_raw("GET", "/api/platform/hazards?shards=9tbq&" + bad)
+                self.assertEqual(status, 400)
+                self.assertEqual(body.get("error"), "coordinates_not_accepted")
+
+    def test_hazards_reject_malformed_shards(self):
+        for bad in ("", "9tb", "9tbqa", "9tb!!", "a" * 40):
+            with self.subTest(shards=bad):
+                status, body, _ = self._request_raw("GET", "/api/platform/hazards?shards=" + bad)
+                self.assertEqual(status, 400)
+                self.assertEqual(body.get("error"), "bad_shards")
+
+    def test_hazards_accept_cells_and_report_upstream_unavailable(self):
+        # No hazard shard service runs in this suite, so a well-formed request must fail
+        # honestly rather than silently returning an empty answer.
+        status, body, _ = self._request_raw("GET", "/api/platform/hazards?shards=9tbq,9tbr,9tbp")
+        self.assertEqual(status, 502)
+        self.assertEqual(body.get("error"), "hazards_unavailable")
 
 
 if __name__ == "__main__":

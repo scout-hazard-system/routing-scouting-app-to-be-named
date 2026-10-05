@@ -430,6 +430,8 @@ private static final Set<String> GLOBAL_PUBLIC_ENDPOINTS =
     registerContext(server, "/api/gps/latest", new GpsLatestHandler());
     registerContext(server, "/api/gps/track", new GpsTrackHandler());
     registerContext(server, "/api/gps/triangulation", new GpsTriangulationHandler());
+    registerContext(server, "/api/gps/policy", new GpsPolicyHandler());
+    registerContext(server, "/api/platform/hazards", new PlatformHazardsHandler());
     registerContext(server, "/api/platform/broadcastify/select", new BroadcastifySelectHandler());
     registerContext(server, "/api/platform/broadcastify/catalog", new BroadcastifyCatalogHandler());
     registerContext(server, "/api/platform/providers/status", new ProviderStatusHandler());
@@ -5064,6 +5066,23 @@ private static final Set<String> GLOBAL_PUBLIC_ENDPOINTS =
   private static String runBroadcastifySelector(Map<String, String> query) {
     String lat = query.getOrDefault("lat", "");
     String lon = query.getOrDefault("lon", "");
+    if (!ACCEPT_CLIENT_GPS) {
+      // Coordinate-free hub: a client position is never an acceptable input here, and
+      // latestGpsPoint is null anyway because /api/gps/update is refused. Selection is driven
+      // by the geohash cell the client computed on its own device.
+      lat = "";
+      lon = "";
+      String shard = query.getOrDefault("shard", "").trim();
+      if (!shard.isEmpty()) {
+        double[] center = geohashCellCenter(shard);
+        if (center == null) {
+          return "{\"error\":\"bad_shard\",\"detail\":\"shard must be a geohash-" + SHARD_PRECISION
+              + " cell id computed on the client\"}";
+        }
+        lat = trimDouble(center[1]);
+        lon = trimDouble(center[0]);
+      }
+    }
     if (lat.isBlank() || lon.isBlank()) {
       // Route selection from the streaming device's GPS (posted via
       // /api/gps/update) instead of server-side defaults whenever a device
@@ -5344,6 +5363,182 @@ private static final Set<String> GLOBAL_PUBLIC_ENDPOINTS =
     }
   }
 
+  /**
+   * Coordinate-free hub: clients compute coarse geohash shards on the device and ask for shard data;
+   * they never hand positions to the main stack. The /api/gps/* intake/replay endpoints are
+   * therefore refused (410) unless a vehicle-LOCAL backend explicitly opts in with
+   * SCOUT_ACCEPT_CLIENT_GPS=true. Clients read /api/gps/policy to learn which mode they are in.
+   */
+  private static final boolean ACCEPT_CLIENT_GPS =
+      "true".equalsIgnoreCase(System.getenv().getOrDefault("SCOUT_ACCEPT_CLIENT_GPS", "false").trim());
+
+  /** geohash cell alphabet; 'a', 'i', 'l' and 'o' are never part of a cell id. */
+  private static final String GEOHASH_BASE32 = "0123456789bcdefghjkmnpqrstuvwxyz";
+  private static final int SHARD_PRECISION = 4;
+  private static final Pattern GEOHASH_CELL_PATTERN = Pattern.compile("^[0-9b-hjkmnp-z]{4}$");
+  private static final int MAX_HAZARD_SHARDS =
+      parseIntOrDefault(System.getenv("SCOUT_HAZARDS_MAX_SHARDS_PER_REQUEST"), 27);
+  private static final String HAZARDS_UPSTREAM =
+      System.getenv().getOrDefault("SCOUT_HAZARDS_URL", "http://127.0.0.1:8770").replaceAll("/+$", "");
+  private static final String HAZARDS_PATH = "/api/platform/hazards";
+  /**
+   * Parameter names that carry a position. Requests using them are refused with 400 rather than
+   * silently ignored, so a client bug can never quietly start leaking positions again.
+   */
+  private static final Set<String> COORDINATE_PARAMS =
+      Set.of(
+          "lat", "lon", "lng", "long", "latitude", "longitude", "ll", "latlon", "latlng",
+          "coords", "coordinates", "gps", "location", "loc", "pos", "position", "point", "bbox",
+          "geo", "geometry");
+
+  private static boolean refuseClientGps(HttpExchange exchange) throws IOException {
+    if (ACCEPT_CLIENT_GPS) {
+      return false;
+    }
+    try (InputStream in = exchange.getRequestBody()) {
+      in.readNBytes(64 * 1024); // drain without storing
+    } catch (IOException ignored) {
+      // nothing to keep
+    }
+    writeJson(exchange, 410,
+        "{\"error\":\"gps_not_accepted\",\"detail\":\"this hub is coordinate-free: compute geohash-"
+            + SHARD_PRECISION
+            + " shards on the device and request hazard data with "
+            + HAZARDS_PATH
+            + "?shards=...\"}");
+    return true;
+  }
+
+  /** Coordinate-shaped query parameters present in this request, lowercased. */
+  private static List<String> coordinateParamsIn(Map<String, String> query) {
+    List<String> bad = new ArrayList<>();
+    for (String key : query.keySet()) {
+      String normalized = key == null ? "" : key.trim().toLowerCase(Locale.ROOT);
+      if (COORDINATE_PARAMS.contains(normalized)) {
+        bad.add(normalized);
+      }
+    }
+    bad.sort(null);
+    return bad;
+  }
+
+  /** Parses 1..MAX_HAZARD_SHARDS geohash cell ids, or null when the list is unusable. */
+  private static List<String> parseShardIds(String raw) {
+    List<String> ids = new ArrayList<>();
+    if (raw == null || raw.isBlank()) {
+      return null;
+    }
+    for (String part : raw.split(",")) {
+      String cell = part.trim().toLowerCase(Locale.ROOT);
+      if (cell.isEmpty() || ids.contains(cell)) {
+        continue;
+      }
+      if (!GEOHASH_CELL_PATTERN.matcher(cell).matches() || ids.size() >= MAX_HAZARD_SHARDS) {
+        return null;
+      }
+      ids.add(cell);
+    }
+    return ids.isEmpty() ? null : ids;
+  }
+
+  /** Centre of a geohash cell as {lat, lon}, or null when the id is not a valid cell. */
+  private static double[] geohashCellCenter(String cell) {
+    if (cell == null) {
+      return null;
+    }
+    String id = cell.trim().toLowerCase(Locale.ROOT);
+    if (id.length() != SHARD_PRECISION) {
+      return null;
+    }
+    double[][] ranges = {{-180.0, 180.0}, {-90.0, 90.0}}; // 0 = lon, 1 = lat
+    boolean even = true;
+    for (int i = 0; i < id.length(); i++) {
+      int value = GEOHASH_BASE32.indexOf(id.charAt(i));
+      if (value < 0) {
+        return null;
+      }
+      for (int shift = 4; shift >= 0; shift--) {
+        double[] range = ranges[even ? 0 : 1];
+        double mid = (range[0] + range[1]) / 2.0;
+        if (((value >> shift) & 1) == 1) {
+          range[0] = mid;
+        } else {
+          range[1] = mid;
+        }
+        even = !even;
+      }
+    }
+    return new double[] {(ranges[1][0] + ranges[1][1]) / 2.0, (ranges[0][0] + ranges[0][1]) / 2.0};
+  }
+
+  private static final class GpsPolicyHandler implements HttpHandler {
+    @Override
+    public void handle(HttpExchange exchange) throws IOException {
+      if (!isGet(exchange)) {
+        writeJson(exchange, 405, "{\"error\":\"method_not_allowed\"}");
+        return;
+      }
+      // Deliberately carries no coordinates in either direction: a client reads this once at
+      // startup to learn whether it may use position features or must stay on coarse cells.
+      writeJson(
+          exchange,
+          200,
+          "{"
+              + "\"status\":\"ok\","
+              + "\"accepts_client_gps\":" + ACCEPT_CLIENT_GPS + ","
+              + "\"mode\":\"" + (ACCEPT_CLIENT_GPS ? "vehicle_local" : "coordinate_free") + "\","
+              + "\"shard_precision\":" + SHARD_PRECISION + ","
+              + "\"max_shards_per_request\":" + MAX_HAZARD_SHARDS + ","
+              + "\"hazards_path\":\"" + HAZARDS_PATH + "\""
+              + "}");
+    }
+  }
+
+  /**
+   * Coarse hazard feed for clients. The only accepted input is cell ids the client computed itself;
+   * anything coordinate-shaped is refused with 400 before the upstream is contacted.
+   */
+  private static final class PlatformHazardsHandler implements HttpHandler {
+    @Override
+    public void handle(HttpExchange exchange) throws IOException {
+      if (!isGet(exchange)) {
+        writeJson(exchange, 405, "{\"error\":\"method_not_allowed\"}");
+        return;
+      }
+      Map<String, String> query = parseQuery(exchange.getRequestURI().getRawQuery());
+      List<String> bad = coordinateParamsIn(query);
+      if (!bad.isEmpty()) {
+        writeJson(
+            exchange,
+            400,
+            "{\"error\":\"coordinates_not_accepted\",\"detail\":\"send geohash-"
+                + SHARD_PRECISION
+                + " cell ids computed on the client (shards=...); refused parameters: "
+                + jsonEscape(String.join(", ", bad)) + "\"}");
+        return;
+      }
+      List<String> ids = parseShardIds(query.getOrDefault("shards", ""));
+      if (ids == null) {
+        writeJson(
+            exchange,
+            400,
+            "{\"error\":\"bad_shards\",\"detail\":\"1-"
+                + MAX_HAZARD_SHARDS + " geohash-" + SHARD_PRECISION + " cell ids\"}");
+        return;
+      }
+      String upstream =
+          httpGetExternal(HAZARDS_UPSTREAM + "/v1/hazards?shards=" + urlEncode(String.join(",", ids)));
+      if (upstream == null || !looksLikeJson(upstream)) {
+        writeJson(
+            exchange,
+            502,
+            "{\"error\":\"hazards_unavailable\",\"detail\":\"the hazard shard service did not answer\"}");
+        return;
+      }
+      writeJson(exchange, 200, upstream);
+    }
+  }
+
   private static void writeJson(HttpExchange exchange, int statusCode, String body) throws IOException {
     byte[] payload = body.getBytes(StandardCharsets.UTF_8);
     Headers headers = exchange.getResponseHeaders();
@@ -5511,7 +5706,7 @@ private static final Set<String> GLOBAL_PUBLIC_ENDPOINTS =
       URI uri = exchange.getRequestURI();
       Map<String, String> query = parseQuery(uri.getRawQuery());
       String routeJson = buildStandaloneLocalRouteJson(query);
-      writeJson(exchange, helperResponseStatus(routeJson), routeJson);
+      writeJson(exchange, routeResponseStatus(routeJson), routeJson);
     }
   }
 
@@ -5525,7 +5720,7 @@ private static final Set<String> GLOBAL_PUBLIC_ENDPOINTS =
       URI uri = exchange.getRequestURI();
       Map<String, String> query = parseQuery(uri.getRawQuery());
       String payload = buildRouteOptionsJson(query);
-      writeJson(exchange, helperResponseStatus(payload), payload);
+      writeJson(exchange, routeResponseStatus(payload), payload);
     }
   }
 
@@ -5943,6 +6138,24 @@ writeJson(exchange, 403, "{\"error\":\"invalid_or_expired_share_token\"}");
     return 200;
   }
 
+  /** Same as helperResponseStatus, but caller-side coordinate problems are 400, not 502. */
+  private static int routeResponseStatus(String payload) {
+    if (payload != null
+        && (payload.contains("\"invalid_route_coordinates\"")
+            || payload.contains("\"missing_share_route_coordinates\""))) {
+      return 400;
+    }
+    return helperResponseStatus(payload);
+  }
+
+  /** A malformed client-supplied cell id is a caller error, not a helper failure. */
+  private static int selectorResponseStatus(String payload) {
+    if (payload != null && payload.contains("\"bad_shard\"")) {
+      return 400;
+    }
+    return helperResponseStatus(payload);
+  }
+
   private static int shareEtaCreateResponseStatus(String payload) {
     if (payload == null || payload.isBlank()) {
       return 502;
@@ -6164,7 +6377,7 @@ writeJson(exchange, 403, "{\"error\":\"invalid_or_expired_share_token\"}");
       URI uri = exchange.getRequestURI();
       Map<String, String> query = parseQuery(uri.getRawQuery());
       String selectorJson = runBroadcastifySelector(query);
-      writeJson(exchange, helperResponseStatus(selectorJson), selectorJson);
+      writeJson(exchange, selectorResponseStatus(selectorJson), selectorJson);
     }
   }
 
@@ -6694,6 +6907,9 @@ static final class MeshEnrollHandler implements HttpHandler {
   private static final class GpsUpdateHandler implements HttpHandler {
     @Override
     public void handle(HttpExchange exchange) throws IOException {
+      if (refuseClientGps(exchange)) {
+        return;
+      }
       String method = exchange.getRequestMethod();
       if (!"POST".equals(method) && !"GET".equals(method)) {
         writeJson(exchange, 405, "{\"error\":\"method_not_allowed\"}");
@@ -6857,6 +7073,9 @@ static final class MeshEnrollHandler implements HttpHandler {
   private static final class GpsLatestHandler implements HttpHandler {
     @Override
     public void handle(HttpExchange exchange) throws IOException {
+      if (refuseClientGps(exchange)) {
+        return;
+      }
       if (!isGet(exchange)) {
         writeJson(exchange, 405, "{\"error\":\"method_not_allowed\"}");
         return;
@@ -6880,6 +7099,9 @@ static final class MeshEnrollHandler implements HttpHandler {
   private static final class GpsTrackHandler implements HttpHandler {
     @Override
     public void handle(HttpExchange exchange) throws IOException {
+      if (refuseClientGps(exchange)) {
+        return;
+      }
       if (!isGet(exchange)) {
         writeJson(exchange, 405, "{\"error\":\"method_not_allowed\"}");
         return;
@@ -6909,6 +7131,9 @@ static final class MeshEnrollHandler implements HttpHandler {
   private static final class GpsTriangulationHandler implements HttpHandler {
     @Override
     public void handle(HttpExchange exchange) throws IOException {
+      if (refuseClientGps(exchange)) {
+        return;
+      }
       if (!isGet(exchange)) {
         writeJson(exchange, 405, "{\"error\":\"method_not_allowed\"}");
         return;
