@@ -191,7 +191,6 @@ TOMTOM_FIELDS = ("{incidents{type,geometry{type,coordinates},properties{id,iconC
 
 
 TOMTOM_MAX_TILE_KM2 = 9000.0          # API hard cap is 10,000 km^2 per bbox
-_tomtom_last_call = 0.0
 
 
 def tomtom_tiles(region: Region, max_km2: float = TOMTOM_MAX_TILE_KM2):
@@ -206,16 +205,11 @@ def tomtom_tiles(region: Region, max_km2: float = TOMTOM_MAX_TILE_KM2):
 
 
 def tomtom(region: Region, states: Iterable[str] = ()) -> List[HazardEvent]:
-    """TomTom incidents over the whole region (tiled under the bbox cap), rate
-    limited by SCOUT_TOMTOM_MIN_INTERVAL_S (default 600 s) for the free tier."""
-    global _tomtom_last_call
+    """TomTom incidents over one region (tiled under the bbox cap). Rate limits
+    and the free-tier cell budget are applied by the runner per (provider, cell)."""
     key = os.getenv("SCOUT_TOMTOM_KEY", "").strip()
     if not key:
         return []
-    min_interval = float(os.getenv("SCOUT_TOMTOM_MIN_INTERVAL_S", "600") or 600)
-    if _tomtom_last_call and time.monotonic() - _tomtom_last_call < min_interval:
-        return []
-    _tomtom_last_call = time.monotonic()
     url = "https://api.tomtom.com/traffic/services/5/incidentDetails"
     incidents: Dict[str, Any] = {}
     for (a, b, c, d) in tomtom_tiles(region):

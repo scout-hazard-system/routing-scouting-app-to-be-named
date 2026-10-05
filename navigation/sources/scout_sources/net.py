@@ -107,3 +107,42 @@ def any_point_in(region: Region, geometry: Optional[Dict[str, Any]]) -> bool:
     if not geometry:
         return False
     return any(region.contains(lat, lon) for lat, lon in walk(geometry.get("coordinates")))
+
+
+class CellRegion(Region):
+    """A geohash cell as a region: exact bounds, centre point for point APIs."""
+
+    def __init__(self, cell: str):
+        from .shards import bounds, center
+        lat, lon = center(cell)
+        a, b, c, d = bounds(cell)
+        half_diag = haversine_km(a, b, c, d) / 2
+        object.__setattr__(self, "lat", lat)
+        object.__setattr__(self, "lon", lon)
+        object.__setattr__(self, "radius_km", half_diag)
+        object.__setattr__(self, "cell", cell)
+        object.__setattr__(self, "_b", (a, b, c, d))
+
+    def bbox(self):
+        a, b, c, d = self._b
+        return (b, a, d, c)
+
+    def contains(self, lat, lon) -> bool:
+        if lat is None or lon is None:
+            return False
+        a, b, c, d = self._b
+        return a <= lat < c and b <= lon < d
+
+
+class Coverage:
+    """Union of cells: what the hub ingests. Ordered by priority (demand first)."""
+
+    def __init__(self, cells):
+        self.regions = [CellRegion(c) for c in dict.fromkeys(cells)]
+
+    @property
+    def cells(self):
+        return [r.cell for r in self.regions]
+
+    def contains(self, lat, lon) -> bool:
+        return any(r.contains(lat, lon) for r in self.regions)

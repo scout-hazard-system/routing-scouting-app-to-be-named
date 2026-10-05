@@ -12,7 +12,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from scout_sources import providers as P  # noqa: E402
 from scout_sources.events import HazardEvent, verify  # noqa: E402
 from scout_sources.net import Region, redact  # noqa: E402
-from scout_sources.runner import Seen, poll_once  # noqa: E402
+from scout_sources import runner, shards  # noqa: E402
+from scout_sources.runner import Demand, Seen, ShardStore, coverage, poll_once  # noqa: E402
 
 PHX = Region(33.4484, -112.0740, 50)
 
@@ -93,7 +94,6 @@ class ProvidersTest(unittest.TestCase):
         self.assertNotIn("SECRET", e.source_url)
 
     def test_tomtom(self):
-        P._tomtom_last_call = 0.0
         (e,) = P.tomtom(PHX)
         self.assertEqual((e.kind, e.severity, e.road), ("incident", "major", "I-10"))
 
@@ -107,12 +107,6 @@ class ProvidersTest(unittest.TestCase):
                 self.assertLess((c - a) * k * (d - b) * 111.0, 10000.0)
             self.assertAlmostEqual(min(t[0] for t in tiles), reg.bbox()[0])
             self.assertAlmostEqual(max(t[3] for t in tiles), reg.bbox()[3])
-
-    def test_tomtom_rate_limited(self):
-        P._tomtom_last_call = 0.0
-        self.assertEqual(len(P.tomtom(PHX)), 1)
-        self.assertEqual(P.tomtom(PHX), [])  # within SCOUT_TOMTOM_MIN_INTERVAL_S
-        P._tomtom_last_call = 0.0
 
     def test_tomtom_without_key_is_inert(self):
         with mock.patch.dict(os.environ, {"SCOUT_TOMTOM_KEY": ""}):
@@ -143,15 +137,75 @@ class AccountabilityTest(unittest.TestCase):
              tempfile.TemporaryDirectory() as d:
             log = os.path.join(d, "p.log")
             seen = Seen(Path(d) / "seen.json")
-            P._tomtom_last_call = 0.0
-            first = poll_once(PHX, ["AZ"], ["nws", "511", "wzdx", "tomtom"], log_file=log, seen=seen)
-            second = poll_once(PHX, ["AZ"], ["nws", "511", "wzdx", "tomtom"], log_file=log, seen=seen)
+            runner._last_call.clear()
+            store = ShardStore(Path(d) / "shards.json")
+            first = poll_once(PHX, ["AZ"], ["nws", "511", "wzdx", "tomtom"], log_file=log, seen=seen, store=store)
+            second = poll_once(PHX, ["AZ"], ["nws", "511", "wzdx", "tomtom"], log_file=log, seen=seen, store=store)
             self.assertEqual(first["new_or_changed"], 4)
             self.assertEqual(second["new_or_changed"], 0)
             with open(log, encoding="utf-8") as fh:
                 lines = fh.read().splitlines()
             self.assertEqual(len(lines), 4)
             self.assertTrue(all(l.startswith("[EVENT_JSON] ") and '"hazard_event"' in l for l in lines))
+
+
+
+class ShardPrivacyTest(unittest.TestCase):
+    def setUp(self):
+        import threading
+        from http.server import ThreadingHTTPServer
+        from scout_sources import serve as S
+        self.tmp = tempfile.TemporaryDirectory()
+        self.env = mock.patch.dict(os.environ, {"SCOUT_STATE_DIR": self.tmp.name})
+        self.env.start()
+        store = ShardStore()
+        store.update([HazardEvent(provider="tomtom", native_id="1", kind="incident", title="Crash I-10",
+                                  lat=33.45, lon=-112.06).finalize(b"k"),
+                      HazardEvent(provider="tomtom", native_id="2", kind="closure", title="Far away",
+                                  lat=40.76, lon=-111.89).finalize(b"k")])
+        store.save()
+        self.httpd = ThreadingHTTPServer(("127.0.0.1", 0), S.make_handler(S._State()))
+        self.port = self.httpd.server_address[1]
+        threading.Thread(target=self.httpd.serve_forever, daemon=True).start()
+
+    def tearDown(self):
+        self.httpd.shutdown()
+        self.env.stop()
+        self.tmp.cleanup()
+
+    def get(self, q):
+        import json as J
+        import urllib.error
+        import urllib.request
+        try:
+            with urllib.request.urlopen(f"http://127.0.0.1:{self.port}{q}", timeout=5) as r:
+                return r.status, J.loads(r.read())
+        except urllib.error.HTTPError as e:
+            return e.code, J.loads(e.read())
+
+    def test_coordinates_are_refused(self):
+        for q in ("/v1/hazards?lat=33.4&lon=-112", "/v1/hazards?shards=9tbq&gps=33.4,-112",
+                  "/v1/hazards?shards=9tbq&location=x", "/v1/hazards?shards=9tbq&bbox=1,2,3,4"):
+            code, body = self.get(q)
+            self.assertEqual((code, body["error"]), (400, "coordinates_not_accepted"), q)
+
+    def test_shards_return_only_requested_cells_and_record_demand(self):
+        cells = shards.neighbors(shards.encode(33.4484, -112.074))
+        code, body = self.get("/v1/hazards?shards=" + ",".join(cells))
+        self.assertEqual(code, 200)
+        titles = [e["title"] for evs in body["shards"].values() for e in evs]
+        self.assertEqual(titles, ["Crash I-10"])  # the Salt Lake City event is not leaked
+        self.assertIn("9tbq", Demand().map)  # coarse demand only, persisted for ingestion
+
+    def test_bad_or_too_many_shards(self):
+        self.assertEqual(self.get("/v1/hazards?shards=9tb")[0], 400)
+        self.assertEqual(self.get("/v1/hazards?shards=" + ",".join(["9tbq"] * 3 + [f"9tb{c}" for c in "0123456789bcdefghjkmnpqrstuvwxyz"]))[0], 400)
+
+    def test_coverage_prefers_demand_then_configured(self):
+        with mock.patch.dict(os.environ, {"SCOUT_SOURCES_SHARDS": "9tbq"}):
+            d = Demand()
+            d.touch(["dr5r"])
+            self.assertEqual(coverage(d).cells, ["dr5r", "9tbq"])
 
 
 if __name__ == "__main__":

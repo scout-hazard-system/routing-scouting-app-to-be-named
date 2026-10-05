@@ -1,0 +1,19 @@
+[Unit]
+Description=Scout hazard shard service (coordinate-free: clients send geohash cell ids only)
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=simple
+User=scout
+Group=scout
+WorkingDirectory=/home/scout/routing-hardened/navigation/sources
+EnvironmentFile=/etc/scout-sources.env
+Environment=PYTHONUNBUFFERED=1
+ExecStart=/usr/bin/python3 -m scout_sources serve
+Restart=always
+RestartSec=5s
+NoNewPrivileges=true
+
+[Install]
+WantedBy=multi-user.target
