@@ -650,6 +650,12 @@ BROWSER_USER_AGENT = (
 )
 BROADCASTIFY_LISTEN_RE = re.compile(r"https?://(?:www\.)?broadcastify\.com/listen/feed/(\d+)")
 _broadcastify_sessions = {}
+def broadcastify_web_capture_allowed():
+    """Web-player capture is OFF unless explicitly enabled for a documented,
+    permitted use (e.g. written permission from Broadcastify)."""
+    return os.getenv("SCOUT_ALLOW_BROADCASTIFY_WEB_CAPTURE", "0").strip().lower() in ("1", "true", "yes")
+
+
 def resolve_broadcastify_stream(stream_url):
     """Resolve a Broadcastify listen-page URL to a playable signed HLS URL.
 
@@ -663,6 +669,14 @@ def resolve_broadcastify_stream(stream_url):
     match = BROADCASTIFY_LISTEN_RE.match(stream_url or "")
     if not match:
         return stream_url
+    if not broadcastify_web_capture_allowed():
+        raise RuntimeError(
+            "Broadcastify web-player capture is disabled: scraping listen pages with a spoofed "
+            "browser identity and fake session beacons circumvents Broadcastify's access controls "
+            "and terms. Use the official Broadcastify API (when approved), your own receiver "
+            "(--source-node direct / audiorelay), or the scout_sources hazard providers "
+            "(NWS, state 511, USDOT WZDx, TomTom)."
+        )
     feed_id = match.group(1)
     cached = _broadcastify_sessions.get(feed_id)
     if cached:
@@ -699,7 +713,7 @@ def invalidate_broadcastify_session(stream_url):
 def broadcastify_beacon_ping(stream_url):
     """Keep the signed HLS session alive (server expects a ping every ~60s)."""
     match = BROADCASTIFY_LISTEN_RE.match(stream_url or "")
-    if not match:
+    if not match or not broadcastify_web_capture_allowed():
         return
     cached = _broadcastify_sessions.get(match.group(1))
     if not cached or not cached.get("beacon_url"):
