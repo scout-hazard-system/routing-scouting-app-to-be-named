@@ -41,17 +41,11 @@ const state = {
   currentGps: null,
   gpsWatchId: null,
   map: {
-    instance: null,
-    isometricOnly: true,
     isometricImg: null,
     loadingOverlay: null,
     centerLat: null,
     centerLon: null,
     centerZoom: 6,
-    currentMarker: null,
-    alertMarker: null,
-    trackLine: null,
-    triangulationMarker: null,
     followMode: true,
     hasAutoCentered: false,
     lastBackendRenderAt: 0,
@@ -61,13 +55,33 @@ const state = {
     chunkReadyToken: 0,
     imageReadyToken: 0,
   },
-  gpsIngest: {
-    inFlight: false,
-    pendingSample: null,
-    seq: 0,
-    lastAckAt: 0,
+  /**
+   * Hub capabilities, read once from /api/gps/policy. A coordinate-free hub
+   * (the default) never receives a device position from this page: the device
+   * computes its own geohash cell and only cell ids leave the browser.
+   */
+  hub: {
+    policy: null,
+    policyProbeDone: false,
   },
-  clientId: null,
+  /**
+   * Coarse cell state. `cell`/`cells` are the only position-derived values this
+   * page is allowed to send anywhere; `center` is the cell centre, which is the
+   * coarsest position any hub request may use.
+   */
+  shards: {
+    cell: null,
+    cells: [],
+    center: null,
+    lastFetchedKey: "",
+    inFlight: false,
+    events: [],
+  },
+  hazards: {
+    lastStatus: "idle",
+    lastFetchedAt: 0,
+    events: [],
+  },
   notificationWorkflow: {
     total: 0,
     normalCalls: 0,
@@ -98,28 +112,23 @@ const state = {
     appliedLabel: "",
     menuEl: null,
   },
-  google: {
-    scriptPromise: null,
-    mapsReady: false,
-    placesReady: false,
-    geocoder: null,
-    directionsService: null,
-    autocompleteService: null,
-  },
 };
 const BROWSER_NOTIFY_COOLDOWN_MS = 6000;
 const JURISDICTION_COOLDOWN_MS = 4 * 60 * 1000;
 const BACKEND_MAP_RENDER_MIN_INTERVAL_MS = 3200;
 const DEST_SUGGEST_DEBOUNCE_MS = 220;
-const GOOGLE_ROUTE_SEARCH_ENABLED = window.SCANNER_GOOGLE_ROUTE_SEARCH_ENABLED !== false;
-const GOOGLE_MAPS_API_KEY = String(window.SCANNER_GOOGLE_MAPS_API_KEY || "").trim();
+const HAZARDS_REFRESH_MIN_INTERVAL_MS = 30000;
 const STARTUP_MAP_ZOOM_OUT_FACTOR = 50;
+const HUB_BACKEND_PORT = "18080";
 
 function resolveApiBase() {
   const configured = String(window.SCANNER_API_BASE_URL || "").trim().replace(/\/+$/, "");
   const pageHost = window.location.hostname || "127.0.0.1";
   const pageIsLocal = pageHost === "127.0.0.1" || pageHost === "localhost";
-  const fallback = `http://${pageHost}:18080`;
+  // An https page is served by the edge proxy, which fronts the hub on the same
+  // origin; asking for a different port there would be blocked as mixed content.
+  if (window.location.protocol === "https:") return "";
+  const fallback = `http://${pageHost}:${HUB_BACKEND_PORT}`;
   if (!configured) return fallback;
   try {
     const u = new URL(configured);
@@ -196,6 +205,8 @@ const ui = {
   quickAlertsBtn: document.getElementById("quickAlertsBtn"),
   routeSketchCanvas: document.getElementById("routeSketchCanvas"),
   routeAltList: document.getElementById("routeAltList"),
+  hazardList: document.getElementById("hazardList"),
+  hazardStatus: document.getElementById("hazardStatus"),
   routeEtaSummary: document.getElementById("routeEtaSummary"),
   routeVisualStatus: document.getElementById("routeVisualStatus"),
   clusterList: document.getElementById("clusterList"),
@@ -207,104 +218,6 @@ const ui = {
 
 function apiUrl(path) {
   return API_BASE ? `${API_BASE}${path}` : path;
-}
-function isGoogleRouteSearchEnabled() {
-  return GOOGLE_ROUTE_SEARCH_ENABLED && !!GOOGLE_MAPS_API_KEY;
-}
-function googleMapsScriptUrl() {
-  const params = new URLSearchParams({
-    key: GOOGLE_MAPS_API_KEY,
-    libraries: "places",
-  });
-  return `https://maps.googleapis.com/maps/api/js?${params.toString()}`;
-}
-function loadGoogleMapsApi() {
-  if (!isGoogleRouteSearchEnabled()) return Promise.resolve(false);
-  if (state.google.scriptPromise) return state.google.scriptPromise;
-  state.google.scriptPromise = new Promise((resolve) => {
-    if (window.google?.maps) {
-      state.google.mapsReady = true;
-      state.google.placesReady = !!window.google?.maps?.places;
-      resolve(true);
-      return;
-    }
-    const script = document.createElement("script");
-    script.src = googleMapsScriptUrl();
-    script.async = true;
-    script.defer = true;
-    script.onload = () => {
-      state.google.mapsReady = !!window.google?.maps;
-      state.google.placesReady = !!window.google?.maps?.places;
-      resolve(state.google.mapsReady);
-    };
-    script.onerror = () => resolve(false);
-    document.head.appendChild(script);
-  });
-  return state.google.scriptPromise;
-}
-async function ensureGoogleServices() {
-  const loaded = await loadGoogleMapsApi();
-  if (!loaded || !window.google?.maps) return false;
-  if (!state.google.geocoder) {
-    state.google.geocoder = new window.google.maps.Geocoder();
-  }
-  if (!state.google.directionsService) {
-    state.google.directionsService = new window.google.maps.DirectionsService();
-  }
-  if (state.google.placesReady && !state.google.autocompleteService) {
-    state.google.autocompleteService = new window.google.maps.places.AutocompleteService();
-  }
-  return true;
-}
-function googleLocationBias(bias) {
-  if (!window.google?.maps || !bias || !Number.isFinite(bias.lat) || !Number.isFinite(bias.lon)) return undefined;
-  return {
-    center: new window.google.maps.LatLng(bias.lat, bias.lon),
-    radius: 50000,
-  };
-}
-function geocodeResultToCandidate(result, fallbackName) {
-  const loc = result?.geometry?.location;
-  const lat = typeof loc?.lat === "function" ? loc.lat() : asFiniteNumber(loc?.lat);
-  const lon = typeof loc?.lng === "function" ? loc.lng() : asFiniteNumber(loc?.lng);
-  if (!Number.isFinite(lat) || !Number.isFinite(lon)) return null;
-  return {
-    lat,
-    lon,
-    displayName: String(result?.formatted_address || fallbackName || "").trim() || fallbackName,
-  };
-}
-function googleDirectionsRouteToAlternative(route) {
-  const legs = Array.isArray(route?.legs) ? route.legs : [];
-  let distanceM = 0;
-  let durationS = 0;
-  let durationTrafficS = 0;
-  legs.forEach((leg) => {
-    distanceM += Number(leg?.distance?.value || 0);
-    durationS += Number(leg?.duration?.value || 0);
-    durationTrafficS += Number(leg?.duration_in_traffic?.value || leg?.duration?.value || 0);
-  });
-  const overview = Array.isArray(route?.overview_path) ? route.overview_path : [];
-  const routePoints = overview
-    .map((point) => {
-      const lat = typeof point?.lat === "function" ? point.lat() : asFiniteNumber(point?.lat);
-      const lon = typeof point?.lng === "function" ? point.lng() : asFiniteNumber(point?.lng);
-      if (!Number.isFinite(lat) || !Number.isFinite(lon)) return null;
-      return { lat, lon };
-    })
-    .filter(Boolean);
-  return {
-    index: 0,
-    distance_m: distanceM,
-    duration_s: durationS,
-    eta_speed_limit_s: durationTrafficS || durationS,
-    stop_dwell_s: 0,
-    eta_with_stops_s: durationTrafficS || durationS,
-    has_toll_hint: false,
-    has_ferry_hint: false,
-    maxspeed_coverage: 1,
-    route_points: routePoints,
-  };
 }
 function setRouteVisualStatus(text) {
   if (!ui.routeVisualStatus) return;
@@ -838,7 +751,7 @@ function refreshBackendMapPreview(lat, lon, opts = {}) {
   if (!Number.isFinite(lat) || !Number.isFinite(lon)) return;
   state.map.centerLat = lat;
   state.map.centerLon = lon;
-  const zoom = Number.isFinite(opts.zoom) ? opts.zoom : state.map.instance?.getZoom?.() ?? 9;
+  const zoom = Number.isFinite(opts.zoom) ? opts.zoom : 9;
   state.map.centerZoom = zoom;
   const radiusM = Number.isFinite(opts.radiusM) ? opts.radiusM : mapRadiusForZoom(zoom);
   const now = Date.now();
@@ -930,116 +843,139 @@ function initIntegratedMap() {
   });
 }
 
-function updateMapTrack(points) {
-  if (state.map.isometricOnly || !state.map.instance || !window.L) return;
-  if (!Array.isArray(points) || !points.length) return;
-  const latLngs = points
-    .filter((p) => Number.isFinite(p.lat) && Number.isFinite(p.lon))
-    .map((p) => [p.lat, p.lon]);
-  if (!latLngs.length) return;
-  if (state.map.trackLine) {
-    state.map.trackLine.setLatLngs(latLngs);
-  } else {
-    state.map.trackLine = window.L.polyline(latLngs, {
-      color: "#4f8cff",
-      weight: 4,
-      opacity: 0.8,
-    }).addTo(state.map.instance);
-  }
+function shardApi() {
+  const api = window.ScoutShards;
+  if (!api || typeof api.cellsAround !== "function") return null;
+  return api;
 }
 
-function queueGpsSampleForIngestion(sample) {
-  state.gpsIngest.pendingSample = sample;
-  flushGpsIngestionQueue();
-}
-
-function flushGpsIngestionQueue() {
-  if (state.gpsIngest.inFlight || !state.gpsIngest.pendingSample) return;
-  const sample = state.gpsIngest.pendingSample;
-  state.gpsIngest.pendingSample = null;
-  state.gpsIngest.inFlight = true;
-
-  fetch(apiUrl("/api/gps/update"), {
-    method: "POST",
-    keepalive: true,
-    body: JSON.stringify(sample),
-  })
-    .then((res) => {
-      if (!res.ok) throw new Error("gps ingest failed");
-      return res.json();
-    })
-    .then((data) => {
-      state.gpsIngest.lastAckAt = Date.now();
-      updateMapTrack(Array.isArray(data?.track) ? data.track : []);
-      setMapHud({ users: Number(data?.active_users || 0) });
-    })
-    .catch(() => {
-      // Keep UI responsive; newer samples supersede older failed samples.
-    })
-    .finally(() => {
-      state.gpsIngest.inFlight = false;
-      if (state.gpsIngest.pendingSample) {
-        flushGpsIngestionQueue();
-      }
-    });
-}
-
-async function fetchGpsTrackSnapshot() {
+/**
+ * Learn from the hub whether it accepts client positions at all. A coordinate-free
+ * hub answers 410 on /api/gps/*, so this page must not try them; a vehicle-local
+ * hub that opted in may. Until the probe answers we stay coarse: a failed probe
+ * must never widen what we send.
+ */
+async function loadHubPolicy() {
   try {
-    const r = await fetch(apiUrl("/api/gps/track?limit=120"));
-    if (!r.ok) return;
-    const data = await r.json();
-    if (!Array.isArray(data.points) || !data.points.length) return;
-    updateMapTrack(data.points);
-    const latest = data.points[data.points.length - 1];
-    if (!state.currentGps && Number.isFinite(latest?.lat) && Number.isFinite(latest?.lon)) {
-      updateIntegratedMap(latest.lat, latest.lon, 6, "gps");
+    const r = await fetch(apiUrl("/api/gps/policy"), { headers: { Accept: "application/json" } });
+    if (r.ok) {
+      const data = await r.json();
+      state.hub.policy = {
+        accepts_client_gps: data?.accepts_client_gps === true,
+        mode: String(data?.mode || (data?.accepts_client_gps ? "vehicle_local" : "coordinate_free")),
+        shard_precision: Number(data?.shard_precision) || 4,
+        max_shards_per_request: Number(data?.max_shards_per_request) || 27,
+        hazards_path: String(data?.hazards_path || "/api/platform/hazards"),
+      };
+    } else {
+      state.hub.policy = null;
     }
-    setMapHud({ users: Number(data?.active_users || 0) });
   } catch {
-    // optional bootstrap
+    state.hub.policy = null;
+  }
+  state.hub.policyProbeDone = true;
+  setGpsStatus(
+    hubAcceptsClientGps() ? "gps: hub accepts position" : "gps: coarse cell only",
+    hubAcceptsClientGps() ? "ok" : "mute"
+  );
+  return state.hub.policy;
+}
+
+function hubAcceptsClientGps() {
+  return state.hub.policy?.accepts_client_gps === true;
+}
+
+/**
+ * Coarse, privacy-preserving position for automatic hub requests: the centre of the
+ * cell the device is in. Exact coordinates are only used for what the user explicitly
+ * asked for (a route they typed, a marker they clicked).
+ */
+function coarseCenter() {
+  return state.shards.center;
+}
+
+function setCoarseCell(lat, lon) {
+  const api = shardApi();
+  if (!api || !Number.isFinite(lat) || !Number.isFinite(lon)) return null;
+  const cell = api.cellOf(lat, lon);
+  const center = api.cellCenter(cell);
+  const cells = api.cellsAround(lat, lon);
+  state.shards.cell = cell;
+  state.shards.cells = cells;
+  state.shards.center = center;
+  return { cell, center, cells };
+}
+
+function formatShardEvent(event, index) {
+  const kind = String(event?.kind || event?.event_type || event?.type || "hazard").replace(/_/g, " ");
+  const headline = String(
+    event?.headline || event?.description || event?.alert || event?.text || event?.title || ""
+  ).trim();
+  const where = String(event?.location || event?.road || event?.street || "").trim();
+  const when = event?.expires_at || event?.expires || event?.end_time || event?.valid_until || "";
+  const parts = [`${kind}${headline ? `: ${headline}` : ""}`];
+  if (where) parts.push(`near ${where}`);
+  if (when) parts.push(`until ${when}`);
+  if (event?.event_id || event?.id) parts.push(`id ${event.event_id || event.id}`);
+  parts.push(`shard ${index + 1}`);
+  return parts.join(" · ");
+}
+
+function renderShardHazards(events) {
+  const items = Array.isArray(events) ? events : [];
+  state.hazards.events = items;
+  if (!ui.hazardList) return;
+  ui.hazardList.innerHTML = "";
+  if (!items.length) {
+    const li = document.createElement("li");
+    li.className = "sub tiny";
+    li.textContent = state.shards.cell
+      ? `No hazards in the 9 cells around ${state.shards.cell}.`
+      : "No hazards yet; the hub is asked again when the device changes cell.";
+    ui.hazardList.appendChild(li);
+    return;
+  }
+  items.slice(0, 25).forEach((event, idx) => addListItem(ui.hazardList, formatShardEvent(event, idx)));
+}
+
+/**
+ * Ask the hub for hazards for the current 3x3 cell neighbourhood. Only cell ids are
+ * sent. Refetched when the device enters a new cell, and otherwise no more often than
+ * the refresh floor.
+ */
+async function refreshShardHazards({ force = false } = {}) {
+  const cells = state.shards.cells;
+  if (!cells.length || state.shards.inFlight) return;
+  const key = cells.join(",");
+  const now = Date.now();
+  if (!force && state.shards.lastFetchedKey === key && now - (state.hazards.lastFetchedAt || 0) < HAZARDS_REFRESH_MIN_INTERVAL_MS) {
+    return;
+  }
+  const api = shardApi();
+  if (!api) return;
+  state.shards.inFlight = true;
+  state.shards.lastFetchedKey = key;
+  state.hazards.lastFetchedAt = now;
+  try {
+    const payload = await api.fetchHazards(apiUrl(state.hub.policy?.hazards_path || "/api/platform/hazards"), cells);
+    const events = Array.isArray(payload?.events)
+      ? payload.events
+      : Array.isArray(payload?.shards)
+        ? payload.shards.flatMap((s) => (Array.isArray(s?.events) ? s.events : []))
+        : [];
+    state.hazards.lastStatus = events.length ? `${events.length} event(s)` : "clear";
+    renderShardHazards(events);
+  } catch {
+    state.hazards.lastStatus = "unavailable";
+    renderShardHazards([]);
+  } finally {
+    state.shards.inFlight = false;
   }
 }
 
-async function refreshTriangulationView() {
-  try {
-    const r = await fetch(apiUrl("/api/gps/triangulation"));
-    if (!r.ok) return;
-    const data = await r.json();
-    if (data.status !== "ok") {
-      setMapHud({
-        users: Number(data?.active_users || 0),
-        triangulation: data.status || "idle",
-      });
-      return;
-    }
-    const tLat = Number(data.estimated_lat);
-    const tLon = Number(data.estimated_lon);
-    if (!state.map.isometricOnly && Number.isFinite(tLat) && Number.isFinite(tLon) && state.map.instance && window.L) {
-      const latLng = [tLat, tLon];
-      if (!state.map.triangulationMarker) {
-        state.map.triangulationMarker = window.L.circleMarker(latLng, {
-          radius: 7,
-          color: "#b58cff",
-          fillColor: "#d0b7ff",
-          fillOpacity: 0.75,
-          weight: 2,
-        }).addTo(state.map.instance);
-      } else {
-        state.map.triangulationMarker.setLatLng(latLng);
-      }
-      state.map.triangulationMarker.bindPopup("Triangulation seed (multi-user)");
-    }
-    setMapHud({
-      users: Number(data.active_users || 0),
-      triangulation: "active",
-      lat: Number.isFinite(tLat) ? tLat : undefined,
-      lon: Number.isFinite(tLon) ? tLon : undefined,
-      accuracy: Number(data.average_accuracy_m || 0),
-    });
-  } catch {
-    setMapHud({ triangulation: "unavailable" });
-  }
+function setHazardsStatus(text) {
+  state.hazards.lastStatus = text;
+  if (ui.hazardStatus) ui.hazardStatus.textContent = `hazards: ${text}`;
 }
 
 function updateIntegratedMap(lat, lon, zoom = 11, markerKind = "gps", opts = {}) {
@@ -1194,25 +1130,36 @@ function inferJurisdictionFromRouteInputs() {
     null
   );
 }
-async function reverseGeocodeJurisdiction(lat, lon) {
+/**
+ * Jurisdiction for the current cell, resolved by the hub. The browser used to call
+ * Nominatim directly with its own exact fix, which handed a live position to a third
+ * party on every selector refresh; it now sends the cell id and the hub reverse-geocodes
+ * the cell centre. This also satisfies the page's own CSP, which allows no third parties.
+ */
+async function jurisdictionForCell(cell) {
+  if (!cell) return null;
   try {
-    const url = `https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${encodeURIComponent(lat)}&lon=${encodeURIComponent(lon)}`;
-    const r = await fetch(url, {
-      headers: { Accept: "application/json" }
+    const r = await fetch(apiUrl(`/api/platform/jurisdiction?shard=${encodeURIComponent(cell)}`), {
+      headers: { Accept: "application/json" },
     });
     if (!r.ok) return null;
     const data = await r.json();
-    const addr = data?.address || {};
-    const city = addr.city || addr.town || addr.village || addr.municipality || "";
-    const county = addr.county || "";
-    const state = normalizeState(addr.state || addr.state_code || "");
-    if (!state) return null;
+    if (data?.status !== "ok") return null;
+    const city = String(data?.city || "").trim();
+    const county = String(data?.county || "").trim();
+    const state = normalizeState(data?.state || "");
+    if (!city && !county && !state) return null;
     return { city, county, state };
   } catch {
     return null;
   }
 }
-async function refreshBroadcastifySelector(lat, lon) {
+
+/**
+ * Channel selection follows the device automatically, so it must stay coarse. The hub
+ * picks the cell centre from `shard` when it refuses coordinates, which is the default.
+ */
+async function refreshBroadcastifySelector() {
   if (!isAutoSelectorMode()) {
     applyManualSelectionToStatus();
     return;
@@ -1220,15 +1167,18 @@ async function refreshBroadcastifySelector(lat, lon) {
   try {
     setSelectorStatus("selector: updating");
     const inferred = inferJurisdictionFromRouteInputs();
-    const reverse = inferred ? null : await reverseGeocodeJurisdiction(lat, lon);
-    const jurisdiction = inferred || reverse || {};
-    const params = new URLSearchParams({
-      lat: String(lat),
-      lon: String(lon),
-    });
+    const cell = state.shards.cell;
+    const resolved = inferred || (cell ? await jurisdictionForCell(cell) : null);
+    const jurisdiction = resolved || {};
+    const params = new URLSearchParams();
+    if (cell) params.set("shard", cell);
     if (jurisdiction.city) params.set("city", jurisdiction.city);
     if (jurisdiction.county) params.set("county", jurisdiction.county);
     if (jurisdiction.state) params.set("state", jurisdiction.state);
+    if (!params.toString()) {
+      setSelectorStatus("selector: awaiting a coarse cell");
+      return;
+    }
     const url = apiUrl(`/api/platform/broadcastify/select?${params.toString()}`);
     const r = await fetch(url);
     if (!r.ok) throw new Error("selector endpoint unavailable");
@@ -1246,44 +1196,42 @@ async function refreshBroadcastifySelector(lat, lon) {
     setSelectorStatus("selector: unavailable");
   }
 }
-function ensureClientId() {
-  if (state.clientId) return state.clientId;
-  const existing = window.localStorage.getItem("scanner_client_id");
-  if (existing) {
-    state.clientId = existing;
-    return existing;
-  }
-  const created = `client-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 10)}`;
-  window.localStorage.setItem("scanner_client_id", created);
-  state.clientId = created;
-  return created;
-}
-
 function applyCurrentGpsToUi(lat, lon, meta = {}) {
+  // The device fix is used here and only here: to compute this device's coarse cell.
+  // Nothing in this function hands lat/lon to the hub.
+  const previousCell = state.shards.cell;
   state.currentGps = { lat, lon };
-  ui.latInput.value = lat.toFixed(6);
-  ui.lonInput.value = lon.toFixed(6);
-  updateIntegratedMap(lat, lon, 13, "gps");
-  setGpsStatus("gps: locked", "ok");
-  setMapHud({
-    lat,
-    lon,
-    accuracy: Number.isFinite(meta?.accuracy) ? meta.accuracy : 0,
-  });
-  state.gpsIngest.seq += 1;
-  queueGpsSampleForIngestion({
-    seq: state.gpsIngest.seq,
-    ts: new Date().toISOString(),
-    user_id: ensureClientId(),
-    source: "frontend_browser",
-    lat,
-    lon,
-    accuracy: Number.isFinite(meta?.accuracy) ? meta.accuracy : 0,
-    speed: Number.isFinite(meta?.speed) ? meta.speed : 0,
-    heading: Number.isFinite(meta?.heading) ? meta.heading : 0,
-  });
+  const coarse = setCoarseCell(lat, lon);
+  const center = coarse?.center;
+  // These inputs feed explicit actions (map refresh, route start) that do reach the hub,
+  // so a coordinate-free hub only ever gets the cell centre unless the user types a point.
+  const prefill = hubAcceptsClientGps() || !center ? { lat, lon } : center;
+  ui.latInput.value = prefill.lat.toFixed(6);
+  ui.lonInput.value = prefill.lon.toFixed(6);
+  if (center) {
+    setGpsStatus(`gps: cell ${coarse.cell}`, "ok");
+    setMapHud({
+      lat: center.lat,
+      lon: center.lon,
+      accuracy: Number.isFinite(meta?.accuracy) ? meta.accuracy : 0,
+    });
+    // Centre the map on the cell, not the fix.
+    updateIntegratedMap(center.lat, center.lon, 11, "gps");
+  } else {
+    setGpsStatus("gps: locked", "ok");
+    setMapHud({
+      lat,
+      lon,
+      accuracy: Number.isFinite(meta?.accuracy) ? meta.accuracy : 0,
+    });
+  }
+  if (coarse && coarse.cell !== previousCell) {
+    refreshShardHazards({ force: true });
+  } else if (coarse) {
+    refreshShardHazards();
+  }
   if (isAutoSelectorMode()) {
-    refreshBroadcastifySelector(lat, lon);
+    refreshBroadcastifySelector();
   } else {
     applyManualSelectionToStatus();
   }
@@ -1719,10 +1667,14 @@ function asFiniteNumber(value) {
   return Number.isFinite(num) ? num : null;
 }
 
+/**
+ * Bias for address search. Typing a destination is an explicit user action, so an
+ * explicitly entered coordinate stays exact; but the automatic bias for a device fix is
+ * the cell centre, never the fix.
+ */
 function readBiasCoordinates() {
-  if (state.currentGps?.lat != null && state.currentGps?.lon != null) {
-    return { lat: state.currentGps.lat, lon: state.currentGps.lon };
-  }
+  const center = coarseCenter();
+  if (center) return { lat: center.lat, lon: center.lon };
   const lat = asFiniteNumber(ui.latInput.value);
   const lon = asFiniteNumber(ui.lonInput.value);
   if (lat != null && lon != null) {
@@ -1770,16 +1722,6 @@ function applyDestinationSuggestion(item) {
   if (Number.isFinite(item.lat) && Number.isFinite(item.lon)) {
     ui.latInput.value = Number(item.lat).toFixed(6);
     ui.lonInput.value = Number(item.lon).toFixed(6);
-  } else if (item.place_id) {
-    resolveGooglePlaceIdToCandidate(item.place_id, item.display_name)
-      .then((candidate) => {
-        if (!candidate) return;
-        ui.latInput.value = Number(candidate.lat).toFixed(6);
-        ui.lonInput.value = Number(candidate.lon).toFixed(6);
-      })
-      .catch(() => {
-        // keep text-only destination when place lookup fails
-      });
   }
   hideDestinationSuggestions();
 }
@@ -1787,26 +1729,7 @@ function applyDestinationSuggestion(item) {
 async function fetchDestinationSuggestions(query) {
   const seq = ++state.routeSearch.requestSeq;
   const bias = readBiasCoordinates();
-  const useGoogle = await ensureGoogleServices();
   try {
-    if (useGoogle && state.google.autocompleteService && window.google?.maps?.places) {
-      const request = {
-        input: query,
-        locationBias: googleLocationBias(bias),
-      };
-      const response = await state.google.autocompleteService.getPlacePredictions(request);
-      if (seq !== state.routeSearch.requestSeq) return;
-      const predictions = Array.isArray(response?.predictions) ? response.predictions : [];
-      state.routeSearch.suggestions = predictions.slice(0, 8).map((p) => ({
-        display_name: String(p?.description || "").trim(),
-        lat: null,
-        lon: null,
-        place_id: String(p?.place_id || "").trim(),
-      })).filter((p) => p.display_name);
-      state.routeSearch.activeIndex = state.routeSearch.suggestions.length ? 0 : -1;
-      renderDestinationSuggestions();
-      return;
-    }
     const url =
       apiUrl(`/api/platform/address-catalog/suggest?q=${encodeURIComponent(query)}&limit=8`)
       + buildBiasQueryString(bias);
@@ -1951,69 +1874,6 @@ async function resolveFromGeocode(query, bias) {
   const first = Array.isArray(payload?.results) ? payload.results[0] : null;
   return parseAddressCandidate(first, query);
 }
-async function resolveFromGoogleGeocode(query, bias) {
-  const ready = await ensureGoogleServices();
-  if (!ready || !state.google.geocoder) return null;
-  return new Promise((resolve) => {
-    const request = { address: query };
-    const locationBias = googleLocationBias(bias);
-    if (locationBias) request.locationBias = locationBias;
-    state.google.geocoder.geocode(request, (results, status) => {
-      if (status !== "OK" || !Array.isArray(results) || !results.length) {
-        resolve(null);
-        return;
-      }
-      resolve(geocodeResultToCandidate(results[0], query));
-    });
-  });
-}
-async function resolveGooglePlaceIdToCandidate(placeId, fallbackName) {
-  const ready = await ensureGoogleServices();
-  if (!ready || !state.google.geocoder || !placeId) return null;
-  return new Promise((resolve) => {
-    state.google.geocoder.geocode({ placeId }, (results, status) => {
-      if (status !== "OK" || !Array.isArray(results) || !results.length) {
-        resolve(null);
-        return;
-      }
-      resolve(geocodeResultToCandidate(results[0], fallbackName));
-    });
-  });
-}
-async function buildGoogleDirectionsRoute(origin, destination, stops) {
-  const ready = await ensureGoogleServices();
-  if (!ready || !state.google.directionsService || !window.google?.maps?.TravelMode) return null;
-  return new Promise((resolve) => {
-    const waypointItems = (Array.isArray(stops) ? stops : [])
-      .filter((s) => Number.isFinite(s?.lat) && Number.isFinite(s?.lon))
-      .map((s) => ({
-        location: { lat: s.lat, lng: s.lon },
-        stopover: true,
-      }));
-    state.google.directionsService.route(
-      {
-        origin: { lat: origin.lat, lng: origin.lon },
-        destination: { lat: destination.lat, lng: destination.lon },
-        waypoints: waypointItems,
-        optimizeWaypoints: false,
-        provideRouteAlternatives: false,
-        travelMode: window.google.maps.TravelMode.DRIVING,
-        drivingOptions: {
-          departureTime: new Date(),
-          trafficModel: window.google.maps.TrafficModel.BEST_GUESS,
-        },
-      },
-      (result, status) => {
-        if (status !== "OK" || !result?.routes?.length) {
-          resolve(null);
-          return;
-        }
-        resolve(result.routes[0]);
-      }
-    );
-  });
-}
-
 async function upsertAddressCatalog(query, candidate, bias) {
   if (!candidate) return;
   const body = {
