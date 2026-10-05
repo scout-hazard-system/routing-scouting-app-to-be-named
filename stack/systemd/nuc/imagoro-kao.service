@@ -1,0 +1,18 @@
+[Unit]
+Description=Imagoro Kao MCP gateway (serve-http on the Scout mesh)
+Wants=network-online.target wg-quick@scoutwg0.service
+After=network-online.target wg-quick@scoutwg0.service
+
+[Service]
+User=scout
+Group=scout
+WorkingDirectory=/opt/imagoro-kao/harness
+EnvironmentFile=/etc/imagoro-kao/kao.env
+EnvironmentFile=-/etc/imagoro-kao/session.env
+ExecStart=/bin/bash -c 'IMAGORO_DIST_PUBKEY="$$(cat /etc/imagoro-kao/model-catalog.pub)" exec /usr/bin/node bin/imagoro-kao.mjs serve-http'
+Restart=always
+RestartSec=5s
+NoNewPrivileges=true
+
+[Install]
+WantedBy=multi-user.target
