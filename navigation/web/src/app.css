@@ -1,0 +1,379 @@
+/* Scout public site. Same visual language as the Imagoro portfolio (black ground,
+   cyan accent, Courier, ASCII marks, slat backdrop) without its shared design packages. */
+:root {
+  --bg: #000000;
+  --surface: rgba(10, 16, 20, 0.86);
+  --border: #1d2a33;
+  --text: #d8e4ea;
+  --muted: #8a9aa6;
+  --accent: #00c9c7;
+  --warn: #ba3737;
+  --font: "Courier New", Courier, ui-monospace, monospace;
+  --s1: 6px;
+  --s2: 12px;
+  --s3: 20px;
+  --s4: 32px;
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+a {
+  color: var(--accent);
+}
+
+.sc-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.sc-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.sc-header {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s3);
+  padding: var(--s2) var(--s3);
+  border-bottom: 1px solid var(--border);
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.sc-brand-mark {
+  display: block;
+  width: 200px;
+  height: 52px;
+}
+
+.sc-nav {
+  display: flex;
+  gap: var(--s3);
+}
+
+.sc-nav a {
+  text-decoration: none;
+  color: var(--text);
+}
+
+.sc-nav a:hover,
+.sc-nav a:focus-visible {
+  color: var(--accent);
+}
+
+.sc-main {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+}
+
+.sc-sea {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: #000;
+}
+
+.sc-page {
+  position: relative;
+  z-index: 1;
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: var(--s4) var(--s3);
+}
+
+.sc-hero h1 {
+  font-size: clamp(30px, 5vw, 54px);
+  line-height: 1.1;
+  margin: var(--s4) 0 var(--s3);
+  max-width: 16ch;
+}
+
+.sc-sub {
+  color: var(--text);
+  max-width: 60ch;
+  background: rgba(0, 0, 0, 0.55);
+}
+
+.sc-cta {
+  display: flex;
+  align-items: center;
+  gap: var(--s3);
+  margin: var(--s4) 0;
+}
+
+.sc-btn {
+  display: inline-block;
+  font: inherit;
+  color: #001414;
+  background: var(--accent);
+  border: 0;
+  border-radius: 4px;
+  padding: var(--s1) var(--s2);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.sc-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.sc-btn-lg {
+  font-size: 20px;
+  padding: var(--s2) var(--s3);
+}
+
+.sc-link {
+  font: inherit;
+  color: var(--accent);
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.sc-cards {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--s3);
+}
+
+.sc-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: var(--s3);
+}
+
+.sc-card h3 {
+  margin-top: 0;
+  color: var(--accent);
+}
+
+.sc-prose {
+  background: var(--surface);
+}
+
+.sc-points li {
+  margin-bottom: var(--s2);
+}
+
+.sc-footer {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--s2);
+  padding: var(--s2) var(--s3);
+  color: var(--muted);
+  font-size: 15px;
+  border-top: 1px solid var(--border);
+  background: rgba(0, 0, 0, 0.6);
+}
+
+/* Map app */
+.sc-shell-app {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.sc-app {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  height: calc(100vh - 77px);
+}
+
+.sc-panel {
+  overflow-y: auto;
+  padding: var(--s3);
+  border-right: 1px solid var(--border);
+  background: #05090c;
+  font-size: 16px;
+}
+
+.sc-panel h2 {
+  font-size: 17px;
+  color: var(--accent);
+  margin: var(--s3) 0 var(--s2);
+}
+
+.sc-title {
+  font-size: 22px;
+  margin: 0 0 var(--s2);
+}
+
+.sc-banner {
+  border: 1px solid var(--warn);
+  padding: var(--s2);
+  border-radius: 4px;
+  font-size: 15px;
+}
+
+.sc-fine,
+.sc-status {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.sc-field {
+  margin-bottom: var(--s2);
+}
+
+.sc-field label {
+  display: block;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.sc-search {
+  display: flex;
+  gap: var(--s1);
+}
+
+.sc-search input {
+  flex: 1;
+  min-width: 0;
+  font: inherit;
+  color: var(--text);
+  background: #0b1217;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: var(--s1);
+}
+
+.sc-search button {
+  font: inherit;
+  color: var(--text);
+  background: #13202a;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.sc-picked {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--s2);
+}
+
+.sc-results {
+  list-style: none;
+  padding: 0;
+  margin: var(--s1) 0;
+  border: 1px solid var(--border);
+}
+
+.sc-results button {
+  width: 100%;
+  text-align: left;
+  font: inherit;
+  font-size: 14px;
+  color: var(--text);
+  background: none;
+  border: 0;
+  border-bottom: 1px solid var(--border);
+  padding: var(--s1);
+  cursor: pointer;
+}
+
+.sc-results button:hover,
+.sc-results button:focus-visible {
+  background: #0f1a21;
+}
+
+.sc-err {
+  color: #ff8a8a;
+  font-size: 14px;
+}
+
+.sc-clusters,
+.sc-routes {
+  padding-left: 0;
+  list-style: none;
+}
+
+.sc-routes {
+  list-style: decimal inside;
+}
+
+.sc-clusters li {
+  display: flex;
+  align-items: center;
+  gap: var(--s1);
+  margin-bottom: 4px;
+}
+
+.sc-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex: none;
+}
+
+.sc-map {
+  height: 100%;
+  background: #0a0f12;
+}
+
+.sc-pop {
+  font-family: var(--font);
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.sc-pop-roads {
+  margin-top: 4px;
+}
+
+.sc-pop-src {
+  color: #555;
+  margin-top: 4px;
+}
+
+@media (max-width: 760px) {
+  .sc-app {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 60vh;
+    height: auto;
+  }
+  .sc-shell-app {
+    height: auto;
+    overflow: visible;
+  }
+  .sc-panel {
+    border-right: 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .sc-brand-mark {
+    width: 150px;
+    height: 40px;
+  }
+}
