@@ -7124,7 +7124,9 @@ static final class MeshEnrollHandler implements HttpHandler {
           }
         }
       }
-      byte[] png = ProprietaryMapEngine.renderPng(lat, lon, mpp, heading, tilt, w, h, routePts, destLatBox, destLonBox);
+      boolean tileMode = parseFlexibleBoolean(query.getOrDefault("tile", ""), false);
+      byte[] png =
+          ProprietaryMapEngine.renderPng(lat, lon, mpp, heading, tilt, w, h, routePts, destLatBox, destLonBox, tileMode);
       writeBinary(exchange, 200, png, "image/png");
     }
   }

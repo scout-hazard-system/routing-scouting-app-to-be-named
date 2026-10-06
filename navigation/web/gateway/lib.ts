@@ -108,7 +108,7 @@ export function upstreamFor(route: Route): string {
       return "/api/health";
     case "tile": {
       const c = tileCenter(route.z, route.x, route.y);
-      return `/api/map/render?${qs({ lat: c.lat.toFixed(6), lon: c.lon.toFixed(6), mpp: c.mpp.toFixed(4), heading: 0, tilt: 0, w: 256, h: 256 })}`;
+      return `/api/map/render?${qs({ lat: c.lat.toFixed(6), lon: c.lon.toFixed(6), mpp: c.mpp.toFixed(4), heading: 0, tilt: 0, w: 256, h: 256, tile: 1 })}`;
     }
     case "geocode":
       return `/api/platform/geocode?${qs({ q: route.q, ...(route.lat !== undefined ? { lat: route.lat.toFixed(3), lon: route.lon!.toFixed(3) } : {}) })}`;

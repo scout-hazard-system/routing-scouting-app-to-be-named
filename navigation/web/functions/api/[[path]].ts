@@ -4,13 +4,15 @@
 // site still works and reports the map service as offline.
 //
 // Pages env:
-//   ORIGIN            https://<tunnel hostname>   (unset = offline)
-//   ORIGIN_SUBSCRIPTION  secret: X-Scout-Subscription token issued for the public site
+//   ORIGIN     https://api.scoutnavigation.stream (Cloudflare Tunnel to the Dell; unset = offline)
+//   EDGE_KEY   secret: X-Scout-Edge-Key. The Dell's nginx gate (scout-public-gate.conf) 404s
+//              anything without it, so the tunnel hostname is useless to direct callers. The
+//              map server's subscription token is injected there and never leaves the Dell.
 import { RateLimiter, isRejection, parseRoute, scrub, summarizeHazards, upstreamFor, type Route } from "../../gateway/lib";
 
 interface Env {
   ORIGIN?: string;
-  ORIGIN_SUBSCRIPTION?: string;
+  EDGE_KEY?: string;
 }
 
 const general = new RateLimiter(120, 60_000);
@@ -32,7 +34,7 @@ function json(status: number, body: unknown, extra: Record<string, string> = {})
 async function fromOrigin(env: Env, route: Route, timeoutMs: number): Promise<Response> {
   const origin = (env.ORIGIN ?? "").replace(/\/+$/, "");
   const headers: Record<string, string> = { Accept: route.kind === "tile" ? "image/png" : "application/json" };
-  if (env.ORIGIN_SUBSCRIPTION) headers["X-Scout-Subscription"] = env.ORIGIN_SUBSCRIPTION;
+  if (env.EDGE_KEY) headers["X-Scout-Edge-Key"] = env.EDGE_KEY;
   return fetch(`${origin}${upstreamFor(route)}`, { headers, signal: AbortSignal.timeout(timeoutMs) });
 }
 
@@ -50,7 +52,7 @@ export const onRequest: PagesFunction<Env> = async (ctx) => {
     return json(429, { error: "rate_limited" }, { "Retry-After": "60" });
   }
 
-  if (!env.ORIGIN) {
+  if (!env.ORIGIN || !env.EDGE_KEY) {
     return route.kind === "health"
       ? json(200, { online: false, reason: "map service not connected yet" })
       : json(503, { error: "service_offline" });
