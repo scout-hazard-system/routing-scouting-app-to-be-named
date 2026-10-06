@@ -1,0 +1,5 @@
+# Cloudflare Pages project for the public Scout frontend.
+# ORIGIN / ORIGIN_SUBSCRIPTION are set as Pages env vars/secrets, never here.
+name = "scout"
+pages_build_output_dir = "dist"
+compatibility_date = "2026-09-01"

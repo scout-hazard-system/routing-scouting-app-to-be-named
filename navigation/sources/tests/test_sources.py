@@ -214,8 +214,9 @@ class ClientAssetTest(unittest.TestCase):
         """navigation/frontend ships its own copy (PyInstaller bundles only that dir)."""
         root = Path(__file__).resolve().parents[3]
         canonical = (root / "navigation/sources/clients/shard-client.js").read_bytes().replace(b"\r\n", b"\n")
-        shipped = (root / "navigation/frontend/shard-client.js").read_bytes().replace(b"\r\n", b"\n")
-        self.assertEqual(canonical, shipped, "copy navigation/sources/clients/shard-client.js to navigation/frontend/")
+        for copy in ("navigation/frontend/shard-client.js", "navigation/web/src/shard-client.js"):
+            shipped = (root / copy).read_bytes().replace(b"\r\n", b"\n")
+            self.assertEqual(canonical, shipped, f"copy navigation/sources/clients/shard-client.js to {copy}")
 
 
 if __name__ == "__main__":
