@@ -146,7 +146,8 @@ export default function MapApp() {
       if (cancelled) return;
       setOnline(up);
       if (up) {
-        L.tileLayer("/api/tiles/{z}/{x}/{y}.png", { minZoom: 3, maxZoom: 19, attribution: "Scout map engine · © OpenStreetMap contributors" }).addTo(m);
+        // ?v= busts edge-cached tiles when the renderer changes (the gateway ignores the query).
+        L.tileLayer("/api/tiles/{z}/{x}/{y}.png?v=2", { minZoom: 3, maxZoom: 19, attribution: "Scout map engine · © OpenStreetMap contributors" }).addTo(m);
       } else {
         L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", { maxZoom: 19, attribution: "© OpenStreetMap contributors" }).addTo(m);
       }

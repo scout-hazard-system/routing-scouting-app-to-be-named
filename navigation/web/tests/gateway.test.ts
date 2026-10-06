@@ -85,7 +85,7 @@ describe("responses", () => {
     expect(c.lat).toBeCloseTo(0, 6);
     expect(c.lon).toBeCloseTo(0, 6);
     expect(c.mpp).toBeCloseTo(156543.03, 1);
-    expect(upstreamFor({ kind: "tile", z: 12, x: 700, y: 1600 })).toMatch(/tilt=0&w=256&h=256$/);
+    expect(upstreamFor({ kind: "tile", z: 12, x: 700, y: 1600 })).toMatch(/tilt=0&w=256&h=256&tile=1$/);
   });
 
   it("rate limiter allows the limit per window", () => {
