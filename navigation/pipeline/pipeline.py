@@ -36,7 +36,14 @@ import scipy.io.wavfile as wav
 import requests
 import numpy as np
 from faster_whisper import WhisperModel
-from channel_selector import SelectorContext, haversine_km, load_channels, select_channels
+from channel_selector import (
+    SelectorContext,
+    haversine_km,
+    hub_accepts_client_gps,
+    load_channels,
+    select_channels,
+    shard_center,
+)
 from optional_audio_routes import ensure_optional_route_enabled
 try:
     import llm_set_client
@@ -999,8 +1006,10 @@ parser.add_argument("--selector-ollama-model", type=str, default="scout-rank", h
 parser.add_argument("--selector-ollama-url", type=str, default="http://localhost:11434/api/generate", help="Ollama endpoint for selector reranking")
 parser.add_argument("--selector-ollama-timeout", type=float, default=8.0, help="Ollama timeout in seconds for selector reranking")
 parser.add_argument("--selector-ollama-weight", type=float, default=0.2, help="Blend weight [0..1] for Ollama rerank influence")
-parser.add_argument("--use-device-gps", action=argparse.BooleanOptionalAction, default=True, help="Route selector coordinates from the streaming device GPS (backend /api/gps/latest) instead of static server-side values")
+parser.add_argument("--selector-shard", type=str, default="", help="Geohash-4 cell to rank channels from (cell centre); overrides --selector-lat/--selector-lon and device GPS")
+parser.add_argument("--use-device-gps", action=argparse.BooleanOptionalAction, default=None, help="Route selector coordinates from the streaming device GPS (backend /api/gps/latest). Default: only when the backend's /api/gps/policy says it keeps client GPS (vehicle-local); coordinate-free hubs never do")
 parser.add_argument("--gps-latest-url", type=str, default=f"http://127.0.0.1:{os.environ.get('JAVA_BACKEND_PORT', os.environ.get('BACKEND_PORT', '18080'))}/api/gps/latest", help="Backend endpoint reporting the latest streaming-device GPS fix")
+parser.add_argument("--gps-policy-url", type=str, default="", help="Backend GPS policy endpoint (default: sibling /api/gps/policy of --gps-latest-url)")
 parser.add_argument("--gps-startup-wait", type=float, default=20.0, help="Seconds to wait for a device GPS fix at startup before falling back to configured selector coordinates")
 parser.add_argument("--gps-refresh-seconds", type=float, default=45.0, help="How often to re-poll the device GPS while scanning")
 parser.add_argument("--gps-reselect-km", type=float, default=30.0, help="Re-run channel selection when the device moves at least this many km from the coordinates used for the current selection")
@@ -1081,8 +1090,26 @@ if args.mode == "scrcpy":
     print(f"Routed scrcpy sink-input #{sink_input_id} to isolated sink '{args.scrcpy_sink}'.")
 elif args.mode == "broadcastify":
     ensure_binary("ffmpeg")
+    if args.selector_shard:
+        center = shard_center(args.selector_shard)
+        if center is None:
+            raise RuntimeError("--selector-shard must be a geohash-4 cell id")
+        args.selector_lat, args.selector_lon = center
+        args.use_device_gps = False
+    if not args.stream_url and args.use_device_gps is not False:
+        policy_url = args.gps_policy_url or args.gps_latest_url.rsplit("/", 1)[0] + "/policy"
+        accepts = hub_accepts_client_gps(policy_url)
+        if accepts is not True:
+            if args.use_device_gps:
+                print(f"--use-device-gps ignored: {policy_url} reports a coordinate-free hub (or no answer).")
+            args.use_device_gps = False
+        else:
+            args.use_device_gps = True
     if args.stream_url:
         gps_source = "manual_stream_url"
+    elif args.selector_shard:
+        gps_source = "shard"
+        print(f"Ranking channels from cell {args.selector_shard} (centre {args.selector_lat:.3f},{args.selector_lon:.3f}).")
     elif args.use_device_gps:
         print(f"Waiting up to {args.gps_startup_wait:.0f}s for streaming-device GPS fix from {args.gps_latest_url} ...")
         device_fix = wait_for_device_gps(args.gps_latest_url, args.gps_startup_wait)
