@@ -31,15 +31,18 @@ admin/mesh/mobile/assistant/pipeline/broadcastify. `scrub()` also drops `alert_c
 Privacy: the browser computes its geohash-4 cell on-device (`src/shard-client.js`, a parity-tested copy of
 `navigation/sources/clients/shard-client.js`); only route search sends the two user-chosen points.
 
-## Connecting the map service (not done yet)
+## Live setup (2026-10-06)
 
-Pages env for the `scout` project:
-
-- `ORIGIN`: the Dell map server through a Cloudflare Tunnel, e.g. `https://scout-api.<your-domain>`.
-  Unset = offline mode (OSM basemap, everything else reports `service_offline`).
-- `ORIGIN_SUBSCRIPTION` (secret): an `X-Scout-Subscription` token issued for the public site
-  (`/api/admin/subscription/issue`), revocable on its own.
-
-Needs: a domain on the Cloudflare account (for the tunnel hostname), the Dell running a backend build that
-has `/api/platform/hazards` (PR #23), and a WAF rate-limit rule once the zone exists (the in-function
-limiter is per isolate only).
+- Site: https://scoutnavigation.stream (+ www), Pages project `scout` (also https://scout-386.pages.dev).
+- `ORIGIN` = https://api.scoutnavigation.stream: Cloudflare Tunnel `scout-dell-api` (remotely managed,
+  `scout-tunnel.service` on the Dell, token in `/etc/cloudflared/scout-tunnel.env`, root 600).
+- Tunnel target: nginx gate `127.0.0.1:18090` on the Dell (`/etc/nginx/conf.d/scout-public-gate.conf`,
+  root 600). It 404s anything without `X-Scout-Edge-Key`; only health, map render, geocode,
+  route/options and hazards pass. No access log. It strips caller auth headers and injects the
+  `public-web` subscription token, which never leaves the Dell.
+- Pages secrets: `ORIGIN`, `EDGE_KEY`. Rotate the edge key on both sides together.
+- Alerts are served from the hazard service (`127.0.0.1:8770/v1/hazards`) by the gate.
+- Tiles: `/api/map/render?...&tile=1` (no device marker, no per-tile attribution). Bump `?v=` in
+  `src/MapApp.tsx` after renderer changes so edge-cached tiles refresh.
+- Still to do: a WAF rate-limit rule on the zone (the in-function limiter is per isolate; the gate also
+  rate-limits per CF-Connecting-IP at 30 r/s).

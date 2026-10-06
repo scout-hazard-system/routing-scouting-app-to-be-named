@@ -131,5 +131,7 @@ export async function routeOptions(from: Place, to: Place): Promise<RouteOption[
         points: toPoints(r.route_points ?? r.geometry ?? r.points ?? r.coordinates)
       };
     })
-    .filter((r) => r.points.length >= 2);
+    .filter((r) => r.points.length >= 2)
+    // the server lists the primary route in both `routes` and `alternatives`
+    .filter((r, i, all) => all.findIndex((o) => o.points.length === r.points.length && o.distanceKm === r.distanceKm) === i);
 }
