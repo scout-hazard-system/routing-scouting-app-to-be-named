@@ -30,7 +30,31 @@ export type Route =
   | { kind: "tile"; z: number; x: number; y: number }
   | { kind: "geocode"; q: string; lat?: number; lon?: number }
   | { kind: "route"; originLat: number; originLon: number; destLat: number; destLon: number }
-  | { kind: "alerts"; cells: string[] };
+  | { kind: "alerts"; cells: string[] }
+  | { kind: "scene"; lat: number; lon: number; radiusM: number; zoom: number };
+
+/** The map engine's zoom ladder: scenes come in these levels of detail only. */
+export const ZOOM_LADDER = [15, 13, 11, 9, 7, 5, 3] as const;
+const SCENE_MIN_RADIUS_M = 300;
+const SCENE_MAX_RADIUS_M = 20_000;
+
+export function snapToLadder(z: number): number {
+  for (const rung of ZOOM_LADDER) if (z >= rung) return rung;
+  return ZOOM_LADDER[ZOOM_LADDER.length - 1];
+}
+
+/**
+ * Scene centres are snapped to a grid a quarter of the scene radius wide: neighbouring viewers
+ * share one cached scene, and the map server learns roughly which area is being looked at,
+ * never the exact point.
+ */
+export function snapSceneCenter(lat: number, lon: number, radiusM: number): { lat: number; lon: number } {
+  const snap = (v: number, s: number) => Number((Math.round(v / s) * s).toFixed(5));
+  const sLat = snap(lat, radiusM / 4 / 110_540);
+  // longitude step from the SNAPPED latitude, so everyone in the same row shares one grid
+  const stepLon = radiusM / 4 / (111_320 * Math.max(0.2, Math.cos((sLat * Math.PI) / 180)));
+  return { lat: sLat, lon: snap(lon, stepLon) };
+}
 
 export type Rejection = { status: number; error: string };
 
@@ -74,6 +98,18 @@ export function parseRoute(path: string, q: URLSearchParams): Route | Rejection 
     return { kind: "route", originLat: o[0], originLon: o[1], destLat: d[0], destLon: d[1] };
   }
 
+  if (p === "/scene") {
+    const lat = num(q.get("lat"));
+    const lon = num(q.get("lon"));
+    if (!isLat(lat) || !isLon(lon)) return { status: 400, error: "bad_coordinates" };
+    const r = num(q.get("radius_m")) ?? 1500;
+    const radiusM = Math.round(Math.min(SCENE_MAX_RADIUS_M, Math.max(SCENE_MIN_RADIUS_M, r)));
+    const z = num(q.get("zoom"));
+    const zoom = z === undefined ? 0 : snapToLadder(Math.round(z));
+    const c = snapSceneCenter(lat, lon, radiusM);
+    return { kind: "scene", lat: c.lat, lon: c.lon, radiusM, zoom };
+  }
+
   if (p === "/alerts") {
     for (const k of q.keys()) if (k !== "cells") return { status: 400, error: "coordinates_not_accepted" };
     const cells = [...new Set((q.get("cells") ?? "").split(",").map((c) => c.trim().toLowerCase()).filter(Boolean))];
@@ -114,6 +150,8 @@ export function upstreamFor(route: Route): string {
       return `/api/platform/geocode?${qs({ q: route.q, ...(route.lat !== undefined ? { lat: route.lat.toFixed(3), lon: route.lon!.toFixed(3) } : {}) })}`;
     case "route":
       return `/api/platform/route/options?${qs({ origin_lat: route.originLat, origin_lon: route.originLon, dest_lat: route.destLat, dest_lon: route.destLon })}`;
+    case "scene":
+      return `/api/map/scene?${qs({ lat: route.lat, lon: route.lon, radius_m: route.radiusM, ...(route.zoom ? { zoom: route.zoom } : {}) })}`;
     case "alerts":
       return `/api/platform/hazards?${qs({ shards: route.cells.join(",") })}`;
   }

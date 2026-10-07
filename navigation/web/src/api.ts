@@ -61,6 +61,12 @@ export async function health(): Promise<boolean> {
   }
 }
 
+/** A 3D vector scene from the map engine around a view centre (snapped/cached by the gateway). */
+export async function scene(lat: number, lon: number, radiusM: number): Promise<import("./scene3d").SceneData> {
+  const qs = new URLSearchParams({ lat: lat.toFixed(5), lon: lon.toFixed(5), radius_m: String(Math.round(radiusM)) });
+  return get(`/scene?${qs}`);
+}
+
 export async function alertClusters(cells: string[]): Promise<Cluster[]> {
   return (await get<{ clusters: Cluster[] }>(`/alerts?cells=${cells.join(",")}`)).clusters ?? [];
 }
