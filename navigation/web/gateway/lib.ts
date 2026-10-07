@@ -36,7 +36,8 @@ export type Route =
 /** The map engine's zoom ladder: scenes come in these levels of detail only. */
 export const ZOOM_LADDER = [15, 13, 11, 9, 7, 5, 3] as const;
 const SCENE_MIN_RADIUS_M = 300;
-const SCENE_MAX_RADIUS_M = 20_000;
+// The Dell uplink is ~30 KB/s: a 4 km z13 scene is ~200 KB gzipped (~3 s); 10 km is >1 MB.
+const SCENE_MAX_RADIUS_M = 4_000;
 
 export function snapToLadder(z: number): number {
   for (const rung of ZOOM_LADDER) if (z >= rung) return rung;
