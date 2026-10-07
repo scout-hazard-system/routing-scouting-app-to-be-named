@@ -93,3 +93,24 @@ describe("responses", () => {
     expect([rl.allow("ip", 0), rl.allow("ip", 1), rl.allow("ip", 2), rl.allow("ip", 1001)]).toEqual([true, true, false, true]);
   });
 });
+
+describe("3D scenes", () => {
+  it("snaps centre, clamps radius, snaps zoom to the ladder, and maps to /api/map/scene", () => {
+    const r = parseRoute("/scene", q("lat=33.44841&lon=-112.07401&radius_m=99999&zoom=14"));
+    expect(isRejection(r)).toBe(false);
+    const s = r as { kind: "scene"; lat: number; lon: number; radiusM: number; zoom: number };
+    expect(s.radiusM).toBe(20000);
+    expect(s.zoom).toBe(13);
+    // two nearby viewers land on the same snapped scene
+    const r2 = parseRoute("/scene", q("lat=33.4492&lon=-112.0705&radius_m=20000&zoom=13")) as typeof s;
+    expect([r2.lat, r2.lon]).toEqual([s.lat, s.lon]);
+    expect(upstreamFor(s)).toMatch(/^\/api\/map\/scene\?lat=[-\d.]+&lon=[-\d.]+&radius_m=20000&zoom=13$/);
+  });
+
+  it("rejects bad coordinates and still strips transcripts from scenes", () => {
+    expect((parseRoute("/scene", q("lat=91&lon=0")) as { error: string }).error).toBe("bad_coordinates");
+    const out = JSON.stringify(scrub({ roads: [{ c: "primary", p: [1, 2, 3, 4] }], alert_clusters: [{ alerts: [{ transcript: "radio" }] }] }));
+    expect(out).not.toMatch(/transcript|alert_clusters/);
+    expect(out).toContain("primary");
+  });
+});

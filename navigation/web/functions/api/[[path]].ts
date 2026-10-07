@@ -83,6 +83,26 @@ export const onRequest: PagesFunction<Env> = async (ctx) => {
       return (await filled) ?? json(502, { error: "tile_unavailable" });
     }
 
+    if (route.kind === "scene") {
+      // Keyed by the snapped upstream request, so every viewer in the same grid square at the
+      // same ladder rung shares one cached scene. scrub() drops the alert_clusters the map server
+      // appends to scenes (they carry raw radio transcripts).
+      const cache = (caches as unknown as { default: Cache }).default;
+      const key = new Request(`https://scene-cache.scout.internal${upstreamFor(route)}`, { method: "GET" });
+      const hit = await cache.match(key);
+      if (hit) return hit;
+      const filled = (async (): Promise<Response | null> => {
+        const up = await fromOrigin(env, route, 30_000);
+        if (!up.ok) return null;
+        const body = scrub(await up.json());
+        const res = json(200, body, { "Cache-Control": "public, max-age=300, s-maxage=900" });
+        await cache.put(key, res.clone());
+        return res;
+      })();
+      ctx.waitUntil(filled.catch(() => null));
+      return (await filled.catch(() => null)) ?? json(502, { error: "scene_unavailable" });
+    }
+
     const up = await fromOrigin(env, route, route.kind === "health" ? 4_000 : 20_000);
     if (route.kind === "health") return json(200, { online: up.ok });
     let body: unknown;
