@@ -42,6 +42,10 @@ Privacy: the browser computes its geohash-4 cell on-device (`src/shard-client.js
   `public-web` subscription token, which never leaves the Dell.
 - Pages secrets: `ORIGIN`, `EDGE_KEY`. Rotate the edge key on both sides together.
 - Alerts are served from the hazard service (`127.0.0.1:8770/v1/hazards`) by the gate.
+- 3D scenes: the gate also allows `/api/map/scene` and gzips JSON (`gzip_proxied any`,
+  `gzip_types application/json`, read timeout 60 s). The Dell's uplink is ~30 KB/s over wifi, so
+  scenes are capped at 4 km (a z13 district scene is ~200 KB gzipped, ~3 s cold) and cached at
+  the edge for 24 h; repeats are ~0.3 s.
 - Tiles: `/api/map/render?...&tile=1` (no device marker, no per-tile attribution). Bump `?v=` in
   `src/MapApp.tsx` after renderer changes so edge-cached tiles refresh.
 - Still to do: a WAF rate-limit rule on the zone (the in-function limiter is per isolate; the gate also

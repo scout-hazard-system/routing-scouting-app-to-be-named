@@ -92,10 +92,11 @@ export const onRequest: PagesFunction<Env> = async (ctx) => {
       const hit = await cache.match(key);
       if (hit) return hit;
       const filled = (async (): Promise<Response | null> => {
-        const up = await fromOrigin(env, route, 30_000);
+        const up = await fromOrigin(env, route, 55_000);
         if (!up.ok) return null;
         const body = scrub(await up.json());
-        const res = json(200, body, { "Cache-Control": "public, max-age=300, s-maxage=900" });
+        // map data is static between engine updates: keep scenes at the edge for a day
+        const res = json(200, body, { "Cache-Control": "public, max-age=3600, s-maxage=86400" });
         await cache.put(key, res.clone());
         return res;
       })();

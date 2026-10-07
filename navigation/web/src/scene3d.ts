@@ -51,7 +51,7 @@ const ROAD_STYLE: [RegExp, number, number, number][] = [
   [/./, 6, 0x5d6b78, 1]
 ];
 /** Scene radius buckets: viewers share cached scenes, and each maps to one ladder rung server-side. */
-const RADIUS_BUCKETS = [700, 1500, 4000, 10_000, 20_000];
+const RADIUS_BUCKETS = [700, 1500, 4000]; // capped by the gateway; wider views belong to the 2D tiles
 
 function areaColor(kind: string): number {
   for (const [re, c] of AREA_COLOR) if (re.test(kind)) return c;
@@ -110,7 +110,7 @@ export class Scene3D {
     this.controls.enableDamping = true;
     this.controls.dampingFactor = 0.08;
     this.controls.minDistance = 150;
-    this.controls.maxDistance = 60_000;
+    this.controls.maxDistance = 9_000; // beyond the 4 km scene cap there is nothing more to draw
     this.controls.maxPolarAngle = 1.3; // keep the horizon below ~75°
     this.controls.screenSpacePanning = false;
     this.controls.target.set(0, 0, 0);
@@ -308,6 +308,9 @@ export class Scene3D {
       );
       ring.rotation.x = -Math.PI / 2;
       ring.position.set(x, 2, z);
+      // after the road layers (renderOrder 1..7), so roads don't cut through the ring
+      beam.renderOrder = 15;
+      ring.renderOrder = 15;
       this.hazards.add(beam, ring);
     }
   }

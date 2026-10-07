@@ -99,12 +99,12 @@ describe("3D scenes", () => {
     const r = parseRoute("/scene", q("lat=33.44841&lon=-112.07401&radius_m=99999&zoom=14"));
     expect(isRejection(r)).toBe(false);
     const s = r as { kind: "scene"; lat: number; lon: number; radiusM: number; zoom: number };
-    expect(s.radiusM).toBe(20000);
+    expect(s.radiusM).toBe(4000);
     expect(s.zoom).toBe(13);
     // two nearby viewers land on the same snapped scene
-    const r2 = parseRoute("/scene", q("lat=33.4492&lon=-112.0705&radius_m=20000&zoom=13")) as typeof s;
+    const r2 = parseRoute("/scene", q("lat=33.4492&lon=-112.0705&radius_m=4000&zoom=13")) as typeof s;
     expect([r2.lat, r2.lon]).toEqual([s.lat, s.lon]);
-    expect(upstreamFor(s)).toMatch(/^\/api\/map\/scene\?lat=[-\d.]+&lon=[-\d.]+&radius_m=20000&zoom=13$/);
+    expect(upstreamFor(s)).toMatch(/^\/api\/map\/scene\?lat=[-\d.]+&lon=[-\d.]+&radius_m=4000&zoom=13$/);
   });
 
   it("rejects bad coordinates and still strips transcripts from scenes", () => {
