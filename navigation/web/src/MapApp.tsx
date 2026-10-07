@@ -30,6 +30,62 @@ const KIND_LABEL: Record<string, string> = {
   other: "other"
 };
 const DEFAULT_VIEW: [number, number, number] = [39.5, -98.35, 5]; // continental US
+const AREA_ZOOM = 11; // ~40 km area around the user's cell centre
+const PLACE_ZOOM = 13;
+const TILE_TIMEOUT_MS = 12_000; // below the gateway's 15 s origin timeout
+const NATIVE_MAX_ZOOM = 15; // deeper zooms upscale z15 renders instead of asking for slower ones
+const OSM_TILE = "https://tile.openstreetmap.org/{z}/{x}/{y}.png";
+
+interface StartView {
+  lat: number;
+  lon: number;
+  zoom: number;
+}
+
+/**
+ * Scout tiles first, always. A tile that errors or takes longer than TILE_TIMEOUT_MS is shown
+ * from OpenStreetMap instead; per tile, never the whole map. The slow Scout render still
+ * completes and lands in the edge cache, so the next view of that tile comes from Scout.
+ */
+function scoutTileLayer(onFallback: () => void): L.TileLayer {
+  const Layer = L.TileLayer.extend({
+    createTile(this: L.TileLayer, coords: L.Coords, done: L.DoneCallback) {
+      const img = document.createElement("img");
+      img.alt = "";
+      img.setAttribute("role", "presentation");
+      let settled = false;
+      const fallback = () => {
+        if (settled) return;
+        settled = true;
+        clearTimeout(timer);
+        onFallback();
+        img.onload = () => done(undefined, img);
+        img.onerror = () => done(new Error("tile unavailable"), img);
+        img.src = L.Util.template(OSM_TILE, { ...coords, z: coords.z });
+      };
+      const timer = setTimeout(fallback, TILE_TIMEOUT_MS);
+      img.onload = () => {
+        if (settled) return;
+        settled = true;
+        clearTimeout(timer);
+        done(undefined, img);
+      };
+      img.onerror = fallback;
+      img.src = this.getTileUrl(coords);
+      return img;
+    }
+  });
+  // ?v= busts edge-cached tiles when the renderer changes (the gateway ignores the query).
+  return new (Layer as unknown as new (url: string, o: L.TileLayerOptions) => L.TileLayer)("/api/tiles/{z}/{x}/{y}.png?v=2", {
+    minZoom: 4,
+    maxZoom: 18,
+    maxNativeZoom: NATIVE_MAX_ZOOM,
+    keepBuffer: 1,
+    updateWhenIdle: true,
+    updateWhenZooming: false,
+    attribution: "Scout map engine · © OpenStreetMap contributors"
+  });
+}
 
 function clusterHtml(c: Cluster): string {
   const esc = (s: string) => s.replace(/[&<>"']/g, (ch) => `&#${ch.charCodeAt(0)};`);
@@ -126,6 +182,8 @@ export default function MapApp() {
   const clusterLayer = useRef<L.LayerGroup | null>(null);
   const routeLayer = useRef<L.LayerGroup | null>(null);
   const [online, setOnline] = useState<boolean | null>(null);
+  const [start, setStart] = useState<StartView | null>(null);
+  const [fallbackTiles, setFallbackTiles] = useState(0);
   const [cell, setCell] = useState<string | null>(null);
   const [clusters, setClusters] = useState<Cluster[]>([]);
   const [status, setStatus] = useState("");
@@ -134,30 +192,33 @@ export default function MapApp() {
   const [routes, setRoutes] = useState<RouteOption[]>([]);
   const [routing, setRouting] = useState(false);
 
-  // Map + basemap: Scout's own tiles when the service is up, OpenStreetMap otherwise.
+  // Service status for the banner and the search/route controls. Re-checked, so one slow
+  // answer never decides the session (it no longer picks the basemap at all).
   useEffect(() => {
-    if (!mapEl.current || map.current) return;
-    const m = L.map(mapEl.current, { zoomControl: true, worldCopyJump: true }).setView([DEFAULT_VIEW[0], DEFAULT_VIEW[1]], DEFAULT_VIEW[2]);
+    let alive = true;
+    const check = () => void health().then((up) => alive && setOnline(up));
+    check();
+    const t = setInterval(check, 30_000);
+    return () => {
+      alive = false;
+      clearInterval(t);
+    };
+  }, []);
+
+  // The map is created only after the user picks where to start, so the first tiles
+  // rendered are the ones they will actually look at (not a continent's worth).
+  useEffect(() => {
+    if (!start || !mapEl.current || map.current) return;
+    const m = L.map(mapEl.current, { zoomControl: true, worldCopyJump: true }).setView([start.lat, start.lon], start.zoom);
     map.current = m;
+    scoutTileLayer(() => setFallbackTiles((n) => n + 1)).addTo(m);
     clusterLayer.current = L.layerGroup().addTo(m);
     routeLayer.current = L.layerGroup().addTo(m);
-    let cancelled = false;
-    void health().then((up) => {
-      if (cancelled) return;
-      setOnline(up);
-      if (up) {
-        // ?v= busts edge-cached tiles when the renderer changes (the gateway ignores the query).
-        L.tileLayer("/api/tiles/{z}/{x}/{y}.png?v=2", { minZoom: 3, maxZoom: 19, attribution: "Scout map engine · © OpenStreetMap contributors" }).addTo(m);
-      } else {
-        L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", { maxZoom: 19, attribution: "© OpenStreetMap contributors" }).addTo(m);
-      }
-    });
     return () => {
-      cancelled = true;
       m.remove();
       map.current = null;
     };
-  }, []);
+  }, [start]);
 
   // Alert clusters for the device's 3x3 cell neighbourhood (cells computed here, on-device).
   useEffect(() => {
@@ -188,21 +249,32 @@ export default function MapApp() {
     setStatus("Locating…");
     navigator.geolocation.getCurrentPosition(
       (pos) => {
-        // The fix never leaves this function: only the coarse cell is kept.
+        // The fix never leaves this function: only the coarse cell is kept, and the map
+        // opens on the cell centre (~40 km area), not on the device.
         const c = Shards.cellOf(pos.coords.latitude, pos.coords.longitude);
         setCell(c);
         const centre = Shards.cellCenter(c);
-        map.current?.setView([centre.lat, centre.lon], 10);
+        setStatus("");
+        if (map.current) map.current.setView([centre.lat, centre.lon], AREA_ZOOM);
+        else setStart({ lat: centre.lat, lon: centre.lon, zoom: AREA_ZOOM });
       },
-      () => setStatus("Location permission denied. Search a place instead."),
+      () => setStatus("Location permission denied. Search a place or browse the map instead."),
       { enableHighAccuracy: false, maximumAge: 300_000, timeout: 15_000 }
     );
+  }
+
+  function startAtPlace(p: Place | null) {
+    if (!p) return;
+    setCell(Shards.cellOf(p.lat, p.lon));
+    setStart({ lat: p.lat, lon: p.lon, zoom: PLACE_ZOOM });
   }
 
   // Picking a destination also loads hazards around it (by its cell, not by coordinates).
   useEffect(() => {
     const p = to ?? from;
-    if (p) setCell(Shards.cellOf(p.lat, p.lon));
+    if (!p) return;
+    setCell(Shards.cellOf(p.lat, p.lon));
+    if (!map.current) setStart({ lat: p.lat, lon: p.lon, zoom: PLACE_ZOOM });
   }, [from, to]);
 
   async function findRoutes() {
@@ -234,7 +306,12 @@ export default function MapApp() {
       <aside className="sc-panel">
         <h1 className="sc-title">Scout map</h1>
         {offline ? (
-          <p className="sc-banner">The Scout map service isn't connected yet. You're seeing an OpenStreetMap basemap; search, routing and hazards will light up once it is.</p>
+          <p className="sc-banner">The Scout map service isn't reachable right now. Map tiles fall back to OpenStreetMap; search, routing and hazards return when it is.</p>
+        ) : null}
+        {fallbackTiles > 0 && !offline ? (
+          <p className="sc-fine">
+            {fallbackTiles} map tile{fallbackTiles === 1 ? "" : "s"} shown from OpenStreetMap while Scout rendered {fallbackTiles === 1 ? "it" : "them"}; they'll load from Scout next time.
+          </p>
         ) : null}
 
         <section>
@@ -282,7 +359,24 @@ export default function MapApp() {
 
         {status ? <p className="sc-status">{status}</p> : null}
       </aside>
-      <div ref={mapEl} className="sc-map" role="application" aria-label="Map" />
+      <div className="sc-map-wrap">
+        <div ref={mapEl} className="sc-map" role="application" aria-label="Map" />
+        {start ? null : (
+          <div className="sc-start" role="dialog" aria-label="Where should the map start?">
+            <h2>Where are you headed?</h2>
+            <p className="sc-fine">The map renders around the area you pick, so it loads faster.</p>
+            <button type="button" className="sc-btn sc-btn-lg" onClick={useMyArea}>
+              Use my location
+            </button>
+            <p className="sc-fine">Your browser turns it into a ~40 km area code; your exact position isn't sent.</p>
+            <PlaceSearch label="Or search a place" value={null} onPick={startAtPlace} disabled={offline} />
+            <button type="button" className="sc-link" onClick={() => setStart({ lat: DEFAULT_VIEW[0], lon: DEFAULT_VIEW[1], zoom: DEFAULT_VIEW[2] })}>
+              Browse the whole US
+            </button>
+            {status ? <p className="sc-status">{status}</p> : null}
+          </div>
+        )}
+      </div>
     </div>
   );
 }

@@ -377,3 +377,39 @@ a {
     height: 40px;
   }
 }
+
+/* Start prompt over the map area: nothing renders until the user picks a starting view. */
+.sc-map-wrap {
+  position: relative;
+  height: 100%;
+}
+
+.sc-start {
+  position: absolute;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--s2);
+  padding: var(--s3);
+  text-align: center;
+  background: radial-gradient(circle at center, #0b1418 0%, #000 75%);
+}
+
+.sc-start h2 {
+  color: var(--accent);
+  margin: 0;
+}
+
+.sc-start .sc-field {
+  width: min(420px, 100%);
+  text-align: left;
+}
+
+@media (max-width: 760px) {
+  .sc-map-wrap {
+    height: 60vh;
+  }
+}
