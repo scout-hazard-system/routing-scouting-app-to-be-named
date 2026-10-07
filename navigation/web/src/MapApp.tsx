@@ -47,7 +47,7 @@ interface StartView {
  * from OpenStreetMap instead; per tile, never the whole map. The slow Scout render still
  * completes and lands in the edge cache, so the next view of that tile comes from Scout.
  */
-function scoutTileLayer(onFallback: () => void): L.TileLayer {
+function scoutTileLayer(onFallback: () => void, onScout: () => void): L.TileLayer {
   const Layer = L.TileLayer.extend({
     createTile(this: L.TileLayer, coords: L.Coords, done: L.DoneCallback) {
       const img = document.createElement("img");
@@ -68,6 +68,7 @@ function scoutTileLayer(onFallback: () => void): L.TileLayer {
         if (settled) return;
         settled = true;
         clearTimeout(timer);
+        onScout();
         done(undefined, img);
       };
       img.onerror = fallback;
@@ -83,7 +84,7 @@ function scoutTileLayer(onFallback: () => void): L.TileLayer {
     keepBuffer: 1,
     updateWhenIdle: true,
     updateWhenZooming: false,
-    attribution: "Scout map engine · © OpenStreetMap contributors"
+    attribution: "Tiles: Scout map engine · Data © OpenStreetMap contributors"
   });
 }
 
@@ -184,6 +185,7 @@ export default function MapApp() {
   const [online, setOnline] = useState<boolean | null>(null);
   const [start, setStart] = useState<StartView | null>(null);
   const [fallbackTiles, setFallbackTiles] = useState(0);
+  const [scoutTiles, setScoutTiles] = useState(0);
   const [cell, setCell] = useState<string | null>(null);
   const [clusters, setClusters] = useState<Cluster[]>([]);
   const [status, setStatus] = useState("");
@@ -211,7 +213,10 @@ export default function MapApp() {
     if (!start || !mapEl.current || map.current) return;
     const m = L.map(mapEl.current, { zoomControl: true, worldCopyJump: true }).setView([start.lat, start.lon], start.zoom);
     map.current = m;
-    scoutTileLayer(() => setFallbackTiles((n) => n + 1)).addTo(m);
+    scoutTileLayer(
+      () => setFallbackTiles((n) => n + 1),
+      () => setScoutTiles((n) => n + 1)
+    ).addTo(m);
     clusterLayer.current = L.layerGroup().addTo(m);
     routeLayer.current = L.layerGroup().addTo(m);
     return () => {
@@ -308,9 +313,10 @@ export default function MapApp() {
         {offline ? (
           <p className="sc-banner">The Scout map service isn't reachable right now. Map tiles fall back to OpenStreetMap; search, routing and hazards return when it is.</p>
         ) : null}
-        {fallbackTiles > 0 && !offline ? (
-          <p className="sc-fine">
-            {fallbackTiles} map tile{fallbackTiles === 1 ? "" : "s"} shown from OpenStreetMap while Scout rendered {fallbackTiles === 1 ? "it" : "them"}; they'll load from Scout next time.
+        {scoutTiles + fallbackTiles > 0 ? (
+          <p className="sc-fine" data-testid="tile-sources">
+            Map tiles: {scoutTiles} from Scout's engine, {fallbackTiles} from OpenStreetMap
+            {fallbackTiles > 0 ? " (shown while Scout rendered them; they'll come from Scout next time)" : ""}.
           </p>
         ) : null}
 
