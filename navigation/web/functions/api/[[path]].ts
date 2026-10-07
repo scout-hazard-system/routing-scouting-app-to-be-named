@@ -67,16 +67,20 @@ export const onRequest: PagesFunction<Env> = async (ctx) => {
       const key = new Request(url.toString(), { method: "GET" });
       const hit = await cache.match(key);
       if (hit) return hit;
-      const up = await fromOrigin(env, route, 15_000);
-      if (!up.ok || !(up.headers.get("content-type") ?? "").startsWith("image/")) {
-        return json(502, { error: "tile_unavailable" });
-      }
-      const res = new Response(up.body, {
-        status: 200,
-        headers: { "Content-Type": "image/png", "Cache-Control": "public, max-age=3600, s-maxage=86400", "X-Content-Type-Options": "nosniff" }
-      });
-      ctx.waitUntil(cache.put(key, res.clone()));
-      return res;
+      // The render + cache fill is registered with waitUntil, so it completes even when the
+      // browser gives up first (it swaps a slow tile to OSM): the next request is a cache hit.
+      const filled = (async (): Promise<Response | null> => {
+        const up = await fromOrigin(env, route, 25_000);
+        if (!up.ok || !(up.headers.get("content-type") ?? "").startsWith("image/")) return null;
+        const res = new Response(await up.arrayBuffer(), {
+          status: 200,
+          headers: { "Content-Type": "image/png", "Cache-Control": "public, max-age=3600, s-maxage=86400", "X-Content-Type-Options": "nosniff" }
+        });
+        await cache.put(key, res.clone());
+        return res;
+      })();
+      ctx.waitUntil(filled.catch(() => null));
+      return (await filled) ?? json(502, { error: "tile_unavailable" });
     }
 
     const up = await fromOrigin(env, route, route.kind === "health" ? 4_000 : 20_000);
