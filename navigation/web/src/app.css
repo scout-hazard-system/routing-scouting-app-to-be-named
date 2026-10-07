@@ -413,3 +413,38 @@ a {
     height: 60vh;
   }
 }
+
+/* 3D view + view toggle */
+.sc-3d {
+  position: absolute;
+  inset: 0;
+  touch-action: none;
+}
+.sc-3d canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}
+.sc-map[hidden] {
+  display: none;
+}
+.sc-mode {
+  display: inline-flex;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+  margin: var(--s1) 0;
+}
+.sc-mode button {
+  font: inherit;
+  font-size: 15px;
+  color: var(--text);
+  background: #0b1217;
+  border: 0;
+  padding: var(--s1) var(--s2);
+  cursor: pointer;
+}
+.sc-mode button.sc-mode-on {
+  color: #001414;
+  background: var(--accent);
+}

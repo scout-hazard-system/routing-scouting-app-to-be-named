@@ -8,11 +8,13 @@ import {
   geocode,
   health,
   routeOptions,
+  scene,
   type Cluster,
   type Place,
   type RouteOption,
   type Severity
 } from "./api";
+import { Scene3D } from "./scene3d";
 
 const SEV_COLOR: Record<Severity, string> = {
   severe: "#ff3b3b",
@@ -182,6 +184,9 @@ export default function MapApp() {
   const map = useRef<L.Map | null>(null);
   const clusterLayer = useRef<L.LayerGroup | null>(null);
   const routeLayer = useRef<L.LayerGroup | null>(null);
+  const view3dEl = useRef<HTMLDivElement>(null);
+  const s3d = useRef<Scene3D | null>(null);
+  const [mode, setMode] = useState<"3d" | "2d">("3d");
   const [online, setOnline] = useState<boolean | null>(null);
   const [start, setStart] = useState<StartView | null>(null);
   const [fallbackTiles, setFallbackTiles] = useState(0);
@@ -210,7 +215,7 @@ export default function MapApp() {
   // The map is created only after the user picks where to start, so the first tiles
   // rendered are the ones they will actually look at (not a continent's worth).
   useEffect(() => {
-    if (!start || !mapEl.current || map.current) return;
+    if (!start || mode !== "2d" || !mapEl.current || map.current) return;
     const m = L.map(mapEl.current, { zoomControl: true, worldCopyJump: true }).setView([start.lat, start.lon], start.zoom);
     map.current = m;
     scoutTileLayer(
@@ -222,29 +227,81 @@ export default function MapApp() {
     return () => {
       m.remove();
       map.current = null;
+      clusterLayer.current = null;
+      routeLayer.current = null;
     };
-  }, [start]);
+  }, [start, mode]);
+
+  // 3D: the map engine's vector scenes, rendered in WebGL (web port of the Android Map3dView).
+  // If scenes aren't available, fall back to the 2D tile map rather than showing nothing.
+  useEffect(() => {
+    if (!start || mode !== "3d" || !view3dEl.current || s3d.current) return;
+    const v = new Scene3D(
+      view3dEl.current,
+      { lat: start.lat, lon: start.lon },
+      Math.max(start.zoom, 13), // 3D opens at district distance: the z13/z15 rungs carry buildings
+      async (req) => {
+        try {
+          return await scene(req.lat, req.lon, req.radiusM);
+        } catch (ex) {
+          if (ex instanceof ApiError && [404, 502, 503, 504].includes(ex.status)) {
+            setMode("2d");
+            setStatus("3D scenes aren't available right now, so this is the 2D tile map.");
+          }
+          throw ex;
+        }
+      },
+      setStatus
+    );
+    s3d.current = v;
+    return () => {
+      v.dispose();
+      s3d.current = null;
+    };
+  }, [start, mode]);
 
   // Alert clusters for the device's 3x3 cell neighbourhood (cells computed here, on-device).
   useEffect(() => {
-    if (!cell || !clusterLayer.current) return;
-    const layer = clusterLayer.current;
+    if (!cell) return;
     const center = Shards.cellCenter(cell);
-    setStatus("Loading hazards…");
     alertClusters(Shards.cellsAround(center.lat, center.lon))
       .then((cs) => {
         setClusters(cs);
-        layer.clearLayers();
-        for (const c of cs) {
-          const r = Math.min(26, 10 + Math.sqrt(c.count) * 1.6);
-          L.circleMarker([c.lat, c.lon], { radius: r, color: SEV_COLOR[c.worst], weight: 2, fillOpacity: 0.35 })
-            .bindPopup(clusterHtml(c))
-            .addTo(layer);
-        }
-        setStatus(cs.length ? "" : "No active hazards reported around you.");
+        if (cs.length === 0) setStatus("No active hazards reported around you.");
       })
       .catch((ex) => setStatus(ex instanceof ApiError && ex.status === 503 ? "Hazard service offline." : "Could not load hazards."));
   }, [cell]);
+
+  // Draw hazards and routes into whichever view is active.
+  useEffect(() => {
+    if (mode === "3d") {
+      s3d.current?.setHazards(clusters.map((c) => ({ lat: c.lat, lon: c.lon, count: c.count, color: SEV_COLOR[c.worst] })));
+      return;
+    }
+    const layer = clusterLayer.current;
+    if (!layer) return;
+    layer.clearLayers();
+    for (const c of clusters) {
+      const r = Math.min(26, 10 + Math.sqrt(c.count) * 1.6);
+      L.circleMarker([c.lat, c.lon], { radius: r, color: SEV_COLOR[c.worst], weight: 2, fillOpacity: 0.35 })
+        .bindPopup(clusterHtml(c))
+        .addTo(layer);
+    }
+  }, [clusters, mode, start]);
+
+  useEffect(() => {
+    if (mode === "3d") {
+      s3d.current?.setRoute(routes[0]?.points ?? null);
+      return;
+    }
+    const layer = routeLayer.current;
+    if (!layer) return;
+    layer.clearLayers();
+    routes.forEach((r, i) => {
+      L.polyline(r.points, { color: i === 0 ? "#00c9c7" : "#5d6b78", weight: i === 0 ? 6 : 4, opacity: i === 0 ? 0.95 : 0.7 }).addTo(layer);
+    });
+    if (routes[0]) map.current?.fitBounds(L.latLngBounds(routes[0].points), { padding: [40, 40] });
+  }, [routes, mode, start]);
 
   function useMyArea() {
     if (!("geolocation" in navigator)) {
@@ -261,6 +318,7 @@ export default function MapApp() {
         const centre = Shards.cellCenter(c);
         setStatus("");
         if (map.current) map.current.setView([centre.lat, centre.lon], AREA_ZOOM);
+        else if (s3d.current) s3d.current.focus(centre.lat, centre.lon, AREA_ZOOM);
         else setStart({ lat: centre.lat, lon: centre.lon, zoom: AREA_ZOOM });
       },
       () => setStatus("Location permission denied. Search a place or browse the map instead."),
@@ -279,22 +337,17 @@ export default function MapApp() {
     const p = to ?? from;
     if (!p) return;
     setCell(Shards.cellOf(p.lat, p.lon));
-    if (!map.current) setStart({ lat: p.lat, lon: p.lon, zoom: PLACE_ZOOM });
+    if (!start) setStart({ lat: p.lat, lon: p.lon, zoom: PLACE_ZOOM });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [from, to]);
 
   async function findRoutes() {
-    if (!from || !to || !routeLayer.current) return;
+    if (!from || !to) return;
     setRouting(true);
     setRoutes([]);
     try {
       const rs = await routeOptions(from, to);
       setRoutes(rs);
-      const layer = routeLayer.current;
-      layer.clearLayers();
-      rs.forEach((r, i) => {
-        L.polyline(r.points, { color: i === 0 ? "#00c9c7" : "#5d6b78", weight: i === 0 ? 6 : 4, opacity: i === 0 ? 0.95 : 0.7 }).addTo(layer);
-      });
-      if (rs[0]) map.current?.fitBounds(L.latLngBounds(rs[0].points), { padding: [40, 40] });
       if (rs.length === 0) setStatus("No route found.");
     } catch (ex) {
       setStatus(ex instanceof ApiError && ex.status === 503 ? "Routing is offline." : "Route search failed.");
@@ -313,7 +366,20 @@ export default function MapApp() {
         {offline ? (
           <p className="sc-banner">The Scout map service isn't reachable right now. Map tiles fall back to OpenStreetMap; search, routing and hazards return when it is.</p>
         ) : null}
-        {scoutTiles + fallbackTiles > 0 ? (
+        {start ? (
+          <div className="sc-mode" role="group" aria-label="Map view">
+            <button type="button" className={mode === "3d" ? "sc-mode-on" : ""} onClick={() => setMode("3d")}>
+              3D view
+            </button>
+            <button type="button" className={mode === "2d" ? "sc-mode-on" : ""} onClick={() => setMode("2d")}>
+              2D tiles
+            </button>
+          </div>
+        ) : null}
+        {mode === "3d" && start ? (
+          <p className="sc-fine">Drag to pan · right-drag or two fingers to rotate and tilt · scroll to zoom.</p>
+        ) : null}
+        {mode === "2d" && scoutTiles + fallbackTiles > 0 ? (
           <p className="sc-fine" data-testid="tile-sources">
             Map tiles: {scoutTiles} from Scout's engine, {fallbackTiles} from OpenStreetMap
             {fallbackTiles > 0 ? " (shown while Scout rendered them; they'll come from Scout next time)" : ""}.
@@ -366,7 +432,8 @@ export default function MapApp() {
         {status ? <p className="sc-status">{status}</p> : null}
       </aside>
       <div className="sc-map-wrap">
-        <div ref={mapEl} className="sc-map" role="application" aria-label="Map" />
+        <div ref={mapEl} className="sc-map" role="application" aria-label="Map" hidden={mode !== "2d"} />
+        <div ref={view3dEl} className="sc-map sc-3d" role="application" aria-label="3D map" hidden={mode !== "3d"} />
         {start ? null : (
           <div className="sc-start" role="dialog" aria-label="Where should the map start?">
             <h2>Where are you headed?</h2>
@@ -376,7 +443,15 @@ export default function MapApp() {
             </button>
             <p className="sc-fine">Your browser turns it into a ~40 km area code; your exact position isn't sent.</p>
             <PlaceSearch label="Or search a place" value={null} onPick={startAtPlace} disabled={offline} />
-            <button type="button" className="sc-link" onClick={() => setStart({ lat: DEFAULT_VIEW[0], lon: DEFAULT_VIEW[1], zoom: DEFAULT_VIEW[2] })}>
+            <button
+              type="button"
+              className="sc-link"
+              onClick={() => {
+                // a continent isn't a 3D scene: browse it on the 2D tiles
+                setMode("2d");
+                setStart({ lat: DEFAULT_VIEW[0], lon: DEFAULT_VIEW[1], zoom: DEFAULT_VIEW[2] });
+              }}
+            >
               Browse the whole US
             </button>
             {status ? <p className="sc-status">{status}</p> : null}
