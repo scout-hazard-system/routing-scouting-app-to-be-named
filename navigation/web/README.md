@@ -46,6 +46,10 @@ Privacy: the browser computes its geohash-4 cell on-device (`src/shard-client.js
   `gzip_types application/json`, read timeout 60 s). The Dell's uplink is ~30 KB/s over wifi, so
   scenes are capped at 4 km (a z13 district scene is ~200 KB gzipped, ~3 s cold) and cached at
   the edge for 24 h; repeats are ~0.3 s.
+- The 3D client (`src/scene3d.ts`) streams **chunks** rather than one scene: a z13 base layer plus a
+  z15 street-detail layer over it, built in a worker (`chunkBuild.worker.ts`). Chunk centres are
+  pre-snapped to the gateway grid (`src/chunkGrid.ts`), so every viewer at the same spot shares the
+  same edge-cached scenes, and panning fades chunks in/out instead of blanking the view.
 - Tiles: `/api/map/render?...&tile=1` (no device marker, no per-tile attribution). Bump `?v=` in
   `src/MapApp.tsx` after renderer changes so edge-cached tiles refresh.
 - Still to do: a WAF rate-limit rule on the zone (the in-function limiter is per isolate; the gate also
