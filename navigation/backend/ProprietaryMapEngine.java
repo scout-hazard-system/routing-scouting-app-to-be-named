@@ -1024,6 +1024,26 @@ final class ProprietaryMapEngine {
       double[] routePts,
       Double destLat,
       Double destLon) throws IOException {
+    return renderPng(lat, lon, metersPerPixel, headingDeg, tiltDeg, w, h, routePts, destLat, destLon, false);
+  }
+
+  /**
+   * {@code tileMode}: render a bare basemap tile for a slippy-map client. The centre point is just
+   * the tile centre, not a device, so no device marker; and the client shows the ODbL attribution
+   * once for the whole map, so it is not stamped onto every tile.
+   */
+  static byte[] renderPng(
+      double lat,
+      double lon,
+      double metersPerPixel,
+      double headingDeg,
+      double tiltDeg,
+      int w,
+      int h,
+      double[] routePts,
+      Double destLat,
+      Double destLon,
+      boolean tileMode) throws IOException {
     double mpp = Double.isFinite(metersPerPixel) && metersPerPixel > 0.05 ? Math.min(metersPerPixel, 30000) : 1.2;
     int width = Math.max(64, Math.min(w, 1600));
     int height = Math.max(64, Math.min(h, 1600));
@@ -1167,12 +1187,14 @@ final class ProprietaryMapEngine {
       }
 
       // 5. Markers
-      double[] devicePt = proj.project(lat, lon, 0);
-      g.setColor(new Color(0x2B, 0x6B, 0xE6));
-      g.fillOval((int) devicePt[0] - 8, (int) devicePt[1] - 8, 16, 16);
-      g.setColor(Color.WHITE);
-      g.setStroke(new BasicStroke(2.5f));
-      g.drawOval((int) devicePt[0] - 8, (int) devicePt[1] - 8, 16, 16);
+      if (!tileMode) {
+        double[] devicePt = proj.project(lat, lon, 0);
+        g.setColor(new Color(0x2B, 0x6B, 0xE6));
+        g.fillOval((int) devicePt[0] - 8, (int) devicePt[1] - 8, 16, 16);
+        g.setColor(Color.WHITE);
+        g.setStroke(new BasicStroke(2.5f));
+        g.drawOval((int) devicePt[0] - 8, (int) devicePt[1] - 8, 16, 16);
+      }
       if (destLat != null && destLon != null) {
         double[] destPt = proj.project(destLat, destLon, 0);
         g.setColor(new Color(0xD8, 0x3C, 0x3C));
@@ -1202,14 +1224,16 @@ final class ProprietaryMapEngine {
         }
       }
 
-      // 7. Attribution (ODbL)
-      g.setFont(new Font(Font.SANS_SERIF, Font.PLAIN, 10));
-      String attribution = ATTRIBUTION;
-      int attrWidth = g.getFontMetrics().stringWidth(attribution);
-      g.setColor(new Color(255, 255, 255, 190));
-      g.fillRect(width - attrWidth - 10, height - 16, attrWidth + 10, 16);
-      g.setColor(new Color(0x55, 0x50, 0x48));
-      g.drawString(attribution, width - attrWidth - 5, height - 4);
+      // 7. Attribution (ODbL) — tile clients show it once in their own map chrome
+      if (!tileMode) {
+        g.setFont(new Font(Font.SANS_SERIF, Font.PLAIN, 10));
+        String attribution = ATTRIBUTION;
+        int attrWidth = g.getFontMetrics().stringWidth(attribution);
+        g.setColor(new Color(255, 255, 255, 190));
+        g.fillRect(width - attrWidth - 10, height - 16, attrWidth + 10, 16);
+        g.setColor(new Color(0x55, 0x50, 0x48));
+        g.drawString(attribution, width - attrWidth - 5, height - 4);
+      }
     } finally {
       g.dispose();
     }
