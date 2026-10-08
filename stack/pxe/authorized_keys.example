@@ -1,0 +1,17 @@
+# Copy to stack/pxe/authorized_keys (gitignored); install-pxe.sh serves it to new installs,
+# and the preseed puts it at /home/scout/.ssh/authorized_keys.
+#
+# Restrict each key by SOURCE NETWORK, not by host address: operator machines get their
+# LAN address from DHCP and it rotates, which silently locked the operator key out when the
+# workstation moved from 192.168.12.188 to .187. The key itself is still required; `from=`
+# only limits where it is accepted from.
+#
+#   192.168.12.0/24  home LAN (operator workstation)
+#   192.168.1.0/24   Scout LAN behind the EdgeRouter (Dell <-> NUC)
+#   10.66.0.0/16     Scout WireGuard mesh (stable addresses; preferred path)
+#
+# Operator / agent key (the workstation's ~/.ssh/scout_agent_ed25519.pub):
+from="192.168.12.0/24,192.168.1.0/24,10.66.0.0/16" ssh-ed25519 AAAA...replace-with-the-public-key... scout-agent@workstation
+#
+# Mesh-only agent key (on the Dell/NUC, for host-to-host agent hops):
+from="10.66.0.0/16" ssh-ed25519 AAAA...replace-with-the-public-key... scout-agent-mesh
