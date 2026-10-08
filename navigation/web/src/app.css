@@ -425,6 +425,36 @@ a {
   width: 100% !important;
   height: 100% !important;
 }
+/* HTML label overlay for the 3D view (roads, places, POIs). */
+.sc-3d-labels {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.sc-3d-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  will-change: transform;
+  font-size: 11px;
+  line-height: 1.2;
+  color: #cfe0ea;
+  text-shadow:
+    0 0 3px #05090c,
+    0 1px 2px #05090c;
+  white-space: nowrap;
+  user-select: none;
+}
+.sc-3d-label-place {
+  font-size: 13px;
+  font-weight: 600;
+  color: #eaf4fa;
+}
+.sc-3d-label-road {
+  color: #93a9b8;
+  font-size: 10px;
+}
 .sc-map[hidden] {
   display: none;
 }

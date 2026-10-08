@@ -1,66 +1,59 @@
-// Web port of the Android Map3dView: draws the map engine's vector scenes
-// (/api/map/scene, via the public gateway) in 3D. Extruded buildings at their real heights,
-// roads as ribbons sized by class, water/park/land areas, the route, and hazard clusters as
-// beacons. Pan / rotate / tilt / zoom with MapControls; a new scene is requested at the matching
-// zoom-ladder rung whenever the view leaves the loaded one.
+// Streaming web port of the Android Map3dView: the map is drawn as grid-aligned
+// scene chunks (via the public gateway's /api/map/scene) instead of one scene that
+// is thrown away whenever the view moves. A coarse base layer covers the fog line
+// at every distance, a street-detail layer stacks over it while the camera is close,
+// chunks stream in at the edges as you pan (never blanking the middle), fade in,
+// and are evicted once they leave the view. Geometry is built in a worker so panning
+// stays smooth; roads are mitred ribbons with dark casings, buildings carry shaded
+// vertex colours, and place/road labels ride an HTML overlay.
 import * as THREE from "three";
 import { MapControls } from "three/examples/jsm/controls/MapControls.js";
-import { mergeGeometries } from "three/examples/jsm/utils/BufferGeometryUtils.js";
+import { appendRibbon, buildChunk, type BuildContext, type BuildOptions, type BuiltChunk, type BuiltLabel } from "./chunkBuild";
+import {
+  BASE_RADIUS_M,
+  baseRangeForDistance,
+  chunkKey,
+  detailRadiusForDistance,
+  detailRangeForDistance,
+  desiredChunks,
+  fogRangeForDistance,
+  type DesiredChunk
+} from "./chunkGrid";
+import type { Beacon, SceneData, ViewRequest } from "./sceneData";
 
-export interface SceneData {
-  center: { lat: number; lon: number };
-  radius_m: number;
-  zoom: number;
-  areas?: { k: string; p: number[] }[];
-  roads?: { c: string; n?: string; ow?: number; p: number[] }[];
-  buildings?: { h: number; p: number[] }[];
-  pois?: { n: string; k: string; lat: number; lon: number }[];
-}
-
-export interface Beacon {
-  lat: number;
-  lon: number;
-  count: number;
-  color: string;
-}
-
-export interface ViewRequest {
-  lat: number;
-  lon: number;
-  radiusM: number;
-}
+export type { Beacon, SceneData, ViewRequest } from "./sceneData";
 
 const BG = 0x05090c;
 const GROUND = 0x0b1217;
-const AREA_COLOR: [RegExp, number][] = [
-  [/water|river|lake|reservoir|ocean|bay|basin/, 0x0f2c3d],
-  [/park|forest|wood|grass|meadow|garden|nature|golf|green|cemetery|pitch|playground/, 0x10291d],
-  [/sand|beach|desert|bare|scrub/, 0x2a2618],
-  [/industrial|commercial|retail|parking|railway|military|airport|aerodrome/, 0x161c22],
-  [/./, 0x111820]
-];
-// [width m, colour, draw order]
-const ROAD_STYLE: [RegExp, number, number, number][] = [
-  [/motorway/, 18, 0x00c9c7, 6],
-  [/trunk/, 15, 0x3fd8d5, 5],
-  [/primary/, 12, 0xd6dee3, 4],
-  [/secondary/, 10, 0xaab8c2, 3],
-  [/tertiary/, 8, 0x8797a3, 2],
-  [/rail/, 4, 0x6b5a7a, 2],
-  [/path|foot|cycle|track|steps|pedestrian|bridleway/, 2.5, 0x3a4650, 0],
-  [/./, 6, 0x5d6b78, 1]
-];
-/** Scene radius buckets: viewers share cached scenes, and each maps to one ladder rung server-side. */
-const RADIUS_BUCKETS = [700, 1500, 4000]; // capped by the gateway; wider views belong to the 2D tiles
+/** renderOrder offset for the detail layer, so street data draws over the base district. */
+const DETAIL_OFFSET = 30;
+const HAZARD_ORDER = 60;
+const ROUTE_ORDER = 65;
+/** Simultaneous scene requests: enough to fill the view, few enough to stay polite. */
+const CONCURRENCY = 5;
+const MAX_CHUNKS = 72;
+/** Desired-set recompute cadence while the camera is moving. */
+const EVAL_MS = 250;
+/** A chunk must stay unwanted this long before it fades out (anti-thrash hysteresis). */
+const EVICT_AFTER_MS = 900;
+const FADE_IN_MS = 300;
+const FADE_OUT_MS = 220;
+const MAX_LABELS = 48;
 
-function areaColor(kind: string): number {
-  for (const [re, c] of AREA_COLOR) if (re.test(kind)) return c;
-  return 0x111820;
-}
-
-function roadStyle(cls: string): { w: number; color: number; order: number } {
-  for (const [re, w, color, order] of ROAD_STYLE) if (re.test(cls)) return { w, color, order };
-  return { w: 6, color: 0x5d6b78, order: 1 };
+interface ChunkEntry {
+  key: string;
+  radiusM: number;
+  level: "base" | "detail";
+  cx: number;
+  cz: number;
+  group: THREE.Group;
+  materials: THREE.Material[];
+  labels: BuiltLabel[];
+  fadingOut: number | null;
+  fadeInAt: number;
+  settled: boolean;
+  wanted: boolean;
+  lastWanted: number;
 }
 
 export class Scene3D {
@@ -68,16 +61,30 @@ export class Scene3D {
   private scene = new THREE.Scene();
   private camera: THREE.PerspectiveCamera;
   private controls: MapControls;
-  private base: THREE.Group | null = null;
   private hazards = new THREE.Group();
   private route = new THREE.Group();
-  private loaded: { lat: number; lon: number; radiusM: number } | null = null;
-  private pending = false;
+  private chunks = new Map<string, ChunkEntry>();
+  private inflight = new Set<string>();
+  private failures = new Map<string, { attempts: number; next: number }>();
+  private queue: DesiredChunk[] = [];
+  private worker: Worker | null | undefined; // undefined = not tried yet
+  private buildWaiters = new Map<number, (err: string | null, chunk: BuiltChunk | null) => void>();
+  private buildSeq = 0;
+  private frustum = new THREE.Frustum();
+  private projScreen = new THREE.Matrix4();
+  private sphere = new THREE.Sphere(new THREE.Vector3(), 1);
+  private tmpVec = new THREE.Vector3();
+  private dirty = true;
+  private lastEval = 0;
+  private status = "";
+  private disposed = false;
+  private frame = 0;
+  private labelLayer: HTMLDivElement;
+  private labelEls = new Map<string, HTMLElement>();
   private raf = 0;
   private resize: ResizeObserver;
   private readonly kLat = 110_540;
   private readonly kLon: number;
-  private settleTimer: ReturnType<typeof setTimeout> | null = null;
 
   constructor(
     private container: HTMLElement,
@@ -91,6 +98,10 @@ export class Scene3D {
     this.renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
     this.renderer.setClearColor(BG);
     container.appendChild(this.renderer.domElement);
+
+    this.labelLayer = document.createElement("div");
+    this.labelLayer.className = "sc-3d-labels";
+    container.appendChild(this.labelLayer);
 
     this.scene.fog = new THREE.Fog(BG, 8_000, 60_000);
     this.scene.add(new THREE.HemisphereLight(0xcfe8ff, 0x0b1217, 0.9));
@@ -110,17 +121,23 @@ export class Scene3D {
     this.controls.enableDamping = true;
     this.controls.dampingFactor = 0.08;
     this.controls.minDistance = 150;
-    this.controls.maxDistance = 9_000; // beyond the 4 km scene cap there is nothing more to draw
+    this.controls.maxDistance = 15_000; // base chunks + fog cover the ground out to here
     this.controls.maxPolarAngle = 1.3; // keep the horizon below ~75°
     this.controls.screenSpacePanning = false;
     this.controls.target.set(0, 0, 0);
-    this.controls.addEventListener("end", () => this.scheduleLoad());
+    this.controls.update();
+    const markDirty = () => {
+      this.dirty = true;
+    };
+    this.controls.addEventListener("change", markDirty);
 
     this.resize = new ResizeObserver(() => this.fit());
     this.resize.observe(container);
     this.fit();
+    this.setStatus("Loading 3D area…");
     const loop = () => {
       this.raf = requestAnimationFrame(loop);
+      const now = performance.now();
       this.controls.update();
       // keep depth precision at every zoom: planes follow the camera distance
       const d = this.camera.position.distanceTo(this.controls.target);
@@ -130,10 +147,19 @@ export class Scene3D {
         this.camera.far = d * 60 + 20_000;
         this.camera.updateProjectionMatrix();
       }
+      // the fog line IS the load boundary: ground fades out where chunks stop
+      const fogRange = fogRangeForDistance(d);
+      const fog = this.scene.fog as THREE.Fog;
+      fog.near = fogRange * 0.55;
+      fog.far = fogRange * 1.02;
+      this.updateFades(now);
+      if ((this.dirty && now - this.lastEval >= EVAL_MS) || now - this.lastEval >= 2_000) {
+        this.evaluate(now);
+      }
+      if ((this.frame++ & 1) === 0) this.updateLabels();
       this.renderer.render(this.scene, this.camera);
     };
     loop();
-    void this.load();
   }
 
   /** lat/lon -> local metres (x east, y up, z south) around the fixed session origin. */
@@ -153,140 +179,336 @@ export class Scene3D {
     this.camera.updateProjectionMatrix();
   }
 
-  /** What the camera is looking at, as a scene request (radius bucketed). */
-  private view(): ViewRequest {
+  private buildContext(): BuildContext {
+    return { origin: this.origin, kLat: this.kLat, kLon: this.kLon };
+  }
+
+  private setStatus(s: string) {
+    if (s !== this.status) {
+      this.status = s;
+      this.onStatus(s);
+    }
+  }
+
+  /**
+   * Recompute the wanted chunk set for the current camera: base layer across the
+   * fog line, detail layer near the target, both frustum-culled. Wanted chunks
+   * that aren't loaded yet are queued nearest-first; unwanted ones age out.
+   */
+  private evaluate(now: number) {
+    this.dirty = false;
+    this.lastEval = now;
     const t = this.controls.target;
     const d = this.camera.position.distanceTo(t);
-    const want = d * 1.3;
-    const radiusM = RADIUS_BUCKETS.find((b) => b >= want) ?? RADIUS_BUCKETS[RADIUS_BUCKETS.length - 1];
-    return { ...this.latLonAt(t.x, t.z), radiusM };
-  }
+    const centre = this.latLonAt(t.x, t.z);
 
-  private scheduleLoad() {
-    if (this.settleTimer) clearTimeout(this.settleTimer);
-    this.settleTimer = setTimeout(() => void this.load(), 350);
-  }
+    this.camera.updateMatrixWorld();
+    this.projScreen.multiplyMatrices(this.camera.projectionMatrix, this.camera.matrixWorldInverse);
+    this.frustum.setFromProjectionMatrix(this.projScreen);
 
-  private async load() {
-    if (this.pending) return;
-    const v = this.view();
-    if (this.loaded) {
-      const [ax, az] = this.xz(this.loaded.lat, this.loaded.lon);
-      const [bx, bz] = this.xz(v.lat, v.lon);
-      const moved = Math.hypot(ax - bx, az - bz);
-      if (v.radiusM === this.loaded.radiusM && moved < this.loaded.radiusM * 0.45) return;
-    }
-    this.pending = true;
-    this.onStatus("Loading 3D scene…");
-    try {
-      const data = await this.requestScene(v);
-      this.setBase(data);
-      this.loaded = { lat: data.center.lat, lon: data.center.lon, radiusM: v.radiusM };
-      this.onStatus("");
-    } catch (err) {
-      // The map component's requestScene decides what a failure means (e.g. fall back to 2D).
-      this.onStatus(err instanceof Error ? err.message : "Scene failed to load.");
-    } finally {
-      this.pending = false;
-    }
-  }
+    const wanted = new Set<string>();
+    const missing: DesiredChunk[] = [];
+    const consider = (spec: DesiredChunk) => {
+      const key = chunkKey(spec.radiusM, spec.i, spec.j);
+      wanted.add(key);
+      if (this.chunks.has(key) || this.inflight.has(key)) return;
+      const fail = this.failures.get(key);
+      if (fail && now < fail.next) return;
+      missing.push(spec);
+    };
+    const addLevel = (radiusM: number, rangeM: number) => {
+      for (const spec of desiredChunks({
+        radiusM,
+        centre,
+        rangeM,
+        visible: (lat, lon, halfM) => {
+          const [x, z] = this.xz(lat, lon);
+          this.sphere.center.set(x, 0, z);
+          this.sphere.radius = halfM;
+          return this.frustum.intersectsSphere(this.sphere);
+        }
+      })) {
+        consider(spec);
+      }
+    };
 
-  private setBase(data: SceneData) {
-    const group = new THREE.Group();
+    const baseRange = baseRangeForDistance(d);
+    if (baseRange !== null) addLevel(BASE_RADIUS_M, baseRange);
+    const detailR = detailRadiusForDistance(d);
+    if (detailR !== null) addLevel(detailR, detailRangeForDistance(d, detailR));
 
-    // Areas: flat, merged per colour.
-    const areaGeos = new Map<number, THREE.BufferGeometry[]>();
-    for (const a of data.areas ?? []) {
-      const shape = this.shape(a.p);
-      if (!shape) continue;
-      const g = new THREE.ShapeGeometry(shape);
-      g.rotateX(-Math.PI / 2);
-      const c = areaColor(a.k);
-      (areaGeos.get(c) ?? areaGeos.set(c, []).get(c)!).push(g);
-    }
-    for (const [color, geos] of areaGeos) {
-      const merged = mergeGeometries(geos.map((g) => g.toNonIndexed()));
-      geos.forEach((g) => g.dispose());
-      if (!merged) continue;
-      // flat layers draw in a fixed order without depth writes (no z-fighting between overlaps)
-      const m = new THREE.Mesh(merged, new THREE.MeshBasicMaterial({ color, side: THREE.DoubleSide, depthWrite: false }));
-      m.position.y = 0.1;
-      m.renderOrder = 0;
-      group.add(m);
-    }
-
-    // Roads: ribbons, merged per class style; higher classes drawn above lower ones.
-    // Real-world widths vanish below a pixel on wide scenes; scale with the scene radius.
-    const widthScale = Math.max(1, (data.radius_m || 1500) / 1500);
-    const roadBuf = new Map<string, { style: ReturnType<typeof roadStyle>; pos: number[] }>();
-    for (const r of data.roads ?? []) {
-      const style = roadStyle(r.c);
-      const key = `${style.color}:${style.w}`;
-      const buf = roadBuf.get(key) ?? roadBuf.set(key, { style, pos: [] }).get(key)!;
-      this.ribbon(r.p, style.w * widthScale, buf.pos);
-    }
-    for (const { style, pos } of roadBuf.values()) {
-      if (pos.length === 0) continue;
-      const g = new THREE.BufferGeometry();
-      g.setAttribute("position", new THREE.Float32BufferAttribute(pos, 3));
-      const m = new THREE.Mesh(g, new THREE.MeshBasicMaterial({ color: style.color, side: THREE.DoubleSide, depthWrite: false }));
-      m.position.y = 0.4 + style.order * 0.08;
-      m.renderOrder = 1 + style.order;
-      group.add(m);
-    }
-
-    // Buildings: extruded to their height, one merged lit mesh.
-    const bGeos: THREE.BufferGeometry[] = [];
-    for (const b of (data.buildings ?? []).slice(0, 8000)) {
-      const shape = this.shape(b.p);
-      if (!shape) continue;
-      const g = new THREE.ExtrudeGeometry(shape, { depth: Math.max(3, Math.min(b.h || 6, 400)), bevelEnabled: false });
-      g.rotateX(-Math.PI / 2);
-      g.deleteAttribute("uv");
-      bGeos.push(g);
-    }
-    if (bGeos.length) {
-      const merged = mergeGeometries(bGeos);
-      bGeos.forEach((g) => g.dispose());
-      if (merged) {
-        merged.computeVertexNormals();
-        const bm = new THREE.Mesh(merged, new THREE.MeshLambertMaterial({ color: 0x3a4d5c, side: THREE.DoubleSide }));
-        bm.renderOrder = 10;
-        group.add(bm);
+    for (const e of this.chunks.values()) {
+      if (wanted.has(e.key)) {
+        e.wanted = true;
+        e.lastWanted = now;
+      } else {
+        e.wanted = false;
+        if (e.fadingOut === null && now - e.lastWanted > EVICT_AFTER_MS) this.fadeOut(e, now);
       }
     }
-
-    if (this.base) {
-      this.scene.remove(this.base);
-      disposeGroup(this.base);
+    // Hard cap: over budget, drop the farthest unwanted chunks straight away.
+    if (this.chunks.size > MAX_CHUNKS) {
+      const over = [...this.chunks.values()]
+        .filter((e) => !e.wanted && e.fadingOut === null)
+        .sort((a, b) => Math.hypot(b.cx - t.x, b.cz - t.z) - Math.hypot(a.cx - t.x, a.cz - t.z));
+      for (const e of over.slice(0, this.chunks.size - MAX_CHUNKS)) this.fadeOut(e, now);
     }
-    this.base = group;
+
+    missing.sort((a, b) => a.distM - b.distM);
+    this.queue = missing;
+    this.pump(now);
+    this.reportStatus(now);
+  }
+
+  private pump(_now: number) {
+    while (this.inflight.size < CONCURRENCY && this.queue.length > 0) {
+      const spec = this.queue.shift()!;
+      void this.fetchChunk(spec);
+    }
+  }
+
+  private reportStatus(_now: number) {
+    let visible = false;
+    for (const e of this.chunks.values()) {
+      if (e.fadingOut === null) {
+        visible = true;
+        break;
+      }
+    }
+    if (visible) this.setStatus("");
+    else if (this.inflight.size > 0) this.setStatus("Loading 3D area…");
+    else if (this.failures.size > 0) this.setStatus("3D map detail couldn't load — it will keep retrying.");
+  }
+
+  private async fetchChunk(spec: DesiredChunk) {
+    const key = chunkKey(spec.radiusM, spec.i, spec.j);
+    this.inflight.add(key);
+    try {
+      const data = await this.requestScene({ lat: spec.lat, lon: spec.lon, radiusM: spec.radiusM });
+      const built = await this.build(data, spec.radiusM);
+      if (this.disposed) return;
+      this.failures.delete(key);
+      this.addChunk(spec, built, performance.now());
+    } catch (err) {
+      if (this.disposed) return;
+      const f = this.failures.get(key) ?? { attempts: 0, next: 0 };
+      f.attempts += 1;
+      f.next = performance.now() + Math.min(30_000, 2_000 * 2 ** f.attempts);
+      this.failures.set(key, f);
+      void err;
+    } finally {
+      this.inflight.delete(key);
+      if (!this.disposed) this.dirty = true;
+    }
+  }
+
+  /** Build geometry for one scene: in the worker when available, inline otherwise. */
+  private build(data: SceneData, radiusM: number): Promise<BuiltChunk> {
+    const ctx = this.buildContext();
+    const opts: BuildOptions = { widthScale: Math.max(1, radiusM / 1500) };
+    const w = this.ensureWorker();
+    if (!w) return Promise.resolve(buildChunk(data, ctx, opts));
+    const id = ++this.buildSeq;
+    return new Promise<BuiltChunk>((resolve, reject) => {
+      const timer = window.setTimeout(() => {
+        this.buildWaiters.delete(id);
+        reject(new Error("chunk build timed out"));
+      }, 8_000);
+      this.buildWaiters.set(id, (err, chunk) => {
+        clearTimeout(timer);
+        if (err || !chunk) reject(new Error(err ?? "chunk build failed"));
+        else resolve(chunk);
+      });
+      try {
+        w.postMessage({ id, data, ctx, opts });
+      } catch (e) {
+        clearTimeout(timer);
+        this.buildWaiters.delete(id);
+        reject(e instanceof Error ? e : new Error(String(e)));
+      }
+    }).catch(() => buildChunk(data, ctx, opts)); // fall back to the main thread
+  }
+
+  private ensureWorker(): Worker | null {
+    if (this.worker !== undefined) return this.worker;
+    try {
+      const w = new Worker(new URL("./chunkBuild.worker.ts", import.meta.url), { type: "module" });
+      w.onmessage = (e: MessageEvent) => {
+        const msg = e.data as { id: number; chunk?: BuiltChunk; error?: string };
+        const settle = this.buildWaiters.get(msg.id);
+        if (!settle) return;
+        this.buildWaiters.delete(msg.id);
+        if (msg.chunk) settle(null, msg.chunk);
+        else settle(msg.error ?? "worker error", null);
+      };
+      w.onerror = () => {
+        for (const settle of this.buildWaiters.values()) settle("worker failed", null);
+        this.buildWaiters.clear();
+        this.worker = null; // a worker that can't even load won't start working later
+      };
+      this.worker = w;
+      return w;
+    } catch {
+      this.worker = null;
+      return null;
+    }
+  }
+
+  /** Turn a built chunk into scene objects and fade it in. */
+  private addChunk(spec: DesiredChunk, built: BuiltChunk, now: number) {
+    const key = chunkKey(spec.radiusM, spec.i, spec.j);
+    if (this.chunks.has(key) || this.disposed) return;
+    const level = spec.radiusM === BASE_RADIUS_M ? "base" : "detail";
+    const off = level === "detail" ? DETAIL_OFFSET : 0;
+    const group = new THREE.Group();
+    const materials: THREE.Material[] = [];
+
+    for (const a of built.areas) {
+      const g = new THREE.BufferGeometry();
+      g.setAttribute("position", new THREE.BufferAttribute(a.pos, 3));
+      const m = new THREE.MeshBasicMaterial({ color: a.color, side: THREE.DoubleSide, depthWrite: false });
+      const mesh = new THREE.Mesh(g, m);
+      mesh.position.y = 0.1;
+      mesh.renderOrder = off;
+      materials.push(m);
+      group.add(mesh);
+    }
+    for (const r of built.roads) {
+      const g = new THREE.BufferGeometry();
+      g.setAttribute("position", new THREE.BufferAttribute(r.pos, 3));
+      const m = new THREE.MeshBasicMaterial({ color: r.color, side: THREE.DoubleSide, depthWrite: false });
+      const mesh = new THREE.Mesh(g, m);
+      mesh.position.y = 0.3 + r.order * 0.05;
+      mesh.renderOrder = off + 1 + r.order;
+      materials.push(m);
+      group.add(mesh);
+    }
+    if (built.buildings) {
+      const g = new THREE.BufferGeometry();
+      g.setAttribute("position", new THREE.BufferAttribute(built.buildings.pos, 3));
+      g.setAttribute("normal", new THREE.BufferAttribute(built.buildings.normals, 3));
+      g.setAttribute("color", new THREE.BufferAttribute(built.buildings.colors, 3));
+      const m = new THREE.MeshLambertMaterial({ vertexColors: true, side: THREE.DoubleSide });
+      const mesh = new THREE.Mesh(g, m);
+      mesh.renderOrder = off + 20;
+      materials.push(m);
+      group.add(mesh);
+    }
+
+    const [cx, cz] = this.xz(spec.lat, spec.lon);
+    const entry: ChunkEntry = {
+      key,
+      radiusM: spec.radiusM,
+      level,
+      cx,
+      cz,
+      group,
+      materials,
+      labels: built.labels,
+      fadingOut: null,
+      fadeInAt: now,
+      settled: false,
+      wanted: true,
+      lastWanted: now
+    };
+    this.chunks.set(key, entry);
     this.scene.add(group);
-  }
-
-  /** Flat [lat, lon, lat, lon, ...] -> a Shape in (east, north) metres. */
-  private shape(p: number[]): THREE.Shape | null {
-    if (!p || p.length < 6) return null;
-    const pts: THREE.Vector2[] = [];
-    for (let i = 0; i + 1 < p.length; i += 2) {
-      const [x, z] = this.xz(p[i], p[i + 1]);
-      pts.push(new THREE.Vector2(x, -z));
+    for (const m of materials) {
+      m.transparent = true;
+      m.opacity = 0;
+      m.needsUpdate = true;
     }
-    return pts.length >= 3 ? new THREE.Shape(pts) : null;
   }
 
-  /** Append triangles for a polyline ribbon of width w (metres) to pos. */
-  private ribbon(p: number[], w: number, pos: number[], y = 0) {
-    const half = w / 2;
-    for (let i = 0; i + 3 < p.length; i += 2) {
-      const [x1, z1] = this.xz(p[i], p[i + 1]);
-      const [x2, z2] = this.xz(p[i + 2], p[i + 3]);
-      const len = Math.hypot(x2 - x1, z2 - z1);
-      if (len < 0.01) continue;
-      const nx = (-(z2 - z1) / len) * half;
-      const nz = ((x2 - x1) / len) * half;
-      pos.push(x1 + nx, y, z1 + nz, x1 - nx, y, z1 - nz, x2 + nx, y, z2 + nz);
-      pos.push(x2 + nx, y, z2 + nz, x1 - nx, y, z1 - nz, x2 - nx, y, z2 - nz);
+  private fadeOut(e: ChunkEntry, now: number) {
+    e.fadingOut = now;
+    for (const m of e.materials) {
+      m.transparent = true;
+      m.needsUpdate = true;
+    }
+  }
+
+  private updateFades(now: number) {
+    for (const e of this.chunks.values()) {
+      if (e.fadingOut !== null) {
+        const k = (now - e.fadingOut) / FADE_OUT_MS;
+        if (k >= 1) {
+          this.removeChunk(e);
+          continue;
+        }
+        this.setOpacity(e, 1 - k);
+      } else if (!e.settled) {
+        const k = (now - e.fadeInAt) / FADE_IN_MS;
+        if (k >= 1) {
+          e.settled = true;
+          for (const m of e.materials) {
+            m.transparent = false;
+            m.opacity = 1;
+            m.needsUpdate = true;
+          }
+        } else {
+          this.setOpacity(e, k);
+        }
+      }
+    }
+  }
+
+  private setOpacity(e: ChunkEntry, o: number) {
+    for (const m of e.materials) m.opacity = o;
+  }
+
+  private removeChunk(e: ChunkEntry) {
+    if (!this.chunks.delete(e.key)) return;
+    this.scene.remove(e.group);
+    disposeGroup(e.group);
+    for (let i = 0; i < e.labels.length; i++) {
+      const el = this.labelEls.get(`${e.key}#${i}`);
+      if (el) {
+        el.remove();
+        this.labelEls.delete(`${e.key}#${i}`);
+      }
+    }
+  }
+
+  /** Place the nearest, most important chunk labels on the HTML overlay. */
+  private updateLabels() {
+    const t = this.controls.target;
+    const fogFar = (this.scene.fog as THREE.Fog).far;
+    const cands: { id: string; label: BuiltLabel; d: number }[] = [];
+    for (const e of this.chunks.values()) {
+      if (e.fadingOut !== null) continue;
+      e.labels.forEach((label, idx) => {
+        const d = Math.hypot(label.x - t.x, label.z - t.z);
+        if (d > fogFar * 0.95) return;
+        cands.push({ id: `${e.key}#${idx}`, label, d });
+      });
+    }
+    cands.sort((a, b) => a.label.rank - b.label.rank || a.d - b.d);
+    const w = this.container.clientWidth;
+    const h = this.container.clientHeight;
+    const shown = new Set<string>();
+    for (let i = 0; i < Math.min(MAX_LABELS, cands.length); i++) {
+      const { id, label } = cands[i];
+      this.tmpVec.set(label.x, 6, label.z);
+      this.tmpVec.project(this.camera);
+      if (this.tmpVec.z > 1 || Math.abs(this.tmpVec.x) > 1.02 || Math.abs(this.tmpVec.y) > 1.02) continue;
+      let el = this.labelEls.get(id);
+      if (!el) {
+        el = document.createElement("div");
+        el.className =
+          "sc-3d-label" +
+          (label.rank === 0 ? " sc-3d-label-place" : label.rank === 1 ? " sc-3d-label-road" : "");
+        el.textContent = label.text;
+        this.labelLayer.appendChild(el);
+        this.labelEls.set(id, el);
+      }
+      const x = ((this.tmpVec.x * 0.5 + 0.5) * w).toFixed(1);
+      const y = ((-this.tmpVec.y * 0.5 + 0.5) * h).toFixed(1);
+      el.style.transform = `translate(${x}px, ${y}px) translate(-50%, -50%)`;
+      shown.add(id);
+    }
+    for (const [id, el] of this.labelEls) {
+      if (!shown.has(id)) el.style.transform = "translate(-9999px, -9999px)";
     }
   }
 
@@ -308,9 +530,9 @@ export class Scene3D {
       );
       ring.rotation.x = -Math.PI / 2;
       ring.position.set(x, 2, z);
-      // after the road layers (renderOrder 1..7), so roads don't cut through the ring
-      beam.renderOrder = 15;
-      ring.renderOrder = 15;
+      // above every road/building layer (incl. the detail offset), so they never cut the ring
+      beam.renderOrder = HAZARD_ORDER;
+      ring.renderOrder = HAZARD_ORDER;
       this.hazards.add(beam, ring);
     }
   }
@@ -321,12 +543,12 @@ export class Scene3D {
     if (!points || points.length < 2) return;
     const flat = points.flatMap(([lat, lon]) => [lat, lon]);
     const pos: number[] = [];
-    this.ribbon(flat, 14, pos, 0);
+    appendRibbon(flat, 14, pos, 0, this.buildContext());
     const g = new THREE.BufferGeometry();
     g.setAttribute("position", new THREE.Float32BufferAttribute(pos, 3));
     const m = new THREE.Mesh(g, new THREE.MeshBasicMaterial({ color: 0x00e5e2, side: THREE.DoubleSide, depthTest: false }));
     m.position.y = 3;
-    m.renderOrder = 20;
+    m.renderOrder = ROUTE_ORDER;
     this.route.add(m);
     // frame the whole route
     let minX = Infinity, maxX = -Infinity, minZ = Infinity, maxZ = -Infinity;
@@ -349,17 +571,24 @@ export class Scene3D {
     this.controls.target.set(x, 0, z);
     this.camera.position.set(x + dir.x * dist, Math.max(dir.y, 0.5) * dist, z + dir.z * dist);
     this.controls.update();
-    this.scheduleLoad();
+    this.dirty = true;
+    this.lastEval = 0; // re-evaluate immediately for the new view
   }
 
   dispose() {
+    this.disposed = true;
     cancelAnimationFrame(this.raf);
-    if (this.settleTimer) clearTimeout(this.settleTimer);
     this.resize.disconnect();
     this.controls.dispose();
-    if (this.base) disposeGroup(this.base);
+    if (this.worker) this.worker.terminate();
+    for (const settle of this.buildWaiters.values()) settle("disposed", null);
+    this.buildWaiters.clear();
+    for (const e of [...this.chunks.values()]) this.removeChunk(e);
     disposeGroup(this.hazards);
     disposeGroup(this.route);
+    this.labelEls.forEach((el) => el.remove());
+    this.labelEls.clear();
+    this.labelLayer.remove();
     this.renderer.dispose();
     this.renderer.domElement.remove();
   }

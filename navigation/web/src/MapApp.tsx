@@ -236,17 +236,26 @@ export default function MapApp() {
   // If scenes aren't available, fall back to the 2D tile map rather than showing nothing.
   useEffect(() => {
     if (!start || mode !== "3d" || !view3dEl.current || s3d.current) return;
+    let sceneEverLoaded = false;
+    let sceneFatal = 0;
     const v = new Scene3D(
       view3dEl.current,
       { lat: start.lat, lon: start.lon },
       Math.max(start.zoom, 13), // 3D opens at district distance: the z13/z15 rungs carry buildings
       async (req) => {
+        // Only a fatal status with no scene ever loaded falls back to 2D; a single
+        // chunk failing mid-pan must not throw away a working 3D view.
         try {
-          return await scene(req.lat, req.lon, req.radiusM);
+          const data = await scene(req.lat, req.lon, req.radiusM);
+          sceneEverLoaded = true;
+          return data;
         } catch (ex) {
           if (ex instanceof ApiError && [404, 502, 503, 504].includes(ex.status)) {
-            setMode("2d");
-            setStatus("3D scenes aren't available right now, so this is the 2D tile map.");
+            sceneFatal += 1;
+            if (!sceneEverLoaded && sceneFatal >= 2) {
+              setMode("2d");
+              setStatus("3D scenes aren't available right now, so this is the 2D tile map.");
+            }
           }
           throw ex;
         }
