@@ -1,0 +1,20 @@
+[Unit]
+Description=Scout hazard sources (NWS, state 511, USDOT WZDx, TomTom) -> signed hazard events
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=simple
+User=scout
+Group=scout
+WorkingDirectory=/home/scout/routing-hardened/navigation/sources
+# Region, states, provider keys and SCOUT_SOURCES_SIGNING_KEY (root:scout 640, never in git)
+EnvironmentFile=/etc/scout-sources.env
+Environment=PYTHONUNBUFFERED=1
+ExecStart=/usr/bin/python3 -m scout_sources poll --interval 120
+Restart=always
+RestartSec=30s
+NoNewPrivileges=true
+
+[Install]
+WantedBy=multi-user.target
