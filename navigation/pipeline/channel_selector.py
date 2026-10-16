@@ -107,6 +107,49 @@ def haversine_km(lat1: float, lon1: float, lat2: float, lon2: float) -> float:
     return radius * c
 
 
+GEOHASH_BASE32 = "0123456789bcdefghjkmnpqrstuvwxyz"
+SHARD_PATTERN = re.compile(r"^[0-9b-hjkmnp-z]{4}$")
+
+
+def shard_center(cell: str) -> tuple[float, float] | None:
+    """(lat, lon) centre of a geohash-4 cell, or None if `cell` is not one.
+
+    Coordinate-free hubs rank channels from the cell a client computed on-device,
+    never from the client's own fix; this is the coarsest point that cell implies.
+    """
+    cell = str(cell or "").strip().lower()
+    if not SHARD_PATTERN.match(cell):
+        return None
+    lat_r, lon_r = [-90.0, 90.0], [-180.0, 180.0]
+    even = True
+    for ch in cell:
+        value = GEOHASH_BASE32.index(ch)
+        for shift in range(4, -1, -1):
+            r = lon_r if even else lat_r
+            mid = (r[0] + r[1]) / 2
+            if (value >> shift) & 1:
+                r[0] = mid
+            else:
+                r[1] = mid
+            even = not even
+    return (lat_r[0] + lat_r[1]) / 2, (lon_r[0] + lon_r[1]) / 2
+
+
+def hub_accepts_client_gps(policy_url: str, timeout_seconds: float = 3.0) -> bool | None:
+    """Ask the backend whether it keeps client GPS (/api/gps/policy).
+
+    True/False from the hub's answer; None when the hub could not be asked, in
+    which case callers must treat GPS as unavailable rather than assume it.
+    """
+    try:
+        payload = requests.get(policy_url, timeout=timeout_seconds).json()
+    except Exception:
+        return None
+    if not isinstance(payload, dict) or "accepts_client_gps" not in payload:
+        return None
+    return payload.get("accepts_client_gps") is True
+
+
 @dataclass
 class SelectorContext:
     lat: float | None
@@ -316,7 +359,9 @@ def deterministic_score(channel: dict[str, Any], ctx: SelectorContext) -> tuple[
     chan_lon = safe_float(channel.get("lon"))
     if ctx.lat is not None and ctx.lon is not None and chan_lat is not None and chan_lon is not None:
         dist_km = haversine_km(ctx.lat, ctx.lon, chan_lat, chan_lon)
-        distance_points = max(0.0, 30.0 - 0.35 * dist_km)
+        # Linear to zero at 400 km: a coarse cell centre (tens of km from the device) must
+        # still separate "next county" from "another state"; the old 86 km cut-off did not.
+        distance_points = max(0.0, 30.0 * (1.0 - dist_km / 400.0))
         parts["distance_km"] = round(dist_km, 3)
         parts["distance_bonus"] = round(distance_points, 3)
         score += distance_points
@@ -449,6 +494,12 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--channels-file", required=True, help="Path to channel catalog JSON file.")
     parser.add_argument("--lat", type=float, default=None, help="Current latitude (optional).")
     parser.add_argument("--lon", type=float, default=None, help="Current longitude (optional).")
+    parser.add_argument(
+        "--shard",
+        type=str,
+        default="",
+        help="Geohash-4 cell computed on the client; ranks from the cell centre and overrides --lat/--lon.",
+    )
     parser.add_argument("--city", type=str, default="", help="Current city/jurisdiction context.")
     parser.add_argument("--county", type=str, default="", help="Current county context.")
     parser.add_argument("--state", type=str, default="", help="Current state context.")
@@ -485,7 +536,13 @@ def build_parser() -> argparse.ArgumentParser:
 
 
 def main() -> None:
-    args = build_parser().parse_args()
+    parser = build_parser()
+    args = parser.parse_args()
+    if args.shard:
+        center = shard_center(args.shard)
+        if center is None:
+            parser.error("--shard must be a geohash-4 cell id")
+        args.lat, args.lon = center
     desired_types = [token.strip() for token in args.desired_types.split(",") if token.strip()]
     ctx = SelectorContext(
         lat=args.lat,
