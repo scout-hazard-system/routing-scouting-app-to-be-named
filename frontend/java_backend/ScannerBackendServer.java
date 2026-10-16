@@ -34,7 +34,7 @@ import java.util.regex.Pattern;
 
 public final class ScannerBackendServer {
   private static final String DEFAULT_HOST = "0.0.0.0";
-  private static final int DEFAULT_PORT = 8080;
+  private static final int DEFAULT_PORT = 18080;
   private static final int RECENT_EVENT_LIMIT = 120;
   private static final int SNAPSHOT_EVENT_RETURN_LIMIT = 30;
   private static final int MOBILE_EVENT_RETURN_LIMIT = 12;

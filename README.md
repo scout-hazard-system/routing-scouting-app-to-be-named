@@ -37,4 +37,4 @@ This file is the high-level index for project progress.
   - optional Ollama reranking for ambiguous candidates
 - Sample catalog: `config/broadcastify_channels.sample.json`
 - Example:
-  - `/home/gibi/Desktop/cop_pipeline/bin/python3 /home/gibi/Desktop/channel_selector.py --channels-file /home/gibi/Desktop/config/broadcastify_channels.sample.json --city "Sample City" --county "Sample County" --state "Sample State" --lat 40.0 --lon -75.0 --desired-types law,dispatch --use-ollama-rerank --output-format text`
+  - `python3 channel_selector.py --channels-file config/broadcastify_channels.sample.json --city "Sample City" --county "Sample County" --state "Sample State" --lat 40.0 --lon -75.0 --desired-types law,dispatch --output-format text`

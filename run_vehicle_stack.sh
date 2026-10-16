@@ -40,29 +40,34 @@ if [[ -f "$CONFIG_FILE" ]]; then
   source "$CONFIG_FILE"
 fi
 
-rotate_one_log() {
-  local file_path="$1"
-  [[ -f "$file_path" ]] || return 0
-  local max_bytes=$((MAX_LOG_SIZE_MB * 1024 * 1024))
-  local size
-  size="$(wc -c < "$file_path" | tr -d ' ')"
-  if (( size < max_bytes )); then
-    return 0
-  fi
-  for i in $(seq "$MAX_LOG_BACKUPS" -1 1); do
-    if [[ -f "${file_path}.${i}" ]]; then
-      mv "${file_path}.${i}" "${file_path}.$((i + 1))"
+LOG_ROTATION_SH="${ROOT_DIR}/config/log_rotation.sh"
+if [[ -f "$LOG_ROTATION_SH" ]]; then
+  # shellcheck disable=SC1090
+  source "$LOG_ROTATION_SH"
+else
+  rotate_one_log() {
+    local file_path="$1"
+    [[ -f "$file_path" ]] || return 0
+    local max_bytes=$((MAX_LOG_SIZE_MB * 1024 * 1024))
+    local size
+    size="$(wc -c < "$file_path" | tr -d ' ')"
+    if (( size < max_bytes )); then
+      return 0
     fi
-  done
-  mv "$file_path" "${file_path}.1"
-  : > "$file_path"
-}
-
-rotate_logs() {
-  rotate_one_log "$BACKEND_LOG_FILE"
-  rotate_one_log "$FRONTEND_LOG_FILE"
-  rotate_one_log "$PIPELINE_LOG"
-}
+    for i in $(seq "$MAX_LOG_BACKUPS" -1 1); do
+      if [[ -f "${file_path}.${i}" ]]; then
+        mv "${file_path}.${i}" "${file_path}.$((i + 1))"
+      fi
+    done
+    mv "$file_path" "${file_path}.1"
+    : > "$file_path"
+  }
+  rotate_logs() {
+    rotate_one_log "$BACKEND_LOG_FILE"
+    rotate_one_log "$FRONTEND_LOG_FILE"
+    rotate_one_log "$PIPELINE_LOG"
+  }
+fi
 port_in_use() {
   local port="$1"
   ss -ltn "sport = :$port" | grep -q LISTEN
@@ -118,7 +123,7 @@ start_backend() {
     BROADCASTIFY_SELECTOR_TOP_K="${BROADCASTIFY_SELECTOR_TOP_K:-8}" \
     BROADCASTIFY_SELECTOR_PRINT_TOP="${BROADCASTIFY_SELECTOR_PRINT_TOP:-3}" \
     BROADCASTIFY_SELECTOR_USE_OLLAMA_RERANK="${BROADCASTIFY_SELECTOR_USE_OLLAMA_RERANK:-false}" \
-    BROADCASTIFY_SELECTOR_OLLAMA_MODEL="${BROADCASTIFY_SELECTOR_OLLAMA_MODEL:-llama3.1}" \
+    BROADCASTIFY_SELECTOR_OLLAMA_MODEL="${BROADCASTIFY_SELECTOR_OLLAMA_MODEL:-scout-rank}" \
     BROADCASTIFY_SELECTOR_OLLAMA_URL="${BROADCASTIFY_SELECTOR_OLLAMA_URL:-http://localhost:11434/api/generate}" \
     BROADCASTIFY_SELECTOR_OLLAMA_TIMEOUT="${BROADCASTIFY_SELECTOR_OLLAMA_TIMEOUT:-8.0}" \
     BROADCASTIFY_SELECTOR_OLLAMA_WEIGHT="${BROADCASTIFY_SELECTOR_OLLAMA_WEIGHT:-0.2}" \
