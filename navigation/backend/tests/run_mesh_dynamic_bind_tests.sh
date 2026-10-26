@@ -18,6 +18,7 @@ javac -encoding UTF-8 -d "$OUT" \
   "$BACKEND/ScoutMeshControl.java" \
   "$BACKEND/ScoutSubscriptionAuth.java" \
   "$BACKEND/ScoutAdminAuth.java" \
+  "$BACKEND/ScoutPaths.java" \
   "$TEST_SRC"
 
 run_case() {

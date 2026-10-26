@@ -18,9 +18,20 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!--
+    No third-party scripts, styles or frames. The page loads only same-origin
+    files and talks to the hub, so a CDN compromise cannot read the page's
+    in-memory position. The map, geocoding and routing all go through the hub,
+    which refuses raw coordinates by default.
+  -->
+  <meta
+    http-equiv="Content-Security-Policy"
+    content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data: blob:; connect-src 'self' http://*:18080 ws://*:18080 http://127.0.0.1:18080 http://localhost:18080; object-src 'none'; base-uri 'self'; form-action 'none'; frame-ancestors 'none'"
+  />
+  <meta name="referrer" content="no-referrer" />
   <title>Scanner Navigation Monitor</title>
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <link rel="stylesheet" href="./styles.css" />
+  <link rel="icon" href="data:," />
 </head>
 <body>
   <main class="layout">
@@ -246,17 +257,18 @@
       <canvas id="visualizerCanvas" width="700" height="180"></canvas>
     </div>
   </div>
-  <script>
-    (function () {
-      var host = window.location.hostname || "127.0.0.1";
-      var backendPort = "18080";
-      // Prefer same host as the UI (Tailscale/LAN/localhost) so map/shard APIs stay reachable.
-      window.SCANNER_API_BASE_URL = "http://" + host + ":" + backendPort;
-    })();
-    window.SCANNER_GOOGLE_ROUTE_SEARCH_ENABLED = true;
-    window.SCANNER_GOOGLE_MAPS_API_KEY = "";
-  </script>
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <!--
+    No inline bootstrap: a CSP that allows only same-origin scripts cannot run one.
+    app.js derives the hub origin itself (same host, port 18080, or same-origin when
+    this page is served over TLS by the edge proxy). No Google Maps key either:
+    geocoding, routing and the map are hub-side, so nothing about the device
+    position reaches a third party.
+  -->
+  <!--
+    shard-client.js is same-origin (no CDN) and attaches ScoutShards. It computes the
+    coarse geohash cell on this device so app.js never has to hand a position to the hub.
+  -->
+  <script src="./shard-client.js"></script>
   <script src="./app.js"></script>
 </body>
 </html>

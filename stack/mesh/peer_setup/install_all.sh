@@ -9,11 +9,11 @@
 #   4) write local wiring env for stack/gate tooling
 #
 # Required env (from hub operator — not baked into the tarball):
-#   SCOUT_MESH_ENROLL_URL   e.g. http://192.168.1.154:18080
+#   SCOUT_MESH_ENROLL_URL   e.g. http://192.168.1.100:18080
 #   SCOUT_MESH_ENTRY_TOKEN  mesh entry token (NOT the Windows admin token)
 #
 # Optional:
-#   SCOUT_MESH_ENDPOINT_OVERRIDE=192.168.1.154:51820   # when public hairpin fails
+#   SCOUT_MESH_ENDPOINT_OVERRIDE=192.168.1.100:51820   # when public hairpin fails
 #   SCOUT_INSTALL_OLLAMA=1|0                          # default 1 if ollama missing
 #   SCOUT_BUILD_GATE_MODEL=1|0                        # default 1
 #   SKIP_MESH_JOIN=1                                  # only install tools/models
